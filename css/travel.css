@@ -170,10 +170,7 @@
 	height: min(72vh, 640px);
 	display: flex;
 	flex-direction: column;
-	background: #fff;
-	border-left: 4px solid var(--accent, #303F9F);
-	box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
-	padding: 1rem 0.75rem 1rem 1rem;
+	padding: 0;
 }
 
 .travel-stats {
@@ -368,9 +365,7 @@
 	}
 
 	.travel-cards-sidebar {
-		max-height: none;
-		border-left: none;
-		border-top: 4px solid var(--accent, #303F9F);
+		height: auto;
 	}
 
 	.travel-hover-card {
