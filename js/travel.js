@@ -423,10 +423,8 @@
 		marker.on('mouseover', function () {
 			if (isHome) {
 				showHoverCard(homeCardHtml(data), true);
-				fitMapToLatLngs([marker.getLatLng()], 10);
 			} else {
 				showHoverCard(cityCardHtml(data, trips), false);
-				fitMapToLatLngs([marker.getLatLng()], 9);
 			}
 			el.classList.add('highlight');
 		});
@@ -436,7 +434,6 @@
 				highlightTrip(activeTripId);
 			} else {
 				el.classList.remove('highlight');
-				resetMapView();
 			}
 		});
 
