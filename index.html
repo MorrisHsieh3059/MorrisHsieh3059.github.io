@@ -499,13 +499,12 @@
 						<div id="travel-notice" class="travel-notice" style="display:none;"></div>
 
 						<p class="travel-intro">
-							<strong>Trip cards</strong> group each journey (leave home → return home).
-							The <strong>map</strong> shows every city as a heat spot — brighter and larger means more revisits, including return visits within the same trip.
+							<strong>Trip cards</strong> sit over the map on the right — hover one to trace the full route from home, through each city, and back.
+							City pins use <strong>heat</strong> (brighter and larger = more revisits within trips).
 						</p>
 
 						<div class="travel-layout">
-							<div class="travel-panel">
-								<h3 class="travel-panel-title"><i class="fas fa-map"></i> Cities map <span class="travel-panel-hint">heat = revisit frequency</span></h3>
+							<div class="travel-map-stage">
 								<div class="travel-map-wrap">
 									<div id="travel-map"></div>
 									<div id="travel-hover-card" class="travel-hover-card"></div>
@@ -515,12 +514,12 @@
 										<span class="legend-route">Trip route (on hover)</span>
 									</div>
 								</div>
-							</div>
-							<div class="travel-panel">
-								<h3 class="travel-panel-title"><i class="fas fa-suitcase-rolling"></i> Trip journal <span class="travel-panel-hint">one card per journey</span></h3>
-								<div class="travel-cards-panel" id="travel-cards">
-									<p style="color:#888;">Loading travel data…</p>
-								</div>
+								<aside class="travel-cards-overlay">
+									<h3 class="travel-panel-title"><i class="fas fa-suitcase-rolling"></i> Trip journal <span class="travel-panel-hint">one card per journey</span></h3>
+									<div class="travel-cards-panel" id="travel-cards">
+										<p style="color:#888;">Loading travel data…</p>
+									</div>
+								</aside>
 							</div>
 						</div>
 					</div>

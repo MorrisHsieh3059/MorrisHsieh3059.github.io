@@ -12,6 +12,14 @@
 	var activeTripId = null;
 
 	var MAP_FLY_OPTS = { duration: 0.55 };
+	var CARDS_PAD_RIGHT = 400;
+
+	function mapFitPadding() {
+		return {
+			paddingTopLeft: L.point(48, 48),
+			paddingBottomRight: L.point(48, CARDS_PAD_RIGHT)
+		};
+	}
 
 	function formatDateRange(start, end) {
 		var s = new Date(start + 'T00:00:00');
@@ -126,8 +134,8 @@
 			}
 			$card.on('mouseenter', function () {
 				activeTripId = trip.id;
+				hideHoverCard();
 				highlightTrip(trip.id);
-				showHoverCard(tripCardHtml(trip), false);
 			});
 			$card.on('mouseleave', function () {
 				activeTripId = null;
@@ -151,14 +159,54 @@
 		}
 	}
 
+	function homeBaseForTrip(trip) {
+		var homes = travelData.homeBases || [];
+		var start = trip.startDate;
+		var match = null;
+
+		homes.forEach(function (home) {
+			var afterFrom = !home.from || start >= home.from;
+			var beforeTo = !home.to || start <= home.to;
+			if (afterFrom && beforeTo) match = home;
+		});
+
+		return match || homes[homes.length - 1] || homes[0] || null;
+	}
+
+	function latLngsFromTripWithBase(trip) {
+		if (!trip) return [];
+
+		var home = homeBaseForTrip(trip);
+		var pts = [];
+
+		if (home) {
+			pts.push(L.latLng(home.lat, home.lng));
+		}
+
+		if (trip.route && trip.route.length) {
+			trip.route.forEach(function (p) {
+				pts.push(L.latLng(p.lat, p.lng));
+			});
+		} else {
+			(trip.cityIds || []).forEach(function (id) {
+				if (markers[id]) pts.push(markers[id].marker.getLatLng());
+			});
+		}
+
+		if (home && pts.length > 1) {
+			pts.push(L.latLng(home.lat, home.lng));
+		}
+
+		return pts;
+	}
+
 	function drawTripRoute(tripId) {
 		clearRouteLine();
 		var trip = (travelData.trips || []).find(function (t) { return t.id === tripId; });
-		if (!trip || !trip.route || trip.route.length < 2 || !map) return;
+		if (!trip || !map) return;
 
-		var latlngs = trip.route.map(function (p) {
-			return [p.lat, p.lng];
-		});
+		var latlngs = latLngsFromTripWithBase(trip);
+		if (latlngs.length < 2) return;
 
 		activeRouteLine = L.polyline(latlngs, {
 			color: '#303F9F',
@@ -175,19 +223,7 @@
 		}
 	}
 
-	function latLngsFromTrip(trip) {
-		if (!trip) return [];
-		if (trip.route && trip.route.length) {
-			return trip.route.map(function (p) {
-				return L.latLng(p.lat, p.lng);
-			});
-		}
-		return (trip.cityIds || []).map(function (id) {
-			return markers[id] ? markers[id].marker.getLatLng() : null;
-		}).filter(Boolean);
-	}
-
-	function fitMapToLatLngs(latlngs, maxZoom) {
+	function fitMapToLatLngs(latlngs, maxZoom, useCardsPadding) {
 		if (!map || !latlngs.length) return;
 
 		if (latlngs.length === 1) {
@@ -195,17 +231,23 @@
 			return;
 		}
 
-		map.flyToBounds(L.latLngBounds(latlngs), $.extend({}, MAP_FLY_OPTS, {
-			padding: [48, 48],
+		var opts = $.extend({}, MAP_FLY_OPTS, {
 			maxZoom: maxZoom || 10
-		}));
+		});
+
+		if (useCardsPadding) {
+			$.extend(opts, mapFitPadding());
+		} else {
+			opts.padding = [48, 48];
+		}
+
+		map.flyToBounds(L.latLngBounds(latlngs), opts);
 	}
 
 	function resetMapView() {
 		if (!map) return;
 		if (defaultBounds) {
-			map.flyToBounds(defaultBounds, $.extend({}, MAP_FLY_OPTS, {
-				padding: [40, 40],
+			map.flyToBounds(defaultBounds, $.extend({}, MAP_FLY_OPTS, mapFitPadding(), {
 				maxZoom: 5
 			}));
 		} else if (defaultCenter) {
@@ -220,9 +262,20 @@
 		var trip = (travelData.trips || []).find(function (t) { return t.id === tripId; });
 		var tripCityIds = trip ? (trip.cityIds || []) : [];
 
+		var home = homeBaseForTrip(trip);
+
 		Object.keys(markers).forEach(function (id) {
 			var m = markers[id];
-			if (m.isHome) return;
+			if (m.isHome) {
+				if (home && id === home.id) {
+					m.el.classList.add('highlight');
+					m.el.classList.remove('dimmed');
+				} else {
+					m.el.classList.add('dimmed');
+					m.el.classList.remove('highlight');
+				}
+				return;
+			}
 			if (tripCityIds.indexOf(id) >= 0) {
 				m.el.classList.add('highlight');
 				m.el.classList.remove('dimmed');
@@ -233,7 +286,7 @@
 		});
 
 		drawTripRoute(tripId);
-		fitMapToLatLngs(latLngsFromTrip(trip), 10);
+		fitMapToLatLngs(latLngsFromTripWithBase(trip), 10, true);
 	}
 
 	function clearHighlights() {
@@ -285,7 +338,7 @@
 		});
 		if (latlngs.length > 1) {
 			defaultBounds = L.latLngBounds(latlngs);
-			map.fitBounds(defaultBounds, { padding: [40, 40], maxZoom: 5 });
+			map.fitBounds(defaultBounds, $.extend({}, mapFitPadding(), { maxZoom: 5 }));
 		} else if (latlngs.length === 1) {
 			map.setView(latlngs[0], 4);
 		}
@@ -335,10 +388,6 @@
 			hideHoverCard();
 			if (activeTripId) {
 				highlightTrip(activeTripId);
-				var trip = (travelData.trips || []).find(function (t) {
-					return t.id === activeTripId;
-				});
-				showHoverCard(tripCardHtml(trip), false);
 			} else {
 				el.classList.remove('highlight');
 				resetMapView();

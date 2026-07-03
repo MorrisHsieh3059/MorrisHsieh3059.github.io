@@ -1,4 +1,4 @@
-/* Travel section — map + trip cards */
+/* Travel section — full map with overlaid trip cards */
 
 .travel-intro {
 	font-size: 0.9rem;
@@ -13,6 +13,7 @@
 	color: #333;
 	margin: 0 0 0.75rem;
 	font-weight: 500;
+	flex-shrink: 0;
 }
 
 .travel-panel-title i {
@@ -29,14 +30,18 @@
 }
 
 .travel-layout {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 2rem;
 	margin-top: 1.25rem;
+}
+
+.travel-map-stage {
+	position: relative;
+	width: 100%;
 }
 
 .travel-map-wrap {
 	position: relative;
+	width: 100%;
+	height: min(72vh, 640px);
 	min-height: 420px;
 	background: #e8eaf6;
 	border: 1px solid #d0d0d0;
@@ -44,7 +49,7 @@
 
 #travel-map {
 	width: 100%;
-	height: 420px;
+	height: 100%;
 	z-index: 1;
 }
 
@@ -111,9 +116,11 @@
 .travel-hover-card {
 	position: absolute;
 	top: 12px;
-	right: 12px;
+	left: 12px;
+	right: auto;
 	z-index: 600;
-	width: 260px;
+	width: 280px;
+	max-width: calc(100% - 24px);
 	background: #fff;
 	border-left: 4px solid var(--accent, #303F9F);
 	padding: 1rem 1.1rem;
@@ -121,6 +128,8 @@
 	opacity: 0;
 	pointer-events: none;
 	transition: opacity 0.2s ease;
+	word-wrap: break-word;
+	overflow-wrap: anywhere;
 }
 
 .travel-hover-card.visible {
@@ -135,6 +144,8 @@
 	font-family: 'Roboto Mono', sans-serif;
 	font-size: 0.95rem;
 	margin: 0 0 0.35rem;
+	word-wrap: break-word;
+	overflow-wrap: anywhere;
 }
 
 .travel-hover-card .meta {
@@ -147,6 +158,26 @@
 	font-size: 0.85rem;
 	margin: 0;
 	color: #444;
+	word-wrap: break-word;
+	overflow-wrap: anywhere;
+}
+
+.travel-cards-overlay {
+	position: absolute;
+	top: 12px;
+	right: 12px;
+	bottom: 12px;
+	width: min(380px, 44%);
+	z-index: 700;
+	display: flex;
+	flex-direction: column;
+	background: rgba(255, 255, 255, 0.94);
+	backdrop-filter: blur(8px);
+	-webkit-backdrop-filter: blur(8px);
+	border-left: 4px solid var(--accent, #303F9F);
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.16);
+	padding: 1rem 0.65rem 1rem 1rem;
+	pointer-events: auto;
 }
 
 .travel-stats {
@@ -176,18 +207,22 @@
 }
 
 .travel-cards-panel {
-	max-height: 420px;
+	flex: 1;
+	min-height: 0;
 	overflow-y: auto;
-	padding-right: 0.5rem;
+	overflow-x: hidden;
+	padding-right: 0.35rem;
 }
 
 .trip-card {
 	background: #fff;
 	border-left: 4px solid var(--accent, #303F9F);
-	padding: 1.1rem 1.25rem;
+	padding: 1.1rem 1.15rem;
 	margin-bottom: 1rem;
 	cursor: pointer;
 	transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+	word-wrap: break-word;
+	overflow-wrap: anywhere;
 }
 
 .trip-card:hover,
@@ -201,12 +236,17 @@
 	font-family: 'Roboto Mono', sans-serif;
 	font-size: 0.95rem;
 	margin: 0 0 0.3rem;
+	word-wrap: break-word;
+	overflow-wrap: anywhere;
+	white-space: normal;
 }
 
 .trip-card .meta {
 	font-size: 0.8rem;
 	color: #888;
 	margin-bottom: 0.5rem;
+	word-wrap: break-word;
+	overflow-wrap: anywhere;
 }
 
 .trip-card .meta i {
@@ -218,6 +258,9 @@
 	font-size: 0.88rem;
 	margin: 0;
 	color: #555;
+	word-wrap: break-word;
+	overflow-wrap: anywhere;
+	white-space: normal;
 }
 
 .trip-card .trip-counts {
@@ -226,6 +269,9 @@
 	font-size: 0.72rem;
 	color: var(--accent, #303F9F);
 	letter-spacing: 0.02em;
+	word-wrap: break-word;
+	overflow-wrap: anywhere;
+	white-space: normal;
 }
 
 .trip-card .cities {
@@ -238,17 +284,6 @@
 	white-space: normal;
 }
 
-.trip-card h4 {
-	word-wrap: break-word;
-	overflow-wrap: anywhere;
-	white-space: normal;
-}
-
-#travel-hover-card {
-	word-wrap: break-word;
-	overflow-wrap: anywhere;
-}
-
 .travel-notice {
 	background: #fff8e1;
 	border-left: 4px solid #FFC72C;
@@ -256,6 +291,8 @@
 	margin-bottom: 1rem;
 	font-size: 0.88rem;
 	color: #665500;
+	word-wrap: break-word;
+	overflow-wrap: anywhere;
 }
 
 .travel-city-marker {
@@ -325,17 +362,24 @@
 }
 
 @media (max-width: 991px) {
-	.travel-layout {
-		grid-template-columns: 1fr;
+	.travel-map-wrap {
+		height: 50vh;
+		min-height: 300px;
+	}
+
+	.travel-cards-overlay {
+		position: relative;
+		top: auto;
+		right: auto;
+		bottom: auto;
+		width: 100%;
+		margin-top: 1rem;
+		max-height: none;
 	}
 
 	.travel-hover-card {
 		width: calc(100% - 24px);
-		right: 12px;
 		left: 12px;
-	}
-
-	.travel-cards-panel {
-		max-height: none;
+		right: 12px;
 	}
 }
