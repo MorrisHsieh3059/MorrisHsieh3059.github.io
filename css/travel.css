@@ -1,0 +1,231 @@
+/* Travel section — map + trip cards */
+
+.travel-layout {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 2rem;
+	margin-top: 1.5rem;
+}
+
+.travel-map-wrap {
+	position: relative;
+	min-height: 420px;
+	background: #e8eaf6;
+	border: 1px solid #d0d0d0;
+}
+
+#travel-map {
+	width: 100%;
+	height: 420px;
+	z-index: 1;
+}
+
+.travel-map-legend {
+	position: absolute;
+	bottom: 12px;
+	left: 12px;
+	z-index: 500;
+	background: rgba(255, 255, 255, 0.92);
+	padding: 0.5rem 0.75rem;
+	font-size: 0.78rem;
+	font-family: 'Roboto Mono', sans-serif;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.travel-map-legend span {
+	display: inline-block;
+	margin-right: 0.75rem;
+}
+
+.legend-home::before,
+.legend-visit::before {
+	content: '';
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	margin-right: 4px;
+	vertical-align: middle;
+}
+
+.legend-home::before {
+	background: #303F9F;
+	border: 2px solid #fff;
+	box-shadow: 0 0 0 1px #303F9F;
+}
+
+.legend-visit::before {
+	background: #FFC72C;
+	border: 2px solid #fff;
+	box-shadow: 0 0 0 1px #c9a000;
+}
+
+.travel-hover-card {
+	position: absolute;
+	top: 12px;
+	right: 12px;
+	z-index: 600;
+	width: 260px;
+	background: #fff;
+	border-left: 4px solid var(--accent, #303F9F);
+	padding: 1rem 1.1rem;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.2s ease;
+}
+
+.travel-hover-card.visible {
+	opacity: 1;
+}
+
+.travel-hover-card.home-card {
+	border-left-color: #303F9F;
+}
+
+.travel-hover-card h5 {
+	font-family: 'Roboto Mono', sans-serif;
+	font-size: 0.95rem;
+	margin: 0 0 0.35rem;
+}
+
+.travel-hover-card .meta {
+	font-size: 0.8rem;
+	color: #888;
+	margin-bottom: 0.5rem;
+}
+
+.travel-hover-card p {
+	font-size: 0.85rem;
+	margin: 0;
+	color: #444;
+}
+
+.travel-stats {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	margin: 1rem 0 0.5rem;
+}
+
+.travel-stat {
+	background: #fff;
+	padding: 0.75rem 1.25rem;
+	border-top: 3px solid var(--accent, #303F9F);
+	min-width: 120px;
+}
+
+.travel-stat strong {
+	display: block;
+	font-family: 'Roboto Mono', sans-serif;
+	font-size: 1.4rem;
+	color: var(--accent, #303F9F);
+}
+
+.travel-stat span {
+	font-size: 0.8rem;
+	color: #666;
+}
+
+.travel-cards-panel {
+	max-height: 420px;
+	overflow-y: auto;
+	padding-right: 0.5rem;
+}
+
+.trip-card {
+	background: #fff;
+	border-left: 4px solid var(--accent, #303F9F);
+	padding: 1.1rem 1.25rem;
+	margin-bottom: 1rem;
+	cursor: pointer;
+	transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.trip-card:hover,
+.trip-card.active {
+	transform: translateX(4px);
+	box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+	border-left-color: #FFC72C;
+}
+
+.trip-card h4 {
+	font-family: 'Roboto Mono', sans-serif;
+	font-size: 0.95rem;
+	margin: 0 0 0.3rem;
+}
+
+.trip-card .meta {
+	font-size: 0.8rem;
+	color: #888;
+	margin-bottom: 0.5rem;
+}
+
+.trip-card .meta i {
+	margin-right: 0.3rem;
+	color: var(--accent, #303F9F);
+}
+
+.trip-card p {
+	font-size: 0.88rem;
+	margin: 0;
+	color: #555;
+}
+
+.trip-card .cities {
+	margin-top: 0.5rem;
+	font-size: 0.78rem;
+	color: #777;
+}
+
+.travel-notice {
+	background: #fff8e1;
+	border-left: 4px solid #FFC72C;
+	padding: 0.85rem 1rem;
+	margin-bottom: 1rem;
+	font-size: 0.88rem;
+	color: #665500;
+}
+
+.travel-city-marker {
+	background: transparent;
+	border: none;
+}
+
+.travel-city-marker .dot {
+	width: 14px;
+	height: 14px;
+	border-radius: 50%;
+	background: #FFC72C;
+	border: 2px solid #fff;
+	box-shadow: 0 0 0 1px #c9a000, 0 2px 6px rgba(0, 0, 0, 0.25);
+	transition: transform 0.15s ease;
+}
+
+.travel-city-marker.home .dot {
+	width: 16px;
+	height: 16px;
+	background: #303F9F;
+	box-shadow: 0 0 0 2px #fff, 0 0 0 3px #303F9F, 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.travel-city-marker:hover .dot,
+.travel-city-marker.highlight .dot {
+	transform: scale(1.35);
+}
+
+@media (max-width: 991px) {
+	.travel-layout {
+		grid-template-columns: 1fr;
+	}
+
+	.travel-hover-card {
+		width: calc(100% - 24px);
+		right: 12px;
+		left: 12px;
+	}
+
+	.travel-cards-panel {
+		max-height: none;
+	}
+}

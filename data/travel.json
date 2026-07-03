@@ -1,0 +1,33 @@
+{
+  "generatedAt": "2026-07-03T20:32:56.711946+00:00",
+  "sourceNote": "No place visits found in export. Google Takeout may only include Timeline settings when history is stored on-device. Export from Google Maps → Your Timeline → Settings → Export.",
+  "homeBases": [
+    {
+      "id": "home-taipei",
+      "city": "Taipei",
+      "country": "Taiwan",
+      "lat": 25.033,
+      "lng": 121.5654,
+      "from": null,
+      "to": "2022-08-01",
+      "label": "Home base (until Aug 2022)"
+    },
+    {
+      "id": "home-nyc",
+      "city": "New York City",
+      "country": "United States",
+      "lat": 40.7128,
+      "lng": -74.006,
+      "from": "2022-08-01",
+      "to": null,
+      "label": "Home base (since Aug 2022)"
+    }
+  ],
+  "cities": [],
+  "trips": [],
+  "stats": {
+    "totalTrips": 0,
+    "totalCities": 0,
+    "totalCountries": 0
+  }
+}

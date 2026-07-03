@@ -17,7 +17,9 @@
 	<link rel="stylesheet" href="vendor/fonts/fonts.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/custom.css">
+	<link rel="stylesheet" href="css/travel.css">
 	<link rel="stylesheet" href="vendor/fontawesome/css/all.min.css">
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
 </head>
 
 <body>
@@ -492,63 +494,21 @@
 						<div class="section-header">
 							<h2>My <strong class="color">Travel</strong> Journal</h2>
 						</div>
-						<div class="row">
-							<div class="col-md-6">
-								<div class="journal-card">
-									<h4>Europe Trade Mission '16</h4>
-									<div class="meta"><i class="fas fa-plane"></i> Slovenia · Poland · Czech Rep. · Norway · Russia</div>
-									<p>
-										Visited Ljubljana, Prague, Warsaw, Oslo, and St. Petersburg. Trade fairs in each city
-										with 16+ local companies on average. Explored local businesses, met government officials,
-										and experienced Nordic design culture firsthand.
-									</p>
-								</div>
-								<div class="journal-card">
-									<h4>Europe Trade Mission '15</h4>
-									<div class="meta"><i class="fas fa-plane"></i> Russia · Finland · Estonia · Sweden · Poland</div>
-									<p>
-										St. Petersburg, Helsinki (visited Nokia HQ), Tallinn (Estonia trade fair),
-										Stockholm (Hammarby Sjöstad sustainable city tour), and Warsaw.
-										8-hour B2B conferences with 15+ companies per city.
-									</p>
-								</div>
-								<div class="journal-card">
-									<h4>China Academic Exchange</h4>
-									<div class="meta"><i class="fas fa-plane"></i> Chongqing · Chengdu · Yibin, Sichuan</div>
-									<p>
-										Cross-strait student exchange between Taiwan, mainland China, Hong Kong &amp; Macau.
-										Visited Wuliangye distillery, attended the 2015 Victory Day Parade,
-										and gave speeches introducing Taiwan's culture.
-									</p>
+
+						<div id="travel-stats" class="travel-stats"></div>
+						<div id="travel-notice" class="travel-notice" style="display:none;"></div>
+
+						<div class="travel-layout">
+							<div class="travel-map-wrap">
+								<div id="travel-map"></div>
+								<div id="travel-hover-card" class="travel-hover-card"></div>
+								<div class="travel-map-legend">
+									<span class="legend-home">Home base</span>
+									<span class="legend-visit">City visited</span>
 								</div>
 							</div>
-							<div class="col-md-6">
-								<div class="journal-card">
-									<h4>Beijing AI Summer — Sinovation Ventures</h4>
-									<div class="meta"><i class="fas fa-plane"></i> Beijing, China — Summer 2018</div>
-									<p>
-										40-day internship coordinating Deecamp, an AI summer camp for 300 top students.
-										An unforgettable experience meeting brilliant minds and exploring Beijing's tech scene.
-									</p>
-								</div>
-								<div class="journal-card">
-									<h4>Countries Visited</h4>
-									<div class="meta"><i class="fas fa-globe"></i> 20+ and counting</div>
-									<p>
-										Taiwan, China, Japan, South Korea, Russia, Finland, Estonia, Sweden, Poland,
-										Norway, Czech Republic, Slovenia, USA, and more.
-										<strong>Goal: 100+ countries.</strong>
-									</p>
-								</div>
-								<div class="journal-card">
-									<h4>Travel Philosophy</h4>
-									<div class="meta"><i class="fas fa-heart"></i> How I travel</div>
-									<p>
-										I believe the best travel combines local food, walking tours, and conversations with locals.
-										Every trip is a chance to learn history, taste culture, and collect stories.
-										Check my <a href="#portfolio" class="section-toggle" data-section="portfolio">Gallery</a> for photos!
-									</p>
-								</div>
+							<div class="travel-cards-panel" id="travel-cards">
+								<p style="color:#888;">Loading travel data…</p>
 							</div>
 						</div>
 					</div>
@@ -870,5 +830,7 @@
 	<script src="js/jquery.magnific-popup.min.js"></script>
 	<script src="js/validator.min.js"></script>
 	<script src="js/script.js"></script>
+	<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+	<script src="js/travel.js"></script>
 </body>
 </html>
