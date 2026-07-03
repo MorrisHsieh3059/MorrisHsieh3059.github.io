@@ -102,13 +102,13 @@
 
 	function visitHeatStyle(visits, maxVisits) {
 		var t = maxVisits <= 1 ? 0.35 : (visits - 1) / (maxVisits - 1);
-		var core = Math.round(10 + t * 14);
-		var glow = Math.round(core + 10 + t * 18);
 		var r = Math.round(255 - t * 64);
 		var g = Math.round(224 - t * 170);
 		var b = Math.round(130 - t * 118);
 		var color = 'rgb(' + r + ',' + g + ',' + b + ')';
 		var opacity = (0.3 + t * 0.55).toFixed(2);
+		var core = 12;
+		var glow = 28;
 		return {
 			core: core,
 			glow: glow,
