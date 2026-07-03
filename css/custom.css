@@ -4,16 +4,6 @@
 	--nyc-gold: #FFC72C;
 	--nyc-blue: #0039A6;
 	--accent: #303F9F;
-	--frame-backdrop: #e2e2e2;
-}
-
-html,
-body {
-	background: var(--frame-backdrop) !important;
-}
-
-.main-content {
-	background: #f0f0f0;
 }
 
 .section-main {
