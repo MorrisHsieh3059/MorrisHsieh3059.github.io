@@ -4,12 +4,22 @@
 	--nyc-gold: #FFC72C;
 	--nyc-blue: #0039A6;
 	--accent: #303F9F;
+	--frame-gutter: #e0e0e0;
+	--frame-inset: 21px; /* page-border offset (14px) + border width (7px) */
 }
 
-/* Solid backdrop in the margin outside the blue page border */
-html,
-body {
-	background-color: #e0e0e0 !important;
+.main-content {
+	background-color: var(--frame-gutter);
+}
+
+.main-content > .sections {
+	position: absolute;
+	top: var(--frame-inset);
+	left: var(--frame-inset);
+	right: var(--frame-inset);
+	bottom: var(--frame-inset);
+	width: auto;
+	height: auto;
 }
 
 .section-main {
