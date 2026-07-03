@@ -498,17 +498,29 @@
 						<div id="travel-stats" class="travel-stats"></div>
 						<div id="travel-notice" class="travel-notice" style="display:none;"></div>
 
+						<p class="travel-intro">
+							<strong>Trip cards</strong> group each journey (leave home → return home).
+							The <strong>map</strong> shows every city you've visited as its own pin — hover a card to highlight that trip's route.
+						</p>
+
 						<div class="travel-layout">
-							<div class="travel-map-wrap">
-								<div id="travel-map"></div>
-								<div id="travel-hover-card" class="travel-hover-card"></div>
-								<div class="travel-map-legend">
-									<span class="legend-home">Home base</span>
-									<span class="legend-visit">City visited</span>
+							<div class="travel-panel">
+								<h3 class="travel-panel-title"><i class="fas fa-map"></i> Cities map <span class="travel-panel-hint">one pin per city</span></h3>
+								<div class="travel-map-wrap">
+									<div id="travel-map"></div>
+									<div id="travel-hover-card" class="travel-hover-card"></div>
+									<div class="travel-map-legend">
+										<span class="legend-home">Home base</span>
+										<span class="legend-visit">City visited</span>
+										<span class="legend-route">Trip route (on hover)</span>
+									</div>
 								</div>
 							</div>
-							<div class="travel-cards-panel" id="travel-cards">
-								<p style="color:#888;">Loading travel data…</p>
+							<div class="travel-panel">
+								<h3 class="travel-panel-title"><i class="fas fa-suitcase-rolling"></i> Trip journal <span class="travel-panel-hint">one card per journey</span></h3>
+								<div class="travel-cards-panel" id="travel-cards">
+									<p style="color:#888;">Loading travel data…</p>
+								</div>
 							</div>
 						</div>
 					</div>

@@ -5,6 +5,7 @@
 	var markers = {};
 	var travelData = null;
 	var $hoverCard = null;
+	var activeRouteLine = null;
 
 	function formatDateRange(start, end) {
 		var s = new Date(start + 'T00:00:00');
@@ -36,7 +37,8 @@
 			'<div class="meta"><i class="fas fa-map-marker-alt"></i> ' +
 			city.visits + ' visit' + (city.visits === 1 ? '' : 's') +
 			' · ' + city.firstVisit + ' – ' + city.lastVisit + '</div>' +
-			(tripList ? '<p>Trips:</p><ul style="margin:0;padding-left:1.1rem;font-size:0.82rem;">' + tripList + '</ul>' : '');
+			'<p style="font-size:0.8rem;color:#888;margin:0.25rem 0 0;">Each pin = one city across all your trips.</p>' +
+			(tripList ? '<p style="margin-top:0.5rem;">Part of:</p><ul style="margin:0;padding-left:1.1rem;font-size:0.82rem;">' + tripList + '</ul>' : '');
 	}
 
 	function homeCardHtml(home) {
@@ -50,10 +52,19 @@
 	}
 
 	function tripCardHtml(trip) {
+		var route = formatRouteCities(trip);
 		return '<h5>' + trip.title + '</h5>' +
 			'<div class="meta"><i class="fas fa-plane"></i> ' +
 			formatDateRange(trip.startDate, trip.endDate) + '</div>' +
-			'<p>' + trip.description + '</p>';
+			'<p>' + trip.description + '</p>' +
+			(route ? '<p style="margin-top:0.5rem;font-size:0.82rem;"><strong>Route:</strong> ' + route + '</p>' : '');
+	}
+
+	function formatRouteCities(trip) {
+		var cities = trip.cities || [];
+		if (cities.length <= 1) return cities[0] || '';
+		if (cities.length <= 5) return cities.join(' → ');
+		return cities.slice(0, 4).join(' → ') + ' → … +' + (cities.length - 4);
 	}
 
 	function renderTripCards() {
@@ -69,15 +80,21 @@
 		}
 
 		travelData.trips.forEach(function (trip) {
+			var nCities = (trip.cities || []).length;
+			var nCountries = (trip.countries || []).length;
 			var $card = $('<div class="trip-card" data-trip-id="' + trip.id + '"></div>');
 			$card.append('<h4>' + trip.title + '</h4>');
 			$card.append(
 				'<div class="meta"><i class="fas fa-plane"></i> ' +
 				formatDateRange(trip.startDate, trip.endDate) + '</div>'
 			);
+			$card.append(
+				'<div class="trip-counts">' + nCities + ' ' + (nCities === 1 ? 'city' : 'cities') +
+				' · ' + nCountries + ' ' + (nCountries === 1 ? 'country' : 'countries') + '</div>'
+			);
 			$card.append('<p>' + trip.description + '</p>');
 			if (trip.cities && trip.cities.length) {
-				$card.append('<div class="cities">' + trip.cities.join(' · ') + '</div>');
+				$card.append('<div class="cities">' + formatRouteCities(trip) + '</div>');
 			}
 			$card.on('mouseenter', function () {
 				highlightTrip(trip.id);
@@ -105,22 +122,58 @@
 		}
 	}
 
+	function drawTripRoute(tripId) {
+		clearRouteLine();
+		var trip = (travelData.trips || []).find(function (t) { return t.id === tripId; });
+		if (!trip || !trip.route || trip.route.length < 2 || !map) return;
+
+		var latlngs = trip.route.map(function (p) {
+			return [p.lat, p.lng];
+		});
+
+		activeRouteLine = L.polyline(latlngs, {
+			color: '#303F9F',
+			weight: 2,
+			opacity: 0.75,
+			dashArray: '6, 8'
+		}).addTo(map);
+	}
+
+	function clearRouteLine() {
+		if (activeRouteLine && map) {
+			map.removeLayer(activeRouteLine);
+			activeRouteLine = null;
+		}
+	}
+
 	function highlightTrip(tripId) {
 		clearHighlights();
 		$('.trip-card[data-trip-id="' + tripId + '"]').addClass('active');
+
+		var trip = (travelData.trips || []).find(function (t) { return t.id === tripId; });
+		var tripCityIds = trip ? (trip.cityIds || []) : [];
+
 		Object.keys(markers).forEach(function (id) {
 			var m = markers[id];
-			if (m.tripIds && m.tripIds.indexOf(tripId) >= 0) {
+			if (m.isHome) return;
+			if (tripCityIds.indexOf(id) >= 0) {
 				m.el.classList.add('highlight');
+				m.el.classList.remove('dimmed');
+			} else {
+				m.el.classList.add('dimmed');
+				m.el.classList.remove('highlight');
 			}
 		});
+
+		drawTripRoute(tripId);
 	}
 
 	function clearHighlights() {
 		$('.trip-card').removeClass('active');
 		Object.keys(markers).forEach(function (id) {
-			markers[id].el.classList.remove('highlight');
+			markers[id].el.classList.remove('highlight', 'dimmed');
 		});
+		clearRouteLine();
 	}
 
 	function initMap() {
@@ -139,20 +192,17 @@
 
 		$hoverCard = $('#travel-hover-card');
 
-		// Home base pins
 		(travelData.homeBases || []).forEach(function (home) {
-			addMarker(home.id, home.lat, home.lng, true, home, null);
+			addMarker(home.id, home.lat, home.lng, true, home, null, 0);
 		});
 
-		// Travel city pins
 		(travelData.cities || []).forEach(function (city) {
 			var trips = (travelData.trips || []).filter(function (t) {
 				return t.cityIds && t.cityIds.indexOf(city.id) >= 0;
 			});
-			addMarker(city.id, city.lat, city.lng, false, city, trips);
+			addMarker(city.id, city.lat, city.lng, false, city, trips, city.visits);
 		});
 
-		// Fit bounds if we have markers
 		var latlngs = [];
 		Object.keys(markers).forEach(function (id) {
 			latlngs.push(markers[id].marker.getLatLng());
@@ -164,10 +214,14 @@
 		}
 	}
 
-	function addMarker(id, lat, lng, isHome, data, trips) {
+	function addMarker(id, lat, lng, isHome, data, trips, visitCount) {
+		var badge = (!isHome && visitCount > 1)
+			? '<span class="visit-badge">' + visitCount + '</span>'
+			: '';
+
 		var icon = L.divIcon({
 			className: 'travel-city-marker' + (isHome ? ' home' : ''),
-			html: '<div class="dot"></div>',
+			html: '<div class="dot"></div>' + badge,
 			iconSize: [20, 20],
 			iconAnchor: [10, 10]
 		});
@@ -185,12 +239,15 @@
 		});
 		marker.on('mouseout', function () {
 			hideHoverCard();
-			el.classList.remove('highlight');
+			if (!$('.trip-card.active').length) {
+				el.classList.remove('highlight');
+			}
 		});
 
 		markers[id] = {
 			marker: marker,
 			el: el,
+			isHome: isHome,
 			tripIds: isHome ? [] : (data.tripIds || [])
 		};
 	}
@@ -212,7 +269,6 @@
 		}
 	});
 
-	// Re-fit map when travel section becomes active
 	$(document).on('click', '.section-toggle[data-section="travel"]', function () {
 		setTimeout(function () {
 			if (map) map.invalidateSize();

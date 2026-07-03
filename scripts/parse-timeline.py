@@ -334,7 +334,27 @@ def build_output(visits: list[dict], source_note: str) -> dict:
         start = min(v["start"] for v in group)
         end = max((v.get("end") or v["start"]) for v in group)
         countries = sorted({v["country"] for v in group if v["country"] != "Unknown"})
-        city_names = sorted({v["city"] for v in group})
+
+        # Chronological route (dedupe consecutive same city) for map lines & card display
+        route: list[dict] = []
+        last_ck: str | None = None
+        for v in sorted(group, key=lambda x: x["start"]):
+            ck = city_key(v["city"], v["country"])
+            if ck == last_ck:
+                continue
+            route.append(
+                {
+                    "cityId": ck,
+                    "city": v["city"],
+                    "country": v["country"],
+                    "lat": round(v["lat"], 5),
+                    "lng": round(v["lng"], 5),
+                }
+            )
+            last_ck = ck
+
+        city_names = [r["city"] for r in route]
+        city_ids = sorted(cities_in_trip.keys())
 
         trips_out.append(
             {
@@ -344,7 +364,8 @@ def build_output(visits: list[dict], source_note: str) -> dict:
                 "endDate": end.date().isoformat(),
                 "cities": city_names,
                 "countries": countries,
-                "cityIds": sorted(cities_in_trip.keys()),
+                "cityIds": city_ids,
+                "route": route,
                 "description": (
                     f"Visited {len(city_names)} "
                     f"{'city' if len(city_names) == 1 else 'cities'} in "

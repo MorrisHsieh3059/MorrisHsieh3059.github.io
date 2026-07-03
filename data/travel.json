@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-03T20:41:36.507196+00:00",
+  "generatedAt": "2026-07-03T20:48:25.627916+00:00",
   "sourceNote": "Parsed 9770 visits from location-history.json",
   "homeBases": [
     {
@@ -1336,15 +1336,16 @@
       "startDate": "2026-06-20",
       "endDate": "2026-06-29",
       "cities": [
+        "Vilnius",
+        "Oslo",
+        "London",
         "Camden Town",
         "City of London",
+        "London",
+        "Langley Green",
         "Ciutat Vella",
         "Eixample",
-        "Langley Green",
-        "London",
-        "Nouaseur",
-        "Oslo",
-        "Vilnius"
+        "Nouaseur"
       ],
       "countries": [
         "Lithuania",
@@ -1364,7 +1365,79 @@
         "oslo-norway",
         "vilnius-lithuania"
       ],
-      "description": "Visited 9 cities in 5 countries.",
+      "route": [
+        {
+          "cityId": "vilnius-lithuania",
+          "city": "Vilnius",
+          "country": "Lithuania",
+          "lat": 54.69163,
+          "lng": 25.27172
+        },
+        {
+          "cityId": "oslo-norway",
+          "city": "Oslo",
+          "country": "Norway",
+          "lat": 59.91252,
+          "lng": 10.73606
+        },
+        {
+          "cityId": "london-united-kingdom",
+          "city": "London",
+          "country": "United Kingdom",
+          "lat": 51.50708,
+          "lng": -0.14163
+        },
+        {
+          "cityId": "camden-town-united-kingdom",
+          "city": "Camden Town",
+          "country": "United Kingdom",
+          "lat": 51.51545,
+          "lng": -0.14884
+        },
+        {
+          "cityId": "city-of-london-united-kingdom",
+          "city": "City of London",
+          "country": "United Kingdom",
+          "lat": 51.50124,
+          "lng": -0.09361
+        },
+        {
+          "cityId": "london-united-kingdom",
+          "city": "London",
+          "country": "United Kingdom",
+          "lat": 51.51351,
+          "lng": -0.12208
+        },
+        {
+          "cityId": "langley-green-united-kingdom",
+          "city": "Langley Green",
+          "country": "United Kingdom",
+          "lat": 51.15366,
+          "lng": -0.18206
+        },
+        {
+          "cityId": "ciutat-vella-spain",
+          "city": "Ciutat Vella",
+          "country": "Spain",
+          "lat": 41.38278,
+          "lng": 2.17149
+        },
+        {
+          "cityId": "eixample-spain",
+          "city": "Eixample",
+          "country": "Spain",
+          "lat": 41.39442,
+          "lng": 2.16527
+        },
+        {
+          "cityId": "nouaseur-morocco",
+          "city": "Nouaseur",
+          "country": "Morocco",
+          "lat": 33.37027,
+          "lng": -7.58291
+        }
+      ],
+      "description": "Visited 10 cities in 5 countries.",
       "photos": []
     },
     {
@@ -1373,8 +1446,8 @@
       "startDate": "2026-05-21",
       "endDate": "2026-05-25",
       "cities": [
-        "Linthicum",
-        "Washington, D.C."
+        "Washington, D.C.",
+        "Linthicum"
       ],
       "countries": [
         "United States"
@@ -1382,6 +1455,22 @@
       "cityIds": [
         "linthicum-united-states",
         "washington-d-c-united-states"
+      ],
+      "route": [
+        {
+          "cityId": "washington-d-c-united-states",
+          "city": "Washington, D.C.",
+          "country": "United States",
+          "lat": 38.90783,
+          "lng": -77.03562
+        },
+        {
+          "cityId": "linthicum-united-states",
+          "city": "Linthicum",
+          "country": "United States",
+          "lat": 39.21277,
+          "lng": -76.67207
+        }
       ],
       "description": "Visited 2 cities in 1 country.",
       "photos": []
@@ -1400,6 +1489,15 @@
       "cityIds": [
         "atlanta-united-states"
       ],
+      "route": [
+        {
+          "cityId": "atlanta-united-states",
+          "city": "Atlanta",
+          "country": "United States",
+          "lat": 33.76338,
+          "lng": -84.39511
+        }
+      ],
       "description": "Visited 1 city in 1 country.",
       "photos": []
     },
@@ -1416,6 +1514,15 @@
       ],
       "cityIds": [
         "new-orleans-united-states"
+      ],
+      "route": [
+        {
+          "cityId": "new-orleans-united-states",
+          "city": "New Orleans",
+          "country": "United States",
+          "lat": 29.95095,
+          "lng": -90.06917
+        }
       ],
       "description": "Visited 1 city in 1 country.",
       "photos": []
@@ -1434,6 +1541,15 @@
       "cityIds": [
         "mount-rainier-united-states"
       ],
+      "route": [
+        {
+          "cityId": "mount-rainier-united-states",
+          "city": "Mount Rainier",
+          "country": "United States",
+          "lat": 38.91657,
+          "lng": -76.9715
+        }
+      ],
       "description": "Visited 1 city in 1 country.",
       "photos": []
     },
@@ -1444,8 +1560,8 @@
       "endDate": "2025-12-01",
       "cities": [
         "Cork",
-        "Drumcondra",
-        "Waterford"
+        "Waterford",
+        "Drumcondra"
       ],
       "countries": [
         "Ireland"
@@ -1454,6 +1570,29 @@
         "cork-ireland",
         "drumcondra-ireland",
         "waterford-ireland"
+      ],
+      "route": [
+        {
+          "cityId": "cork-ireland",
+          "city": "Cork",
+          "country": "Ireland",
+          "lat": 51.90293,
+          "lng": -8.45839
+        },
+        {
+          "cityId": "waterford-ireland",
+          "city": "Waterford",
+          "country": "Ireland",
+          "lat": 52.24226,
+          "lng": -7.16474
+        },
+        {
+          "cityId": "drumcondra-ireland",
+          "city": "Drumcondra",
+          "country": "Ireland",
+          "lat": 53.35966,
+          "lng": -6.26004
+        }
       ],
       "description": "Visited 3 cities in 1 country.",
       "photos": []
@@ -1464,11 +1603,14 @@
       "startDate": "2025-10-26",
       "endDate": "2025-11-15",
       "cities": [
-        "El Segundo",
-        "Seoul",
         "Taipei",
         "Taoyuan City",
-        "Yilan"
+        "Seoul",
+        "Taipei",
+        "Yilan",
+        "Taipei",
+        "Taoyuan City",
+        "El Segundo"
       ],
       "countries": [
         "South Korea",
@@ -1482,7 +1624,65 @@
         "taoyuan-city-taiwan",
         "yilan-taiwan"
       ],
-      "description": "Visited 5 cities in 3 countries.",
+      "route": [
+        {
+          "cityId": "taipei-taiwan",
+          "city": "Taipei",
+          "country": "Taiwan",
+          "lat": 25.08012,
+          "lng": 121.59959
+        },
+        {
+          "cityId": "taoyuan-city-taiwan",
+          "city": "Taoyuan City",
+          "country": "Taiwan",
+          "lat": 25.08049,
+          "lng": 121.23116
+        },
+        {
+          "cityId": "seoul-south-korea",
+          "city": "Seoul",
+          "country": "South Korea",
+          "lat": 37.52515,
+          "lng": 126.92907
+        },
+        {
+          "cityId": "taipei-taiwan",
+          "city": "Taipei",
+          "country": "Taiwan",
+          "lat": 25.08254,
+          "lng": 121.60316
+        },
+        {
+          "cityId": "yilan-taiwan",
+          "city": "Yilan",
+          "country": "Taiwan",
+          "lat": 24.68414,
+          "lng": 121.65985
+        },
+        {
+          "cityId": "taipei-taiwan",
+          "city": "Taipei",
+          "country": "Taiwan",
+          "lat": 25.04617,
+          "lng": 121.54452
+        },
+        {
+          "cityId": "taoyuan-city-taiwan",
+          "city": "Taoyuan City",
+          "country": "Taiwan",
+          "lat": 25.08049,
+          "lng": 121.23116
+        },
+        {
+          "cityId": "el-segundo-united-states",
+          "city": "El Segundo",
+          "country": "United States",
+          "lat": 33.94215,
+          "lng": -118.4036
+        }
+      ],
+      "description": "Visited 8 cities in 3 countries.",
       "photos": []
     },
     {
@@ -1498,6 +1698,15 @@
       ],
       "cityIds": [
         "hurley-united-states"
+      ],
+      "route": [
+        {
+          "cityId": "hurley-united-states",
+          "city": "Hurley",
+          "country": "United States",
+          "lat": 41.89029,
+          "lng": -74.06133
+        }
       ],
       "description": "Visited 1 city in 1 country.",
       "photos": []
@@ -1516,6 +1725,15 @@
       "cityIds": [
         "washington-d-c-united-states"
       ],
+      "route": [
+        {
+          "cityId": "washington-d-c-united-states",
+          "city": "Washington, D.C.",
+          "country": "United States",
+          "lat": 38.90759,
+          "lng": -77.00773
+        }
+      ],
       "description": "Visited 1 city in 1 country.",
       "photos": []
     },
@@ -1525,8 +1743,10 @@
       "startDate": "2025-08-02",
       "endDate": "2025-08-03",
       "cities": [
+        "Pittsburgh",
         "Bloomfield",
-        "Pittsburgh"
+        "Pittsburgh",
+        "Bloomfield"
       ],
       "countries": [
         "United States"
@@ -1535,7 +1755,37 @@
         "bloomfield-united-states",
         "pittsburgh-united-states"
       ],
-      "description": "Visited 2 cities in 1 country.",
+      "route": [
+        {
+          "cityId": "pittsburgh-united-states",
+          "city": "Pittsburgh",
+          "country": "United States",
+          "lat": 40.44747,
+          "lng": -80.00716
+        },
+        {
+          "cityId": "bloomfield-united-states",
+          "city": "Bloomfield",
+          "country": "United States",
+          "lat": 40.44787,
+          "lng": -79.94983
+        },
+        {
+          "cityId": "pittsburgh-united-states",
+          "city": "Pittsburgh",
+          "country": "United States",
+          "lat": 40.43311,
+          "lng": -80.00464
+        },
+        {
+          "cityId": "bloomfield-united-states",
+          "city": "Bloomfield",
+          "country": "United States",
+          "lat": 40.44787,
+          "lng": -79.94983
+        }
+      ],
+      "description": "Visited 4 cities in 1 country.",
       "photos": []
     },
     {
@@ -1552,6 +1802,15 @@
       "cityIds": [
         "lancaster-united-states"
       ],
+      "route": [
+        {
+          "cityId": "lancaster-united-states",
+          "city": "Lancaster",
+          "country": "United States",
+          "lat": 40.07349,
+          "lng": -76.28809
+        }
+      ],
       "description": "Visited 1 city in 1 country.",
       "photos": []
     },
@@ -1561,8 +1820,8 @@
       "startDate": "2025-06-21",
       "endDate": "2025-06-22",
       "cities": [
-        "El Segundo",
-        "Redlands"
+        "Redlands",
+        "El Segundo"
       ],
       "countries": [
         "United States"
@@ -1570,6 +1829,22 @@
       "cityIds": [
         "el-segundo-united-states",
         "redlands-united-states"
+      ],
+      "route": [
+        {
+          "cityId": "redlands-united-states",
+          "city": "Redlands",
+          "country": "United States",
+          "lat": 34.06999,
+          "lng": -117.21486
+        },
+        {
+          "cityId": "el-segundo-united-states",
+          "city": "El Segundo",
+          "country": "United States",
+          "lat": 33.94215,
+          "lng": -118.4036
+        }
       ],
       "description": "Visited 2 cities in 1 country.",
       "photos": []
@@ -1588,6 +1863,15 @@
       "cityIds": [
         "princeton-united-states"
       ],
+      "route": [
+        {
+          "cityId": "princeton-united-states",
+          "city": "Princeton",
+          "country": "United States",
+          "lat": 40.34944,
+          "lng": -74.66298
+        }
+      ],
       "description": "Visited 1 city in 1 country.",
       "photos": []
     },
@@ -1597,10 +1881,10 @@
       "startDate": "2025-05-23",
       "endDate": "2025-05-26",
       "cities": [
-        "Cary",
-        "Forest Acres",
         "Greenville",
-        "Saint George"
+        "Forest Acres",
+        "Saint George",
+        "Cary"
       ],
       "countries": [
         "United States"
@@ -1610,6 +1894,36 @@
         "forest-acres-united-states",
         "greenville-united-states",
         "saint-george-united-states"
+      ],
+      "route": [
+        {
+          "cityId": "greenville-united-states",
+          "city": "Greenville",
+          "country": "United States",
+          "lat": 34.8614,
+          "lng": -82.40406
+        },
+        {
+          "cityId": "forest-acres-united-states",
+          "city": "Forest Acres",
+          "country": "United States",
+          "lat": 33.96714,
+          "lng": -80.94119
+        },
+        {
+          "cityId": "saint-george-united-states",
+          "city": "Saint George",
+          "country": "United States",
+          "lat": 33.19457,
+          "lng": -80.60479
+        },
+        {
+          "cityId": "cary-united-states",
+          "city": "Cary",
+          "country": "United States",
+          "lat": 35.7392,
+          "lng": -78.7867
+        }
       ],
       "description": "Visited 4 cities in 1 country.",
       "photos": []
@@ -1628,6 +1942,15 @@
       "cityIds": [
         "milton-united-states"
       ],
+      "route": [
+        {
+          "cityId": "milton-united-states",
+          "city": "Milton",
+          "country": "United States",
+          "lat": 41.66697,
+          "lng": -73.95493
+        }
+      ],
       "description": "Visited 1 city in 1 country.",
       "photos": []
     },
@@ -1645,6 +1968,15 @@
       "cityIds": [
         "central-valley-united-states"
       ],
+      "route": [
+        {
+          "cityId": "central-valley-united-states",
+          "city": "Central Valley",
+          "country": "United States",
+          "lat": 41.31694,
+          "lng": -74.12505
+        }
+      ],
       "description": "Visited 1 city in 1 country.",
       "photos": []
     },
@@ -1654,9 +1986,9 @@
       "startDate": "2025-02-22",
       "endDate": "2025-02-24",
       "cities": [
+        "Raymond",
         "Gorham",
-        "Montville Center",
-        "Raymond"
+        "Montville Center"
       ],
       "countries": [
         "United States"
@@ -1665,6 +1997,29 @@
         "gorham-united-states",
         "montville-center-united-states",
         "raymond-united-states"
+      ],
+      "route": [
+        {
+          "cityId": "raymond-united-states",
+          "city": "Raymond",
+          "country": "United States",
+          "lat": 43.89929,
+          "lng": -70.47219
+        },
+        {
+          "cityId": "gorham-united-states",
+          "city": "Gorham",
+          "country": "United States",
+          "lat": 44.39325,
+          "lng": -71.19019
+        },
+        {
+          "cityId": "montville-center-united-states",
+          "city": "Montville Center",
+          "country": "United States",
+          "lat": 41.47937,
+          "lng": -72.15108
+        }
       ],
       "description": "Visited 3 cities in 1 country.",
       "photos": []
@@ -1683,6 +2038,15 @@
       "cityIds": [
         "washington-d-c-united-states"
       ],
+      "route": [
+        {
+          "cityId": "washington-d-c-united-states",
+          "city": "Washington, D.C.",
+          "country": "United States",
+          "lat": 38.89817,
+          "lng": -77.02086
+        }
+      ],
       "description": "Visited 1 city in 1 country.",
       "photos": []
     },
@@ -1700,6 +2064,15 @@
       "cityIds": [
         "hudson-united-states"
       ],
+      "route": [
+        {
+          "cityId": "hudson-united-states",
+          "city": "Hudson",
+          "country": "United States",
+          "lat": 42.25382,
+          "lng": -73.79247
+        }
+      ],
       "description": "Visited 1 city in 1 country.",
       "photos": []
     },
@@ -1709,10 +2082,12 @@
       "startDate": "2024-11-28",
       "endDate": "2024-12-04",
       "cities": [
+        "Sant Marti",
         "Barcelona",
+        "Sant Marti",
         "City Center",
         "Madrid",
-        "Sant Marti"
+        "City Center"
       ],
       "countries": [
         "Spain"
@@ -1723,7 +2098,51 @@
         "madrid-spain",
         "sant-marti-spain"
       ],
-      "description": "Visited 4 cities in 1 country.",
+      "route": [
+        {
+          "cityId": "sant-marti-spain",
+          "city": "Sant Marti",
+          "country": "Spain",
+          "lat": 41.4,
+          "lng": 2.20111
+        },
+        {
+          "cityId": "barcelona-spain",
+          "city": "Barcelona",
+          "country": "Spain",
+          "lat": 41.39352,
+          "lng": 2.16398
+        },
+        {
+          "cityId": "sant-marti-spain",
+          "city": "Sant Marti",
+          "country": "Spain",
+          "lat": 41.4,
+          "lng": 2.20111
+        },
+        {
+          "cityId": "city-center-spain",
+          "city": "City Center",
+          "country": "Spain",
+          "lat": 40.42066,
+          "lng": -3.708
+        },
+        {
+          "cityId": "madrid-spain",
+          "city": "Madrid",
+          "country": "Spain",
+          "lat": 40.41418,
+          "lng": -3.70791
+        },
+        {
+          "cityId": "city-center-spain",
+          "city": "City Center",
+          "country": "Spain",
+          "lat": 40.42007,
+          "lng": -3.70742
+        }
+      ],
+      "description": "Visited 6 cities in 1 country.",
       "photos": []
     },
     {
@@ -1733,8 +2152,8 @@
       "endDate": "2024-10-23",
       "cities": [
         "Baie-D'Urfe",
-        "Burlingame",
         "Coppell",
+        "Burlingame",
         "Lochbuie"
       ],
       "countries": [
@@ -1746,6 +2165,36 @@
         "burlingame-united-states",
         "coppell-united-states",
         "lochbuie-united-states"
+      ],
+      "route": [
+        {
+          "cityId": "baie-d-urfe-canada",
+          "city": "Baie-D'Urfe",
+          "country": "Canada",
+          "lat": 45.42634,
+          "lng": -73.91629
+        },
+        {
+          "cityId": "coppell-united-states",
+          "city": "Coppell",
+          "country": "United States",
+          "lat": 32.89904,
+          "lng": -97.03358
+        },
+        {
+          "cityId": "burlingame-united-states",
+          "city": "Burlingame",
+          "country": "United States",
+          "lat": 37.60224,
+          "lng": -122.37044
+        },
+        {
+          "cityId": "lochbuie-united-states",
+          "city": "Lochbuie",
+          "country": "United States",
+          "lat": 39.85635,
+          "lng": -104.6764
+        }
       ],
       "description": "Visited 4 cities in 2 countries.",
       "photos": []
@@ -1764,6 +2213,15 @@
       "cityIds": [
         "withamsville-united-states"
       ],
+      "route": [
+        {
+          "cityId": "withamsville-united-states",
+          "city": "Withamsville",
+          "country": "United States",
+          "lat": 39.06871,
+          "lng": -84.30172
+        }
+      ],
       "description": "Visited 1 city in 1 country.",
       "photos": []
     },
@@ -1781,6 +2239,15 @@
       "cityIds": [
         "washington-d-c-united-states"
       ],
+      "route": [
+        {
+          "cityId": "washington-d-c-united-states",
+          "city": "Washington, D.C.",
+          "country": "United States",
+          "lat": 38.89904,
+          "lng": -77.00679
+        }
+      ],
       "description": "Visited 1 city in 1 country.",
       "photos": []
     },
@@ -1791,7 +2258,8 @@
       "endDate": "2024-07-01",
       "cities": [
         "Lancaster",
-        "Strasburg"
+        "Strasburg",
+        "Lancaster"
       ],
       "countries": [
         "United States"
@@ -1800,7 +2268,30 @@
         "lancaster-united-states",
         "strasburg-united-states"
       ],
-      "description": "Visited 2 cities in 1 country.",
+      "route": [
+        {
+          "cityId": "lancaster-united-states",
+          "city": "Lancaster",
+          "country": "United States",
+          "lat": 40.07349,
+          "lng": -76.28809
+        },
+        {
+          "cityId": "strasburg-united-states",
+          "city": "Strasburg",
+          "country": "United States",
+          "lat": 39.99724,
+          "lng": -76.18784
+        },
+        {
+          "cityId": "lancaster-united-states",
+          "city": "Lancaster",
+          "country": "United States",
+          "lat": 40.07349,
+          "lng": -76.28809
+        }
+      ],
+      "description": "Visited 3 cities in 1 country.",
       "photos": []
     },
     {
@@ -1816,6 +2307,15 @@
       ],
       "cityIds": [
         "cheverly-united-states"
+      ],
+      "route": [
+        {
+          "cityId": "cheverly-united-states",
+          "city": "Cheverly",
+          "country": "United States",
+          "lat": 38.93725,
+          "lng": -76.91708
+        }
       ],
       "description": "Visited 1 city in 1 country.",
       "photos": []
@@ -1834,6 +2334,15 @@
       "cityIds": [
         "shrewsbury-united-states"
       ],
+      "route": [
+        {
+          "cityId": "shrewsbury-united-states",
+          "city": "Shrewsbury",
+          "country": "United States",
+          "lat": 40.13606,
+          "lng": -74.43616
+        }
+      ],
       "description": "Visited 1 city in 1 country.",
       "photos": []
     },
@@ -1851,6 +2360,15 @@
       "cityIds": [
         "norwich-united-states"
       ],
+      "route": [
+        {
+          "cityId": "norwich-united-states",
+          "city": "Norwich",
+          "country": "United States",
+          "lat": 42.53339,
+          "lng": -75.52432
+        }
+      ],
       "description": "Visited 1 city in 1 country.",
       "photos": []
     },
@@ -1860,9 +2378,9 @@
       "startDate": "2024-03-13",
       "endDate": "2024-03-14",
       "cities": [
-        "Meredith",
+        "Sutton",
         "Newbury",
-        "Sutton"
+        "Meredith"
       ],
       "countries": [
         "United States"
@@ -1871,6 +2389,29 @@
         "meredith-united-states",
         "newbury-united-states",
         "sutton-united-states"
+      ],
+      "route": [
+        {
+          "cityId": "sutton-united-states",
+          "city": "Sutton",
+          "country": "United States",
+          "lat": 43.2949,
+          "lng": -71.9829
+        },
+        {
+          "cityId": "newbury-united-states",
+          "city": "Newbury",
+          "country": "United States",
+          "lat": 43.3429,
+          "lng": -72.06176
+        },
+        {
+          "cityId": "meredith-united-states",
+          "city": "Meredith",
+          "country": "United States",
+          "lat": 43.60746,
+          "lng": -71.46588
+        }
       ],
       "description": "Visited 3 cities in 1 country.",
       "photos": []
@@ -1889,6 +2430,15 @@
       "cityIds": [
         "princeton-united-states"
       ],
+      "route": [
+        {
+          "cityId": "princeton-united-states",
+          "city": "Princeton",
+          "country": "United States",
+          "lat": 40.3452,
+          "lng": -74.66725
+        }
+      ],
       "description": "Visited 1 city in 1 country.",
       "photos": []
     },
@@ -1898,9 +2448,11 @@
       "startDate": "2023-11-22",
       "endDate": "2023-11-28",
       "cities": [
-        "Florence",
         "Milano",
-        "Venice"
+        "Venice",
+        "Milano",
+        "Florence",
+        "Milano"
       ],
       "countries": [
         "Italy"
@@ -1910,7 +2462,44 @@
         "milano-italy",
         "venice-italy"
       ],
-      "description": "Visited 3 cities in 1 country.",
+      "route": [
+        {
+          "cityId": "milano-italy",
+          "city": "Milano",
+          "country": "Italy",
+          "lat": 45.47196,
+          "lng": 9.18781
+        },
+        {
+          "cityId": "venice-italy",
+          "city": "Venice",
+          "country": "Italy",
+          "lat": 45.43428,
+          "lng": 12.34639
+        },
+        {
+          "cityId": "milano-italy",
+          "city": "Milano",
+          "country": "Italy",
+          "lat": 45.48356,
+          "lng": 9.20478
+        },
+        {
+          "cityId": "florence-italy",
+          "city": "Florence",
+          "country": "Italy",
+          "lat": 43.77309,
+          "lng": 11.25546
+        },
+        {
+          "cityId": "milano-italy",
+          "city": "Milano",
+          "country": "Italy",
+          "lat": 45.48356,
+          "lng": 9.20478
+        }
+      ],
+      "description": "Visited 5 cities in 1 country.",
       "photos": []
     },
     {
@@ -1919,10 +2508,10 @@
       "startDate": "2023-11-04",
       "endDate": "2023-11-07",
       "cities": [
-        "Chicago",
         "Detroit",
+        "Westland",
         "Fair Plain",
-        "Westland"
+        "Chicago"
       ],
       "countries": [
         "United States"
@@ -1932,6 +2521,36 @@
         "detroit-united-states",
         "fair-plain-united-states",
         "westland-united-states"
+      ],
+      "route": [
+        {
+          "cityId": "detroit-united-states",
+          "city": "Detroit",
+          "country": "United States",
+          "lat": 42.32963,
+          "lng": -83.04613
+        },
+        {
+          "cityId": "westland-united-states",
+          "city": "Westland",
+          "country": "United States",
+          "lat": 42.36674,
+          "lng": -83.40736
+        },
+        {
+          "cityId": "fair-plain-united-states",
+          "city": "Fair Plain",
+          "country": "United States",
+          "lat": 42.07627,
+          "lng": -86.41887
+        },
+        {
+          "cityId": "chicago-united-states",
+          "city": "Chicago",
+          "country": "United States",
+          "lat": 41.79045,
+          "lng": -87.6004
+        }
       ],
       "description": "Visited 4 cities in 1 country.",
       "photos": []
@@ -1950,6 +2569,15 @@
       "cityIds": [
         "long-valley-united-states"
       ],
+      "route": [
+        {
+          "cityId": "long-valley-united-states",
+          "city": "Long Valley",
+          "country": "United States",
+          "lat": 40.75114,
+          "lng": -74.7364
+        }
+      ],
       "description": "Visited 1 city in 1 country.",
       "photos": []
     },
@@ -1960,8 +2588,9 @@
       "endDate": "2023-09-05",
       "cities": [
         "Coppell",
-        "Grapevine",
-        "River Oaks"
+        "River Oaks",
+        "Coppell",
+        "Grapevine"
       ],
       "countries": [
         "United States"
@@ -1971,7 +2600,37 @@
         "grapevine-united-states",
         "river-oaks-united-states"
       ],
-      "description": "Visited 3 cities in 1 country.",
+      "route": [
+        {
+          "cityId": "coppell-united-states",
+          "city": "Coppell",
+          "country": "United States",
+          "lat": 32.95846,
+          "lng": -97.03425
+        },
+        {
+          "cityId": "river-oaks-united-states",
+          "city": "River Oaks",
+          "country": "United States",
+          "lat": 32.78928,
+          "lng": -97.34702
+        },
+        {
+          "cityId": "coppell-united-states",
+          "city": "Coppell",
+          "country": "United States",
+          "lat": 32.95641,
+          "lng": -97.03753
+        },
+        {
+          "cityId": "grapevine-united-states",
+          "city": "Grapevine",
+          "country": "United States",
+          "lat": 32.89981,
+          "lng": -97.04033
+        }
+      ],
+      "description": "Visited 4 cities in 1 country.",
       "photos": []
     },
     {
@@ -1980,12 +2639,15 @@
       "startDate": "2023-08-13",
       "endDate": "2023-08-30",
       "cities": [
-        "Keelung",
-        "Taibao",
-        "Taichung",
-        "Tainan",
         "Taipei",
-        "Yilan"
+        "Taibao",
+        "Tainan",
+        "Taichung",
+        "Taipei",
+        "Yilan",
+        "Taipei",
+        "Keelung",
+        "Taipei"
       ],
       "countries": [
         "Taiwan"
@@ -1998,7 +2660,72 @@
         "taipei-taiwan",
         "yilan-taiwan"
       ],
-      "description": "Visited 6 cities in 1 country.",
+      "route": [
+        {
+          "cityId": "taipei-taiwan",
+          "city": "Taipei",
+          "country": "Taiwan",
+          "lat": 25.08254,
+          "lng": 121.60316
+        },
+        {
+          "cityId": "taibao-taiwan",
+          "city": "Taibao",
+          "country": "Taiwan",
+          "lat": 23.47313,
+          "lng": 120.29272
+        },
+        {
+          "cityId": "tainan-taiwan",
+          "city": "Tainan",
+          "country": "Taiwan",
+          "lat": 23.01806,
+          "lng": 120.19388
+        },
+        {
+          "cityId": "taichung-taiwan",
+          "city": "Taichung",
+          "country": "Taiwan",
+          "lat": 24.1829,
+          "lng": 120.64579
+        },
+        {
+          "cityId": "taipei-taiwan",
+          "city": "Taipei",
+          "country": "Taiwan",
+          "lat": 25.03412,
+          "lng": 121.56402
+        },
+        {
+          "cityId": "yilan-taiwan",
+          "city": "Yilan",
+          "country": "Taiwan",
+          "lat": 24.82634,
+          "lng": 121.77056
+        },
+        {
+          "cityId": "taipei-taiwan",
+          "city": "Taipei",
+          "country": "Taiwan",
+          "lat": 25.08254,
+          "lng": 121.60316
+        },
+        {
+          "cityId": "keelung-taiwan",
+          "city": "Keelung",
+          "country": "Taiwan",
+          "lat": 25.1808,
+          "lng": 121.63867
+        },
+        {
+          "cityId": "taipei-taiwan",
+          "city": "Taipei",
+          "country": "Taiwan",
+          "lat": 25.08254,
+          "lng": 121.60316
+        }
+      ],
+      "description": "Visited 9 cities in 1 country.",
       "photos": []
     },
     {
@@ -2015,6 +2742,15 @@
       "cityIds": [
         "providence-united-states"
       ],
+      "route": [
+        {
+          "cityId": "providence-united-states",
+          "city": "Providence",
+          "country": "United States",
+          "lat": 41.84357,
+          "lng": -71.4121
+        }
+      ],
       "description": "Visited 1 city in 1 country.",
       "photos": []
     },
@@ -2024,9 +2760,9 @@
       "startDate": "2023-08-07",
       "endDate": "2023-08-09",
       "cities": [
+        "Woodlawn",
         "Arlington",
-        "Bordentown",
-        "Woodlawn"
+        "Bordentown"
       ],
       "countries": [
         "United States"
@@ -2035,6 +2771,29 @@
         "arlington-united-states",
         "bordentown-united-states",
         "woodlawn-united-states"
+      ],
+      "route": [
+        {
+          "cityId": "woodlawn-united-states",
+          "city": "Woodlawn",
+          "country": "United States",
+          "lat": 39.31301,
+          "lng": -76.74172
+        },
+        {
+          "cityId": "arlington-united-states",
+          "city": "Arlington",
+          "country": "United States",
+          "lat": 38.84763,
+          "lng": -77.08041
+        },
+        {
+          "cityId": "bordentown-united-states",
+          "city": "Bordentown",
+          "country": "United States",
+          "lat": 40.14927,
+          "lng": -74.69939
+        }
       ],
       "description": "Visited 3 cities in 1 country.",
       "photos": []
@@ -2053,6 +2812,15 @@
       "cityIds": [
         "niagara-falls-united-states"
       ],
+      "route": [
+        {
+          "cityId": "niagara-falls-united-states",
+          "city": "Niagara Falls",
+          "country": "United States",
+          "lat": 43.08372,
+          "lng": -79.06503
+        }
+      ],
       "description": "Visited 1 city in 1 country.",
       "photos": []
     },
@@ -2069,6 +2837,15 @@
       ],
       "cityIds": [
         "lancaster-united-states"
+      ],
+      "route": [
+        {
+          "cityId": "lancaster-united-states",
+          "city": "Lancaster",
+          "country": "United States",
+          "lat": 40.07349,
+          "lng": -76.28809
+        }
       ],
       "description": "Visited 1 city in 1 country.",
       "photos": []
@@ -2087,6 +2864,15 @@
       "cityIds": [
         "lexington-united-states"
       ],
+      "route": [
+        {
+          "cityId": "lexington-united-states",
+          "city": "Lexington",
+          "country": "United States",
+          "lat": 42.44543,
+          "lng": -71.26068
+        }
+      ],
       "description": "Visited 1 city in 1 country.",
       "photos": []
     },
@@ -2103,6 +2889,15 @@
       ],
       "cityIds": [
         "taichung-taiwan"
+      ],
+      "route": [
+        {
+          "cityId": "taichung-taiwan",
+          "city": "Taichung",
+          "country": "Taiwan",
+          "lat": 24.15831,
+          "lng": 120.65529
+        }
       ],
       "description": "Visited 1 city in 1 country.",
       "photos": []
@@ -2121,6 +2916,15 @@
       "cityIds": [
         "taichung-taiwan"
       ],
+      "route": [
+        {
+          "cityId": "taichung-taiwan",
+          "city": "Taichung",
+          "country": "Taiwan",
+          "lat": 24.15831,
+          "lng": 120.65529
+        }
+      ],
       "description": "Visited 1 city in 1 country.",
       "photos": []
     },
@@ -2137,6 +2941,15 @@
       ],
       "cityIds": [
         "hsinchu-taiwan"
+      ],
+      "route": [
+        {
+          "cityId": "hsinchu-taiwan",
+          "city": "Hsinchu",
+          "country": "Taiwan",
+          "lat": 24.80579,
+          "lng": 120.98494
+        }
       ],
       "description": "Visited 1 city in 1 country.",
       "photos": []
@@ -2155,6 +2968,15 @@
       "cityIds": [
         "hsinchu-taiwan"
       ],
+      "route": [
+        {
+          "cityId": "hsinchu-taiwan",
+          "city": "Hsinchu",
+          "country": "Taiwan",
+          "lat": 24.80982,
+          "lng": 120.97513
+        }
+      ],
       "description": "Visited 1 city in 1 country.",
       "photos": []
     },
@@ -2171,6 +2993,15 @@
       ],
       "cityIds": [
         "ma-kung-taiwan"
+      ],
+      "route": [
+        {
+          "cityId": "ma-kung-taiwan",
+          "city": "Ma-kung",
+          "country": "Taiwan",
+          "lat": 23.5773,
+          "lng": 119.57328
+        }
       ],
       "description": "Visited 1 city in 1 country.",
       "photos": []
@@ -2189,6 +3020,15 @@
       "cityIds": [
         "kaohsiung-taiwan"
       ],
+      "route": [
+        {
+          "cityId": "kaohsiung-taiwan",
+          "city": "Kaohsiung",
+          "country": "Taiwan",
+          "lat": 22.61917,
+          "lng": 120.28453
+        }
+      ],
       "description": "Visited 1 city in 1 country.",
       "photos": []
     },
@@ -2199,12 +3039,22 @@
       "endDate": "2018-08-26",
       "cities": [
         "Datun",
-        "Dongfeng",
+        "Haidian",
+        "Datun",
+        "Haidian",
+        "Datun",
+        "Haidian",
+        "Wangjing",
+        "Haidian",
+        "Longtan",
         "Haidian",
         "Jingshan",
+        "Haidian",
         "Lisui",
-        "Longtan",
-        "Wangjing"
+        "Haidian",
+        "Dongfeng",
+        "Haidian",
+        "Jingshan"
       ],
       "countries": [
         "China"
@@ -2218,7 +3068,128 @@
         "longtan-china",
         "wangjing-china"
       ],
-      "description": "Visited 7 cities in 1 country.",
+      "route": [
+        {
+          "cityId": "datun-china",
+          "city": "Datun",
+          "country": "China",
+          "lat": 39.96821,
+          "lng": 116.409
+        },
+        {
+          "cityId": "haidian-china",
+          "city": "Haidian",
+          "country": "China",
+          "lat": 39.98322,
+          "lng": 116.30773
+        },
+        {
+          "cityId": "datun-china",
+          "city": "Datun",
+          "country": "China",
+          "lat": 39.96458,
+          "lng": 116.40207
+        },
+        {
+          "cityId": "haidian-china",
+          "city": "Haidian",
+          "country": "China",
+          "lat": 39.98691,
+          "lng": 116.30587
+        },
+        {
+          "cityId": "datun-china",
+          "city": "Datun",
+          "country": "China",
+          "lat": 39.96458,
+          "lng": 116.40207
+        },
+        {
+          "cityId": "haidian-china",
+          "city": "Haidian",
+          "country": "China",
+          "lat": 39.98691,
+          "lng": 116.30587
+        },
+        {
+          "cityId": "wangjing-china",
+          "city": "Wangjing",
+          "country": "China",
+          "lat": 40.00671,
+          "lng": 116.48377
+        },
+        {
+          "cityId": "haidian-china",
+          "city": "Haidian",
+          "country": "China",
+          "lat": 39.98423,
+          "lng": 116.30398
+        },
+        {
+          "cityId": "longtan-china",
+          "city": "Longtan",
+          "country": "China",
+          "lat": 39.86778,
+          "lng": 116.49482
+        },
+        {
+          "cityId": "haidian-china",
+          "city": "Haidian",
+          "country": "China",
+          "lat": 39.98691,
+          "lng": 116.30587
+        },
+        {
+          "cityId": "jingshan-china",
+          "city": "Jingshan",
+          "country": "China",
+          "lat": 39.91634,
+          "lng": 116.39715
+        },
+        {
+          "cityId": "haidian-china",
+          "city": "Haidian",
+          "country": "China",
+          "lat": 39.98691,
+          "lng": 116.30587
+        },
+        {
+          "cityId": "lisui-china",
+          "city": "Lisui",
+          "country": "China",
+          "lat": 40.08736,
+          "lng": 116.71528
+        },
+        {
+          "cityId": "haidian-china",
+          "city": "Haidian",
+          "country": "China",
+          "lat": 39.98691,
+          "lng": 116.30587
+        },
+        {
+          "cityId": "dongfeng-china",
+          "city": "Dongfeng",
+          "country": "China",
+          "lat": 39.90832,
+          "lng": 116.47623
+        },
+        {
+          "cityId": "haidian-china",
+          "city": "Haidian",
+          "country": "China",
+          "lat": 39.98691,
+          "lng": 116.30587
+        },
+        {
+          "cityId": "jingshan-china",
+          "city": "Jingshan",
+          "country": "China",
+          "lat": 39.91848,
+          "lng": 116.40496
+        }
+      ],
+      "description": "Visited 17 cities in 1 country.",
       "photos": []
     },
     {
@@ -2235,6 +3206,15 @@
       "cityIds": [
         "kaohsiung-taiwan"
       ],
+      "route": [
+        {
+          "cityId": "kaohsiung-taiwan",
+          "city": "Kaohsiung",
+          "country": "Taiwan",
+          "lat": 22.62718,
+          "lng": 120.31375
+        }
+      ],
       "description": "Visited 1 city in 1 country.",
       "photos": []
     },
@@ -2245,8 +3225,8 @@
       "endDate": "2017-06-02",
       "cities": [
         "Kaohsiung",
-        "Taichung",
-        "Tainan"
+        "Tainan",
+        "Taichung"
       ],
       "countries": [
         "Taiwan"
@@ -2255,6 +3235,29 @@
         "kaohsiung-taiwan",
         "taichung-taiwan",
         "tainan-taiwan"
+      ],
+      "route": [
+        {
+          "cityId": "kaohsiung-taiwan",
+          "city": "Kaohsiung",
+          "country": "Taiwan",
+          "lat": 22.65026,
+          "lng": 120.30378
+        },
+        {
+          "cityId": "tainan-taiwan",
+          "city": "Tainan",
+          "country": "Taiwan",
+          "lat": 22.99873,
+          "lng": 120.20538
+        },
+        {
+          "cityId": "taichung-taiwan",
+          "city": "Taichung",
+          "country": "Taiwan",
+          "lat": 24.14066,
+          "lng": 120.68114
+        }
       ],
       "description": "Visited 3 cities in 1 country.",
       "photos": []
@@ -2265,6 +3268,7 @@
       "startDate": "2016-08-17",
       "endDate": "2016-08-20",
       "cities": [
+        "Naha-shi",
         "Ishikawa",
         "Naha-shi"
       ],
@@ -2275,7 +3279,30 @@
         "ishikawa-japan",
         "naha-shi-japan"
       ],
-      "description": "Visited 2 cities in 1 country.",
+      "route": [
+        {
+          "cityId": "naha-shi-japan",
+          "city": "Naha-shi",
+          "country": "Japan",
+          "lat": 26.21414,
+          "lng": 127.67069
+        },
+        {
+          "cityId": "ishikawa-japan",
+          "city": "Ishikawa",
+          "country": "Japan",
+          "lat": 26.41503,
+          "lng": 127.71554
+        },
+        {
+          "cityId": "naha-shi-japan",
+          "city": "Naha-shi",
+          "country": "Japan",
+          "lat": 26.2142,
+          "lng": 127.67043
+        }
+      ],
+      "description": "Visited 3 cities in 1 country.",
       "photos": []
     },
     {
@@ -2284,12 +3311,13 @@
       "startDate": "2016-04-18",
       "endDate": "2016-04-30",
       "cities": [
-        "Kupchino",
         "Ljubljana",
+        "Wola",
+        "Sandvika",
         "Mala Strana",
         "Saint Petersburg",
-        "Sandvika",
-        "Wola"
+        "Kupchino",
+        "Saint Petersburg"
       ],
       "countries": [
         "Czech Republic",
@@ -2306,7 +3334,58 @@
         "sandvika-norway",
         "wola-poland"
       ],
-      "description": "Visited 6 cities in 5 countries.",
+      "route": [
+        {
+          "cityId": "ljubljana-slovenia",
+          "city": "Ljubljana",
+          "country": "Slovenia",
+          "lat": 46.07149,
+          "lng": 14.51478
+        },
+        {
+          "cityId": "wola-poland",
+          "city": "Wola",
+          "country": "Poland",
+          "lat": 52.22604,
+          "lng": 20.98883
+        },
+        {
+          "cityId": "sandvika-norway",
+          "city": "Sandvika",
+          "country": "Norway",
+          "lat": 59.88581,
+          "lng": 10.51895
+        },
+        {
+          "cityId": "mala-strana-czech-republic",
+          "city": "Mala Strana",
+          "country": "Czech Republic",
+          "lat": 50.09951,
+          "lng": 14.3899
+        },
+        {
+          "cityId": "saint-petersburg-russia",
+          "city": "Saint Petersburg",
+          "country": "Russia",
+          "lat": 59.9396,
+          "lng": 30.31988
+        },
+        {
+          "cityId": "kupchino-russia",
+          "city": "Kupchino",
+          "country": "Russia",
+          "lat": 59.81999,
+          "lng": 30.31715
+        },
+        {
+          "cityId": "saint-petersburg-russia",
+          "city": "Saint Petersburg",
+          "country": "Russia",
+          "lat": 59.9396,
+          "lng": 30.31988
+        }
+      ],
+      "description": "Visited 7 cities in 5 countries.",
       "photos": []
     },
     {
@@ -2317,8 +3396,8 @@
       "cities": [
         "Admiralteisky",
         "Helsinki",
-        "OEstermalm",
         "Tallinn",
+        "OEstermalm",
         "Warsaw"
       ],
       "countries": [
@@ -2334,6 +3413,43 @@
         "oestermalm-sweden",
         "tallinn-estonia",
         "warsaw-poland"
+      ],
+      "route": [
+        {
+          "cityId": "admiralteisky-russia",
+          "city": "Admiralteisky",
+          "country": "Russia",
+          "lat": 59.89369,
+          "lng": 30.3176
+        },
+        {
+          "cityId": "helsinki-finland",
+          "city": "Helsinki",
+          "country": "Finland",
+          "lat": 60.17993,
+          "lng": 24.92702
+        },
+        {
+          "cityId": "tallinn-estonia",
+          "city": "Tallinn",
+          "country": "Estonia",
+          "lat": 59.43624,
+          "lng": 24.75597
+        },
+        {
+          "cityId": "oestermalm-sweden",
+          "city": "OEstermalm",
+          "country": "Sweden",
+          "lat": 59.32524,
+          "lng": 18.09901
+        },
+        {
+          "cityId": "warsaw-poland",
+          "city": "Warsaw",
+          "country": "Poland",
+          "lat": 52.22944,
+          "lng": 21.01269
+        }
       ],
       "description": "Visited 5 cities in 5 countries.",
       "photos": []
@@ -2352,6 +3468,15 @@
       "cityIds": [
         "puli-taiwan"
       ],
+      "route": [
+        {
+          "cityId": "puli-taiwan",
+          "city": "Puli",
+          "country": "Taiwan",
+          "lat": 23.96402,
+          "lng": 121.13032
+        }
+      ],
       "description": "Visited 1 city in 1 country.",
       "photos": []
     },
@@ -2368,6 +3493,15 @@
       ],
       "cityIds": [
         "kuala-lumpur-malaysia"
+      ],
+      "route": [
+        {
+          "cityId": "kuala-lumpur-malaysia",
+          "city": "Kuala Lumpur",
+          "country": "Malaysia",
+          "lat": 3.13619,
+          "lng": 101.69101
+        }
       ],
       "description": "Visited 1 city in 1 country.",
       "photos": []
