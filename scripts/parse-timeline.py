@@ -284,10 +284,14 @@ def cluster_trips(visits: list[dict]) -> list[list[dict]]:
     return trips
 
 
-def trip_title(group: list[dict], start: datetime, end: datetime) -> str:
-    countries = sorted({v["country"] for v in group if v["country"] != "Unknown"})
-    region = " · ".join(countries) if countries else "Unknown"
-    return f"{region} — {start.strftime('%b %d')}–{end.strftime('%b %d, %Y')}"
+def trip_title(start: datetime, end: datetime, countries: list[str]) -> str:
+    year = start.year
+    if start.year == end.year:
+        dates = f"{start.strftime('%b %d')} - {end.strftime('%b %d')}"
+    else:
+        dates = f"{start.strftime('%b %d, %Y')} - {end.strftime('%b %d, %Y')}"
+    region = "·".join(countries) if countries else "Unknown"
+    return f"{year} ({dates}): {region}"
 
 
 def build_output(visits: list[dict], source_note: str) -> dict:
@@ -360,19 +364,13 @@ def build_output(visits: list[dict], source_note: str) -> dict:
         trips_out.append(
             {
                 "id": trip_id,
-                "title": trip_title(group, start, end),
+                "title": trip_title(start, end, countries),
                 "startDate": start.date().isoformat(),
                 "endDate": end.date().isoformat(),
                 "cities": city_names,
                 "countries": countries,
                 "cityIds": city_ids,
                 "route": route,
-                "description": (
-                    f"Visited {len(city_names)} "
-                    f"{'city' if len(city_names) == 1 else 'cities'} in "
-                    f"{len(countries) or 1} "
-                    f"{'country' if len(countries) == 1 else 'countries'}."
-                ),
                 "photos": [],
             }
         )

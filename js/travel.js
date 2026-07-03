@@ -131,9 +131,6 @@
 	function tripCardHtml(trip) {
 		var route = formatRouteCities(trip);
 		return '<h5>' + trip.title + '</h5>' +
-			'<div class="meta"><i class="fas fa-plane"></i> ' +
-			formatDateRange(trip.startDate, trip.endDate) + '</div>' +
-			'<p>' + trip.description + '</p>' +
 			(route ? '<p style="margin-top:0.5rem;font-size:0.82rem;"><strong>Route:</strong> ' + route + '</p>' : '');
 	}
 
@@ -160,14 +157,9 @@
 			var $card = $('<div class="trip-card" data-trip-id="' + trip.id + '"></div>');
 			$card.append('<h4>' + trip.title + '</h4>');
 			$card.append(
-				'<div class="meta"><i class="fas fa-plane"></i> ' +
-				formatDateRange(trip.startDate, trip.endDate) + '</div>'
-			);
-			$card.append(
 				'<div class="trip-counts">' + nCities + ' ' + (nCities === 1 ? 'city' : 'cities') +
 				' · ' + nCountries + ' ' + (nCountries === 1 ? 'country' : 'countries') + '</div>'
 			);
-			$card.append('<p>' + trip.description + '</p>');
 			if (trip.cities && trip.cities.length) {
 				$card.append('<div class="cities">' + formatRouteCities(trip) + '</div>');
 			}
