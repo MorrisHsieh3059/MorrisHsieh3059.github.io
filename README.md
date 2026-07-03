@@ -51,7 +51,7 @@ python3 scripts/parse-timeline.py /path/to/Takeout/
 2. Settings (gear) → **Export Timeline data**
 3. Save the file, then run `npm run build-travel` with that path
 
-Home bases are fixed: **Taipei** (until Aug 1, 2022) and **NYC** (after) — shown as home pins, not travel.
+Home bases are fixed: **Taipei** (until Aug 1, 2022) and **NYC** (since Aug 2, 2022). A trip starts when you leave base and ends when you return — shown as home pins, not travel destinations.
 
 ## Updating content
 

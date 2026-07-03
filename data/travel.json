@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-03T20:40:52.261034+00:00",
+  "generatedAt": "2026-07-03T20:41:36.507196+00:00",
   "sourceNote": "Parsed 9770 visits from location-history.json",
   "homeBases": [
     {
@@ -10,7 +10,7 @@
       "lng": 121.5654,
       "from": null,
       "to": "2022-08-01",
-      "label": "Home base (until Aug 2022)"
+      "label": "Home base (until Aug 1, 2022)"
     },
     {
       "id": "home-nyc",
@@ -18,9 +18,9 @@
       "country": "United States",
       "lat": 40.7128,
       "lng": -74.006,
-      "from": "2022-08-01",
+      "from": "2022-08-02",
       "to": null,
-      "label": "Home base (since Aug 2022)"
+      "label": "Home base (since Aug 2, 2022)"
     }
   ],
   "cities": [
@@ -231,7 +231,7 @@
       "tripIds": [
         "trip-006",
         "trip-007",
-        "trip-010"
+        "trip-009"
       ]
     },
     {
@@ -245,7 +245,7 @@
       "lastVisit": "2023-08-19",
       "tripIds": [
         "trip-006",
-        "trip-018"
+        "trip-020"
       ]
     },
     {
@@ -259,9 +259,9 @@
       "lastVisit": "2023-08-20",
       "tripIds": [
         "trip-006",
+        "trip-013",
         "trip-014",
-        "trip-015",
-        "trip-018"
+        "trip-020"
       ]
     },
     {
@@ -326,8 +326,7 @@
       "firstVisit": "2018-08-12",
       "lastVisit": "2018-08-25",
       "tripIds": [
-        "trip-008",
-        "trip-009"
+        "trip-008"
       ]
     },
     {
@@ -366,7 +365,7 @@
       "firstVisit": "2019-06-24",
       "lastVisit": "2019-06-26",
       "tripIds": [
-        "trip-011"
+        "trip-010"
       ]
     },
     {
@@ -379,8 +378,8 @@
       "firstVisit": "2019-07-16",
       "lastVisit": "2021-02-20",
       "tripIds": [
-        "trip-012",
-        "trip-013"
+        "trip-011",
+        "trip-012"
       ]
     },
     {
@@ -393,7 +392,7 @@
       "firstVisit": "2023-06-25",
       "lastVisit": "2023-06-25",
       "tripIds": [
-        "trip-016"
+        "trip-015"
       ]
     },
     {
@@ -406,9 +405,9 @@
       "firstVisit": "2023-07-01",
       "lastVisit": "2025-06-30",
       "tripIds": [
-        "trip-017",
-        "trip-027",
-        "trip-040"
+        "trip-016",
+        "trip-030",
+        "trip-043"
       ]
     },
     {
@@ -421,7 +420,7 @@
       "firstVisit": "2023-08-05",
       "lastVisit": "2023-08-05",
       "tripIds": [
-        "trip-018"
+        "trip-017"
       ]
     },
     {
@@ -473,7 +472,7 @@
       "firstVisit": "2023-08-11",
       "lastVisit": "2023-08-11",
       "tripIds": [
-        "trip-018"
+        "trip-019"
       ]
     },
     {
@@ -486,8 +485,8 @@
       "firstVisit": "2023-08-13",
       "lastVisit": "2025-11-12",
       "tripIds": [
-        "trip-018",
-        "trip-044"
+        "trip-020",
+        "trip-047"
       ]
     },
     {
@@ -500,7 +499,7 @@
       "firstVisit": "2023-08-19",
       "lastVisit": "2023-08-19",
       "tripIds": [
-        "trip-018"
+        "trip-020"
       ]
     },
     {
@@ -513,8 +512,8 @@
       "firstVisit": "2023-08-24",
       "lastVisit": "2025-11-07",
       "tripIds": [
-        "trip-018",
-        "trip-044"
+        "trip-020",
+        "trip-047"
       ]
     },
     {
@@ -527,7 +526,7 @@
       "firstVisit": "2023-08-26",
       "lastVisit": "2023-08-26",
       "tripIds": [
-        "trip-018"
+        "trip-020"
       ]
     },
     {
@@ -540,8 +539,8 @@
       "firstVisit": "2023-09-02",
       "lastVisit": "2024-10-18",
       "tripIds": [
-        "trip-018",
-        "trip-030"
+        "trip-021",
+        "trip-033"
       ]
     },
     {
@@ -554,7 +553,7 @@
       "firstVisit": "2023-09-03",
       "lastVisit": "2023-09-03",
       "tripIds": [
-        "trip-018"
+        "trip-021"
       ]
     },
     {
@@ -567,7 +566,7 @@
       "firstVisit": "2023-09-04",
       "lastVisit": "2023-09-04",
       "tripIds": [
-        "trip-018"
+        "trip-021"
       ]
     },
     {
@@ -580,7 +579,7 @@
       "firstVisit": "2023-10-21",
       "lastVisit": "2023-10-21",
       "tripIds": [
-        "trip-019"
+        "trip-022"
       ]
     },
     {
@@ -593,7 +592,7 @@
       "firstVisit": "2023-11-04",
       "lastVisit": "2023-11-04",
       "tripIds": [
-        "trip-020"
+        "trip-023"
       ]
     },
     {
@@ -606,7 +605,7 @@
       "firstVisit": "2023-11-05",
       "lastVisit": "2023-11-05",
       "tripIds": [
-        "trip-020"
+        "trip-023"
       ]
     },
     {
@@ -619,7 +618,7 @@
       "firstVisit": "2023-11-06",
       "lastVisit": "2023-11-06",
       "tripIds": [
-        "trip-020"
+        "trip-023"
       ]
     },
     {
@@ -632,7 +631,7 @@
       "firstVisit": "2023-11-06",
       "lastVisit": "2023-11-07",
       "tripIds": [
-        "trip-020"
+        "trip-023"
       ]
     },
     {
@@ -645,7 +644,7 @@
       "firstVisit": "2023-11-22",
       "lastVisit": "2023-11-27",
       "tripIds": [
-        "trip-021"
+        "trip-024"
       ]
     },
     {
@@ -658,7 +657,7 @@
       "firstVisit": "2023-11-23",
       "lastVisit": "2023-11-23",
       "tripIds": [
-        "trip-021"
+        "trip-024"
       ]
     },
     {
@@ -671,7 +670,7 @@
       "firstVisit": "2023-11-27",
       "lastVisit": "2023-11-27",
       "tripIds": [
-        "trip-021"
+        "trip-024"
       ]
     },
     {
@@ -684,8 +683,8 @@
       "firstVisit": "2024-02-17",
       "lastVisit": "2025-06-07",
       "tripIds": [
-        "trip-022",
-        "trip-038"
+        "trip-025",
+        "trip-041"
       ]
     },
     {
@@ -698,7 +697,7 @@
       "firstVisit": "2024-03-13",
       "lastVisit": "2024-03-13",
       "tripIds": [
-        "trip-023"
+        "trip-026"
       ]
     },
     {
@@ -711,7 +710,7 @@
       "firstVisit": "2024-03-13",
       "lastVisit": "2024-03-13",
       "tripIds": [
-        "trip-023"
+        "trip-026"
       ]
     },
     {
@@ -724,7 +723,7 @@
       "firstVisit": "2024-03-14",
       "lastVisit": "2024-03-14",
       "tripIds": [
-        "trip-023"
+        "trip-026"
       ]
     },
     {
@@ -737,7 +736,7 @@
       "firstVisit": "2024-04-08",
       "lastVisit": "2024-04-08",
       "tripIds": [
-        "trip-024"
+        "trip-027"
       ]
     },
     {
@@ -750,7 +749,7 @@
       "firstVisit": "2024-04-13",
       "lastVisit": "2024-04-13",
       "tripIds": [
-        "trip-025"
+        "trip-028"
       ]
     },
     {
@@ -763,7 +762,7 @@
       "firstVisit": "2024-04-24",
       "lastVisit": "2024-04-24",
       "tripIds": [
-        "trip-026"
+        "trip-029"
       ]
     },
     {
@@ -776,7 +775,7 @@
       "firstVisit": "2024-06-28",
       "lastVisit": "2024-06-28",
       "tripIds": [
-        "trip-027"
+        "trip-030"
       ]
     },
     {
@@ -789,10 +788,10 @@
       "firstVisit": "2024-07-22",
       "lastVisit": "2026-05-21",
       "tripIds": [
-        "trip-028",
-        "trip-033",
-        "trip-042",
-        "trip-049"
+        "trip-031",
+        "trip-036",
+        "trip-045",
+        "trip-052"
       ]
     },
     {
@@ -805,7 +804,7 @@
       "firstVisit": "2024-09-01",
       "lastVisit": "2024-09-02",
       "tripIds": [
-        "trip-029"
+        "trip-032"
       ]
     },
     {
@@ -818,7 +817,7 @@
       "firstVisit": "2024-10-11",
       "lastVisit": "2024-10-14",
       "tripIds": [
-        "trip-030"
+        "trip-033"
       ]
     },
     {
@@ -831,7 +830,7 @@
       "firstVisit": "2024-10-19",
       "lastVisit": "2024-10-21",
       "tripIds": [
-        "trip-030"
+        "trip-033"
       ]
     },
     {
@@ -844,7 +843,7 @@
       "firstVisit": "2024-10-22",
       "lastVisit": "2024-10-22",
       "tripIds": [
-        "trip-030"
+        "trip-033"
       ]
     },
     {
@@ -857,7 +856,7 @@
       "firstVisit": "2024-11-28",
       "lastVisit": "2024-11-30",
       "tripIds": [
-        "trip-031"
+        "trip-034"
       ]
     },
     {
@@ -870,7 +869,7 @@
       "firstVisit": "2024-11-30",
       "lastVisit": "2024-11-30",
       "tripIds": [
-        "trip-031"
+        "trip-034"
       ]
     },
     {
@@ -883,7 +882,7 @@
       "firstVisit": "2024-12-01",
       "lastVisit": "2024-12-03",
       "tripIds": [
-        "trip-031"
+        "trip-034"
       ]
     },
     {
@@ -896,7 +895,7 @@
       "firstVisit": "2024-12-02",
       "lastVisit": "2024-12-02",
       "tripIds": [
-        "trip-031"
+        "trip-034"
       ]
     },
     {
@@ -909,7 +908,7 @@
       "firstVisit": "2024-12-28",
       "lastVisit": "2024-12-28",
       "tripIds": [
-        "trip-032"
+        "trip-035"
       ]
     },
     {
@@ -922,7 +921,7 @@
       "firstVisit": "2025-02-22",
       "lastVisit": "2025-02-22",
       "tripIds": [
-        "trip-034"
+        "trip-037"
       ]
     },
     {
@@ -935,7 +934,7 @@
       "firstVisit": "2025-02-23",
       "lastVisit": "2025-02-23",
       "tripIds": [
-        "trip-034"
+        "trip-037"
       ]
     },
     {
@@ -948,7 +947,7 @@
       "firstVisit": "2025-02-24",
       "lastVisit": "2025-02-24",
       "tripIds": [
-        "trip-034"
+        "trip-037"
       ]
     },
     {
@@ -961,7 +960,7 @@
       "firstVisit": "2025-05-10",
       "lastVisit": "2025-05-10",
       "tripIds": [
-        "trip-035"
+        "trip-038"
       ]
     },
     {
@@ -974,7 +973,7 @@
       "firstVisit": "2025-05-17",
       "lastVisit": "2025-05-17",
       "tripIds": [
-        "trip-036"
+        "trip-039"
       ]
     },
     {
@@ -987,7 +986,7 @@
       "firstVisit": "2025-05-23",
       "lastVisit": "2025-05-23",
       "tripIds": [
-        "trip-037"
+        "trip-040"
       ]
     },
     {
@@ -1000,7 +999,7 @@
       "firstVisit": "2025-05-24",
       "lastVisit": "2025-05-24",
       "tripIds": [
-        "trip-037"
+        "trip-040"
       ]
     },
     {
@@ -1013,7 +1012,7 @@
       "firstVisit": "2025-05-25",
       "lastVisit": "2025-05-25",
       "tripIds": [
-        "trip-037"
+        "trip-040"
       ]
     },
     {
@@ -1026,7 +1025,7 @@
       "firstVisit": "2025-05-26",
       "lastVisit": "2025-05-26",
       "tripIds": [
-        "trip-037"
+        "trip-040"
       ]
     },
     {
@@ -1039,7 +1038,7 @@
       "firstVisit": "2025-06-21",
       "lastVisit": "2025-06-21",
       "tripIds": [
-        "trip-039"
+        "trip-042"
       ]
     },
     {
@@ -1052,8 +1051,8 @@
       "firstVisit": "2025-06-22",
       "lastVisit": "2025-11-15",
       "tripIds": [
-        "trip-039",
-        "trip-044"
+        "trip-042",
+        "trip-047"
       ]
     },
     {
@@ -1066,7 +1065,7 @@
       "firstVisit": "2025-08-02",
       "lastVisit": "2025-08-03",
       "tripIds": [
-        "trip-041"
+        "trip-044"
       ]
     },
     {
@@ -1079,7 +1078,7 @@
       "firstVisit": "2025-08-02",
       "lastVisit": "2025-08-03",
       "tripIds": [
-        "trip-041"
+        "trip-044"
       ]
     },
     {
@@ -1092,7 +1091,7 @@
       "firstVisit": "2025-10-11",
       "lastVisit": "2025-10-12",
       "tripIds": [
-        "trip-043"
+        "trip-046"
       ]
     },
     {
@@ -1105,7 +1104,7 @@
       "firstVisit": "2025-11-04",
       "lastVisit": "2025-11-14",
       "tripIds": [
-        "trip-044"
+        "trip-047"
       ]
     },
     {
@@ -1118,7 +1117,7 @@
       "firstVisit": "2025-11-05",
       "lastVisit": "2025-11-05",
       "tripIds": [
-        "trip-044"
+        "trip-047"
       ]
     },
     {
@@ -1131,7 +1130,7 @@
       "firstVisit": "2025-11-27",
       "lastVisit": "2025-11-27",
       "tripIds": [
-        "trip-045"
+        "trip-048"
       ]
     },
     {
@@ -1144,7 +1143,7 @@
       "firstVisit": "2025-11-28",
       "lastVisit": "2025-11-29",
       "tripIds": [
-        "trip-045"
+        "trip-048"
       ]
     },
     {
@@ -1157,7 +1156,7 @@
       "firstVisit": "2025-11-29",
       "lastVisit": "2025-11-30",
       "tripIds": [
-        "trip-045"
+        "trip-048"
       ]
     },
     {
@@ -1170,7 +1169,7 @@
       "firstVisit": "2025-12-27",
       "lastVisit": "2025-12-28",
       "tripIds": [
-        "trip-046"
+        "trip-049"
       ]
     },
     {
@@ -1183,7 +1182,7 @@
       "firstVisit": "2026-01-18",
       "lastVisit": "2026-01-20",
       "tripIds": [
-        "trip-047"
+        "trip-050"
       ]
     },
     {
@@ -1196,7 +1195,7 @@
       "firstVisit": "2026-03-07",
       "lastVisit": "2026-03-08",
       "tripIds": [
-        "trip-048"
+        "trip-051"
       ]
     },
     {
@@ -1209,7 +1208,7 @@
       "firstVisit": "2026-05-25",
       "lastVisit": "2026-05-25",
       "tripIds": [
-        "trip-049"
+        "trip-052"
       ]
     },
     {
@@ -1222,7 +1221,7 @@
       "firstVisit": "2026-06-20",
       "lastVisit": "2026-06-20",
       "tripIds": [
-        "trip-050"
+        "trip-053"
       ]
     },
     {
@@ -1235,7 +1234,7 @@
       "firstVisit": "2026-06-21",
       "lastVisit": "2026-06-22",
       "tripIds": [
-        "trip-050"
+        "trip-053"
       ]
     },
     {
@@ -1248,7 +1247,7 @@
       "firstVisit": "2026-06-23",
       "lastVisit": "2026-06-25",
       "tripIds": [
-        "trip-050"
+        "trip-053"
       ]
     },
     {
@@ -1261,7 +1260,7 @@
       "firstVisit": "2026-06-23",
       "lastVisit": "2026-06-23",
       "tripIds": [
-        "trip-050"
+        "trip-053"
       ]
     },
     {
@@ -1274,7 +1273,7 @@
       "firstVisit": "2026-06-24",
       "lastVisit": "2026-06-24",
       "tripIds": [
-        "trip-050"
+        "trip-053"
       ]
     },
     {
@@ -1287,7 +1286,7 @@
       "firstVisit": "2026-06-26",
       "lastVisit": "2026-06-26",
       "tripIds": [
-        "trip-050"
+        "trip-053"
       ]
     },
     {
@@ -1300,7 +1299,7 @@
       "firstVisit": "2026-06-26",
       "lastVisit": "2026-06-27",
       "tripIds": [
-        "trip-050"
+        "trip-053"
       ]
     },
     {
@@ -1313,7 +1312,7 @@
       "firstVisit": "2026-06-27",
       "lastVisit": "2026-06-27",
       "tripIds": [
-        "trip-050"
+        "trip-053"
       ]
     },
     {
@@ -1326,13 +1325,13 @@
       "firstVisit": "2026-06-28",
       "lastVisit": "2026-06-28",
       "tripIds": [
-        "trip-050"
+        "trip-053"
       ]
     }
   ],
   "trips": [
     {
-      "id": "trip-050",
+      "id": "trip-053",
       "title": "Lithuania +4 more — Jun 20–Jun 29, 2026",
       "startDate": "2026-06-20",
       "endDate": "2026-06-29",
@@ -1369,7 +1368,7 @@
       "photos": []
     },
     {
-      "id": "trip-049",
+      "id": "trip-052",
       "title": "United States — May 21–May 25, 2026",
       "startDate": "2026-05-21",
       "endDate": "2026-05-25",
@@ -1388,7 +1387,7 @@
       "photos": []
     },
     {
-      "id": "trip-048",
+      "id": "trip-051",
       "title": "United States — Mar 07–Mar 08, 2026",
       "startDate": "2026-03-07",
       "endDate": "2026-03-08",
@@ -1405,7 +1404,7 @@
       "photos": []
     },
     {
-      "id": "trip-047",
+      "id": "trip-050",
       "title": "United States — Jan 18–Jan 20, 2026",
       "startDate": "2026-01-18",
       "endDate": "2026-01-20",
@@ -1422,7 +1421,7 @@
       "photos": []
     },
     {
-      "id": "trip-046",
+      "id": "trip-049",
       "title": "United States — Dec 27–Dec 28, 2025",
       "startDate": "2025-12-27",
       "endDate": "2025-12-28",
@@ -1439,7 +1438,7 @@
       "photos": []
     },
     {
-      "id": "trip-045",
+      "id": "trip-048",
       "title": "Ireland — Nov 27–Dec 01, 2025",
       "startDate": "2025-11-27",
       "endDate": "2025-12-01",
@@ -1460,7 +1459,7 @@
       "photos": []
     },
     {
-      "id": "trip-044",
+      "id": "trip-047",
       "title": "South Korea · Taiwan · United States — Oct 26–Nov 15, 2025",
       "startDate": "2025-10-26",
       "endDate": "2025-11-15",
@@ -1487,7 +1486,7 @@
       "photos": []
     },
     {
-      "id": "trip-043",
+      "id": "trip-046",
       "title": "United States — Oct 11–Oct 12, 2025",
       "startDate": "2025-10-11",
       "endDate": "2025-10-12",
@@ -1504,7 +1503,7 @@
       "photos": []
     },
     {
-      "id": "trip-042",
+      "id": "trip-045",
       "title": "United States — Aug 30–Sep 01, 2025",
       "startDate": "2025-08-30",
       "endDate": "2025-09-01",
@@ -1521,7 +1520,7 @@
       "photos": []
     },
     {
-      "id": "trip-041",
+      "id": "trip-044",
       "title": "United States — Aug 02–Aug 03, 2025",
       "startDate": "2025-08-02",
       "endDate": "2025-08-03",
@@ -1540,7 +1539,7 @@
       "photos": []
     },
     {
-      "id": "trip-040",
+      "id": "trip-043",
       "title": "United States — Jun 26–Jun 30, 2025",
       "startDate": "2025-06-26",
       "endDate": "2025-06-30",
@@ -1557,7 +1556,7 @@
       "photos": []
     },
     {
-      "id": "trip-039",
+      "id": "trip-042",
       "title": "United States — Jun 21–Jun 22, 2025",
       "startDate": "2025-06-21",
       "endDate": "2025-06-22",
@@ -1576,7 +1575,7 @@
       "photos": []
     },
     {
-      "id": "trip-038",
+      "id": "trip-041",
       "title": "United States — Jun 07–Jun 07, 2025",
       "startDate": "2025-06-07",
       "endDate": "2025-06-07",
@@ -1593,7 +1592,7 @@
       "photos": []
     },
     {
-      "id": "trip-037",
+      "id": "trip-040",
       "title": "United States — May 23–May 26, 2025",
       "startDate": "2025-05-23",
       "endDate": "2025-05-26",
@@ -1616,7 +1615,7 @@
       "photos": []
     },
     {
-      "id": "trip-036",
+      "id": "trip-039",
       "title": "United States — May 17–May 18, 2025",
       "startDate": "2025-05-17",
       "endDate": "2025-05-18",
@@ -1633,7 +1632,7 @@
       "photos": []
     },
     {
-      "id": "trip-035",
+      "id": "trip-038",
       "title": "United States — May 10–May 11, 2025",
       "startDate": "2025-05-10",
       "endDate": "2025-05-11",
@@ -1650,7 +1649,7 @@
       "photos": []
     },
     {
-      "id": "trip-034",
+      "id": "trip-037",
       "title": "United States — Feb 22–Feb 24, 2025",
       "startDate": "2025-02-22",
       "endDate": "2025-02-24",
@@ -1671,7 +1670,7 @@
       "photos": []
     },
     {
-      "id": "trip-033",
+      "id": "trip-036",
       "title": "United States — Jan 20–Jan 20, 2025",
       "startDate": "2025-01-20",
       "endDate": "2025-01-20",
@@ -1688,7 +1687,7 @@
       "photos": []
     },
     {
-      "id": "trip-032",
+      "id": "trip-035",
       "title": "United States — Dec 28–Dec 28, 2024",
       "startDate": "2024-12-28",
       "endDate": "2024-12-28",
@@ -1705,7 +1704,7 @@
       "photos": []
     },
     {
-      "id": "trip-031",
+      "id": "trip-034",
       "title": "Spain — Nov 28–Dec 04, 2024",
       "startDate": "2024-11-28",
       "endDate": "2024-12-04",
@@ -1728,7 +1727,7 @@
       "photos": []
     },
     {
-      "id": "trip-030",
+      "id": "trip-033",
       "title": "Canada · United States — Oct 11–Oct 23, 2024",
       "startDate": "2024-10-11",
       "endDate": "2024-10-23",
@@ -1752,7 +1751,7 @@
       "photos": []
     },
     {
-      "id": "trip-029",
+      "id": "trip-032",
       "title": "United States — Sep 01–Sep 02, 2024",
       "startDate": "2024-09-01",
       "endDate": "2024-09-02",
@@ -1769,7 +1768,7 @@
       "photos": []
     },
     {
-      "id": "trip-028",
+      "id": "trip-031",
       "title": "United States — Jul 22–Jul 23, 2024",
       "startDate": "2024-07-22",
       "endDate": "2024-07-23",
@@ -1786,7 +1785,7 @@
       "photos": []
     },
     {
-      "id": "trip-027",
+      "id": "trip-030",
       "title": "United States — Jun 28–Jul 01, 2024",
       "startDate": "2024-06-28",
       "endDate": "2024-07-01",
@@ -1805,7 +1804,7 @@
       "photos": []
     },
     {
-      "id": "trip-026",
+      "id": "trip-029",
       "title": "United States — Apr 24–Apr 24, 2024",
       "startDate": "2024-04-24",
       "endDate": "2024-04-24",
@@ -1822,7 +1821,7 @@
       "photos": []
     },
     {
-      "id": "trip-025",
+      "id": "trip-028",
       "title": "United States — Apr 13–Apr 13, 2024",
       "startDate": "2024-04-13",
       "endDate": "2024-04-13",
@@ -1839,7 +1838,7 @@
       "photos": []
     },
     {
-      "id": "trip-024",
+      "id": "trip-027",
       "title": "United States — Apr 08–Apr 08, 2024",
       "startDate": "2024-04-08",
       "endDate": "2024-04-08",
@@ -1856,7 +1855,7 @@
       "photos": []
     },
     {
-      "id": "trip-023",
+      "id": "trip-026",
       "title": "United States — Mar 13–Mar 14, 2024",
       "startDate": "2024-03-13",
       "endDate": "2024-03-14",
@@ -1877,7 +1876,7 @@
       "photos": []
     },
     {
-      "id": "trip-022",
+      "id": "trip-025",
       "title": "United States — Feb 17–Feb 18, 2024",
       "startDate": "2024-02-17",
       "endDate": "2024-02-18",
@@ -1894,7 +1893,7 @@
       "photos": []
     },
     {
-      "id": "trip-021",
+      "id": "trip-024",
       "title": "Italy — Nov 22–Nov 28, 2023",
       "startDate": "2023-11-22",
       "endDate": "2023-11-28",
@@ -1915,7 +1914,7 @@
       "photos": []
     },
     {
-      "id": "trip-020",
+      "id": "trip-023",
       "title": "United States — Nov 04–Nov 07, 2023",
       "startDate": "2023-11-04",
       "endDate": "2023-11-07",
@@ -1938,7 +1937,7 @@
       "photos": []
     },
     {
-      "id": "trip-019",
+      "id": "trip-022",
       "title": "United States — Oct 21–Oct 21, 2023",
       "startDate": "2023-10-21",
       "endDate": "2023-10-21",
@@ -1955,51 +1954,110 @@
       "photos": []
     },
     {
-      "id": "trip-018",
-      "title": "Taiwan · United States — Aug 05–Sep 05, 2023",
-      "startDate": "2023-08-05",
+      "id": "trip-021",
+      "title": "United States — Sep 02–Sep 05, 2023",
+      "startDate": "2023-09-02",
       "endDate": "2023-09-05",
       "cities": [
-        "Arlington",
-        "Bordentown",
         "Coppell",
         "Grapevine",
+        "River Oaks"
+      ],
+      "countries": [
+        "United States"
+      ],
+      "cityIds": [
+        "coppell-united-states",
+        "grapevine-united-states",
+        "river-oaks-united-states"
+      ],
+      "description": "Visited 3 cities in 1 country.",
+      "photos": []
+    },
+    {
+      "id": "trip-020",
+      "title": "Taiwan — Aug 13–Aug 30, 2023",
+      "startDate": "2023-08-13",
+      "endDate": "2023-08-30",
+      "cities": [
         "Keelung",
-        "Niagara Falls",
-        "Providence",
-        "River Oaks",
         "Taibao",
         "Taichung",
         "Tainan",
         "Taipei",
-        "Woodlawn",
         "Yilan"
       ],
       "countries": [
-        "Taiwan",
+        "Taiwan"
+      ],
+      "cityIds": [
+        "keelung-taiwan",
+        "taibao-taiwan",
+        "taichung-taiwan",
+        "tainan-taiwan",
+        "taipei-taiwan",
+        "yilan-taiwan"
+      ],
+      "description": "Visited 6 cities in 1 country.",
+      "photos": []
+    },
+    {
+      "id": "trip-019",
+      "title": "United States — Aug 11–Aug 11, 2023",
+      "startDate": "2023-08-11",
+      "endDate": "2023-08-11",
+      "cities": [
+        "Providence"
+      ],
+      "countries": [
+        "United States"
+      ],
+      "cityIds": [
+        "providence-united-states"
+      ],
+      "description": "Visited 1 city in 1 country.",
+      "photos": []
+    },
+    {
+      "id": "trip-018",
+      "title": "United States — Aug 07–Aug 09, 2023",
+      "startDate": "2023-08-07",
+      "endDate": "2023-08-09",
+      "cities": [
+        "Arlington",
+        "Bordentown",
+        "Woodlawn"
+      ],
+      "countries": [
         "United States"
       ],
       "cityIds": [
         "arlington-united-states",
         "bordentown-united-states",
-        "coppell-united-states",
-        "grapevine-united-states",
-        "keelung-taiwan",
-        "niagara-falls-united-states",
-        "providence-united-states",
-        "river-oaks-united-states",
-        "taibao-taiwan",
-        "taichung-taiwan",
-        "tainan-taiwan",
-        "taipei-taiwan",
-        "woodlawn-united-states",
-        "yilan-taiwan"
+        "woodlawn-united-states"
       ],
-      "description": "Visited 14 cities in 2 countries.",
+      "description": "Visited 3 cities in 1 country.",
       "photos": []
     },
     {
       "id": "trip-017",
+      "title": "United States — Aug 05–Aug 05, 2023",
+      "startDate": "2023-08-05",
+      "endDate": "2023-08-05",
+      "cities": [
+        "Niagara Falls"
+      ],
+      "countries": [
+        "United States"
+      ],
+      "cityIds": [
+        "niagara-falls-united-states"
+      ],
+      "description": "Visited 1 city in 1 country.",
+      "photos": []
+    },
+    {
+      "id": "trip-016",
       "title": "United States — Jul 01–Jul 04, 2023",
       "startDate": "2023-07-01",
       "endDate": "2023-07-04",
@@ -2016,7 +2074,7 @@
       "photos": []
     },
     {
-      "id": "trip-016",
+      "id": "trip-015",
       "title": "United States — Jun 25–Jun 25, 2023",
       "startDate": "2023-06-25",
       "endDate": "2023-06-25",
@@ -2033,7 +2091,7 @@
       "photos": []
     },
     {
-      "id": "trip-015",
+      "id": "trip-014",
       "title": "Taiwan — Dec 02–Dec 03, 2021",
       "startDate": "2021-12-02",
       "endDate": "2021-12-03",
@@ -2050,7 +2108,7 @@
       "photos": []
     },
     {
-      "id": "trip-014",
+      "id": "trip-013",
       "title": "Taiwan — Aug 25–Aug 26, 2021",
       "startDate": "2021-08-25",
       "endDate": "2021-08-26",
@@ -2067,7 +2125,7 @@
       "photos": []
     },
     {
-      "id": "trip-013",
+      "id": "trip-012",
       "title": "Taiwan — Feb 20–Feb 20, 2021",
       "startDate": "2021-02-20",
       "endDate": "2021-02-20",
@@ -2084,7 +2142,7 @@
       "photos": []
     },
     {
-      "id": "trip-012",
+      "id": "trip-011",
       "title": "Taiwan — Jul 16–Jul 16, 2019",
       "startDate": "2019-07-16",
       "endDate": "2019-07-16",
@@ -2101,7 +2159,7 @@
       "photos": []
     },
     {
-      "id": "trip-011",
+      "id": "trip-010",
       "title": "Taiwan — Jun 24–Jun 26, 2019",
       "startDate": "2019-06-24",
       "endDate": "2019-06-26",
@@ -2118,7 +2176,7 @@
       "photos": []
     },
     {
-      "id": "trip-010",
+      "id": "trip-009",
       "title": "Taiwan — Apr 19–Apr 19, 2019",
       "startDate": "2019-04-19",
       "endDate": "2019-04-19",
@@ -2135,27 +2193,10 @@
       "photos": []
     },
     {
-      "id": "trip-009",
-      "title": "China — Aug 24–Aug 26, 2018",
-      "startDate": "2018-08-24",
-      "endDate": "2018-08-26",
-      "cities": [
-        "Jingshan"
-      ],
-      "countries": [
-        "China"
-      ],
-      "cityIds": [
-        "jingshan-china"
-      ],
-      "description": "Visited 1 city in 1 country.",
-      "photos": []
-    },
-    {
       "id": "trip-008",
-      "title": "China — Jul 19–Aug 20, 2018",
+      "title": "China — Jul 19–Aug 26, 2018",
       "startDate": "2018-07-19",
-      "endDate": "2018-08-20",
+      "endDate": "2018-08-26",
       "cities": [
         "Datun",
         "Dongfeng",
@@ -2333,7 +2374,7 @@
     }
   ],
   "stats": {
-    "totalTrips": 50,
+    "totalTrips": 53,
     "totalCities": 99,
     "totalCountries": 21
   }

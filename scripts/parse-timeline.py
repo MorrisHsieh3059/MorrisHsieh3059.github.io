@@ -19,11 +19,10 @@ except ImportError:
 ROOT = Path(__file__).resolve().parent.parent
 OUTPUT = ROOT / "data" / "travel.json"
 
-HOME_SWITCH = datetime(2022, 8, 1, tzinfo=timezone.utc)
+HOME_SWITCH = datetime(2022, 8, 2, tzinfo=timezone.utc)
 TAIPEI = {"lat": 25.0330, "lng": 121.5654, "radius_km": 45}
 NYC = {"lat": 40.7128, "lng": -74.0060, "radius_km": 55}
 MIN_VISIT_HOURS = 3
-MIN_TRIP_GAP_DAYS = 4
 SKIP_SEMANTIC = {"inferred home", "home", "inferred work", "work"}
 
 CC_NAMES = {
@@ -77,7 +76,8 @@ def parse_geo_string(value: str | None) -> tuple[float, float] | None:
         return None
 
 
-def is_home_visit(lat: float, lng: float, when: datetime) -> bool:
+def is_at_base(lat: float, lng: float, when: datetime) -> bool:
+    """True when visit is within the active home base for that date."""
     if when < HOME_SWITCH:
         return haversine_km(lat, lng, TAIPEI["lat"], TAIPEI["lng"]) <= TAIPEI["radius_km"]
     return haversine_km(lat, lng, NYC["lat"], NYC["lng"]) <= NYC["radius_km"]
@@ -249,29 +249,38 @@ def extract_visits(records: list[dict]) -> list[dict]:
 
 
 def cluster_trips(visits: list[dict]) -> list[list[dict]]:
-    travel_visits = []
-    for v in visits:
-        if v["hours"] < MIN_VISIT_HOURS:
-            continue
-        if is_home_visit(v["lat"], v["lng"], v["start"]):
-            continue
-        travel_visits.append(v)
-
-    if not travel_visits:
-        return []
+    """
+    Trip = period away from home base.
+    Starts when location leaves base; ends when location returns to base.
+    """
+    qualifying = [v for v in visits if v["hours"] >= MIN_VISIT_HOURS]
+    qualifying.sort(key=lambda v: v["start"])
 
     trips: list[list[dict]] = []
-    current = [travel_visits[0]]
-    for v in travel_visits[1:]:
-        prev = current[-1]
-        prev_end = prev.get("end") or prev["start"]
-        gap_days = (v["start"] - prev_end).total_seconds() / 86400
-        if gap_days > MIN_TRIP_GAP_DAYS:
-            trips.append(current)
+    away = False
+    current: list[dict] = []
+
+    for v in qualifying:
+        at_base = is_at_base(v["lat"], v["lng"], v["start"])
+
+        if not away and not at_base:
+            # Left home base → new trip begins
+            away = True
             current = [v]
-        else:
+        elif away and at_base:
+            # Returned home base → trip ends
+            if current:
+                trips.append(current)
+            current = []
+            away = False
+        elif away and not at_base:
+            # Still traveling
             current.append(v)
-    trips.append(current)
+        # at base while not away: at home, not part of any trip
+
+    if away and current:
+        trips.append(current)
+
     return trips
 
 
@@ -362,8 +371,8 @@ def build_output(visits: list[dict], source_note: str) -> dict:
                 "lat": TAIPEI["lat"],
                 "lng": TAIPEI["lng"],
                 "from": None,
-                "to": HOME_SWITCH.date().isoformat(),
-                "label": "Home base (until Aug 2022)",
+                "to": "2022-08-01",
+                "label": "Home base (until Aug 1, 2022)",
             },
             {
                 "id": "home-nyc",
@@ -373,7 +382,7 @@ def build_output(visits: list[dict], source_note: str) -> dict:
                 "lng": NYC["lng"],
                 "from": HOME_SWITCH.date().isoformat(),
                 "to": None,
-                "label": "Home base (since Aug 2022)",
+                "label": "Home base (since Aug 2, 2022)",
             },
         ],
         "cities": sorted(city_stats.values(), key=lambda c: c["firstVisit"]),
