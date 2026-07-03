@@ -10,6 +10,8 @@
 	var defaultCenter = null;
 	var defaultZoom = null;
 	var activeTripId = null;
+	var hideCardTimer = null;
+	var CITY_TRIPS_PREVIEW = 5;
 
 	var MAP_FLY_OPTS = { duration: 0.55 };
 	var MAP_PAD = [36, 36];
@@ -26,25 +28,68 @@
 			' – ' + e.toLocaleDateString('en-US', opts);
 	}
 
-	function showHoverCard(html, isHome) {
+	function showHoverCard(html, isHome, interactive) {
 		if (!$hoverCard) return;
+		clearTimeout(hideCardTimer);
 		$hoverCard.html(html);
 		$hoverCard.toggleClass('home-card', !!isHome);
+		$hoverCard.toggleClass('interactive', !!interactive);
 		$hoverCard.addClass('visible');
 	}
 
 	function hideHoverCard() {
-		if ($hoverCard) $hoverCard.removeClass('visible');
+		clearTimeout(hideCardTimer);
+		if ($hoverCard) {
+			$hoverCard.removeClass('visible interactive');
+		}
+	}
+
+	function scheduleHideHoverCard() {
+		clearTimeout(hideCardTimer);
+		hideCardTimer = setTimeout(function () {
+			if ($hoverCard && !$hoverCard.is(':hover')) {
+				hideHoverCard();
+				if (!activeTripId) {
+					Object.keys(markers).forEach(function (id) {
+						if (!markers[id].isHome) {
+							markers[id].el.classList.remove('highlight');
+						}
+					});
+				}
+			}
+		}, 150);
 	}
 
 	function cityCardHtml(city, trips) {
-		var tripList = (trips || []).map(function (t) {
-			return '<li>' + t.title + '</li>';
-		}).join('');
+		var sorted = (trips || []).slice().sort(function (a, b) {
+			return b.startDate.localeCompare(a.startDate);
+		});
+		var visible = sorted.slice(0, CITY_TRIPS_PREVIEW);
+		var hidden = sorted.slice(CITY_TRIPS_PREVIEW);
+		var tripCount = city.visits || sorted.length;
+
+		function tripItems(list) {
+			return list.map(function (t) {
+				return '<li>' + t.title + '</li>';
+			}).join('');
+		}
+
+		var tripsHtml = '';
+		if (sorted.length) {
+			tripsHtml = '<p class="city-trips-label">Part of:</p>' +
+				'<ul class="city-trips-list">' + tripItems(visible) + '</ul>';
+			if (hidden.length) {
+				tripsHtml += '<ul class="city-trips-list city-trips-more">' + tripItems(hidden) + '</ul>' +
+					'<button type="button" class="city-trips-expand">Show ' + hidden.length + ' more</button>';
+			}
+		}
+
 		return '<h5>' + city.city + (city.country ? ', ' + city.country : '') + '</h5>' +
+			'<div class="meta"><i class="fas fa-map-marker-alt"></i> ' +
+			tripCount + ' trip' + (tripCount === 1 ? '' : 's') + '</div>' +
 			'<div class="meta"><i class="fas fa-calendar-alt"></i> ' +
 			city.firstVisit + ' – ' + city.lastVisit + '</div>' +
-			(tripList ? '<p style="margin-top:0.5rem;">Part of:</p><ul style="margin:0;padding-left:1.1rem;font-size:0.82rem;">' + tripList + '</ul>' : '');
+			tripsHtml;
 	}
 
 	function maxCityVisits() {
@@ -365,6 +410,25 @@
 
 		$hoverCard = $('#travel-hover-card');
 
+		$hoverCard.off('mouseenter mouseleave click').on('mouseenter', function () {
+			clearTimeout(hideCardTimer);
+		}).on('mouseleave', function () {
+			hideHoverCard();
+			if (activeTripId) {
+				highlightTrip(activeTripId);
+			} else {
+				Object.keys(markers).forEach(function (id) {
+					if (!markers[id].isHome) {
+						markers[id].el.classList.remove('highlight');
+					}
+				});
+			}
+		}).on('click', '.city-trips-expand', function () {
+			var $btn = $(this);
+			$btn.siblings('.city-trips-more').addClass('visible');
+			$btn.remove();
+		});
+
 		(travelData.homeBases || []).forEach(function (home) {
 			addMarker(home.id, home.lat, home.lng, true, home, null, 0, 1);
 		});
@@ -422,18 +486,20 @@
 
 		marker.on('mouseover', function () {
 			if (isHome) {
-				showHoverCard(homeCardHtml(data), true);
+				showHoverCard(homeCardHtml(data), true, false);
 			} else {
-				showHoverCard(cityCardHtml(data, trips), false);
+				showHoverCard(cityCardHtml(data, trips), false, true);
 			}
 			el.classList.add('highlight');
 		});
 		marker.on('mouseout', function () {
-			hideHoverCard();
+			if (isHome) {
+				hideHoverCard();
+			} else {
+				scheduleHideHoverCard();
+			}
 			if (activeTripId) {
 				highlightTrip(activeTripId);
-			} else {
-				el.classList.remove('highlight');
 			}
 		});
 

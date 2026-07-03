@@ -132,6 +132,10 @@
 	opacity: 1;
 }
 
+.travel-hover-card.interactive {
+	pointer-events: auto;
+}
+
 .travel-hover-card.home-card {
 	border-left-color: #303F9F;
 }
@@ -156,6 +160,43 @@
 	color: #444;
 	word-wrap: break-word;
 	overflow-wrap: anywhere;
+}
+
+.travel-hover-card .city-trips-label {
+	margin-top: 0.5rem;
+	font-size: 0.82rem;
+	color: #444;
+}
+
+.travel-hover-card .city-trips-list {
+	margin: 0.2rem 0 0;
+	padding-left: 1.1rem;
+	font-size: 0.82rem;
+	color: #555;
+}
+
+.travel-hover-card .city-trips-more {
+	display: none;
+}
+
+.travel-hover-card .city-trips-more.visible {
+	display: block;
+}
+
+.travel-hover-card .city-trips-expand {
+	margin-top: 0.35rem;
+	padding: 0;
+	border: none;
+	background: none;
+	font-family: 'Roboto Mono', sans-serif;
+	font-size: 0.75rem;
+	color: var(--accent, #303F9F);
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.travel-hover-card .city-trips-expand:hover {
+	color: #1a237e;
 }
 
 .travel-cards-sidebar {
