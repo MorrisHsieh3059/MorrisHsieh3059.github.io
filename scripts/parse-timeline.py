@@ -326,11 +326,6 @@ def build_output(visits: list[dict], source_note: str) -> dict:
             city_stats[ck]["lat"] = ((n - 1) * city_stats[ck]["lat"] + v["lat"]) / n
             city_stats[ck]["lng"] = ((n - 1) * city_stats[ck]["lng"] + v["lng"]) / n
 
-        for ck in cities_in_trip:
-            if trip_id not in city_stats[ck]["tripIds"]:
-                city_stats[ck]["tripIds"].append(trip_id)
-            city_stats[ck]["visits"] = len(city_stats[ck]["tripIds"])
-
         start = min(v["start"] for v in group)
         end = max((v.get("end") or v["start"]) for v in group)
         countries = sorted({v["country"] for v in group if v["country"] != "Unknown"})
@@ -352,6 +347,18 @@ def build_output(visits: list[dict], source_note: str) -> dict:
                 }
             )
             last_ck = ck
+
+        # Each appearance in the chronological route counts once; revisiting a city
+        # within the same trip (leave → return) adds another visit.
+        city_trip_visits: dict[str, int] = {}
+        for r in route:
+            ck = r["cityId"]
+            city_trip_visits[ck] = city_trip_visits.get(ck, 0) + 1
+
+        for ck, count in city_trip_visits.items():
+            if trip_id not in city_stats[ck]["tripIds"]:
+                city_stats[ck]["tripIds"].append(trip_id)
+            city_stats[ck]["visits"] += count
 
         city_names = [r["city"] for r in route]
         city_ids = sorted(cities_in_trip.keys())
@@ -378,7 +385,6 @@ def build_output(visits: list[dict], source_note: str) -> dict:
 
     for c in city_stats.values():
         c["tripIds"] = sorted(set(c["tripIds"]))
-        c["visits"] = len(c["tripIds"])
         c.pop("_coordSamples", None)
         c["lat"] = round(c["lat"], 5)
         c["lng"] = round(c["lng"], 5)

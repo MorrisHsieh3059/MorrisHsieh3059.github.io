@@ -40,11 +40,35 @@
 			return '<li>' + t.title + '</li>';
 		}).join('');
 		return '<h5>' + city.city + (city.country ? ', ' + city.country : '') + '</h5>' +
-			'<div class="meta"><i class="fas fa-map-marker-alt"></i> ' +
-			city.visits + ' trip' + (city.visits === 1 ? '' : 's') +
-			' · ' + city.firstVisit + ' – ' + city.lastVisit + '</div>' +
-			'<p style="font-size:0.8rem;color:#888;margin:0.25rem 0 0;">Each pin = one city across all your trips.</p>' +
+			'<div class="meta"><i class="fas fa-calendar-alt"></i> ' +
+			city.firstVisit + ' – ' + city.lastVisit + '</div>' +
 			(tripList ? '<p style="margin-top:0.5rem;">Part of:</p><ul style="margin:0;padding-left:1.1rem;font-size:0.82rem;">' + tripList + '</ul>' : '');
+	}
+
+	function maxCityVisits() {
+		var max = 1;
+		(travelData.cities || []).forEach(function (city) {
+			if (city.visits > max) max = city.visits;
+		});
+		return max;
+	}
+
+	function visitHeatStyle(visits, maxVisits) {
+		var t = maxVisits <= 1 ? 0.35 : (visits - 1) / (maxVisits - 1);
+		var core = Math.round(10 + t * 14);
+		var glow = Math.round(core + 10 + t * 18);
+		var r = Math.round(255 - t * 64);
+		var g = Math.round(224 - t * 170);
+		var b = Math.round(130 - t * 118);
+		var color = 'rgb(' + r + ',' + g + ',' + b + ')';
+		var opacity = (0.3 + t * 0.55).toFixed(2);
+		return {
+			core: core,
+			glow: glow,
+			color: color,
+			opacity: opacity,
+			outer: glow + 4
+		};
 	}
 
 	function homeCardHtml(home) {
@@ -243,14 +267,16 @@
 		$hoverCard = $('#travel-hover-card');
 
 		(travelData.homeBases || []).forEach(function (home) {
-			addMarker(home.id, home.lat, home.lng, true, home, null, 0);
+			addMarker(home.id, home.lat, home.lng, true, home, null, 0, 1);
 		});
+
+		var maxVisits = maxCityVisits();
 
 		(travelData.cities || []).forEach(function (city) {
 			var trips = (travelData.trips || []).filter(function (t) {
 				return t.cityIds && t.cityIds.indexOf(city.id) >= 0;
 			});
-			addMarker(city.id, city.lat, city.lng, false, city, trips, city.visits);
+			addMarker(city.id, city.lat, city.lng, false, city, trips, city.visits, maxVisits);
 		});
 
 		var latlngs = [];
@@ -267,16 +293,29 @@
 		defaultZoom = map.getZoom();
 	}
 
-	function addMarker(id, lat, lng, isHome, data, trips, visitCount) {
-		var badge = (!isHome && visitCount > 1)
-			? '<span class="visit-badge">' + visitCount + '</span>'
-			: '';
+	function addMarker(id, lat, lng, isHome, data, trips, visitCount, maxVisits) {
+		var html;
+		var iconSize;
+		var iconAnchor;
+
+		if (isHome) {
+			html = '<div class="dot"></div>';
+			iconSize = [20, 20];
+			iconAnchor = [10, 10];
+		} else {
+			var heat = visitHeatStyle(visitCount || 1, maxVisits || 1);
+			html = '<div class="heat-spot" style="--heat-core:' + heat.core + 'px;--heat-glow:' +
+				heat.glow + 'px;--heat-color:' + heat.color + ';--heat-opacity:' + heat.opacity + ';">' +
+				'<span class="heat-glow"></span><span class="heat-core"></span></div>';
+			iconSize = [heat.outer, heat.outer];
+			iconAnchor = [heat.outer / 2, heat.outer / 2];
+		}
 
 		var icon = L.divIcon({
-			className: 'travel-city-marker' + (isHome ? ' home' : ''),
-			html: '<div class="dot"></div>' + badge,
-			iconSize: [20, 20],
-			iconAnchor: [10, 10]
+			className: 'travel-city-marker' + (isHome ? ' home' : ' heat'),
+			html: html,
+			iconSize: iconSize,
+			iconAnchor: iconAnchor
 		});
 
 		var marker = L.marker([lat, lng], { icon: icon }).addTo(map);

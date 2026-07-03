@@ -500,18 +500,18 @@
 
 						<p class="travel-intro">
 							<strong>Trip cards</strong> group each journey (leave home → return home).
-							The <strong>map</strong> shows every city you've visited as its own pin — hover a card to highlight that trip's route.
+							The <strong>map</strong> shows every city as a heat spot — brighter and larger means more revisits, including return visits within the same trip.
 						</p>
 
 						<div class="travel-layout">
 							<div class="travel-panel">
-								<h3 class="travel-panel-title"><i class="fas fa-map"></i> Cities map <span class="travel-panel-hint">one pin per city</span></h3>
+								<h3 class="travel-panel-title"><i class="fas fa-map"></i> Cities map <span class="travel-panel-hint">heat = revisit frequency</span></h3>
 								<div class="travel-map-wrap">
 									<div id="travel-map"></div>
 									<div id="travel-hover-card" class="travel-hover-card"></div>
 									<div class="travel-map-legend">
 										<span class="legend-home">Home base</span>
-										<span class="legend-visit">City visited</span>
+										<span class="legend-heat">Revisit heat <span class="heat-gradient"></span></span>
 										<span class="legend-route">Trip route (on hover)</span>
 									</div>
 								</div>

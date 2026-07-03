@@ -82,10 +82,19 @@
 	box-shadow: 0 0 0 1px #303F9F;
 }
 
-.legend-visit::before {
-	background: #FFC72C;
-	border: 2px solid #fff;
-	box-shadow: 0 0 0 1px #c9a000;
+.legend-heat {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.35rem;
+}
+
+.legend-heat .heat-gradient {
+	display: inline-block;
+	width: 52px;
+	height: 8px;
+	border-radius: 4px;
+	background: linear-gradient(to right, #FFE082, #BF360C);
+	vertical-align: middle;
 }
 
 .legend-route::before {
@@ -264,6 +273,37 @@
 	transition: transform 0.15s ease;
 }
 
+.travel-city-marker .heat-spot {
+	position: relative;
+	width: var(--heat-glow);
+	height: var(--heat-glow);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: transform 0.15s ease;
+}
+
+.travel-city-marker .heat-glow {
+	position: absolute;
+	width: var(--heat-glow);
+	height: var(--heat-glow);
+	border-radius: 50%;
+	background: var(--heat-color);
+	opacity: calc(var(--heat-opacity) * 0.4);
+	filter: blur(3px);
+}
+
+.travel-city-marker .heat-core {
+	position: relative;
+	z-index: 1;
+	width: var(--heat-core);
+	height: var(--heat-core);
+	border-radius: 50%;
+	background: var(--heat-color);
+	border: 2px solid #fff;
+	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
 .travel-city-marker.home .dot {
 	width: 16px;
 	height: 16px;
@@ -272,28 +312,16 @@
 }
 
 .travel-city-marker:hover .dot,
-.travel-city-marker.highlight .dot {
-	transform: scale(1.35);
+.travel-city-marker.highlight .dot,
+.travel-city-marker:hover .heat-spot,
+.travel-city-marker.highlight .heat-spot {
+	transform: scale(1.2);
 }
 
-.travel-city-marker.dimmed .dot {
+.travel-city-marker.dimmed .dot,
+.travel-city-marker.dimmed .heat-spot {
 	opacity: 0.25;
 	transform: scale(0.85);
-}
-
-.travel-city-marker .visit-badge {
-	position: absolute;
-	top: -6px;
-	right: -8px;
-	background: #303F9F;
-	color: #fff;
-	font-family: 'Roboto Mono', sans-serif;
-	font-size: 9px;
-	line-height: 1;
-	padding: 2px 4px;
-	border-radius: 8px;
-	min-width: 14px;
-	text-align: center;
 }
 
 @media (max-width: 991px) {
