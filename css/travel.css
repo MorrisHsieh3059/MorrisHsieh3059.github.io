@@ -22,25 +22,51 @@
 	margin-left: 0.35rem;
 }
 
+.travel-section.active {
+	overflow: hidden;
+}
+
+.travel-section .section-block {
+	flex: 1;
+	min-height: 0;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	padding-right: 36px;
+	padding-bottom: 28px;
+}
+
+.travel-section .container-fluid {
+	flex: 1;
+	min-height: 0;
+	display: flex;
+	flex-direction: column;
+}
+
 .travel-layout {
 	display: grid;
-	grid-template-columns: minmax(70%, 1fr) minmax(0, 30%);
-	gap: 1.25rem;
-	margin-top: 1.25rem;
+	grid-template-columns: minmax(0, 1fr) minmax(260px, 26%);
+	gap: 0.65rem;
+	margin-top: 1rem;
+	flex: 1;
+	min-height: 0;
 	align-items: stretch;
 }
 
 .travel-map-panel {
 	min-width: 0;
+	height: 100%;
+	min-height: 0;
 }
 
 .travel-map-wrap {
 	position: relative;
 	width: 100%;
-	height: min(72vh, 640px);
-	min-height: 420px;
+	height: 100%;
+	min-height: 0;
 	background: #e8eaf6;
 	border: 1px solid #d0d0d0;
+	box-sizing: border-box;
 }
 
 #travel-map {
@@ -201,18 +227,21 @@
 
 .travel-cards-sidebar {
 	min-width: 0;
-	height: min(72vh, 640px);
+	height: 100%;
 	display: flex;
 	flex-direction: column;
 	padding: 0;
+	margin-left: auto;
 }
 
 .travel-stats {
 	margin: 1rem 0 0.5rem;
 	font-family: 'Roboto Mono', sans-serif;
 	font-size: 0.88rem;
-	color: #555;
+	font-weight: 700;
+	color: #333;
 	letter-spacing: 0.02em;
+	flex-shrink: 0;
 }
 
 .travel-cards-panel {
@@ -371,8 +400,18 @@
 }
 
 @media (max-width: 991px) {
+	.travel-section.active {
+		overflow: auto;
+	}
+
+	.travel-section .section-block {
+		overflow: visible;
+		padding-right: 110px;
+	}
+
 	.travel-layout {
 		grid-template-columns: 1fr;
+		flex: none;
 	}
 
 	.travel-map-wrap {
@@ -382,6 +421,7 @@
 
 	.travel-cards-sidebar {
 		height: auto;
+		margin-left: 0;
 	}
 
 	.travel-hover-card {

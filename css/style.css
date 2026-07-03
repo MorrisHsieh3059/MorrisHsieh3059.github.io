@@ -203,6 +203,11 @@ body.border-dark .main-content > .page-border{
 	padding-top:110px;
 	background:#F0F0F0;
 }
+.travel-section{
+	display:flex;
+	flex-direction:column;
+	overflow:hidden;
+}
 .section.active{
 	visibility:visible;
 	z-index:99;
