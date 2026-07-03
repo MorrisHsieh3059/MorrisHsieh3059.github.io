@@ -8,9 +8,13 @@ import math
 import re
 import sys
 import zipfile
-from collections import defaultdict
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timezone
 from pathlib import Path
+
+try:
+    import reverse_geocoder as rg
+except ImportError:
+    rg = None  # type: ignore
 
 ROOT = Path(__file__).resolve().parent.parent
 OUTPUT = ROOT / "data" / "travel.json"
@@ -18,8 +22,22 @@ OUTPUT = ROOT / "data" / "travel.json"
 HOME_SWITCH = datetime(2022, 8, 1, tzinfo=timezone.utc)
 TAIPEI = {"lat": 25.0330, "lng": 121.5654, "radius_km": 45}
 NYC = {"lat": 40.7128, "lng": -74.0060, "radius_km": 55}
-MIN_VISIT_HOURS = 4
-MIN_TRIP_GAP_DAYS = 5
+MIN_VISIT_HOURS = 3
+MIN_TRIP_GAP_DAYS = 4
+SKIP_SEMANTIC = {"inferred home", "home", "inferred work", "work"}
+
+CC_NAMES = {
+    "AD": "Andorra", "AE": "United Arab Emirates", "AT": "Austria", "AU": "Australia",
+    "BE": "Belgium", "BG": "Bulgaria", "CA": "Canada", "CH": "Switzerland", "CN": "China",
+    "CZ": "Czech Republic", "DE": "Germany", "DK": "Denmark", "EE": "Estonia", "ES": "Spain",
+    "FI": "Finland", "FR": "France", "GB": "United Kingdom", "GR": "Greece", "HK": "Hong Kong",
+    "HR": "Croatia", "HU": "Hungary", "IE": "Ireland", "IS": "Iceland", "IT": "Italy",
+    "JP": "Japan", "KR": "South Korea", "LT": "Lithuania", "LU": "Luxembourg", "LV": "Latvia",
+    "MO": "Macau", "MX": "Mexico", "MY": "Malaysia", "NL": "Netherlands", "NO": "Norway",
+    "PL": "Poland", "PT": "Portugal", "RO": "Romania", "RU": "Russia", "SE": "Sweden",
+    "SG": "Singapore", "SI": "Slovenia", "SK": "Slovakia", "TH": "Thailand", "TR": "Turkey",
+    "TW": "Taiwan", "US": "United States", "VN": "Vietnam",
+}
 
 
 def haversine_km(lat1: float, lng1: float, lat2: float, lng2: float) -> float:
@@ -47,18 +65,31 @@ def coord_from_e7(e7: int | float | None) -> float | None:
     return float(e7) / 1e7
 
 
+def parse_geo_string(value: str | None) -> tuple[float, float] | None:
+    if not value:
+        return None
+    if value.startswith("geo:"):
+        value = value[4:]
+    try:
+        lat_s, lng_s = value.split(",", 1)
+        return float(lat_s), float(lng_s)
+    except (ValueError, AttributeError):
+        return None
+
+
 def is_home_visit(lat: float, lng: float, when: datetime) -> bool:
     if when < HOME_SWITCH:
         return haversine_km(lat, lng, TAIPEI["lat"], TAIPEI["lng"]) <= TAIPEI["radius_km"]
     return haversine_km(lat, lng, NYC["lat"], NYC["lng"]) <= NYC["radius_km"]
 
 
+def country_name(cc: str) -> str:
+    return CC_NAMES.get(cc.upper(), cc.upper())
+
+
 def normalize_city(name: str) -> str:
     name = re.sub(r"\s+", " ", name.strip())
-    for suffix in (", Taiwan", ", TW", ", United States", ", USA", ", US", ", NY"):
-        if name.endswith(suffix):
-            name = name[: -len(suffix)].strip()
-    return name
+    return name or "Unknown"
 
 
 def city_key(city: str, country: str) -> str:
@@ -66,22 +97,19 @@ def city_key(city: str, country: str) -> str:
     return slug or "unknown"
 
 
-def load_json_files(source: Path) -> list[dict]:
-    payloads: list[dict] = []
+def load_records(source: Path) -> tuple[list[dict], str]:
+    """Load timeline records from json / zip / directory."""
 
-    def ingest(path: Path) -> None:
-        if path.suffix.lower() != ".json":
-            return
-        try:
-            data = json.loads(path.read_text(encoding="utf-8"))
-        except (json.JSONDecodeError, OSError):
-            return
+    def flatten(data) -> list[dict]:
+        if isinstance(data, list):
+            return [x for x in data if isinstance(x, dict)]
         if isinstance(data, dict):
-            payloads.append(data)
-        elif isinstance(data, list):
-            for item in data:
-                if isinstance(item, dict):
-                    payloads.append(item)
+            if "timelineObjects" in data:
+                return data["timelineObjects"]
+            return [data]
+        return []
+
+    records: list[dict] = []
 
     if source.is_file() and source.suffix.lower() == ".zip":
         with zipfile.ZipFile(source) as zf:
@@ -92,95 +120,129 @@ def load_json_files(source: Path) -> list[dict]:
                     data = json.loads(zf.read(name))
                 except (json.JSONDecodeError, KeyError):
                     continue
-                if isinstance(data, dict):
-                    payloads.append(data)
-                elif isinstance(data, list):
-                    for item in data:
-                        if isinstance(item, dict):
-                            payloads.append(item)
-    elif source.is_dir():
+                records.extend(flatten(data))
+        return records, source.name
+
+    if source.is_dir():
         for path in source.rglob("*.json"):
-            ingest(path)
-    elif source.is_file():
-        ingest(source)
-
-    return payloads
-
-
-def extract_visits(payloads: list[dict]) -> list[dict]:
-    visits: list[dict] = []
-
-    for payload in payloads:
-        # Semantic Location History monthly files
-        if "timelineObjects" in payload:
-            for obj in payload.get("timelineObjects", []):
-                pv = obj.get("placeVisit")
-                if not pv:
-                    continue
-                loc = pv.get("location", {})
-                lat = coord_from_e7(loc.get("latitudeE7"))
-                lng = coord_from_e7(loc.get("longitudeE7"))
-                if lat is None or lng is None:
-                    continue
-                start = parse_ts((pv.get("duration") or {}).get("startTimestamp"))
-                end = parse_ts((pv.get("duration") or {}).get("endTimestamp"))
-                if not start:
-                    continue
-                hours = 0.0
-                if end:
-                    hours = (end - start).total_seconds() / 3600
-                name = loc.get("name") or loc.get("address") or "Unknown place"
-                address = loc.get("address") or ""
-                country = ""
-                for part in address.split(","):
-                    part = part.strip()
-                    if len(part) == 2 and part.isalpha():
-                        country = part
-                visits.append(
-                    {
-                        "city": normalize_city(name.split(",")[0]),
-                        "country": country or "Unknown",
-                        "lat": lat,
-                        "lng": lng,
-                        "start": start,
-                        "end": end,
-                        "hours": hours,
-                        "source": "semantic",
-                    }
-                )
-
-        # Raw Records.json timeline edits / visits
-        for key in ("visit", "placeVisit", "activity"):
-            if key not in payload and "timelinePath" not in payload:
+            try:
+                data = json.loads(path.read_text(encoding="utf-8"))
+            except (json.JSONDecodeError, OSError):
                 continue
-        if "visit" in payload:
-            v = payload["visit"]
-            hier = v.get("hierarchyLevel", 0)
-            if hier != 0:
+            records.extend(flatten(data))
+        return records, source.name
+
+    if source.is_file():
+        data = json.loads(source.read_text(encoding="utf-8"))
+        return flatten(data), source.name
+
+    return [], source.name
+
+
+def build_geocode_cache(coords: set[tuple[float, float]]) -> dict[tuple[float, float], dict]:
+    cache: dict[tuple[float, float], dict] = {}
+    if not coords:
+        return cache
+    if rg is None:
+        for c in coords:
+            cache[c] = {"city": "Unknown", "country": "Unknown", "cc": ""}
+        return cache
+
+    ordered = sorted(coords)
+    results = rg.search(ordered, mode=1)
+    for coord, res in zip(ordered, results):
+        cache[coord] = {
+            "city": normalize_city(res["name"]),
+            "country": country_name(res["cc"]),
+            "cc": res["cc"],
+        }
+    return cache
+
+
+def extract_visits(records: list[dict]) -> list[dict]:
+    raw: list[dict] = []
+    coord_buckets: set[tuple[float, float]] = set()
+
+    for record in records:
+        # Google Maps location-history.json export
+        if "visit" in record and "startTime" in record:
+            v = record["visit"]
+            if str(v.get("hierarchyLevel", "0")) != "0":
                 continue
-            tp = v.get("topCandidate") or {}
-            lat = coord_from_e7((tp.get("placeLocation") or {}).get("latE7"))
-            lng = coord_from_e7((tp.get("placeLocation") or {}).get("lngE7"))
-            if lat is None or lng is None:
+            tc = v.get("topCandidate") or {}
+            semantic = (tc.get("semanticType") or "").lower()
+            if semantic in SKIP_SEMANTIC:
                 continue
-            start = parse_ts((v.get("time") or {}).get("range", {}).get("start"))
-            end = parse_ts((v.get("time") or {}).get("range", {}).get("end"))
+            coords = parse_geo_string(tc.get("placeLocation"))
+            if not coords:
+                continue
+            lat, lng = coords
+            start = parse_ts(record.get("startTime"))
+            end = parse_ts(record.get("endTime"))
             if not start:
                 continue
             hours = (end - start).total_seconds() / 3600 if end else MIN_VISIT_HOURS
-            label = tp.get("label") or "Unknown place"
-            visits.append(
+            bucket = (round(lat, 2), round(lng, 2))
+            coord_buckets.add(bucket)
+            raw.append(
                 {
-                    "city": normalize_city(label.split(",")[0]),
-                    "country": "Unknown",
                     "lat": lat,
                     "lng": lng,
+                    "bucket": bucket,
                     "start": start,
                     "end": end,
                     "hours": hours,
-                    "source": "records",
+                    "semantic": semantic,
+                    "source": "location-history",
                 }
             )
+            continue
+
+        # Semantic Location History (monthly Takeout files)
+        if "placeVisit" in record:
+            pv = record["placeVisit"]
+        elif "timelineObjects" not in record and record.get("placeVisit"):
+            pv = record["placeVisit"]
+        else:
+            pv = None
+
+        if pv:
+            loc = pv.get("location", {})
+            lat = coord_from_e7(loc.get("latitudeE7"))
+            lng = coord_from_e7(loc.get("longitudeE7"))
+            if lat is None or lng is None:
+                continue
+            start = parse_ts((pv.get("duration") or {}).get("startTimestamp"))
+            end = parse_ts((pv.get("duration") or {}).get("endTimestamp"))
+            if not start:
+                continue
+            hours = (end - start).total_seconds() / 3600 if end else MIN_VISIT_HOURS
+            name = loc.get("name") or loc.get("address") or "Unknown"
+            bucket = (round(lat, 2), round(lng, 2))
+            coord_buckets.add(bucket)
+            raw.append(
+                {
+                    "lat": lat,
+                    "lng": lng,
+                    "bucket": bucket,
+                    "start": start,
+                    "end": end,
+                    "hours": hours,
+                    "city": normalize_city(name.split(",")[0]),
+                    "country": "Unknown",
+                    "source": "semantic",
+                }
+            )
+
+    geocode = build_geocode_cache(coord_buckets)
+    visits: list[dict] = []
+
+    for item in raw:
+        if item.get("source") == "location-history":
+            geo = geocode.get(item["bucket"], {"city": "Unknown", "country": "Unknown"})
+            item["city"] = geo["city"]
+            item["country"] = geo["country"]
+        visits.append(item)
 
     visits.sort(key=lambda v: v["start"])
     return visits
@@ -202,15 +264,26 @@ def cluster_trips(visits: list[dict]) -> list[list[dict]]:
     current = [travel_visits[0]]
     for v in travel_visits[1:]:
         prev = current[-1]
-        gap_days = (v["start"] - (prev.get("end") or prev["start"])).days
-        same_country = v["country"] == prev["country"] and v["country"] != "Unknown"
-        if gap_days > MIN_TRIP_GAP_DAYS and not same_country:
+        prev_end = prev.get("end") or prev["start"]
+        gap_days = (v["start"] - prev_end).total_seconds() / 86400
+        if gap_days > MIN_TRIP_GAP_DAYS:
             trips.append(current)
             current = [v]
         else:
             current.append(v)
     trips.append(current)
     return trips
+
+
+def trip_title(group: list[dict], start: datetime, end: datetime) -> str:
+    countries = sorted({v["country"] for v in group if v["country"] != "Unknown"})
+    if len(countries) == 1:
+        region = countries[0]
+    elif len(countries) <= 3:
+        region = " · ".join(countries)
+    else:
+        region = f"{countries[0]} +{len(countries) - 1} more"
+    return f"{region} — {start.strftime('%b %d')}–{end.strftime('%b %d, %Y')}"
 
 
 def build_output(visits: list[dict], source_note: str) -> dict:
@@ -221,6 +294,7 @@ def build_output(visits: list[dict], source_note: str) -> dict:
     for idx, group in enumerate(trips_raw, start=1):
         trip_id = f"trip-{idx:03d}"
         cities_in_trip: dict[str, dict] = {}
+
         for v in group:
             ck = city_key(v["city"], v["country"])
             if ck not in cities_in_trip:
@@ -239,11 +313,11 @@ def build_output(visits: list[dict], source_note: str) -> dict:
                 }
             city_stats[ck]["visits"] += 1
             city_stats[ck]["tripIds"].append(trip_id)
-            if v["start"].date().isoformat() < city_stats[ck]["firstVisit"]:
-                city_stats[ck]["firstVisit"] = v["start"].date().isoformat()
-            if v["start"].date().isoformat() > city_stats[ck]["lastVisit"]:
-                city_stats[ck]["lastVisit"] = v["start"].date().isoformat()
-            # Average lat/lng across visits
+            d = v["start"].date().isoformat()
+            if d < city_stats[ck]["firstVisit"]:
+                city_stats[ck]["firstVisit"] = d
+            if d > city_stats[ck]["lastVisit"]:
+                city_stats[ck]["lastVisit"] = d
             n = city_stats[ck]["visits"]
             city_stats[ck]["lat"] = ((n - 1) * city_stats[ck]["lat"] + v["lat"]) / n
             city_stats[ck]["lng"] = ((n - 1) * city_stats[ck]["lng"] + v["lng"]) / n
@@ -252,30 +326,30 @@ def build_output(visits: list[dict], source_note: str) -> dict:
         end = max((v.get("end") or v["start"]) for v in group)
         countries = sorted({v["country"] for v in group if v["country"] != "Unknown"})
         city_names = sorted({v["city"] for v in group})
-        title_bits = []
-        if countries:
-            title_bits.append(" · ".join(countries[:3]))
-        title = f"Trip {start.strftime('%b %Y')}"
-        if title_bits:
-            title = f"{title_bits[0]} — {start.strftime('%b %d')}–{end.strftime('%b %d, %Y')}"
 
         trips_out.append(
             {
                 "id": trip_id,
-                "title": title,
+                "title": trip_title(group, start, end),
                 "startDate": start.date().isoformat(),
                 "endDate": end.date().isoformat(),
                 "cities": city_names,
                 "countries": countries,
                 "cityIds": sorted(cities_in_trip.keys()),
-                "description": f"Visited {len(city_names)} cities across {len(countries) or 1} countr{'ies' if len(countries) != 1 else 'y'}.",
+                "description": (
+                    f"Visited {len(city_names)} "
+                    f"{'city' if len(city_names) == 1 else 'cities'} in "
+                    f"{len(countries) or 1} "
+                    f"{'country' if len(countries) == 1 else 'countries'}."
+                ),
                 "photos": [],
             }
         )
 
-    # Deduplicate tripIds per city
     for c in city_stats.values():
         c["tripIds"] = sorted(set(c["tripIds"]))
+        c["lat"] = round(c["lat"], 5)
+        c["lng"] = round(c["lng"], 5)
 
     return {
         "generatedAt": datetime.now(timezone.utc).isoformat(),
@@ -313,29 +387,25 @@ def build_output(visits: list[dict], source_note: str) -> dict:
 
 
 def main() -> int:
-    source = Path(sys.argv[1]) if len(sys.argv) > 1 else Path("/Users/morris/Downloads/takeout-20260703T202550Z-3-001.zip")
+    default = Path("/Users/morris/Downloads/location-history.json")
+    source = Path(sys.argv[1]) if len(sys.argv) > 1 else default
     if not source.exists():
         print(f"Source not found: {source}", file=sys.stderr)
         return 1
 
-    payloads = load_json_files(source)
-    visits = extract_visits(payloads)
+    records, name = load_records(source)
+    visits = extract_visits(records)
 
     if not visits:
-        note = (
-            "No place visits found in export. Google Takeout may only include Timeline settings "
-            "when history is stored on-device. Export from Google Maps → Your Timeline → Settings → Export."
-        )
+        note = "No place visits found in export."
     else:
-        note = f"Parsed {len(visits)} visits from {source.name}"
+        note = f"Parsed {len(visits)} visits from {name}"
 
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     data = build_output(visits, note)
     OUTPUT.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"Wrote {OUTPUT}")
-    print(f"  Trips: {data['stats']['totalTrips']}, Cities: {data['stats']['totalCities']}")
-    if not visits:
-        print(f"  Note: {note}")
+    print(f"  Trips: {data['stats']['totalTrips']}, Cities: {data['stats']['totalCities']}, Countries: {data['stats']['totalCountries']}")
     return 0
 
 

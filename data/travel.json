@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-03T20:32:56.711946+00:00",
-  "sourceNote": "No place visits found in export. Google Takeout may only include Timeline settings when history is stored on-device. Export from Google Maps → Your Timeline → Settings → Export.",
+  "generatedAt": "2026-07-03T20:40:35.289837+00:00",
+  "sourceNote": "Parsed 9770 visits from location-history.json",
   "homeBases": [
     {
       "id": "home-taipei",
@@ -23,11 +23,2318 @@
       "label": "Home base (since Aug 2022)"
     }
   ],
-  "cities": [],
-  "trips": [],
+  "cities": [
+    {
+      "id": "kuala-lumpur-malaysia",
+      "city": "Kuala Lumpur",
+      "country": "Malaysia",
+      "lat": 3.13619,
+      "lng": 101.69101,
+      "visits": 1,
+      "firstVisit": "2014-06-03",
+      "lastVisit": "2014-06-03",
+      "tripIds": [
+        "trip-001"
+      ]
+    },
+    {
+      "id": "puli-taiwan",
+      "city": "Puli",
+      "country": "Taiwan",
+      "lat": 23.99971,
+      "lng": 121.14239,
+      "visits": 2,
+      "firstVisit": "2014-07-05",
+      "lastVisit": "2014-07-06",
+      "tripIds": [
+        "trip-002"
+      ]
+    },
+    {
+      "id": "admiralteisky-russia",
+      "city": "Admiralteisky",
+      "country": "Russia",
+      "lat": 59.89369,
+      "lng": 30.3176,
+      "visits": 1,
+      "firstVisit": "2015-04-19",
+      "lastVisit": "2015-04-19",
+      "tripIds": [
+        "trip-003"
+      ]
+    },
+    {
+      "id": "helsinki-finland",
+      "city": "Helsinki",
+      "country": "Finland",
+      "lat": 60.17993,
+      "lng": 24.92702,
+      "visits": 2,
+      "firstVisit": "2015-04-22",
+      "lastVisit": "2015-04-22",
+      "tripIds": [
+        "trip-003"
+      ]
+    },
+    {
+      "id": "tallinn-estonia",
+      "city": "Tallinn",
+      "country": "Estonia",
+      "lat": 59.43839,
+      "lng": 24.75979,
+      "visits": 3,
+      "firstVisit": "2015-04-23",
+      "lastVisit": "2015-04-25",
+      "tripIds": [
+        "trip-003"
+      ]
+    },
+    {
+      "id": "oestermalm-sweden",
+      "city": "OEstermalm",
+      "country": "Sweden",
+      "lat": 59.32524,
+      "lng": 18.09901,
+      "visits": 3,
+      "firstVisit": "2015-04-26",
+      "lastVisit": "2015-04-27",
+      "tripIds": [
+        "trip-003"
+      ]
+    },
+    {
+      "id": "warsaw-poland",
+      "city": "Warsaw",
+      "country": "Poland",
+      "lat": 52.22944,
+      "lng": 21.01269,
+      "visits": 3,
+      "firstVisit": "2015-04-28",
+      "lastVisit": "2015-04-30",
+      "tripIds": [
+        "trip-003"
+      ]
+    },
+    {
+      "id": "ljubljana-slovenia",
+      "city": "Ljubljana",
+      "country": "Slovenia",
+      "lat": 46.07149,
+      "lng": 14.51478,
+      "visits": 1,
+      "firstVisit": "2016-04-18",
+      "lastVisit": "2016-04-18",
+      "tripIds": [
+        "trip-004"
+      ]
+    },
+    {
+      "id": "wola-poland",
+      "city": "Wola",
+      "country": "Poland",
+      "lat": 52.22604,
+      "lng": 20.98883,
+      "visits": 2,
+      "firstVisit": "2016-04-19",
+      "lastVisit": "2016-04-20",
+      "tripIds": [
+        "trip-004"
+      ]
+    },
+    {
+      "id": "sandvika-norway",
+      "city": "Sandvika",
+      "country": "Norway",
+      "lat": 59.88581,
+      "lng": 10.51895,
+      "visits": 4,
+      "firstVisit": "2016-04-21",
+      "lastVisit": "2016-04-23",
+      "tripIds": [
+        "trip-004"
+      ]
+    },
+    {
+      "id": "mala-strana-czech-republic",
+      "city": "Mala Strana",
+      "country": "Czech Republic",
+      "lat": 50.09951,
+      "lng": 14.3899,
+      "visits": 3,
+      "firstVisit": "2016-04-24",
+      "lastVisit": "2016-04-26",
+      "tripIds": [
+        "trip-004"
+      ]
+    },
+    {
+      "id": "saint-petersburg-russia",
+      "city": "Saint Petersburg",
+      "country": "Russia",
+      "lat": 59.9396,
+      "lng": 30.31988,
+      "visits": 3,
+      "firstVisit": "2016-04-27",
+      "lastVisit": "2016-04-29",
+      "tripIds": [
+        "trip-004"
+      ]
+    },
+    {
+      "id": "kupchino-russia",
+      "city": "Kupchino",
+      "country": "Russia",
+      "lat": 59.81999,
+      "lng": 30.31715,
+      "visits": 1,
+      "firstVisit": "2016-04-29",
+      "lastVisit": "2016-04-29",
+      "tripIds": [
+        "trip-004"
+      ]
+    },
+    {
+      "id": "naha-shi-japan",
+      "city": "Naha-shi",
+      "country": "Japan",
+      "lat": 26.21417,
+      "lng": 127.67056,
+      "visits": 4,
+      "firstVisit": "2016-08-17",
+      "lastVisit": "2016-08-20",
+      "tripIds": [
+        "trip-005"
+      ]
+    },
+    {
+      "id": "ishikawa-japan",
+      "city": "Ishikawa",
+      "country": "Japan",
+      "lat": 26.41503,
+      "lng": 127.71554,
+      "visits": 1,
+      "firstVisit": "2016-08-19",
+      "lastVisit": "2016-08-19",
+      "tripIds": [
+        "trip-005"
+      ]
+    },
+    {
+      "id": "kaohsiung-taiwan",
+      "city": "Kaohsiung",
+      "country": "Taiwan",
+      "lat": 22.6322,
+      "lng": 120.30069,
+      "visits": 3,
+      "firstVisit": "2017-05-30",
+      "lastVisit": "2019-04-19",
+      "tripIds": [
+        "trip-006",
+        "trip-007",
+        "trip-010"
+      ]
+    },
+    {
+      "id": "tainan-taiwan",
+      "city": "Tainan",
+      "country": "Taiwan",
+      "lat": 23.00517,
+      "lng": 120.20154,
+      "visits": 3,
+      "firstVisit": "2017-05-31",
+      "lastVisit": "2023-08-19",
+      "tripIds": [
+        "trip-006",
+        "trip-018"
+      ]
+    },
+    {
+      "id": "taichung-taiwan",
+      "city": "Taichung",
+      "country": "Taiwan",
+      "lat": 24.15494,
+      "lng": 120.66314,
+      "visits": 7,
+      "firstVisit": "2017-06-01",
+      "lastVisit": "2023-08-20",
+      "tripIds": [
+        "trip-006",
+        "trip-014",
+        "trip-015",
+        "trip-018"
+      ]
+    },
+    {
+      "id": "datun-china",
+      "city": "Datun",
+      "country": "China",
+      "lat": 39.9664,
+      "lng": 116.40554,
+      "visits": 4,
+      "firstVisit": "2018-07-19",
+      "lastVisit": "2018-07-29",
+      "tripIds": [
+        "trip-008"
+      ]
+    },
+    {
+      "id": "haidian-china",
+      "city": "Haidian",
+      "country": "China",
+      "lat": 39.98617,
+      "lng": 116.30575,
+      "visits": 33,
+      "firstVisit": "2018-07-20",
+      "lastVisit": "2018-08-19",
+      "tripIds": [
+        "trip-008"
+      ]
+    },
+    {
+      "id": "wangjing-china",
+      "city": "Wangjing",
+      "country": "China",
+      "lat": 40.00671,
+      "lng": 116.48377,
+      "visits": 1,
+      "firstVisit": "2018-08-10",
+      "lastVisit": "2018-08-10",
+      "tripIds": [
+        "trip-008"
+      ]
+    },
+    {
+      "id": "longtan-china",
+      "city": "Longtan",
+      "country": "China",
+      "lat": 39.86778,
+      "lng": 116.49482,
+      "visits": 1,
+      "firstVisit": "2018-08-11",
+      "lastVisit": "2018-08-11",
+      "tripIds": [
+        "trip-008"
+      ]
+    },
+    {
+      "id": "jingshan-china",
+      "city": "Jingshan",
+      "country": "China",
+      "lat": 39.91777,
+      "lng": 116.40236,
+      "visits": 3,
+      "firstVisit": "2018-08-12",
+      "lastVisit": "2018-08-25",
+      "tripIds": [
+        "trip-008",
+        "trip-009"
+      ]
+    },
+    {
+      "id": "lisui-china",
+      "city": "Lisui",
+      "country": "China",
+      "lat": 40.08736,
+      "lng": 116.71528,
+      "visits": 1,
+      "firstVisit": "2018-08-15",
+      "lastVisit": "2018-08-15",
+      "tripIds": [
+        "trip-008"
+      ]
+    },
+    {
+      "id": "dongfeng-china",
+      "city": "Dongfeng",
+      "country": "China",
+      "lat": 39.90832,
+      "lng": 116.47623,
+      "visits": 1,
+      "firstVisit": "2018-08-18",
+      "lastVisit": "2018-08-18",
+      "tripIds": [
+        "trip-008"
+      ]
+    },
+    {
+      "id": "ma-kung-taiwan",
+      "city": "Ma-kung",
+      "country": "Taiwan",
+      "lat": 23.5773,
+      "lng": 119.57328,
+      "visits": 3,
+      "firstVisit": "2019-06-24",
+      "lastVisit": "2019-06-26",
+      "tripIds": [
+        "trip-011"
+      ]
+    },
+    {
+      "id": "hsinchu-taiwan",
+      "city": "Hsinchu",
+      "country": "Taiwan",
+      "lat": 24.8078,
+      "lng": 120.98003,
+      "visits": 2,
+      "firstVisit": "2019-07-16",
+      "lastVisit": "2021-02-20",
+      "tripIds": [
+        "trip-012",
+        "trip-013"
+      ]
+    },
+    {
+      "id": "lexington-united-states",
+      "city": "Lexington",
+      "country": "United States",
+      "lat": 42.44543,
+      "lng": -71.26068,
+      "visits": 1,
+      "firstVisit": "2023-06-25",
+      "lastVisit": "2023-06-25",
+      "tripIds": [
+        "trip-016"
+      ]
+    },
+    {
+      "id": "lancaster-united-states",
+      "city": "Lancaster",
+      "country": "United States",
+      "lat": 40.07416,
+      "lng": -76.28785,
+      "visits": 13,
+      "firstVisit": "2023-07-01",
+      "lastVisit": "2025-06-30",
+      "tripIds": [
+        "trip-017",
+        "trip-027",
+        "trip-040"
+      ]
+    },
+    {
+      "id": "niagara-falls-united-states",
+      "city": "Niagara Falls",
+      "country": "United States",
+      "lat": 43.08372,
+      "lng": -79.06503,
+      "visits": 1,
+      "firstVisit": "2023-08-05",
+      "lastVisit": "2023-08-05",
+      "tripIds": [
+        "trip-018"
+      ]
+    },
+    {
+      "id": "woodlawn-united-states",
+      "city": "Woodlawn",
+      "country": "United States",
+      "lat": 39.31301,
+      "lng": -76.74172,
+      "visits": 1,
+      "firstVisit": "2023-08-07",
+      "lastVisit": "2023-08-07",
+      "tripIds": [
+        "trip-018"
+      ]
+    },
+    {
+      "id": "arlington-united-states",
+      "city": "Arlington",
+      "country": "United States",
+      "lat": 38.84763,
+      "lng": -77.08041,
+      "visits": 1,
+      "firstVisit": "2023-08-08",
+      "lastVisit": "2023-08-08",
+      "tripIds": [
+        "trip-018"
+      ]
+    },
+    {
+      "id": "bordentown-united-states",
+      "city": "Bordentown",
+      "country": "United States",
+      "lat": 40.14927,
+      "lng": -74.69939,
+      "visits": 1,
+      "firstVisit": "2023-08-09",
+      "lastVisit": "2023-08-09",
+      "tripIds": [
+        "trip-018"
+      ]
+    },
+    {
+      "id": "providence-united-states",
+      "city": "Providence",
+      "country": "United States",
+      "lat": 41.84357,
+      "lng": -71.4121,
+      "visits": 1,
+      "firstVisit": "2023-08-11",
+      "lastVisit": "2023-08-11",
+      "tripIds": [
+        "trip-018"
+      ]
+    },
+    {
+      "id": "taipei-taiwan",
+      "city": "Taipei",
+      "country": "Taiwan",
+      "lat": 25.07922,
+      "lng": 121.58783,
+      "visits": 41,
+      "firstVisit": "2023-08-13",
+      "lastVisit": "2025-11-12",
+      "tripIds": [
+        "trip-018",
+        "trip-044"
+      ]
+    },
+    {
+      "id": "taibao-taiwan",
+      "city": "Taibao",
+      "country": "Taiwan",
+      "lat": 23.47313,
+      "lng": 120.29272,
+      "visits": 1,
+      "firstVisit": "2023-08-19",
+      "lastVisit": "2023-08-19",
+      "tripIds": [
+        "trip-018"
+      ]
+    },
+    {
+      "id": "yilan-taiwan",
+      "city": "Yilan",
+      "country": "Taiwan",
+      "lat": 24.75524,
+      "lng": 121.71521,
+      "visits": 2,
+      "firstVisit": "2023-08-24",
+      "lastVisit": "2025-11-07",
+      "tripIds": [
+        "trip-018",
+        "trip-044"
+      ]
+    },
+    {
+      "id": "keelung-taiwan",
+      "city": "Keelung",
+      "country": "Taiwan",
+      "lat": 25.21251,
+      "lng": 121.63624,
+      "visits": 2,
+      "firstVisit": "2023-08-26",
+      "lastVisit": "2023-08-26",
+      "tripIds": [
+        "trip-018"
+      ]
+    },
+    {
+      "id": "coppell-united-states",
+      "city": "Coppell",
+      "country": "United States",
+      "lat": 32.94258,
+      "lng": -97.03572,
+      "visits": 4,
+      "firstVisit": "2023-09-02",
+      "lastVisit": "2024-10-18",
+      "tripIds": [
+        "trip-018",
+        "trip-030"
+      ]
+    },
+    {
+      "id": "river-oaks-united-states",
+      "city": "River Oaks",
+      "country": "United States",
+      "lat": 32.78928,
+      "lng": -97.34702,
+      "visits": 1,
+      "firstVisit": "2023-09-03",
+      "lastVisit": "2023-09-03",
+      "tripIds": [
+        "trip-018"
+      ]
+    },
+    {
+      "id": "grapevine-united-states",
+      "city": "Grapevine",
+      "country": "United States",
+      "lat": 32.89981,
+      "lng": -97.04033,
+      "visits": 1,
+      "firstVisit": "2023-09-04",
+      "lastVisit": "2023-09-04",
+      "tripIds": [
+        "trip-018"
+      ]
+    },
+    {
+      "id": "long-valley-united-states",
+      "city": "Long Valley",
+      "country": "United States",
+      "lat": 40.75114,
+      "lng": -74.7364,
+      "visits": 1,
+      "firstVisit": "2023-10-21",
+      "lastVisit": "2023-10-21",
+      "tripIds": [
+        "trip-019"
+      ]
+    },
+    {
+      "id": "detroit-united-states",
+      "city": "Detroit",
+      "country": "United States",
+      "lat": 42.32963,
+      "lng": -83.04613,
+      "visits": 1,
+      "firstVisit": "2023-11-04",
+      "lastVisit": "2023-11-04",
+      "tripIds": [
+        "trip-020"
+      ]
+    },
+    {
+      "id": "westland-united-states",
+      "city": "Westland",
+      "country": "United States",
+      "lat": 42.36674,
+      "lng": -83.40736,
+      "visits": 1,
+      "firstVisit": "2023-11-05",
+      "lastVisit": "2023-11-05",
+      "tripIds": [
+        "trip-020"
+      ]
+    },
+    {
+      "id": "fair-plain-united-states",
+      "city": "Fair Plain",
+      "country": "United States",
+      "lat": 42.07627,
+      "lng": -86.41887,
+      "visits": 1,
+      "firstVisit": "2023-11-06",
+      "lastVisit": "2023-11-06",
+      "tripIds": [
+        "trip-020"
+      ]
+    },
+    {
+      "id": "chicago-united-states",
+      "city": "Chicago",
+      "country": "United States",
+      "lat": 41.8622,
+      "lng": -87.62199,
+      "visits": 2,
+      "firstVisit": "2023-11-06",
+      "lastVisit": "2023-11-07",
+      "tripIds": [
+        "trip-020"
+      ]
+    },
+    {
+      "id": "milano-italy",
+      "city": "Milano",
+      "country": "Italy",
+      "lat": 45.47905,
+      "lng": 9.19752,
+      "visits": 10,
+      "firstVisit": "2023-11-22",
+      "lastVisit": "2023-11-27",
+      "tripIds": [
+        "trip-021"
+      ]
+    },
+    {
+      "id": "venice-italy",
+      "city": "Venice",
+      "country": "Italy",
+      "lat": 45.43428,
+      "lng": 12.34639,
+      "visits": 1,
+      "firstVisit": "2023-11-23",
+      "lastVisit": "2023-11-23",
+      "tripIds": [
+        "trip-021"
+      ]
+    },
+    {
+      "id": "florence-italy",
+      "city": "Florence",
+      "country": "Italy",
+      "lat": 43.77309,
+      "lng": 11.25546,
+      "visits": 1,
+      "firstVisit": "2023-11-27",
+      "lastVisit": "2023-11-27",
+      "tripIds": [
+        "trip-021"
+      ]
+    },
+    {
+      "id": "princeton-united-states",
+      "city": "Princeton",
+      "country": "United States",
+      "lat": 40.34661,
+      "lng": -74.66583,
+      "visits": 3,
+      "firstVisit": "2024-02-17",
+      "lastVisit": "2025-06-07",
+      "tripIds": [
+        "trip-022",
+        "trip-038"
+      ]
+    },
+    {
+      "id": "sutton-united-states",
+      "city": "Sutton",
+      "country": "United States",
+      "lat": 43.2949,
+      "lng": -71.9829,
+      "visits": 1,
+      "firstVisit": "2024-03-13",
+      "lastVisit": "2024-03-13",
+      "tripIds": [
+        "trip-023"
+      ]
+    },
+    {
+      "id": "newbury-united-states",
+      "city": "Newbury",
+      "country": "United States",
+      "lat": 43.3429,
+      "lng": -72.06176,
+      "visits": 1,
+      "firstVisit": "2024-03-13",
+      "lastVisit": "2024-03-13",
+      "tripIds": [
+        "trip-023"
+      ]
+    },
+    {
+      "id": "meredith-united-states",
+      "city": "Meredith",
+      "country": "United States",
+      "lat": 43.60746,
+      "lng": -71.46588,
+      "visits": 1,
+      "firstVisit": "2024-03-14",
+      "lastVisit": "2024-03-14",
+      "tripIds": [
+        "trip-023"
+      ]
+    },
+    {
+      "id": "norwich-united-states",
+      "city": "Norwich",
+      "country": "United States",
+      "lat": 42.53339,
+      "lng": -75.52432,
+      "visits": 1,
+      "firstVisit": "2024-04-08",
+      "lastVisit": "2024-04-08",
+      "tripIds": [
+        "trip-024"
+      ]
+    },
+    {
+      "id": "shrewsbury-united-states",
+      "city": "Shrewsbury",
+      "country": "United States",
+      "lat": 40.13606,
+      "lng": -74.43616,
+      "visits": 1,
+      "firstVisit": "2024-04-13",
+      "lastVisit": "2024-04-13",
+      "tripIds": [
+        "trip-025"
+      ]
+    },
+    {
+      "id": "cheverly-united-states",
+      "city": "Cheverly",
+      "country": "United States",
+      "lat": 38.93725,
+      "lng": -76.91708,
+      "visits": 1,
+      "firstVisit": "2024-04-24",
+      "lastVisit": "2024-04-24",
+      "tripIds": [
+        "trip-026"
+      ]
+    },
+    {
+      "id": "strasburg-united-states",
+      "city": "Strasburg",
+      "country": "United States",
+      "lat": 39.99724,
+      "lng": -76.18784,
+      "visits": 1,
+      "firstVisit": "2024-06-28",
+      "lastVisit": "2024-06-28",
+      "tripIds": [
+        "trip-027"
+      ]
+    },
+    {
+      "id": "washington-d-c-united-states",
+      "city": "Washington, D.C.",
+      "country": "United States",
+      "lat": 38.90308,
+      "lng": -77.01863,
+      "visits": 10,
+      "firstVisit": "2024-07-22",
+      "lastVisit": "2026-05-21",
+      "tripIds": [
+        "trip-028",
+        "trip-033",
+        "trip-042",
+        "trip-049"
+      ]
+    },
+    {
+      "id": "withamsville-united-states",
+      "city": "Withamsville",
+      "country": "United States",
+      "lat": 39.06871,
+      "lng": -84.30172,
+      "visits": 2,
+      "firstVisit": "2024-09-01",
+      "lastVisit": "2024-09-02",
+      "tripIds": [
+        "trip-029"
+      ]
+    },
+    {
+      "id": "baie-d-urfe-canada",
+      "city": "Baie-D'Urfe",
+      "country": "Canada",
+      "lat": 45.42634,
+      "lng": -73.91629,
+      "visits": 4,
+      "firstVisit": "2024-10-11",
+      "lastVisit": "2024-10-14",
+      "tripIds": [
+        "trip-030"
+      ]
+    },
+    {
+      "id": "burlingame-united-states",
+      "city": "Burlingame",
+      "country": "United States",
+      "lat": 37.60156,
+      "lng": -122.36946,
+      "visits": 4,
+      "firstVisit": "2024-10-19",
+      "lastVisit": "2024-10-21",
+      "tripIds": [
+        "trip-030"
+      ]
+    },
+    {
+      "id": "lochbuie-united-states",
+      "city": "Lochbuie",
+      "country": "United States",
+      "lat": 39.85635,
+      "lng": -104.6764,
+      "visits": 1,
+      "firstVisit": "2024-10-22",
+      "lastVisit": "2024-10-22",
+      "tripIds": [
+        "trip-030"
+      ]
+    },
+    {
+      "id": "sant-marti-spain",
+      "city": "Sant Marti",
+      "country": "Spain",
+      "lat": 41.4,
+      "lng": 2.20111,
+      "visits": 3,
+      "firstVisit": "2024-11-28",
+      "lastVisit": "2024-11-30",
+      "tripIds": [
+        "trip-031"
+      ]
+    },
+    {
+      "id": "barcelona-spain",
+      "city": "Barcelona",
+      "country": "Spain",
+      "lat": 41.39352,
+      "lng": 2.16398,
+      "visits": 1,
+      "firstVisit": "2024-11-30",
+      "lastVisit": "2024-11-30",
+      "tripIds": [
+        "trip-031"
+      ]
+    },
+    {
+      "id": "city-center-spain",
+      "city": "City Center",
+      "country": "Spain",
+      "lat": 40.42027,
+      "lng": -3.70761,
+      "visits": 3,
+      "firstVisit": "2024-12-01",
+      "lastVisit": "2024-12-03",
+      "tripIds": [
+        "trip-031"
+      ]
+    },
+    {
+      "id": "madrid-spain",
+      "city": "Madrid",
+      "country": "Spain",
+      "lat": 40.41418,
+      "lng": -3.70791,
+      "visits": 1,
+      "firstVisit": "2024-12-02",
+      "lastVisit": "2024-12-02",
+      "tripIds": [
+        "trip-031"
+      ]
+    },
+    {
+      "id": "hudson-united-states",
+      "city": "Hudson",
+      "country": "United States",
+      "lat": 42.25382,
+      "lng": -73.79247,
+      "visits": 1,
+      "firstVisit": "2024-12-28",
+      "lastVisit": "2024-12-28",
+      "tripIds": [
+        "trip-032"
+      ]
+    },
+    {
+      "id": "raymond-united-states",
+      "city": "Raymond",
+      "country": "United States",
+      "lat": 43.89929,
+      "lng": -70.47219,
+      "visits": 1,
+      "firstVisit": "2025-02-22",
+      "lastVisit": "2025-02-22",
+      "tripIds": [
+        "trip-034"
+      ]
+    },
+    {
+      "id": "gorham-united-states",
+      "city": "Gorham",
+      "country": "United States",
+      "lat": 44.39325,
+      "lng": -71.19019,
+      "visits": 1,
+      "firstVisit": "2025-02-23",
+      "lastVisit": "2025-02-23",
+      "tripIds": [
+        "trip-034"
+      ]
+    },
+    {
+      "id": "montville-center-united-states",
+      "city": "Montville Center",
+      "country": "United States",
+      "lat": 41.47937,
+      "lng": -72.15108,
+      "visits": 1,
+      "firstVisit": "2025-02-24",
+      "lastVisit": "2025-02-24",
+      "tripIds": [
+        "trip-034"
+      ]
+    },
+    {
+      "id": "central-valley-united-states",
+      "city": "Central Valley",
+      "country": "United States",
+      "lat": 41.31694,
+      "lng": -74.12505,
+      "visits": 1,
+      "firstVisit": "2025-05-10",
+      "lastVisit": "2025-05-10",
+      "tripIds": [
+        "trip-035"
+      ]
+    },
+    {
+      "id": "milton-united-states",
+      "city": "Milton",
+      "country": "United States",
+      "lat": 41.66697,
+      "lng": -73.95493,
+      "visits": 1,
+      "firstVisit": "2025-05-17",
+      "lastVisit": "2025-05-17",
+      "tripIds": [
+        "trip-036"
+      ]
+    },
+    {
+      "id": "greenville-united-states",
+      "city": "Greenville",
+      "country": "United States",
+      "lat": 34.8614,
+      "lng": -82.40406,
+      "visits": 1,
+      "firstVisit": "2025-05-23",
+      "lastVisit": "2025-05-23",
+      "tripIds": [
+        "trip-037"
+      ]
+    },
+    {
+      "id": "forest-acres-united-states",
+      "city": "Forest Acres",
+      "country": "United States",
+      "lat": 33.96714,
+      "lng": -80.94119,
+      "visits": 1,
+      "firstVisit": "2025-05-24",
+      "lastVisit": "2025-05-24",
+      "tripIds": [
+        "trip-037"
+      ]
+    },
+    {
+      "id": "saint-george-united-states",
+      "city": "Saint George",
+      "country": "United States",
+      "lat": 33.19457,
+      "lng": -80.60479,
+      "visits": 1,
+      "firstVisit": "2025-05-25",
+      "lastVisit": "2025-05-25",
+      "tripIds": [
+        "trip-037"
+      ]
+    },
+    {
+      "id": "cary-united-states",
+      "city": "Cary",
+      "country": "United States",
+      "lat": 35.7392,
+      "lng": -78.7867,
+      "visits": 1,
+      "firstVisit": "2025-05-26",
+      "lastVisit": "2025-05-26",
+      "tripIds": [
+        "trip-037"
+      ]
+    },
+    {
+      "id": "redlands-united-states",
+      "city": "Redlands",
+      "country": "United States",
+      "lat": 34.06999,
+      "lng": -117.21486,
+      "visits": 1,
+      "firstVisit": "2025-06-21",
+      "lastVisit": "2025-06-21",
+      "tripIds": [
+        "trip-039"
+      ]
+    },
+    {
+      "id": "el-segundo-united-states",
+      "city": "El Segundo",
+      "country": "United States",
+      "lat": 33.94215,
+      "lng": -118.4036,
+      "visits": 2,
+      "firstVisit": "2025-06-22",
+      "lastVisit": "2025-11-15",
+      "tripIds": [
+        "trip-039",
+        "trip-044"
+      ]
+    },
+    {
+      "id": "pittsburgh-united-states",
+      "city": "Pittsburgh",
+      "country": "United States",
+      "lat": 40.44305,
+      "lng": -80.00547,
+      "visits": 3,
+      "firstVisit": "2025-08-02",
+      "lastVisit": "2025-08-03",
+      "tripIds": [
+        "trip-041"
+      ]
+    },
+    {
+      "id": "bloomfield-united-states",
+      "city": "Bloomfield",
+      "country": "United States",
+      "lat": 40.44787,
+      "lng": -79.94983,
+      "visits": 2,
+      "firstVisit": "2025-08-02",
+      "lastVisit": "2025-08-03",
+      "tripIds": [
+        "trip-041"
+      ]
+    },
+    {
+      "id": "hurley-united-states",
+      "city": "Hurley",
+      "country": "United States",
+      "lat": 41.89519,
+      "lng": -74.05814,
+      "visits": 3,
+      "firstVisit": "2025-10-11",
+      "lastVisit": "2025-10-12",
+      "tripIds": [
+        "trip-043"
+      ]
+    },
+    {
+      "id": "taoyuan-city-taiwan",
+      "city": "Taoyuan City",
+      "country": "Taiwan",
+      "lat": 25.08049,
+      "lng": 121.23116,
+      "visits": 2,
+      "firstVisit": "2025-11-04",
+      "lastVisit": "2025-11-14",
+      "tripIds": [
+        "trip-044"
+      ]
+    },
+    {
+      "id": "seoul-south-korea",
+      "city": "Seoul",
+      "country": "South Korea",
+      "lat": 37.52515,
+      "lng": 126.92907,
+      "visits": 1,
+      "firstVisit": "2025-11-05",
+      "lastVisit": "2025-11-05",
+      "tripIds": [
+        "trip-044"
+      ]
+    },
+    {
+      "id": "cork-ireland",
+      "city": "Cork",
+      "country": "Ireland",
+      "lat": 51.90293,
+      "lng": -8.45839,
+      "visits": 1,
+      "firstVisit": "2025-11-27",
+      "lastVisit": "2025-11-27",
+      "tripIds": [
+        "trip-045"
+      ]
+    },
+    {
+      "id": "waterford-ireland",
+      "city": "Waterford",
+      "country": "Ireland",
+      "lat": 52.25118,
+      "lng": -7.13749,
+      "visits": 2,
+      "firstVisit": "2025-11-28",
+      "lastVisit": "2025-11-29",
+      "tripIds": [
+        "trip-045"
+      ]
+    },
+    {
+      "id": "drumcondra-ireland",
+      "city": "Drumcondra",
+      "country": "Ireland",
+      "lat": 53.35966,
+      "lng": -6.26004,
+      "visits": 2,
+      "firstVisit": "2025-11-29",
+      "lastVisit": "2025-11-30",
+      "tripIds": [
+        "trip-045"
+      ]
+    },
+    {
+      "id": "mount-rainier-united-states",
+      "city": "Mount Rainier",
+      "country": "United States",
+      "lat": 38.91653,
+      "lng": -76.97184,
+      "visits": 2,
+      "firstVisit": "2025-12-27",
+      "lastVisit": "2025-12-28",
+      "tripIds": [
+        "trip-046"
+      ]
+    },
+    {
+      "id": "new-orleans-united-states",
+      "city": "New Orleans",
+      "country": "United States",
+      "lat": 29.95208,
+      "lng": -90.07021,
+      "visits": 3,
+      "firstVisit": "2026-01-18",
+      "lastVisit": "2026-01-20",
+      "tripIds": [
+        "trip-047"
+      ]
+    },
+    {
+      "id": "atlanta-united-states",
+      "city": "Atlanta",
+      "country": "United States",
+      "lat": 33.76248,
+      "lng": -84.39053,
+      "visits": 2,
+      "firstVisit": "2026-03-07",
+      "lastVisit": "2026-03-08",
+      "tripIds": [
+        "trip-048"
+      ]
+    },
+    {
+      "id": "linthicum-united-states",
+      "city": "Linthicum",
+      "country": "United States",
+      "lat": 39.21277,
+      "lng": -76.67207,
+      "visits": 1,
+      "firstVisit": "2026-05-25",
+      "lastVisit": "2026-05-25",
+      "tripIds": [
+        "trip-049"
+      ]
+    },
+    {
+      "id": "vilnius-lithuania",
+      "city": "Vilnius",
+      "country": "Lithuania",
+      "lat": 54.69163,
+      "lng": 25.27172,
+      "visits": 1,
+      "firstVisit": "2026-06-20",
+      "lastVisit": "2026-06-20",
+      "tripIds": [
+        "trip-050"
+      ]
+    },
+    {
+      "id": "oslo-norway",
+      "city": "Oslo",
+      "country": "Norway",
+      "lat": 59.91322,
+      "lng": 10.73655,
+      "visits": 2,
+      "firstVisit": "2026-06-21",
+      "lastVisit": "2026-06-22",
+      "tripIds": [
+        "trip-050"
+      ]
+    },
+    {
+      "id": "london-united-kingdom",
+      "city": "London",
+      "country": "United Kingdom",
+      "lat": 51.51029,
+      "lng": -0.13185,
+      "visits": 2,
+      "firstVisit": "2026-06-23",
+      "lastVisit": "2026-06-25",
+      "tripIds": [
+        "trip-050"
+      ]
+    },
+    {
+      "id": "camden-town-united-kingdom",
+      "city": "Camden Town",
+      "country": "United Kingdom",
+      "lat": 51.51545,
+      "lng": -0.14884,
+      "visits": 1,
+      "firstVisit": "2026-06-23",
+      "lastVisit": "2026-06-23",
+      "tripIds": [
+        "trip-050"
+      ]
+    },
+    {
+      "id": "city-of-london-united-kingdom",
+      "city": "City of London",
+      "country": "United Kingdom",
+      "lat": 51.50124,
+      "lng": -0.09361,
+      "visits": 1,
+      "firstVisit": "2026-06-24",
+      "lastVisit": "2026-06-24",
+      "tripIds": [
+        "trip-050"
+      ]
+    },
+    {
+      "id": "langley-green-united-kingdom",
+      "city": "Langley Green",
+      "country": "United Kingdom",
+      "lat": 51.15366,
+      "lng": -0.18206,
+      "visits": 1,
+      "firstVisit": "2026-06-26",
+      "lastVisit": "2026-06-26",
+      "tripIds": [
+        "trip-050"
+      ]
+    },
+    {
+      "id": "ciutat-vella-spain",
+      "city": "Ciutat Vella",
+      "country": "Spain",
+      "lat": 41.38323,
+      "lng": 2.17759,
+      "visits": 2,
+      "firstVisit": "2026-06-26",
+      "lastVisit": "2026-06-27",
+      "tripIds": [
+        "trip-050"
+      ]
+    },
+    {
+      "id": "eixample-spain",
+      "city": "Eixample",
+      "country": "Spain",
+      "lat": 41.39442,
+      "lng": 2.16527,
+      "visits": 1,
+      "firstVisit": "2026-06-27",
+      "lastVisit": "2026-06-27",
+      "tripIds": [
+        "trip-050"
+      ]
+    },
+    {
+      "id": "nouaseur-ma",
+      "city": "Nouaseur",
+      "country": "MA",
+      "lat": 33.37027,
+      "lng": -7.58291,
+      "visits": 1,
+      "firstVisit": "2026-06-28",
+      "lastVisit": "2026-06-28",
+      "tripIds": [
+        "trip-050"
+      ]
+    }
+  ],
+  "trips": [
+    {
+      "id": "trip-050",
+      "title": "Lithuania +4 more — Jun 20–Jun 29, 2026",
+      "startDate": "2026-06-20",
+      "endDate": "2026-06-29",
+      "cities": [
+        "Camden Town",
+        "City of London",
+        "Ciutat Vella",
+        "Eixample",
+        "Langley Green",
+        "London",
+        "Nouaseur",
+        "Oslo",
+        "Vilnius"
+      ],
+      "countries": [
+        "Lithuania",
+        "MA",
+        "Norway",
+        "Spain",
+        "United Kingdom"
+      ],
+      "cityIds": [
+        "camden-town-united-kingdom",
+        "city-of-london-united-kingdom",
+        "ciutat-vella-spain",
+        "eixample-spain",
+        "langley-green-united-kingdom",
+        "london-united-kingdom",
+        "nouaseur-ma",
+        "oslo-norway",
+        "vilnius-lithuania"
+      ],
+      "description": "Visited 9 cities in 5 countries.",
+      "photos": []
+    },
+    {
+      "id": "trip-049",
+      "title": "United States — May 21–May 25, 2026",
+      "startDate": "2026-05-21",
+      "endDate": "2026-05-25",
+      "cities": [
+        "Linthicum",
+        "Washington, D.C."
+      ],
+      "countries": [
+        "United States"
+      ],
+      "cityIds": [
+        "linthicum-united-states",
+        "washington-d-c-united-states"
+      ],
+      "description": "Visited 2 cities in 1 country.",
+      "photos": []
+    },
+    {
+      "id": "trip-048",
+      "title": "United States — Mar 07–Mar 08, 2026",
+      "startDate": "2026-03-07",
+      "endDate": "2026-03-08",
+      "cities": [
+        "Atlanta"
+      ],
+      "countries": [
+        "United States"
+      ],
+      "cityIds": [
+        "atlanta-united-states"
+      ],
+      "description": "Visited 1 city in 1 country.",
+      "photos": []
+    },
+    {
+      "id": "trip-047",
+      "title": "United States — Jan 18–Jan 20, 2026",
+      "startDate": "2026-01-18",
+      "endDate": "2026-01-20",
+      "cities": [
+        "New Orleans"
+      ],
+      "countries": [
+        "United States"
+      ],
+      "cityIds": [
+        "new-orleans-united-states"
+      ],
+      "description": "Visited 1 city in 1 country.",
+      "photos": []
+    },
+    {
+      "id": "trip-046",
+      "title": "United States — Dec 27–Dec 28, 2025",
+      "startDate": "2025-12-27",
+      "endDate": "2025-12-28",
+      "cities": [
+        "Mount Rainier"
+      ],
+      "countries": [
+        "United States"
+      ],
+      "cityIds": [
+        "mount-rainier-united-states"
+      ],
+      "description": "Visited 1 city in 1 country.",
+      "photos": []
+    },
+    {
+      "id": "trip-045",
+      "title": "Ireland — Nov 27–Dec 01, 2025",
+      "startDate": "2025-11-27",
+      "endDate": "2025-12-01",
+      "cities": [
+        "Cork",
+        "Drumcondra",
+        "Waterford"
+      ],
+      "countries": [
+        "Ireland"
+      ],
+      "cityIds": [
+        "cork-ireland",
+        "drumcondra-ireland",
+        "waterford-ireland"
+      ],
+      "description": "Visited 3 cities in 1 country.",
+      "photos": []
+    },
+    {
+      "id": "trip-044",
+      "title": "South Korea · Taiwan · United States — Oct 26–Nov 15, 2025",
+      "startDate": "2025-10-26",
+      "endDate": "2025-11-15",
+      "cities": [
+        "El Segundo",
+        "Seoul",
+        "Taipei",
+        "Taoyuan City",
+        "Yilan"
+      ],
+      "countries": [
+        "South Korea",
+        "Taiwan",
+        "United States"
+      ],
+      "cityIds": [
+        "el-segundo-united-states",
+        "seoul-south-korea",
+        "taipei-taiwan",
+        "taoyuan-city-taiwan",
+        "yilan-taiwan"
+      ],
+      "description": "Visited 5 cities in 3 countries.",
+      "photos": []
+    },
+    {
+      "id": "trip-043",
+      "title": "United States — Oct 11–Oct 12, 2025",
+      "startDate": "2025-10-11",
+      "endDate": "2025-10-12",
+      "cities": [
+        "Hurley"
+      ],
+      "countries": [
+        "United States"
+      ],
+      "cityIds": [
+        "hurley-united-states"
+      ],
+      "description": "Visited 1 city in 1 country.",
+      "photos": []
+    },
+    {
+      "id": "trip-042",
+      "title": "United States — Aug 30–Sep 01, 2025",
+      "startDate": "2025-08-30",
+      "endDate": "2025-09-01",
+      "cities": [
+        "Washington, D.C."
+      ],
+      "countries": [
+        "United States"
+      ],
+      "cityIds": [
+        "washington-d-c-united-states"
+      ],
+      "description": "Visited 1 city in 1 country.",
+      "photos": []
+    },
+    {
+      "id": "trip-041",
+      "title": "United States — Aug 02–Aug 03, 2025",
+      "startDate": "2025-08-02",
+      "endDate": "2025-08-03",
+      "cities": [
+        "Bloomfield",
+        "Pittsburgh"
+      ],
+      "countries": [
+        "United States"
+      ],
+      "cityIds": [
+        "bloomfield-united-states",
+        "pittsburgh-united-states"
+      ],
+      "description": "Visited 2 cities in 1 country.",
+      "photos": []
+    },
+    {
+      "id": "trip-040",
+      "title": "United States — Jun 26–Jun 30, 2025",
+      "startDate": "2025-06-26",
+      "endDate": "2025-06-30",
+      "cities": [
+        "Lancaster"
+      ],
+      "countries": [
+        "United States"
+      ],
+      "cityIds": [
+        "lancaster-united-states"
+      ],
+      "description": "Visited 1 city in 1 country.",
+      "photos": []
+    },
+    {
+      "id": "trip-039",
+      "title": "United States — Jun 21–Jun 22, 2025",
+      "startDate": "2025-06-21",
+      "endDate": "2025-06-22",
+      "cities": [
+        "El Segundo",
+        "Redlands"
+      ],
+      "countries": [
+        "United States"
+      ],
+      "cityIds": [
+        "el-segundo-united-states",
+        "redlands-united-states"
+      ],
+      "description": "Visited 2 cities in 1 country.",
+      "photos": []
+    },
+    {
+      "id": "trip-038",
+      "title": "United States — Jun 07–Jun 07, 2025",
+      "startDate": "2025-06-07",
+      "endDate": "2025-06-07",
+      "cities": [
+        "Princeton"
+      ],
+      "countries": [
+        "United States"
+      ],
+      "cityIds": [
+        "princeton-united-states"
+      ],
+      "description": "Visited 1 city in 1 country.",
+      "photos": []
+    },
+    {
+      "id": "trip-037",
+      "title": "United States — May 23–May 26, 2025",
+      "startDate": "2025-05-23",
+      "endDate": "2025-05-26",
+      "cities": [
+        "Cary",
+        "Forest Acres",
+        "Greenville",
+        "Saint George"
+      ],
+      "countries": [
+        "United States"
+      ],
+      "cityIds": [
+        "cary-united-states",
+        "forest-acres-united-states",
+        "greenville-united-states",
+        "saint-george-united-states"
+      ],
+      "description": "Visited 4 cities in 1 country.",
+      "photos": []
+    },
+    {
+      "id": "trip-036",
+      "title": "United States — May 17–May 18, 2025",
+      "startDate": "2025-05-17",
+      "endDate": "2025-05-18",
+      "cities": [
+        "Milton"
+      ],
+      "countries": [
+        "United States"
+      ],
+      "cityIds": [
+        "milton-united-states"
+      ],
+      "description": "Visited 1 city in 1 country.",
+      "photos": []
+    },
+    {
+      "id": "trip-035",
+      "title": "United States — May 10–May 11, 2025",
+      "startDate": "2025-05-10",
+      "endDate": "2025-05-11",
+      "cities": [
+        "Central Valley"
+      ],
+      "countries": [
+        "United States"
+      ],
+      "cityIds": [
+        "central-valley-united-states"
+      ],
+      "description": "Visited 1 city in 1 country.",
+      "photos": []
+    },
+    {
+      "id": "trip-034",
+      "title": "United States — Feb 22–Feb 24, 2025",
+      "startDate": "2025-02-22",
+      "endDate": "2025-02-24",
+      "cities": [
+        "Gorham",
+        "Montville Center",
+        "Raymond"
+      ],
+      "countries": [
+        "United States"
+      ],
+      "cityIds": [
+        "gorham-united-states",
+        "montville-center-united-states",
+        "raymond-united-states"
+      ],
+      "description": "Visited 3 cities in 1 country.",
+      "photos": []
+    },
+    {
+      "id": "trip-033",
+      "title": "United States — Jan 20–Jan 20, 2025",
+      "startDate": "2025-01-20",
+      "endDate": "2025-01-20",
+      "cities": [
+        "Washington, D.C."
+      ],
+      "countries": [
+        "United States"
+      ],
+      "cityIds": [
+        "washington-d-c-united-states"
+      ],
+      "description": "Visited 1 city in 1 country.",
+      "photos": []
+    },
+    {
+      "id": "trip-032",
+      "title": "United States — Dec 28–Dec 28, 2024",
+      "startDate": "2024-12-28",
+      "endDate": "2024-12-28",
+      "cities": [
+        "Hudson"
+      ],
+      "countries": [
+        "United States"
+      ],
+      "cityIds": [
+        "hudson-united-states"
+      ],
+      "description": "Visited 1 city in 1 country.",
+      "photos": []
+    },
+    {
+      "id": "trip-031",
+      "title": "Spain — Nov 28–Dec 04, 2024",
+      "startDate": "2024-11-28",
+      "endDate": "2024-12-04",
+      "cities": [
+        "Barcelona",
+        "City Center",
+        "Madrid",
+        "Sant Marti"
+      ],
+      "countries": [
+        "Spain"
+      ],
+      "cityIds": [
+        "barcelona-spain",
+        "city-center-spain",
+        "madrid-spain",
+        "sant-marti-spain"
+      ],
+      "description": "Visited 4 cities in 1 country.",
+      "photos": []
+    },
+    {
+      "id": "trip-030",
+      "title": "Canada · United States — Oct 11–Oct 23, 2024",
+      "startDate": "2024-10-11",
+      "endDate": "2024-10-23",
+      "cities": [
+        "Baie-D'Urfe",
+        "Burlingame",
+        "Coppell",
+        "Lochbuie"
+      ],
+      "countries": [
+        "Canada",
+        "United States"
+      ],
+      "cityIds": [
+        "baie-d-urfe-canada",
+        "burlingame-united-states",
+        "coppell-united-states",
+        "lochbuie-united-states"
+      ],
+      "description": "Visited 4 cities in 2 countries.",
+      "photos": []
+    },
+    {
+      "id": "trip-029",
+      "title": "United States — Sep 01–Sep 02, 2024",
+      "startDate": "2024-09-01",
+      "endDate": "2024-09-02",
+      "cities": [
+        "Withamsville"
+      ],
+      "countries": [
+        "United States"
+      ],
+      "cityIds": [
+        "withamsville-united-states"
+      ],
+      "description": "Visited 1 city in 1 country.",
+      "photos": []
+    },
+    {
+      "id": "trip-028",
+      "title": "United States — Jul 22–Jul 23, 2024",
+      "startDate": "2024-07-22",
+      "endDate": "2024-07-23",
+      "cities": [
+        "Washington, D.C."
+      ],
+      "countries": [
+        "United States"
+      ],
+      "cityIds": [
+        "washington-d-c-united-states"
+      ],
+      "description": "Visited 1 city in 1 country.",
+      "photos": []
+    },
+    {
+      "id": "trip-027",
+      "title": "United States — Jun 28–Jul 01, 2024",
+      "startDate": "2024-06-28",
+      "endDate": "2024-07-01",
+      "cities": [
+        "Lancaster",
+        "Strasburg"
+      ],
+      "countries": [
+        "United States"
+      ],
+      "cityIds": [
+        "lancaster-united-states",
+        "strasburg-united-states"
+      ],
+      "description": "Visited 2 cities in 1 country.",
+      "photos": []
+    },
+    {
+      "id": "trip-026",
+      "title": "United States — Apr 24–Apr 24, 2024",
+      "startDate": "2024-04-24",
+      "endDate": "2024-04-24",
+      "cities": [
+        "Cheverly"
+      ],
+      "countries": [
+        "United States"
+      ],
+      "cityIds": [
+        "cheverly-united-states"
+      ],
+      "description": "Visited 1 city in 1 country.",
+      "photos": []
+    },
+    {
+      "id": "trip-025",
+      "title": "United States — Apr 13–Apr 13, 2024",
+      "startDate": "2024-04-13",
+      "endDate": "2024-04-13",
+      "cities": [
+        "Shrewsbury"
+      ],
+      "countries": [
+        "United States"
+      ],
+      "cityIds": [
+        "shrewsbury-united-states"
+      ],
+      "description": "Visited 1 city in 1 country.",
+      "photos": []
+    },
+    {
+      "id": "trip-024",
+      "title": "United States — Apr 08–Apr 08, 2024",
+      "startDate": "2024-04-08",
+      "endDate": "2024-04-08",
+      "cities": [
+        "Norwich"
+      ],
+      "countries": [
+        "United States"
+      ],
+      "cityIds": [
+        "norwich-united-states"
+      ],
+      "description": "Visited 1 city in 1 country.",
+      "photos": []
+    },
+    {
+      "id": "trip-023",
+      "title": "United States — Mar 13–Mar 14, 2024",
+      "startDate": "2024-03-13",
+      "endDate": "2024-03-14",
+      "cities": [
+        "Meredith",
+        "Newbury",
+        "Sutton"
+      ],
+      "countries": [
+        "United States"
+      ],
+      "cityIds": [
+        "meredith-united-states",
+        "newbury-united-states",
+        "sutton-united-states"
+      ],
+      "description": "Visited 3 cities in 1 country.",
+      "photos": []
+    },
+    {
+      "id": "trip-022",
+      "title": "United States — Feb 17–Feb 18, 2024",
+      "startDate": "2024-02-17",
+      "endDate": "2024-02-18",
+      "cities": [
+        "Princeton"
+      ],
+      "countries": [
+        "United States"
+      ],
+      "cityIds": [
+        "princeton-united-states"
+      ],
+      "description": "Visited 1 city in 1 country.",
+      "photos": []
+    },
+    {
+      "id": "trip-021",
+      "title": "Italy — Nov 22–Nov 28, 2023",
+      "startDate": "2023-11-22",
+      "endDate": "2023-11-28",
+      "cities": [
+        "Florence",
+        "Milano",
+        "Venice"
+      ],
+      "countries": [
+        "Italy"
+      ],
+      "cityIds": [
+        "florence-italy",
+        "milano-italy",
+        "venice-italy"
+      ],
+      "description": "Visited 3 cities in 1 country.",
+      "photos": []
+    },
+    {
+      "id": "trip-020",
+      "title": "United States — Nov 04–Nov 07, 2023",
+      "startDate": "2023-11-04",
+      "endDate": "2023-11-07",
+      "cities": [
+        "Chicago",
+        "Detroit",
+        "Fair Plain",
+        "Westland"
+      ],
+      "countries": [
+        "United States"
+      ],
+      "cityIds": [
+        "chicago-united-states",
+        "detroit-united-states",
+        "fair-plain-united-states",
+        "westland-united-states"
+      ],
+      "description": "Visited 4 cities in 1 country.",
+      "photos": []
+    },
+    {
+      "id": "trip-019",
+      "title": "United States — Oct 21–Oct 21, 2023",
+      "startDate": "2023-10-21",
+      "endDate": "2023-10-21",
+      "cities": [
+        "Long Valley"
+      ],
+      "countries": [
+        "United States"
+      ],
+      "cityIds": [
+        "long-valley-united-states"
+      ],
+      "description": "Visited 1 city in 1 country.",
+      "photos": []
+    },
+    {
+      "id": "trip-018",
+      "title": "Taiwan · United States — Aug 05–Sep 05, 2023",
+      "startDate": "2023-08-05",
+      "endDate": "2023-09-05",
+      "cities": [
+        "Arlington",
+        "Bordentown",
+        "Coppell",
+        "Grapevine",
+        "Keelung",
+        "Niagara Falls",
+        "Providence",
+        "River Oaks",
+        "Taibao",
+        "Taichung",
+        "Tainan",
+        "Taipei",
+        "Woodlawn",
+        "Yilan"
+      ],
+      "countries": [
+        "Taiwan",
+        "United States"
+      ],
+      "cityIds": [
+        "arlington-united-states",
+        "bordentown-united-states",
+        "coppell-united-states",
+        "grapevine-united-states",
+        "keelung-taiwan",
+        "niagara-falls-united-states",
+        "providence-united-states",
+        "river-oaks-united-states",
+        "taibao-taiwan",
+        "taichung-taiwan",
+        "tainan-taiwan",
+        "taipei-taiwan",
+        "woodlawn-united-states",
+        "yilan-taiwan"
+      ],
+      "description": "Visited 14 cities in 2 countries.",
+      "photos": []
+    },
+    {
+      "id": "trip-017",
+      "title": "United States — Jul 01–Jul 04, 2023",
+      "startDate": "2023-07-01",
+      "endDate": "2023-07-04",
+      "cities": [
+        "Lancaster"
+      ],
+      "countries": [
+        "United States"
+      ],
+      "cityIds": [
+        "lancaster-united-states"
+      ],
+      "description": "Visited 1 city in 1 country.",
+      "photos": []
+    },
+    {
+      "id": "trip-016",
+      "title": "United States — Jun 25–Jun 25, 2023",
+      "startDate": "2023-06-25",
+      "endDate": "2023-06-25",
+      "cities": [
+        "Lexington"
+      ],
+      "countries": [
+        "United States"
+      ],
+      "cityIds": [
+        "lexington-united-states"
+      ],
+      "description": "Visited 1 city in 1 country.",
+      "photos": []
+    },
+    {
+      "id": "trip-015",
+      "title": "Taiwan — Dec 02–Dec 03, 2021",
+      "startDate": "2021-12-02",
+      "endDate": "2021-12-03",
+      "cities": [
+        "Taichung"
+      ],
+      "countries": [
+        "Taiwan"
+      ],
+      "cityIds": [
+        "taichung-taiwan"
+      ],
+      "description": "Visited 1 city in 1 country.",
+      "photos": []
+    },
+    {
+      "id": "trip-014",
+      "title": "Taiwan — Aug 25–Aug 26, 2021",
+      "startDate": "2021-08-25",
+      "endDate": "2021-08-26",
+      "cities": [
+        "Taichung"
+      ],
+      "countries": [
+        "Taiwan"
+      ],
+      "cityIds": [
+        "taichung-taiwan"
+      ],
+      "description": "Visited 1 city in 1 country.",
+      "photos": []
+    },
+    {
+      "id": "trip-013",
+      "title": "Taiwan — Feb 20–Feb 20, 2021",
+      "startDate": "2021-02-20",
+      "endDate": "2021-02-20",
+      "cities": [
+        "Hsinchu"
+      ],
+      "countries": [
+        "Taiwan"
+      ],
+      "cityIds": [
+        "hsinchu-taiwan"
+      ],
+      "description": "Visited 1 city in 1 country.",
+      "photos": []
+    },
+    {
+      "id": "trip-012",
+      "title": "Taiwan — Jul 16–Jul 16, 2019",
+      "startDate": "2019-07-16",
+      "endDate": "2019-07-16",
+      "cities": [
+        "Hsinchu"
+      ],
+      "countries": [
+        "Taiwan"
+      ],
+      "cityIds": [
+        "hsinchu-taiwan"
+      ],
+      "description": "Visited 1 city in 1 country.",
+      "photos": []
+    },
+    {
+      "id": "trip-011",
+      "title": "Taiwan — Jun 24–Jun 26, 2019",
+      "startDate": "2019-06-24",
+      "endDate": "2019-06-26",
+      "cities": [
+        "Ma-kung"
+      ],
+      "countries": [
+        "Taiwan"
+      ],
+      "cityIds": [
+        "ma-kung-taiwan"
+      ],
+      "description": "Visited 1 city in 1 country.",
+      "photos": []
+    },
+    {
+      "id": "trip-010",
+      "title": "Taiwan — Apr 19–Apr 19, 2019",
+      "startDate": "2019-04-19",
+      "endDate": "2019-04-19",
+      "cities": [
+        "Kaohsiung"
+      ],
+      "countries": [
+        "Taiwan"
+      ],
+      "cityIds": [
+        "kaohsiung-taiwan"
+      ],
+      "description": "Visited 1 city in 1 country.",
+      "photos": []
+    },
+    {
+      "id": "trip-009",
+      "title": "China — Aug 24–Aug 26, 2018",
+      "startDate": "2018-08-24",
+      "endDate": "2018-08-26",
+      "cities": [
+        "Jingshan"
+      ],
+      "countries": [
+        "China"
+      ],
+      "cityIds": [
+        "jingshan-china"
+      ],
+      "description": "Visited 1 city in 1 country.",
+      "photos": []
+    },
+    {
+      "id": "trip-008",
+      "title": "China — Jul 19–Aug 20, 2018",
+      "startDate": "2018-07-19",
+      "endDate": "2018-08-20",
+      "cities": [
+        "Datun",
+        "Dongfeng",
+        "Haidian",
+        "Jingshan",
+        "Lisui",
+        "Longtan",
+        "Wangjing"
+      ],
+      "countries": [
+        "China"
+      ],
+      "cityIds": [
+        "datun-china",
+        "dongfeng-china",
+        "haidian-china",
+        "jingshan-china",
+        "lisui-china",
+        "longtan-china",
+        "wangjing-china"
+      ],
+      "description": "Visited 7 cities in 1 country.",
+      "photos": []
+    },
+    {
+      "id": "trip-007",
+      "title": "Taiwan — Jul 19–Jul 20, 2017",
+      "startDate": "2017-07-19",
+      "endDate": "2017-07-20",
+      "cities": [
+        "Kaohsiung"
+      ],
+      "countries": [
+        "Taiwan"
+      ],
+      "cityIds": [
+        "kaohsiung-taiwan"
+      ],
+      "description": "Visited 1 city in 1 country.",
+      "photos": []
+    },
+    {
+      "id": "trip-006",
+      "title": "Taiwan — May 30–Jun 02, 2017",
+      "startDate": "2017-05-30",
+      "endDate": "2017-06-02",
+      "cities": [
+        "Kaohsiung",
+        "Taichung",
+        "Tainan"
+      ],
+      "countries": [
+        "Taiwan"
+      ],
+      "cityIds": [
+        "kaohsiung-taiwan",
+        "taichung-taiwan",
+        "tainan-taiwan"
+      ],
+      "description": "Visited 3 cities in 1 country.",
+      "photos": []
+    },
+    {
+      "id": "trip-005",
+      "title": "Japan — Aug 17–Aug 20, 2016",
+      "startDate": "2016-08-17",
+      "endDate": "2016-08-20",
+      "cities": [
+        "Ishikawa",
+        "Naha-shi"
+      ],
+      "countries": [
+        "Japan"
+      ],
+      "cityIds": [
+        "ishikawa-japan",
+        "naha-shi-japan"
+      ],
+      "description": "Visited 2 cities in 1 country.",
+      "photos": []
+    },
+    {
+      "id": "trip-004",
+      "title": "Czech Republic +4 more — Apr 18–Apr 30, 2016",
+      "startDate": "2016-04-18",
+      "endDate": "2016-04-30",
+      "cities": [
+        "Kupchino",
+        "Ljubljana",
+        "Mala Strana",
+        "Saint Petersburg",
+        "Sandvika",
+        "Wola"
+      ],
+      "countries": [
+        "Czech Republic",
+        "Norway",
+        "Poland",
+        "Russia",
+        "Slovenia"
+      ],
+      "cityIds": [
+        "kupchino-russia",
+        "ljubljana-slovenia",
+        "mala-strana-czech-republic",
+        "saint-petersburg-russia",
+        "sandvika-norway",
+        "wola-poland"
+      ],
+      "description": "Visited 6 cities in 5 countries.",
+      "photos": []
+    },
+    {
+      "id": "trip-003",
+      "title": "Estonia +4 more — Apr 19–May 01, 2015",
+      "startDate": "2015-04-19",
+      "endDate": "2015-05-01",
+      "cities": [
+        "Admiralteisky",
+        "Helsinki",
+        "OEstermalm",
+        "Tallinn",
+        "Warsaw"
+      ],
+      "countries": [
+        "Estonia",
+        "Finland",
+        "Poland",
+        "Russia",
+        "Sweden"
+      ],
+      "cityIds": [
+        "admiralteisky-russia",
+        "helsinki-finland",
+        "oestermalm-sweden",
+        "tallinn-estonia",
+        "warsaw-poland"
+      ],
+      "description": "Visited 5 cities in 5 countries.",
+      "photos": []
+    },
+    {
+      "id": "trip-002",
+      "title": "Taiwan — Jul 05–Jul 06, 2014",
+      "startDate": "2014-07-05",
+      "endDate": "2014-07-06",
+      "cities": [
+        "Puli"
+      ],
+      "countries": [
+        "Taiwan"
+      ],
+      "cityIds": [
+        "puli-taiwan"
+      ],
+      "description": "Visited 1 city in 1 country.",
+      "photos": []
+    },
+    {
+      "id": "trip-001",
+      "title": "Malaysia — Jun 03–Jun 03, 2014",
+      "startDate": "2014-06-03",
+      "endDate": "2014-06-03",
+      "cities": [
+        "Kuala Lumpur"
+      ],
+      "countries": [
+        "Malaysia"
+      ],
+      "cityIds": [
+        "kuala-lumpur-malaysia"
+      ],
+      "description": "Visited 1 city in 1 country.",
+      "photos": []
+    }
+  ],
   "stats": {
-    "totalTrips": 0,
-    "totalCities": 0,
-    "totalCountries": 0
+    "totalTrips": 50,
+    "totalCities": 99,
+    "totalCountries": 21
   }
 }
