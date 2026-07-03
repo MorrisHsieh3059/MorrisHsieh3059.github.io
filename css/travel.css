@@ -1,4 +1,4 @@
-/* Travel section — full map with overlaid trip cards */
+/* Travel section — map (≥70%) + trip cards sidebar */
 
 .travel-intro {
 	font-size: 0.9rem;
@@ -30,12 +30,15 @@
 }
 
 .travel-layout {
+	display: grid;
+	grid-template-columns: minmax(70%, 1fr) minmax(0, 30%);
+	gap: 1.25rem;
 	margin-top: 1.25rem;
+	align-items: stretch;
 }
 
-.travel-map-stage {
-	position: relative;
-	width: 100%;
+.travel-map-panel {
+	min-width: 0;
 }
 
 .travel-map-wrap {
@@ -162,22 +165,15 @@
 	overflow-wrap: anywhere;
 }
 
-.travel-cards-overlay {
-	position: absolute;
-	top: 12px;
-	right: 12px;
-	bottom: 12px;
-	width: min(380px, 44%);
-	z-index: 700;
+.travel-cards-sidebar {
+	min-width: 0;
+	height: min(72vh, 640px);
 	display: flex;
 	flex-direction: column;
-	background: rgba(255, 255, 255, 0.94);
-	backdrop-filter: blur(8px);
-	-webkit-backdrop-filter: blur(8px);
+	background: #fff;
 	border-left: 4px solid var(--accent, #303F9F);
-	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.16);
-	padding: 1rem 0.65rem 1rem 1rem;
-	pointer-events: auto;
+	box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+	padding: 1rem 0.75rem 1rem 1rem;
 }
 
 .travel-stats {
@@ -362,19 +358,19 @@
 }
 
 @media (max-width: 991px) {
+	.travel-layout {
+		grid-template-columns: 1fr;
+	}
+
 	.travel-map-wrap {
 		height: 50vh;
 		min-height: 300px;
 	}
 
-	.travel-cards-overlay {
-		position: relative;
-		top: auto;
-		right: auto;
-		bottom: auto;
-		width: 100%;
-		margin-top: 1rem;
+	.travel-cards-sidebar {
 		max-height: none;
+		border-left: none;
+		border-top: 4px solid var(--accent, #303F9F);
 	}
 
 	.travel-hover-card {

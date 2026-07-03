@@ -12,14 +12,8 @@
 	var activeTripId = null;
 
 	var MAP_FLY_OPTS = { duration: 0.55 };
-	var CARDS_PAD_RIGHT = 400;
-
-	function mapFitPadding() {
-		return {
-			paddingTopLeft: L.point(48, 48),
-			paddingBottomRight: L.point(48, CARDS_PAD_RIGHT)
-		};
-	}
+	var MAP_PAD = [36, 36];
+	var TRIP_FOCUS_PAD = [24, 24];
 
 	function formatDateRange(start, end) {
 		var s = new Date(start + 'T00:00:00');
@@ -223,7 +217,45 @@
 		}
 	}
 
-	function fitMapToLatLngs(latlngs, maxZoom, useCardsPadding) {
+	function tripFocusPoints(trip) {
+		if (!trip) return [];
+
+		var home = homeBaseForTrip(trip);
+		var pts = [];
+
+		if (home) {
+			pts.push(L.latLng(home.lat, home.lng));
+		}
+
+		if (trip.route && trip.route.length) {
+			trip.route.forEach(function (p) {
+				pts.push(L.latLng(p.lat, p.lng));
+			});
+		} else {
+			(trip.cityIds || []).forEach(function (id) {
+				if (markers[id]) pts.push(markers[id].marker.getLatLng());
+			});
+		}
+
+		return pts;
+	}
+
+	function maxZoomForBounds(bounds) {
+		var sw = bounds.getSouthWest();
+		var ne = bounds.getNorthEast();
+		var latSpan = Math.abs(ne.lat - sw.lat);
+		var lngSpan = Math.abs(ne.lng - sw.lng);
+		var span = Math.max(latSpan, lngSpan);
+
+		if (span < 1.5) return 13;
+		if (span < 5) return 11;
+		if (span < 15) return 9;
+		if (span < 40) return 7;
+		if (span < 90) return 5;
+		return 4;
+	}
+
+	function fitMapToLatLngs(latlngs, maxZoom) {
 		if (!map || !latlngs.length) return;
 
 		if (latlngs.length === 1) {
@@ -231,23 +263,36 @@
 			return;
 		}
 
-		var opts = $.extend({}, MAP_FLY_OPTS, {
-			maxZoom: maxZoom || 10
-		});
+		var bounds = L.latLngBounds(latlngs);
+		map.flyToBounds(bounds, $.extend({}, MAP_FLY_OPTS, {
+			padding: MAP_PAD,
+			maxZoom: maxZoom || maxZoomForBounds(bounds)
+		}));
+	}
 
-		if (useCardsPadding) {
-			$.extend(opts, mapFitPadding());
-		} else {
-			opts.padding = [48, 48];
+	function fitMapToTrip(trip) {
+		if (!map || !trip) return;
+
+		var pts = tripFocusPoints(trip);
+		if (!pts.length) return;
+
+		if (pts.length === 1) {
+			map.flyTo(pts[0], 11, MAP_FLY_OPTS);
+			return;
 		}
 
-		map.flyToBounds(L.latLngBounds(latlngs), opts);
+		var bounds = L.latLngBounds(pts);
+		map.flyToBounds(bounds, $.extend({}, MAP_FLY_OPTS, {
+			padding: TRIP_FOCUS_PAD,
+			maxZoom: maxZoomForBounds(bounds)
+		}));
 	}
 
 	function resetMapView() {
 		if (!map) return;
 		if (defaultBounds) {
-			map.flyToBounds(defaultBounds, $.extend({}, MAP_FLY_OPTS, mapFitPadding(), {
+			map.flyToBounds(defaultBounds, $.extend({}, MAP_FLY_OPTS, {
+				padding: MAP_PAD,
 				maxZoom: 5
 			}));
 		} else if (defaultCenter) {
@@ -286,7 +331,7 @@
 		});
 
 		drawTripRoute(tripId);
-		fitMapToLatLngs(latLngsFromTripWithBase(trip), 10, true);
+		fitMapToTrip(trip);
 	}
 
 	function clearHighlights() {
@@ -338,7 +383,7 @@
 		});
 		if (latlngs.length > 1) {
 			defaultBounds = L.latLngBounds(latlngs);
-			map.fitBounds(defaultBounds, $.extend({}, mapFitPadding(), { maxZoom: 5 }));
+			map.fitBounds(defaultBounds, { padding: MAP_PAD, maxZoom: 5 });
 		} else if (latlngs.length === 1) {
 			map.setView(latlngs[0], 4);
 		}
