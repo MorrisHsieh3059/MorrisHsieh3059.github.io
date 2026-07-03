@@ -35,7 +35,7 @@
 		}).join('');
 		return '<h5>' + city.city + (city.country ? ', ' + city.country : '') + '</h5>' +
 			'<div class="meta"><i class="fas fa-map-marker-alt"></i> ' +
-			city.visits + ' visit' + (city.visits === 1 ? '' : 's') +
+			city.visits + ' trip' + (city.visits === 1 ? '' : 's') +
 			' · ' + city.firstVisit + ' – ' + city.lastVisit + '</div>' +
 			'<p style="font-size:0.8rem;color:#888;margin:0.25rem 0 0;">Each pin = one city across all your trips.</p>' +
 			(tripList ? '<p style="margin-top:0.5rem;">Part of:</p><ul style="margin:0;padding-left:1.1rem;font-size:0.82rem;">' + tripList + '</ul>' : '');
@@ -62,9 +62,7 @@
 
 	function formatRouteCities(trip) {
 		var cities = trip.cities || [];
-		if (cities.length <= 1) return cities[0] || '';
-		if (cities.length <= 5) return cities.join(' → ');
-		return cities.slice(0, 4).join(' → ') + ' → … +' + (cities.length - 4);
+		return cities.join(' → ');
 	}
 
 	function renderTripCards() {

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-03T20:48:25.627916+00:00",
+  "generatedAt": "2026-07-03T20:56:05.869804+00:00",
   "sourceNote": "Parsed 9770 visits from location-history.json",
   "homeBases": [
     {
@@ -43,7 +43,7 @@
       "country": "Taiwan",
       "lat": 23.99971,
       "lng": 121.14239,
-      "visits": 2,
+      "visits": 1,
       "firstVisit": "2014-07-05",
       "lastVisit": "2014-07-06",
       "tripIds": [
@@ -69,7 +69,7 @@
       "country": "Finland",
       "lat": 60.17993,
       "lng": 24.92702,
-      "visits": 2,
+      "visits": 1,
       "firstVisit": "2015-04-22",
       "lastVisit": "2015-04-22",
       "tripIds": [
@@ -82,7 +82,7 @@
       "country": "Estonia",
       "lat": 59.43839,
       "lng": 24.75979,
-      "visits": 3,
+      "visits": 1,
       "firstVisit": "2015-04-23",
       "lastVisit": "2015-04-25",
       "tripIds": [
@@ -95,7 +95,7 @@
       "country": "Sweden",
       "lat": 59.32524,
       "lng": 18.09901,
-      "visits": 3,
+      "visits": 1,
       "firstVisit": "2015-04-26",
       "lastVisit": "2015-04-27",
       "tripIds": [
@@ -108,7 +108,7 @@
       "country": "Poland",
       "lat": 52.22944,
       "lng": 21.01269,
-      "visits": 3,
+      "visits": 1,
       "firstVisit": "2015-04-28",
       "lastVisit": "2015-04-30",
       "tripIds": [
@@ -134,7 +134,7 @@
       "country": "Poland",
       "lat": 52.22604,
       "lng": 20.98883,
-      "visits": 2,
+      "visits": 1,
       "firstVisit": "2016-04-19",
       "lastVisit": "2016-04-20",
       "tripIds": [
@@ -147,7 +147,7 @@
       "country": "Norway",
       "lat": 59.88581,
       "lng": 10.51895,
-      "visits": 4,
+      "visits": 1,
       "firstVisit": "2016-04-21",
       "lastVisit": "2016-04-23",
       "tripIds": [
@@ -160,7 +160,7 @@
       "country": "Czech Republic",
       "lat": 50.09951,
       "lng": 14.3899,
-      "visits": 3,
+      "visits": 1,
       "firstVisit": "2016-04-24",
       "lastVisit": "2016-04-26",
       "tripIds": [
@@ -173,7 +173,7 @@
       "country": "Russia",
       "lat": 59.9396,
       "lng": 30.31988,
-      "visits": 3,
+      "visits": 1,
       "firstVisit": "2016-04-27",
       "lastVisit": "2016-04-29",
       "tripIds": [
@@ -199,7 +199,7 @@
       "country": "Japan",
       "lat": 26.21417,
       "lng": 127.67056,
-      "visits": 4,
+      "visits": 1,
       "firstVisit": "2016-08-17",
       "lastVisit": "2016-08-20",
       "tripIds": [
@@ -240,7 +240,7 @@
       "country": "Taiwan",
       "lat": 23.00517,
       "lng": 120.20154,
-      "visits": 3,
+      "visits": 2,
       "firstVisit": "2017-05-31",
       "lastVisit": "2023-08-19",
       "tripIds": [
@@ -254,7 +254,7 @@
       "country": "Taiwan",
       "lat": 24.15494,
       "lng": 120.66314,
-      "visits": 7,
+      "visits": 4,
       "firstVisit": "2017-06-01",
       "lastVisit": "2023-08-20",
       "tripIds": [
@@ -270,7 +270,7 @@
       "country": "China",
       "lat": 39.9664,
       "lng": 116.40554,
-      "visits": 4,
+      "visits": 1,
       "firstVisit": "2018-07-19",
       "lastVisit": "2018-07-29",
       "tripIds": [
@@ -283,7 +283,7 @@
       "country": "China",
       "lat": 39.98617,
       "lng": 116.30575,
-      "visits": 33,
+      "visits": 1,
       "firstVisit": "2018-07-20",
       "lastVisit": "2018-08-19",
       "tripIds": [
@@ -322,7 +322,7 @@
       "country": "China",
       "lat": 39.91777,
       "lng": 116.40236,
-      "visits": 3,
+      "visits": 1,
       "firstVisit": "2018-08-12",
       "lastVisit": "2018-08-25",
       "tripIds": [
@@ -361,7 +361,7 @@
       "country": "Taiwan",
       "lat": 23.5773,
       "lng": 119.57328,
-      "visits": 3,
+      "visits": 1,
       "firstVisit": "2019-06-24",
       "lastVisit": "2019-06-26",
       "tripIds": [
@@ -401,7 +401,7 @@
       "country": "United States",
       "lat": 40.07416,
       "lng": -76.28785,
-      "visits": 13,
+      "visits": 3,
       "firstVisit": "2023-07-01",
       "lastVisit": "2025-06-30",
       "tripIds": [
@@ -481,7 +481,7 @@
       "country": "Taiwan",
       "lat": 25.07922,
       "lng": 121.58783,
-      "visits": 41,
+      "visits": 2,
       "firstVisit": "2023-08-13",
       "lastVisit": "2025-11-12",
       "tripIds": [
@@ -522,7 +522,7 @@
       "country": "Taiwan",
       "lat": 25.21251,
       "lng": 121.63624,
-      "visits": 2,
+      "visits": 1,
       "firstVisit": "2023-08-26",
       "lastVisit": "2023-08-26",
       "tripIds": [
@@ -535,7 +535,7 @@
       "country": "United States",
       "lat": 32.94258,
       "lng": -97.03572,
-      "visits": 4,
+      "visits": 2,
       "firstVisit": "2023-09-02",
       "lastVisit": "2024-10-18",
       "tripIds": [
@@ -627,7 +627,7 @@
       "country": "United States",
       "lat": 41.8622,
       "lng": -87.62199,
-      "visits": 2,
+      "visits": 1,
       "firstVisit": "2023-11-06",
       "lastVisit": "2023-11-07",
       "tripIds": [
@@ -640,7 +640,7 @@
       "country": "Italy",
       "lat": 45.47905,
       "lng": 9.19752,
-      "visits": 10,
+      "visits": 1,
       "firstVisit": "2023-11-22",
       "lastVisit": "2023-11-27",
       "tripIds": [
@@ -679,7 +679,7 @@
       "country": "United States",
       "lat": 40.34661,
       "lng": -74.66583,
-      "visits": 3,
+      "visits": 2,
       "firstVisit": "2024-02-17",
       "lastVisit": "2025-06-07",
       "tripIds": [
@@ -784,7 +784,7 @@
       "country": "United States",
       "lat": 38.90308,
       "lng": -77.01863,
-      "visits": 10,
+      "visits": 4,
       "firstVisit": "2024-07-22",
       "lastVisit": "2026-05-21",
       "tripIds": [
@@ -800,7 +800,7 @@
       "country": "United States",
       "lat": 39.06871,
       "lng": -84.30172,
-      "visits": 2,
+      "visits": 1,
       "firstVisit": "2024-09-01",
       "lastVisit": "2024-09-02",
       "tripIds": [
@@ -813,7 +813,7 @@
       "country": "Canada",
       "lat": 45.42634,
       "lng": -73.91629,
-      "visits": 4,
+      "visits": 1,
       "firstVisit": "2024-10-11",
       "lastVisit": "2024-10-14",
       "tripIds": [
@@ -826,7 +826,7 @@
       "country": "United States",
       "lat": 37.60156,
       "lng": -122.36946,
-      "visits": 4,
+      "visits": 1,
       "firstVisit": "2024-10-19",
       "lastVisit": "2024-10-21",
       "tripIds": [
@@ -852,7 +852,7 @@
       "country": "Spain",
       "lat": 41.4,
       "lng": 2.20111,
-      "visits": 3,
+      "visits": 1,
       "firstVisit": "2024-11-28",
       "lastVisit": "2024-11-30",
       "tripIds": [
@@ -878,7 +878,7 @@
       "country": "Spain",
       "lat": 40.42027,
       "lng": -3.70761,
-      "visits": 3,
+      "visits": 1,
       "firstVisit": "2024-12-01",
       "lastVisit": "2024-12-03",
       "tripIds": [
@@ -1061,7 +1061,7 @@
       "country": "United States",
       "lat": 40.44305,
       "lng": -80.00547,
-      "visits": 3,
+      "visits": 1,
       "firstVisit": "2025-08-02",
       "lastVisit": "2025-08-03",
       "tripIds": [
@@ -1074,7 +1074,7 @@
       "country": "United States",
       "lat": 40.44787,
       "lng": -79.94983,
-      "visits": 2,
+      "visits": 1,
       "firstVisit": "2025-08-02",
       "lastVisit": "2025-08-03",
       "tripIds": [
@@ -1087,7 +1087,7 @@
       "country": "United States",
       "lat": 41.89519,
       "lng": -74.05814,
-      "visits": 3,
+      "visits": 1,
       "firstVisit": "2025-10-11",
       "lastVisit": "2025-10-12",
       "tripIds": [
@@ -1100,7 +1100,7 @@
       "country": "Taiwan",
       "lat": 25.08049,
       "lng": 121.23116,
-      "visits": 2,
+      "visits": 1,
       "firstVisit": "2025-11-04",
       "lastVisit": "2025-11-14",
       "tripIds": [
@@ -1139,7 +1139,7 @@
       "country": "Ireland",
       "lat": 52.25118,
       "lng": -7.13749,
-      "visits": 2,
+      "visits": 1,
       "firstVisit": "2025-11-28",
       "lastVisit": "2025-11-29",
       "tripIds": [
@@ -1152,7 +1152,7 @@
       "country": "Ireland",
       "lat": 53.35966,
       "lng": -6.26004,
-      "visits": 2,
+      "visits": 1,
       "firstVisit": "2025-11-29",
       "lastVisit": "2025-11-30",
       "tripIds": [
@@ -1165,7 +1165,7 @@
       "country": "United States",
       "lat": 38.91653,
       "lng": -76.97184,
-      "visits": 2,
+      "visits": 1,
       "firstVisit": "2025-12-27",
       "lastVisit": "2025-12-28",
       "tripIds": [
@@ -1178,7 +1178,7 @@
       "country": "United States",
       "lat": 29.95208,
       "lng": -90.07021,
-      "visits": 3,
+      "visits": 1,
       "firstVisit": "2026-01-18",
       "lastVisit": "2026-01-20",
       "tripIds": [
@@ -1191,7 +1191,7 @@
       "country": "United States",
       "lat": 33.76248,
       "lng": -84.39053,
-      "visits": 2,
+      "visits": 1,
       "firstVisit": "2026-03-07",
       "lastVisit": "2026-03-08",
       "tripIds": [
@@ -1230,7 +1230,7 @@
       "country": "Norway",
       "lat": 59.91322,
       "lng": 10.73655,
-      "visits": 2,
+      "visits": 1,
       "firstVisit": "2026-06-21",
       "lastVisit": "2026-06-22",
       "tripIds": [
@@ -1243,7 +1243,7 @@
       "country": "United Kingdom",
       "lat": 51.51029,
       "lng": -0.13185,
-      "visits": 2,
+      "visits": 1,
       "firstVisit": "2026-06-23",
       "lastVisit": "2026-06-25",
       "tripIds": [
@@ -1295,7 +1295,7 @@
       "country": "Spain",
       "lat": 41.38323,
       "lng": 2.17759,
-      "visits": 2,
+      "visits": 1,
       "firstVisit": "2026-06-26",
       "lastVisit": "2026-06-27",
       "tripIds": [
@@ -1332,7 +1332,7 @@
   "trips": [
     {
       "id": "trip-053",
-      "title": "Lithuania +4 more — Jun 20–Jun 29, 2026",
+      "title": "Lithuania · Morocco · Norway · Spain · United Kingdom — Jun 20–Jun 29, 2026",
       "startDate": "2026-06-20",
       "endDate": "2026-06-29",
       "cities": [
@@ -3307,7 +3307,7 @@
     },
     {
       "id": "trip-004",
-      "title": "Czech Republic +4 more — Apr 18–Apr 30, 2016",
+      "title": "Czech Republic · Norway · Poland · Russia · Slovenia — Apr 18–Apr 30, 2016",
       "startDate": "2016-04-18",
       "endDate": "2016-04-30",
       "cities": [
@@ -3390,7 +3390,7 @@
     },
     {
       "id": "trip-003",
-      "title": "Estonia +4 more — Apr 19–May 01, 2015",
+      "title": "Estonia · Finland · Poland · Russia · Sweden — Apr 19–May 01, 2015",
       "startDate": "2015-04-19",
       "endDate": "2015-05-01",
       "cities": [

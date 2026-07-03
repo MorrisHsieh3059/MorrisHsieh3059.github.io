@@ -224,6 +224,20 @@
 	font-size: 0.78rem;
 	color: #777;
 	line-height: 1.45;
+	word-wrap: break-word;
+	overflow-wrap: anywhere;
+	white-space: normal;
+}
+
+.trip-card h4 {
+	word-wrap: break-word;
+	overflow-wrap: anywhere;
+	white-space: normal;
+}
+
+#travel-hover-card {
+	word-wrap: break-word;
+	overflow-wrap: anywhere;
 }
 
 .travel-notice {

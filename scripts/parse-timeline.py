@@ -286,12 +286,7 @@ def cluster_trips(visits: list[dict]) -> list[list[dict]]:
 
 def trip_title(group: list[dict], start: datetime, end: datetime) -> str:
     countries = sorted({v["country"] for v in group if v["country"] != "Unknown"})
-    if len(countries) == 1:
-        region = countries[0]
-    elif len(countries) <= 3:
-        region = " · ".join(countries)
-    else:
-        region = f"{countries[0]} +{len(countries) - 1} more"
+    region = " · ".join(countries) if countries else "Unknown"
     return f"{region} — {start.strftime('%b %d')}–{end.strftime('%b %d, %Y')}"
 
 
@@ -319,17 +314,22 @@ def build_output(visits: list[dict], source_note: str) -> dict:
                     "firstVisit": v["start"].date().isoformat(),
                     "lastVisit": v["start"].date().isoformat(),
                     "tripIds": [],
+                    "_coordSamples": 0,
                 }
-            city_stats[ck]["visits"] += 1
-            city_stats[ck]["tripIds"].append(trip_id)
             d = v["start"].date().isoformat()
             if d < city_stats[ck]["firstVisit"]:
                 city_stats[ck]["firstVisit"] = d
             if d > city_stats[ck]["lastVisit"]:
                 city_stats[ck]["lastVisit"] = d
-            n = city_stats[ck]["visits"]
+            n = city_stats[ck]["_coordSamples"] + 1
+            city_stats[ck]["_coordSamples"] = n
             city_stats[ck]["lat"] = ((n - 1) * city_stats[ck]["lat"] + v["lat"]) / n
             city_stats[ck]["lng"] = ((n - 1) * city_stats[ck]["lng"] + v["lng"]) / n
+
+        for ck in cities_in_trip:
+            if trip_id not in city_stats[ck]["tripIds"]:
+                city_stats[ck]["tripIds"].append(trip_id)
+            city_stats[ck]["visits"] = len(city_stats[ck]["tripIds"])
 
         start = min(v["start"] for v in group)
         end = max((v.get("end") or v["start"]) for v in group)
@@ -378,6 +378,8 @@ def build_output(visits: list[dict], source_note: str) -> dict:
 
     for c in city_stats.values():
         c["tripIds"] = sorted(set(c["tripIds"]))
+        c["visits"] = len(c["tripIds"])
+        c.pop("_coordSamples", None)
         c["lat"] = round(c["lat"], 5)
         c["lng"] = round(c["lng"], 5)
 
