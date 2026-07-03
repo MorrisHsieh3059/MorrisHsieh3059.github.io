@@ -398,7 +398,7 @@
 		if (typeof L === 'undefined') return;
 
 		map = L.map('travel-map', {
-			scrollWheelZoom: false,
+			scrollWheelZoom: true,
 			zoomControl: true
 		}).setView([30, 10], 2);
 
