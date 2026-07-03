@@ -6,6 +6,12 @@
 	var travelData = null;
 	var $hoverCard = null;
 	var activeRouteLine = null;
+	var defaultBounds = null;
+	var defaultCenter = null;
+	var defaultZoom = null;
+	var activeTripId = null;
+
+	var MAP_FLY_OPTS = { duration: 0.55 };
 
 	function formatDateRange(start, end) {
 		var s = new Date(start + 'T00:00:00');
@@ -95,12 +101,13 @@
 				$card.append('<div class="cities">' + formatRouteCities(trip) + '</div>');
 			}
 			$card.on('mouseenter', function () {
+				activeTripId = trip.id;
 				highlightTrip(trip.id);
 				showHoverCard(tripCardHtml(trip), false);
 			});
 			$card.on('mouseleave', function () {
-				clearHighlights();
-				hideHoverCard();
+				activeTripId = null;
+				clearTripFocus();
 			});
 			$panel.append($card);
 		});
@@ -144,6 +151,44 @@
 		}
 	}
 
+	function latLngsFromTrip(trip) {
+		if (!trip) return [];
+		if (trip.route && trip.route.length) {
+			return trip.route.map(function (p) {
+				return L.latLng(p.lat, p.lng);
+			});
+		}
+		return (trip.cityIds || []).map(function (id) {
+			return markers[id] ? markers[id].marker.getLatLng() : null;
+		}).filter(Boolean);
+	}
+
+	function fitMapToLatLngs(latlngs, maxZoom) {
+		if (!map || !latlngs.length) return;
+
+		if (latlngs.length === 1) {
+			map.flyTo(latlngs[0], maxZoom || 9, MAP_FLY_OPTS);
+			return;
+		}
+
+		map.flyToBounds(L.latLngBounds(latlngs), $.extend({}, MAP_FLY_OPTS, {
+			padding: [48, 48],
+			maxZoom: maxZoom || 10
+		}));
+	}
+
+	function resetMapView() {
+		if (!map) return;
+		if (defaultBounds) {
+			map.flyToBounds(defaultBounds, $.extend({}, MAP_FLY_OPTS, {
+				padding: [40, 40],
+				maxZoom: 5
+			}));
+		} else if (defaultCenter) {
+			map.flyTo(defaultCenter, defaultZoom, MAP_FLY_OPTS);
+		}
+	}
+
 	function highlightTrip(tripId) {
 		clearHighlights();
 		$('.trip-card[data-trip-id="' + tripId + '"]').addClass('active');
@@ -164,6 +209,7 @@
 		});
 
 		drawTripRoute(tripId);
+		fitMapToLatLngs(latLngsFromTrip(trip), 10);
 	}
 
 	function clearHighlights() {
@@ -172,6 +218,12 @@
 			markers[id].el.classList.remove('highlight', 'dimmed');
 		});
 		clearRouteLine();
+	}
+
+	function clearTripFocus() {
+		clearHighlights();
+		hideHoverCard();
+		resetMapView();
 	}
 
 	function initMap() {
@@ -206,10 +258,13 @@
 			latlngs.push(markers[id].marker.getLatLng());
 		});
 		if (latlngs.length > 1) {
-			map.fitBounds(L.latLngBounds(latlngs), { padding: [40, 40], maxZoom: 5 });
+			defaultBounds = L.latLngBounds(latlngs);
+			map.fitBounds(defaultBounds, { padding: [40, 40], maxZoom: 5 });
 		} else if (latlngs.length === 1) {
 			map.setView(latlngs[0], 4);
 		}
+		defaultCenter = map.getCenter();
+		defaultZoom = map.getZoom();
 	}
 
 	function addMarker(id, lat, lng, isHome, data, trips, visitCount) {
@@ -230,15 +285,24 @@
 		marker.on('mouseover', function () {
 			if (isHome) {
 				showHoverCard(homeCardHtml(data), true);
+				fitMapToLatLngs([marker.getLatLng()], 10);
 			} else {
 				showHoverCard(cityCardHtml(data, trips), false);
+				fitMapToLatLngs([marker.getLatLng()], 9);
 			}
 			el.classList.add('highlight');
 		});
 		marker.on('mouseout', function () {
 			hideHoverCard();
-			if (!$('.trip-card.active').length) {
+			if (activeTripId) {
+				highlightTrip(activeTripId);
+				var trip = (travelData.trips || []).find(function (t) {
+					return t.id === activeTripId;
+				});
+				showHoverCard(tripCardHtml(trip), false);
+			} else {
 				el.classList.remove('highlight');
+				resetMapView();
 			}
 		});
 
