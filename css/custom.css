@@ -6,6 +6,12 @@
 	--accent: #303F9F;
 }
 
+/* Solid backdrop in the margin outside the blue page border */
+html,
+body {
+	background-color: #e0e0e0 !important;
+}
+
 .section-main {
 	background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.55)),
 		url('../img/nyc/hero-skyline.jpg');
