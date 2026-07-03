@@ -31,7 +31,7 @@
 /*=======================================================
 	General Styles
 =======================================================*/
-@import url(https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700,300,100|Lora:400,400italic,700,700italic);
+/* Fonts loaded locally via vendor/fonts/fonts.css */
 body, html{
 	height:100%;
 	width:100%;

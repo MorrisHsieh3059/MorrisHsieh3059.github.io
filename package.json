@@ -1,0 +1,19 @@
+{
+  "name": "morrishsieh3059-github-io",
+  "version": "1.0.0",
+  "description": "Morris Hsieh personal website",
+  "private": true,
+  "scripts": {
+    "postinstall": "node scripts/vendor-assets.js",
+    "start": "serve . -l 8000",
+    "dev": "serve . -l 8000"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "5.8.1",
+    "@fontsource/lora": "^5.2.5",
+    "@fontsource/roboto-mono": "^5.2.5"
+  },
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}

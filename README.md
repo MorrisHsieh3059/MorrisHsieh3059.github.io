@@ -16,15 +16,25 @@ Personal site for Morris Chun-Mo Hsieh (谢君模), built on the N5 minimal resu
 - **Gallery** — Photo gallery with filters
 - **Contact** — Email & social links
 
-## Local development
+## Setup
 
-Open `index.html` in a browser, or serve locally:
+Install dependencies (Node.js required):
 
 ```bash
-python3 -m http.server 8000
+npm install
+```
+
+This installs dev tooling and copies Font Awesome + Google Fonts into `vendor/` (no CDN needed).
+
+## Local development
+
+```bash
+npm start
 ```
 
 Then visit http://localhost:8000
+
+Or without npm: `python3 -m http.server 8000`
 
 ## Custom domain setup
 
