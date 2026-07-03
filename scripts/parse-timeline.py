@@ -348,17 +348,11 @@ def build_output(visits: list[dict], source_note: str) -> dict:
             )
             last_ck = ck
 
-        # Each appearance in the chronological route counts once; revisiting a city
-        # within the same trip (leave → return) adds another visit.
-        city_trip_visits: dict[str, int] = {}
-        for r in route:
-            ck = r["cityId"]
-            city_trip_visits[ck] = city_trip_visits.get(ck, 0) + 1
-
-        for ck, count in city_trip_visits.items():
+        # Each city counts once per trip, even if revisited within the journey.
+        for ck in cities_in_trip:
             if trip_id not in city_stats[ck]["tripIds"]:
                 city_stats[ck]["tripIds"].append(trip_id)
-            city_stats[ck]["visits"] += count
+            city_stats[ck]["visits"] = len(city_stats[ck]["tripIds"])
 
         city_names = [r["city"] for r in route]
         city_ids = sorted(cities_in_trip.keys())
@@ -383,11 +377,18 @@ def build_output(visits: list[dict], source_note: str) -> dict:
             }
         )
 
+    total_trip_days = 0
     for c in city_stats.values():
         c["tripIds"] = sorted(set(c["tripIds"]))
+        c["visits"] = len(c["tripIds"])
         c.pop("_coordSamples", None)
         c["lat"] = round(c["lat"], 5)
         c["lng"] = round(c["lng"], 5)
+
+    for trip in trips_out:
+        start_d = datetime.fromisoformat(trip["startDate"]).date()
+        end_d = datetime.fromisoformat(trip["endDate"]).date()
+        total_trip_days += (end_d - start_d).days + 1
 
     return {
         "generatedAt": datetime.now(timezone.utc).isoformat(),
@@ -418,6 +419,7 @@ def build_output(visits: list[dict], source_note: str) -> dict:
         "trips": sorted(trips_out, key=lambda t: t["startDate"], reverse=True),
         "stats": {
             "totalTrips": len(trips_out),
+            "totalTripDays": total_trip_days,
             "totalCities": len(city_stats),
             "totalCountries": len({c["country"] for c in city_stats.values() if c["country"] != "Unknown"}),
         },

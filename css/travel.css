@@ -1,12 +1,5 @@
 /* Travel section — map (≥70%) + trip cards sidebar */
 
-.travel-intro {
-	font-size: 0.9rem;
-	color: #666;
-	margin: 0.75rem 0 0;
-	line-height: 1.55;
-}
-
 .travel-panel-title {
 	font-family: 'Roboto Mono', sans-serif;
 	font-size: 0.95rem;
@@ -174,29 +167,11 @@
 }
 
 .travel-stats {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 1rem;
 	margin: 1rem 0 0.5rem;
-}
-
-.travel-stat {
-	background: #fff;
-	padding: 0.75rem 1.25rem;
-	border-top: 3px solid var(--accent, #303F9F);
-	min-width: 120px;
-}
-
-.travel-stat strong {
-	display: block;
 	font-family: 'Roboto Mono', sans-serif;
-	font-size: 1.4rem;
-	color: var(--accent, #303F9F);
-}
-
-.travel-stat span {
-	font-size: 0.8rem;
-	color: #666;
+	font-size: 0.88rem;
+	color: #555;
+	letter-spacing: 0.02em;
 }
 
 .travel-cards-panel {

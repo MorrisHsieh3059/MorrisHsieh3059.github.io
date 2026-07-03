@@ -142,9 +142,10 @@
 	function renderStats() {
 		var s = travelData.stats || {};
 		$('#travel-stats').html(
-			'<div class="travel-stat"><strong>' + (s.totalTrips || 0) + '</strong><span>Trips</span></div>' +
-			'<div class="travel-stat"><strong>' + (s.totalCities || 0) + '</strong><span>Cities</span></div>' +
-			'<div class="travel-stat"><strong>' + (s.totalCountries || 0) + '</strong><span>Countries</span></div>'
+			'trips: ' + (s.totalTrips || 0) +
+			' | trip days: ' + (s.totalTripDays || 0) +
+			' | cities: ' + (s.totalCities || 0) +
+			' | countries: ' + (s.totalCountries || 0)
 		);
 		if (travelData.sourceNote && !travelData.trips.length) {
 			$('#travel-notice').text(travelData.sourceNote).show();

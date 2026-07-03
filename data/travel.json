@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-03T21:04:04.152719+00:00",
+  "generatedAt": "2026-07-03T21:54:03.927703+00:00",
   "sourceNote": "Parsed 9770 visits from location-history.json",
   "homeBases": [
     {
@@ -173,7 +173,7 @@
       "country": "Russia",
       "lat": 59.9396,
       "lng": 30.31988,
-      "visits": 2,
+      "visits": 1,
       "firstVisit": "2016-04-27",
       "lastVisit": "2016-04-29",
       "tripIds": [
@@ -199,7 +199,7 @@
       "country": "Japan",
       "lat": 26.21417,
       "lng": 127.67056,
-      "visits": 2,
+      "visits": 1,
       "firstVisit": "2016-08-17",
       "lastVisit": "2016-08-20",
       "tripIds": [
@@ -270,7 +270,7 @@
       "country": "China",
       "lat": 39.9664,
       "lng": 116.40554,
-      "visits": 3,
+      "visits": 1,
       "firstVisit": "2018-07-19",
       "lastVisit": "2018-07-29",
       "tripIds": [
@@ -283,7 +283,7 @@
       "country": "China",
       "lat": 39.98617,
       "lng": 116.30575,
-      "visits": 8,
+      "visits": 1,
       "firstVisit": "2018-07-20",
       "lastVisit": "2018-08-19",
       "tripIds": [
@@ -322,7 +322,7 @@
       "country": "China",
       "lat": 39.91777,
       "lng": 116.40236,
-      "visits": 2,
+      "visits": 1,
       "firstVisit": "2018-08-12",
       "lastVisit": "2018-08-25",
       "tripIds": [
@@ -401,7 +401,7 @@
       "country": "United States",
       "lat": 40.07416,
       "lng": -76.28785,
-      "visits": 4,
+      "visits": 3,
       "firstVisit": "2023-07-01",
       "lastVisit": "2025-06-30",
       "tripIds": [
@@ -481,7 +481,7 @@
       "country": "Taiwan",
       "lat": 25.07922,
       "lng": 121.58783,
-      "visits": 7,
+      "visits": 2,
       "firstVisit": "2023-08-13",
       "lastVisit": "2025-11-12",
       "tripIds": [
@@ -535,7 +535,7 @@
       "country": "United States",
       "lat": 32.94258,
       "lng": -97.03572,
-      "visits": 3,
+      "visits": 2,
       "firstVisit": "2023-09-02",
       "lastVisit": "2024-10-18",
       "tripIds": [
@@ -640,7 +640,7 @@
       "country": "Italy",
       "lat": 45.47905,
       "lng": 9.19752,
-      "visits": 3,
+      "visits": 1,
       "firstVisit": "2023-11-22",
       "lastVisit": "2023-11-27",
       "tripIds": [
@@ -852,7 +852,7 @@
       "country": "Spain",
       "lat": 41.4,
       "lng": 2.20111,
-      "visits": 2,
+      "visits": 1,
       "firstVisit": "2024-11-28",
       "lastVisit": "2024-11-30",
       "tripIds": [
@@ -878,7 +878,7 @@
       "country": "Spain",
       "lat": 40.42027,
       "lng": -3.70761,
-      "visits": 2,
+      "visits": 1,
       "firstVisit": "2024-12-01",
       "lastVisit": "2024-12-03",
       "tripIds": [
@@ -1061,7 +1061,7 @@
       "country": "United States",
       "lat": 40.44305,
       "lng": -80.00547,
-      "visits": 2,
+      "visits": 1,
       "firstVisit": "2025-08-02",
       "lastVisit": "2025-08-03",
       "tripIds": [
@@ -1074,7 +1074,7 @@
       "country": "United States",
       "lat": 40.44787,
       "lng": -79.94983,
-      "visits": 2,
+      "visits": 1,
       "firstVisit": "2025-08-02",
       "lastVisit": "2025-08-03",
       "tripIds": [
@@ -1100,7 +1100,7 @@
       "country": "Taiwan",
       "lat": 25.08049,
       "lng": 121.23116,
-      "visits": 2,
+      "visits": 1,
       "firstVisit": "2025-11-04",
       "lastVisit": "2025-11-14",
       "tripIds": [
@@ -1243,7 +1243,7 @@
       "country": "United Kingdom",
       "lat": 51.51029,
       "lng": -0.13185,
-      "visits": 2,
+      "visits": 1,
       "firstVisit": "2026-06-23",
       "lastVisit": "2026-06-25",
       "tripIds": [
@@ -3509,6 +3509,7 @@
   ],
   "stats": {
     "totalTrips": 53,
+    "totalTripDays": 243,
     "totalCities": 99,
     "totalCountries": 21
   }
