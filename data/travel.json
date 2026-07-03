@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-03T20:40:35.289837+00:00",
+  "generatedAt": "2026-07-03T20:40:52.261034+00:00",
   "sourceNote": "Parsed 9770 visits from location-history.json",
   "homeBases": [
     {
@@ -1317,9 +1317,9 @@
       ]
     },
     {
-      "id": "nouaseur-ma",
+      "id": "nouaseur-morocco",
       "city": "Nouaseur",
-      "country": "MA",
+      "country": "Morocco",
       "lat": 33.37027,
       "lng": -7.58291,
       "visits": 1,
@@ -1349,7 +1349,7 @@
       ],
       "countries": [
         "Lithuania",
-        "MA",
+        "Morocco",
         "Norway",
         "Spain",
         "United Kingdom"
@@ -1361,7 +1361,7 @@
         "eixample-spain",
         "langley-green-united-kingdom",
         "london-united-kingdom",
-        "nouaseur-ma",
+        "nouaseur-morocco",
         "oslo-norway",
         "vilnius-lithuania"
       ],

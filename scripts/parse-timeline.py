@@ -33,7 +33,7 @@ CC_NAMES = {
     "FI": "Finland", "FR": "France", "GB": "United Kingdom", "GR": "Greece", "HK": "Hong Kong",
     "HR": "Croatia", "HU": "Hungary", "IE": "Ireland", "IS": "Iceland", "IT": "Italy",
     "JP": "Japan", "KR": "South Korea", "LT": "Lithuania", "LU": "Luxembourg", "LV": "Latvia",
-    "MO": "Macau", "MX": "Mexico", "MY": "Malaysia", "NL": "Netherlands", "NO": "Norway",
+    "MA": "Morocco", "MO": "Macau", "MX": "Mexico", "MY": "Malaysia", "NL": "Netherlands", "NO": "Norway",
     "PL": "Poland", "PT": "Portugal", "RO": "Romania", "RU": "Russia", "SE": "Sweden",
     "SG": "Singapore", "SI": "Slovenia", "SK": "Slovakia", "TH": "Thailand", "TR": "Turkey",
     "TW": "Taiwan", "US": "United States", "VN": "Vietnam",
