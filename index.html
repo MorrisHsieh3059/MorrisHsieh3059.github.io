@@ -430,74 +430,25 @@
 
 						<div id="nyc-stats" class="nyc-stats">Loading walk data…</div>
 
-						<div class="nyc-layout">
-							<div class="nyc-map-panel">
-								<div class="nyc-map-wrap">
-									<div id="nyc-map"></div>
-									<div class="nyc-map-legend">
-										<span class="legend-label">The lines I know</span>
-										<span class="legend-gradient">
-											<span>rare</span>
-											<span class="walk-gradient"></span>
-											<span>often</span>
-										</span>
-									</div>
-									<div class="nyc-map-tagline">Every line is a walk since I made NYC home.</div>
-								</div>
+						<div class="nyc-map-wrap">
+							<div id="nyc-map"></div>
+							<div id="nyc-hover-card" class="nyc-hover-card"></div>
+							<div class="nyc-map-legend">
+								<span class="nyc-legend-item nyc-legend-street">Walked streets</span>
+								<span class="nyc-legend-item"><span class="nyc-legend-dot restaurant"></span> Restaurants</span>
+								<span class="nyc-legend-item"><span class="nyc-legend-dot goto"></span> Go-to spots</span>
 							</div>
-							<aside class="nyc-stories-sidebar">
-								<h3 class="nyc-panel-title"><i class="fas fa-shoe-prints"></i> NYC Stories</h3>
-								<div class="nyc-stories-panel" id="nyc-stories">
-									<div class="journal-card nyc-card" data-borough="manhattan">
-										<h4>Manhattan Walks</h4>
-										<div class="meta"><i class="fas fa-map-marker-alt"></i> Lower Manhattan → Central Park</div>
-										<p>
-											Tracing Dutch New Amsterdam through Wall Street, the African Burial Ground,
-											Washington Square Park, and up Fifth Avenue. The grid system is a masterpiece of urban planning.
-										</p>
-									</div>
-									<div class="journal-card nyc-card" data-borough="brooklyn">
-										<h4>Brooklyn Bridge &amp; DUMBO</h4>
-										<div class="meta"><i class="fas fa-map-marker-alt"></i> Brooklyn</div>
-										<p>
-											My go-to sunset walk. The bridge opened in 1883 as the world's longest suspension bridge.
-											DUMBO's waterfront views of the Manhattan skyline never get old.
-										</p>
-									</div>
-									<div class="journal-card nyc-card" data-borough="city">
-										<h4>Subway Stories</h4>
-										<div class="meta"><i class="fas fa-subway"></i> MTA Lines</div>
-										<p>
-											The subway is NYC's lifeline — 472 stations, 24/7 service, and over a century of history.
-											Each line has its own character, from the express 4/5 to the scenic N through Brooklyn.
-										</p>
-									</div>
-									<div class="journal-card nyc-card" data-borough="queens">
-										<h4>Queens: World's Borough</h4>
-										<div class="meta"><i class="fas fa-map-marker-alt"></i> Flushing, Astoria, Jackson Heights</div>
-										<p>
-											The most ethnically diverse urban area on earth. Amazing food in Flushing's Chinatown,
-											Greek culture in Astoria, and Himalayan restaurants in Jackson Heights.
-										</p>
-									</div>
-									<div class="journal-card nyc-card" data-borough="manhattan">
-										<h4>Hidden History</h4>
-										<div class="meta"><i class="fas fa-book"></i> NYC History</div>
-										<p>
-											Favorites: the Stonewall Inn, Tenement Museum, Ellis Island, and the High Line —
-											a freight rail line turned elevated park. NYC's layers of history are endless.
-										</p>
-									</div>
-									<div class="journal-card nyc-card" data-borough="city">
-										<h4>Seasons in the City</h4>
-										<div class="meta"><i class="fas fa-leaf"></i> Year-round</div>
-										<p>
-											Cherry blossoms at Brooklyn Botanic Garden in spring, Shakespeare in the Park in summer,
-											foliage in Central Park in fall, and holiday lights at Rockefeller Center in winter.
-										</p>
-									</div>
-								</div>
-							</aside>
+						</div>
+
+						<div class="nyc-places-lists">
+							<div class="nyc-places-column">
+								<h3 class="nyc-places-title restaurants"><i class="fas fa-utensils"></i> Restaurants</h3>
+								<div class="nyc-places-scroll" id="nyc-restaurants-list"></div>
+							</div>
+							<div class="nyc-places-column">
+								<h3 class="nyc-places-title goto"><i class="fas fa-star"></i> Go-to spots</h3>
+								<div class="nyc-places-scroll" id="nyc-goto-list"></div>
+							</div>
 						</div>
 					</div>
 				</div>

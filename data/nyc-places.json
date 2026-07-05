@@ -1,0 +1,28 @@
+{
+  "restaurants": [
+    {
+      "id": "via-carota",
+      "name": "Via Carota",
+      "lat": 40.7331,
+      "lng": -74.0034,
+      "address": "51 Grove St, New York, NY 10014",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Via+Carota+51+Grove+St+New+York",
+      "rating": 8,
+      "review": "TBD",
+      "images": []
+    }
+  ],
+  "go_to_spots": [
+    {
+      "id": "the-met",
+      "name": "The Met",
+      "lat": 40.7794,
+      "lng": -73.9632,
+      "address": "1000 5th Ave, New York, NY 10028",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=The+Met+1000+5th+Ave+New+York",
+      "rating": 8,
+      "review": "TBD",
+      "images": []
+    }
+  ]
+}

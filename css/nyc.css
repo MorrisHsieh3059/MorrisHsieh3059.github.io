@@ -1,4 +1,4 @@
-/* NYC section — walk map + stories sidebar */
+/* NYC section — walked streets map + place lists */
 
 .nyc-section .section-block {
 	padding-right: 44px;
@@ -13,22 +13,10 @@
 	letter-spacing: 0.02em;
 }
 
-.nyc-layout {
-	display: grid;
-	grid-template-columns: minmax(0, 1fr) minmax(220px, 24%);
-	gap: 0.75rem;
-	margin-top: 0.5rem;
-	align-items: stretch;
-}
-
-.nyc-map-panel {
-	min-width: 0;
-}
-
 .nyc-map-wrap {
 	position: relative;
 	width: 100%;
-	height: clamp(380px, calc(100vh - 340px), 580px);
+	height: clamp(380px, calc(100vh - 380px), 560px);
 	background: #f4f4f0;
 	border: 2px solid var(--nyc-blue, #0039A6);
 	box-shadow: inset 0 0 0 1px rgba(255, 199, 44, 0.35);
@@ -45,6 +33,9 @@
 	bottom: 12px;
 	left: 12px;
 	z-index: 500;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.65rem 1rem;
 	background: rgba(255, 255, 255, 0.94);
 	padding: 0.5rem 0.75rem;
 	font-size: 0.76rem;
@@ -54,103 +45,287 @@
 	border-left: 3px solid var(--nyc-gold, #FFC72C);
 }
 
-.nyc-map-legend .legend-label {
-	display: block;
-	margin-bottom: 0.35rem;
-	font-weight: 500;
-}
-
-.nyc-map-legend .legend-gradient {
+.nyc-legend-item {
 	display: inline-flex;
 	align-items: center;
-	gap: 0.4rem;
+	gap: 0.35rem;
 }
 
-.nyc-map-legend .walk-gradient {
+.nyc-legend-street::before {
+	content: '';
 	display: inline-block;
-	width: 72px;
-	height: 6px;
-	border-radius: 3px;
-	background: linear-gradient(to right,
-		rgba(255, 199, 44, 0.08),
-		rgba(255, 199, 44, 0.95));
-	vertical-align: middle;
+	width: 22px;
+	height: 5px;
+	background: #FFC72C;
+	border-radius: 1px;
 }
 
-.nyc-map-tagline {
+.nyc-legend-dot {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	display: inline-block;
+}
+
+.nyc-legend-dot.restaurant {
+	background: #DC143C;
+}
+
+.nyc-legend-dot.goto {
+	background: #2E7D32;
+}
+
+.nyc-hover-card {
 	position: absolute;
-	bottom: 12px;
-	right: 12px;
-	z-index: 500;
-	font-family: Lora, serif;
-	font-size: 0.72rem;
-	font-style: italic;
-	color: #666;
-	background: rgba(255, 255, 255, 0.88);
-	padding: 0.35rem 0.6rem;
-	max-width: 220px;
-	text-align: right;
+	top: 12px;
+	left: 12px;
+	z-index: 600;
+	width: 300px;
+	max-width: calc(100% - 24px);
+	max-height: calc(100% - 24px);
+	overflow-y: auto;
+	background: #fff;
+	border-left: 4px solid var(--nyc-blue, #0039A6);
+	padding: 1rem 1.1rem;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.2s ease;
 }
 
-.nyc-stories-sidebar {
-	min-width: 0;
-	display: flex;
-	flex-direction: column;
-	max-height: clamp(380px, calc(100vh - 340px), 580px);
+.nyc-hover-card.visible {
+	opacity: 1;
 }
 
-.nyc-panel-title {
+.nyc-hover-card.interactive {
+	pointer-events: auto;
+}
+
+.nyc-hover-card.restaurant {
+	border-left-color: #DC143C;
+}
+
+.nyc-hover-card.goto {
+	border-left-color: #2E7D32;
+}
+
+.nyc-hover-card h5 {
 	font-family: 'Roboto Mono', sans-serif;
 	font-size: 0.95rem;
-	color: var(--nyc-blue, #0039A6);
-	margin: 0 0 0.75rem;
-	font-weight: 500;
-	flex-shrink: 0;
+	margin: 0 0 0.35rem;
 }
 
-.nyc-panel-title i {
-	color: var(--nyc-gold, #FFC72C);
+.nyc-place-meta {
+	font-size: 0.72rem;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	color: #888;
+	margin-bottom: 0.5rem;
+}
+
+.nyc-place-address {
+	font-size: 0.82rem;
+	margin: 0 0 0.6rem;
+}
+
+.nyc-place-address a {
+	color: var(--nyc-blue, #0039A6);
+	text-decoration: none;
+}
+
+.nyc-place-address a:hover {
+	text-decoration: underline;
+}
+
+.nyc-place-rating {
+	margin-bottom: 0.5rem;
+}
+
+.nyc-rating-badge {
+	display: inline-block;
+	font-family: 'Roboto Mono', sans-serif;
+	font-size: 0.78rem;
+	font-weight: 600;
+	background: #f5f5f5;
+	border: 1px solid #ddd;
+	padding: 0.15rem 0.5rem;
+	border-radius: 2px;
+}
+
+.nyc-place-review {
+	font-family: Lora, serif;
+	font-size: 0.85rem;
+	color: #555;
+	margin: 0 0 0.75rem;
+	font-style: italic;
+}
+
+.nyc-photo-placeholder {
+	font-size: 0.8rem;
+	color: #999;
+	background: #f8f8f8;
+	border: 1px dashed #ddd;
+	padding: 1.25rem 0.75rem;
+	text-align: center;
+}
+
+.nyc-photo-placeholder i {
+	margin-right: 0.35rem;
+}
+
+.nyc-place-carousel {
+	margin-top: 0.5rem;
+}
+
+.nyc-place-carousel figure {
+	margin: 0;
+}
+
+.nyc-place-carousel img {
+	width: 100%;
+	height: 140px;
+	object-fit: cover;
+	display: block;
+}
+
+.nyc-place-carousel .owl-nav button {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background: rgba(255, 255, 255, 0.9) !important;
+	width: 28px;
+	height: 28px;
+	border-radius: 50%;
+	font-size: 0.7rem;
+}
+
+.nyc-place-carousel .owl-nav .owl-prev {
+	left: 4px;
+}
+
+.nyc-place-carousel .owl-nav .owl-next {
+	right: 4px;
+}
+
+.nyc-places-lists {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1rem;
+	margin-top: 1rem;
+}
+
+.nyc-places-column {
+	min-width: 0;
+}
+
+.nyc-places-title {
+	font-family: 'Roboto Mono', sans-serif;
+	font-size: 0.92rem;
+	color: var(--nyc-blue, #0039A6);
+	margin: 0 0 0.6rem;
+	font-weight: 500;
+}
+
+.nyc-places-title.restaurants i {
+	color: #DC143C;
+}
+
+.nyc-places-title.goto i {
+	color: #2E7D32;
+}
+
+.nyc-places-title i {
 	margin-right: 0.4rem;
 }
 
-.nyc-stories-panel {
-	flex: 1;
+.nyc-places-scroll {
+	max-height: 200px;
 	overflow-y: auto;
 	padding-right: 4px;
 	scrollbar-width: thin;
 }
 
-.nyc-stories-panel .journal-card {
-	margin-bottom: 0.75rem;
-	cursor: default;
-	transition: border-left-color 0.2s ease, box-shadow 0.2s ease;
+.nyc-place-item {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	width: 100%;
+	text-align: left;
+	padding: 0.55rem 0.65rem;
+	margin-bottom: 0.4rem;
+	border: 1px solid #e0e0e0;
+	background: #fff;
+	cursor: pointer;
+	transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.nyc-stories-panel .journal-card.nyc-card-highlight {
-	border-left-color: var(--nyc-gold, #FFC72C);
-	box-shadow: 0 2px 12px rgba(0, 57, 166, 0.12);
+.nyc-place-item:hover,
+.nyc-place-item.active {
+	border-color: var(--nyc-blue, #0039A6);
+	box-shadow: 0 2px 8px rgba(0, 57, 166, 0.1);
 }
 
-.nyc-notice {
+.nyc-place-dot {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	flex-shrink: 0;
+}
+
+.nyc-place-name {
+	flex: 1;
 	font-family: Lora, serif;
-	color: #888;
-	padding: 1rem 0;
+	font-size: 0.88rem;
+	color: #333;
 }
 
-@media (max-width: 991px) {
-	.nyc-layout {
+.nyc-place-rating-mini {
+	font-family: 'Roboto Mono', sans-serif;
+	font-size: 0.72rem;
+	color: #888;
+	flex-shrink: 0;
+}
+
+.nyc-list-empty {
+	font-size: 0.85rem;
+	color: #999;
+	margin: 0;
+}
+
+.nyc-place-marker .place-dot {
+	position: relative;
+	width: 18px;
+	height: 18px;
+}
+
+.nyc-place-marker .place-glow {
+	position: absolute;
+	inset: 0;
+	border-radius: 50%;
+	background: var(--place-color);
+	opacity: 0.35;
+	transform: scale(1.8);
+}
+
+.nyc-place-marker .place-core {
+	position: absolute;
+	inset: 3px;
+	border-radius: 50%;
+	background: var(--place-color);
+	border: 2px solid #fff;
+	box-shadow: 0 0 0 1px var(--place-color);
+}
+
+.nyc-place-marker.highlight .place-core {
+	transform: scale(1.2);
+}
+
+@media (max-width: 767px) {
+	.nyc-places-lists {
 		grid-template-columns: 1fr;
 	}
 
-	.nyc-stories-sidebar {
-		max-height: none;
-	}
-
 	.nyc-map-wrap {
-		height: clamp(300px, 55vh, 480px);
-	}
-
-	.nyc-map-tagline {
-		display: none;
+		height: clamp(300px, 50vh, 440px);
 	}
 }
