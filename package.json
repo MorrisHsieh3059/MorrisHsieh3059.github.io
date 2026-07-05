@@ -6,6 +6,7 @@
   "scripts": {
     "postinstall": "node scripts/vendor-assets.js",
     "build-travel": "python3 scripts/parse-timeline.py ../Downloads/location-history.json",
+    "build-nyc": "python3 scripts/parse-nyc.py ../Downloads/location-history.json",
     "start": "serve . -l 8000",
     "dev": "serve . -l 8000"
   },
