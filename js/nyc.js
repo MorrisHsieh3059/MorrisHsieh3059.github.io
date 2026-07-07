@@ -47,13 +47,13 @@
 	}
 
 	function streetStyle(count) {
-		var opacity = Math.min(0.85, 0.25 + Math.log((count || 1) + 1) * 0.12);
-		var weight = (count || 1) > 12 ? 7 : (count || 1) > 5 ? 6 : 5;
+		var opacity = Math.min(0.9, 0.35 + Math.log((count || 1) + 1) * 0.1);
+		var weight = (count || 1) > 15 ? 8 : (count || 1) > 6 ? 7 : 6;
 		return {
-			color: '#FFC72C',
+			color: '#E6B800',
 			weight: weight,
 			opacity: opacity,
-			lineCap: 'butt',
+			lineCap: 'round',
 			lineJoin: 'round'
 		};
 	}
@@ -196,19 +196,29 @@
 			streetLayer = null;
 		}
 
-		streetLayer = L.layerGroup().addTo(map);
-		var bounds = L.latLngBounds();
-		(streetsData.streets || []).forEach(function (street) {
-			var latlngs = (street.coords || []).map(function (c) {
-				return L.latLng(c[1], c[0]);
-			});
-			if (latlngs.length < 2) return;
-			L.polyline(latlngs, streetStyle(street.count)).addTo(streetLayer);
-			latlngs.forEach(function (ll) { bounds.extend(ll); });
+		var features = (streetsData.streets || []).map(function (street) {
+			return {
+				type: 'Feature',
+				properties: { count: street.count || 1 },
+				geometry: {
+					type: 'LineString',
+					coordinates: street.coords || []
+				}
+			};
 		});
 
-		if (bounds.isValid()) {
-			map.fitBounds(bounds, { padding: MAP_PAD });
+		streetLayer = L.geoJSON({
+			type: 'FeatureCollection',
+			features: features
+		}, {
+			style: function (feature) {
+				return streetStyle(feature.properties.count);
+			},
+			interactive: false
+		}).addTo(map);
+
+		if (streetLayer.getBounds().isValid()) {
+			map.fitBounds(streetLayer.getBounds(), { padding: MAP_PAD });
 		}
 	}
 
