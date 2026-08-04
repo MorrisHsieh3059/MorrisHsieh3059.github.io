@@ -97,7 +97,7 @@
 	function popupHtml(visit) {
 		var pictures = visit.pictures || [];
 		var slides = pictures.map(function (filename) {
-			return '<div class="item"><figure><img src="' + photoPath(visit, filename) + '" alt="' + visit.name + '"></figure></div>';
+			return '<div class="item"><figure><img src="' + photoPath(visit, filename) + '" alt="' + visit.name + '" loading="lazy"></figure></div>';
 		}).join('');
 
 		if (!slides) {
