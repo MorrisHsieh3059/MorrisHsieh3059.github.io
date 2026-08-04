@@ -31,13 +31,15 @@
 	/*=========================================================================
 		Star rating badge — an original design (small red star shapes),
 		not the MICHELIN Guide's trademarked rosette/star artwork.
-	=========================================================================*/
-	function starsHtml(rating) {
-		var m = /^(ex-)?([1-3])-star$/.exec(rating || '');
-		if (!m) return '';
 
-		var isFormer = !!m[1];
-		var count = parseInt(m[2], 10);
+		visit.stars: 1-3 (number of stars at time of visit)
+		visit.status: "current" | "former" (still starred today, or not)
+	=========================================================================*/
+	function starsHtml(visit) {
+		var count = parseInt(visit.stars, 10);
+		if (!count || count < 1) return '';
+
+		var isFormer = visit.status === 'former';
 		var starClass = 'mich-star' + (isFormer ? ' mich-star-former' : '');
 		var stars = '';
 		for (var i = 0; i < count; i++) {
@@ -47,6 +49,34 @@
 		return '<span class="michelin-stars">' + stars +
 			(isFormer ? '<span class="mich-former-label">Former</span>' : '') +
 			'</span>';
+	}
+
+	/*=========================================================================
+		Totals banner — sum of current vs. former MICHELIN stars across
+		all logged visits, shown above the grid.
+	=========================================================================*/
+	function totalsHtml(visits) {
+		var current = 0, former = 0;
+		visits.forEach(function (v) {
+			var count = parseInt(v.stars, 10) || 0;
+			if (v.status === 'former') {
+				former += count;
+			} else {
+				current += count;
+			}
+		});
+
+		return (
+			'<span class="michelin-totals-group">' +
+				'<span class="mich-star"></span>' +
+				'<strong>' + current + '</strong> Current' +
+			'</span>' +
+			'<span class="michelin-totals-sep">|</span>' +
+			'<span class="michelin-totals-group">' +
+				'<span class="mich-star mich-star-former"></span>' +
+				'<strong>' + former + '</strong> Former' +
+			'</span>'
+		);
 	}
 
 	function formatVisitDate(dateStr) {
@@ -81,7 +111,7 @@
 					'<h4 class="michelin-card-title">' +
 						'<span>' + visit.name + '</span>' +
 						'<span class="michelin-card-title-sep">|</span>' +
-						starsHtml(visit.rating) +
+						starsHtml(visit) +
 					'</h4>' +
 					'<div class="michelin-meta">' +
 						'<span><i class="fas fa-calendar-alt"></i>' + formatVisitDate(visit.date) + '</span>' +
@@ -108,7 +138,7 @@
 			'<div id="popup-michelin-' + visit.id + '" class="popup mfp-hide">' +
 				'<div class="popup-inner">' +
 					'<div class="michelin-popup-header">' +
-						'<h4><span>' + visit.name + '</span> <span class="michelin-card-title-sep">|</span> ' + starsHtml(visit.rating) + '</h4>' +
+						'<h4><span>' + visit.name + '</span> <span class="michelin-card-title-sep">|</span> ' + starsHtml(visit) + '</h4>' +
 						'<div class="michelin-meta">' +
 							'<span><i class="fas fa-calendar-alt"></i>' + formatVisitDate(visit.date) + '</span>' +
 							'<span><i class="fas fa-map-marker-alt"></i>' + (visit.city || '') + '</span>' +
@@ -127,11 +157,15 @@
 	=========================================================================*/
 	function render(visits) {
 		var $grid = $('#michelin-grid');
+		var $totals = $('#michelin-totals');
 
 		if (!visits || !visits.length) {
+			$totals.empty();
 			$grid.html('<p class="michelin-empty">No MICHELIN visits logged yet — check back soon!</p>');
 			return;
 		}
+
+		$totals.html(totalsHtml(visits));
 
 		// Sort newest visit first.
 		visits = visits.slice().sort(function (a, b) {

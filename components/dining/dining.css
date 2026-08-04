@@ -56,6 +56,44 @@
 	color: #888;
 }
 
+.michelin-totals {
+	display: flex;
+	align-items: center;
+	gap: 0.9rem;
+	margin: 0 0 1.75rem;
+	padding: 0.75rem 1.25rem;
+	background: #fff;
+	border-left: 4px solid var(--michelin-red);
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+	font-family: 'Roboto Mono', sans-serif;
+	font-size: 0.95rem;
+	color: #444;
+}
+
+.michelin-totals:empty {
+	display: none;
+}
+
+.michelin-totals-group {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.45rem;
+}
+
+.michelin-totals-group .mich-star {
+	width: 16px;
+	height: 16px;
+}
+
+.michelin-totals-group strong {
+	color: #222;
+	font-size: 1.05rem;
+}
+
+.michelin-totals-sep {
+	color: #ccc;
+}
+
 .michelin-grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
