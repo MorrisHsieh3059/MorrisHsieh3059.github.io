@@ -24,7 +24,7 @@
 
 .section-main {
 	background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.55)),
-		url('../img/nyc/hero-skyline.jpg');
+		url('../img/home/hero-skyline.jpg');
 	background-size: cover;
 	background-position: center;
 }

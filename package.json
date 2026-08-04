@@ -5,11 +5,12 @@
   "private": true,
   "scripts": {
     "postinstall": "node scripts/vendor-assets.js",
-    "build-travel": "python3 scripts/parse-timeline.py ../Downloads/location-history.json",
-    "build-nyc": "python3 scripts/parse-nyc.py ../Downloads/location-history.json && python3 scripts/match-nyc-streets.py ../Downloads/location-history.json",
-    "build-nyc-offline": "python3 scripts/parse-nyc.py ../Downloads/location-history.json && python3 scripts/match-nyc-streets.py --offline ../Downloads/location-history.json",
-    "start": "serve . -l 8000",
-    "dev": "serve . -l 8000"
+    "build": "node build/build.js",
+    "build-travel": "python3 components/travel/scripts/parse-timeline.py ../Downloads/location-history.json",
+    "build-nyc": "python3 components/nyc/scripts/parse-nyc.py ../Downloads/location-history.json && python3 components/nyc/scripts/match-nyc-streets.py ../Downloads/location-history.json",
+    "build-nyc-offline": "python3 components/nyc/scripts/parse-nyc.py ../Downloads/location-history.json && python3 components/nyc/scripts/match-nyc-streets.py --offline ../Downloads/location-history.json",
+    "start": "npm run build && serve dist -l 8000",
+    "dev": "npm run build && serve dist -l 8000"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "5.8.1",
