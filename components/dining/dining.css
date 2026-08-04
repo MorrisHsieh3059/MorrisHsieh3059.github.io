@@ -168,14 +168,20 @@
 	color: #888;
 }
 
+.michelin-meta-menu {
+	margin-top: 0.4rem;
+}
+
 .michelin-meta i {
 	margin-right: 0.3rem;
 	color: var(--michelin-red);
 }
 
 /*=======================================================
-	Custom star rating badge (original design, not the
-	MICHELIN Guide's trademarked artwork)
+	Star rating badge — masked from the MICHELIN star artwork
+	(components/dining/img/icons/michelin-star.png), tinted via
+	background-color so "current" (red) vs. "former" (gray) reuse
+	the same asset.
 =======================================================*/
 .michelin-stars {
 	display: inline-flex;
@@ -184,16 +190,18 @@
 
 .mich-star {
 	display: inline-block;
-	width: 13px;
-	height: 13px;
+	width: 14px;
+	height: 14px;
 	margin-right: 2px;
 	background-color: var(--michelin-red);
-	-webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 1.5l3.09 6.26 6.91 1-5 4.87 1.18 6.88L12 17.77l-6.18 3.24L7 14.13l-5-4.87 6.91-1z'/></svg>");
-	mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 1.5l3.09 6.26 6.91 1-5 4.87 1.18 6.88L12 17.77l-6.18 3.24L7 14.13l-5-4.87 6.91-1z'/></svg>");
+	-webkit-mask-image: url('../img/dining/icons/michelin-star.png');
+	mask-image: url('../img/dining/icons/michelin-star.png');
 	-webkit-mask-size: contain;
 	mask-size: contain;
 	-webkit-mask-repeat: no-repeat;
 	mask-repeat: no-repeat;
+	-webkit-mask-position: center;
+	mask-position: center;
 }
 
 .mich-star-former {

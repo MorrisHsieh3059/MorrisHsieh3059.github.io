@@ -92,7 +92,32 @@
 
 	/*=========================================================================
 		Card + popup markup for a single visit
+
+		Line 1: restaurant name | stars
+		Line 2: city, date, cuisine
+		Line 3: menu
 	=========================================================================*/
+	function titleHtml(visit) {
+		return (
+			'<span>' + visit.name + '</span>' +
+			'<span class="michelin-card-title-sep">|</span>' +
+			starsHtml(visit)
+		);
+	}
+
+	function metaHtml(visit) {
+		return (
+			'<div class="michelin-meta">' +
+				'<span><i class="fas fa-map-marker-alt"></i>' + (visit.city || '') + '</span>' +
+				'<span><i class="fas fa-calendar-alt"></i>' + formatVisitDate(visit.date) + '</span>' +
+				'<span><i class="fas fa-utensils"></i>' + (visit.cuisine || '') + '</span>' +
+			'</div>' +
+			'<div class="michelin-meta michelin-meta-menu">' +
+				'<span><i class="fas fa-clipboard-list"></i>' + (visit.menu || '') + '</span>' +
+			'</div>'
+		);
+	}
+
 	function cardHtml(visit) {
 		var pictures = visit.pictures || [];
 		var coverStyle = pictures.length
@@ -108,17 +133,8 @@
 			'<a href="#popup-michelin-' + visit.id + '" class="michelin-card">' +
 				'<div class="michelin-card-photo"' + coverStyle + '>' + photoInner + '</div>' +
 				'<div class="michelin-card-body">' +
-					'<h4 class="michelin-card-title">' +
-						'<span>' + visit.name + '</span>' +
-						'<span class="michelin-card-title-sep">|</span>' +
-						starsHtml(visit) +
-					'</h4>' +
-					'<div class="michelin-meta">' +
-						'<span><i class="fas fa-calendar-alt"></i>' + formatVisitDate(visit.date) + '</span>' +
-						'<span><i class="fas fa-map-marker-alt"></i>' + (visit.city || '') + '</span>' +
-						'<span><i class="fas fa-utensils"></i>' + (visit.cuisine || '') + '</span>' +
-						'<span><i class="fas fa-clipboard-list"></i>' + (visit.menu || '') + '</span>' +
-					'</div>' +
+					'<h4 class="michelin-card-title">' + titleHtml(visit) + '</h4>' +
+					metaHtml(visit) +
 				'</div>' +
 			'</a>'
 		);
@@ -138,13 +154,8 @@
 			'<div id="popup-michelin-' + visit.id + '" class="popup mfp-hide">' +
 				'<div class="popup-inner">' +
 					'<div class="michelin-popup-header">' +
-						'<h4><span>' + visit.name + '</span> <span class="michelin-card-title-sep">|</span> ' + starsHtml(visit) + '</h4>' +
-						'<div class="michelin-meta">' +
-							'<span><i class="fas fa-calendar-alt"></i>' + formatVisitDate(visit.date) + '</span>' +
-							'<span><i class="fas fa-map-marker-alt"></i>' + (visit.city || '') + '</span>' +
-							'<span><i class="fas fa-utensils"></i>' + (visit.cuisine || '') + '</span>' +
-							'<span><i class="fas fa-clipboard-list"></i>' + (visit.menu || '') + '</span>' +
-						'</div>' +
+						'<h4>' + titleHtml(visit) + '</h4>' +
+						metaHtml(visit) +
 					'</div>' +
 					'<div class="popup-slider owl-carousel">' + slides + '</div>' +
 				'</div>' +
