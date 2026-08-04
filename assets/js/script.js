@@ -45,6 +45,20 @@ $(function(){
 	});
 
 	/*=========================================================================
+		Menu items with a submenu (e.g. Dining) — clicking the parent
+		expands its sub-links instead of navigating.
+	=========================================================================*/
+	$('.menu-parent-toggle').on('click', function(e){
+		e.preventDefault();
+		var $item = $(this).closest('.menu-item-has-children');
+		var wasExpanded = $item.hasClass('expanded');
+		$('.menu-item-has-children').removeClass('expanded');
+		if( !wasExpanded ){
+			$item.addClass('expanded');
+		}
+	});
+
+	/*=========================================================================
 		Navigation Functions
 	=========================================================================*/
 	$('.section-toggle').on('click', function(){

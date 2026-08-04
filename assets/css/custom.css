@@ -4,6 +4,7 @@
 	--nyc-gold: #FFC72C;
 	--nyc-blue: #0039A6;
 	--accent: #303F9F;
+	--michelin-red: #B7141F;
 	--frame-gutter: #e0e0e0;
 	--frame-inset: 21px; /* page-border offset (14px) + border width (7px) */
 }
@@ -177,6 +178,60 @@
 
 .social-links a:hover {
 	color: var(--nyc-blue);
+}
+
+/*=======================================================
+	Menu — expandable submenu (e.g. Dining → Michelin/General)
+=======================================================*/
+.menu-item-has-children > .menu-parent-toggle {
+	position: relative;
+}
+
+.menu-item-has-children > .menu-parent-toggle:after {
+	content: '';
+	display: inline-block;
+	width: 6px;
+	height: 6px;
+	margin-left: 6px;
+	border-right: 1px solid rgba(255, 255, 255, 0.6);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+	transform: rotate(45deg) translateY(-2px);
+	transition: transform 0.2s ease;
+}
+
+.menu-item-has-children.expanded > .menu-parent-toggle:after {
+	transform: rotate(-135deg) translateY(2px);
+}
+
+.submenu {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	max-height: 0;
+	overflow: hidden;
+	opacity: 0;
+	transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.menu-item-has-children.expanded > .submenu {
+	max-height: 200px;
+	opacity: 1;
+}
+
+.submenu > li > a {
+	display: block;
+	padding: 6px 0;
+	color: rgba(255, 255, 255, 0.5);
+	font-size: 13px;
+	font-weight: 700;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+	text-decoration: none;
+	transition: color 0.2s ease;
+}
+
+.submenu > li > a:hover {
+	color: #fff;
 }
 
 .verse {

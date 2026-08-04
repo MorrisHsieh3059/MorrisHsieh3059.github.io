@@ -19,6 +19,7 @@
 	<link rel="stylesheet" href="css/custom.css">
 	<link rel="stylesheet" href="css/travel.css">
 	<link rel="stylesheet" href="css/nyc.css">
+	<link rel="stylesheet" href="css/dining.css">
 	<link rel="stylesheet" href="vendor/fontawesome/css/all.min.css">
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
 </head>
@@ -54,7 +55,13 @@
 					<li><a href="#resume" class="section-toggle" data-section="resume">Resume</a></li>
 					<li><a href="#nyc" class="section-toggle" data-section="nyc">NYC</a></li>
 					<li><a href="#travel" class="section-toggle" data-section="travel">Travel</a></li>
-					<li><a href="#dining" class="section-toggle" data-section="dining">Dining</a></li>
+					<li class="menu-item-has-children">
+						<a href="#" class="menu-parent-toggle">Dining</a>
+						<ul class="submenu">
+							<li><a href="#dining" class="section-toggle" data-section="dining" data-dining-tab="michelin">Michelin</a></li>
+							<li><a href="#dining" class="section-toggle" data-section="dining" data-dining-tab="general">General</a></li>
+						</ul>
+					</li>
 					<li><a href="#portfolio" class="section-toggle" data-section="portfolio">Gallery</a></li>
 					<li><a href="#contact" class="section-toggle" data-section="contact">Contact</a></li>
 				</ul>
@@ -94,5 +101,6 @@
 	<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
 	<script src="js/travel.js"></script>
 	<script src="js/nyc.js"></script>
+	<script src="js/dining.js"></script>
 </body>
 </html>

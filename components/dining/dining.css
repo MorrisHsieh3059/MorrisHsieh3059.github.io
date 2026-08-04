@@ -1,0 +1,198 @@
+/*=======================================================
+	Dining — General / Michelin tabs
+=======================================================*/
+.dining-tabs {
+	position: relative;
+	list-style: none;
+	margin: 0 0 1.75rem;
+	padding: 0;
+	font-size: 0;
+}
+
+.dining-tabs > li {
+	display: inline-block;
+	font-size: 14px;
+	margin: 0 0.5rem 0.5rem 0;
+}
+
+.dining-tabs > li > a {
+	display: inline-block;
+	padding: 0.45rem 1.2rem;
+	border: 1px solid #ddd;
+	border-radius: 999px;
+	color: #777;
+	font-family: 'Roboto Mono', sans-serif;
+	font-weight: 700;
+	font-size: 0.8rem;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	text-decoration: none;
+	transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.dining-tabs > li > a:hover {
+	color: var(--accent);
+	border-color: var(--accent);
+}
+
+.dining-tabs > li > a.active {
+	color: #fff;
+	background: var(--accent);
+	border-color: var(--accent);
+}
+
+.dining-panel {
+	display: none;
+}
+
+.dining-panel.active {
+	display: block;
+}
+
+/*=======================================================
+	Michelin visit cards
+=======================================================*/
+.michelin-empty {
+	color: #888;
+}
+
+.michelin-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+	gap: 1.5rem;
+}
+
+.michelin-card {
+	background: #fff;
+	border-top: 4px solid var(--michelin-red);
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+	overflow: hidden;
+	cursor: pointer;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.michelin-card:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.michelin-card-photo {
+	height: 170px;
+	background-color: #eee;
+	background-size: cover;
+	background-position: center;
+	position: relative;
+}
+
+.michelin-card-photo-count {
+	position: absolute;
+	right: 0.6rem;
+	bottom: 0.6rem;
+	background: rgba(0, 0, 0, 0.6);
+	color: #fff;
+	font-size: 0.75rem;
+	padding: 0.15rem 0.55rem;
+	border-radius: 999px;
+}
+
+.michelin-card-photo-placeholder {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #aaa;
+	font-size: 1.6rem;
+}
+
+.michelin-card-body {
+	padding: 1.1rem 1.35rem 1.35rem;
+}
+
+.michelin-card-title {
+	font-family: 'Roboto Mono', sans-serif;
+	font-size: 1rem;
+	margin: 0 0 0.6rem;
+	display: flex;
+	align-items: baseline;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+
+.michelin-card-title-sep {
+	color: #ccc;
+}
+
+.michelin-meta {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.6rem 1rem;
+	font-size: 0.82rem;
+	color: #888;
+}
+
+.michelin-meta i {
+	margin-right: 0.3rem;
+	color: var(--michelin-red);
+}
+
+/*=======================================================
+	Custom star rating badge (original design, not the
+	MICHELIN Guide's trademarked artwork)
+=======================================================*/
+.michelin-stars {
+	display: inline-flex;
+	align-items: center;
+}
+
+.mich-star {
+	display: inline-block;
+	width: 13px;
+	height: 13px;
+	margin-right: 2px;
+	background-color: var(--michelin-red);
+	-webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 1.5l3.09 6.26 6.91 1-5 4.87 1.18 6.88L12 17.77l-6.18 3.24L7 14.13l-5-4.87 6.91-1z'/></svg>");
+	mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 1.5l3.09 6.26 6.91 1-5 4.87 1.18 6.88L12 17.77l-6.18 3.24L7 14.13l-5-4.87 6.91-1z'/></svg>");
+	-webkit-mask-size: contain;
+	mask-size: contain;
+	-webkit-mask-repeat: no-repeat;
+	mask-repeat: no-repeat;
+}
+
+.mich-star-former {
+	background-color: #bbb;
+}
+
+.mich-former-label {
+	font-size: 0.7rem;
+	color: #999;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
+	margin-left: 0.3rem;
+}
+
+/*=======================================================
+	Michelin visit popup (photo carousel)
+=======================================================*/
+.michelin-popup .popup-inner {
+	max-width: 760px;
+}
+
+.michelin-popup-header {
+	margin-bottom: 1rem;
+}
+
+.michelin-popup-header h4 {
+	font-family: 'Roboto Mono', sans-serif;
+	margin: 0 0 0.5rem;
+	display: flex;
+	align-items: baseline;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+
+@media (max-width: 767px) {
+	.michelin-grid {
+		grid-template-columns: 1fr;
+	}
+}
