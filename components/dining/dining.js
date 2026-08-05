@@ -130,7 +130,7 @@
 			: '<div class="michelin-card-photo-placeholder"><i class="fas fa-camera"></i></div>';
 
 		return (
-			'<a href="#popup-michelin-' + visit.id + '" class="michelin-card">' +
+			'<a href="#popup-michelin-' + visit.id + '" class="michelin-card" data-cuisine="' + (visit.cuisine || '') + '" data-menu="' + (visit.menu || '') + '">' +
 				'<div class="michelin-card-photo"' + coverStyle + '>' + photoInner + '</div>' +
 				'<div class="michelin-card-body">' +
 					'<h4 class="michelin-card-title">' + titleHtml(visit) + '</h4>' +
@@ -164,6 +164,48 @@
 	}
 
 	/*=========================================================================
+		Cuisine / menu filters — dropdowns populated from whatever values
+		actually appear in the data, filtering the grid by exact match
+		(cards stay in the DOM, just hidden, so popups keep working).
+	=========================================================================*/
+	function populateFilterSelect($select, values) {
+		var unique = [];
+		values.forEach(function (v) {
+			if (v && unique.indexOf(v) === -1) unique.push(v);
+		});
+		unique.sort(function (a, b) { return a.localeCompare(b); });
+
+		unique.forEach(function (v) {
+			$select.append($('<option></option>').attr('value', v).text(v));
+		});
+	}
+
+	function populateFilters(visits) {
+		populateFilterSelect($('#michelin-filter-cuisine'), visits.map(function (v) { return v.cuisine; }));
+		populateFilterSelect($('#michelin-filter-menu'), visits.map(function (v) { return v.menu; }));
+	}
+
+	function applyFilters() {
+		var cuisine = $('#michelin-filter-cuisine').val() || 'all';
+		var menu = $('#michelin-filter-menu').val() || 'all';
+		var visibleCount = 0;
+
+		$('#michelin-grid .michelin-card').each(function () {
+			var $card = $(this);
+			var matches =
+				(cuisine === 'all' || $card.data('cuisine') === cuisine) &&
+				(menu === 'all' || $card.data('menu') === menu);
+
+			$card.toggleClass('michelin-card-hidden', !matches);
+			if (matches) visibleCount++;
+		});
+
+		$('#michelin-filter-empty').toggle(visibleCount === 0);
+	}
+
+	$(document).on('change', '#michelin-filter-cuisine, #michelin-filter-menu', applyFilters);
+
+	/*=========================================================================
 		Render the grid + wire up popups
 	=========================================================================*/
 	function render(visits) {
@@ -172,11 +214,13 @@
 
 		if (!visits || !visits.length) {
 			$totals.empty();
+			$('#michelin-filters').hide();
 			$grid.html('<p class="michelin-empty">No MICHELIN visits logged yet — check back soon!</p>');
 			return;
 		}
 
 		$totals.html(totalsHtml(visits));
+		populateFilters(visits);
 
 		// Sort newest visit first.
 		visits = visits.slice().sort(function (a, b) {
@@ -186,6 +230,7 @@
 		var cardsHtml = visits.map(cardHtml).join('');
 		var popupsHtml = visits.map(popupHtml).join('');
 		$grid.html(cardsHtml + popupsHtml);
+		applyFilters();
 
 		$grid.find('.michelin-card').magnificPopup({
 			type: 'inline',

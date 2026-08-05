@@ -84,9 +84,24 @@
 								A running log of MICHELIN Guide restaurants I've visited.
 							</p>
 							<div class="michelin-totals" id="michelin-totals"></div>
+							<div class="michelin-filters" id="michelin-filters">
+								<label class="michelin-filter">
+									<span class="michelin-filter-label">Cuisine</span>
+									<select class="michelin-filter-select" id="michelin-filter-cuisine">
+										<option value="all">All Cuisines</option>
+									</select>
+								</label>
+								<label class="michelin-filter">
+									<span class="michelin-filter-label">Menu</span>
+									<select class="michelin-filter-select" id="michelin-filter-menu">
+										<option value="all">All Menus</option>
+									</select>
+								</label>
+							</div>
 							<div class="michelin-grid" id="michelin-grid">
 								<p class="michelin-empty">Loading Michelin visits…</p>
 							</div>
+							<p class="michelin-empty michelin-filter-empty" id="michelin-filter-empty" style="display:none;">No visits match these filters.</p>
 						</div>
 					</div>
 				</div>
