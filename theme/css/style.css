@@ -218,8 +218,7 @@ body.border-dark .main-content > .page-border{
 	letter-spacing:4px;
 }
 .section-block{
-	padding:110px;
-	padding-top:0;
+	padding:0 60px 110px;
 }
 body.section-switching .main-content:before,
 body.section-switching .main-content:after{
@@ -1446,8 +1445,7 @@ body.loaded #preloader .loader{
 		padding-top:90px;
 	}
 	.section-block{
-		padding:90px;
-		padding-top:0;
+		padding:0 50px 90px;
 	}
 	.contact-info-icons{
 		margin-top:60px;
@@ -1478,8 +1476,7 @@ body.loaded #preloader .loader{
 		padding-top:70px;
 	}
 	.section-block{
-		padding:70px;
-		padding-top:0;
+		padding:0 40px 70px;
 	}
 }
 @media(max-width:400px){
@@ -1487,7 +1484,6 @@ body.loaded #preloader .loader{
 		padding-top:40px;
 	}
 	.section-block{
-		padding:40px;
-		padding-top:0;
+		padding:0 24px 40px;
 	}
 }
