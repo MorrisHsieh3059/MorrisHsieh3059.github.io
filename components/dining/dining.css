@@ -53,6 +53,37 @@
 	display: block;
 }
 
+/* The Michelin panel bleeds past the section's normal side padding so
+   the card grid gets meaningfully more width, while the heading/tabs
+   above it stay put. Negative margins pull it toward the page frame;
+   values scale down at the same breakpoints style.css uses for
+   .section-block's own padding (110/90/70/40). */
+.dining-panel[data-dining-panel="michelin"] {
+	margin-left: -90px;
+	margin-right: -90px;
+}
+
+@media (max-width: 992px) {
+	.dining-panel[data-dining-panel="michelin"] {
+		margin-left: -74px;
+		margin-right: -74px;
+	}
+}
+
+@media (max-width: 550px) {
+	.dining-panel[data-dining-panel="michelin"] {
+		margin-left: -58px;
+		margin-right: -58px;
+	}
+}
+
+@media (max-width: 400px) {
+	.dining-panel[data-dining-panel="michelin"] {
+		margin-left: -32px;
+		margin-right: -32px;
+	}
+}
+
 /*=======================================================
 	Michelin visit cards
 =======================================================*/
