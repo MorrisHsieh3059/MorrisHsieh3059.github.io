@@ -234,9 +234,8 @@
 	background: #fff;
 	border-top: 4px solid var(--michelin-red);
 	box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
-	padding: 1.85rem 2rem 1.6rem;
 	box-sizing: border-box;
-	max-height: 85vh;
+	max-height: 90vh;
 	overflow-y: auto;
 }
 
@@ -250,21 +249,47 @@
 }
 
 /*=======================================================
-	Popup photo carousel — every slide fits the same frame
-	regardless of its original aspect ratio, and the prev/next
-	buttons sit as a pair centered at the bottom of the photo.
+	Popup header — restaurant name, stars, and details, sized
+	up so it reads clearly in a large modal.
+=======================================================*/
+.michelin-popup-header {
+	padding: 1.5rem 2.5rem 1.25rem;
+}
+
+.michelin-popup-header h4 {
+	font-family: 'Roboto Mono', sans-serif;
+	font-size: 1.5rem;
+	margin: 0 0 0.5rem;
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+
+.michelin-popup-header .michelin-meta {
+	font-size: 1rem;
+}
+
+.michelin-popup-header .michelin-meta i {
+	font-size: 0.95rem;
+}
+
+/*=======================================================
+	Popup photo carousel — a full-bleed dark canvas so every
+	slide fits entirely in view (object-fit: contain, never
+	cropped) regardless of its original aspect ratio, with the
+	prev/next pair centered at the bottom of the photo.
 =======================================================*/
 .popup-slider {
 	position: relative;
-	margin-bottom: 1.5rem;
+	margin: 0 0 2rem;
 }
 
 .popup-slider .item figure {
 	margin: 0;
-	height: 55vh;
-	max-height: 480px;
-	min-height: 220px;
-	background: #f2f2f2;
+	height: min(65vh, 640px);
+	min-height: 260px;
+	background: #161616;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -296,7 +321,7 @@
 	position: absolute;
 	left: 0;
 	right: 0;
-	bottom: 10px;
+	bottom: 16px;
 	display: flex;
 	justify-content: center;
 	gap: 0.75rem;
@@ -306,23 +331,24 @@
 .popup-slider .owl-nav .owl-prev,
 .popup-slider .owl-nav .owl-next {
 	pointer-events: auto;
-	width: 34px;
-	height: 34px;
+	width: 38px;
+	height: 38px;
 	border-radius: 50%;
-	background: rgba(0, 0, 0, 0.55);
+	background: rgba(255, 255, 255, 0.18);
+	backdrop-filter: blur(3px);
 	color: #fff;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	font-size: 0.85rem;
-	border: none;
+	font-size: 0.9rem;
+	border: 1px solid rgba(255, 255, 255, 0.35);
 	cursor: pointer;
 	transition: background 0.2s ease;
 }
 
 .popup-slider .owl-nav .owl-prev:hover,
 .popup-slider .owl-nav .owl-next:hover {
-	background: rgba(0, 0, 0, 0.85);
+	background: rgba(255, 255, 255, 0.35);
 }
 
 .popup-slider .owl-nav .disabled {
@@ -355,20 +381,6 @@
 
 .popup-slider .owl-dot.active span {
 	background: var(--michelin-red);
-}
-
-.michelin-popup-header {
-	margin-bottom: 1rem;
-}
-
-.michelin-popup-header h4 {
-	font-family: 'Roboto Mono', sans-serif;
-	font-size: 1.15rem;
-	margin: 0 0 0.5rem;
-	display: flex;
-	align-items: center;
-	flex-wrap: wrap;
-	gap: 0.5rem;
 }
 
 @media (max-width: 767px) {
