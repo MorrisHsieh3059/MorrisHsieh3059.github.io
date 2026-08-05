@@ -151,7 +151,7 @@
 	font-size: 1rem;
 	margin: 0 0 0.6rem;
 	display: flex;
-	align-items: baseline;
+	align-items: center;
 	flex-wrap: wrap;
 	gap: 0.5rem;
 }
@@ -190,9 +190,9 @@
 
 .mich-star {
 	display: inline-block;
-	width: 14px;
-	height: 14px;
-	margin-right: 2px;
+	width: 1em;
+	height: 1em;
+	margin-right: 0.15em;
 	background-color: var(--michelin-red);
 	-webkit-mask-image: url('../img/dining/icons/michelin-star.png');
 	mask-image: url('../img/dining/icons/michelin-star.png');
@@ -218,10 +218,32 @@
 }
 
 /*=======================================================
-	Michelin visit popup (photo carousel)
+	Michelin visit popup (photo carousel) — centered in the
+	viewport with a framed card around the content.
 =======================================================*/
+.michelin-popup.mfp-wrap .mfp-content {
+	max-width: 800px;
+	width: calc(100% - 32px);
+	margin: 0 auto;
+}
+
 .michelin-popup .popup-inner {
-	max-width: 760px;
+	background: #fff;
+	border-top: 4px solid var(--michelin-red);
+	box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
+	padding: 1.85rem 2rem 1.6rem;
+	box-sizing: border-box;
+	max-height: 85vh;
+	overflow-y: auto;
+}
+
+.michelin-popup .mfp-close {
+	color: #333;
+	opacity: 0.75;
+}
+
+.michelin-popup .mfp-close:hover {
+	opacity: 1;
 }
 
 .michelin-popup-header {
@@ -230,9 +252,10 @@
 
 .michelin-popup-header h4 {
 	font-family: 'Roboto Mono', sans-serif;
+	font-size: 1.15rem;
 	margin: 0 0 0.5rem;
 	display: flex;
-	align-items: baseline;
+	align-items: center;
 	flex-wrap: wrap;
 	gap: 0.5rem;
 }
