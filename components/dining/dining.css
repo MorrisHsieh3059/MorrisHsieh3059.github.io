@@ -56,7 +56,8 @@
 /*=======================================================
 	Michelin visit cards
 =======================================================*/
-.michelin-empty {
+.michelin-empty,
+.general-empty {
 	color: #888;
 }
 
@@ -204,7 +205,8 @@
 	margin-top: -0.5rem;
 }
 
-.michelin-grid {
+.michelin-grid,
+.general-grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
 	gap: 1.5rem;
@@ -214,21 +216,38 @@
 	display: none;
 }
 
-.michelin-card {
+.michelin-card,
+.general-card {
+	/* display:flex + height:100% (rather than relying only on the grid's
+	   default row-stretch) so every card in a row is the same height
+	   regardless of how much meta/accolade text it has, with the photo
+	   staying a fixed height and the body absorbing the difference. */
+	display: flex;
+	flex-direction: column;
+	height: 100%;
 	background: #fff;
-	border-top: 4px solid var(--michelin-red);
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 	overflow: hidden;
 	cursor: pointer;
 	transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.michelin-card:hover {
+.michelin-card {
+	border-top: 4px solid var(--michelin-red);
+}
+
+.general-card {
+	border-top: 4px solid var(--accent);
+}
+
+.michelin-card:hover,
+.general-card:hover {
 	transform: translateY(-3px);
 	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
-.michelin-card-photo {
+.michelin-card-photo,
+.general-card-photo {
 	height: 170px;
 	background-color: #eee;
 	background-size: cover;
@@ -236,7 +255,8 @@
 	position: relative;
 }
 
-.michelin-card-photo-count {
+.michelin-card-photo-count,
+.general-card-photo-count {
 	position: absolute;
 	right: 0.6rem;
 	bottom: 0.6rem;
@@ -247,7 +267,8 @@
 	border-radius: 999px;
 }
 
-.michelin-card-photo-placeholder {
+.michelin-card-photo-placeholder,
+.general-card-photo-placeholder {
 	height: 100%;
 	display: flex;
 	align-items: center;
@@ -256,11 +277,14 @@
 	font-size: 1.6rem;
 }
 
-.michelin-card-body {
+.michelin-card-body,
+.general-card-body {
 	padding: 1.1rem 1.35rem 1.35rem;
+	flex: 1 1 auto;
 }
 
-.michelin-card-title {
+.michelin-card-title,
+.general-card-title {
 	font-family: 'Roboto Mono', sans-serif;
 	font-size: 1rem;
 	margin: 0 0 0.6rem;
@@ -274,7 +298,34 @@
 	color: #ccc;
 }
 
-.michelin-meta {
+/* One line per accolade (e.g. "World's 50 Best Restaurants · World
+   2026 — #5"), stacked beneath the restaurant name — a restaurant can
+   hold several simultaneous accolades, so each gets its own line
+   rather than being folded into a single badge. */
+.general-accolades {
+	margin: 0 0 0.6rem;
+}
+
+.general-accolade {
+	display: flex;
+	align-items: baseline;
+	gap: 0.4rem;
+	font-size: 0.82rem;
+	color: #555;
+	line-height: 1.5;
+}
+
+.general-accolade + .general-accolade {
+	margin-top: 0.15rem;
+}
+
+.general-accolade i {
+	color: var(--accent);
+	flex: 0 0 auto;
+}
+
+.michelin-meta,
+.general-meta {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 0.6rem 1rem;
@@ -282,13 +333,19 @@
 	color: #888;
 }
 
-.michelin-meta-menu {
+.michelin-meta-menu,
+.general-meta-menu {
 	margin-top: 0.4rem;
 }
 
 .michelin-meta i {
 	margin-right: 0.3rem;
 	color: var(--michelin-red);
+}
+
+.general-meta i {
+	margin-right: 0.3rem;
+	color: var(--accent);
 }
 
 /*=======================================================
@@ -363,6 +420,13 @@
 	overflow-y: auto;
 }
 
+/* General tab reuses the same popup mechanics (blur backdrop, carousel)
+   via the shared .michelin-popup mainClass, just with an accent-blue
+   top border instead of Michelin red. */
+.general-popup .popup-inner {
+	border-top-color: var(--accent);
+}
+
 .michelin-popup .mfp-close {
 	color: #333;
 	opacity: 0.75;
@@ -376,11 +440,13 @@
 	Popup header — restaurant name, stars, and details, sized
 	up so it reads clearly in a large modal.
 =======================================================*/
-.michelin-popup-header {
+.michelin-popup-header,
+.general-popup-header {
 	padding: 1.5rem 2.5rem 1.25rem;
 }
 
-.michelin-popup-header h4 {
+.michelin-popup-header h4,
+.general-popup-header h4 {
 	font-family: 'Roboto Mono', sans-serif;
 	font-size: 1.5rem;
 	margin: 0 0 0.5rem;
@@ -390,11 +456,13 @@
 	gap: 0.5rem;
 }
 
-.michelin-popup-header .michelin-meta {
+.michelin-popup-header .michelin-meta,
+.general-popup-header .general-meta {
 	font-size: 1rem;
 }
 
-.michelin-popup-header .michelin-meta i {
+.michelin-popup-header .michelin-meta i,
+.general-popup-header .general-meta i {
 	font-size: 0.95rem;
 }
 
@@ -513,7 +581,8 @@
 }
 
 @media (max-width: 767px) {
-	.michelin-grid {
+	.michelin-grid,
+	.general-grid {
 		grid-template-columns: 1fr;
 	}
 }
