@@ -212,7 +212,12 @@
 	gap: 1.5rem;
 }
 
-.michelin-card-hidden {
+/* Compound selector (two classes) so this reliably beats the plain
+   .michelin-card display:flex rule below regardless of source order —
+   two same-specificity single-class rules would otherwise resolve by
+   whichever comes later in the file, which is what broke filtering
+   when the equal-height flex rule was added after this one. */
+.michelin-card.michelin-card-hidden {
 	display: none;
 }
 
