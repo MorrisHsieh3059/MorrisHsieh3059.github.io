@@ -318,7 +318,15 @@
 		$container.find('.michelin-select-list li').removeClass('active');
 		$li.addClass('active');
 		$container.removeClass('open');
-		applyFilters();
+
+		// The dropdown widget (.michelin-select) is shared styling/behavior
+		// across tabs — which grid it actually filters depends on which
+		// tab's panel it lives in.
+		if ($container.closest('.dining-panel').data('dining-panel') === 'award') {
+			applyAwardFilters();
+		} else {
+			applyFilters();
+		}
 	});
 
 	$(document).on('click', function (e) {
@@ -436,9 +444,10 @@
 				? '<span class="award-card-photo-count">' + pictures.length + ' photos</span>'
 				: '')
 			: '<div class="award-card-photo-placeholder"><i class="fas fa-camera"></i></div>';
+		var accoladeSlugs = accoladesList(visit).map(function (a) { return a.list; }).filter(Boolean);
 
 		return (
-			'<a href="#popup-award-' + visit.id + '" class="award-card">' +
+			'<a href="#popup-award-' + visit.id + '" class="award-card" data-cuisine="' + cuisineList(visit).join(',') + '" data-accolades="' + accoladeSlugs.join(',') + '">' +
 				'<div class="award-card-photo"' + coverStyle + '>' + photoInner + '</div>' +
 				'<div class="award-card-body">' +
 					'<h4 class="award-card-title">' + titleHtmlAward(visit) + '</h4>' +
@@ -473,13 +482,110 @@
 		);
 	}
 
+	/*=========================================================================
+		Stats banner — distinct-restaurant count per named accolade group
+		(not per accolade entry: a restaurant with two "50 Best Restaurants"
+		rankings in the same year, e.g. a regional + a global rank, still
+		only counts once, same dedup-by-name principle as the MICHELIN
+		star totals above). Only these five groups get a tile, by design —
+		OAD's three tiers aren't shown here.
+	=========================================================================*/
+	var AWARD_STAT_GROUPS = [
+		{ list: '50-best-restaurants', label: 'Top 50 Restaurant' },
+		{ list: '50-best-bars', label: 'Top 50 Bars' },
+		{ list: '101-best-steakhouse', label: '101 Best Steakhouse' },
+		{ list: '101-best-burgers', label: '101 Best Burgers' },
+		{ list: '50-best-pizza', label: 'Top 50 Pizza' }
+	];
+
+	function awardTotalsHtml(visits) {
+		var groupsHtml = AWARD_STAT_GROUPS.map(function (group) {
+			var names = {};
+			visits.forEach(function (v) {
+				var key = (v.name || '').trim().toLowerCase();
+				if (!key) return;
+				var hasThisList = accoladesList(v).some(function (a) { return a.list === group.list; });
+				if (hasThisList) names[key] = true;
+			});
+			var count = Object.keys(names).length;
+			return (
+				'<span class="award-totals-group">' +
+					'<strong>' + count + '</strong> ' + group.label +
+				'</span>'
+			);
+		});
+		return groupsHtml.join('<span class="award-totals-sep">|</span>');
+	}
+
+	/*=========================================================================
+		Cuisine + accolade-list filters — same custom dropdown widget as the
+		MICHELIN tab's Cuisine/Menu filters (shared .michelin-select markup
+		and click handlers), just pointed at the Award grid/cards instead.
+	=========================================================================*/
+	function populateAccoladeSelect($container, slugs, allLabel) {
+		var unique = [];
+		slugs.forEach(function (v) {
+			if (v && unique.indexOf(v) === -1) unique.push(v);
+		});
+		unique.sort(function (a, b) {
+			return accoladeListMeta(a).label.localeCompare(accoladeListMeta(b).label);
+		});
+
+		var $list = $container.find('.michelin-select-list');
+		$list.empty();
+		$list.append($('<li></li>').attr('data-value', 'all').addClass('active').text(allLabel));
+		unique.forEach(function (v) {
+			$list.append($('<li></li>').attr('data-value', v).text(accoladeListMeta(v).label));
+		});
+		$container.attr('data-value', 'all');
+		$container.find('.michelin-select-btn').text(allLabel);
+		sizeSelectToContent($container);
+	}
+
+	function populateAwardFilters(visits) {
+		var cuisineValues = [];
+		var accoladeValues = [];
+		visits.forEach(function (v) {
+			cuisineList(v).forEach(function (tag) { cuisineValues.push(tag); });
+			accoladesList(v).forEach(function (a) { if (a.list) accoladeValues.push(a.list); });
+		});
+		populateCustomSelect($('#award-filter-cuisine'), cuisineValues, 'All Cuisines');
+		populateAccoladeSelect($('#award-filter-accolade'), accoladeValues, 'All Lists');
+	}
+
+	function applyAwardFilters() {
+		var cuisine = $('#award-filter-cuisine').attr('data-value') || 'all';
+		var accolade = $('#award-filter-accolade').attr('data-value') || 'all';
+		var visibleCount = 0;
+
+		$('#award-grid .award-card').each(function () {
+			var $card = $(this);
+			var cardCuisines = ($card.attr('data-cuisine') || '').split(',').filter(Boolean);
+			var cardAccolades = ($card.attr('data-accolades') || '').split(',').filter(Boolean);
+			var matches =
+				(cuisine === 'all' || cardCuisines.indexOf(cuisine) !== -1) &&
+				(accolade === 'all' || cardAccolades.indexOf(accolade) !== -1);
+
+			$card.toggleClass('award-card-hidden', !matches);
+			if (matches) visibleCount++;
+		});
+
+		$('#award-filter-empty').toggle(visibleCount === 0);
+	}
+
 	function renderAward(visits) {
 		var $grid = $('#award-grid');
+		var $totals = $('#award-totals');
 
 		if (!visits || !visits.length) {
+			$totals.empty();
+			$('#award-filters').hide();
 			$grid.html('<p class="award-empty">No favorites logged yet — check back soon!</p>');
 			return;
 		}
+
+		$totals.html(awardTotalsHtml(visits));
+		populateAwardFilters(visits);
 
 		visits = visits.slice().sort(function (a, b) {
 			return (b.date || '').localeCompare(a.date || '');
@@ -488,6 +594,7 @@
 		var cardsHtml = visits.map(cardHtmlAward).join('');
 		var popupsHtml = visits.map(popupHtmlAward).join('');
 		$grid.html(cardsHtml + popupsHtml);
+		applyAwardFilters();
 
 		$grid.find('.award-card').magnificPopup({
 			type: 'inline',

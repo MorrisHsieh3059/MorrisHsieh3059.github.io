@@ -95,8 +95,42 @@
 	font-size: 1.05rem;
 }
 
-.michelin-totals-sep {
+.michelin-totals-sep,
+.award-totals-sep {
 	color: #ccc;
+}
+
+/* Award tab's stats banner has five named groups instead of two, so it
+   wraps on narrow screens rather than forcing everything onto one line. */
+.award-totals {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.6rem 1.1rem;
+	margin: 0 0 1.75rem;
+	padding: 0.75rem 1.25rem;
+	background: #fff;
+	border-left: 4px solid var(--accent);
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+	font-family: 'Roboto Mono', sans-serif;
+	font-size: 0.95rem;
+	color: #444;
+}
+
+.award-totals:empty {
+	display: none;
+}
+
+.award-totals-group {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.45rem;
+	white-space: nowrap;
+}
+
+.award-totals-group strong {
+	color: #222;
+	font-size: 1.05rem;
 }
 
 .michelin-filters {
@@ -201,7 +235,8 @@
 	font-weight: 700;
 }
 
-.michelin-filter-empty {
+.michelin-filter-empty,
+.award-filter-empty {
 	margin-top: -0.5rem;
 }
 
@@ -217,7 +252,8 @@
    two same-specificity single-class rules would otherwise resolve by
    whichever comes later in the file, which is what broke filtering
    when the equal-height flex rule was added after this one. */
-.michelin-card.michelin-card-hidden {
+.michelin-card.michelin-card-hidden,
+.award-card.award-card-hidden {
 	display: none;
 }
 

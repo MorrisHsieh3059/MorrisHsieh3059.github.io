@@ -16,9 +16,31 @@
 							<p style="margin-bottom: 2rem; color: #666;">
 								A running log of award-winning restaurants — including top 50 restaurants/bars, top 101 steakhouse/burgers, 50 top pizza, OAD ranking, and personal favorites.
 							</p>
+							<div class="award-totals" id="award-totals"></div>
+							<div class="michelin-filters" id="award-filters">
+								<div class="michelin-filter">
+									<span class="michelin-filter-label">Cuisine</span>
+									<div class="michelin-select" id="award-filter-cuisine" data-value="all">
+										<button type="button" class="michelin-select-btn">All Cuisines</button>
+										<ul class="michelin-select-list">
+											<li data-value="all" class="active">All Cuisines</li>
+										</ul>
+									</div>
+								</div>
+								<div class="michelin-filter">
+									<span class="michelin-filter-label">Accolade List</span>
+									<div class="michelin-select" id="award-filter-accolade" data-value="all">
+										<button type="button" class="michelin-select-btn">All Lists</button>
+										<ul class="michelin-select-list">
+											<li data-value="all" class="active">All Lists</li>
+										</ul>
+									</div>
+								</div>
+							</div>
 							<div class="award-grid" id="award-grid">
 								<p class="award-empty">Loading…</p>
 							</div>
+							<p class="award-empty award-filter-empty" id="award-filter-empty" style="display:none;">No restaurants match these filters.</p>
 						</div>
 
 						<div class="dining-panel active" data-dining-panel="michelin">
