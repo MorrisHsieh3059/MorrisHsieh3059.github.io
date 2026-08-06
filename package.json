@@ -10,7 +10,10 @@
     "build-nyc": "python3 components/nyc/scripts/parse-nyc.py ../Downloads/location-history.json && python3 components/nyc/scripts/match-nyc-streets.py ../Downloads/location-history.json",
     "build-nyc-offline": "python3 components/nyc/scripts/parse-nyc.py ../Downloads/location-history.json && python3 components/nyc/scripts/match-nyc-streets.py --offline ../Downloads/location-history.json",
     "start": "npm run build && serve dist -l 8000",
-    "dev": "npm run build && serve dist -l 8000"
+    "dev": "npm run build && serve dist -l 8000",
+    "build:watch": "nodemon --watch components --watch theme --watch assets --watch build --ext html,css,js,json -x \"node build/build.js\"",
+    "serve:watch": "browser-sync start --server dist --files \"dist/**/*\" --no-notify --no-ui --no-open",
+    "dev:watch": "concurrently -n build,serve -c blue,green \"npm run build:watch\" \"npm run serve:watch\""
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "5.8.1",
@@ -18,6 +21,9 @@
     "@fontsource/roboto-mono": "^5.2.5"
   },
   "devDependencies": {
-    "serve": "^14.2.4"
+    "serve": "^14.2.4",
+    "nodemon": "^3.1.0",
+    "browser-sync": "^2.29.3",
+    "concurrently": "^8.2.2"
   }
 }
