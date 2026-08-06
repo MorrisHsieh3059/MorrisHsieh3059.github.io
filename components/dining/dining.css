@@ -286,6 +286,19 @@
 	margin: 0 auto;
 }
 
+/* Blur the page behind the popup instead of the theme's solid blue
+   overlay (.mfp-bg is #303F9F at ~96% opacity by default). Scoped to
+   .michelin-popup so the Gallery lightbox keeps its usual look. */
+.michelin-popup.mfp-bg {
+	background: rgba(15, 15, 15, 0.45);
+	backdrop-filter: blur(6px);
+	-webkit-backdrop-filter: blur(6px);
+}
+
+.my-mfp-zoom-in.michelin-popup.mfp-ready.mfp-bg {
+	opacity: 1;
+}
+
 .michelin-popup .popup-inner {
 	background: #fff;
 	border-top: 4px solid var(--michelin-red);
