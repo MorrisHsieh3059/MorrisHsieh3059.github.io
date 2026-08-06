@@ -16,6 +16,7 @@ html {
 	--nyc-blue: #0039A6;
 	--accent: #303F9F;
 	--michelin-red: #B7141F;
+	--award-brown: #863E15; /* Dark Crispy Brown — Award tab's own accent, card + stats only */
 	--frame-gutter: #e0e0e0;
 	--frame-inset: 21px; /* page-border offset (14px) + border width (7px) */
 }

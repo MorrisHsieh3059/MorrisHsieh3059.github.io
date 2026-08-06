@@ -508,9 +508,15 @@
 				if (hasThisList) names[key] = true;
 			});
 			var count = Object.keys(names).length;
+			var icon = accoladeListMeta(group.list).icon;
+			var iconHtml = icon
+				? '<img class="award-totals-icon" src="' + iconPath(icon) + '" alt="">'
+				: '';
 			return (
 				'<span class="award-totals-group">' +
-					'<strong>' + count + '</strong> ' + group.label +
+					iconHtml +
+					'<span>' + group.label + '</span> ' +
+					'<strong>' + count + '</strong>' +
 				'</span>'
 			);
 		});

@@ -110,7 +110,7 @@
 	margin: 0 0 1.75rem;
 	padding: 0.75rem 1.25rem;
 	background: #fff;
-	border-left: 4px solid var(--accent);
+	border-left: 4px solid var(--award-brown);
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 	font-family: 'Roboto Mono', sans-serif;
 	font-size: 0.95rem;
@@ -131,6 +131,14 @@
 .award-totals-group strong {
 	color: #222;
 	font-size: 1.05rem;
+}
+
+.award-totals-icon {
+	height: 16px;
+	width: auto;
+	max-width: 50px;
+	object-fit: contain;
+	flex: 0 0 auto;
 }
 
 .michelin-filters {
@@ -278,7 +286,7 @@
 }
 
 .award-card {
-	border-top: 4px solid var(--accent);
+	border-top: 4px solid var(--award-brown);
 }
 
 .michelin-card:hover,
