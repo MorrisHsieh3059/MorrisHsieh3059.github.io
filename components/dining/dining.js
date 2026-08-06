@@ -52,12 +52,27 @@
 	}
 
 	/*=========================================================================
-		Totals banner — sum of current vs. former MICHELIN stars across
-		all logged visits, shown above the grid.
+		Totals banner — sum of current vs. former MICHELIN stars, counted
+		once per distinct restaurant (not once per visit) so a restaurant
+		you've dined at multiple times only contributes its star count a
+		single time. When a restaurant has more than one visit logged, the
+		most recent visit's stars/status is used, since that reflects its
+		current standing.
 	=========================================================================*/
 	function totalsHtml(visits) {
-		var current = 0, former = 0;
+		var latestByName = {};
 		visits.forEach(function (v) {
+			var key = (v.name || '').trim().toLowerCase();
+			if (!key) return;
+			var existing = latestByName[key];
+			if (!existing || new Date(v.date) > new Date(existing.date)) {
+				latestByName[key] = v;
+			}
+		});
+
+		var current = 0, former = 0;
+		Object.keys(latestByName).forEach(function (key) {
+			var v = latestByName[key];
 			var count = parseInt(v.stars, 10) || 0;
 			if (v.status === 'former') {
 				former += count;
