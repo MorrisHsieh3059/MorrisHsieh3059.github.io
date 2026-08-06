@@ -351,7 +351,9 @@
 =======================================================*/
 .popup-slider {
 	position: relative;
-	margin: 0 0 2rem;
+	margin: 0;
+	background: #161616;
+	padding-bottom: 2rem;
 }
 
 .popup-slider .item figure {
@@ -382,7 +384,7 @@
 	top: 0;
 	left: 0;
 	right: 0;
-	bottom: 0;
+	bottom: 2rem;
 	pointer-events: none;
 }
 
@@ -429,8 +431,11 @@
 	position: absolute;
 	left: 0;
 	right: 0;
-	bottom: -1.6rem;
-	text-align: center;
+	bottom: -2rem;
+	height: 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	pointer-events: none;
 }
 
