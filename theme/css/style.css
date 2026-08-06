@@ -200,7 +200,7 @@ body.border-dark .main-content > .page-border{
 	overflow:auto;
 	z-index:-1;
 	visibility:hidden;
-	padding-top:110px;
+	padding-top:24px;
 	background:#F0F0F0;
 }
 .section.active{
@@ -1442,7 +1442,7 @@ body.loaded #preloader .loader{
 		width:50%;
 	}
 	.section{
-		padding-top:90px;
+		padding-top:24px;
 	}
 	.section-block{
 		padding:0 50px 90px;
@@ -1473,7 +1473,7 @@ body.loaded #preloader .loader{
 }
 @media(max-width:550px){
 	.section{
-		padding-top:70px;
+		padding-top:24px;
 	}
 	.section-block{
 		padding:0 40px 70px;
@@ -1481,7 +1481,7 @@ body.loaded #preloader .loader{
 }
 @media(max-width:400px){
 	.section{
-		padding-top:40px;
+		padding-top:24px;
 	}
 	.section-block{
 		padding:0 24px 40px;
