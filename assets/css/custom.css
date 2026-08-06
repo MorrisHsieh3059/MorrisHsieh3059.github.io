@@ -1,5 +1,16 @@
 /* Morris Hsieh — personal site extensions (N5 template) */
 
+/* bootstrap.min.css sets html{font-size:10px} for its own grid math, and
+   nearly all "content" text sitewide (paragraphs, meta lines, timeline
+   entries, card text, etc.) is sized in rem against that root — so it
+   renders ~62% smaller than a normal 16px-root page. Headings and the
+   sidebar nav are sized in px and are unaffected by this, which is why
+   they look fine while body copy looks tiny. Override the root back up
+   to scale every rem-based content size up proportionally. */
+html {
+	font-size: 14px;
+}
+
 :root {
 	--nyc-gold: #FFC72C;
 	--nyc-blue: #0039A6;
