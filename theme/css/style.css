@@ -525,7 +525,7 @@ body.section-switching.up .animation-block{
 	background:#F0F0F0;
 }
 .about-block .section-header{
-	margin-bottom:80px;
+	margin-bottom:30px;
 }
 .about-text > p{
 	font-size:18px;
@@ -1442,7 +1442,7 @@ body.loaded #preloader .loader{
 		width:50%;
 	}
 	.section{
-		padding-top:40px;
+		padding-top:60px;
 	}
 	.section-block{
 		padding:0 50px 90px;
