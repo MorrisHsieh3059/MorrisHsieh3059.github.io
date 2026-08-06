@@ -5,7 +5,9 @@
     "date": "2026-06-14",
     "stars": 3,
     "status": "current",
-    "cuisine": "Korean",
+    "cuisine": [
+      "Korean"
+    ],
     "menu": "full tasting",
     "city": "New York, NY",
     "pictures": [
@@ -43,7 +45,9 @@
     "date": "2026-05-30",
     "stars": 1,
     "status": "current",
-    "cuisine": "Korean",
+    "cuisine": [
+      "Korean"
+    ],
     "menu": "à la carte",
     "city": "New York, NY",
     "pictures": [
@@ -67,7 +71,10 @@
     "date": "2026-04-19",
     "stars": 1,
     "status": "current",
-    "cuisine": "French · Contemporary",
+    "cuisine": [
+      "French",
+      "Contemporary"
+    ],
     "menu": "full tasting",
     "city": "New York, NY",
     "pictures": [
@@ -93,7 +100,10 @@
     "date": "2026-04-04",
     "stars": 1,
     "status": "former",
-    "cuisine": "American · Contemporary",
+    "cuisine": [
+      "American",
+      "Contemporary"
+    ],
     "menu": "full tasting",
     "city": "New York, NY",
     "pictures": [
@@ -123,7 +133,10 @@
     "date": "2026-02-04",
     "stars": 1,
     "status": "current",
-    "cuisine": "Asian Fusion · Contemporary",
+    "cuisine": [
+      "Asian Fusion",
+      "Contemporary"
+    ],
     "menu": "restaurant week",
     "city": "New York, NY",
     "pictures": [
@@ -144,7 +157,10 @@
     "date": "2026-01-30",
     "stars": 1,
     "status": "current",
-    "cuisine": "French · Contemporary",
+    "cuisine": [
+      "French",
+      "Contemporary"
+    ],
     "menu": "full tasting",
     "city": "New York, NY",
     "pictures": [
@@ -166,7 +182,9 @@
     "date": "2026-01-26",
     "stars": 1,
     "status": "former",
-    "cuisine": "Indian",
+    "cuisine": [
+      "Indian"
+    ],
     "menu": "restaurant week",
     "city": "New York, NY",
     "pictures": [
@@ -187,7 +205,9 @@
     "date": "2025-08-08",
     "stars": 1,
     "status": "former",
-    "cuisine": "Italian",
+    "cuisine": [
+      "Italian"
+    ],
     "menu": "restaurant week",
     "city": "New York, NY",
     "pictures": [
@@ -207,7 +227,10 @@
     "date": "2025-08-01",
     "stars": 1,
     "status": "current",
-    "cuisine": "American · Contemporary",
+    "cuisine": [
+      "American",
+      "Contemporary"
+    ],
     "menu": "restaurant week",
     "city": "New York, NY",
     "pictures": [
@@ -230,7 +253,10 @@
     "date": "2025-07-30",
     "stars": 1,
     "status": "current",
-    "cuisine": "American · Contemporary",
+    "cuisine": [
+      "American",
+      "Contemporary"
+    ],
     "menu": "restaurant week",
     "city": "New York, NY",
     "pictures": [
@@ -251,7 +277,9 @@
     "date": "2025-06-22",
     "stars": 1,
     "status": "current",
-    "cuisine": "Spanish",
+    "cuisine": [
+      "Spanish"
+    ],
     "menu": "à la carte",
     "city": "New York, NY",
     "pictures": [
@@ -270,7 +298,10 @@
     "date": "2025-02-07",
     "stars": 1,
     "status": "current",
-    "cuisine": "American · Contemporary",
+    "cuisine": [
+      "American",
+      "Contemporary"
+    ],
     "menu": "restaurant week",
     "city": "New York, NY",
     "pictures": [
@@ -289,7 +320,10 @@
     "date": "2025-02-06",
     "stars": 2,
     "status": "current",
-    "cuisine": "French · Contemporary",
+    "cuisine": [
+      "French",
+      "Contemporary"
+    ],
     "menu": "restaurant week",
     "city": "New York, NY",
     "pictures": [
@@ -315,7 +349,9 @@
     "date": "2025-01-29",
     "stars": 2,
     "status": "current",
-    "cuisine": "Contemporary",
+    "cuisine": [
+      "Contemporary"
+    ],
     "menu": "restaurant week",
     "city": "New York, NY",
     "pictures": [
@@ -335,7 +371,9 @@
     "date": "2024-01-29",
     "stars": 1,
     "status": "current",
-    "cuisine": "French",
+    "cuisine": [
+      "French"
+    ],
     "menu": "restaurant week",
     "city": "New York, NY",
     "pictures": [
