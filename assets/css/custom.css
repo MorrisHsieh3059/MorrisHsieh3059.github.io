@@ -207,6 +207,7 @@ html {
 .services-block .row {
 	display: flex;
 	flex-wrap: wrap;
+	row-gap: 1.75rem;
 }
 
 .services-block .row > [class*="col-"] {
