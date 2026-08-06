@@ -200,7 +200,7 @@ body.border-dark .main-content > .page-border{
 	overflow:auto;
 	z-index:-1;
 	visibility:hidden;
-	padding-top:40px;
+	padding-top:60px;
 	background:#F0F0F0;
 }
 .section.active{
@@ -790,14 +790,14 @@ body.section-switching.up .animation-block{
 	Resume Section
 =======================================================*/
 .timeline-block .section-header{
-	margin-bottom:80px;
+	margin-bottom:24px;
 }
 .timeline{
 	margin:0;
 	padding:0;
 	list-style:none;
 	position:relative;
-	padding:40px 0;
+	padding:8px 0 40px;
 }
 .timeline:before{
 	content: ' ';
