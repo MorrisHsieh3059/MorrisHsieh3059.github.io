@@ -96,7 +96,22 @@
 		Line 1: restaurant name | stars
 		Line 2: cuisine, city, date
 		Line 3: menu
+
+		visit.cuisine is an array of tags (e.g. ["French", "Contemporary"])
+		rather than one opaque string, so a visit can be filtered by any
+		of its tags individually.
 	=========================================================================*/
+	function cuisineList(visit) {
+		var c = visit.cuisine;
+		if (Array.isArray(c)) return c.filter(Boolean);
+		if (c) return [c];
+		return [];
+	}
+
+	function cuisineText(visit) {
+		return cuisineList(visit).join(' · ');
+	}
+
 	function titleHtml(visit) {
 		return (
 			'<span class="michelin-card-title-name">' + visit.name + '</span>' +
@@ -108,7 +123,7 @@
 	function metaHtml(visit) {
 		return (
 			'<div class="michelin-meta">' +
-				'<span><i class="fas fa-utensils"></i>' + (visit.cuisine || '') + '</span>' +
+				'<span><i class="fas fa-utensils"></i>' + cuisineText(visit) + '</span>' +
 				'<span><i class="fas fa-map-marker-alt"></i>' + (visit.city || '') + '</span>' +
 				'<span><i class="fas fa-calendar-alt"></i>' + formatVisitDate(visit.date) + '</span>' +
 			'</div>' +
@@ -130,7 +145,7 @@
 			: '<div class="michelin-card-photo-placeholder"><i class="fas fa-camera"></i></div>';
 
 		return (
-			'<a href="#popup-michelin-' + visit.id + '" class="michelin-card" data-cuisine="' + (visit.cuisine || '') + '" data-menu="' + (visit.menu || '') + '">' +
+			'<a href="#popup-michelin-' + visit.id + '" class="michelin-card" data-cuisine="' + cuisineList(visit).join(',') + '" data-menu="' + (visit.menu || '') + '">' +
 				'<div class="michelin-card-photo"' + coverStyle + '>' + photoInner + '</div>' +
 				'<div class="michelin-card-body">' +
 					'<h4 class="michelin-card-title">' + titleHtml(visit) + '</h4>' +
@@ -186,10 +201,48 @@
 		});
 		$container.attr('data-value', 'all');
 		$container.find('.michelin-select-btn').text(allLabel);
+		sizeSelectToContent($container);
+	}
+
+	// Fix the button + list width to fit the longest option (including the
+	// "All ..." label) so the control never truncates or wraps its text and
+	// never needs to scroll horizontally, and doesn't resize/jump as the
+	// user picks different-length options.
+	function sizeSelectToContent($container) {
+		var $btn = $container.find('.michelin-select-btn');
+		var $measure = $('<span></span>').css({
+			position: 'absolute',
+			visibility: 'hidden',
+			whiteSpace: 'nowrap',
+			fontFamily: $btn.css('font-family'),
+			fontSize: $btn.css('font-size'),
+			fontWeight: $btn.css('font-weight'),
+			letterSpacing: $btn.css('letter-spacing')
+		}).appendTo('body');
+
+		var maxTextWidth = 0;
+		$container.find('.michelin-select-list li').each(function () {
+			$measure.text($(this).text());
+			maxTextWidth = Math.max(maxTextWidth, $measure.outerWidth());
+		});
+		$measure.remove();
+
+		// button padding is 1rem left + 1.8rem right (arrow allowance); add a
+		// little slack so the text never sits flush against either edge.
+		var btnPaddingLeft = parseFloat($btn.css('padding-left')) || 0;
+		var btnPaddingRight = parseFloat($btn.css('padding-right')) || 0;
+		var width = Math.ceil(maxTextWidth + btnPaddingLeft + btnPaddingRight + 4);
+
+		$btn.css('width', width + 'px');
+		$container.find('.michelin-select-list').css('width', width + 'px');
 	}
 
 	function populateFilters(visits) {
-		populateCustomSelect($('#michelin-filter-cuisine'), visits.map(function (v) { return v.cuisine; }), 'All Cuisines');
+		var cuisineValues = [];
+		visits.forEach(function (v) {
+			cuisineList(v).forEach(function (tag) { cuisineValues.push(tag); });
+		});
+		populateCustomSelect($('#michelin-filter-cuisine'), cuisineValues, 'All Cuisines');
 		populateCustomSelect($('#michelin-filter-menu'), visits.map(function (v) { return v.menu; }), 'All Menus');
 	}
 
@@ -200,8 +253,9 @@
 
 		$('#michelin-grid .michelin-card').each(function () {
 			var $card = $(this);
+			var cardCuisines = ($card.attr('data-cuisine') || '').split(',').filter(Boolean);
 			var matches =
-				(cuisine === 'all' || $card.data('cuisine') === cuisine) &&
+				(cuisine === 'all' || cardCuisines.indexOf(cuisine) !== -1) &&
 				(menu === 'all' || $card.data('menu') === menu);
 
 			$card.toggleClass('michelin-card-hidden', !matches);
