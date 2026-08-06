@@ -4,7 +4,7 @@
 .dining-tabs {
 	position: relative;
 	list-style: none;
-	margin: 0 0 1.75rem;
+	margin: 0.75rem 0 1.75rem;
 	padding: 0;
 	font-size: 0;
 	display: flex;
