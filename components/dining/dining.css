@@ -1,5 +1,5 @@
 /*=======================================================
-	Dining — General / Michelin tabs
+	Dining — Award / Michelin tabs
 =======================================================*/
 .dining-tabs {
 	position: relative;
@@ -57,7 +57,7 @@
 	Michelin visit cards
 =======================================================*/
 .michelin-empty,
-.general-empty {
+.award-empty {
 	color: #888;
 }
 
@@ -206,7 +206,7 @@
 }
 
 .michelin-grid,
-.general-grid {
+.award-grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
 	gap: 1.5rem;
@@ -222,7 +222,7 @@
 }
 
 .michelin-card,
-.general-card {
+.award-card {
 	/* display:flex + height:100% (rather than relying only on the grid's
 	   default row-stretch) so every card in a row is the same height
 	   regardless of how much meta/accolade text it has, with the photo
@@ -241,18 +241,18 @@
 	border-top: 4px solid var(--michelin-red);
 }
 
-.general-card {
+.award-card {
 	border-top: 4px solid var(--accent);
 }
 
 .michelin-card:hover,
-.general-card:hover {
+.award-card:hover {
 	transform: translateY(-3px);
 	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
 .michelin-card-photo,
-.general-card-photo {
+.award-card-photo {
 	height: 170px;
 	background-color: #eee;
 	background-size: cover;
@@ -261,7 +261,7 @@
 }
 
 .michelin-card-photo-count,
-.general-card-photo-count {
+.award-card-photo-count {
 	position: absolute;
 	right: 0.6rem;
 	bottom: 0.6rem;
@@ -273,7 +273,7 @@
 }
 
 .michelin-card-photo-placeholder,
-.general-card-photo-placeholder {
+.award-card-photo-placeholder {
 	height: 100%;
 	display: flex;
 	align-items: center;
@@ -283,13 +283,13 @@
 }
 
 .michelin-card-body,
-.general-card-body {
+.award-card-body {
 	padding: 1.1rem 1.35rem 1.35rem;
 	flex: 1 1 auto;
 }
 
 .michelin-card-title,
-.general-card-title {
+.award-card-title {
 	font-family: 'Roboto Mono', sans-serif;
 	font-size: 1rem;
 	margin: 0 0 0.6rem;
@@ -307,11 +307,11 @@
    2026 — #5"), stacked beneath the restaurant name — a restaurant can
    hold several simultaneous accolades, so each gets its own line
    rather than being folded into a single badge. */
-.general-accolades {
+.award-accolades {
 	margin: 0 0 0.6rem;
 }
 
-.general-accolade {
+.award-accolade {
 	display: flex;
 	align-items: center;
 	gap: 0.45rem;
@@ -320,7 +320,7 @@
 	line-height: 1.5;
 }
 
-.general-accolade + .general-accolade {
+.award-accolade + .award-accolade {
 	margin-top: 0.15rem;
 }
 
@@ -329,7 +329,7 @@
    (101 Best Steakhouses/Burgers, which are tall; OAD's own mark is
    wide) all read at a consistent height instead of being squashed
    into a forced square box. */
-.general-accolade-icon {
+.award-accolade-icon {
 	height: 18px;
 	width: auto;
 	max-width: 60px;
@@ -338,7 +338,7 @@
 }
 
 .michelin-meta,
-.general-meta {
+.award-meta {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 0.6rem 1rem;
@@ -347,7 +347,7 @@
 }
 
 .michelin-meta-menu,
-.general-meta-menu {
+.award-meta-menu {
 	margin-top: 0.4rem;
 }
 
@@ -356,7 +356,7 @@
 	color: var(--michelin-red);
 }
 
-.general-meta i {
+.award-meta i {
 	margin-right: 0.3rem;
 	color: var(--accent);
 }
@@ -433,10 +433,10 @@
 	overflow-y: auto;
 }
 
-/* General tab reuses the same popup mechanics (blur backdrop, carousel)
+/* Award tab reuses the same popup mechanics (blur backdrop, carousel)
    via the shared .michelin-popup mainClass, just with an accent-blue
    top border instead of Michelin red. */
-.general-popup .popup-inner {
+.award-popup .popup-inner {
 	border-top-color: var(--accent);
 }
 
@@ -454,12 +454,12 @@
 	up so it reads clearly in a large modal.
 =======================================================*/
 .michelin-popup-header,
-.general-popup-header {
+.award-popup-header {
 	padding: 1.5rem 2.5rem 1.25rem;
 }
 
 .michelin-popup-header h4,
-.general-popup-header h4 {
+.award-popup-header h4 {
 	font-family: 'Roboto Mono', sans-serif;
 	font-size: 1.5rem;
 	margin: 0 0 0.5rem;
@@ -470,12 +470,12 @@
 }
 
 .michelin-popup-header .michelin-meta,
-.general-popup-header .general-meta {
+.award-popup-header .award-meta {
 	font-size: 1rem;
 }
 
 .michelin-popup-header .michelin-meta i,
-.general-popup-header .general-meta i {
+.award-popup-header .award-meta i {
 	font-size: 0.95rem;
 }
 
@@ -595,7 +595,7 @@
 
 @media (max-width: 767px) {
 	.michelin-grid,
-	.general-grid {
+	.award-grid {
 		grid-template-columns: 1fr;
 	}
 }

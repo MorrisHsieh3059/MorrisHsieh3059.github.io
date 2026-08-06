@@ -2,17 +2,17 @@
 	'use strict';
 
 	var initialized = false;
-	var generalInitialized = false;
+	var awardInitialized = false;
 	var michelinData = null;
-	var generalData = null;
+	var awardData = null;
 
 	/*=========================================================================
-		General / Michelin tab switching — driven by both the in-section
+		Award / Michelin tab switching — driven by both the in-section
 		tabs and the sidebar submenu links (both share the same
 		[data-dining-tab] attribute + .dining-tab-toggle class).
 	=========================================================================*/
 	function showDiningTab(tab) {
-		if (tab !== 'general' && tab !== 'michelin') return;
+		if (tab !== 'award' && tab !== 'michelin') return;
 
 		$('.dining-tab-toggle').removeClass('active');
 		$('.dining-tab-toggle[data-dining-tab="' + tab + '"]').addClass('active');
@@ -22,8 +22,8 @@
 
 		if (tab === 'michelin') {
 			ensureInit();
-		} else if (tab === 'general') {
-			ensureInitGeneral();
+		} else if (tab === 'award') {
+			ensureInitAward();
 		}
 	}
 
@@ -328,7 +328,7 @@
 	});
 
 	/*=========================================================================
-		General tab — same JSON-driven card/popup approach as Michelin, but
+		Award tab — same JSON-driven card/popup approach as Michelin, but
 		for restaurants tracked by award lists + world rankings rather than
 		MICHELIN stars.
 
@@ -400,72 +400,72 @@
 		var lines = accolades.map(function (a) {
 			var line = accoladeLine(a);
 			var iconHtml = line.icon
-				? '<img class="general-accolade-icon" src="' + iconPath(line.icon) + '" alt="">'
+				? '<img class="award-accolade-icon" src="' + iconPath(line.icon) + '" alt="">'
 				: '';
-			return '<div class="general-accolade">' + iconHtml + '<span>' + line.text + '</span></div>';
+			return '<div class="award-accolade">' + iconHtml + '<span>' + line.text + '</span></div>';
 		}).join('');
-		return '<div class="general-accolades">' + lines + '</div>';
+		return '<div class="award-accolades">' + lines + '</div>';
 	}
 
-	function titleHtmlGeneral(visit) {
-		return '<span class="general-card-title-name">' + visit.name + '</span>';
+	function titleHtmlAward(visit) {
+		return '<span class="award-card-title-name">' + visit.name + '</span>';
 	}
 
-	function metaHtmlGeneral(visit) {
+	function metaHtmlAward(visit) {
 		var cuisines = cuisineText(visit);
 
 		return (
-			(cuisines ? '<div class="general-meta"><span><i class="fas fa-utensils"></i>' + cuisines + '</span></div>' : '') +
-			'<div class="general-meta">' +
+			(cuisines ? '<div class="award-meta"><span><i class="fas fa-utensils"></i>' + cuisines + '</span></div>' : '') +
+			'<div class="award-meta">' +
 				'<span><i class="fas fa-map-marker-alt"></i>' + (visit.city || '') + '</span>' +
 				'<span><i class="fas fa-calendar-alt"></i>' + formatVisitDate(visit.date) + '</span>' +
 			'</div>' +
-			'<div class="general-meta general-meta-menu">' +
+			'<div class="award-meta award-meta-menu">' +
 				'<span><i class="fas fa-clipboard-list"></i>' + titleCase(visit.menu) + '</span>' +
 			'</div>'
 		);
 	}
 
-	function cardHtmlGeneral(visit) {
+	function cardHtmlAward(visit) {
 		var pictures = visit.pictures || [];
 		var coverStyle = pictures.length
-			? ' style="background-image:url(\'' + photoPath('general', visit, pictures[0]) + '\')"'
+			? ' style="background-image:url(\'' + photoPath('award', visit, pictures[0]) + '\')"'
 			: '';
 		var photoInner = pictures.length
 			? (pictures.length > 1
-				? '<span class="general-card-photo-count">' + pictures.length + ' photos</span>'
+				? '<span class="award-card-photo-count">' + pictures.length + ' photos</span>'
 				: '')
-			: '<div class="general-card-photo-placeholder"><i class="fas fa-camera"></i></div>';
+			: '<div class="award-card-photo-placeholder"><i class="fas fa-camera"></i></div>';
 
 		return (
-			'<a href="#popup-general-' + visit.id + '" class="general-card">' +
-				'<div class="general-card-photo"' + coverStyle + '>' + photoInner + '</div>' +
-				'<div class="general-card-body">' +
-					'<h4 class="general-card-title">' + titleHtmlGeneral(visit) + '</h4>' +
+			'<a href="#popup-award-' + visit.id + '" class="award-card">' +
+				'<div class="award-card-photo"' + coverStyle + '>' + photoInner + '</div>' +
+				'<div class="award-card-body">' +
+					'<h4 class="award-card-title">' + titleHtmlAward(visit) + '</h4>' +
 					accoladesHtml(visit) +
-					metaHtmlGeneral(visit) +
+					metaHtmlAward(visit) +
 				'</div>' +
 			'</a>'
 		);
 	}
 
-	function popupHtmlGeneral(visit) {
+	function popupHtmlAward(visit) {
 		var pictures = visit.pictures || [];
 		var slides = pictures.map(function (filename) {
-			return '<div class="item"><figure><img src="' + photoPath('general', visit, filename) + '" alt="' + visit.name + '" loading="lazy"></figure></div>';
+			return '<div class="item"><figure><img src="' + photoPath('award', visit, filename) + '" alt="' + visit.name + '" loading="lazy"></figure></div>';
 		}).join('');
 
 		if (!slides) {
-			slides = '<div class="item"><div class="general-card-photo-placeholder"><i class="fas fa-camera"></i> No photos yet</div></div>';
+			slides = '<div class="item"><div class="award-card-photo-placeholder"><i class="fas fa-camera"></i> No photos yet</div></div>';
 		}
 
 		return (
-			'<div id="popup-general-' + visit.id + '" class="popup mfp-hide">' +
+			'<div id="popup-award-' + visit.id + '" class="popup mfp-hide">' +
 				'<div class="popup-inner">' +
-					'<div class="general-popup-header">' +
-						'<h4>' + titleHtmlGeneral(visit) + '</h4>' +
+					'<div class="award-popup-header">' +
+						'<h4>' + titleHtmlAward(visit) + '</h4>' +
 						accoladesHtml(visit) +
-						metaHtmlGeneral(visit) +
+						metaHtmlAward(visit) +
 					'</div>' +
 					'<div class="popup-slider owl-carousel">' + slides + '</div>' +
 				'</div>' +
@@ -473,11 +473,11 @@
 		);
 	}
 
-	function renderGeneral(visits) {
-		var $grid = $('#general-grid');
+	function renderAward(visits) {
+		var $grid = $('#award-grid');
 
 		if (!visits || !visits.length) {
-			$grid.html('<p class="general-empty">No favorites logged yet — check back soon!</p>');
+			$grid.html('<p class="award-empty">No favorites logged yet — check back soon!</p>');
 			return;
 		}
 
@@ -485,11 +485,11 @@
 			return (b.date || '').localeCompare(a.date || '');
 		});
 
-		var cardsHtml = visits.map(cardHtmlGeneral).join('');
-		var popupsHtml = visits.map(popupHtmlGeneral).join('');
+		var cardsHtml = visits.map(cardHtmlAward).join('');
+		var popupsHtml = visits.map(popupHtmlAward).join('');
 		$grid.html(cardsHtml + popupsHtml);
 
-		$grid.find('.general-card').magnificPopup({
+		$grid.find('.award-card').magnificPopup({
 			type: 'inline',
 			fixedContentPos: false,
 			fixedBgPos: true,
@@ -498,7 +498,7 @@
 			preloader: false,
 			midClick: true,
 			removalDelay: 300,
-			mainClass: 'my-mfp-zoom-in michelin-popup general-popup',
+			mainClass: 'my-mfp-zoom-in michelin-popup award-popup',
 			callbacks: {
 				open: function () {
 					this.content.find('.popup-slider').owlCarousel({
@@ -520,19 +520,19 @@
 		});
 	}
 
-	function loadGeneralData() {
-		$.getJSON('data/general.json').done(function (data) {
-			generalData = data;
-			renderGeneral(data);
+	function loadAwardData() {
+		$.getJSON('data/award.json').done(function (data) {
+			awardData = data;
+			renderAward(data);
 		}).fail(function () {
-			$('#general-grid').html('<p class="general-empty">Favorites data unavailable.</p>');
+			$('#award-grid').html('<p class="award-empty">Favorites data unavailable.</p>');
 		});
 	}
 
-	function ensureInitGeneral() {
-		if (generalInitialized) return;
-		generalInitialized = true;
-		loadGeneralData();
+	function ensureInitAward() {
+		if (awardInitialized) return;
+		awardInitialized = true;
+		loadAwardData();
 	}
 
 	/*=========================================================================
@@ -619,8 +619,8 @@
 			setTimeout(function () { showDiningTab(tab); }, 1300);
 		} else if ($('.dining-panel[data-dining-panel="michelin"]').hasClass('active')) {
 			setTimeout(ensureInit, 1300);
-		} else if ($('.dining-panel[data-dining-panel="general"]').hasClass('active')) {
-			setTimeout(ensureInitGeneral, 1300);
+		} else if ($('.dining-panel[data-dining-panel="award"]').hasClass('active')) {
+			setTimeout(ensureInitAward, 1300);
 		}
 	});
 
@@ -628,8 +628,8 @@
 		if (!$('#dining').hasClass('active')) return;
 		if ($('.dining-panel[data-dining-panel="michelin"]').hasClass('active')) {
 			ensureInit();
-		} else if ($('.dining-panel[data-dining-panel="general"]').hasClass('active')) {
-			ensureInitGeneral();
+		} else if ($('.dining-panel[data-dining-panel="award"]').hasClass('active')) {
+			ensureInitAward();
 		}
 	});
 
