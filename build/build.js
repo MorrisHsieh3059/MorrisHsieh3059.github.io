@@ -5,7 +5,7 @@
  * Source layout (edit these):
  *   build/template.html        page skeleton with <!--@include:name--> markers
  *   components/<name>/         one folder per site section (home, about, resume,
- *                               nyc, travel, dining, gallery, contact) — each may
+ *                               travel, dining, gallery, contact) — each may
  *                               contain <name>.html, <name>.css, <name>.js,
  *                               img/, data/, scripts/
  *   theme/                     third-party N5 template + UI plugins (unmodified)
@@ -25,7 +25,7 @@ const root = path.join(__dirname, '..');
 const dist = path.join(root, 'dist');
 
 const COMPONENTS = [
-  'home', 'about', 'resume', 'nyc', 'travel', 'dining', 'gallery', 'contact',
+  'home', 'about', 'resume', 'travel', 'dining', 'gallery', 'contact',
 ];
 
 function rmrf(dir) {
