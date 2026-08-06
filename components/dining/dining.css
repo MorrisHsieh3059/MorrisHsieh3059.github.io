@@ -121,7 +121,14 @@
 	color: #999;
 }
 
-.michelin-filter-select {
+/* Custom dropdown (not a native <select>) so the option list can be
+   fully styled — centered text included, which native select popups
+   ignore in most browsers. */
+.michelin-select {
+	position: relative;
+}
+
+.michelin-select-btn {
 	appearance: none;
 	-webkit-appearance: none;
 	background: #fff;
@@ -132,6 +139,8 @@
 	font-size: 0.8rem;
 	color: #444;
 	cursor: pointer;
+	text-align: center;
+	min-width: 140px;
 	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath fill='%23999' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
 	background-repeat: no-repeat;
 	background-position: right 0.85rem center;
@@ -139,10 +148,51 @@
 	transition: border-color 0.2s ease;
 }
 
-.michelin-filter-select:hover,
-.michelin-filter-select:focus {
+.michelin-select-btn:hover,
+.michelin-select.open .michelin-select-btn {
 	border-color: var(--michelin-red);
 	outline: none;
+}
+
+.michelin-select-list {
+	display: none;
+	position: absolute;
+	top: calc(100% + 6px);
+	left: 0;
+	right: 0;
+	z-index: 20;
+	margin: 0;
+	padding: 0.4rem 0;
+	list-style: none;
+	background: #fff;
+	border: 1px solid #ddd;
+	border-radius: 10px;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+	max-height: 260px;
+	overflow-y: auto;
+}
+
+.michelin-select.open .michelin-select-list {
+	display: block;
+}
+
+.michelin-select-list li {
+	padding: 0.5rem 1rem;
+	font-family: 'Roboto Mono', sans-serif;
+	font-size: 0.8rem;
+	color: #444;
+	text-align: center;
+	cursor: pointer;
+	white-space: nowrap;
+}
+
+.michelin-select-list li:hover {
+	background: #f5f5f5;
+}
+
+.michelin-select-list li.active {
+	color: var(--michelin-red);
+	font-weight: 700;
 }
 
 .michelin-filter-empty {
