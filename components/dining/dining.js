@@ -109,6 +109,12 @@
 		return 'img/dining/' + section + '/' + visit.id + '/' + filename;
 	}
 
+	// Accolade-list logos live in components/dining/img/icons/ (copied by
+	// build.js to dist/img/dining/icons/, same as photoPath's convention).
+	function iconPath(filename) {
+		return 'img/dining/icons/' + filename;
+	}
+
 	// Title-case a string, preserving all-caps acronyms as-is (e.g. "OAD").
 	function titleCaseWord(w) {
 		if (!w) return w;
@@ -335,32 +341,39 @@
 		region/year/rank are all optional; unranked lists just omit rank.
 
 		visit.accolades[].list is a slug drawn from the finite ACCOLADE_LISTS
-		set below (not freeform text), so every entry gets a consistent
-		display label + icon instead of however the raw name was typed.
-		To add a new award list, add one entry here — nothing else needs
-		to change. A slug that isn't in the table still renders (title-
-		cased, with a generic trophy icon) rather than breaking, but add
-		it here when you notice one so it renders with intent.
+		set below (not freeform text) — this is a closed set by design, not
+		an open one, so every entry gets its real award-list logo instead
+		of however the raw name was typed. To retire/add a list, edit this
+		table — nothing else needs to change. A slug that isn't in the
+		table still renders (title-cased text, no logo) rather than
+		breaking, but that should only ever happen for a typo, since the
+		set itself is meant to be exhaustive.
+
+		icon filenames are resolved via iconPath() to
+		img/dining/icons/<file> (component source: components/dining/img/icons/).
 
 		Card + popup layout:
 			Line 1: restaurant name
-			Line 2+: one line per accolade (list · region · year — #rank)
+			Line 2+: one line per accolade (logo + list · region · year — #rank)
 			Next: cuisines
 			Next: city, date
 			Next: menu
 	=========================================================================*/
 	var ACCOLADE_LISTS = {
-		'worlds-50-best-restaurants': { label: 'World\'s 50 Best Restaurants', icon: 'fa-globe' },
-		'worlds-50-best-bars': { label: 'World\'s 50 Best Bars', icon: 'fa-cocktail' },
-		'nyt-100-best': { label: 'NYT 100 Best Restaurants', icon: 'fa-newspaper' },
-		'oad': { label: 'OAD', icon: 'fa-medal' }
+		'50-best-restaurants': { label: 'World\'s 50 Best Restaurants', icon: '50-best.svg' },
+		'50-best-bars': { label: 'World\'s 50 Best Bars', icon: '50-best.svg' },
+		'101-best-steakhouse': { label: '101 Best Steakhouses', icon: '101-best-steakhouses.png' },
+		'101-best-burgers': { label: '101 Best Burgers', icon: '101-best-burgers.png' },
+		'50-best-pizza': { label: '50 Top Pizza', icon: '50-top-pizza.svg' },
+		'oad-top-restaurants': { label: 'OAD — Top Restaurants', icon: 'oad.svg' },
+		'oad-casual': { label: 'OAD — Casual', icon: 'oad.svg' },
+		'oad-cheap-eats': { label: 'OAD — Cheap Eats', icon: 'oad.svg' }
 	};
-	var DEFAULT_ACCOLADE_ICON = 'fa-trophy';
 
 	function accoladeListMeta(slug) {
 		return ACCOLADE_LISTS[slug] || {
 			label: titleCase((slug || '').replace(/-/g, ' ')),
-			icon: DEFAULT_ACCOLADE_ICON
+			icon: null
 		};
 	}
 
@@ -386,7 +399,10 @@
 		if (!accolades.length) return '';
 		var lines = accolades.map(function (a) {
 			var line = accoladeLine(a);
-			return '<div class="general-accolade"><i class="fas ' + line.icon + '"></i>' + line.text + '</div>';
+			var iconHtml = line.icon
+				? '<img class="general-accolade-icon" src="' + iconPath(line.icon) + '" alt="">'
+				: '';
+			return '<div class="general-accolade">' + iconHtml + '<span>' + line.text + '</span></div>';
 		}).join('');
 		return '<div class="general-accolades">' + lines + '</div>';
 	}

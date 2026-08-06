@@ -313,8 +313,8 @@
 
 .general-accolade {
 	display: flex;
-	align-items: baseline;
-	gap: 0.4rem;
+	align-items: center;
+	gap: 0.45rem;
 	font-size: 0.82rem;
 	color: #555;
 	line-height: 1.5;
@@ -324,8 +324,16 @@
 	margin-top: 0.15rem;
 }
 
-.general-accolade i {
-	color: var(--accent);
+/* Real award-list logos (not tinted icons) — fixed height with auto
+   width so square marks (50 Best, OAD) and wordmark-shaped logos
+   (101 Best Steakhouses/Burgers, which are tall; OAD's own mark is
+   wide) all read at a consistent height instead of being squashed
+   into a forced square box. */
+.general-accolade-icon {
+	height: 18px;
+	width: auto;
+	max-width: 60px;
+	object-fit: contain;
 	flex: 0 0 auto;
 }
 
