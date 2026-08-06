@@ -5,7 +5,7 @@
     "date": "2026-06-14",
     "stars": 3,
     "status": "current",
-    "cuisine": [
+    "cuisines": [
       "Korean"
     ],
     "menu": "full tasting",
@@ -45,7 +45,7 @@
     "date": "2026-05-30",
     "stars": 1,
     "status": "current",
-    "cuisine": [
+    "cuisines": [
       "Korean"
     ],
     "menu": "à la carte",
@@ -71,7 +71,7 @@
     "date": "2026-04-19",
     "stars": 1,
     "status": "current",
-    "cuisine": [
+    "cuisines": [
       "French",
       "Contemporary"
     ],
@@ -100,7 +100,7 @@
     "date": "2026-04-04",
     "stars": 1,
     "status": "former",
-    "cuisine": [
+    "cuisines": [
       "American",
       "Contemporary"
     ],
@@ -133,7 +133,7 @@
     "date": "2026-02-04",
     "stars": 1,
     "status": "current",
-    "cuisine": [
+    "cuisines": [
       "Asian Fusion",
       "Contemporary"
     ],
@@ -157,7 +157,7 @@
     "date": "2026-01-30",
     "stars": 1,
     "status": "current",
-    "cuisine": [
+    "cuisines": [
       "French",
       "Contemporary"
     ],
@@ -182,7 +182,7 @@
     "date": "2026-01-26",
     "stars": 1,
     "status": "former",
-    "cuisine": [
+    "cuisines": [
       "Indian"
     ],
     "menu": "restaurant week",
@@ -205,7 +205,7 @@
     "date": "2025-08-08",
     "stars": 1,
     "status": "former",
-    "cuisine": [
+    "cuisines": [
       "Italian"
     ],
     "menu": "restaurant week",
@@ -227,7 +227,7 @@
     "date": "2025-08-01",
     "stars": 1,
     "status": "current",
-    "cuisine": [
+    "cuisines": [
       "American",
       "Contemporary"
     ],
@@ -253,7 +253,7 @@
     "date": "2025-07-30",
     "stars": 1,
     "status": "current",
-    "cuisine": [
+    "cuisines": [
       "American",
       "Contemporary"
     ],
@@ -277,7 +277,7 @@
     "date": "2025-06-22",
     "stars": 1,
     "status": "current",
-    "cuisine": [
+    "cuisines": [
       "Spanish"
     ],
     "menu": "à la carte",
@@ -298,7 +298,7 @@
     "date": "2025-02-07",
     "stars": 1,
     "status": "current",
-    "cuisine": [
+    "cuisines": [
       "American",
       "Contemporary"
     ],
@@ -320,7 +320,7 @@
     "date": "2025-02-06",
     "stars": 2,
     "status": "current",
-    "cuisine": [
+    "cuisines": [
       "French",
       "Contemporary"
     ],
@@ -349,7 +349,7 @@
     "date": "2025-01-29",
     "stars": 2,
     "status": "current",
-    "cuisine": [
+    "cuisines": [
       "Contemporary"
     ],
     "menu": "restaurant week",
@@ -371,7 +371,7 @@
     "date": "2024-01-29",
     "stars": 1,
     "status": "current",
-    "cuisine": [
+    "cuisines": [
       "French"
     ],
     "menu": "restaurant week",

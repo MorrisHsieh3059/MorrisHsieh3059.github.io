@@ -97,12 +97,12 @@
 		Line 2: cuisine, city, date
 		Line 3: menu
 
-		visit.cuisine is an array of tags (e.g. ["French", "Contemporary"])
+		visit.cuisines is an array of tags (e.g. ["French", "Contemporary"])
 		rather than one opaque string, so a visit can be filtered by any
 		of its tags individually.
 	=========================================================================*/
 	function cuisineList(visit) {
-		var c = visit.cuisine;
+		var c = visit.cuisines;
 		if (Array.isArray(c)) return c.filter(Boolean);
 		if (c) return [c];
 		return [];
