@@ -3,8 +3,8 @@
 
 	Self-contained component: the tab pills, custom dropdown
 	widget, card grid, and popup mechanics deliberately duplicate
-	(rather than reuse) the Dining tab's .dining-tabs/.michelin-*
-	patterns under their own .faith-*/.devotion-* class names, so
+	(rather than reuse) the Dining tab's dining-tabs / michelin
+	patterns under their own faith / devotion class names, so
 	this component never reaches into dining.css/dining.js.
 =======================================================*/
 .faith-tabs {
