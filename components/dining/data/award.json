@@ -42,5 +42,78 @@
       "16.jpeg",
       "17.jpeg"
     ]
+  },
+  {
+    "id": "sips-and-guzzle-071126",
+    "name": "Sips & Guzzle",
+    "date": "2026-07-11",
+    "accolades": [
+      {
+        "list": "50-best-bars",
+        "region": "New America",
+        "year": 2026,
+        "rank": 1
+      },
+      {
+        "list": "101-best-burgers",
+        "region": "World",
+        "year": 2026,
+        "rank": 6
+      },
+      {
+        "list": "50-best-bars",
+        "region": "World",
+        "year": 2025,
+        "rank": 39
+      }
+    ],
+    "cuisines": [
+      "Bar"
+    ],
+    "menu": "à la carte",
+    "city": "New York",
+    "pictures": [
+      "0.jpeg",
+      "1.jpeg",
+      "2.jpeg",
+      "3.jpeg",
+      "4.jpeg"
+    ]
+  },
+    {
+    "id": "pascual-070526",
+    "name": "Pascual",
+    "date": "2026-07-05",
+    "accolades": [
+      {
+        "list": "50-best-restaurants",
+        "region": "North America",
+        "year": 2026,
+        "rank": 42
+      },
+      {
+        "list": "50-best-restaurants",
+        "region": "Washington DC",
+        "year": 2026,
+        "rank": 4
+      }
+    ],
+    "cuisines": [
+      "Mexican"
+    ],
+    "menu": "à la carte",
+    "city": "Washington, DC",
+    "pictures": [
+      "0.jpeg",
+      "1.jpeg",
+      "2.jpeg",
+      "3.jpeg",
+      "4.jpeg",
+      "5.jpeg",
+      "6.jpeg",
+      "7.jpeg",
+      "8.jpeg",
+      "9.jpeg"
+    ]
   }
 ]
