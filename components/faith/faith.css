@@ -325,7 +325,7 @@
 }
 
 .devotion-popup-content {
-	padding: 0.5rem 2.5rem 2.5rem;
+	padding: 1.5rem 2.5rem 2.5rem;
 	max-height: 50vh;
 	overflow-y: auto;
 	line-height: 1.7;
@@ -337,6 +337,18 @@
 .devotion-popup-content h3 {
 	font-family: 'Roboto Mono', sans-serif;
 	margin: 1.25rem 0 0.5rem;
+}
+
+.devotion-popup-content h1 {
+	font-size: 1.15rem;
+}
+
+.devotion-popup-content h2 {
+	font-size: 1.05rem;
+}
+
+.devotion-popup-content h3 {
+	font-size: 0.95rem;
 }
 
 .devotion-popup-content h1:first-child,
