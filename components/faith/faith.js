@@ -100,6 +100,19 @@
 		return '<span class="devotion-card-title-name">' + passage + '</span>';
 	}
 
+	// Plain-text, attribute-safe version of titleLineHtml — used as the
+	// card title's native tooltip (title="...") so the full text is still
+	// reachable on hover once the header clips a long line with an ellipsis.
+	function titleLineText(devotion) {
+		var passage = devotion.passage || '';
+		var text = devotion.title ? (devotion.title + (passage ? ' (' + passage + ')' : '')) : passage;
+		var div = document.createElement('div');
+		div.textContent = text;
+		// innerHTML escapes &, <, > but not quotes — escape those too since
+		// this is inlined straight into a double-quoted HTML attribute.
+		return div.innerHTML.replace(/"/g, '&quot;');
+	}
+
 	function metaLineHtml(devotion) {
 		var parts = [];
 		if (devotion.plan) parts.push(titleCase(devotion.plan));
@@ -113,10 +126,16 @@
 		var id = devotionId(devotion);
 		var books = booksList(devotion);
 
+		// title="" carries the full, untruncated line-1 text as a native
+		// tooltip, since the header clips overflowing titles with an
+		// ellipsis (see .devotion-card-title in faith.css) instead of
+		// wrapping them onto a second line.
 		return (
 			'<a href="#popup-' + id + '" class="devotion-card" data-year="' + yearOf(devotion.date) + '" data-month="' + monthOf(devotion.date) + '" data-plan="' + (devotion.plan || '') + '" data-books="' + books.join(',') + '">' +
+				'<div class="devotion-card-header">' +
+					'<h4 class="devotion-card-title" title="' + titleLineText(devotion) + '">' + titleLineHtml(devotion) + '</h4>' +
+				'</div>' +
 				'<div class="devotion-card-body">' +
-					'<h4 class="devotion-card-title">' + titleLineHtml(devotion) + '</h4>' +
 					'<div class="devotion-meta devotion-meta-date"><i class="fas fa-calendar-alt"></i>' + formatDevotionDate(devotion.date) + '</div>' +
 					'<div class="devotion-meta devotion-meta-tags">' + metaLineHtml(devotion) + '</div>' +
 				'</div>' +

@@ -203,24 +203,42 @@
 	text-decoration: none;
 }
 
+/* Header vs. body get distinct treatment (tinted background + a hairline
+   divider) so the title reads as a clearly separate zone from the
+   date/plan/book meta beneath it, rather than one flat block of text. */
+.devotion-card-header {
+	padding: 1rem 1.35rem 0.85rem;
+	background: #f1fafb;
+	border-bottom: 1px solid #dcf1f4;
+}
+
 .devotion-card-body {
-	padding: 1.1rem 1.35rem 1.35rem;
+	padding: 0.9rem 1.35rem 1.35rem;
 	flex: 1 1 auto;
 }
 
 .devotion-card-title {
 	font-family: 'Roboto Mono', sans-serif;
 	font-size: 1rem;
-	margin: 0 0 0.6rem;
-	display: flex;
-	align-items: center;
-	flex-wrap: wrap;
-	gap: 0.4rem;
+	margin: 0;
+	/* Long titles are clipped with an ellipsis rather than wrapping to a
+	   second line — the full text is still available via the title
+	   attribute (native tooltip) set in faith.js. */
+	display: block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.devotion-card-title-name,
+.devotion-card-title-passage {
+	white-space: nowrap;
 }
 
 .devotion-card-title-passage {
 	color: #888;
 	font-weight: 400;
+	margin-left: 0.3rem;
 }
 
 .devotion-meta {
