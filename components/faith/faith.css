@@ -1,0 +1,339 @@
+/*=======================================================
+	Faith — Daily Devotion / Other tabs
+
+	Self-contained component: the tab pills, custom dropdown
+	widget, card grid, and popup mechanics deliberately duplicate
+	(rather than reuse) the Dining tab's .dining-tabs/.michelin-*
+	patterns under their own .faith-*/.devotion-* class names, so
+	this component never reaches into dining.css/dining.js.
+=======================================================*/
+.faith-tabs {
+	position: relative;
+	list-style: none;
+	margin: 0.75rem 0 1.75rem;
+	padding: 0;
+	font-size: 0;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 0.75rem;
+}
+
+.faith-tabs > li {
+	display: inline-block;
+	font-size: 14px;
+	margin: 0 0 0.5rem 0;
+}
+
+.faith-tabs > li > a {
+	display: inline-block;
+	padding: 0.45rem 1.2rem;
+	border: 1px solid #ddd;
+	border-radius: 999px;
+	color: #777;
+	font-family: 'Roboto Mono', sans-serif;
+	font-weight: 700;
+	font-size: 0.8rem;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	text-decoration: none;
+	transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.faith-tabs > li > a:hover {
+	color: var(--accent);
+	border-color: var(--accent);
+}
+
+.faith-tabs > li > a.active {
+	color: #fff;
+	background: var(--accent);
+	border-color: var(--accent);
+}
+
+.faith-panel {
+	display: none;
+}
+
+.faith-panel.active {
+	display: block;
+}
+
+.devotion-empty {
+	color: #888;
+}
+
+.devotion-filters {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1.25rem;
+	align-items: center;
+	margin: 0 0 1.5rem;
+}
+
+.devotion-filter {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.devotion-filter-label {
+	font-family: 'Roboto Mono', sans-serif;
+	font-size: 0.72rem;
+	font-weight: 700;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	color: #999;
+}
+
+/* Custom dropdown (not a native <select>) so the option list can be
+   fully styled, same approach as Dining's .michelin-select widget. */
+.devotion-select {
+	position: relative;
+}
+
+.devotion-select-btn {
+	appearance: none;
+	-webkit-appearance: none;
+	background: #fff;
+	border: 1px solid #ddd;
+	border-radius: 999px;
+	padding: 0.4rem 1.8rem 0.4rem 1rem;
+	font-family: 'Roboto Mono', sans-serif;
+	font-size: 0.8rem;
+	color: #444;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	text-align: left;
+	white-space: nowrap;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath fill='%23999' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: right 0.85rem center;
+	background-size: 10px 7px;
+	transition: border-color 0.2s ease;
+}
+
+.devotion-select-btn:hover,
+.devotion-select.open .devotion-select-btn {
+	border-color: var(--accent);
+	outline: none;
+}
+
+.devotion-select-list {
+	display: none;
+	position: absolute;
+	top: calc(100% + 6px);
+	left: 0;
+	z-index: 20;
+	margin: 0;
+	padding: 0.4rem 0;
+	list-style: none;
+	background: #fff;
+	border: 1px solid #ddd;
+	border-radius: 10px;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+	max-height: 260px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.devotion-select.open .devotion-select-list {
+	display: block;
+}
+
+.devotion-select-list li {
+	padding: 0.5rem 1rem;
+	font-family: 'Roboto Mono', sans-serif;
+	font-size: 0.8rem;
+	color: #444;
+	text-align: left;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	white-space: nowrap;
+	box-sizing: border-box;
+}
+
+.devotion-select-list li:hover {
+	background: #f5f5f5;
+}
+
+.devotion-select-list li.active {
+	color: var(--accent);
+	font-weight: 700;
+}
+
+.devotion-filter-empty {
+	margin-top: -0.5rem;
+}
+
+.devotion-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+	gap: 1.5rem;
+}
+
+/* Compound selector (two classes) so this reliably beats the plain
+   .devotion-card display:flex rule below regardless of source order —
+   see dining.css for the cascade bug this pattern was written to avoid. */
+.devotion-card.devotion-card-hidden {
+	display: none;
+}
+
+.devotion-card {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	background: #fff;
+	border-top: 4px solid #B3EBF2;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+	overflow: hidden;
+	cursor: pointer;
+	color: inherit;
+	text-decoration: none;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.devotion-card:hover,
+.devotion-card:focus {
+	transform: translateY(-3px);
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+	color: inherit;
+	text-decoration: none;
+}
+
+.devotion-card-body {
+	padding: 1.1rem 1.35rem 1.35rem;
+	flex: 1 1 auto;
+}
+
+.devotion-card-title {
+	font-family: 'Roboto Mono', sans-serif;
+	font-size: 1rem;
+	margin: 0 0 0.6rem;
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 0.4rem;
+}
+
+.devotion-card-title-passage {
+	color: #888;
+	font-weight: 400;
+}
+
+.devotion-meta {
+	font-size: 0.82rem;
+	color: #888;
+	margin-bottom: 0.4rem;
+}
+
+.devotion-meta i {
+	margin-right: 0.3rem;
+	color: var(--accent);
+}
+
+.devotion-meta-tags {
+	margin-bottom: 0;
+}
+
+/*=======================================================
+	Devotion popup — same mechanics as the Dining popups
+	(magnificPopup inline, blurred backdrop), but the area that
+	would normally hold a photo carousel instead holds the
+	devotion's content rendered as Markdown. That content block is
+	independently scrollable (max-height + overflow-y) so a long
+	entry never grows the popup past the viewport.
+=======================================================*/
+.devotion-popup.mfp-wrap .mfp-content {
+	max-width: 800px;
+	width: calc(100% - 32px);
+	margin: 0 auto;
+}
+
+.devotion-popup.mfp-bg {
+	background: rgba(15, 15, 15, 0.45);
+	backdrop-filter: blur(6px);
+	-webkit-backdrop-filter: blur(6px);
+}
+
+.my-mfp-zoom-in.devotion-popup.mfp-ready.mfp-bg {
+	opacity: 1;
+}
+
+.devotion-popup .popup-inner {
+	background: #fff;
+	box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
+	box-sizing: border-box;
+	max-height: 90vh;
+	overflow-y: auto;
+}
+
+.devotion-popup .mfp-close {
+	color: #333;
+	opacity: 0.75;
+}
+
+.devotion-popup .mfp-close:hover {
+	opacity: 1;
+}
+
+.devotion-popup-header {
+	padding: 1.5rem 2.5rem 1.25rem;
+}
+
+.devotion-popup-header h4 {
+	font-family: 'Roboto Mono', sans-serif;
+	font-size: 1.5rem;
+	margin: 0 0 0.75rem;
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+
+.devotion-popup-header .devotion-meta {
+	font-size: 1rem;
+}
+
+.devotion-popup-header .devotion-meta i {
+	font-size: 0.95rem;
+}
+
+.devotion-popup-content {
+	padding: 0.5rem 2.5rem 2.5rem;
+	max-height: 50vh;
+	overflow-y: auto;
+	line-height: 1.7;
+	color: #333;
+}
+
+.devotion-popup-content h1,
+.devotion-popup-content h2,
+.devotion-popup-content h3 {
+	font-family: 'Roboto Mono', sans-serif;
+	margin: 1.25rem 0 0.5rem;
+}
+
+.devotion-popup-content h1:first-child,
+.devotion-popup-content h2:first-child,
+.devotion-popup-content h3:first-child {
+	margin-top: 0;
+}
+
+.devotion-popup-content p {
+	margin: 0 0 1rem;
+}
+
+.devotion-popup-content ul,
+.devotion-popup-content ol {
+	margin: 0 0 1rem;
+	padding-left: 1.5rem;
+}
+
+@media (max-width: 767px) {
+	.devotion-grid {
+		grid-template-columns: 1fr;
+	}
+}

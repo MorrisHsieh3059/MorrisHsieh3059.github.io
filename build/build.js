@@ -25,7 +25,7 @@ const root = path.join(__dirname, '..');
 const dist = path.join(root, 'dist');
 
 const COMPONENTS = [
-  'home', 'about', 'resume', 'travel', 'dining', 'gallery', 'contact',
+  'home', 'about', 'resume', 'travel', 'dining', 'faith', 'gallery', 'contact',
 ];
 
 function rmrf(dir) {

@@ -19,6 +19,7 @@
 	<link rel="stylesheet" href="css/custom.css">
 	<link rel="stylesheet" href="css/travel.css">
 	<link rel="stylesheet" href="css/dining.css">
+	<link rel="stylesheet" href="css/faith.css">
 	<link rel="stylesheet" href="vendor/fontawesome/css/all.min.css">
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
 </head>
@@ -60,6 +61,13 @@
 							<li><a href="#dining" class="section-toggle" data-section="dining" data-dining-tab="award">Award</a></li>
 						</ul>
 					</li>
+					<li class="menu-item-has-children">
+						<a href="#" class="menu-parent-toggle">Faith</a>
+						<ul class="submenu">
+							<li><a href="#faith" class="section-toggle" data-section="faith" data-faith-tab="devotion">Daily Devotion</a></li>
+							<li><a href="#faith" class="section-toggle" data-section="faith" data-faith-tab="other">Other</a></li>
+						</ul>
+					</li>
 					<li><a href="#portfolio" class="section-toggle" data-section="portfolio">Gallery</a></li>
 					<li><a href="#contact" class="section-toggle" data-section="contact">Contact</a></li>
 				</ul>
@@ -81,6 +89,8 @@
 
 			<!--@include:dining-->
 
+			<!--@include:faith-->
+
 			<!--@include:gallery-->
 
 			<!--@include:contact-->
@@ -97,5 +107,7 @@
 	<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
 	<script src="js/travel.js"></script>
 	<script src="js/dining.js"></script>
+	<script src="https://unpkg.com/marked@11.1.1/marked.min.js"></script>
+	<script src="js/faith.js"></script>
 </body>
 </html>
