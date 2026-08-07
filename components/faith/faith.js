@@ -122,16 +122,27 @@
 		return parts.join(' · ');
 	}
 
+	// An entry with no content yet (a placeholder for a future day) has
+	// nothing to show in a popup, so its card renders "inactive": grayed
+	// out and not clickable, rather than opening an empty popup.
+	function hasContent(devotion) {
+		return !!(devotion.content && String(devotion.content).trim());
+	}
+
 	function cardHtml(devotion) {
 		var id = devotionId(devotion);
 		var books = booksList(devotion);
+		var active = hasContent(devotion);
+		var tag = active ? 'a' : 'div';
+		var hrefAttr = active ? ' href="#popup-' + id + '"' : '';
+		var cardClass = 'devotion-card' + (active ? '' : ' devotion-card-inactive');
 
 		// title="" carries the full, untruncated line-1 text as a native
 		// tooltip, since the header clips overflowing titles with an
 		// ellipsis (see .devotion-card-title in faith.css) instead of
 		// wrapping them onto a second line.
 		return (
-			'<a href="#popup-' + id + '" class="devotion-card" data-year="' + yearOf(devotion.date) + '" data-month="' + monthOf(devotion.date) + '" data-plan="' + (devotion.plan || '') + '" data-books="' + books.join(',') + '">' +
+			'<' + tag + hrefAttr + ' class="' + cardClass + '" data-year="' + yearOf(devotion.date) + '" data-month="' + monthOf(devotion.date) + '" data-plan="' + (devotion.plan || '') + '" data-books="' + books.join(',') + '">' +
 				'<div class="devotion-card-header">' +
 					'<h4 class="devotion-card-title" title="' + titleLineText(devotion) + '">' + titleLineHtml(devotion) + '</h4>' +
 				'</div>' +
@@ -139,7 +150,7 @@
 					'<div class="devotion-meta devotion-meta-date"><i class="fas fa-calendar-alt"></i>' + formatDevotionDate(devotion.date) + '</div>' +
 					'<div class="devotion-meta devotion-meta-tags">' + metaLineHtml(devotion) + '</div>' +
 				'</div>' +
-			'</a>'
+			'</' + tag + '>'
 		);
 	}
 
@@ -157,6 +168,10 @@
 	}
 
 	function popupHtml(devotion) {
+		// No content means no clickable card (see cardHtml/hasContent above),
+		// so there's nothing for a popup to show — skip it entirely.
+		if (!hasContent(devotion)) return '';
+
 		var id = devotionId(devotion);
 
 		return (
@@ -314,7 +329,9 @@
 		$grid.html(cardsHtml + popupsHtml);
 		applyFilters();
 
-		$grid.find('.devotion-card').magnificPopup({
+		// Inactive (empty-content) cards are plain <div>s with no popup to
+		// open — exclude them from the click-to-open binding.
+		$grid.find('.devotion-card:not(.devotion-card-inactive)').magnificPopup({
 			type: 'inline',
 			fixedContentPos: false,
 			fixedBgPos: true,

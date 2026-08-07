@@ -203,6 +203,21 @@
 	text-decoration: none;
 }
 
+/* Placeholder entries with no content yet (see hasContent() in faith.js)
+   render grayed out and inert — no pointer cursor, no hover lift, no
+   click target (they're plain <div>s, not links). */
+.devotion-card-inactive {
+	cursor: default;
+	filter: grayscale(1);
+	opacity: 0.55;
+}
+
+.devotion-card-inactive:hover,
+.devotion-card-inactive:focus {
+	transform: none;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
 /* Header vs. body get distinct treatment (tinted background + a hairline
    divider) so the title reads as a clearly separate zone from the
    date/plan/book meta beneath it, rather than one flat block of text. */
