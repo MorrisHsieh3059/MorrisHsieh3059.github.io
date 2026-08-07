@@ -48,6 +48,14 @@ html {
 	text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
 }
 
+/* The theme's default body font is Lora (serif) — override just the
+   home hero's paragraph text (subtitle + tagline) to a sans-serif
+   system font stack, while the "This is Morris Hsieh" <h1> keeps its
+   own Roboto Mono styling from style.css untouched. */
+.section-main .intro-text p {
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
 .tagline {
 	font-size: 1.05rem;
 	margin-top: 0.75rem;
