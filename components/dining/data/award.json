@@ -80,7 +80,7 @@
       "4.jpeg"
     ]
   },
-    {
+  {
     "id": "pascual-070526",
     "name": "Pascual",
     "date": "2026-07-05",
@@ -114,6 +114,235 @@
       "7.jpeg",
       "8.jpeg",
       "9.jpeg"
+    ]
+  },
+  {
+    "id": "paradiso-062726",
+    "name": "Paradiso",
+    "date": "2026-06-27",
+    "accolades": [
+      {
+        "list": "50-best-bars",
+        "region": "World",
+        "year": 2025,
+        "rank": 4
+      },
+      {
+        "list": "50-best-bars",
+        "region": "Europe",
+        "year": 2026,
+        "rank": 9
+      }
+    ],
+    "cuisines": [
+      "Bar"
+    ],
+    "menu": "à la carte",
+    "city": "Barcelona, Spain",
+    "pictures": [
+      "0.jpeg",
+      "1.jpeg",
+      "2.jpeg",
+      "3.jpeg",
+      "4.jpeg",
+      "5.jpeg",
+      "6.jpeg",
+      "7.jpeg",
+      "8.jpeg",
+      "9.jpeg",
+      "10.jpeg",
+      "11.jpeg",
+      "12.jpeg",
+      "13.jpeg",
+      "14.jpeg"
+    ]
+  },
+  {
+    "id": "sips-062626",
+    "name": "Sips",
+    "date": "2026-06-26",
+    "accolades": [
+      {
+        "list": "50-best-bars",
+        "region": "World",
+        "year": 2025,
+        "rank": 3
+      },
+      {
+        "list": "50-best-bars",
+        "region": "Europe",
+        "year": 2026,
+        "rank": 3
+      }
+    ],
+    "cuisines": [
+      "Bar"
+    ],
+    "menu": "à la carte",
+    "city": "Barcelona, Spain",
+    "pictures": [
+      "0.jpeg",
+      "1.jpeg",
+      "2.jpeg",
+      "3.jpeg",
+      "4.JPG",
+      "5.jpeg",
+      "6.jpeg",
+      "7.jpeg",
+      "8.jpeg"
+    ]
+  },
+  {
+    "id": "bleecker-burger-062426",
+    "name": "Bleeker Burger",
+    "date": "2026-06-24",
+    "accolades": [
+      {
+        "list": "101-best-burgers",
+        "region": "World",
+        "year": 2026,
+        "rank": 1
+      }
+    ],
+    "cuisines": [
+      "Hamburger"
+    ],
+    "menu": "à la carte",
+    "city": "London, UK",
+    "pictures": [
+      "0.jpeg",
+      "1.jpeg",
+      "2.jpeg",
+      "3.jpeg",
+      "4.jpeg",
+      "5.jpeg"
+    ]
+  },
+  {
+    "id": "napoli-on-the-road-062326",
+    "name": "Napoli on the Road",
+    "date": "2026-06-23",
+    "accolades": [
+      {
+        "list": "50-best-pizza",
+        "region": "Europe",
+        "year": 2026,
+        "rank": 1
+      },
+      {
+        "list": "50-best-pizza",
+        "region": "World",
+        "year": 2025,
+        "rank": 5
+      }
+    ],
+    "cuisines": [
+      "Pizza"
+    ],
+    "menu": "à la carte",
+    "city": "London, UK",
+    "pictures": [
+      "0.jpeg",
+      "1.jpeg",
+      "2.jpeg",
+      "3.jpeg",
+      "4.jpeg",
+      "5.jpeg",
+      "6.jpeg",
+      "7.jpeg",
+      "8.jpeg",
+      "9.jpeg"
+    ]
+  },
+  {
+    "id": "himkok-062226",
+    "name": "Himkok",
+    "date": "2026-06-22",
+    "accolades": [
+      {
+        "list": "50-best-bars",
+        "region": "Europe",
+        "year": 2026,
+        "rank": 4
+      },
+      {
+        "list": "50-best-bars",
+        "region": "World",
+        "year": 2025,
+        "rank": 14
+      }
+    ],
+    "cuisines": [
+      "Bar"
+    ],
+    "menu": "à la carte",
+    "city": "Olso, Norway",
+    "pictures": [
+      "0.jpeg",
+      "1.jpeg",
+      "2.jpeg",
+      "3.jpeg",
+      "4.jpeg",
+      "5.jpeg",
+      "6.jpeg",
+      "7.jpeg",
+      "8.jpeg",
+      "9.jpeg",
+      "10.jpeg",
+      "11.jpeg",
+      "12.jpeg",
+      "13.jpeg",
+      "14.jpeg",
+      "15.jpeg",
+      "16.jpeg",
+      "17.jpeg",
+      "18.jpeg",
+      "19.jpeg",
+      "20.jpeg",
+      "21.jpeg"
+    ]
+  },
+  {
+    "id": "svanen-062126",
+    "name": "Svanen",
+    "date": "2026-06-21",
+    "accolades": [
+      {
+        "list": "50-best-bars",
+        "region": "Europe",
+        "year": 2026,
+        "rank": 15
+      },
+      {
+        "list": "50-best-bars",
+        "region": "World",
+        "year": 2025,
+        "rank": 32
+      }
+    ],
+    "cuisines": [
+      "Bar"
+    ],
+    "menu": "à la carte",
+    "city": "Olso, Norway",
+    "pictures": [
+      "0.jpeg",
+      "1.jpeg",
+      "2.jpeg",
+      "3.jpeg",
+      "4.jpeg",
+      "5.jpeg",
+      "6.jpeg",
+      "7.jpeg",
+      "8.jpeg",
+      "9.jpeg",
+      "10.jpeg",
+      "11.jpeg",
+      "12.jpeg",
+      "13.jpeg",
+      "14.jpeg",
+      "15.jpeg",
+      "16.jpeg"
     ]
   }
 ]
