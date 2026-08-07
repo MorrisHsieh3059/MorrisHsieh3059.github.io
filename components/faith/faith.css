@@ -297,8 +297,13 @@
 	opacity: 1;
 }
 
+/* Same tinted-background + divider treatment as the grid card's header
+   (see .devotion-card-header above), so the popup's title/meta zone
+   reads as clearly separate from the scrollable content beneath it. */
 .devotion-popup-header {
 	padding: 1.5rem 2.5rem 1.25rem;
+	background: #f1fafb;
+	border-bottom: 1px solid #dcf1f4;
 }
 
 .devotion-popup-header h4 {
