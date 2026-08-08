@@ -428,5 +428,59 @@
       "4.jpeg",
       "5.jpeg"
     ]
+  },
+  {
+    "id": "mam-050226",
+    "name": "Mam",
+    "date": "2026-05-02",
+    "accolades": [
+      {
+        "list": "nyt-100-best-restaurants",
+        "region": "New York",
+        "year": 2026,
+        "rank": 26
+      }
+    ],
+    "cuisines": [
+      "Vietnamese"
+    ],
+    "menu": "à la carte",
+    "city": "New York, NY",
+    "pictures": [
+      "0.jpeg",
+      "1.jpeg",
+      "2.jpeg",
+      "3.jpeg",
+      "4.jpeg",
+      "5.jpeg",
+      "6.jpeg",
+      "7.jpeg"
+    ]
+  },
+  {
+    "id": "via-carota-051226",
+    "name": "Via Carota",
+    "date": "2026-05-12",
+    "accolades": [
+      {
+        "list": "nyt-100-best-restaurants",
+        "region": "New York",
+        "year": 2026,
+        "rank": 13
+      }
+    ],
+    "cuisines": [
+      "Italian"
+    ],
+    "menu": "à la carte",
+    "city": "New York, NY",
+    "pictures": [
+      "0.jpeg",
+      "1.jpeg",
+      "2.jpeg",
+      "3.jpeg",
+      "4.jpeg",
+      "5.jpeg"
+    ]
   }
 ]
