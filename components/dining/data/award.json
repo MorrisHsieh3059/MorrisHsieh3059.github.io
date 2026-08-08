@@ -344,5 +344,89 @@
       "15.jpeg",
       "16.jpeg"
     ]
+  },
+  {
+    "id": "clemente-bar-061426",
+    "name": "Clemente Bar",
+    "date": "2026-06-14",
+    "accolades": [
+      {
+        "list": "50-best-bars",
+        "region": "North America",
+        "year": 2026,
+        "rank": 15
+      }
+    ],
+    "cuisines": [
+      "Bar"
+    ],
+    "menu": "à la carte",
+    "city": "New York, NY",
+    "pictures": [
+      "0.jpeg",
+      "1.jpeg",
+      "2.jpeg",
+      "3.jpeg",
+      "4.jpeg",
+      "5.jpeg",
+      "6.jpeg",
+      "7.jpeg",
+      "8.jpeg",
+      "9.jpeg",
+      "10.jpeg",
+      "11.jpeg"
+    ]
+  },
+  {
+    "id": "via-carota-060826",
+    "name": "Via Carota",
+    "date": "2026-06-08",
+    "accolades": [
+      {
+        "list": "nyt-100-best-restaurants",
+        "region": "New York",
+        "year": 2026,
+        "rank": 13
+      }
+    ],
+    "cuisines": [
+      "Italian"
+    ],
+    "menu": "à la carte",
+    "city": "New York, NY",
+    "pictures": [
+      "0.jpeg",
+      "1.jpeg",
+      "2.jpeg",
+      "3.jpeg",
+      "4.jpeg",
+      "5.jpeg"
+    ]
+  },
+  {
+    "id": "nowon-060426",
+    "name": "Nowon",
+    "date": "2026-06-04",
+    "accolades": [
+      {
+        "list": "101-best-burgers",
+        "region": "World",
+        "year": 2026,
+        "rank": 8
+      }
+    ],
+    "cuisines": [
+      "Korean"
+    ],
+    "menu": "à la carte",
+    "city": "New York, NY",
+    "pictures": [
+      "0.jpeg",
+      "1.jpeg",
+      "2.jpeg",
+      "3.jpeg",
+      "4.jpeg",
+      "5.jpeg"
+    ]
   }
 ]
