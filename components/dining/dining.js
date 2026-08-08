@@ -373,6 +373,7 @@
 		'101-best-steakhouse': { label: '101 Best Steakhouses', icon: '101-best-steakhouses.png' },
 		'101-best-burgers': { label: '101 Best Burgers', icon: '101-best-burgers.png' },
 		'50-best-pizza': { label: '50 Top Pizza', icon: '50-top-pizza.svg' },
+		'nyt-100-best-restaurants': { label: 'NYT\'s 100 Best Restaurants', icon: 'nyt-100-best-restaurants.png' },
 		'oad-top-restaurants': { label: 'OAD — Top Restaurants', icon: 'oad.svg' },
 		'oad-casual': { label: 'OAD — Casual', icon: 'oad.svg' },
 		'oad-cheap-eats': { label: 'OAD — Cheap Eats', icon: 'oad.svg' }
