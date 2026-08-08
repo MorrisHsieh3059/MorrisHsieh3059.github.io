@@ -488,7 +488,7 @@
 		(not per accolade entry: a restaurant with two "50 Best Restaurants"
 		rankings in the same year, e.g. a regional + a global rank, still
 		only counts once, same dedup-by-name principle as the MICHELIN
-		star totals above). Only these five groups get a tile, by design —
+		star totals above). Only these six groups get a tile, by design —
 		OAD's three tiers aren't shown here.
 	=========================================================================*/
 	var AWARD_STAT_GROUPS = [
@@ -496,7 +496,8 @@
 		{ list: '50-best-bars', label: 'Top 50 Bars' },
 		{ list: '101-best-steakhouse', label: '101 Best Steakhouse' },
 		{ list: '101-best-burgers', label: '101 Best Burgers' },
-		{ list: '50-best-pizza', label: 'Top 50 Pizza' }
+		{ list: '50-best-pizza', label: 'Top 50 Pizza' },
+		{ list: 'nyt-100-best-restaurants', label: 'NYT 100 Best' }
 	];
 
 	function awardTotalsHtml(visits) {
