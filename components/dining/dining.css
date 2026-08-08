@@ -90,6 +90,11 @@
 	height: 16px;
 }
 
+.michelin-totals-group .mich-bib-icon {
+	width: 16px;
+	height: 16px;
+}
+
 .michelin-totals-group strong {
 	color: #222;
 	font-size: 1.05rem;
@@ -434,6 +439,23 @@
 
 .mich-star-former {
 	background-color: #bbb;
+}
+
+/* Bib Gourmand uses the real MICHELIN Bibendum-face artwork (full color,
+   not a tintable silhouette like the star), so "former" is expressed the
+   same way as the inactive devotion cards elsewhere on the site: a plain
+   grayscale filter on the actual icon rather than a color swap. */
+.mich-bib-icon {
+	display: inline-block;
+	width: 1.1em;
+	height: 1.1em;
+	margin-right: 0.15em;
+	object-fit: contain;
+	vertical-align: middle;
+}
+
+.mich-bib-icon-former {
+	filter: grayscale(1);
 }
 
 .mich-former-label {

@@ -36,10 +36,23 @@
 		Star rating badge — an original design (small red star shapes),
 		not the MICHELIN Guide's trademarked rosette/star artwork.
 
-		visit.stars: 1-3 (number of stars at time of visit)
-		visit.status: "current" | "former" (still starred today, or not)
+		visit.stars: 1-3 (number of stars at time of visit) OR the string
+		'bib' for a Bib Gourmand listing (a separate, non-starred MICHELIN
+		distinction) — the two are mutually exclusive per visit, same as
+		the real Guide.
+		visit.status: "current" | "former" (still holds the distinction
+		today, or not)
 	=========================================================================*/
 	function starsHtml(visit) {
+		if (visit.stars === 'bib') {
+			var isFormerBib = visit.status === 'former';
+			var bibClass = 'mich-bib-icon' + (isFormerBib ? ' mich-bib-icon-former' : '');
+			return '<span class="michelin-stars">' +
+				'<img class="' + bibClass + '" src="' + iconPath('bib.png') + '" alt="Bib Gourmand">' +
+				(isFormerBib ? '<span class="mich-former-label">Former</span>' : '') +
+				'</span>';
+		}
+
 		var count = parseInt(visit.stars, 10);
 		if (!count || count < 1) return '';
 
@@ -74,9 +87,17 @@
 			}
 		});
 
-		var current = 0, former = 0;
+		var current = 0, former = 0, bibCurrent = 0, bibFormer = 0;
 		Object.keys(latestByName).forEach(function (key) {
 			var v = latestByName[key];
+			if (v.stars === 'bib') {
+				if (v.status === 'former') {
+					bibFormer++;
+				} else {
+					bibCurrent++;
+				}
+				return;
+			}
 			var count = parseInt(v.stars, 10) || 0;
 			if (v.status === 'former') {
 				former += count;
@@ -94,6 +115,16 @@
 			'<span class="michelin-totals-group">' +
 				'<span class="mich-star mich-star-former"></span>' +
 				'<strong>' + former + '</strong> Former' +
+			'</span>' +
+			'<span class="michelin-totals-sep">|</span>' +
+			'<span class="michelin-totals-group">' +
+				'<img class="mich-bib-icon" src="' + iconPath('bib.png') + '" alt="Bib Gourmand">' +
+				'<strong>' + bibCurrent + '</strong> Current' +
+			'</span>' +
+			'<span class="michelin-totals-sep">|</span>' +
+			'<span class="michelin-totals-group">' +
+				'<img class="mich-bib-icon mich-bib-icon-former" src="' + iconPath('bib.png') + '" alt="Bib Gourmand">' +
+				'<strong>' + bibFormer + '</strong> Former' +
 			'</span>'
 		);
 	}
