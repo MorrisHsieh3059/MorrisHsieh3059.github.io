@@ -423,7 +423,7 @@
   },
   {
     "id": "the-modern-012925",
-    "name": "Bar room at the modern",
+    "name": "The Modern -- Bar room",
     "date": "2025-01-29",
     "stars": 2,
     "status": "current",
@@ -499,7 +499,8 @@
     "stars": "bib",
     "status": "current",
     "cuisines": [
-      "Japanese", "Ramen"
+      "Japanese",
+      "Ramen"
     ],
     "menu": "à la carte",
     "city": "New York, NY",
@@ -509,6 +510,38 @@
       "2.jpeg",
       "3.jpeg",
       "4.jpeg"
+    ]
+  },
+  {
+    "id": "the-modern-080926",
+    "name": "The Modern",
+    "date": "2026-08-09",
+    "stars": 2,
+    "status": "current",
+    "cuisines": [
+      "Contemporary"
+    ],
+    "menu": "full tasting",
+    "city": "New York, NY",
+    "pictures": [
+      "0.jpeg",
+      "1.jpeg",
+      "2.jpeg",
+      "3.jpeg",
+      "4.jpeg",
+      "5.jpeg",
+      "6.jpeg",
+      "7.jpeg",
+      "8.jpeg",
+      "9.jpeg",
+      "10.jpeg",
+      "11.jpeg",
+      "12.jpeg",
+      "13.jpeg",
+      "14.jpeg",
+      "15.jpeg",
+      "16.jpeg",
+      "17.jpeg"
     ]
   }
 ]
