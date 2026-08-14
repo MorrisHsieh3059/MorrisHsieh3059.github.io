@@ -423,13 +423,17 @@
   },
   {
     "id": "the-modern-012925",
-    "name": "The Modern -- Bar room",
+    "name": "The Modern",
     "date": "2025-01-29",
     "stars": 2,
     "status": "current",
     "cuisines": [
       "Contemporary"
     ],
+    "sub": {
+      "isSharedKitchen": true,
+      "name": "The Bar room at the Modern"
+    },
     "menu": "restaurant week",
     "city": "New York, NY",
     "pictures": [
