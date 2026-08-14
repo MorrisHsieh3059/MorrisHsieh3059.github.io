@@ -187,6 +187,24 @@
 		);
 	}
 
+	/*=========================================================================
+		Shared-kitchen tag — some MICHELIN listings are one of several
+		concepts operating out of the same physical kitchen/space (e.g. a
+		bar program and a restaurant sharing one kitchen). visit.sub is
+		optional; only isSharedKitchen: true renders anything.
+
+		visit.sub: { isSharedKitchen: true|false, name: "" }
+	=========================================================================*/
+	function sharedKitchenHtml(visit) {
+		var sub = visit.sub;
+		if (!sub || !sub.isSharedKitchen) return '';
+		var name = sub.name || '';
+		return '<div class="michelin-shared-kitchen">' +
+			'<i class="fas fa-share-alt"></i> Shared kitchen' +
+			(name ? ' with ' + name : '') +
+			'</div>';
+	}
+
 	function metaHtml(visit) {
 		return (
 			'<div class="michelin-meta">' +
@@ -216,6 +234,7 @@
 				'<div class="michelin-card-photo"' + coverStyle + '>' + photoInner + '</div>' +
 				'<div class="michelin-card-body">' +
 					'<h4 class="michelin-card-title">' + titleHtml(visit) + '</h4>' +
+					sharedKitchenHtml(visit) +
 					metaHtml(visit) +
 				'</div>' +
 			'</a>'
@@ -237,6 +256,7 @@
 				'<div class="popup-inner">' +
 					'<div class="michelin-popup-header">' +
 						'<h4>' + titleHtml(visit) + '</h4>' +
+						sharedKitchenHtml(visit) +
 						metaHtml(visit) +
 					'</div>' +
 					'<div class="popup-slider owl-carousel">' + slides + '</div>' +

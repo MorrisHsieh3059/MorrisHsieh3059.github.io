@@ -467,6 +467,28 @@
 	margin-left: 0.3rem;
 }
 
+/* Shared-kitchen tag — a small pill under the restaurant name flagging
+   that this listing shares its physical kitchen with another concept. */
+.michelin-shared-kitchen {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.35rem;
+	margin: 0.3rem 0 0.6rem;
+	padding: 0.15rem 0.6rem;
+	background: #f4f1ec;
+	border-radius: 999px;
+	font-family: 'Roboto Mono', sans-serif;
+	font-size: 0.72rem;
+	font-weight: 600;
+	letter-spacing: 0.3px;
+	color: #8a7a5c;
+	width: fit-content;
+}
+
+.michelin-shared-kitchen i {
+	font-size: 0.7rem;
+}
+
 /*=======================================================
 	Michelin visit popup (photo carousel) — centered in the
 	viewport with a framed card around the content.
