@@ -396,10 +396,14 @@
   },
   {
     "id": "jean-georges-020625",
-    "name": "Nougatine by Jean-Georges",
+    "name": "Jean-Georges",
     "date": "2025-02-06",
     "stars": 2,
     "status": "current",
+    "sub": {
+      "isSharedKitchen": true,
+      "name": "Nougatine by Jean-Georges"
+    },
     "cuisines": [
       "French",
       "Contemporary"

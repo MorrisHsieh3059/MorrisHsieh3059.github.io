@@ -200,8 +200,8 @@
 		if (!sub || !sub.isSharedKitchen) return '';
 		var name = sub.name || '';
 		return '<div class="michelin-shared-kitchen">' +
-			'<i class="fas fa-share-alt"></i> Shared kitchen' +
-			(name ? ' with ' + name : '') +
+			'<i class="fas fa-share-alt"></i>' +
+			(name ? '' + name : '') +
 			'</div>';
 	}
 
