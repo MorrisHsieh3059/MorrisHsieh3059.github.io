@@ -263,10 +263,19 @@
 		return visit.rank === 'gourmand' || visit.rank === 'selected';
 	}
 
+	// 'gourmand' (Bib Gourmand) shows its badge icon next to the name, same
+	// as a starred visit. 'selected' is a quieter distinction — no icon by
+	// the name, just a "Former" label when it applies (the stats banner
+	// still gets its icon either way, see rankTotalsHtml).
 	function rankHtml(visit) {
 		var meta = RANK_META[visit.rank];
 		if (!meta) return '';
 		var isFormer = visit.status === 'former';
+		if (visit.rank === 'selected') {
+			return isFormer
+				? '<span class="michelin-stars"><span class="mich-former-label">Former</span></span>'
+				: '';
+		}
 		var rankClass = 'mich-bib-icon' + (isFormer ? ' mich-bib-icon-former' : '');
 		return '<span class="michelin-stars">' +
 			'<img class="' + rankClass + '" src="' + iconPath(meta.icon) + '" alt="' + meta.label + '">' +
@@ -275,10 +284,10 @@
 	}
 
 	function titleHtmlGourmand(visit) {
+		var rank = rankHtml(visit);
 		return (
 			'<span class="michelin-card-title-name">' + visit.name + '</span>' +
-			'<span class="michelin-card-title-sep">|</span>' +
-			rankHtml(visit)
+			(rank ? '<span class="michelin-card-title-sep">|</span>' + rank : '')
 		);
 	}
 
