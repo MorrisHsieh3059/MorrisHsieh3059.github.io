@@ -238,11 +238,11 @@
 
 	/*=========================================================================
 		Gourmand tab — MICHELIN Guide distinctions below full star status:
-		Bib Gourmand and Recommended. Kept in the same michelin.json file as
+		Bib Gourmand and Selected. Kept in the same michelin.json file as
 		the starred visits (one restaurant list, one source of truth) but
 		rendered on its own tab/grid, split out by visit.rank.
 
-		visit.rank: 'gourmand' | 'recommend' (mutually exclusive with
+		visit.rank: 'gourmand' | 'selected' (mutually exclusive with
 		visit.stars — a visit is either a starred entry or a Gourmand-tab
 		entry, never both)
 		visit.status: "current" | "former" (still holds the distinction
@@ -256,11 +256,11 @@
 	=========================================================================*/
 	var RANK_META = {
 		gourmand: { label: 'Gourmand', icon: 'bib.png' },
-		recommend: { label: 'Recommend', icon: 'recommend.png' }
+		selected: { label: 'Selected', icon: 'selected.png' }
 	};
 
 	function isGourmandVisit(visit) {
-		return visit.rank === 'gourmand' || visit.rank === 'recommend';
+		return visit.rank === 'gourmand' || visit.rank === 'selected';
 	}
 
 	function rankHtml(visit) {
@@ -342,7 +342,7 @@
 			}
 		});
 
-		var groups = ['gourmand', 'recommend'].map(function (rank) {
+		var groups = ['gourmand', 'selected'].map(function (rank) {
 			var current = 0, former = 0;
 			Object.keys(latestByName).forEach(function (key) {
 				var v = latestByName[key];
