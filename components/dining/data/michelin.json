@@ -482,7 +482,7 @@
     "id": "8282-080126",
     "name": "8282",
     "date": "2026-08-01",
-    "stars": "bib",
+    "rank": "gourmand",
     "status": "current",
     "cuisines": [
       "Korean"
@@ -504,7 +504,7 @@
     "id": "tonchin-101725",
     "name": "Tonchin",
     "date": "2025-10-17",
-    "stars": "bib",
+    "rank": "gourmand",
     "status": "current",
     "cuisines": [
       "Japanese",

@@ -12,7 +12,7 @@
 		[data-dining-tab] attribute + .dining-tab-toggle class).
 	=========================================================================*/
 	function showDiningTab(tab) {
-		if (tab !== 'award' && tab !== 'michelin') return;
+		if (tab !== 'award' && tab !== 'michelin' && tab !== 'gourmand') return;
 
 		$('.dining-tab-toggle').removeClass('active');
 		$('.dining-tab-toggle[data-dining-tab="' + tab + '"]').addClass('active');
@@ -20,7 +20,7 @@
 		$('.dining-panel').removeClass('active');
 		$('.dining-panel[data-dining-panel="' + tab + '"]').addClass('active');
 
-		if (tab === 'michelin') {
+		if (tab === 'michelin' || tab === 'gourmand') {
 			ensureInit();
 		} else if (tab === 'award') {
 			ensureInitAward();
@@ -34,25 +34,14 @@
 
 	/*=========================================================================
 		Star rating badge — an original design (small red star shapes),
-		not the MICHELIN Guide's trademarked rosette/star artwork.
+		not the MICHELIN Guide's trademarked rosette/star artwork. This tab
+		is stars only now — Bib Gourmand / Recommended listings live on the
+		separate Gourmand tab (see rankHtml below).
 
-		visit.stars: 1-3 (number of stars at time of visit) OR the string
-		'bib' for a Bib Gourmand listing (a separate, non-starred MICHELIN
-		distinction) — the two are mutually exclusive per visit, same as
-		the real Guide.
-		visit.status: "current" | "former" (still holds the distinction
-		today, or not)
+		visit.stars: 1-3 (number of stars at time of visit)
+		visit.status: "current" | "former" (still starred today, or not)
 	=========================================================================*/
 	function starsHtml(visit) {
-		if (visit.stars === 'bib') {
-			var isFormerBib = visit.status === 'former';
-			var bibClass = 'mich-bib-icon' + (isFormerBib ? ' mich-bib-icon-former' : '');
-			return '<span class="michelin-stars">' +
-				'<img class="' + bibClass + '" src="' + iconPath('bib.png') + '" alt="Bib Gourmand">' +
-				(isFormerBib ? '<span class="mich-former-label">Former</span>' : '') +
-				'</span>';
-		}
-
 		var count = parseInt(visit.stars, 10);
 		if (!count || count < 1) return '';
 
@@ -87,17 +76,9 @@
 			}
 		});
 
-		var current = 0, former = 0, bibCurrent = 0, bibFormer = 0;
+		var current = 0, former = 0;
 		Object.keys(latestByName).forEach(function (key) {
 			var v = latestByName[key];
-			if (v.stars === 'bib') {
-				if (v.status === 'former') {
-					bibFormer++;
-				} else {
-					bibCurrent++;
-				}
-				return;
-			}
 			var count = parseInt(v.stars, 10) || 0;
 			if (v.status === 'former') {
 				former += count;
@@ -115,16 +96,6 @@
 			'<span class="michelin-totals-group">' +
 				'<span class="mich-star mich-star-former"></span>' +
 				'<strong>' + former + '</strong> Former' +
-			'</span>' +
-			'<span class="michelin-totals-sep">|</span>' +
-			'<span class="michelin-totals-group">' +
-				'<img class="mich-bib-icon" src="' + iconPath('bib.png') + '" alt="Bib Gourmand">' +
-				'<strong>' + bibCurrent + '</strong> Current' +
-			'</span>' +
-			'<span class="michelin-totals-sep">|</span>' +
-			'<span class="michelin-totals-group">' +
-				'<img class="mich-bib-icon mich-bib-icon-former" src="' + iconPath('bib.png') + '" alt="Bib Gourmand">' +
-				'<strong>' + bibFormer + '</strong> Former' +
 			'</span>'
 		);
 	}
@@ -266,6 +237,217 @@
 	}
 
 	/*=========================================================================
+		Gourmand tab — MICHELIN Guide distinctions below full star status:
+		Bib Gourmand and Recommended. Kept in the same michelin.json file as
+		the starred visits (one restaurant list, one source of truth) but
+		rendered on its own tab/grid, split out by visit.rank.
+
+		visit.rank: 'gourmand' | 'recommend' (mutually exclusive with
+		visit.stars — a visit is either a starred entry or a Gourmand-tab
+		entry, never both)
+		visit.status: "current" | "former" (still holds the distinction
+		today, or not)
+
+		Card/popup markup, filters and photoPath all reuse the michelin
+		tab's plumbing (same .michelin-card/.michelin-popup-header markup,
+		same img/dining/michelin/<id>/ photo folders) since a Gourmand
+		listing is structurally identical to a starred one apart from the
+		badge — only the title line (rank icon instead of stars) differs.
+	=========================================================================*/
+	var RANK_META = {
+		gourmand: { label: 'Gourmand', icon: 'bib.png' },
+		recommend: { label: 'Recommend', icon: 'recommend.png' }
+	};
+
+	function isGourmandVisit(visit) {
+		return visit.rank === 'gourmand' || visit.rank === 'recommend';
+	}
+
+	function rankHtml(visit) {
+		var meta = RANK_META[visit.rank];
+		if (!meta) return '';
+		var isFormer = visit.status === 'former';
+		var rankClass = 'mich-bib-icon' + (isFormer ? ' mich-bib-icon-former' : '');
+		return '<span class="michelin-stars">' +
+			'<img class="' + rankClass + '" src="' + iconPath(meta.icon) + '" alt="' + meta.label + '">' +
+			(isFormer ? '<span class="mich-former-label">Former</span>' : '') +
+			'</span>';
+	}
+
+	function titleHtmlGourmand(visit) {
+		return (
+			'<span class="michelin-card-title-name">' + visit.name + '</span>' +
+			'<span class="michelin-card-title-sep">|</span>' +
+			rankHtml(visit)
+		);
+	}
+
+	function cardHtmlGourmand(visit) {
+		var pictures = visit.pictures || [];
+		var coverStyle = pictures.length
+			? ' style="background-image:url(\'' + photoPath('michelin', visit, pictures[0]) + '\')"'
+			: '';
+		var photoInner = pictures.length
+			? (pictures.length > 1
+				? '<span class="michelin-card-photo-count">' + pictures.length + ' photos</span>'
+				: '')
+			: '<div class="michelin-card-photo-placeholder"><i class="fas fa-camera"></i></div>';
+
+		return (
+			'<a href="#popup-gourmand-' + visit.id + '" class="michelin-card" data-cuisine="' + cuisineList(visit).join(',') + '" data-menu="' + (visit.menu || '') + '">' +
+				'<div class="michelin-card-photo"' + coverStyle + '>' + photoInner + '</div>' +
+				'<div class="michelin-card-body">' +
+					'<h4 class="michelin-card-title">' + titleHtmlGourmand(visit) + '</h4>' +
+					sharedKitchenHtml(visit) +
+					metaHtml(visit) +
+				'</div>' +
+			'</a>'
+		);
+	}
+
+	function popupHtmlGourmand(visit) {
+		var pictures = visit.pictures || [];
+		var slides = pictures.map(function (filename) {
+			return '<div class="item"><figure><img src="' + photoPath('michelin', visit, filename) + '" alt="' + visit.name + '" loading="lazy"></figure></div>';
+		}).join('');
+
+		if (!slides) {
+			slides = '<div class="item"><div class="michelin-card-photo-placeholder"><i class="fas fa-camera"></i> No photos yet</div></div>';
+		}
+
+		return (
+			'<div id="popup-gourmand-' + visit.id + '" class="popup mfp-hide">' +
+				'<div class="popup-inner">' +
+					'<div class="michelin-popup-header">' +
+						'<h4>' + titleHtmlGourmand(visit) + '</h4>' +
+						sharedKitchenHtml(visit) +
+						metaHtml(visit) +
+					'</div>' +
+					'<div class="popup-slider owl-carousel">' + slides + '</div>' +
+				'</div>' +
+			'</div>'
+		);
+	}
+
+	// Current/former count per rank, same dedup-by-restaurant-name approach
+	// as the star tab's totalsHtml.
+	function rankTotalsHtml(visits) {
+		var latestByName = {};
+		visits.forEach(function (v) {
+			var key = (v.name || '').trim().toLowerCase();
+			if (!key) return;
+			var existing = latestByName[key];
+			if (!existing || new Date(v.date) > new Date(existing.date)) {
+				latestByName[key] = v;
+			}
+		});
+
+		var groups = ['gourmand', 'recommend'].map(function (rank) {
+			var current = 0, former = 0;
+			Object.keys(latestByName).forEach(function (key) {
+				var v = latestByName[key];
+				if (v.rank !== rank) return;
+				if (v.status === 'former') { former++; } else { current++; }
+			});
+			var meta = RANK_META[rank];
+			return (
+				'<span class="michelin-totals-group">' +
+					'<img class="mich-bib-icon" src="' + iconPath(meta.icon) + '" alt="' + meta.label + '">' +
+					'<strong>' + current + '</strong> Current' +
+				'</span>' +
+				'<span class="michelin-totals-sep">|</span>' +
+				'<span class="michelin-totals-group">' +
+					'<img class="mich-bib-icon mich-bib-icon-former" src="' + iconPath(meta.icon) + '" alt="' + meta.label + '">' +
+					'<strong>' + former + '</strong> Former' +
+				'</span>'
+			);
+		});
+		return groups.join('<span class="michelin-totals-sep">|</span>');
+	}
+
+	function populateFiltersGourmand(visits) {
+		var cuisineValues = [];
+		visits.forEach(function (v) {
+			cuisineList(v).forEach(function (tag) { cuisineValues.push(tag); });
+		});
+		populateCustomSelect($('#gourmand-filter-cuisine'), cuisineValues, 'All Cuisines');
+		populateCustomSelect($('#gourmand-filter-menu'), visits.map(function (v) { return v.menu; }), 'All Menus');
+	}
+
+	function applyFiltersGourmand() {
+		var cuisine = $('#gourmand-filter-cuisine').attr('data-value') || 'all';
+		var menu = $('#gourmand-filter-menu').attr('data-value') || 'all';
+		var visibleCount = 0;
+
+		$('#gourmand-grid .michelin-card').each(function () {
+			var $card = $(this);
+			var cardCuisines = ($card.attr('data-cuisine') || '').split(',').filter(Boolean);
+			var matches =
+				(cuisine === 'all' || cardCuisines.indexOf(cuisine) !== -1) &&
+				(menu === 'all' || $card.data('menu') === menu);
+
+			$card.toggleClass('michelin-card-hidden', !matches);
+			if (matches) visibleCount++;
+		});
+
+		$('#gourmand-filter-empty').toggle(visibleCount === 0);
+	}
+
+	function renderGourmand(visits) {
+		var $grid = $('#gourmand-grid');
+		var $totals = $('#gourmand-totals');
+
+		if (!visits || !visits.length) {
+			$totals.empty();
+			$('#gourmand-filters').hide();
+			$grid.html('<p class="michelin-empty">No Gourmand/Recommended visits logged yet — check back soon!</p>');
+			return;
+		}
+
+		$totals.html(rankTotalsHtml(visits));
+		populateFiltersGourmand(visits);
+
+		visits = visits.slice().sort(function (a, b) {
+			return (b.date || '').localeCompare(a.date || '');
+		});
+
+		var cardsHtml = visits.map(cardHtmlGourmand).join('');
+		var popupsHtml = visits.map(popupHtmlGourmand).join('');
+		$grid.html(cardsHtml + popupsHtml);
+		applyFiltersGourmand();
+
+		$grid.find('.michelin-card').magnificPopup({
+			type: 'inline',
+			fixedContentPos: false,
+			fixedBgPos: true,
+			overflowY: 'auto',
+			closeBtnInside: true,
+			preloader: false,
+			midClick: true,
+			removalDelay: 300,
+			mainClass: 'my-mfp-zoom-in michelin-popup',
+			callbacks: {
+				open: function () {
+					this.content.find('.popup-slider').owlCarousel({
+						items: 1,
+						loop: this.content.find('.popup-slider .item').length > 1,
+						nav: true,
+						dots: true,
+						autoplay: false,
+						navText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>']
+					});
+				},
+				close: function () {
+					var $slider = this.content.find('.popup-slider');
+					if ($slider.data('owl.carousel')) {
+						$slider.trigger('destroy.owl.carousel');
+					}
+				}
+			}
+		});
+	}
+
+	/*=========================================================================
 		Cuisine / menu filters — a custom-styled dropdown (not a native
 		<select>) populated from whatever values actually appear in the
 		data, filtering the grid by exact match (cards stay in the DOM,
@@ -373,8 +555,11 @@
 		// The dropdown widget (.michelin-select) is shared styling/behavior
 		// across tabs — which grid it actually filters depends on which
 		// tab's panel it lives in.
-		if ($container.closest('.dining-panel').data('dining-panel') === 'award') {
+		var panel = $container.closest('.dining-panel').data('dining-panel');
+		if (panel === 'award') {
 			applyAwardFilters();
+		} else if (panel === 'gourmand') {
+			applyFiltersGourmand();
 		} else {
 			applyFilters();
 		}
@@ -759,12 +944,17 @@
 		});
 	}
 
+	// One JSON file backs both the Michelin (star) and Gourmand tabs, split
+	// client-side by visit.rank — so a single fetch renders both grids
+	// regardless of which tab the user opened first.
 	function loadData() {
 		$.getJSON('data/michelin.json').done(function (data) {
 			michelinData = data;
-			render(data);
+			render(data.filter(function (v) { return !isGourmandVisit(v); }));
+			renderGourmand(data.filter(isGourmandVisit));
 		}).fail(function () {
 			$('#michelin-grid').html('<p class="michelin-empty">Michelin visit data unavailable.</p>');
+			$('#gourmand-grid').html('<p class="michelin-empty">Michelin visit data unavailable.</p>');
 		});
 	}
 
@@ -783,19 +973,19 @@
 		var tab = $(this).data('dining-tab');
 		if (tab) {
 			setTimeout(function () { showDiningTab(tab); }, 1300);
-		} else if ($('.dining-panel[data-dining-panel="michelin"]').hasClass('active')) {
-			setTimeout(ensureInit, 1300);
 		} else if ($('.dining-panel[data-dining-panel="award"]').hasClass('active')) {
 			setTimeout(ensureInitAward, 1300);
+		} else {
+			setTimeout(ensureInit, 1300);
 		}
 	});
 
 	$(window).on('load', function () {
 		if (!$('#dining').hasClass('active')) return;
-		if ($('.dining-panel[data-dining-panel="michelin"]').hasClass('active')) {
-			ensureInit();
-		} else if ($('.dining-panel[data-dining-panel="award"]').hasClass('active')) {
+		if ($('.dining-panel[data-dining-panel="award"]').hasClass('active')) {
 			ensureInitAward();
+		} else {
+			ensureInit();
 		}
 	});
 
