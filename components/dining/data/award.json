@@ -1291,5 +1291,44 @@
         "rank": 32
       }
     ]
+  },
+  {
+    "id": "the-musket-room-040426",
+    "name": "The Musket Room",
+    "city": "New York, NY",
+    "date": "2026-04-04",
+    "menu": "full tasting",
+    "cuisines": [
+      "American",
+      "Contemporary"
+    ],
+    "pictures": [
+      "0.jpeg",
+      "1.jpeg",
+      "2.jpeg",
+      "3.jpeg",
+      "4.jpeg",
+      "5.jpeg",
+      "6.jpeg",
+      "7.jpeg",
+      "8.jpeg",
+      "9.jpeg",
+      "10.jpeg",
+      "11.jpeg",
+      "12.jpeg",
+      "13.jpeg",
+      "14.jpeg",
+      "15.jpeg",
+      "16.jpeg",
+      "17.jpeg"
+    ],
+    "accolades": [
+      {
+        "list": "nyt-100-best-restaurants",
+        "region": "New York",
+        "year": 2023,
+        "rank": 84
+      }
+    ]
   }
 ]
