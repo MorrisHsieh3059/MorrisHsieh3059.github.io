@@ -1090,5 +1090,90 @@
       "5.jpeg",
       "6.jpeg"
     ]
+  },
+  {
+    "id": "crown-shy-080426",
+    "name": "Crown Shy",
+    "city": "New York, NY",
+    "date": "2026-08-04",
+    "menu": "restaurant week",
+    "cuisines": [
+      "American",
+      "Contemporary"
+    ],
+    "pictures": [
+      "0.jpeg",
+      "1.jpeg",
+      "2.jpeg",
+      "3.jpeg",
+      "4.jpeg",
+      "5.jpeg",
+      "6.jpeg",
+      "7.jpeg",
+      "8.jpeg"
+    ],
+    "accolades": [
+      {
+        "list": "nyt-100-best-restaurants",
+        "region": "New York",
+        "year": 2025
+      }
+    ]
+  },
+  {
+    "id": "crown-shy-073025",
+    "name": "Crown Shy",
+    "city": "New York, NY",
+    "date": "2025-07-30",
+    "menu": "restaurant week",
+    "cuisines": [
+      "American",
+      "Contemporary"
+    ],
+    "pictures": [
+      "0.jpeg",
+      "1.jpeg",
+      "2.jpeg",
+      "3.jpeg",
+      "4.jpeg",
+      "5.jpeg",
+      "7.jpeg",
+      "8.jpeg",
+      "9.jpeg"
+    ],
+    "accolades": [
+      {
+        "list": "nyt-100-best-restaurants",
+        "region": "New York",
+        "year": 2025
+      }
+    ]
+  },
+  {
+    "id": "crown-shy-020725",
+    "name": "Crown Shy",
+    "city": "New York, NY",
+    "date": "2025-02-07",
+    "menu": "restaurant week",
+    "cuisines": [
+      "American",
+      "Contemporary"
+    ],
+    "pictures": [
+      "0.jpeg",
+      "1.jpeg",
+      "2.jpeg",
+      "3.jpeg",
+      "4.jpeg",
+      "5.jpeg",
+      "6.jpeg"
+    ],
+    "accolades": [
+      {
+        "list": "nyt-100-best-restaurants",
+        "region": "New York",
+        "year": 2025
+      }
+    ]
   }
 ]
