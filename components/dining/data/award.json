@@ -1175,5 +1175,43 @@
         "year": 2025
       }
     ]
+  },
+  {
+    "id": "gramercy-tavern-080125",
+    "name": "Gramercy Tavern",
+    "city": "New York, NY",
+    "date": "2025-08-01",
+    "menu": "restaurant week",
+    "cuisines": [
+      "American",
+      "Contemporary"
+    ],
+    "pictures": [
+      "0.jpeg",
+      "1.jpeg",
+      "2.jpeg",
+      "3.jpeg",
+      "4.jpeg",
+      "5.jpeg",
+      "6.jpeg",
+      "7.jpeg",
+      "8.jpeg",
+      "9.jpeg",
+      "10.jpeg"
+    ],
+    "accolades": [
+      {
+        "list": "nyt-100-best-restaurants",
+        "region": "New York",
+        "year": 2024,
+        "rank": 33
+      },
+      {
+        "list": "nyt-100-best-restaurants",
+        "region": "New York",
+        "year": 2023,
+        "rank": 11
+      }
+    ]
   }
 ]
