@@ -517,5 +517,424 @@
       "7.jpeg",
       "8.jpeg"
     ]
+  },
+  {
+    "id": "barney-greengrass-010324",
+    "name": "Barney Greengrass",
+    "date": "2024-01-03",
+    "accolades": [
+      {
+        "list": "nyt-100-best-restaurants",
+        "region": "New York",
+        "year": 2026,
+        "rank": 92
+      },
+      {
+        "list": "nyt-100-best-restaurants",
+        "region": "New York",
+        "year": 2024,
+        "rank": 66
+      },
+      {
+        "list": "nyt-100-best-restaurants",
+        "region": "New York",
+        "year": 2023,
+        "rank": 91
+      }
+    ],
+    "cuisines": [
+      "Deli",
+      "Appetizing",
+      "Breakfast"
+    ],
+    "menu": "à la carte",
+    "city": "New York, NY",
+    "pictures": [
+      "0.jpeg",
+      "1.jpeg",
+      "2.jpeg",
+      "3.jpeg",
+      "4.jpeg",
+      "5.jpeg",
+      "6.jpeg",
+      "7.jpeg",
+      "8.jpeg",
+      "9.jpeg",
+      "10.jpeg",
+      "11.jpeg",
+      "12.jpeg"
+    ]
+  },
+  {
+    "id": "casa-mono-062225",
+    "name": "Casa Mono",
+    "date": "2026-06-22",
+    "accolades": [
+      {
+        "list": "nyt-100-best-restaurants",
+        "region": "New York",
+        "year": 2026,
+        "rank": 40
+      },
+      {
+        "list": "nyt-100-best-restaurants",
+        "region": "New York",
+        "year": 2024,
+        "rank": 21
+      },
+      {
+        "list": "nyt-100-best-restaurants",
+        "region": "New York",
+        "year": 2023,
+        "rank": 24
+      }
+    ],
+    "cuisines": [
+      "Spanish"
+    ],
+    "menu": "à la carte",
+    "city": "New York, NY",
+    "pictures": [
+      "0.jpeg",
+      "1.jpeg",
+      "2.jpeg",
+      "3.jpeg",
+      "4.jpeg",
+      "5.jpeg",
+      "6.jpeg"
+    ]
+  },
+  {
+    "id": "cheli-060525",
+    "name": "Cheli",
+    "date": "2025-06-05",
+    "accolades": [
+      {
+        "list": "nyt-100-best-restaurants",
+        "region": "New York",
+        "year": 2024,
+        "rank": 15
+      },
+      {
+        "list": "nyt-100-best-restaurants",
+        "region": "New York",
+        "year": 2023,
+        "rank": 8
+      }
+    ],
+    "cuisines": [
+      "Chinese",
+      "Shanghainese"
+    ],
+    "menu": "à la carte",
+    "city": "New York, NY",
+    "pictures": [
+      "0.jpeg",
+      "1.jpeg",
+      "2.jpeg",
+      "3.jpeg",
+      "4.jpeg",
+      "5.jpeg",
+      "6.jpeg"
+    ]
+  },
+  {
+    "id": "cheli-012525",
+    "name": "Cheli",
+    "date": "2025-01-25",
+    "accolades": [
+      {
+        "list": "nyt-100-best-restaurants",
+        "region": "New York",
+        "year": 2024,
+        "rank": 15
+      },
+      {
+        "list": "nyt-100-best-restaurants",
+        "region": "New York",
+        "year": 2023,
+        "rank": 8
+      }
+    ],
+    "cuisines": [
+      "Chinese",
+      "Shanghainese"
+    ],
+    "menu": "à la carte",
+    "city": "New York, NY",
+    "pictures": [
+      "0.jpeg",
+      "1.jpeg",
+      "2.jpeg",
+      "3.jpeg",
+      "4.jpeg",
+      "5.jpeg",
+      "6.jpeg",
+      "7.jpeg"
+    ]
+  },
+  {
+    "id": "cheli-042524",
+    "name": "Cheli",
+    "date": "2024-04-25",
+    "accolades": [
+      {
+        "list": "nyt-100-best-restaurants",
+        "region": "New York",
+        "year": 2024,
+        "rank": 15
+      },
+      {
+        "list": "nyt-100-best-restaurants",
+        "region": "New York",
+        "year": 2023,
+        "rank": 8
+      }
+    ],
+    "cuisines": [
+      "Chinese",
+      "Shanghainese"
+    ],
+    "menu": "à la carte",
+    "city": "New York, NY",
+    "pictures": [
+      "0.jpeg",
+      "1.jpeg",
+      "2.jpeg",
+      "3.jpeg",
+      "4.jpeg",
+      "5.jpeg",
+      "6.jpeg"
+    ]
+  },
+  {
+    "id": "cheli-010224",
+    "name": "Cheli",
+    "date": "2024-01-02",
+    "accolades": [
+      {
+        "list": "nyt-100-best-restaurants",
+        "region": "New York",
+        "year": 2024,
+        "rank": 15
+      },
+      {
+        "list": "nyt-100-best-restaurants",
+        "region": "New York",
+        "year": 2023,
+        "rank": 8
+      }
+    ],
+    "cuisines": [
+      "Chinese",
+      "Shanghainese"
+    ],
+    "menu": "à la carte",
+    "city": "New York, NY",
+    "pictures": [
+      "0.jpeg",
+      "1.jpeg",
+      "2.jpeg"
+    ]
+  },
+  {
+    "id": "cheli-122723",
+    "name": "Cheli",
+    "date": "2023-12-27",
+    "accolades": [
+      {
+        "list": "nyt-100-best-restaurants",
+        "region": "New York",
+        "year": 2024,
+        "rank": 15
+      },
+      {
+        "list": "nyt-100-best-restaurants",
+        "region": "New York",
+        "year": 2023,
+        "rank": 8
+      }
+    ],
+    "cuisines": [
+      "Chinese",
+      "Shanghainese"
+    ],
+    "menu": "à la carte",
+    "city": "New York, NY",
+    "pictures": [
+      "0.jpeg",
+      "1.jpeg",
+      "2.jpeg",
+      "3.jpeg"
+    ]
+  },
+  {
+    "id": "cheli-071323",
+    "name": "Cheli",
+    "date": "2023-07-13",
+    "accolades": [
+      {
+        "list": "nyt-100-best-restaurants",
+        "region": "New York",
+        "year": 2024,
+        "rank": 15
+      },
+      {
+        "list": "nyt-100-best-restaurants",
+        "region": "New York",
+        "year": 2023,
+        "rank": 8
+      }
+    ],
+    "cuisines": [
+      "Chinese",
+      "Shanghainese"
+    ],
+    "menu": "à la carte",
+    "city": "New York, NY",
+    "pictures": [
+      "0.jpeg",
+      "1.jpeg",
+      "2.jpeg",
+      "3.jpeg",
+      "4.jpeg",
+      "5.jpeg",
+      "6.jpeg"
+    ]
+  },
+  {
+    "id": "cheli-040823",
+    "name": "Cheli",
+    "date": "2023-04-08",
+    "accolades": [
+      {
+        "list": "nyt-100-best-restaurants",
+        "region": "New York",
+        "year": 2024,
+        "rank": 15
+      },
+      {
+        "list": "nyt-100-best-restaurants",
+        "region": "New York",
+        "year": 2023,
+        "rank": 8
+      }
+    ],
+    "cuisines": [
+      "Chinese",
+      "Shanghainese"
+    ],
+    "menu": "à la carte",
+    "city": "New York, NY",
+    "pictures": [
+      "0.jpeg",
+      "1.jpeg",
+      "2.jpeg",
+      "3.jpeg",
+      "4.jpeg",
+      "5.jpeg",
+      "6.jpeg",
+      "7.jpeg"
+    ]
+  },
+  {
+    "id": "cheli-022623",
+    "name": "Cheli",
+    "date": "2023-02-26",
+    "accolades": [
+      {
+        "list": "nyt-100-best-restaurants",
+        "region": "New York",
+        "year": 2024,
+        "rank": 15
+      },
+      {
+        "list": "nyt-100-best-restaurants",
+        "region": "New York",
+        "year": 2023,
+        "rank": 8
+      }
+    ],
+    "cuisines": [
+      "Chinese",
+      "Shanghainese"
+    ],
+    "menu": "à la carte",
+    "city": "New York, NY",
+    "pictures": [
+      "0.jpeg",
+      "1.jpeg",
+      "2.jpeg",
+      "3.jpeg",
+      "4.jpeg",
+      "5.jpeg",
+      "6.jpeg",
+      "7.jpeg",
+      "8.jpeg"
+    ]
+  },
+  {
+    "id": "cheli-022023",
+    "name": "Cheli",
+    "date": "2023-02-20",
+    "accolades": [
+      {
+        "list": "nyt-100-best-restaurants",
+        "region": "New York",
+        "year": 2024,
+        "rank": 15
+      },
+      {
+        "list": "nyt-100-best-restaurants",
+        "region": "New York",
+        "year": 2023,
+        "rank": 8
+      }
+    ],
+    "cuisines": [
+      "Chinese",
+      "Shanghainese"
+    ],
+    "menu": "à la carte",
+    "city": "New York, NY",
+    "pictures": [
+      "0.jpeg",
+      "1.jpeg",
+      "2.jpeg",
+      "3.jpeg",
+      "4.jpeg",
+      "5.jpeg",
+      "6.jpeg",
+      "7.jpeg"
+    ]
+  },
+  {
+    "id": "cheli-081322",
+    "name": "Cheli",
+    "date": "2022-08-13",
+    "accolades": [
+      {
+        "list": "nyt-100-best-restaurants",
+        "region": "New York",
+        "year": 2021,
+        "rank": 2
+      }
+    ],
+    "cuisines": [
+      "Chinese",
+      "Shanghainese"
+    ],
+    "menu": "à la carte",
+    "city": "New York, NY",
+    "pictures": [
+      "0.jpeg",
+      "1.jpeg",
+      "2.jpeg",
+      "3.jpeg",
+      "4.jpeg",
+      "5.jpeg",
+      "6.jpeg",
+      "7.jpeg"
+    ]
   }
 ]
