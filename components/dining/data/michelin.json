@@ -555,7 +555,7 @@
   {
     "id": "lyly-vietnam-cookhouse-081526",
     "name": "Ly Ly Vietnam Cookhouse",
-    "date": "2026-08-09",
+    "date": "2026-08-15",
     "rank": "selected",
     "status": "current",
     "cuisines": [
@@ -572,6 +572,29 @@
       "5.jpeg",
       "6.jpeg",
       "7.jpeg"
+    ]
+  },
+  {
+    "id": "dhamaka-081626",
+    "name": "Dhamaka",
+    "date": "2026-08-16",
+    "rank": "gourmand",
+    "status": "current",
+    "cuisines": [
+      "Indian"
+    ],
+    "menu": "à la carte",
+    "city": "New York, NY",
+    "pictures": [
+      "0.jpeg",
+      "1.jpeg",
+      "2.jpeg",
+      "3.jpeg",
+      "4.jpeg",
+      "5.jpeg",
+      "6.jpeg",
+      "7.jpeg",
+      "8.jpeg"
     ]
   }
 ]
