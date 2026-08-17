@@ -1057,5 +1057,38 @@
       "2.jpeg",
       "3.jpeg"
     ]
+  },
+  {
+    "id": "ci-siamo-101625",
+    "name": "Ci Siamo",
+    "date": "2025-10-16",
+    "accolades": [
+      {
+        "list": "nyt-100-best-restaurants",
+        "region": "New York",
+        "year": 2026,
+        "rank": 84
+      },
+      {
+        "list": "nyt-100-best-restaurants",
+        "region": "New York",
+        "year": 2024,
+        "rank": 13
+      }
+    ],
+    "cuisines": [
+      "Italian"
+    ],
+    "menu": "à la carte",
+    "city": "New York, NY",
+    "pictures": [
+      "0.jpeg",
+      "1.jpeg",
+      "2.jpeg",
+      "3.jpeg",
+      "4.jpeg",
+      "5.jpeg",
+      "6.jpeg"
+    ]
   }
 ]
