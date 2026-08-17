@@ -1259,5 +1259,37 @@
         "rank": 41
       }
     ]
+  },
+  {
+    "id": "the-modern-012925",
+    "name": "The Modern",
+    "city": "New York, NY",
+    "date": "2025-01-29",
+    "menu": "restaurant week",
+    "cuisines": [
+      "Contemporary"
+    ],
+    "sub": {
+      "isSharedKitchen": true,
+      "name": "The Bar room at the Modern"
+    },
+    "pictures": [
+      "0.jpeg",
+      "1.jpeg",
+      "2.jpeg",
+      "3.jpeg",
+      "4.jpeg",
+      "5.jpeg",
+      "6.jpeg",
+      "7.jpeg"
+    ],
+    "accolades": [
+      {
+        "list": "nyt-100-best-restaurants",
+        "region": "New York",
+        "year": 2026,
+        "rank": 32
+      }
+    ]
   }
 ]
