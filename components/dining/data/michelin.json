@@ -888,5 +888,26 @@
       "2.jpeg",
       "3.jpeg"
     ]
+  },
+  {
+    "id": "ci-siamo-101625",
+    "name": "Ci Siamo",
+    "date": "2025-10-16",
+    "rank": "selected",
+    "status": "current",
+    "cuisines": [
+      "Italian"
+    ],
+    "menu": "à la carte",
+    "city": "New York, NY",
+    "pictures": [
+      "0.jpeg",
+      "1.jpeg",
+      "2.jpeg",
+      "3.jpeg",
+      "4.jpeg",
+      "5.jpeg",
+      "6.jpeg"
+    ]
   }
 ]
