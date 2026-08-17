@@ -1262,17 +1262,13 @@
   },
   {
     "id": "the-modern-012925",
-    "name": "The Modern",
+    "name": "The Bar room at the Modern",
     "city": "New York, NY",
     "date": "2025-01-29",
     "menu": "restaurant week",
     "cuisines": [
       "Contemporary"
     ],
-    "sub": {
-      "isSharedKitchen": true,
-      "name": "The Bar room at the Modern"
-    },
     "pictures": [
       "0.jpeg",
       "1.jpeg",
