@@ -1,0 +1,15 @@
+---
+description: Edit source components, never dist or vendored third-party
+alwaysApply: true
+---
+
+# Source vs generated
+
+This is a static site. GitHub Actions runs `npm ci` + `npm run build` and deploys `dist/`.
+
+- Edit `components/`, `assets/`, `build/template.html`, `build/build.js`. Never edit `dist/`.
+- Preview with `npm run build` (or `npm start`). Do not commit `dist/`, `vendor/`, `cache/`, `node_modules/`, or `.DS_Store`.
+- `theme/` and `bootstrap/` are unmodified third-party. Site-specific CSS/JS goes in `assets/` or `components/<section>/`.
+- `vendor/` is gitignored but some files are still historically tracked — do not add more vendor files.
+- Live sections are whatever is in `build/template.html` nav + `COMPONENTS` in `build/build.js`. **NYC is WIP** (not wired). **Gallery** is built but the nav link is commented out — do not re-enable or delete either unless asked.
+- Resume: GPA only, no semester grades.

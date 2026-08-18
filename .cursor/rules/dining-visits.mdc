@@ -1,0 +1,19 @@
+---
+description: Dining visits are JSON-driven (Award / Stars / Guide tabs)
+globs: components/dining/**
+alwaysApply: false
+---
+
+# Dining visits
+
+Do not put restaurant cards in `dining.html`. Tabs read JSON:
+
+- **Michelin Stars** — `data/michelin.json` entries with `stars` (1–3) and `status` (`current` | `former`)
+- **Michelin Guide** — same file, `rank`: `gourmand` | `selected` (no `stars`)
+- **Award** — `data/award.json` with `accolades[]` (`list`, `region`, `year`, `rank`)
+
+`id` is `kebab-name-MMDDYY` (visit date). `pictures` lists files in `img/visits/<id>/`.
+
+A meal on two tabs: **same `id`** in both JSON files, one photo folder. Repeat visits (e.g. Cheli) stay separate ids/dates.
+
+After adding photos, follow the dining-photos rule (`npm run compress-dining` before commit).
