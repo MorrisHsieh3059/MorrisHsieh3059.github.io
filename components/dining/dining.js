@@ -107,8 +107,11 @@
 		return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
 	}
 
-	function photoPath(section, visit, filename) {
-		return 'img/dining/' + section + '/' + visit.id + '/' + filename;
+	// Visit photos live in components/dining/img/visits/<id>/ — one folder
+	// per visit, shared by the Award and Michelin tabs when a meal appears
+	// on both. build.js copies this to dist/img/dining/visits/.
+	function photoPath(visit, filename) {
+		return 'img/dining/visits/' + visit.id + '/' + filename;
 	}
 
 	// Accolade-list logos live in components/dining/img/icons/ (copied by
@@ -192,7 +195,7 @@
 	function cardHtml(visit) {
 		var pictures = visit.pictures || [];
 		var coverStyle = pictures.length
-			? ' style="background-image:url(\'' + photoPath('michelin', visit, pictures[0]) + '\')"'
+			? ' style="background-image:url(\'' + photoPath(visit, pictures[0]) + '\')"'
 			: '';
 		var photoInner = pictures.length
 			? (pictures.length > 1
@@ -215,7 +218,7 @@
 	function popupHtml(visit) {
 		var pictures = visit.pictures || [];
 		var slides = pictures.map(function (filename) {
-			return '<div class="item"><figure><img src="' + photoPath('michelin', visit, filename) + '" alt="' + visit.name + '" loading="lazy"></figure></div>';
+			return '<div class="item"><figure><img src="' + photoPath(visit, filename) + '" alt="' + visit.name + '" loading="lazy"></figure></div>';
 		}).join('');
 
 		if (!slides) {
@@ -250,7 +253,7 @@
 
 		Card/popup markup, filters and photoPath all reuse the michelin
 		tab's plumbing (same .michelin-card/.michelin-popup-header markup,
-		same img/dining/michelin/<id>/ photo folders) since a Gourmand
+		same img/dining/visits/<id>/ photo folders) since a Gourmand
 		listing is structurally identical to a starred one apart from the
 		badge — only the title line (rank icon instead of stars) differs.
 	=========================================================================*/
@@ -294,7 +297,7 @@
 	function cardHtmlGourmand(visit) {
 		var pictures = visit.pictures || [];
 		var coverStyle = pictures.length
-			? ' style="background-image:url(\'' + photoPath('michelin', visit, pictures[0]) + '\')"'
+			? ' style="background-image:url(\'' + photoPath(visit, pictures[0]) + '\')"'
 			: '';
 		var photoInner = pictures.length
 			? (pictures.length > 1
@@ -317,7 +320,7 @@
 	function popupHtmlGourmand(visit) {
 		var pictures = visit.pictures || [];
 		var slides = pictures.map(function (filename) {
-			return '<div class="item"><figure><img src="' + photoPath('michelin', visit, filename) + '" alt="' + visit.name + '" loading="lazy"></figure></div>';
+			return '<div class="item"><figure><img src="' + photoPath(visit, filename) + '" alt="' + visit.name + '" loading="lazy"></figure></div>';
 		}).join('');
 
 		if (!slides) {
@@ -683,7 +686,7 @@
 	function cardHtmlAward(visit) {
 		var pictures = visit.pictures || [];
 		var coverStyle = pictures.length
-			? ' style="background-image:url(\'' + photoPath('award', visit, pictures[0]) + '\')"'
+			? ' style="background-image:url(\'' + photoPath(visit, pictures[0]) + '\')"'
 			: '';
 		var photoInner = pictures.length
 			? (pictures.length > 1
@@ -707,7 +710,7 @@
 	function popupHtmlAward(visit) {
 		var pictures = visit.pictures || [];
 		var slides = pictures.map(function (filename) {
-			return '<div class="item"><figure><img src="' + photoPath('award', visit, filename) + '" alt="' + visit.name + '" loading="lazy"></figure></div>';
+			return '<div class="item"><figure><img src="' + photoPath(visit, filename) + '" alt="' + visit.name + '" loading="lazy"></figure></div>';
 		}).join('');
 
 		if (!slides) {
