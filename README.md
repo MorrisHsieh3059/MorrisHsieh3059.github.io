@@ -95,6 +95,7 @@ Home bases are fixed: **Taipei** (until Aug 1, 2022) and **NYC** (since Aug 2, 2
 
 ## Updating content
 
-- **Dining entries:** Edit `components/dining/dining.html`
-- **Photos:** Add images to `components/<section>/img/` and reference them from that section's `.html`
+- **Dining entries:** Add the visit to `components/dining/data/award.json` and/or `michelin.json`. Dual-listed meals use the **same `id`** in both files and one photo folder.
+- **Dining photos:** Drop JPEGs into `components/dining/img/visits/<id>/` as `0.jpeg`, `1.jpeg`, … then run `npm run compress-dining` **before committing**. That builds the lightbox file (max 2000px) and a `*.thumb.jpeg` for cards. Keep camera originals out of git.
+- **Other photos:** Add images to `components/<section>/img/` and reference them from that section’s `.html`.
 - **NYC spots:** Update cards in `components/nyc/nyc.html`

@@ -1,0 +1,18 @@
+---
+description: Compress dining visit photos before committing new images
+alwaysApply: true
+---
+
+# Dining visit photos
+
+Morris drops new restaurant photos and then asks the agent to commit. Never commit camera originals.
+
+When adding or changing files under `components/dining/img/visits/`:
+
+1. One folder per visit: `components/dining/img/visits/<id>/` with `0.jpeg`, `1.jpeg`, … matching the `pictures` arrays in `award.json` / `michelin.json`.
+2. Dual-listed meals (Michelin + Award): two JSON entries, **same `id`**, one photo folder.
+3. Run `npm run compress-dining` **before** staging/committing. That writes web-sized display JPEGs (max 2000px) and `*.thumb.jpeg` card covers. Re-run is safe; already-processed files are skipped.
+4. Cards must use `photoPath(visit, file, 'thumb')`; the lightbox uses `photoPath(visit, file)`.
+5. Do not commit until every listed picture has both `N.jpeg` and `N.thumb.jpeg`.
+
+Keep print/originals off this repo (iCloud/Photos). Git only holds the compressed pair.
