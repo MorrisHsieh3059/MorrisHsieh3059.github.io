@@ -110,8 +110,15 @@
 	// Visit photos live in components/dining/img/visits/<id>/ — one folder
 	// per visit, shared by the Award and Michelin tabs when a meal appears
 	// on both. build.js copies this to dist/img/dining/visits/.
-	function photoPath(visit, filename) {
-		return 'img/dining/visits/' + visit.id + '/' + filename;
+	//
+	// 0.jpeg       lightbox (web-sized, see scripts/compress-dining-photos.py)
+	// 0.thumb.jpeg card cover
+	function photoPath(visit, filename, variant) {
+		var name = filename;
+		if (variant === 'thumb') {
+			name = filename.replace(/(\.[^.]+)$/, '.thumb$1');
+		}
+		return 'img/dining/visits/' + visit.id + '/' + name;
 	}
 
 	// Accolade-list logos live in components/dining/img/icons/ (copied by
@@ -195,7 +202,7 @@
 	function cardHtml(visit) {
 		var pictures = visit.pictures || [];
 		var coverStyle = pictures.length
-			? ' style="background-image:url(\'' + photoPath(visit, pictures[0]) + '\')"'
+			? ' style="background-image:url(\'' + photoPath(visit, pictures[0], 'thumb') + '\')"'
 			: '';
 		var photoInner = pictures.length
 			? (pictures.length > 1
@@ -297,7 +304,7 @@
 	function cardHtmlGourmand(visit) {
 		var pictures = visit.pictures || [];
 		var coverStyle = pictures.length
-			? ' style="background-image:url(\'' + photoPath(visit, pictures[0]) + '\')"'
+			? ' style="background-image:url(\'' + photoPath(visit, pictures[0], 'thumb') + '\')"'
 			: '';
 		var photoInner = pictures.length
 			? (pictures.length > 1
@@ -686,7 +693,7 @@
 	function cardHtmlAward(visit) {
 		var pictures = visit.pictures || [];
 		var coverStyle = pictures.length
-			? ' style="background-image:url(\'' + photoPath(visit, pictures[0]) + '\')"'
+			? ' style="background-image:url(\'' + photoPath(visit, pictures[0], 'thumb') + '\')"'
 			: '';
 		var photoInner = pictures.length
 			? (pictures.length > 1
