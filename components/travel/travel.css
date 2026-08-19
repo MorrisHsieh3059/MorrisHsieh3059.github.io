@@ -43,6 +43,7 @@
 	position: relative;
 	width: 100%;
 	height: clamp(300px, calc(100vh - 340px), 520px);
+	height: clamp(300px, calc(100dvh - 340px), 520px);
 	background: #e8eaf6;
 	border: 1px solid #d0d0d0;
 }
@@ -206,6 +207,7 @@
 .travel-cards-sidebar {
 	min-width: 0;
 	height: clamp(300px, calc(100vh - 340px), 520px);
+	height: clamp(300px, calc(100dvh - 340px), 520px);
 	display: flex;
 	flex-direction: column;
 	padding: 0;
@@ -377,7 +379,7 @@
 
 @media (max-width: 991px) {
 	.travel-section .section-block {
-		padding-right: 110px;
+		padding-right: 40px;
 	}
 
 	.travel-layout {
@@ -385,8 +387,9 @@
 	}
 
 	.travel-map-wrap {
-		height: 50vh;
-		min-height: 300px;
+		height: clamp(240px, 42vh, 420px);
+		height: clamp(240px, 42dvh, 420px);
+		min-height: 240px;
 	}
 
 	.travel-cards-sidebar {
@@ -402,11 +405,21 @@
 
 @media (max-width: 767px) {
 	.travel-section .section-block {
-		padding-right: 40px;
+		padding-right: 24px;
 	}
 
 	.travel-map-wrap {
-		height: 42vh;
-		min-height: 240px;
+		height: clamp(220px, 38vh, 360px);
+		height: clamp(220px, 38dvh, 360px);
+		min-height: 220px;
+	}
+
+	.trip-card,
+	.trip-card h4,
+	.trip-card .meta,
+	.trip-card p,
+	.trip-card .trip-counts,
+	.trip-card .cities {
+		overflow-wrap: break-word;
 	}
 }

@@ -19,10 +19,19 @@ html {
 	--award-brown: #863E15; /* Dark Crispy Brown — Award tab's own accent, card + stats only */
 	--frame-gutter: #e0e0e0;
 	--frame-inset: 21px; /* page-border offset (14px) + border width (7px) */
+	--safe-top: env(safe-area-inset-top, 0px);
+	--safe-right: env(safe-area-inset-right, 0px);
+	--safe-bottom: env(safe-area-inset-bottom, 0px);
+	--safe-left: env(safe-area-inset-left, 0px);
 }
 
 .main-content {
 	background-color: var(--frame-gutter);
+}
+
+/* Theme opens the drawer via :hover; touch devices need the class. */
+body.menu-open .menu {
+	width: 300px;
 }
 
 .main-content > .sections {
@@ -303,8 +312,25 @@ html {
 }
 
 @media (max-width: 768px) {
+	:root {
+		--frame-inset: 14px;
+	}
+
+	/* Theme zeros the frame on small screens; keep notch / home-indicator clearance. */
+	.main-content {
+		top: max(0px, var(--safe-top));
+		right: max(0px, var(--safe-right));
+		bottom: max(0px, var(--safe-bottom));
+		left: max(0px, var(--safe-left));
+	}
+
+	.menu-btn {
+		top: calc(12px + var(--safe-top));
+		right: calc(12px + var(--safe-right));
+	}
+
 	body.menu-open .menu {
-		width: 300px;
+		width: min(300px, 100%);
 	}
 
 	.section-main .intro-text h1 {
@@ -329,8 +355,21 @@ html {
 }
 
 @media (max-width: 400px) {
+	:root {
+		--frame-inset: 10px;
+	}
+
+	body.menu-open .menu {
+		width: 100%;
+	}
+
 	.section-main .intro-text h1 {
 		font-size: 1.7rem;
 		letter-spacing: 0.1em;
+	}
+
+	.submenu > li > a {
+		padding: 10px 0;
+		font-size: 14px;
 	}
 }
