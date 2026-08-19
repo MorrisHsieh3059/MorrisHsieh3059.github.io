@@ -11,11 +11,19 @@
 	var defaultZoom = null;
 	var activeTripId = null;
 	var hideCardTimer = null;
+	var pinnedCityId = null;
 	var CITY_TRIPS_PREVIEW = 5;
 
 	var MAP_FLY_OPTS = { duration: 0.55 };
 	var MAP_PAD = [36, 36];
 	var TRIP_FOCUS_PAD = [24, 24];
+
+	// Desktop keeps hover; phones/tablets use tap. Synthetic mouseenter after
+	// touch would otherwise toggle trip focus off on the following click.
+	function finePointerHover() {
+		return window.matchMedia &&
+			window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+	}
 
 	function formatDateRange(start, end) {
 		var s = new Date(start + 'T00:00:00');
@@ -164,13 +172,30 @@
 				$card.append('<div class="cities">' + formatRouteCities(trip) + '</div>');
 			}
 			$card.on('mouseenter', function () {
+				if (!finePointerHover()) return;
 				activeTripId = trip.id;
 				hideHoverCard();
 				highlightTrip(trip.id);
 			});
 			$card.on('mouseleave', function () {
+				if (!finePointerHover()) return;
 				activeTripId = null;
 				clearTripFocus();
+			});
+			$card.on('click', function () {
+				if (finePointerHover()) return;
+				if (activeTripId === trip.id) {
+					activeTripId = null;
+					$panel.find('.trip-card').removeClass('active');
+					clearTripFocus();
+					return;
+				}
+				activeTripId = trip.id;
+				pinnedCityId = null;
+				$panel.find('.trip-card').removeClass('active');
+				$card.addClass('active');
+				hideHoverCard();
+				highlightTrip(trip.id);
 			});
 			$panel.append($card);
 		});
@@ -381,6 +406,7 @@
 	}
 
 	function clearTripFocus() {
+		pinnedCityId = null;
 		clearHighlights();
 		hideHoverCard();
 		resetMapView();
@@ -405,6 +431,8 @@
 		$hoverCard.off('mouseenter mouseleave click').on('mouseenter', function () {
 			clearTimeout(hideCardTimer);
 		}).on('mouseleave', function () {
+			if (!finePointerHover()) return;
+			if (pinnedCityId) return;
 			hideHoverCard();
 			if (activeTripId) {
 				highlightTrip(activeTripId);
@@ -419,6 +447,17 @@
 			var $btn = $(this);
 			$btn.siblings('.city-trips-more').addClass('visible');
 			$btn.remove();
+		});
+
+		map.on('click', function () {
+			if (finePointerHover()) return;
+			pinnedCityId = null;
+			hideHoverCard();
+			if (activeTripId) {
+				highlightTrip(activeTripId);
+			} else {
+				clearHighlights();
+			}
 		});
 
 		(travelData.homeBases || []).forEach(function (home) {
@@ -477,6 +516,7 @@
 		var el = marker.getElement();
 
 		marker.on('mouseover', function () {
+			if (!finePointerHover()) return;
 			if (isHome) {
 				showHoverCard(homeCardHtml(data), true, false);
 			} else {
@@ -485,6 +525,8 @@
 			el.classList.add('highlight');
 		});
 		marker.on('mouseout', function () {
+			if (!finePointerHover()) return;
+			if (pinnedCityId === id) return;
 			if (isHome) {
 				hideHoverCard();
 			} else {
@@ -492,6 +534,33 @@
 			}
 			if (activeTripId) {
 				highlightTrip(activeTripId);
+			}
+		});
+		marker.on('click', function (e) {
+			L.DomEvent.stopPropagation(e);
+			if (finePointerHover()) return;
+			if (pinnedCityId === id) {
+				pinnedCityId = null;
+				hideHoverCard();
+				if (activeTripId) {
+					highlightTrip(activeTripId);
+				} else {
+					clearHighlights();
+				}
+				return;
+			}
+			pinnedCityId = id;
+			$('#travel-cards .trip-card').removeClass('active');
+			activeTripId = null;
+			clearRouteLine();
+			Object.keys(markers).forEach(function (mid) {
+				markers[mid].el.classList.toggle('highlight', mid === id);
+				markers[mid].el.classList.remove('dimmed');
+			});
+			if (isHome) {
+				showHoverCard(homeCardHtml(data), true, true);
+			} else {
+				showHoverCard(cityCardHtml(data, trips), false, true);
 			}
 		});
 

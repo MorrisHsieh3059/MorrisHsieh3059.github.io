@@ -697,7 +697,7 @@
 	}
 
 	.dining-tabs > li > a {
-		padding: 0.38rem 0.75rem;
+		padding: 0.5rem 0.85rem;
 		font-size: 0.72rem;
 		letter-spacing: 0.5px;
 	}
@@ -1081,7 +1081,7 @@
 		align-items: stretch;
 		width: 100%;
 		gap: 1.75rem;
-		padding: 0.5rem 0 3rem;
+		padding: 0.5rem 0 calc(3rem + env(safe-area-inset-bottom, 0px));
 	}
 
 	.dining-timeline-rail {
