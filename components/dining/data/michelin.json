@@ -573,6 +573,32 @@
     ]
   },
   {
+    "id": "coqodaq-081826",
+    "name": "Coqodaq",
+    "date": "2026-08-18",
+    "rank": "gourmand",
+    "status": "current",
+    "cuisines": [
+      "Korean"
+    ],
+    "menu": "à la carte",
+    "city": "New York, NY",
+    "pictures": [
+      "0.jpeg",
+      "1.jpeg",
+      "2.jpeg",
+      "3.jpeg",
+      "4.jpeg",
+      "5.jpeg",
+      "6.jpeg",
+      "7.jpeg",
+      "8.jpeg",
+      "9.jpeg",
+      "10.jpeg",
+      "11.jpeg"
+    ]
+  },
+  {
     "id": "dhamaka-081626",
     "name": "Dhamaka",
     "date": "2026-08-16",
