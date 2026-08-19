@@ -776,13 +776,14 @@
 }
 
 .dining-timeline-track {
+	--tl-pad: 4.5rem;
 	position: relative;
 	display: flex;
 	align-items: flex-end;
 	flex: 0 0 auto;
 	gap: 2.35rem;
 	width: max-content;
-	padding: 0.35rem 0.75rem 0;
+	padding: 0.35rem var(--tl-pad) 0;
 	box-sizing: border-box;
 }
 
@@ -812,7 +813,7 @@
 
 .dining-timeline-month-label-inner {
 	position: sticky;
-	left: max(1.25rem, 4vw);
+	left: var(--tl-pad);
 	width: max-content;
 	z-index: 2;
 }
@@ -996,14 +997,15 @@
 	margin-top: -21px;
 	border: 1px solid #ddd;
 	border-radius: 50%;
-	background: rgba(255, 255, 255, 0.92);
+	background: #fff;
 	color: #555;
 	cursor: pointer;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-	transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+	opacity: 1;
+	transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
 }
 
 .dining-timeline-btn[hidden] {
@@ -1016,7 +1018,8 @@
 }
 
 .dining-timeline-btn:disabled {
-	opacity: 0.28;
+	opacity: 1;
+	color: #bbb;
 	cursor: default;
 }
 
@@ -1061,6 +1064,7 @@
 
 	.dining-timeline-btn {
 		display: none;
+		opacity: 1;
 	}
 
 	.dining-timeline-scroller {
@@ -1077,7 +1081,7 @@
 		align-items: stretch;
 		width: 100%;
 		gap: 1.75rem;
-		padding: 0.35rem 0 2.5rem;
+		padding: 0.5rem 0 3rem;
 	}
 
 	.dining-timeline-rail {

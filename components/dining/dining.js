@@ -1247,6 +1247,8 @@
 		slot.style.webkitMaskImage = '';
 		slot.style.maskSize = '';
 		slot.style.webkitMaskSize = '';
+		slot.style.maskRepeat = '';
+		slot.style.webkitMaskRepeat = '';
 	}
 
 	function morphStation(station, view, fade, vertical) {
@@ -1290,6 +1292,8 @@
 			slot.style.webkitMaskImage = mask;
 			slot.style.maskSize = '100% 100%';
 			slot.style.webkitMaskSize = '100% 100%';
+			slot.style.maskRepeat = 'no-repeat';
+			slot.style.webkitMaskRepeat = 'no-repeat';
 		}
 
 		if (node) node.style.opacity = (aM * 0.45).toFixed(3);
@@ -1364,10 +1368,6 @@
 
 		var vertical = isTimelineVertical();
 		updateTimelineNav(scroller);
-		if (prefersReducedMotion()) {
-			resetTimelineMorph();
-			return;
-		}
 
 		var viewEl = vertical ? document.getElementById('dining') : scroller;
 		if (!viewEl) return;
@@ -1375,12 +1375,18 @@
 		var fade;
 		if (vertical) {
 			if (view.height < 8) return;
-			fade = Math.max(80, Math.min(140, view.height * 0.12));
+			fade = Math.max(48, Math.min(72, view.height * 0.08));
 		} else if (view.width < 8) {
 			return;
 		} else {
-			fade = Math.max(100, Math.min(180, view.width * 0.12));
+			fade = Math.max(40, Math.min(56, view.width * 0.04));
 		}
+
+		if (prefersReducedMotion()) {
+			resetTimelineMorph();
+			return;
+		}
+
 		var stations = scroller.querySelectorAll('.dining-timeline-station');
 		var months = scroller.querySelectorAll('.dining-timeline-month');
 		var i;
@@ -1511,10 +1517,8 @@
 		var tab = $(this).data('dining-tab');
 		if (tab) {
 			setTimeout(function () { showDiningTab(tab); }, 1300);
-		} else if ($('.dining-panel[data-dining-panel="award"]').hasClass('active')) {
-			setTimeout(ensureInitAward, 1300);
 		} else {
-			setTimeout(ensureInit, 1300);
+			setTimeout(function () { showDiningTab('timeline'); }, 1300);
 		}
 	});
 
