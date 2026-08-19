@@ -760,6 +760,24 @@
 	pointer-events: auto;
 }
 
+.dining-timeline-fade {
+	--tl-fade: 48px;
+	-webkit-mask-image: linear-gradient(
+		to right,
+		transparent 0,
+		#000 var(--tl-fade),
+		#000 calc(100% - var(--tl-fade)),
+		transparent 100%
+	);
+	mask-image: linear-gradient(
+		to right,
+		transparent 0,
+		#000 var(--tl-fade),
+		#000 calc(100% - var(--tl-fade)),
+		transparent 100%
+	);
+}
+
 .dining-timeline-scroller {
 	overflow-x: auto;
 	overflow-y: hidden;
@@ -1032,6 +1050,11 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+	.dining-timeline-fade {
+		-webkit-mask-image: none;
+		mask-image: none;
+	}
+
 	.dining-timeline-card-slot,
 	.dining-timeline-node,
 	.dining-timeline-month-label-copy {
@@ -1065,6 +1088,11 @@
 	.dining-timeline-btn {
 		display: none;
 		opacity: 1;
+	}
+
+	.dining-timeline-fade {
+		mask-image: none;
+		-webkit-mask-image: none;
 	}
 
 	.dining-timeline-scroller {
