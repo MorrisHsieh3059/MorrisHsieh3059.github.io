@@ -12,6 +12,7 @@ photos are skipped unless --force is passed.
 
 Usage:
   python3 scripts/compress-dining-photos.py
+  python3 scripts/compress-dining-photos.py coqodaq-081826
   python3 scripts/compress-dining-photos.py --force
 """
 from __future__ import annotations
@@ -102,15 +103,27 @@ def process(path: Path, force: bool) -> str:
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--force", action="store_true", help="re-encode even if already processed")
+    parser.add_argument(
+        "visits",
+        nargs="*",
+        help="optional visit folder ids under img/visits/ (default: all visits)",
+    )
     args = parser.parse_args()
 
     if not VISITS.is_dir():
         print(f"missing {VISITS}", file=sys.stderr)
         return 1
 
+    roots = [VISITS / vid for vid in args.visits] if args.visits else [VISITS]
+    for root in roots:
+        if not root.is_dir():
+            print(f"missing {root}", file=sys.stderr)
+            return 1
+
     files = sorted(
         p
-        for p in VISITS.rglob("*")
+        for root in roots
+        for p in root.rglob("*")
         if p.is_file() and p.suffix.lower() in IMAGE_SUFFIXES and not is_thumb(p)
     )
     skipped = 0

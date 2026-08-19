@@ -1,0 +1,2029 @@
+{
+  "updated": "2026-08-19",
+  "entries": [
+    {
+      "name": "Bleecker Burger",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2026,
+      "rank": 1,
+      "source": "seed"
+    },
+    {
+      "name": "Bleeker Burger",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2026,
+      "rank": 1,
+      "source": "award.json"
+    },
+    {
+      "name": "Black Bear Burger",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2026,
+      "rank": 2,
+      "source": "seed"
+    },
+    {
+      "name": "Café Margaret",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2026,
+      "rank": 3,
+      "source": "seed"
+    },
+    {
+      "name": "The Diplomat",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2026,
+      "rank": 4,
+      "source": "seed"
+    },
+    {
+      "name": "Gasoline Grill",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2026,
+      "rank": 5,
+      "source": "seed"
+    },
+    {
+      "name": "Sip & Guzzle",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2026,
+      "rank": 6,
+      "source": "seed"
+    },
+    {
+      "name": "Hawksmoor St Pancras",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2026,
+      "rank": 7,
+      "source": "seed"
+    },
+    {
+      "name": "Nowon",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2026,
+      "rank": 8,
+      "source": "seed"
+    },
+    {
+      "name": "Amboy Quality Meats",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2026,
+      "rank": 9,
+      "source": "seed"
+    },
+    {
+      "name": "The Grill at the International",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2026,
+      "rank": 10,
+      "source": "seed"
+    },
+    {
+      "name": "Burger & Beyond",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2026,
+      "rank": 11,
+      "source": "seed"
+    },
+    {
+      "name": "Wagyumafia",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2026,
+      "rank": 12,
+      "source": "seed"
+    },
+    {
+      "name": "Charrd",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2026,
+      "rank": 13,
+      "source": "seed"
+    },
+    {
+      "name": "Will's",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2026,
+      "rank": 14,
+      "source": "seed"
+    },
+    {
+      "name": "Camphor",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2026,
+      "rank": 15,
+      "source": "seed"
+    },
+    {
+      "name": "Hubert",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2026,
+      "rank": 16,
+      "source": "seed"
+    },
+    {
+      "name": "Bar Julius",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2026,
+      "rank": 17,
+      "source": "seed"
+    },
+    {
+      "name": "AG",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2026,
+      "rank": 18,
+      "source": "seed"
+    },
+    {
+      "name": "The Gidley",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2026,
+      "rank": 19,
+      "source": "seed"
+    },
+    {
+      "name": "Salt Shed",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2026,
+      "rank": 20,
+      "source": "seed"
+    },
+    {
+      "name": "Clam Bar",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2026,
+      "rank": 21,
+      "source": "seed"
+    },
+    {
+      "name": "The Loyalist",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2026,
+      "rank": 22,
+      "source": "seed"
+    },
+    {
+      "name": "Bunsen Burgers",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2026,
+      "rank": 23,
+      "source": "seed"
+    },
+    {
+      "name": "Bar Chimera",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2026,
+      "rank": 24,
+      "source": "seed"
+    },
+    {
+      "name": "The Alston",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2026,
+      "rank": 25,
+      "source": "seed"
+    },
+    {
+      "name": "Dumbo",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2026,
+      "rank": 26,
+      "source": "seed"
+    },
+    {
+      "name": "Reburger",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2026,
+      "rank": 27,
+      "source": "seed"
+    },
+    {
+      "name": "Meat Stop",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2026,
+      "rank": 28,
+      "source": "seed"
+    },
+    {
+      "name": "Dandelion Burger",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2026,
+      "rank": 29,
+      "source": "seed"
+    },
+    {
+      "name": "Gui's Burger",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2026,
+      "rank": 30,
+      "source": "seed"
+    },
+    {
+      "name": "Sips",
+      "list": "50-best-bars",
+      "region": "World",
+      "year": 2025,
+      "rank": 3,
+      "source": "award.json"
+    },
+    {
+      "name": "Paradiso",
+      "list": "50-best-bars",
+      "region": "World",
+      "year": 2025,
+      "rank": 4,
+      "source": "award.json"
+    },
+    {
+      "name": "Himkok",
+      "list": "50-best-bars",
+      "region": "World",
+      "year": 2025,
+      "rank": 14,
+      "source": "award.json"
+    },
+    {
+      "name": "Svanen",
+      "list": "50-best-bars",
+      "region": "World",
+      "year": 2025,
+      "rank": 32,
+      "source": "award.json"
+    },
+    {
+      "name": "Sips & Guzzle",
+      "list": "50-best-bars",
+      "region": "World",
+      "year": 2025,
+      "rank": 39,
+      "source": "award.json"
+    },
+    {
+      "name": "Sips",
+      "list": "50-best-bars",
+      "region": "Europe",
+      "year": 2026,
+      "rank": 3,
+      "source": "award.json"
+    },
+    {
+      "name": "Himkok",
+      "list": "50-best-bars",
+      "region": "Europe",
+      "year": 2026,
+      "rank": 4,
+      "source": "award.json"
+    },
+    {
+      "name": "Paradiso",
+      "list": "50-best-bars",
+      "region": "Europe",
+      "year": 2026,
+      "rank": 9,
+      "source": "award.json"
+    },
+    {
+      "name": "Svanen",
+      "list": "50-best-bars",
+      "region": "Europe",
+      "year": 2026,
+      "rank": 15,
+      "source": "award.json"
+    },
+    {
+      "name": "Sip & Guzzle",
+      "list": "50-best-bars",
+      "region": "North America",
+      "year": 2026,
+      "rank": 1,
+      "source": "seed"
+    },
+    {
+      "name": "Bar Mauro",
+      "list": "50-best-bars",
+      "region": "North America",
+      "year": 2026,
+      "rank": 2,
+      "source": "seed"
+    },
+    {
+      "name": "Bar Snack",
+      "list": "50-best-bars",
+      "region": "North America",
+      "year": 2026,
+      "rank": 3,
+      "source": "seed"
+    },
+    {
+      "name": "Schmuck",
+      "list": "50-best-bars",
+      "region": "North America",
+      "year": 2026,
+      "rank": 4,
+      "source": "seed"
+    },
+    {
+      "name": "Tlecān",
+      "list": "50-best-bars",
+      "region": "North America",
+      "year": 2026,
+      "rank": 5,
+      "source": "seed"
+    },
+    {
+      "name": "Jewel of the South",
+      "list": "50-best-bars",
+      "region": "North America",
+      "year": 2026,
+      "rank": 6,
+      "source": "seed"
+    },
+    {
+      "name": "The Keefer Bar",
+      "list": "50-best-bars",
+      "region": "North America",
+      "year": 2026,
+      "rank": 7,
+      "source": "seed"
+    },
+    {
+      "name": "Bar Pompette",
+      "list": "50-best-bars",
+      "region": "North America",
+      "year": 2026,
+      "rank": 8,
+      "source": "seed"
+    },
+    {
+      "name": "Superbueno",
+      "list": "50-best-bars",
+      "region": "North America",
+      "year": 2026,
+      "rank": 9,
+      "source": "seed"
+    },
+    {
+      "name": "El Gallo Altanero",
+      "list": "50-best-bars",
+      "region": "North America",
+      "year": 2026,
+      "rank": 10,
+      "source": "seed"
+    },
+    {
+      "name": "Kumiko",
+      "list": "50-best-bars",
+      "region": "North America",
+      "year": 2026,
+      "rank": 11,
+      "source": "seed"
+    },
+    {
+      "name": "Handshake Speakeasy",
+      "list": "50-best-bars",
+      "region": "North America",
+      "year": 2026,
+      "rank": 12,
+      "source": "seed"
+    },
+    {
+      "name": "Form + Matter",
+      "list": "50-best-bars",
+      "region": "North America",
+      "year": 2026,
+      "rank": 13,
+      "source": "seed"
+    },
+    {
+      "name": "True Laurel",
+      "list": "50-best-bars",
+      "region": "North America",
+      "year": 2026,
+      "rank": 14,
+      "source": "seed"
+    },
+    {
+      "name": "Clemente Bar",
+      "list": "50-best-bars",
+      "region": "North America",
+      "year": 2026,
+      "rank": 15,
+      "source": "seed"
+    },
+    {
+      "name": "Best Intentions",
+      "list": "50-best-bars",
+      "region": "North America",
+      "year": 2026,
+      "rank": 16,
+      "source": "seed"
+    },
+    {
+      "name": "June on Cambie",
+      "list": "50-best-bars",
+      "region": "North America",
+      "year": 2026,
+      "rank": 17,
+      "source": "seed"
+    },
+    {
+      "name": "Mecenas",
+      "list": "50-best-bars",
+      "region": "North America",
+      "year": 2026,
+      "rank": 18,
+      "source": "seed"
+    },
+    {
+      "name": "Library Bar",
+      "list": "50-best-bars",
+      "region": "North America",
+      "year": 2026,
+      "rank": 19,
+      "source": "seed"
+    },
+    {
+      "name": "Licorería Limantour",
+      "list": "50-best-bars",
+      "region": "North America",
+      "year": 2026,
+      "rank": 20,
+      "source": "seed"
+    },
+    {
+      "name": "Cure",
+      "list": "50-best-bars",
+      "region": "North America",
+      "year": 2026,
+      "rank": 21,
+      "source": "seed"
+    },
+    {
+      "name": "Mother",
+      "list": "50-best-bars",
+      "region": "North America",
+      "year": 2026,
+      "rank": 22,
+      "source": "seed"
+    },
+    {
+      "name": "Martiny's",
+      "list": "50-best-bars",
+      "region": "North America",
+      "year": 2026,
+      "rank": 23,
+      "source": "seed"
+    },
+    {
+      "name": "Bekeb",
+      "list": "50-best-bars",
+      "region": "North America",
+      "year": 2026,
+      "rank": 24,
+      "source": "seed"
+    },
+    {
+      "name": "Kaito del Valle",
+      "list": "50-best-bars",
+      "region": "North America",
+      "year": 2026,
+      "rank": 25,
+      "source": "seed"
+    },
+    {
+      "name": "La Factoría",
+      "list": "50-best-bars",
+      "region": "North America",
+      "year": 2026,
+      "rank": 26,
+      "source": "seed"
+    },
+    {
+      "name": "Gus' Sip & Dip",
+      "list": "50-best-bars",
+      "region": "North America",
+      "year": 2026,
+      "rank": 27,
+      "source": "seed"
+    },
+    {
+      "name": "Mírate",
+      "list": "50-best-bars",
+      "region": "North America",
+      "year": 2026,
+      "rank": 28,
+      "source": "seed"
+    },
+    {
+      "name": "Civil Works",
+      "list": "50-best-bars",
+      "region": "North America",
+      "year": 2026,
+      "rank": 29,
+      "source": "seed"
+    },
+    {
+      "name": "Bisous",
+      "list": "50-best-bars",
+      "region": "North America",
+      "year": 2026,
+      "rank": 30,
+      "source": "seed"
+    },
+    {
+      "name": "Angel's Share",
+      "list": "50-best-bars",
+      "region": "North America",
+      "year": 2026,
+      "rank": 31,
+      "source": "seed"
+    },
+    {
+      "name": "Prophecy",
+      "list": "50-best-bars",
+      "region": "North America",
+      "year": 2026,
+      "rank": 32,
+      "source": "seed"
+    },
+    {
+      "name": "Overstory",
+      "list": "50-best-bars",
+      "region": "North America",
+      "year": 2026,
+      "rank": 33,
+      "source": "seed"
+    },
+    {
+      "name": "Press Club",
+      "list": "50-best-bars",
+      "region": "North America",
+      "year": 2026,
+      "rank": 34,
+      "source": "seed"
+    },
+    {
+      "name": "Double Chicken Please",
+      "list": "50-best-bars",
+      "region": "North America",
+      "year": 2026,
+      "rank": 35,
+      "source": "seed"
+    },
+    {
+      "name": "Bar Madonna",
+      "list": "50-best-bars",
+      "region": "North America",
+      "year": 2026,
+      "rank": 36,
+      "source": "seed"
+    },
+    {
+      "name": "Attaboy",
+      "list": "50-best-bars",
+      "region": "North America",
+      "year": 2026,
+      "rank": 37,
+      "source": "seed"
+    },
+    {
+      "name": "Botanist Bar",
+      "list": "50-best-bars",
+      "region": "North America",
+      "year": 2026,
+      "rank": 38,
+      "source": "seed"
+    },
+    {
+      "name": "Service Bar",
+      "list": "50-best-bars",
+      "region": "North America",
+      "year": 2026,
+      "rank": 39,
+      "source": "seed"
+    },
+    {
+      "name": "Maison Premiere",
+      "list": "50-best-bars",
+      "region": "North America",
+      "year": 2026,
+      "rank": 40,
+      "source": "seed"
+    },
+    {
+      "name": "Pacific Cocktail Haven",
+      "list": "50-best-bars",
+      "region": "North America",
+      "year": 2026,
+      "rank": 41,
+      "source": "seed"
+    },
+    {
+      "name": "Café La Trova",
+      "list": "50-best-bars",
+      "region": "North America",
+      "year": 2026,
+      "rank": 42,
+      "source": "seed"
+    },
+    {
+      "name": "Selva",
+      "list": "50-best-bars",
+      "region": "North America",
+      "year": 2026,
+      "rank": 43,
+      "source": "seed"
+    },
+    {
+      "name": "Daisy Margarita Bar",
+      "list": "50-best-bars",
+      "region": "North America",
+      "year": 2026,
+      "rank": 44,
+      "source": "seed"
+    },
+    {
+      "name": "Employees Only",
+      "list": "50-best-bars",
+      "region": "North America",
+      "year": 2026,
+      "rank": 45,
+      "source": "seed"
+    },
+    {
+      "name": "Viceversa",
+      "list": "50-best-bars",
+      "region": "North America",
+      "year": 2026,
+      "rank": 46,
+      "source": "seed"
+    },
+    {
+      "name": "Bandista",
+      "list": "50-best-bars",
+      "region": "North America",
+      "year": 2026,
+      "rank": 47,
+      "source": "seed"
+    },
+    {
+      "name": "Baltra Bar",
+      "list": "50-best-bars",
+      "region": "North America",
+      "year": 2026,
+      "rank": 48,
+      "source": "seed"
+    },
+    {
+      "name": "Library by the Sea",
+      "list": "50-best-bars",
+      "region": "North America",
+      "year": 2026,
+      "rank": 49,
+      "source": "seed"
+    },
+    {
+      "name": "Bon Vivants",
+      "list": "50-best-bars",
+      "region": "North America",
+      "year": 2026,
+      "rank": 50,
+      "source": "seed"
+    },
+    {
+      "name": "Napoli on the Road",
+      "list": "50-best-pizza",
+      "region": "World",
+      "year": 2025,
+      "rank": 5,
+      "source": "award.json"
+    },
+    {
+      "name": "Napoli on the Road",
+      "list": "50-best-pizza",
+      "region": "Europe",
+      "year": 2026,
+      "rank": 1,
+      "source": "seed"
+    },
+    {
+      "name": "Baldoria",
+      "list": "50-best-pizza",
+      "region": "Europe",
+      "year": 2026,
+      "rank": 2,
+      "source": "seed"
+    },
+    {
+      "name": "IMperfetto",
+      "list": "50-best-pizza",
+      "region": "Europe",
+      "year": 2026,
+      "rank": 3,
+      "source": "seed"
+    },
+    {
+      "name": "50 Kalò",
+      "list": "50-best-pizza",
+      "region": "Europe",
+      "year": 2026,
+      "rank": 4,
+      "source": "seed"
+    },
+    {
+      "name": "Sartoria Panatieri",
+      "list": "50-best-pizza",
+      "region": "Europe",
+      "year": 2026,
+      "rank": 5,
+      "source": "seed"
+    },
+    {
+      "name": "Pizza Zulu",
+      "list": "50-best-pizza",
+      "region": "Europe",
+      "year": 2026,
+      "rank": 6,
+      "source": "seed"
+    },
+    {
+      "name": "nNea",
+      "list": "50-best-pizza",
+      "region": "Europe",
+      "year": 2026,
+      "rank": 7,
+      "source": "seed"
+    },
+    {
+      "name": "Sapori Italiani U Taliana",
+      "list": "50-best-pizza",
+      "region": "Europe",
+      "year": 2026,
+      "rank": 8,
+      "source": "seed"
+    },
+    {
+      "name": "Forno d'Oro",
+      "list": "50-best-pizza",
+      "region": "Europe",
+      "year": 2026,
+      "rank": 9,
+      "source": "seed"
+    },
+    {
+      "name": "Via Toledo",
+      "list": "50-best-pizza",
+      "region": "Europe",
+      "year": 2026,
+      "rank": 10,
+      "source": "seed"
+    },
+    {
+      "name": "Fratelli Figurato",
+      "list": "50-best-pizza",
+      "region": "Europe",
+      "year": 2026,
+      "rank": 11,
+      "source": "seed"
+    },
+    {
+      "name": "Surt",
+      "list": "50-best-pizza",
+      "region": "Europe",
+      "year": 2026,
+      "rank": 12,
+      "source": "seed"
+    },
+    {
+      "name": "Stile Napoletano",
+      "list": "50-best-pizza",
+      "region": "Europe",
+      "year": 2026,
+      "rank": 13,
+      "source": "seed"
+    },
+    {
+      "name": "Oura",
+      "list": "50-best-pizza",
+      "region": "Europe",
+      "year": 2026,
+      "rank": 14,
+      "source": "seed"
+    },
+    {
+      "name": "La Piola Pizza",
+      "list": "50-best-pizza",
+      "region": "Europe",
+      "year": 2026,
+      "rank": 15,
+      "source": "seed"
+    },
+    {
+      "name": "Demaio",
+      "list": "50-best-pizza",
+      "region": "Europe",
+      "year": 2026,
+      "rank": 16,
+      "source": "seed"
+    },
+    {
+      "name": "Balmesina",
+      "list": "50-best-pizza",
+      "region": "Europe",
+      "year": 2026,
+      "rank": 17,
+      "source": "seed"
+    },
+    {
+      "name": "Zielona Górka",
+      "list": "50-best-pizza",
+      "region": "Europe",
+      "year": 2026,
+      "rank": 18,
+      "source": "seed"
+    },
+    {
+      "name": "Matto Napoletano",
+      "list": "50-best-pizza",
+      "region": "Europe",
+      "year": 2026,
+      "rank": 19,
+      "source": "seed"
+    },
+    {
+      "name": "Franko's Pizza & Bar",
+      "list": "50-best-pizza",
+      "region": "Europe",
+      "year": 2026,
+      "rank": 20,
+      "source": "seed"
+    },
+    {
+      "name": "Una Pizza Napoletana",
+      "list": "50-best-pizza",
+      "region": "North America",
+      "year": 2026,
+      "rank": 1,
+      "source": "seed"
+    },
+    {
+      "name": "Pizzeria Sei",
+      "list": "50-best-pizza",
+      "region": "North America",
+      "year": 2026,
+      "rank": 2,
+      "source": "seed"
+    },
+    {
+      "name": "Tony's Pizza Napoletana",
+      "list": "50-best-pizza",
+      "region": "North America",
+      "year": 2026,
+      "rank": 2,
+      "source": "seed"
+    },
+    {
+      "name": "Razza",
+      "list": "50-best-pizza",
+      "region": "North America",
+      "year": 2026,
+      "rank": 3,
+      "source": "seed"
+    },
+    {
+      "name": "Truly Pizza",
+      "list": "50-best-pizza",
+      "region": "North America",
+      "year": 2026,
+      "rank": 4,
+      "source": "seed"
+    },
+    {
+      "name": "Francesco Martucci",
+      "list": "50-best-pizza",
+      "region": "North America",
+      "year": 2026,
+      "rank": 5,
+      "source": "seed"
+    },
+    {
+      "name": "Don Antonio",
+      "list": "50-best-pizza",
+      "region": "North America",
+      "year": 2026,
+      "rank": 6,
+      "source": "seed"
+    },
+    {
+      "name": "Jay's",
+      "list": "50-best-pizza",
+      "region": "North America",
+      "year": 2026,
+      "rank": 7,
+      "source": "seed"
+    },
+    {
+      "name": "Ribalta",
+      "list": "50-best-pizza",
+      "region": "North America",
+      "year": 2026,
+      "rank": 8,
+      "source": "seed"
+    },
+    {
+      "name": "Robert's",
+      "list": "50-best-pizza",
+      "region": "North America",
+      "year": 2026,
+      "rank": 8,
+      "source": "seed"
+    },
+    {
+      "name": "Leña",
+      "list": "50-best-pizza",
+      "region": "North America",
+      "year": 2026,
+      "rank": 9,
+      "source": "seed"
+    },
+    {
+      "name": "Ken's Artisan Pizza",
+      "list": "50-best-pizza",
+      "region": "North America",
+      "year": 2026,
+      "rank": 10,
+      "source": "seed"
+    },
+    {
+      "name": "'O Munaciello",
+      "list": "50-best-pizza",
+      "region": "North America",
+      "year": 2026,
+      "rank": 11,
+      "source": "seed"
+    },
+    {
+      "name": "La Leggenda",
+      "list": "50-best-pizza",
+      "region": "North America",
+      "year": 2026,
+      "rank": 11,
+      "source": "seed"
+    },
+    {
+      "name": "Valentina",
+      "list": "50-best-pizza",
+      "region": "North America",
+      "year": 2026,
+      "rank": 12,
+      "source": "seed"
+    },
+    {
+      "name": "Stretch Pizza",
+      "list": "50-best-pizza",
+      "region": "North America",
+      "year": 2026,
+      "rank": 13,
+      "source": "seed"
+    },
+    {
+      "name": "Audace",
+      "list": "50-best-pizza",
+      "region": "North America",
+      "year": 2026,
+      "rank": 14,
+      "source": "seed"
+    },
+    {
+      "name": "Pasquale's",
+      "list": "50-best-pizza",
+      "region": "North America",
+      "year": 2026,
+      "rank": 15,
+      "source": "seed"
+    },
+    {
+      "name": "Pizza Secret",
+      "list": "50-best-pizza",
+      "region": "North America",
+      "year": 2026,
+      "rank": 15,
+      "source": "seed"
+    },
+    {
+      "name": "Maido",
+      "list": "50-best-restaurants",
+      "region": "World",
+      "year": 2025,
+      "rank": 1,
+      "source": "seed"
+    },
+    {
+      "name": "Asador Etxebarri",
+      "list": "50-best-restaurants",
+      "region": "World",
+      "year": 2025,
+      "rank": 2,
+      "source": "seed"
+    },
+    {
+      "name": "Quintonil",
+      "list": "50-best-restaurants",
+      "region": "World",
+      "year": 2025,
+      "rank": 3,
+      "source": "seed"
+    },
+    {
+      "name": "DiverXO",
+      "list": "50-best-restaurants",
+      "region": "World",
+      "year": 2025,
+      "rank": 4,
+      "source": "seed"
+    },
+    {
+      "name": "Alchemist",
+      "list": "50-best-restaurants",
+      "region": "World",
+      "year": 2025,
+      "rank": 5,
+      "source": "seed"
+    },
+    {
+      "name": "Gaggan",
+      "list": "50-best-restaurants",
+      "region": "World",
+      "year": 2025,
+      "rank": 6,
+      "source": "seed"
+    },
+    {
+      "name": "Sézanne",
+      "list": "50-best-restaurants",
+      "region": "World",
+      "year": 2025,
+      "rank": 7,
+      "source": "seed"
+    },
+    {
+      "name": "Table by Bruno Verjus",
+      "list": "50-best-restaurants",
+      "region": "World",
+      "year": 2025,
+      "rank": 8,
+      "source": "seed"
+    },
+    {
+      "name": "Kjolle",
+      "list": "50-best-restaurants",
+      "region": "World",
+      "year": 2025,
+      "rank": 9,
+      "source": "seed"
+    },
+    {
+      "name": "Don Julio",
+      "list": "50-best-restaurants",
+      "region": "World",
+      "year": 2025,
+      "rank": 10,
+      "source": "seed"
+    },
+    {
+      "name": "Wing",
+      "list": "50-best-restaurants",
+      "region": "World",
+      "year": 2025,
+      "rank": 11,
+      "source": "seed"
+    },
+    {
+      "name": "Atomix",
+      "list": "50-best-restaurants",
+      "region": "World",
+      "year": 2025,
+      "rank": 12,
+      "source": "seed"
+    },
+    {
+      "name": "Potong",
+      "list": "50-best-restaurants",
+      "region": "World",
+      "year": 2025,
+      "rank": 13,
+      "source": "seed"
+    },
+    {
+      "name": "Plénitude",
+      "list": "50-best-restaurants",
+      "region": "World",
+      "year": 2025,
+      "rank": 14,
+      "source": "seed"
+    },
+    {
+      "name": "Ikoyi",
+      "list": "50-best-restaurants",
+      "region": "World",
+      "year": 2025,
+      "rank": 15,
+      "source": "seed"
+    },
+    {
+      "name": "Lido 84",
+      "list": "50-best-restaurants",
+      "region": "World",
+      "year": 2025,
+      "rank": 16,
+      "source": "seed"
+    },
+    {
+      "name": "Sorn",
+      "list": "50-best-restaurants",
+      "region": "World",
+      "year": 2025,
+      "rank": 17,
+      "source": "seed"
+    },
+    {
+      "name": "Reale",
+      "list": "50-best-restaurants",
+      "region": "World",
+      "year": 2025,
+      "rank": 18,
+      "source": "seed"
+    },
+    {
+      "name": "The Chairman",
+      "list": "50-best-restaurants",
+      "region": "World",
+      "year": 2025,
+      "rank": 19,
+      "source": "seed"
+    },
+    {
+      "name": "Atelier Moessmer Norbert Niederkofler",
+      "list": "50-best-restaurants",
+      "region": "World",
+      "year": 2025,
+      "rank": 20,
+      "source": "seed"
+    },
+    {
+      "name": "Narisawa",
+      "list": "50-best-restaurants",
+      "region": "World",
+      "year": 2025,
+      "rank": 21,
+      "source": "seed"
+    },
+    {
+      "name": "Sühring",
+      "list": "50-best-restaurants",
+      "region": "World",
+      "year": 2025,
+      "rank": 22,
+      "source": "seed"
+    },
+    {
+      "name": "Boragó",
+      "list": "50-best-restaurants",
+      "region": "World",
+      "year": 2025,
+      "rank": 23,
+      "source": "seed"
+    },
+    {
+      "name": "Elkano",
+      "list": "50-best-restaurants",
+      "region": "World",
+      "year": 2025,
+      "rank": 24,
+      "source": "seed"
+    },
+    {
+      "name": "Odette",
+      "list": "50-best-restaurants",
+      "region": "World",
+      "year": 2025,
+      "rank": 25,
+      "source": "seed"
+    },
+    {
+      "name": "Mérito",
+      "list": "50-best-restaurants",
+      "region": "World",
+      "year": 2025,
+      "rank": 26,
+      "source": "seed"
+    },
+    {
+      "name": "Trèsind Studio",
+      "list": "50-best-restaurants",
+      "region": "World",
+      "year": 2025,
+      "rank": 27,
+      "source": "seed"
+    },
+    {
+      "name": "Lasai",
+      "list": "50-best-restaurants",
+      "region": "World",
+      "year": 2025,
+      "rank": 28,
+      "source": "seed"
+    },
+    {
+      "name": "Mingles",
+      "list": "50-best-restaurants",
+      "region": "World",
+      "year": 2025,
+      "rank": 29,
+      "source": "seed"
+    },
+    {
+      "name": "Le Du",
+      "list": "50-best-restaurants",
+      "region": "World",
+      "year": 2025,
+      "rank": 30,
+      "source": "seed"
+    },
+    {
+      "name": "Le Calandre",
+      "list": "50-best-restaurants",
+      "region": "World",
+      "year": 2025,
+      "rank": 31,
+      "source": "seed"
+    },
+    {
+      "name": "Piazza Duomo",
+      "list": "50-best-restaurants",
+      "region": "World",
+      "year": 2025,
+      "rank": 32,
+      "source": "seed"
+    },
+    {
+      "name": "Steirereck",
+      "list": "50-best-restaurants",
+      "region": "World",
+      "year": 2025,
+      "rank": 33,
+      "source": "seed"
+    },
+    {
+      "name": "Enigma",
+      "list": "50-best-restaurants",
+      "region": "World",
+      "year": 2025,
+      "rank": 34,
+      "source": "seed"
+    },
+    {
+      "name": "Nusara",
+      "list": "50-best-restaurants",
+      "region": "World",
+      "year": 2025,
+      "rank": 35,
+      "source": "seed"
+    },
+    {
+      "name": "Florilège",
+      "list": "50-best-restaurants",
+      "region": "World",
+      "year": 2025,
+      "rank": 36,
+      "source": "seed"
+    },
+    {
+      "name": "Orfali Bros Bistro",
+      "list": "50-best-restaurants",
+      "region": "World",
+      "year": 2025,
+      "rank": 37,
+      "source": "seed"
+    },
+    {
+      "name": "Frantzén",
+      "list": "50-best-restaurants",
+      "region": "World",
+      "year": 2025,
+      "rank": 38,
+      "source": "seed"
+    },
+    {
+      "name": "Mayta",
+      "list": "50-best-restaurants",
+      "region": "World",
+      "year": 2025,
+      "rank": 39,
+      "source": "seed"
+    },
+    {
+      "name": "Septime",
+      "list": "50-best-restaurants",
+      "region": "World",
+      "year": 2025,
+      "rank": 40,
+      "source": "seed"
+    },
+    {
+      "name": "Kadeau",
+      "list": "50-best-restaurants",
+      "region": "World",
+      "year": 2025,
+      "rank": 41,
+      "source": "seed"
+    },
+    {
+      "name": "Belcanto",
+      "list": "50-best-restaurants",
+      "region": "World",
+      "year": 2025,
+      "rank": 42,
+      "source": "seed"
+    },
+    {
+      "name": "Uliassi",
+      "list": "50-best-restaurants",
+      "region": "World",
+      "year": 2025,
+      "rank": 43,
+      "source": "seed"
+    },
+    {
+      "name": "La Cime",
+      "list": "50-best-restaurants",
+      "region": "World",
+      "year": 2025,
+      "rank": 44,
+      "source": "seed"
+    },
+    {
+      "name": "Arpège",
+      "list": "50-best-restaurants",
+      "region": "World",
+      "year": 2025,
+      "rank": 45,
+      "source": "seed"
+    },
+    {
+      "name": "Rosetta",
+      "list": "50-best-restaurants",
+      "region": "World",
+      "year": 2025,
+      "rank": 46,
+      "source": "seed"
+    },
+    {
+      "name": "Vyn",
+      "list": "50-best-restaurants",
+      "region": "World",
+      "year": 2025,
+      "rank": 47,
+      "source": "seed"
+    },
+    {
+      "name": "Celele",
+      "list": "50-best-restaurants",
+      "region": "World",
+      "year": 2025,
+      "rank": 48,
+      "source": "seed"
+    },
+    {
+      "name": "Kol",
+      "list": "50-best-restaurants",
+      "region": "World",
+      "year": 2025,
+      "rank": 49,
+      "source": "seed"
+    },
+    {
+      "name": "Restaurant Jan",
+      "list": "50-best-restaurants",
+      "region": "World",
+      "year": 2025,
+      "rank": 50,
+      "source": "seed"
+    },
+    {
+      "name": "Smyth",
+      "list": "50-best-restaurants",
+      "region": "North America",
+      "year": 2026,
+      "rank": 1,
+      "source": "seed"
+    },
+    {
+      "name": "Eight",
+      "list": "50-best-restaurants",
+      "region": "North America",
+      "year": 2026,
+      "rank": 2,
+      "source": "seed"
+    },
+    {
+      "name": "Restaurant Pearl Morissette",
+      "list": "50-best-restaurants",
+      "region": "North America",
+      "year": 2026,
+      "rank": 3,
+      "source": "seed"
+    },
+    {
+      "name": "Dakar NOLA",
+      "list": "50-best-restaurants",
+      "region": "North America",
+      "year": 2026,
+      "rank": 4,
+      "source": "seed"
+    },
+    {
+      "name": "Mon Lapin",
+      "list": "50-best-restaurants",
+      "region": "North America",
+      "year": 2026,
+      "rank": 5,
+      "source": "seed"
+    },
+    {
+      "name": "Albi",
+      "list": "50-best-restaurants",
+      "region": "North America",
+      "year": 2026,
+      "rank": 6,
+      "source": "seed"
+    },
+    {
+      "name": "Atomix",
+      "list": "50-best-restaurants",
+      "region": "North America",
+      "year": 2026,
+      "rank": 7,
+      "source": "seed"
+    },
+    {
+      "name": "Quetzal",
+      "list": "50-best-restaurants",
+      "region": "North America",
+      "year": 2026,
+      "rank": 8,
+      "source": "seed"
+    },
+    {
+      "name": "Tanière3",
+      "list": "50-best-restaurants",
+      "region": "North America",
+      "year": 2026,
+      "rank": 9,
+      "source": "seed"
+    },
+    {
+      "name": "César",
+      "list": "50-best-restaurants",
+      "region": "North America",
+      "year": 2026,
+      "rank": 10,
+      "source": "seed"
+    },
+    {
+      "name": "Kalaya",
+      "list": "50-best-restaurants",
+      "region": "North America",
+      "year": 2026,
+      "rank": 11,
+      "source": "seed"
+    },
+    {
+      "name": "Le Veau d'Or",
+      "list": "50-best-restaurants",
+      "region": "North America",
+      "year": 2026,
+      "rank": 12,
+      "source": "seed"
+    },
+    {
+      "name": "Le Bernardin",
+      "list": "50-best-restaurants",
+      "region": "North America",
+      "year": 2026,
+      "rank": 13,
+      "source": "seed"
+    },
+    {
+      "name": "Kabawa",
+      "list": "50-best-restaurants",
+      "region": "North America",
+      "year": 2026,
+      "rank": 14,
+      "source": "seed"
+    },
+    {
+      "name": "Le Violon",
+      "list": "50-best-restaurants",
+      "region": "North America",
+      "year": 2026,
+      "rank": 15,
+      "source": "seed"
+    },
+    {
+      "name": "SingleThread",
+      "list": "50-best-restaurants",
+      "region": "North America",
+      "year": 2026,
+      "rank": 16,
+      "source": "seed"
+    },
+    {
+      "name": "Published on Main",
+      "list": "50-best-restaurants",
+      "region": "North America",
+      "year": 2026,
+      "rank": 17,
+      "source": "seed"
+    },
+    {
+      "name": "Jungsik",
+      "list": "50-best-restaurants",
+      "region": "North America",
+      "year": 2026,
+      "rank": 18,
+      "source": "seed"
+    },
+    {
+      "name": "Penny",
+      "list": "50-best-restaurants",
+      "region": "North America",
+      "year": 2026,
+      "rank": 19,
+      "source": "seed"
+    },
+    {
+      "name": "Emeril's",
+      "list": "50-best-restaurants",
+      "region": "North America",
+      "year": 2026,
+      "rank": 20,
+      "source": "seed"
+    },
+    {
+      "name": "Chubby Fish",
+      "list": "50-best-restaurants",
+      "region": "North America",
+      "year": 2026,
+      "rank": 21,
+      "source": "seed"
+    },
+    {
+      "name": "Saison",
+      "list": "50-best-restaurants",
+      "region": "North America",
+      "year": 2026,
+      "rank": 22,
+      "source": "seed"
+    },
+    {
+      "name": "Aska",
+      "list": "50-best-restaurants",
+      "region": "North America",
+      "year": 2026,
+      "rank": 23,
+      "source": "seed"
+    },
+    {
+      "name": "Moon Rabbit",
+      "list": "50-best-restaurants",
+      "region": "North America",
+      "year": 2026,
+      "rank": 24,
+      "source": "seed"
+    },
+    {
+      "name": "Edulis",
+      "list": "50-best-restaurants",
+      "region": "North America",
+      "year": 2026,
+      "rank": 25,
+      "source": "seed"
+    },
+    {
+      "name": "Holbox",
+      "list": "50-best-restaurants",
+      "region": "North America",
+      "year": 2026,
+      "rank": 26,
+      "source": "seed"
+    },
+    {
+      "name": "Beba",
+      "list": "50-best-restaurants",
+      "region": "North America",
+      "year": 2026,
+      "rank": 27,
+      "source": "seed"
+    },
+    {
+      "name": "Mhel",
+      "list": "50-best-restaurants",
+      "region": "North America",
+      "year": 2026,
+      "rank": 28,
+      "source": "seed"
+    },
+    {
+      "name": "Avize",
+      "list": "50-best-restaurants",
+      "region": "North America",
+      "year": 2026,
+      "rank": 29,
+      "source": "seed"
+    },
+    {
+      "name": "Acamaya",
+      "list": "50-best-restaurants",
+      "region": "North America",
+      "year": 2026,
+      "rank": 30,
+      "source": "seed"
+    },
+    {
+      "name": "Addison by William Bradley",
+      "list": "50-best-restaurants",
+      "region": "North America",
+      "year": 2026,
+      "rank": 31,
+      "source": "seed"
+    },
+    {
+      "name": "Providence",
+      "list": "50-best-restaurants",
+      "region": "North America",
+      "year": 2026,
+      "rank": 32,
+      "source": "seed"
+    },
+    {
+      "name": "Benu",
+      "list": "50-best-restaurants",
+      "region": "North America",
+      "year": 2026,
+      "rank": 33,
+      "source": "seed"
+    },
+    {
+      "name": "Sabayon",
+      "list": "50-best-restaurants",
+      "region": "North America",
+      "year": 2026,
+      "rank": 34,
+      "source": "seed"
+    },
+    {
+      "name": "AnnaLena",
+      "list": "50-best-restaurants",
+      "region": "North America",
+      "year": 2026,
+      "rank": 35,
+      "source": "seed"
+    },
+    {
+      "name": "Corima",
+      "list": "50-best-restaurants",
+      "region": "North America",
+      "year": 2026,
+      "rank": 36,
+      "source": "seed"
+    },
+    {
+      "name": "Dōgon by Kwame Onwuachi",
+      "list": "50-best-restaurants",
+      "region": "North America",
+      "year": 2026,
+      "rank": 37,
+      "source": "seed"
+    },
+    {
+      "name": "Torrisi",
+      "list": "50-best-restaurants",
+      "region": "North America",
+      "year": 2026,
+      "rank": 38,
+      "source": "seed"
+    },
+    {
+      "name": "Tatiana by Kwame Onwuachi",
+      "list": "50-best-restaurants",
+      "region": "North America",
+      "year": 2026,
+      "rank": 39,
+      "source": "seed"
+    },
+    {
+      "name": "Friday Saturday Sunday",
+      "list": "50-best-restaurants",
+      "region": "North America",
+      "year": 2026,
+      "rank": 40,
+      "source": "seed"
+    },
+    {
+      "name": "Semma",
+      "list": "50-best-restaurants",
+      "region": "North America",
+      "year": 2026,
+      "rank": 41,
+      "source": "seed"
+    },
+    {
+      "name": "Pascual",
+      "list": "50-best-restaurants",
+      "region": "North America",
+      "year": 2026,
+      "rank": 42,
+      "source": "seed"
+    },
+    {
+      "name": "Gramercy Tavern",
+      "list": "50-best-restaurants",
+      "region": "North America",
+      "year": 2026,
+      "rank": 43,
+      "source": "seed"
+    },
+    {
+      "name": "Atelier Crenn",
+      "list": "50-best-restaurants",
+      "region": "North America",
+      "year": 2026,
+      "rank": 44,
+      "source": "seed"
+    },
+    {
+      "name": "Sons & Daughters",
+      "list": "50-best-restaurants",
+      "region": "North America",
+      "year": 2026,
+      "rank": 45,
+      "source": "seed"
+    },
+    {
+      "name": "Somni",
+      "list": "50-best-restaurants",
+      "region": "North America",
+      "year": 2026,
+      "rank": 46,
+      "source": "seed"
+    },
+    {
+      "name": "Wild Blue",
+      "list": "50-best-restaurants",
+      "region": "North America",
+      "year": 2026,
+      "rank": 47,
+      "source": "seed"
+    },
+    {
+      "name": "The Pine",
+      "list": "50-best-restaurants",
+      "region": "North America",
+      "year": 2026,
+      "rank": 48,
+      "source": "seed"
+    },
+    {
+      "name": "Kato",
+      "list": "50-best-restaurants",
+      "region": "North America",
+      "year": 2026,
+      "rank": 49,
+      "source": "seed"
+    },
+    {
+      "name": "Diane's Place",
+      "list": "50-best-restaurants",
+      "region": "North America",
+      "year": 2026,
+      "rank": 50,
+      "source": "seed"
+    },
+    {
+      "name": "Cheli",
+      "list": "nyt-100-best-restaurants",
+      "region": "New York",
+      "year": 2021,
+      "rank": 2,
+      "source": "award.json"
+    },
+    {
+      "name": "Cheli",
+      "list": "nyt-100-best-restaurants",
+      "region": "New York",
+      "year": 2023,
+      "rank": 8,
+      "source": "award.json"
+    },
+    {
+      "name": "Gramercy Tavern",
+      "list": "nyt-100-best-restaurants",
+      "region": "New York",
+      "year": 2023,
+      "rank": 11,
+      "source": "award.json"
+    },
+    {
+      "name": "Casa Mono",
+      "list": "nyt-100-best-restaurants",
+      "region": "New York",
+      "year": 2023,
+      "rank": 24,
+      "source": "award.json"
+    },
+    {
+      "name": "Cho Dang Gol",
+      "list": "nyt-100-best-restaurants",
+      "region": "New York",
+      "year": 2023,
+      "rank": 40,
+      "source": "award.json"
+    },
+    {
+      "name": "The Musket Room",
+      "list": "nyt-100-best-restaurants",
+      "region": "New York",
+      "year": 2023,
+      "rank": 84,
+      "source": "award.json"
+    },
+    {
+      "name": "Barney Greengrass",
+      "list": "nyt-100-best-restaurants",
+      "region": "New York",
+      "year": 2023,
+      "rank": 91,
+      "source": "award.json"
+    },
+    {
+      "name": "Ci Siamo",
+      "list": "nyt-100-best-restaurants",
+      "region": "New York",
+      "year": 2024,
+      "rank": 13,
+      "source": "award.json"
+    },
+    {
+      "name": "Cheli",
+      "list": "nyt-100-best-restaurants",
+      "region": "New York",
+      "year": 2024,
+      "rank": 15,
+      "source": "award.json"
+    },
+    {
+      "name": "Casa Mono",
+      "list": "nyt-100-best-restaurants",
+      "region": "New York",
+      "year": 2024,
+      "rank": 21,
+      "source": "award.json"
+    },
+    {
+      "name": "Gramercy Tavern",
+      "list": "nyt-100-best-restaurants",
+      "region": "New York",
+      "year": 2024,
+      "rank": 33,
+      "source": "award.json"
+    },
+    {
+      "name": "Dhamaka",
+      "list": "nyt-100-best-restaurants",
+      "region": "New York",
+      "year": 2024,
+      "rank": 53,
+      "source": "award.json"
+    },
+    {
+      "name": "Barney Greengrass",
+      "list": "nyt-100-best-restaurants",
+      "region": "New York",
+      "year": 2024,
+      "rank": 66,
+      "source": "award.json"
+    },
+    {
+      "name": "Crown Shy",
+      "list": "nyt-100-best-restaurants",
+      "region": "New York",
+      "year": 2025,
+      "rank": null,
+      "source": "award.json"
+    },
+    {
+      "name": "Via Carota",
+      "list": "nyt-100-best-restaurants",
+      "region": "New York",
+      "year": 2026,
+      "rank": 13,
+      "source": "award.json"
+    },
+    {
+      "name": "Mam",
+      "list": "nyt-100-best-restaurants",
+      "region": "New York",
+      "year": 2026,
+      "rank": 26,
+      "source": "award.json"
+    },
+    {
+      "name": "The Bar room at the Modern",
+      "list": "nyt-100-best-restaurants",
+      "region": "New York",
+      "year": 2026,
+      "rank": 32,
+      "source": "award.json"
+    },
+    {
+      "name": "Casa Mono",
+      "list": "nyt-100-best-restaurants",
+      "region": "New York",
+      "year": 2026,
+      "rank": 40,
+      "source": "award.json"
+    },
+    {
+      "name": "Jungsik New York",
+      "list": "nyt-100-best-restaurants",
+      "region": "New York",
+      "year": 2026,
+      "rank": 41,
+      "source": "award.json"
+    },
+    {
+      "name": "Cho Dang Gol",
+      "list": "nyt-100-best-restaurants",
+      "region": "New York",
+      "year": 2026,
+      "rank": 51,
+      "source": "award.json"
+    },
+    {
+      "name": "Dhamaka",
+      "list": "nyt-100-best-restaurants",
+      "region": "New York",
+      "year": 2026,
+      "rank": 66,
+      "source": "award.json"
+    },
+    {
+      "name": "Ci Siamo",
+      "list": "nyt-100-best-restaurants",
+      "region": "New York",
+      "year": 2026,
+      "rank": 84,
+      "source": "award.json"
+    },
+    {
+      "name": "Barney Greengrass",
+      "list": "nyt-100-best-restaurants",
+      "region": "New York",
+      "year": 2026,
+      "rank": 92,
+      "source": "award.json"
+    }
+  ]
+}

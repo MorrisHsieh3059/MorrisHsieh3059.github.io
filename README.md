@@ -95,7 +95,7 @@ Home bases are fixed: **Taipei** (until Aug 1, 2022) and **NYC** (since Aug 2, 2
 
 ## Updating content
 
-- **Dining entries:** Add the visit to `components/dining/data/award.json` and/or `michelin.json`. Dual-listed meals use the **same `id`** in both files and one photo folder.
-- **Dining photos:** Drop JPEGs into `components/dining/img/visits/<id>/` as `0.jpeg`, `1.jpeg`, … then run `npm run compress-dining` **before committing**. That builds the lightbox file (max 2000px) and a `*.thumb.jpeg` for cards. Keep camera originals out of git.
+- **Dining visits:** Tell the agent the restaurant and date. It checks Michelin + award lists (local cache `components/dining/rankings.json`, lookup via `python3 scripts/dining-rankings.py lookup "Name"`), writes `data/michelin.json` and/or `award.json`, creates `img/visits/<id>/`, then after photos: rename, `npm run compress-dining -- <id>`, commit, push. Dual-listed meals use the **same `id`** and one photo folder.
+- **Dining photos:** Cover is `0.jpeg`. Other files become `1.jpeg`, `2.jpeg`, … in original-filename A–Z order. Compress **that visit only**. Keep camera originals out of git.
 - **Other photos:** Add images to `components/<section>/img/` and reference them from that section’s `.html`.
 - **NYC spots:** Update cards in `components/nyc/nyc.html`
