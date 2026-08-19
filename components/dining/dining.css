@@ -837,11 +837,9 @@
 }
 
 .dining-timeline-month-label-copy {
-	--tl-influence: 0.4;
 	font-family: 'Roboto Mono', sans-serif;
 	text-transform: uppercase;
 	color: #2a2a2a;
-	opacity: calc(0.36 + 0.64 * var(--tl-influence));
 }
 
 .dining-timeline-month-name {
@@ -1056,8 +1054,7 @@
 	}
 
 	.dining-timeline-card-slot,
-	.dining-timeline-node,
-	.dining-timeline-month-label-copy {
+	.dining-timeline-node {
 		opacity: 1 !important;
 	}
 }

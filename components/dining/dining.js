@@ -1328,31 +1328,6 @@
 		}
 	}
 
-	function morphMonth(month, view, vertical) {
-		var label = month.querySelector('.dining-timeline-month-label-copy');
-		if (!label) return;
-		var rect = month.getBoundingClientRect();
-		var influence;
-		if (vertical) {
-			var vFocus = view.top + view.height * 0.2;
-			if (rect.top <= vFocus && rect.bottom >= vFocus) {
-				influence = 1;
-			} else {
-				var vDist = rect.bottom < vFocus ? vFocus - rect.bottom : rect.top - vFocus;
-				influence = clamp01(1 - vDist / (view.height * 0.42));
-			}
-		} else {
-			var focus = view.left + view.width * 0.2;
-			if (rect.left <= focus && rect.right >= focus) {
-				influence = 1;
-			} else {
-				var dist = rect.right < focus ? focus - rect.right : rect.left - focus;
-				influence = clamp01(1 - dist / (view.width * 0.42));
-			}
-		}
-		label.style.setProperty('--tl-influence', influence.toFixed(3));
-	}
-
 	function resetTimelineMorph() {
 		var slots = document.querySelectorAll('#dining-timeline-track .dining-timeline-card-slot');
 		var i;
@@ -1364,10 +1339,6 @@
 		var nodes = document.querySelectorAll('#dining-timeline-track .dining-timeline-node');
 		for (i = 0; i < nodes.length; i++) {
 			nodes[i].style.opacity = '';
-		}
-		var labels = document.querySelectorAll('#dining-timeline-track .dining-timeline-month-label-copy');
-		for (i = 0; i < labels.length; i++) {
-			labels[i].style.setProperty('--tl-influence', '1');
 		}
 	}
 
@@ -1422,13 +1393,11 @@
 			return;
 		}
 
-		var months = scroller.querySelectorAll('.dining-timeline-month');
-		var i;
 		if (vertical) {
 			var stations = scroller.querySelectorAll('.dining-timeline-station');
+			var i;
 			for (i = 0; i < stations.length; i++) morphStation(stations[i], view, fade, vertical);
 		}
-		for (i = 0; i < months.length; i++) morphMonth(months[i], view, vertical);
 	}
 
 	function scheduleTimelineLayout() {
