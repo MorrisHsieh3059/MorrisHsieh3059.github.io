@@ -1,0 +1,508 @@
+{
+  "list": "50-best-bars",
+  "region": "North America",
+  "year": 2026,
+  "source": "https://www.theworlds50best.com/bars/best-in-north-america/lists/1-50",
+  "entries": [
+    {
+      "rank": 1,
+      "name": "Sip & Guzzle",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 2,
+      "name": "Bar Mauro",
+      "city": "Mexico City"
+    },
+    {
+      "rank": 3,
+      "name": "Bar Snack",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 4,
+      "name": "Schmuck",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 5,
+      "name": "Tlecān",
+      "city": "Mexico City"
+    },
+    {
+      "rank": 6,
+      "name": "Jewel of the South",
+      "city": "New Orleans"
+    },
+    {
+      "rank": 7,
+      "name": "The Keefer Bar",
+      "city": "Vancouver"
+    },
+    {
+      "rank": 8,
+      "name": "Bar Pompette",
+      "city": "Toronto"
+    },
+    {
+      "rank": 9,
+      "name": "Superbueno",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 10,
+      "name": "El Gallo Altanero",
+      "city": "Guadalajara"
+    },
+    {
+      "rank": 11,
+      "name": "Kumiko",
+      "city": "Chicago"
+    },
+    {
+      "rank": 12,
+      "name": "Handshake Speakeasy",
+      "city": "Mexico City"
+    },
+    {
+      "rank": 13,
+      "name": "Form + Matter",
+      "city": "Mexico City"
+    },
+    {
+      "rank": 14,
+      "name": "True Laurel",
+      "city": "San Francisco"
+    },
+    {
+      "rank": 15,
+      "name": "Clemente Bar",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 16,
+      "name": "Best Intentions",
+      "city": "Chicago"
+    },
+    {
+      "rank": 17,
+      "name": "June on Cambie",
+      "city": "Vancouver"
+    },
+    {
+      "rank": 18,
+      "name": "Mecenas",
+      "city": "Guadalajara"
+    },
+    {
+      "rank": 19,
+      "name": "Library Bar",
+      "city": "Toronto"
+    },
+    {
+      "rank": 20,
+      "name": "Licorería Limantour",
+      "city": "Mexico City"
+    },
+    {
+      "rank": 21,
+      "name": "Cure",
+      "city": "New Orleans"
+    },
+    {
+      "rank": 22,
+      "name": "Mother",
+      "city": "Toronto"
+    },
+    {
+      "rank": 23,
+      "name": "Martiny's",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 24,
+      "name": "Bekeb",
+      "city": "San Miguel de Allende"
+    },
+    {
+      "rank": 25,
+      "name": "Kaito del Valle",
+      "city": "Mexico City"
+    },
+    {
+      "rank": 26,
+      "name": "La Factoría",
+      "city": "San Juan"
+    },
+    {
+      "rank": 27,
+      "name": "Gus' Sip & Dip",
+      "city": "Chicago"
+    },
+    {
+      "rank": 28,
+      "name": "Mírate",
+      "city": "Los Angeles"
+    },
+    {
+      "rank": 29,
+      "name": "Civil Works",
+      "city": "Toronto"
+    },
+    {
+      "rank": 30,
+      "name": "Bisous",
+      "city": "Chicago"
+    },
+    {
+      "rank": 31,
+      "name": "Angel's Share",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 32,
+      "name": "Prophecy",
+      "city": "Vancouver"
+    },
+    {
+      "rank": 33,
+      "name": "Overstory",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 34,
+      "name": "Press Club",
+      "city": "Washington, DC"
+    },
+    {
+      "rank": 35,
+      "name": "Double Chicken Please",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 36,
+      "name": "Bar Madonna",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 37,
+      "name": "Attaboy",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 38,
+      "name": "Botanist Bar",
+      "city": "Vancouver"
+    },
+    {
+      "rank": 39,
+      "name": "Service Bar",
+      "city": "Washington, DC"
+    },
+    {
+      "rank": 40,
+      "name": "Maison Premiere",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 41,
+      "name": "Pacific Cocktail Haven",
+      "city": "San Francisco"
+    },
+    {
+      "rank": 42,
+      "name": "Café La Trova",
+      "city": "Miami"
+    },
+    {
+      "rank": 43,
+      "name": "Selva",
+      "city": "Oaxaca"
+    },
+    {
+      "rank": 44,
+      "name": "Daisy Margarita Bar",
+      "city": "Los Angeles"
+    },
+    {
+      "rank": 45,
+      "name": "Employees Only",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 46,
+      "name": "Viceversa",
+      "city": "Miami"
+    },
+    {
+      "rank": 47,
+      "name": "Bandista",
+      "city": "Houston"
+    },
+    {
+      "rank": 48,
+      "name": "Baltra Bar",
+      "city": "Mexico City"
+    },
+    {
+      "rank": 49,
+      "name": "Library by the Sea",
+      "city": "Grand Cayman"
+    },
+    {
+      "rank": 50,
+      "name": "Bon Vivants",
+      "city": "Nassau"
+    },
+    {
+      "rank": 51,
+      "name": "Aruba Day Drink",
+      "city": "Tijuana"
+    },
+    {
+      "rank": 52,
+      "name": "Katana Kitten",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 53,
+      "name": "Humboldt Bar",
+      "city": "Victoria"
+    },
+    {
+      "rank": 54,
+      "name": "Civil Liberties",
+      "city": "Toronto"
+    },
+    {
+      "rank": 55,
+      "name": "Silver Lyan",
+      "city": "Washington, DC"
+    },
+    {
+      "rank": 56,
+      "name": "Cloakroom",
+      "city": "Montreal"
+    },
+    {
+      "rank": 57,
+      "name": "Allegory",
+      "city": "Washington, DC"
+    },
+    {
+      "rank": 58,
+      "name": "Dante",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 59,
+      "name": "Bagheera",
+      "city": "Vancouver"
+    },
+    {
+      "rank": 60,
+      "name": "Café de Nadie",
+      "city": "Mexico City"
+    },
+    {
+      "rank": 61,
+      "name": "Arca",
+      "city": "Tulum"
+    },
+    {
+      "rank": 62,
+      "name": "Atwater Cocktail Club",
+      "city": "Montreal"
+    },
+    {
+      "rank": 63,
+      "name": "Scotch Lodge",
+      "city": "Portland"
+    },
+    {
+      "rank": 64,
+      "name": "Meo",
+      "city": "Vancouver"
+    },
+    {
+      "rank": 65,
+      "name": "Meadowlark",
+      "city": "Chicago"
+    },
+    {
+      "rank": 66,
+      "name": "Seed Library",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 67,
+      "name": "Yacht Club",
+      "city": "Denver"
+    },
+    {
+      "rank": 68,
+      "name": "Vandell",
+      "city": "Los Angeles"
+    },
+    {
+      "rank": 69,
+      "name": "Cry Baby Gallery",
+      "city": "Toronto"
+    },
+    {
+      "rank": 70,
+      "name": "Bar Kaiju",
+      "city": "Miami"
+    },
+    {
+      "rank": 71,
+      "name": "The Portrait Bar",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 72,
+      "name": "Laowai",
+      "city": "Vancouver"
+    },
+    {
+      "rank": 73,
+      "name": "Identidad",
+      "city": "San Juan"
+    },
+    {
+      "rank": 74,
+      "name": "Suite 115",
+      "city": "Toronto"
+    },
+    {
+      "rank": 75,
+      "name": "Bar Bello",
+      "city": "Montreal"
+    },
+    {
+      "rank": 76,
+      "name": "Nine Bar",
+      "city": "Chicago"
+    },
+    {
+      "rank": 77,
+      "name": "Shinji's",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 78,
+      "name": "Proof",
+      "city": "Calgary"
+    },
+    {
+      "rank": 79,
+      "name": "Missy's",
+      "city": "Calgary"
+    },
+    {
+      "rank": 80,
+      "name": "Queen Mary",
+      "city": "Chicago"
+    },
+    {
+      "rank": 81,
+      "name": "Bar Leather Apron",
+      "city": "Honolulu"
+    },
+    {
+      "rank": 82,
+      "name": "No Vacancy",
+      "city": "Toronto"
+    },
+    {
+      "rank": 83,
+      "name": "Father Forgive Me",
+      "city": "Detroit"
+    },
+    {
+      "rank": 84,
+      "name": "Julep",
+      "city": "Houston"
+    },
+    {
+      "rank": 85,
+      "name": "Ticonderoga Club",
+      "city": "Atlanta"
+    },
+    {
+      "rank": 86,
+      "name": "The Wig Shop",
+      "city": "Boston"
+    },
+    {
+      "rank": 87,
+      "name": "Citrus & Cane",
+      "city": "Victoria"
+    },
+    {
+      "rank": 88,
+      "name": "Hecate Bar",
+      "city": "Boston"
+    },
+    {
+      "rank": 89,
+      "name": "Roquette",
+      "city": "Seattle"
+    },
+    {
+      "rank": 90,
+      "name": "Slice Of Life",
+      "city": "Toronto"
+    },
+    {
+      "rank": 91,
+      "name": "Mount Pleasant Vintage & Provisions",
+      "city": "Vancouver"
+    },
+    {
+      "rank": 92,
+      "name": "Thunderbolt",
+      "city": "Los Angeles"
+    },
+    {
+      "rank": 93,
+      "name": "Realm of 52 Remedies",
+      "city": "San Diego"
+    },
+    {
+      "rank": 94,
+      "name": "Bar Mordecai",
+      "city": "Toronto"
+    },
+    {
+      "rank": 95,
+      "name": "Zapote Bar",
+      "city": "Playa del Carmen"
+    },
+    {
+      "rank": 96,
+      "name": "Nickel City",
+      "city": "Austin"
+    },
+    {
+      "rank": 97,
+      "name": "The Coldroom",
+      "city": "Montreal"
+    },
+    {
+      "rank": 98,
+      "name": "Shelter",
+      "city": "Calgary"
+    },
+    {
+      "rank": 99,
+      "name": "Door No.4",
+      "city": "Grand Cayman"
+    },
+    {
+      "rank": 100,
+      "name": "Trick Dog",
+      "city": "San Francisco"
+    }
+  ]
+}

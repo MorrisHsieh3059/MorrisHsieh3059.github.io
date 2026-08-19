@@ -1,0 +1,508 @@
+{
+  "list": "101-best-burgers",
+  "region": "World",
+  "year": 2026,
+  "source": "https://joinpearl.co/lists/2026-worlds-101-best-burgers + Timeout UK (7, 72)",
+  "entries": [
+    {
+      "rank": 1,
+      "name": "Bleecker Burger",
+      "city": "London"
+    },
+    {
+      "rank": 2,
+      "name": "Black Bear Burger",
+      "city": "London"
+    },
+    {
+      "rank": 3,
+      "name": "Cafe Margaret",
+      "city": "Double Bay"
+    },
+    {
+      "rank": 4,
+      "name": "The Diplomat",
+      "city": "Hong Kong"
+    },
+    {
+      "rank": 5,
+      "name": "Gasoline Grill",
+      "city": "Copenhagen"
+    },
+    {
+      "rank": 6,
+      "name": "Sip & Guzzle",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 7,
+      "name": "Hawksmoor St Pancras",
+      "city": "London"
+    },
+    {
+      "rank": 8,
+      "name": "Nowon",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 9,
+      "name": "Amboy Quality Meats",
+      "city": "Los Angeles"
+    },
+    {
+      "rank": 10,
+      "name": "The Grill",
+      "city": "Sydney"
+    },
+    {
+      "rank": 11,
+      "name": "Burger & Beyond",
+      "city": "London"
+    },
+    {
+      "rank": 12,
+      "name": "Wagyu MafIa",
+      "city": "Tokyo"
+    },
+    {
+      "rank": 13,
+      "name": "Charrd",
+      "city": "Melbourne"
+    },
+    {
+      "rank": 14,
+      "name": "Will’s",
+      "city": "Sydney"
+    },
+    {
+      "rank": 15,
+      "name": "Camphor",
+      "city": "Los Angeles"
+    },
+    {
+      "rank": 16,
+      "name": "Hubert",
+      "city": "Sydney"
+    },
+    {
+      "rank": 17,
+      "name": "Bar Julius",
+      "city": "Sydney"
+    },
+    {
+      "rank": 18,
+      "name": "AG",
+      "city": "Stockholm"
+    },
+    {
+      "rank": 19,
+      "name": "The Gidley",
+      "city": "Sydney"
+    },
+    {
+      "rank": 20,
+      "name": "Salt Shed",
+      "city": "Brighton"
+    },
+    {
+      "rank": 21,
+      "name": "Clam Bar",
+      "city": "Sydney"
+    },
+    {
+      "rank": 22,
+      "name": "Loyalist",
+      "city": "Chicago"
+    },
+    {
+      "rank": 23,
+      "name": "Bunsen",
+      "city": "Dublin"
+    },
+    {
+      "rank": 24,
+      "name": "Chimera",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 25,
+      "name": "The Alston",
+      "city": "Chicago"
+    },
+    {
+      "rank": 26,
+      "name": "Dumbo",
+      "city": "Paris"
+    },
+    {
+      "rank": 27,
+      "name": "Reburger",
+      "city": "Florence"
+    },
+    {
+      "rank": 28,
+      "name": "Meat Stop",
+      "city": "London"
+    },
+    {
+      "rank": 29,
+      "name": "Dandelion",
+      "city": "Copenhagen"
+    },
+    {
+      "rank": 30,
+      "name": "Gui'S Burger",
+      "city": "Ashiya"
+    },
+    {
+      "rank": 31,
+      "name": "Eat Jabs",
+      "city": "Austin"
+    },
+    {
+      "rank": 32,
+      "name": "Petit Trois",
+      "city": "Los Angeles"
+    },
+    {
+      "rank": 33,
+      "name": "Sold Out",
+      "city": "Paris"
+    },
+    {
+      "rank": 34,
+      "name": "Maijard",
+      "city": "Antwerp"
+    },
+    {
+      "rank": 35,
+      "name": "Sailor",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 36,
+      "name": "Bunzai",
+      "city": "Zürich"
+    },
+    {
+      "rank": 37,
+      "name": "Seoul Tiger",
+      "city": "Melbourne"
+    },
+    {
+      "rank": 38,
+      "name": "Fat Rabbit",
+      "city": "St. Catharines"
+    },
+    {
+      "rank": 39,
+      "name": "Dai Due",
+      "city": "Austin"
+    },
+    {
+      "rank": 40,
+      "name": "Specimen",
+      "city": "Paris"
+    },
+    {
+      "rank": 41,
+      "name": "SSTash",
+      "city": "Mission"
+    },
+    {
+      "rank": 42,
+      "name": "NADC Burger",
+      "city": "Nashville"
+    },
+    {
+      "rank": 43,
+      "name": "Sunny’s Steakhouse",
+      "city": "Miami"
+    },
+    {
+      "rank": 44,
+      "name": "La Birra Bar",
+      "city": "Miami"
+    },
+    {
+      "rank": 45,
+      "name": "arkhé",
+      "city": "Adelaide"
+    },
+    {
+      "rank": 46,
+      "name": "Fireside",
+      "city": "Hong Kong"
+    },
+    {
+      "rank": 47,
+      "name": "Goldies Bar",
+      "city": "Berlin"
+    },
+    {
+      "rank": 48,
+      "name": "Bon Burger",
+      "city": "Amsterdam"
+    },
+    {
+      "rank": 49,
+      "name": "Masonry",
+      "city": "Bali"
+    },
+    {
+      "rank": 50,
+      "name": "Meatsmith",
+      "city": "Singapore"
+    },
+    {
+      "rank": 51,
+      "name": "Brash",
+      "city": "Cape Town"
+    },
+    {
+      "rank": 52,
+      "name": "Grindhouse",
+      "city": "Berlin"
+    },
+    {
+      "rank": 53,
+      "name": "Hanbaagaasuuteeki",
+      "city": "London"
+    },
+    {
+      "rank": 54,
+      "name": "Heard",
+      "city": "London"
+    },
+    {
+      "rank": 55,
+      "name": "POPL Burger",
+      "city": "Copenhagen"
+    },
+    {
+      "rank": 56,
+      "name": "El Perro Negro",
+      "city": "Glasgow"
+    },
+    {
+      "rank": 57,
+      "name": "Flaco",
+      "city": "Santiago de Compostela"
+    },
+    {
+      "rank": 58,
+      "name": "Smash Street",
+      "city": "Singapore"
+    },
+    {
+      "rank": 59,
+      "name": "Kitan Hibiki",
+      "city": "Osaka"
+    },
+    {
+      "rank": 60,
+      "name": "Clover Grill",
+      "city": "Paris"
+    },
+    {
+      "rank": 61,
+      "name": "Prime + Proper",
+      "city": "Detroit"
+    },
+    {
+      "rank": 62,
+      "name": "Hundred",
+      "city": "Madrid"
+    },
+    {
+      "rank": 63,
+      "name": "Red Hook Tavern",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 64,
+      "name": "Débutant Dining",
+      "city": "Wollongong"
+    },
+    {
+      "rank": 65,
+      "name": "One Club Row",
+      "city": "London"
+    },
+    {
+      "rank": 66,
+      "name": "Miller & Lux",
+      "city": "San Francisco"
+    },
+    {
+      "rank": 67,
+      "name": "Char Fuego Y Brasas",
+      "city": "Tenerife"
+    },
+    {
+      "rank": 68,
+      "name": "Asador Bastian",
+      "city": "Chicago"
+    },
+    {
+      "rank": 69,
+      "name": "Brasserie Grand",
+      "city": "Helsinki"
+    },
+    {
+      "rank": 70,
+      "name": "Hermon's",
+      "city": "Los Angeles"
+    },
+    {
+      "rank": 71,
+      "name": "Dreamburger",
+      "city": "Nashville"
+    },
+    {
+      "rank": 72,
+      "name": "Peckish",
+      "city": "London"
+    },
+    {
+      "rank": 73,
+      "name": "Funky Chicken",
+      "city": "Stockholm"
+    },
+    {
+      "rank": 74,
+      "name": "Txula Steak",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 75,
+      "name": "Le Smash Burger",
+      "city": "Amsterdam"
+    },
+    {
+      "rank": 76,
+      "name": "11 Woodfire",
+      "city": "Dubai"
+    },
+    {
+      "rank": 77,
+      "name": "Le Rêve",
+      "city": "Brownsville"
+    },
+    {
+      "rank": 78,
+      "name": "Gabos",
+      "city": "Madrid"
+    },
+    {
+      "rank": 79,
+      "name": "Zuney",
+      "city": "Cape Town"
+    },
+    {
+      "rank": 80,
+      "name": "Gotham Burger Social Club",
+      "city": "Manhattan"
+    },
+    {
+      "rank": 81,
+      "name": "CPH Smash",
+      "city": "Copenhagen"
+    },
+    {
+      "rank": 82,
+      "name": "Black Cactus BBQ",
+      "city": "London"
+    },
+    {
+      "rank": 83,
+      "name": "Little Bad Wolf",
+      "city": "Chicago"
+    },
+    {
+      "rank": 84,
+      "name": "The Boring",
+      "city": "Guildford"
+    },
+    {
+      "rank": 85,
+      "name": "Boneless",
+      "city": "Helsinki"
+    },
+    {
+      "rank": 86,
+      "name": "Down South Deli",
+      "city": "Oslo"
+    },
+    {
+      "rank": 87,
+      "name": "Dove",
+      "city": "London"
+    },
+    {
+      "rank": 88,
+      "name": "Hamburger America",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 89,
+      "name": "Grindhouse",
+      "city": "São Paulo"
+    },
+    {
+      "rank": 90,
+      "name": "Dash Burger",
+      "city": "Dublin"
+    },
+    {
+      "rank": 91,
+      "name": "Rekas Burger",
+      "city": "Malmö"
+    },
+    {
+      "rank": 92,
+      "name": "Jet Set",
+      "city": "Providencia"
+    },
+    {
+      "rank": 93,
+      "name": "Jonas",
+      "city": "Dubai"
+    },
+    {
+      "rank": 94,
+      "name": "Franky’s",
+      "city": "Stockholm"
+    },
+    {
+      "rank": 95,
+      "name": "Goldies",
+      "city": "Berlin"
+    },
+    {
+      "rank": 96,
+      "name": "Eleven Green",
+      "city": "Dubai"
+    },
+    {
+      "rank": 97,
+      "name": "Doug’s",
+      "city": "Oslo"
+    },
+    {
+      "rank": 98,
+      "name": "Leytonstone Tavern",
+      "city": "London"
+    },
+    {
+      "rank": 100,
+      "name": "Mosh",
+      "city": "Bruges"
+    },
+    {
+      "rank": 101,
+      "name": "HIHO",
+      "city": "Los Angeles"
+    }
+  ]
+}

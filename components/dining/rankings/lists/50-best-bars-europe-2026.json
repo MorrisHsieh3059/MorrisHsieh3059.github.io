@@ -1,0 +1,258 @@
+{
+  "list": "50-best-bars",
+  "region": "Europe",
+  "year": 2026,
+  "source": "https://www.prnewswire.com/news-releases/line-in-athens-is-no1-as-the-inaugural-list-of-europes-50-best-bars-2026-is-revealed-302815104.html",
+  "entries": [
+    {
+      "rank": 1,
+      "name": "Line",
+      "city": "Athens"
+    },
+    {
+      "rank": 2,
+      "name": "The Bar in Front of the Bar",
+      "city": "Athens"
+    },
+    {
+      "rank": 3,
+      "name": "Sips",
+      "city": "Barcelona"
+    },
+    {
+      "rank": 4,
+      "name": "Himkok",
+      "city": "Oslo"
+    },
+    {
+      "rank": 5,
+      "name": "Bar Nouveau",
+      "city": "Paris"
+    },
+    {
+      "rank": 6,
+      "name": "Moebius Milano",
+      "city": "Milan"
+    },
+    {
+      "rank": 7,
+      "name": "The Cambridge Public House",
+      "city": "Paris"
+    },
+    {
+      "rank": 8,
+      "name": "Mirror Bar",
+      "city": "Bratislava"
+    },
+    {
+      "rank": 9,
+      "name": "Paradiso",
+      "city": "Barcelona"
+    },
+    {
+      "rank": 10,
+      "name": "Connaught Bar",
+      "city": "London"
+    },
+    {
+      "rank": 11,
+      "name": "Satan's Whiskers",
+      "city": "London"
+    },
+    {
+      "rank": 12,
+      "name": "Tayēr + Elementary",
+      "city": "London"
+    },
+    {
+      "rank": 13,
+      "name": "Barro Negro",
+      "city": "Athens"
+    },
+    {
+      "rank": 14,
+      "name": "Baba au Rum",
+      "city": "Athens"
+    },
+    {
+      "rank": 15,
+      "name": "Svanen",
+      "city": "Oslo"
+    },
+    {
+      "rank": 16,
+      "name": "Nouvelle Vague",
+      "city": "Tirana"
+    },
+    {
+      "rank": 17,
+      "name": "Wax On",
+      "city": "Berlin"
+    },
+    {
+      "rank": 18,
+      "name": "Camparino in Galleria",
+      "city": "Milan"
+    },
+    {
+      "rank": 19,
+      "name": "Danico",
+      "city": "Paris"
+    },
+    {
+      "rank": 20,
+      "name": "Panda & Sons",
+      "city": "Edinburgh"
+    },
+    {
+      "rank": 21,
+      "name": "Locale Firenze",
+      "city": "Florence"
+    },
+    {
+      "rank": 22,
+      "name": "1930",
+      "city": "Milan"
+    },
+    {
+      "rank": 23,
+      "name": "Waltz",
+      "city": "London"
+    },
+    {
+      "rank": 24,
+      "name": "Bird",
+      "city": "Copenhagen"
+    },
+    {
+      "rank": 25,
+      "name": "Alma Prague",
+      "city": "Prague"
+    },
+    {
+      "rank": 26,
+      "name": "Aldea",
+      "city": "Barcelona"
+    },
+    {
+      "rank": 27,
+      "name": "Harry's Bar Paris",
+      "city": "Paris"
+    },
+    {
+      "rank": 28,
+      "name": "L'Antiquario",
+      "city": "Naples"
+    },
+    {
+      "rank": 29,
+      "name": "Gucci Giardino",
+      "city": "Florence"
+    },
+    {
+      "rank": 30,
+      "name": "The Clumsies",
+      "city": "Athens"
+    },
+    {
+      "rank": 31,
+      "name": "Freni e Frizioni",
+      "city": "Rome"
+    },
+    {
+      "rank": 32,
+      "name": "Drink Kong",
+      "city": "Rome"
+    },
+    {
+      "rank": 33,
+      "name": "Gorilla",
+      "city": "Thessaloniki"
+    },
+    {
+      "rank": 34,
+      "name": "De Vie",
+      "city": "Paris"
+    },
+    {
+      "rank": 35,
+      "name": "14 De La Rosa",
+      "city": "Barcelona"
+    },
+    {
+      "rank": 36,
+      "name": "Boadas",
+      "city": "Barcelona"
+    },
+    {
+      "rank": 37,
+      "name": "Tjoget",
+      "city": "Stockholm"
+    },
+    {
+      "rank": 38,
+      "name": "Forbína Bar",
+      "city": "Prague"
+    },
+    {
+      "rank": 39,
+      "name": "Tag",
+      "city": "Krakow"
+    },
+    {
+      "rank": 40,
+      "name": "Kwãnt Mayfair",
+      "city": "London"
+    },
+    {
+      "rank": 41,
+      "name": "Three Sheets (Soho)",
+      "city": "London"
+    },
+    {
+      "rank": 42,
+      "name": "Super Lyan",
+      "city": "Amsterdam"
+    },
+    {
+      "rank": 43,
+      "name": "Röda Huset",
+      "city": "Stockholm"
+    },
+    {
+      "rank": 44,
+      "name": "Late Bloomers",
+      "city": "Zurich"
+    },
+    {
+      "rank": 45,
+      "name": "Angelita",
+      "city": "Madrid"
+    },
+    {
+      "rank": 46,
+      "name": "Salmon Guru",
+      "city": "Madrid"
+    },
+    {
+      "rank": 47,
+      "name": "Scarfes Bar",
+      "city": "London"
+    },
+    {
+      "rank": 48,
+      "name": "Foco",
+      "city": "Barcelona"
+    },
+    {
+      "rank": 49,
+      "name": "Rita",
+      "city": "Milan"
+    },
+    {
+      "rank": 50,
+      "name": "Dunlin",
+      "city": "Innsbruck"
+    }
+  ]
+}

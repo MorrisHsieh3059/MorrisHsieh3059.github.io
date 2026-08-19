@@ -1,0 +1,258 @@
+{
+  "list": "50-best-bars",
+  "region": "North America",
+  "year": 2023,
+  "source": "https://cocktailsandbars.com/north-americas-50-best-bars-2023/",
+  "entries": [
+    {
+      "rank": 1,
+      "name": "Double Chicken Please",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 2,
+      "name": "Handshake Speakeasy",
+      "city": "Mexico City"
+    },
+    {
+      "rank": 3,
+      "name": "Katana Kitten",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 4,
+      "name": "Licorería Limantour",
+      "city": "Mexico City"
+    },
+    {
+      "rank": 5,
+      "name": "Jewel of the South",
+      "city": "New Orleans"
+    },
+    {
+      "rank": 6,
+      "name": "Dante",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 7,
+      "name": "Overstory",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 8,
+      "name": "Kumiko",
+      "city": "Chicago"
+    },
+    {
+      "rank": 9,
+      "name": "Café La Trova",
+      "city": "Miami"
+    },
+    {
+      "rank": 10,
+      "name": "Thunderbolt",
+      "city": "Los Angeles"
+    },
+    {
+      "rank": 11,
+      "name": "Zapote Bar",
+      "city": "Playa del Carmen"
+    },
+    {
+      "rank": 12,
+      "name": "Civil Liberties",
+      "city": "Toronto"
+    },
+    {
+      "rank": 13,
+      "name": "Attaboy",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 14,
+      "name": "Employees Only",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 15,
+      "name": "Bar Pompette",
+      "city": "Toronto"
+    },
+    {
+      "rank": 16,
+      "name": "Baltra Bar",
+      "city": "Mexico City"
+    },
+    {
+      "rank": 17,
+      "name": "Rayo",
+      "city": "Mexico City"
+    },
+    {
+      "rank": 18,
+      "name": "Mace",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 19,
+      "name": "Botanist Bar",
+      "city": "Vancouver"
+    },
+    {
+      "rank": 20,
+      "name": "Hanky Panky",
+      "city": "Mexico City"
+    },
+    {
+      "rank": 21,
+      "name": "El Gallo Altanero",
+      "city": "Guadalajara"
+    },
+    {
+      "rank": 22,
+      "name": "Sabina Sabe",
+      "city": "Oaxaca"
+    },
+    {
+      "rank": 23,
+      "name": "Arca",
+      "city": "Tulum"
+    },
+    {
+      "rank": 24,
+      "name": "La Factoría",
+      "city": "San Juan"
+    },
+    {
+      "rank": 25,
+      "name": "Café de Nadie",
+      "city": "Mexico City"
+    },
+    {
+      "rank": 26,
+      "name": "Kaito del Valle",
+      "city": "Mexico City"
+    },
+    {
+      "rank": 27,
+      "name": "Herbs & Rye",
+      "city": "Las Vegas"
+    },
+    {
+      "rank": 28,
+      "name": "Pacific Cocktail Haven",
+      "city": "San Francisco"
+    },
+    {
+      "rank": 29,
+      "name": "Martiny's",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 30,
+      "name": "Death & Co",
+      "city": "Los Angeles"
+    },
+    {
+      "rank": 31,
+      "name": "Selva",
+      "city": "Oaxaca"
+    },
+    {
+      "rank": 32,
+      "name": "Atwater Cocktail Club",
+      "city": "Montréal"
+    },
+    {
+      "rank": 33,
+      "name": "Service Bar",
+      "city": "Washington, DC"
+    },
+    {
+      "rank": 34,
+      "name": "Sweet Liberty",
+      "city": "Miami"
+    },
+    {
+      "rank": 35,
+      "name": "Cloakroom",
+      "city": "Montréal"
+    },
+    {
+      "rank": 36,
+      "name": "Cure",
+      "city": "New Orleans"
+    },
+    {
+      "rank": 37,
+      "name": "Mother",
+      "city": "Toronto"
+    },
+    {
+      "rank": 38,
+      "name": "Milk Room",
+      "city": "Chicago"
+    },
+    {
+      "rank": 39,
+      "name": "Maison Premiere",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 40,
+      "name": "Aruba Day Drink",
+      "city": "Tijuana"
+    },
+    {
+      "rank": 41,
+      "name": "Bar Leather Apron",
+      "city": "Honolulu"
+    },
+    {
+      "rank": 42,
+      "name": "Yacht Club",
+      "city": "Denver"
+    },
+    {
+      "rank": 43,
+      "name": "Bar Mordecai",
+      "city": "Toronto"
+    },
+    {
+      "rank": 44,
+      "name": "The Dead Rabbit",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 45,
+      "name": "Allegory",
+      "city": "Washington, DC"
+    },
+    {
+      "rank": 46,
+      "name": "Clover Club",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 47,
+      "name": "Brujas",
+      "city": "Mexico City"
+    },
+    {
+      "rank": 48,
+      "name": "Platform 18",
+      "city": "Phoenix"
+    },
+    {
+      "rank": 49,
+      "name": "Youngblood",
+      "city": "San Diego"
+    },
+    {
+      "rank": 50,
+      "name": "Milady's",
+      "city": "New York, NY"
+    }
+  ]
+}
