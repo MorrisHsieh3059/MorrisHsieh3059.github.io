@@ -58,6 +58,20 @@ $(function(){
 		}
 	});
 
+	$('.menu-btn').on('click', function(e){
+		e.preventDefault();
+		e.stopPropagation();
+		$('body').toggleClass('menu-open');
+	});
+
+	$('.menu').on('click', function(e){
+		e.stopPropagation();
+	});
+
+	$(document).on('click', function(){
+		$('body').removeClass('menu-open');
+	});
+
 	/*=========================================================================
 		Navigation Functions
 	=========================================================================*/
@@ -67,6 +81,7 @@ $(function(){
 			current_sect = $('.section.active');
 		if(sect.length == 1){
 			if( sect.hasClass('active') == false && $('body').hasClass('section-switching') == false ){
+				$('body').removeClass('menu-open');
 				$('body').addClass('section-switching');
 				if( sect.index() < current_sect.index() ){
 					$('body').addClass('up');

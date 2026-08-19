@@ -399,3 +399,14 @@
 		right: 12px;
 	}
 }
+
+@media (max-width: 767px) {
+	.travel-section .section-block {
+		padding-right: 40px;
+	}
+
+	.travel-map-wrap {
+		height: 42vh;
+		min-height: 240px;
+	}
+}

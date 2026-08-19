@@ -273,7 +273,7 @@ html {
 }
 
 .menu-item-has-children.expanded > .submenu {
-	max-height: 200px;
+	max-height: 280px;
 	opacity: 1;
 }
 
@@ -300,4 +300,37 @@ html {
 	margin-top: 1rem;
 	padding-left: 1rem;
 	border-left: 2px solid var(--accent);
+}
+
+@media (max-width: 768px) {
+	body.menu-open .menu {
+		width: 300px;
+	}
+
+	.section-main .intro-text h1 {
+		font-size: 2.05rem;
+		letter-spacing: 0.16em;
+		line-height: 1.15;
+	}
+
+	.section-main .intro-text p {
+		font-size: 0.92rem;
+		letter-spacing: 0.04em;
+	}
+
+	.identity-tags {
+		justify-content: center;
+	}
+
+	.intro-text > .intro-btns > .btn-custom {
+		display: inline-block;
+		margin: 0 8px 10px;
+	}
+}
+
+@media (max-width: 400px) {
+	.section-main .intro-text h1 {
+		font-size: 1.7rem;
+		letter-spacing: 0.1em;
+	}
 }

@@ -3,6 +3,8 @@
 
 	var initialized = false;
 	var awardInitialized = false;
+	var timelineRendered = false;
+	var timelineBound = false;
 	var michelinData = null;
 	var awardData = null;
 
@@ -12,7 +14,7 @@
 		[data-dining-tab] attribute + .dining-tab-toggle class).
 	=========================================================================*/
 	function showDiningTab(tab) {
-		if (tab !== 'award' && tab !== 'michelin' && tab !== 'gourmand') return;
+		if (tab !== 'award' && tab !== 'michelin' && tab !== 'gourmand' && tab !== 'timeline') return;
 
 		$('.dining-tab-toggle').removeClass('active');
 		$('.dining-tab-toggle[data-dining-tab="' + tab + '"]').addClass('active');
@@ -20,7 +22,15 @@
 		$('.dining-panel').removeClass('active');
 		$('.dining-panel[data-dining-panel="' + tab + '"]').addClass('active');
 
-		if (tab === 'michelin' || tab === 'gourmand') {
+		if (tab === 'timeline') {
+			ensureInit();
+			ensureInitAward();
+			tryRenderTimeline();
+			if (isTimelineVertical()) {
+				var diningEl = document.getElementById('dining');
+				if (diningEl) diningEl.scrollTop = 0;
+			}
+		} else if (tab === 'michelin' || tab === 'gourmand') {
 			ensureInit();
 		} else if (tab === 'award') {
 			ensureInitAward();
@@ -121,6 +131,10 @@
 		return 'img/dining/visits/' + visit.id + '/' + name;
 	}
 
+	function visitPopupNs(popupNs, fallback) {
+		return typeof popupNs === 'string' && popupNs ? popupNs : fallback;
+	}
+
 	// Accolade-list logos live in components/dining/img/icons/ (copied by
 	// build.js to dist/img/dining/icons/, same as photoPath's convention).
 	function iconPath(filename) {
@@ -199,7 +213,8 @@
 		);
 	}
 
-	function cardHtml(visit) {
+	function cardHtml(visit, popupNs) {
+		popupNs = visitPopupNs(popupNs, 'michelin');
 		var pictures = visit.pictures || [];
 		var coverStyle = pictures.length
 			? ' style="background-image:url(\'' + photoPath(visit, pictures[0], 'thumb') + '\')"'
@@ -211,7 +226,7 @@
 			: '<div class="michelin-card-photo-placeholder"><i class="fas fa-camera"></i></div>';
 
 		return (
-			'<a href="#popup-michelin-' + visit.id + '" class="michelin-card" data-cuisine="' + cuisineList(visit).join(',') + '" data-menu="' + (visit.menu || '') + '">' +
+			'<a href="#popup-' + popupNs + '-' + visit.id + '" class="michelin-card" data-cuisine="' + cuisineList(visit).join(',') + '" data-menu="' + (visit.menu || '') + '">' +
 				'<div class="michelin-card-photo"' + coverStyle + '>' + photoInner + '</div>' +
 				'<div class="michelin-card-body">' +
 					'<h4 class="michelin-card-title">' + titleHtml(visit) + '</h4>' +
@@ -222,7 +237,8 @@
 		);
 	}
 
-	function popupHtml(visit) {
+	function popupHtml(visit, popupNs) {
+		popupNs = visitPopupNs(popupNs, 'michelin');
 		var pictures = visit.pictures || [];
 		var slides = pictures.map(function (filename) {
 			return '<div class="item"><figure><img src="' + photoPath(visit, filename) + '" alt="' + visit.name + '" loading="lazy"></figure></div>';
@@ -233,7 +249,7 @@
 		}
 
 		return (
-			'<div id="popup-michelin-' + visit.id + '" class="popup mfp-hide">' +
+			'<div id="popup-' + popupNs + '-' + visit.id + '" class="popup mfp-hide">' +
 				'<div class="popup-inner">' +
 					'<div class="michelin-popup-header">' +
 						'<h4>' + titleHtml(visit) + '</h4>' +
@@ -301,7 +317,8 @@
 		);
 	}
 
-	function cardHtmlGourmand(visit) {
+	function cardHtmlGourmand(visit, popupNs) {
+		popupNs = visitPopupNs(popupNs, 'gourmand');
 		var pictures = visit.pictures || [];
 		var coverStyle = pictures.length
 			? ' style="background-image:url(\'' + photoPath(visit, pictures[0], 'thumb') + '\')"'
@@ -313,7 +330,7 @@
 			: '<div class="michelin-card-photo-placeholder"><i class="fas fa-camera"></i></div>';
 
 		return (
-			'<a href="#popup-gourmand-' + visit.id + '" class="michelin-card" data-cuisine="' + cuisineList(visit).join(',') + '" data-menu="' + (visit.menu || '') + '">' +
+			'<a href="#popup-' + popupNs + '-' + visit.id + '" class="michelin-card" data-cuisine="' + cuisineList(visit).join(',') + '" data-menu="' + (visit.menu || '') + '">' +
 				'<div class="michelin-card-photo"' + coverStyle + '>' + photoInner + '</div>' +
 				'<div class="michelin-card-body">' +
 					'<h4 class="michelin-card-title">' + titleHtmlGourmand(visit) + '</h4>' +
@@ -324,7 +341,8 @@
 		);
 	}
 
-	function popupHtmlGourmand(visit) {
+	function popupHtmlGourmand(visit, popupNs) {
+		popupNs = visitPopupNs(popupNs, 'gourmand');
 		var pictures = visit.pictures || [];
 		var slides = pictures.map(function (filename) {
 			return '<div class="item"><figure><img src="' + photoPath(visit, filename) + '" alt="' + visit.name + '" loading="lazy"></figure></div>';
@@ -335,7 +353,7 @@
 		}
 
 		return (
-			'<div id="popup-gourmand-' + visit.id + '" class="popup mfp-hide">' +
+			'<div id="popup-' + popupNs + '-' + visit.id + '" class="popup mfp-hide">' +
 				'<div class="popup-inner">' +
 					'<div class="michelin-popup-header">' +
 						'<h4>' + titleHtmlGourmand(visit) + '</h4>' +
@@ -690,7 +708,8 @@
 		);
 	}
 
-	function cardHtmlAward(visit) {
+	function cardHtmlAward(visit, popupNs) {
+		popupNs = visitPopupNs(popupNs, 'award');
 		var pictures = visit.pictures || [];
 		var coverStyle = pictures.length
 			? ' style="background-image:url(\'' + photoPath(visit, pictures[0], 'thumb') + '\')"'
@@ -703,7 +722,7 @@
 		var accoladeSlugs = accoladesList(visit).map(function (a) { return a.list; }).filter(Boolean);
 
 		return (
-			'<a href="#popup-award-' + visit.id + '" class="award-card" data-cuisine="' + cuisineList(visit).join(',') + '" data-accolades="' + accoladeSlugs.join(',') + '">' +
+			'<a href="#popup-' + popupNs + '-' + visit.id + '" class="award-card" data-cuisine="' + cuisineList(visit).join(',') + '" data-accolades="' + accoladeSlugs.join(',') + '">' +
 				'<div class="award-card-photo"' + coverStyle + '>' + photoInner + '</div>' +
 				'<div class="award-card-body">' +
 					'<h4 class="award-card-title">' + titleHtmlAward(visit) + '</h4>' +
@@ -714,7 +733,8 @@
 		);
 	}
 
-	function popupHtmlAward(visit) {
+	function popupHtmlAward(visit, popupNs) {
+		popupNs = visitPopupNs(popupNs, 'award');
 		var pictures = visit.pictures || [];
 		var slides = pictures.map(function (filename) {
 			return '<div class="item"><figure><img src="' + photoPath(visit, filename) + '" alt="' + visit.name + '" loading="lazy"></figure></div>';
@@ -725,7 +745,7 @@
 		}
 
 		return (
-			'<div id="popup-award-' + visit.id + '" class="popup mfp-hide">' +
+			'<div id="popup-' + popupNs + '-' + visit.id + '" class="popup mfp-hide' + (popupNs === 'award' ? '' : ' award-popup') + '">' +
 				'<div class="popup-inner">' +
 					'<div class="award-popup-header">' +
 						'<h4>' + titleHtmlAward(visit) + '</h4>' +
@@ -894,8 +914,11 @@
 		$.getJSON('data/award.json').done(function (data) {
 			awardData = data;
 			renderAward(data);
+			tryRenderTimeline();
 		}).fail(function () {
 			$('#award-grid').html('<p class="award-empty">Favorites data unavailable.</p>');
+			if (!awardData) awardData = [];
+			tryRenderTimeline();
 		});
 	}
 
@@ -971,9 +994,12 @@
 			michelinData = data;
 			render(data.filter(function (v) { return !isGourmandVisit(v); }));
 			renderGourmand(data.filter(isGourmandVisit));
+			tryRenderTimeline();
 		}).fail(function () {
 			$('#michelin-grid').html('<p class="michelin-empty">Michelin visit data unavailable.</p>');
 			$('#gourmand-grid').html('<p class="michelin-empty">Michelin visit data unavailable.</p>');
+			if (!michelinData) michelinData = [];
+			tryRenderTimeline();
 		});
 	}
 
@@ -981,6 +1007,467 @@
 		if (initialized) return;
 		initialized = true;
 		loadData();
+	}
+
+	/*=========================================================================
+		Timeline tab — a horizontal filmstrip of every unique visit
+		(Michelin Stars, Guide, and Award merged, newest on the left).
+		Packed by visit, grouped by month; no empty calendar gaps.
+		The three grid tabs are unchanged; this panel is additive.
+	=========================================================================*/
+	function mergeTimelineVisits(michelin, award) {
+		var awardById = {};
+		(award || []).forEach(function (v) {
+			if (v && v.id) awardById[v.id] = v;
+		});
+
+		var byId = {};
+		(michelin || []).forEach(function (v) {
+			if (!v || !v.id) return;
+			var kind = v.stars ? 'star' : (isGourmandVisit(v) ? 'gourmand' : null);
+			if (!kind) return;
+			var a = awardById[v.id];
+			var visit = v;
+			if (a && accoladesList(a).length) {
+				visit = {};
+				Object.keys(v).forEach(function (k) { visit[k] = v[k]; });
+				visit.accolades = a.accolades;
+			}
+			byId[v.id] = { visit: visit, kind: kind };
+		});
+		(award || []).forEach(function (v) {
+			if (!v || !v.id || byId[v.id]) return;
+			byId[v.id] = { visit: v, kind: 'award' };
+		});
+		return Object.keys(byId).map(function (id) {
+			return byId[id];
+		}).sort(function (a, b) {
+			return (b.visit.date || '').localeCompare(a.visit.date || '');
+		});
+	}
+
+	function timelineMichelinMarks(visit) {
+		var isFormer = visit.status === 'former';
+		var parts = [];
+		var count = parseInt(visit.stars, 10);
+		var i;
+
+		if (count >= 1) {
+			var starClass = 'mich-star' + (isFormer ? ' mich-star-former' : '');
+			var stars = '';
+			for (i = 0; i < count; i++) {
+				stars += '<span class="' + starClass + '"></span>';
+			}
+			parts.push(stars);
+		}
+
+		if (isGourmandVisit(visit)) {
+			var meta = RANK_META[visit.rank];
+			if (meta && meta.icon) {
+				parts.push(
+					'<img class="mich-bib-icon' + (isFormer ? ' mich-bib-icon-former' : '') + '" src="' + iconPath(meta.icon) + '" alt="">'
+				);
+			}
+		}
+
+		if (!parts.length) return '';
+		return '<span class="dining-timeline-card-icon dining-timeline-card-icon-mich">' + parts.join('') + '</span>';
+	}
+
+	function timelineAwardMarks(visit) {
+		var parts = [];
+		var seenIcons = {};
+		accoladesList(visit).forEach(function (a) {
+			var listMeta = accoladeListMeta(a.list);
+			if (!listMeta.icon || seenIcons[listMeta.icon]) return;
+			seenIcons[listMeta.icon] = true;
+			parts.push('<img class="dining-timeline-award-mark" src="' + iconPath(listMeta.icon) + '" alt="">');
+		});
+		if (!parts.length) return '';
+		return '<span class="dining-timeline-card-icon dining-timeline-card-icon-award">' + parts.join('') + '</span>';
+	}
+
+	function timelineCardHtml(entry) {
+		var visit = entry.visit;
+		var pictures = visit.pictures || [];
+		var coverStyle = pictures.length
+			? ' style="background-image:url(\'' + photoPath(visit, pictures[0], 'thumb') + '\')"'
+			: '';
+		var photoInner = pictures.length
+			? (pictures.length > 1
+				? '<span class="michelin-card-photo-count">' + pictures.length + ' photos</span>'
+				: '')
+			: '<div class="michelin-card-photo-placeholder"><i class="fas fa-camera"></i></div>';
+		var cardClass = entry.kind === 'award' ? 'award-card' : 'michelin-card';
+		var city = visit.city || '';
+
+		return (
+			'<a href="#popup-timeline-' + visit.id + '" class="' + cardClass + ' dining-timeline-card">' +
+				'<div class="michelin-card-photo"' + coverStyle + '>' + photoInner + '</div>' +
+				'<div class="dining-timeline-card-body">' +
+					'<div class="dining-timeline-card-line1">' +
+						timelineMichelinMarks(visit) +
+						'<span class="dining-timeline-card-name">' + visit.name + '</span>' +
+						timelineAwardMarks(visit) +
+					'</div>' +
+					'<div class="dining-timeline-card-line2">' +
+						'<span>' + formatVisitDate(visit.date) + '</span>' +
+						(city ? '<span class="dining-timeline-card-dot"> · </span><span>' + city + '</span>' : '') +
+					'</div>' +
+				'</div>' +
+			'</a>'
+		);
+	}
+
+	function timelinePopupHtml(entry) {
+		var v = entry.visit;
+		if (entry.kind === 'star') return popupHtml(v, 'timeline');
+		if (entry.kind === 'gourmand') return popupHtmlGourmand(v, 'timeline');
+		return popupHtmlAward(v, 'timeline');
+	}
+
+	function timelineMonthParts(key) {
+		var d = new Date(key + '-01T00:00:00');
+		if (isNaN(d.getTime())) return { month: key, year: '' };
+		return {
+			month: d.toLocaleDateString('en-US', { month: 'short' }),
+			year: String(d.getFullYear())
+		};
+	}
+
+	function timelineStationHtml(entry) {
+		return (
+			'<article class="dining-timeline-station" data-kind="' + entry.kind + '" data-date="' + (entry.visit.date || '') + '">' +
+				'<div class="dining-timeline-card-slot">' + timelineCardHtml(entry) + '</div>' +
+				'<span class="dining-timeline-node" aria-hidden="true"></span>' +
+			'</article>'
+		);
+	}
+
+	function renderTimeline(entries) {
+		var $track = $('#dining-timeline-track');
+		var $popups = $('#dining-timeline-popups');
+
+		if (!entries || !entries.length) {
+			$track.html('<p class="michelin-empty">No visits logged yet — check back soon!</p>');
+			$popups.empty();
+			return;
+		}
+
+		var groups = [];
+		var current = null;
+		entries.forEach(function (entry) {
+			var key = (entry.visit.date || '').slice(0, 7);
+			if (!current || current.key !== key) {
+				current = { key: key, entries: [] };
+				groups.push(current);
+			}
+			current.entries.push(entry);
+		});
+
+		var html = '<div class="dining-timeline-rail" aria-hidden="true"></div>';
+		groups.forEach(function (group) {
+			var parts = timelineMonthParts(group.key);
+			html += '<section class="dining-timeline-month" data-month="' + group.key + '">' +
+				'<header class="dining-timeline-month-label">' +
+					'<div class="dining-timeline-month-label-inner">' +
+						'<div class="dining-timeline-month-label-copy">' +
+							'<span class="dining-timeline-month-name">' + parts.month + '</span>' +
+							'<span class="dining-timeline-month-year">' + parts.year + '</span>' +
+						'</div>' +
+					'</div>' +
+				'</header>' +
+				'<div class="dining-timeline-stations">' +
+					group.entries.map(timelineStationHtml).join('') +
+				'</div>' +
+			'</section>';
+		});
+
+		$track.html(html);
+		$popups.html(entries.map(timelinePopupHtml).join(''));
+
+		$track.find('.michelin-card, .award-card').magnificPopup({
+			type: 'inline',
+			fixedContentPos: false,
+			fixedBgPos: true,
+			overflowY: 'auto',
+			closeBtnInside: true,
+			preloader: false,
+			midClick: true,
+			removalDelay: 300,
+			mainClass: 'my-mfp-zoom-in michelin-popup',
+			callbacks: {
+				open: function () {
+					this.content.find('.popup-slider').owlCarousel({
+						items: 1,
+						loop: this.content.find('.popup-slider .item').length > 1,
+						nav: true,
+						dots: true,
+						autoplay: false,
+						navText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>']
+					});
+				},
+				close: function () {
+					var $slider = this.content.find('.popup-slider');
+					if ($slider.data('owl.carousel')) {
+						$slider.trigger('destroy.owl.carousel');
+					}
+				}
+			}
+		});
+
+		bindTimeline();
+		requestAnimationFrame(function () {
+			requestAnimationFrame(layoutTimeline);
+		});
+	}
+
+	function prefersReducedMotion() {
+		return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+	}
+
+	function clamp01(x) {
+		return x < 0 ? 0 : x > 1 ? 1 : x;
+	}
+
+	var timelineTicking = false;
+	var timelineScrollIdle = null;
+
+	function isTimelineVertical() {
+		return window.matchMedia && window.matchMedia('(max-width: 767px)').matches;
+	}
+
+	function morphStation(station, view, fade, vertical) {
+		var slot = station.querySelector('.dining-timeline-card-slot');
+		if (!slot) return;
+		var rect = slot.getBoundingClientRect();
+		var t = 0;
+		if (vertical) {
+			var innerTop = view.top + fade * 0.82;
+			var innerBottom = view.bottom - fade * 0.82;
+			var tTop = rect.top < innerTop ? clamp01((innerTop - rect.top) / fade) : 0;
+			var tBottom = rect.bottom > innerBottom ? clamp01((rect.bottom - innerBottom) / fade) : 0;
+			t = Math.max(tTop, tBottom);
+			if (rect.bottom < view.top || rect.top > view.bottom) t = 1;
+		} else {
+			var innerLeft = view.left + fade * 0.82;
+			var innerRight = view.right - fade * 0.82;
+			var tLeft = rect.left < innerLeft ? clamp01((innerLeft - rect.left) / fade) : 0;
+			var tRight = rect.right > innerRight ? clamp01((rect.right - innerRight) / fade) : 0;
+			t = Math.max(tLeft, tRight);
+			if (rect.right < view.left || rect.left > view.right) t = 1;
+		}
+
+		var visible = 1 - t;
+		slot.style.opacity = visible.toFixed(3);
+		slot.style.pointerEvents = t > 0.82 ? 'none' : '';
+
+		var node = station.querySelector('.dining-timeline-node');
+		if (node) node.style.opacity = (visible * visible * 0.4).toFixed(3);
+	}
+
+	function morphMonth(month, view, vertical) {
+		var label = month.querySelector('.dining-timeline-month-label-copy');
+		if (!label) return;
+		var rect = month.getBoundingClientRect();
+		var influence;
+		if (vertical) {
+			var vFocus = view.top + view.height * 0.2;
+			if (rect.top <= vFocus && rect.bottom >= vFocus) {
+				influence = 1;
+			} else {
+				var vDist = rect.bottom < vFocus ? vFocus - rect.bottom : rect.top - vFocus;
+				influence = clamp01(1 - vDist / (view.height * 0.42));
+			}
+		} else {
+			var focus = view.left + view.width * 0.2;
+			if (rect.left <= focus && rect.right >= focus) {
+				influence = 1;
+			} else {
+				var dist = rect.right < focus ? focus - rect.right : rect.left - focus;
+				influence = clamp01(1 - dist / (view.width * 0.42));
+			}
+		}
+		label.style.setProperty('--tl-influence', influence.toFixed(3));
+	}
+
+	function resetTimelineMorph() {
+		var slots = document.querySelectorAll('#dining-timeline-track .dining-timeline-card-slot');
+		var i;
+		for (i = 0; i < slots.length; i++) {
+			slots[i].style.opacity = '';
+			slots[i].style.pointerEvents = '';
+		}
+		var nodes = document.querySelectorAll('#dining-timeline-track .dining-timeline-node');
+		for (i = 0; i < nodes.length; i++) {
+			nodes[i].style.opacity = '';
+		}
+		var labels = document.querySelectorAll('#dining-timeline-track .dining-timeline-month-label-copy');
+		for (i = 0; i < labels.length; i++) {
+			labels[i].style.setProperty('--tl-influence', '1');
+		}
+	}
+
+	function updateTimelineNav(scroller) {
+		var prev = document.getElementById('dining-timeline-prev');
+		var next = document.getElementById('dining-timeline-next');
+		if (!prev || !next) return;
+		if (isTimelineVertical()) {
+			prev.hidden = true;
+			next.hidden = true;
+			return;
+		}
+		var max = scroller.scrollWidth - scroller.clientWidth;
+		var overflow = max > 4;
+		prev.hidden = !overflow;
+		next.hidden = !overflow;
+		prev.disabled = scroller.scrollLeft <= 2;
+		next.disabled = scroller.scrollLeft >= max - 2;
+	}
+
+	function layoutTimeline() {
+		var scroller = document.getElementById('dining-timeline-scroller');
+		if (!scroller) return;
+		if (!$('#dining').hasClass('active')) return;
+		if (!$('.dining-panel[data-dining-panel="timeline"]').hasClass('active')) return;
+
+		var vertical = isTimelineVertical();
+		updateTimelineNav(scroller);
+		if (prefersReducedMotion()) {
+			resetTimelineMorph();
+			return;
+		}
+
+		var viewEl = vertical ? document.getElementById('dining') : scroller;
+		if (!viewEl) return;
+		var view = viewEl.getBoundingClientRect();
+		var fade;
+		if (vertical) {
+			if (view.height < 8) return;
+			fade = Math.max(70, Math.min(160, view.height * 0.12));
+		} else {
+			if (view.width < 8) return;
+			fade = Math.max(80, Math.min(170, view.width * 0.1));
+		}
+		var stations = scroller.querySelectorAll('.dining-timeline-station');
+		var months = scroller.querySelectorAll('.dining-timeline-month');
+		var i;
+		for (i = 0; i < stations.length; i++) morphStation(stations[i], view, fade, vertical);
+		for (i = 0; i < months.length; i++) morphMonth(months[i], view, vertical);
+	}
+
+	function scheduleTimelineLayout() {
+		if (timelineTicking) return;
+		timelineTicking = true;
+		requestAnimationFrame(function () {
+			timelineTicking = false;
+			layoutTimeline();
+		});
+	}
+
+	function timelineStride(scroller) {
+		var el = scroller.querySelector('.dining-timeline-station');
+		if (!el) return 300;
+		var parent = el.parentNode;
+		var gap = 20;
+		if (parent) {
+			var cs = window.getComputedStyle(parent);
+			gap = parseFloat(cs.columnGap || cs.gap) || 20;
+		}
+		return el.getBoundingClientRect().width + gap;
+	}
+
+	function scrollTimelineBy(dir) {
+		var scroller = document.getElementById('dining-timeline-scroller');
+		if (!scroller) return;
+		var dx = timelineStride(scroller) * dir;
+		var reduce = prefersReducedMotion();
+		if (scroller.scrollTo) {
+			scroller.scrollTo({ left: scroller.scrollLeft + dx, behavior: reduce ? 'auto' : 'smooth' });
+		} else {
+			scroller.scrollLeft += dx;
+		}
+	}
+
+	function onTimelineScrollSurface(scroller) {
+		if (scroller) {
+			scroller.classList.add('is-scrolling');
+			if (timelineScrollIdle) clearTimeout(timelineScrollIdle);
+			timelineScrollIdle = setTimeout(function () {
+				scroller.classList.remove('is-scrolling');
+			}, 180);
+		}
+		scheduleTimelineLayout();
+	}
+
+	function bindTimeline() {
+		if (timelineBound) return;
+		timelineBound = true;
+		var scroller = document.getElementById('dining-timeline-scroller');
+		if (!scroller) return;
+
+		scroller.addEventListener('scroll', function () {
+			onTimelineScrollSurface(scroller);
+		}, { passive: true });
+
+		var diningSection = document.getElementById('dining');
+		if (diningSection) {
+			diningSection.addEventListener('scroll', function () {
+				if (!isTimelineVertical()) return;
+				onTimelineScrollSurface(scroller);
+			}, { passive: true });
+		}
+
+		if (window.matchMedia) {
+			var mq = window.matchMedia('(max-width: 767px)');
+			var onBreak = function () {
+				resetTimelineMorph();
+				scheduleTimelineLayout();
+			};
+			if (mq.addEventListener) mq.addEventListener('change', onBreak);
+			else if (mq.addListener) mq.addListener(onBreak);
+		}
+
+		scroller.addEventListener('wheel', function (e) {
+			if (isTimelineVertical()) return;
+			if (!$('.dining-panel[data-dining-panel="timeline"]').hasClass('active')) return;
+			if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) return;
+			var max = scroller.scrollWidth - scroller.clientWidth;
+			if (max <= 0) return;
+			var next = scroller.scrollLeft + e.deltaY;
+			if (next <= 0 && scroller.scrollLeft <= 0 && e.deltaY < 0) return;
+			if (next >= max && scroller.scrollLeft >= max - 1 && e.deltaY > 0) return;
+			e.preventDefault();
+			scroller.scrollLeft += e.deltaY;
+		}, { passive: false });
+
+		$('#dining-timeline-prev').on('click', function () { scrollTimelineBy(-1); });
+		$('#dining-timeline-next').on('click', function () { scrollTimelineBy(1); });
+
+		$(document).on('keydown.diningTimeline', function (e) {
+			if (!$('#dining').hasClass('active')) return;
+			if (!$('.dining-panel[data-dining-panel="timeline"]').hasClass('active')) return;
+			if (isTimelineVertical()) return;
+			if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+			if ($(e.target).is('input, textarea, select')) return;
+			if ($(e.target).closest('.mfp-wrap').length) return;
+			e.preventDefault();
+			scrollTimelineBy(e.key === 'ArrowRight' ? 1 : -1);
+		});
+
+		$(window).on('resize.diningTimeline', scheduleTimelineLayout);
+	}
+
+	function tryRenderTimeline() {
+		if (!michelinData || !awardData) return;
+		if (!timelineRendered) {
+			timelineRendered = true;
+			renderTimeline(mergeTimelineVisits(michelinData, awardData));
+			return;
+		}
+		requestAnimationFrame(function () {
+			requestAnimationFrame(layoutTimeline);
+		});
 	}
 
 	/*=========================================================================
@@ -1002,6 +1489,9 @@
 	$(window).on('load', function () {
 		if (!$('#dining').hasClass('active')) return;
 		if ($('.dining-panel[data-dining-panel="award"]').hasClass('active')) {
+			ensureInitAward();
+		} else if ($('.dining-panel[data-dining-panel="timeline"]').hasClass('active')) {
+			ensureInit();
 			ensureInitAward();
 		} else {
 			ensureInit();
