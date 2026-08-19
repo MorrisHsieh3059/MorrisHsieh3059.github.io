@@ -769,8 +769,6 @@
 	overscroll-behavior-x: contain;
 	touch-action: pan-x;
 	outline: none;
-	mask-image: linear-gradient(to right, transparent 0, #000 4.5%, #000 95.5%, transparent 100%);
-	-webkit-mask-image: linear-gradient(to right, transparent 0, #000 4.5%, #000 95.5%, transparent 100%);
 }
 
 .dining-timeline-scroller::-webkit-scrollbar {
@@ -784,7 +782,7 @@
 	flex: 0 0 auto;
 	gap: 2.35rem;
 	width: max-content;
-	padding: 0.35rem max(5rem, 10vw) 0;
+	padding: 0.35rem 0.75rem 0;
 	box-sizing: border-box;
 }
 
@@ -867,7 +865,7 @@
 }
 
 .dining-timeline-scroller.is-scrolling .dining-timeline-card-slot {
-	will-change: opacity;
+	will-change: opacity, mask-image;
 }
 
 .dining-timeline-card {
@@ -1097,19 +1095,27 @@
 	}
 
 	.dining-timeline-month-label {
+		position: relative;
+		z-index: 3;
 		height: auto;
 		margin-bottom: 0.85rem;
 		text-align: center;
 	}
 
 	.dining-timeline-month-label-inner {
-		position: static;
+		position: relative;
+		z-index: 3;
+		display: inline-block;
 		margin: 0 auto;
 	}
 
 	.dining-timeline-month-label-copy {
-		background: #f0f0f0;
-		padding: 0.1rem 0.45rem;
+		position: relative;
+		z-index: 3;
+		display: inline-block;
+		background: #F0F0F0;
+		padding: 0.28rem 0.85rem;
+		box-shadow: 0 0 0 6px #F0F0F0;
 	}
 
 	.dining-timeline-stations {

@@ -1237,33 +1237,62 @@
 		return window.matchMedia && window.matchMedia('(max-width: 767px)').matches;
 	}
 
+	function edgeAlpha(x, viewStart, viewEnd, fade) {
+		var a = Math.min(clamp01((x - viewStart) / fade), clamp01((viewEnd - x) / fade));
+		return a * a;
+	}
+
+	function clearSlotMask(slot) {
+		slot.style.maskImage = '';
+		slot.style.webkitMaskImage = '';
+		slot.style.maskSize = '';
+		slot.style.webkitMaskSize = '';
+	}
+
 	function morphStation(station, view, fade, vertical) {
 		var slot = station.querySelector('.dining-timeline-card-slot');
 		if (!slot) return;
 		var rect = slot.getBoundingClientRect();
-		var t = 0;
-		if (vertical) {
-			var innerTop = view.top + fade * 0.82;
-			var innerBottom = view.bottom - fade * 0.82;
-			var tTop = rect.top < innerTop ? clamp01((innerTop - rect.top) / fade) : 0;
-			var tBottom = rect.bottom > innerBottom ? clamp01((rect.bottom - innerBottom) / fade) : 0;
-			t = Math.max(tTop, tBottom);
-			if (rect.bottom < view.top || rect.top > view.bottom) t = 1;
-		} else {
-			var innerLeft = view.left + fade * 0.82;
-			var innerRight = view.right - fade * 0.82;
-			var tLeft = rect.left < innerLeft ? clamp01((innerLeft - rect.left) / fade) : 0;
-			var tRight = rect.right > innerRight ? clamp01((rect.right - innerRight) / fade) : 0;
-			t = Math.max(tLeft, tRight);
-			if (rect.right < view.left || rect.left > view.right) t = 1;
+		var x0 = vertical ? rect.top : rect.left;
+		var x1 = vertical ? rect.bottom : rect.right;
+		var v0 = vertical ? view.top : view.left;
+		var v1 = vertical ? view.bottom : view.right;
+		var size = vertical ? rect.height : rect.width;
+		var overlap = Math.min(x1, v1) - Math.max(x0, v0);
+		var node = station.querySelector('.dining-timeline-node');
+
+		if (overlap <= 0 || size <= 0) {
+			slot.style.opacity = '0';
+			slot.style.pointerEvents = 'none';
+			clearSlotMask(slot);
+			if (node) node.style.opacity = '0';
+			return;
 		}
 
-		var visible = 1 - t;
-		slot.style.opacity = visible.toFixed(3);
-		slot.style.pointerEvents = t > 0.82 ? 'none' : '';
+		slot.style.opacity = '1';
+		slot.style.pointerEvents = overlap / size < 0.28 ? 'none' : '';
 
-		var node = station.querySelector('.dining-timeline-node');
-		if (node) node.style.opacity = (visible * visible * 0.4).toFixed(3);
+		var a0 = x0 < v0 || x0 > v1 ? 0 : edgeAlpha(x0, v0, v1, fade);
+		var aM = edgeAlpha((x0 + x1) / 2, v0, v1, fade);
+		var a1 = x1 < v0 || x1 > v1 ? 0 : edgeAlpha(x1, v0, v1, fade);
+		if (x0 < v0) a0 = 0;
+		if (x1 > v1) a1 = 0;
+
+		if (a0 > 0.96 && aM > 0.96 && a1 > 0.96) {
+			clearSlotMask(slot);
+		} else {
+			var dir = vertical ? 'to bottom' : 'to right';
+			var mask = 'linear-gradient(' + dir +
+				', rgba(0,0,0,' + a0.toFixed(3) + ') 0%,' +
+				' rgba(0,0,0,' + aM.toFixed(3) + ') 50%,' +
+				' rgba(0,0,0,' + a1.toFixed(3) + ') 100%)';
+			slot.style.maskImage = mask;
+			slot.style.webkitMaskImage = mask;
+			slot.style.maskSize = '100% 100%';
+			slot.style.webkitMaskSize = '100% 100%';
+		}
+
+		if (node) node.style.opacity = (aM * 0.45).toFixed(3);
 	}
 
 	function morphMonth(month, view, vertical) {
@@ -1297,6 +1326,8 @@
 		for (i = 0; i < slots.length; i++) {
 			slots[i].style.opacity = '';
 			slots[i].style.pointerEvents = '';
+			slots[i].style.maskImage = '';
+			slots[i].style.webkitMaskImage = '';
 		}
 		var nodes = document.querySelectorAll('#dining-timeline-track .dining-timeline-node');
 		for (i = 0; i < nodes.length; i++) {
@@ -1344,10 +1375,11 @@
 		var fade;
 		if (vertical) {
 			if (view.height < 8) return;
-			fade = Math.max(70, Math.min(160, view.height * 0.12));
+			fade = Math.max(80, Math.min(140, view.height * 0.12));
+		} else if (view.width < 8) {
+			return;
 		} else {
-			if (view.width < 8) return;
-			fade = Math.max(80, Math.min(170, view.width * 0.1));
+			fade = Math.max(100, Math.min(180, view.width * 0.12));
 		}
 		var stations = scroller.querySelectorAll('.dining-timeline-station');
 		var months = scroller.querySelectorAll('.dining-timeline-month');
