@@ -1,0 +1,258 @@
+{
+  "list": "50-best-bars",
+  "region": "North America",
+  "year": 2022,
+  "source": "https://drinksint.com/attaboy-named-best-bar-in-north-america/",
+  "entries": [
+    {
+      "rank": 1,
+      "name": "Attaboy",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 2,
+      "name": "Handshake Speakeasy",
+      "city": "Mexico City"
+    },
+    {
+      "rank": 3,
+      "name": "Licorería Limantour",
+      "city": "Mexico City"
+    },
+    {
+      "rank": 4,
+      "name": "Katana Kitten",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 5,
+      "name": "Kumiko",
+      "city": "Chicago"
+    },
+    {
+      "rank": 6,
+      "name": "Café La Trova",
+      "city": "Miami"
+    },
+    {
+      "rank": 7,
+      "name": "Baltra Bar",
+      "city": "Mexico City"
+    },
+    {
+      "rank": 8,
+      "name": "Dante",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 9,
+      "name": "Thunderbolt",
+      "city": "Los Angeles"
+    },
+    {
+      "rank": 10,
+      "name": "Civil Liberties",
+      "city": "Toronto"
+    },
+    {
+      "rank": 11,
+      "name": "Zapote Bar",
+      "city": "Playa del Carmen"
+    },
+    {
+      "rank": 12,
+      "name": "La Factoría",
+      "city": "San Juan"
+    },
+    {
+      "rank": 13,
+      "name": "Kaito del Valle",
+      "city": "Mexico City"
+    },
+    {
+      "rank": 14,
+      "name": "Sweet Liberty",
+      "city": "Miami"
+    },
+    {
+      "rank": 15,
+      "name": "Café de Nadie",
+      "city": "Mexico City"
+    },
+    {
+      "rank": 16,
+      "name": "Hanky Panky",
+      "city": "Mexico City"
+    },
+    {
+      "rank": 17,
+      "name": "Double Chicken Please",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 18,
+      "name": "Service Bar",
+      "city": "Washington, DC"
+    },
+    {
+      "rank": 19,
+      "name": "Raised by Wolves",
+      "city": "San Diego"
+    },
+    {
+      "rank": 20,
+      "name": "Sabina Sabe",
+      "city": "Oaxaca"
+    },
+    {
+      "rank": 21,
+      "name": "El Gallo Altanero",
+      "city": "Guadalajara"
+    },
+    {
+      "rank": 22,
+      "name": "Selva",
+      "city": "Oaxaca"
+    },
+    {
+      "rank": 23,
+      "name": "Amor y Amargo",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 24,
+      "name": "Jewel of the South",
+      "city": "New Orleans"
+    },
+    {
+      "rank": 25,
+      "name": "The Keefer Bar",
+      "city": "Vancouver"
+    },
+    {
+      "rank": 26,
+      "name": "Dear Irving",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 27,
+      "name": "Overstory",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 28,
+      "name": "Herbs & Rye",
+      "city": "Las Vegas"
+    },
+    {
+      "rank": 29,
+      "name": "El Pequeño Bar",
+      "city": "Montréal"
+    },
+    {
+      "rank": 30,
+      "name": "Employees Only",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 31,
+      "name": "The Dead Rabbit",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 32,
+      "name": "Broken Shaker",
+      "city": "Miami"
+    },
+    {
+      "rank": 33,
+      "name": "Friends and Family",
+      "city": "San Francisco"
+    },
+    {
+      "rank": 34,
+      "name": "Death & Co (Los Angeles)",
+      "city": "Los Angeles"
+    },
+    {
+      "rank": 35,
+      "name": "Mace",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 36,
+      "name": "Death & Co (Denver)",
+      "city": "Denver"
+    },
+    {
+      "rank": 37,
+      "name": "Arca",
+      "city": "Tulum"
+    },
+    {
+      "rank": 38,
+      "name": "Mother",
+      "city": "Toronto"
+    },
+    {
+      "rank": 39,
+      "name": "ABV",
+      "city": "San Francisco"
+    },
+    {
+      "rank": 40,
+      "name": "El Floridita",
+      "city": "Havana"
+    },
+    {
+      "rank": 41,
+      "name": "Bar Raval",
+      "city": "Toronto"
+    },
+    {
+      "rank": 42,
+      "name": "Bar Leather Apron",
+      "city": "Honolulu"
+    },
+    {
+      "rank": 43,
+      "name": "Clover Club",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 44,
+      "name": "Bitter & Twisted",
+      "city": "Phoenix"
+    },
+    {
+      "rank": 45,
+      "name": "Cloakroom",
+      "city": "Montréal"
+    },
+    {
+      "rank": 46,
+      "name": "Julep",
+      "city": "Houston"
+    },
+    {
+      "rank": 47,
+      "name": "Bar Mordecai",
+      "city": "Toronto"
+    },
+    {
+      "rank": 48,
+      "name": "Teardrop Lounge",
+      "city": "Portland"
+    },
+    {
+      "rank": 49,
+      "name": "Bar Kismet",
+      "city": "Halifax"
+    },
+    {
+      "rank": 50,
+      "name": "Genever",
+      "city": "Los Angeles"
+    }
+  ]
+}

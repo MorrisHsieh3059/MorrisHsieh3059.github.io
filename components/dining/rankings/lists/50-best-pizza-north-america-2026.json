@@ -1,0 +1,278 @@
+{
+  "list": "50-best-pizza",
+  "region": "North America",
+  "year": 2026,
+  "source": "https://www.50toppizza.it/50-top-pizza-usa-2026-una-pizza-napoletana-in-new-york-is-the-best-pizzeria-in-the-usa-for-2026/",
+  "entries": [
+    {
+      "rank": 1,
+      "name": "Una Pizza Napoletana",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 2,
+      "name": "Pizzeria Sei",
+      "city": "Los Angeles"
+    },
+    {
+      "rank": 2,
+      "name": "Tony's Pizza Napoletana",
+      "city": "San Francisco"
+    },
+    {
+      "rank": 3,
+      "name": "Razza",
+      "city": "Jersey City"
+    },
+    {
+      "rank": 4,
+      "name": "Truly Pizza",
+      "city": "Dana Point"
+    },
+    {
+      "rank": 5,
+      "name": "Francesco Martucci",
+      "city": "Miami"
+    },
+    {
+      "rank": 6,
+      "name": "Don Antonio",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 7,
+      "name": "Jay's",
+      "city": "Kenmore"
+    },
+    {
+      "rank": 8,
+      "name": "Ribalta",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 8,
+      "name": "Robert's",
+      "city": "Chicago"
+    },
+    {
+      "rank": 9,
+      "name": "Leña",
+      "city": "Cleveland"
+    },
+    {
+      "rank": 10,
+      "name": "Ken's Artisan Pizza",
+      "city": "Portland"
+    },
+    {
+      "rank": 11,
+      "name": "La Leggenda",
+      "city": "Miami"
+    },
+    {
+      "rank": 11,
+      "name": "'O Munaciello",
+      "city": "Miami"
+    },
+    {
+      "rank": 12,
+      "name": "Valentina's",
+      "city": "Madison"
+    },
+    {
+      "rank": 13,
+      "name": "Stretch Pizza",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 14,
+      "name": "Audace",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 15,
+      "name": "Pasquale's",
+      "city": "South Kingstown"
+    },
+    {
+      "rank": 15,
+      "name": "Pizza Secret",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 16,
+      "name": "Pizzeria Beddia",
+      "city": "Philadelphia"
+    },
+    {
+      "rank": 17,
+      "name": "Ops",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 18,
+      "name": "Partenope Ristorante",
+      "city": "Dallas"
+    },
+    {
+      "rank": 19,
+      "name": "Mission Pizza Napoletana",
+      "city": "Winston-Salem"
+    },
+    {
+      "rank": 20,
+      "name": "Inferno Pizzeria Napoletana",
+      "city": "Darnestown"
+    },
+    {
+      "rank": 21,
+      "name": "Kesté",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 22,
+      "name": "Flour House",
+      "city": "San Luis Obispo"
+    },
+    {
+      "rank": 23,
+      "name": "Il Forno",
+      "city": "San Antonio"
+    },
+    {
+      "rank": 24,
+      "name": "Fabrica Pizza",
+      "city": "Tampa"
+    },
+    {
+      "rank": 25,
+      "name": "Nardò",
+      "city": "Huntington Beach"
+    },
+    {
+      "rank": 26,
+      "name": "GRANA",
+      "city": "Portland"
+    },
+    {
+      "rank": 27,
+      "name": "Pizza Delicious",
+      "city": "New Orleans"
+    },
+    {
+      "rank": 28,
+      "name": "Coals",
+      "city": "Louisville"
+    },
+    {
+      "rank": 29,
+      "name": "Craft 64",
+      "city": "Scottsdale"
+    },
+    {
+      "rank": 30,
+      "name": "Sho Pizza Bar",
+      "city": "Nashville"
+    },
+    {
+      "rank": 31,
+      "name": "Bricco",
+      "city": "Haddon Township"
+    },
+    {
+      "rank": 32,
+      "name": "Salsa",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 33,
+      "name": "Antico Pizza",
+      "city": "Atlanta"
+    },
+    {
+      "rank": 34,
+      "name": "Zeneli",
+      "city": "New Haven"
+    },
+    {
+      "rank": 35,
+      "name": "Posto",
+      "city": "Somerville"
+    },
+    {
+      "rank": 36,
+      "name": "Andrew Bellucci's Pizzeria",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 37,
+      "name": "A Modo Mio",
+      "city": "Arlington"
+    },
+    {
+      "rank": 38,
+      "name": "Tribute Pizza",
+      "city": "San Diego"
+    },
+    {
+      "rank": 39,
+      "name": "Pasquale Jones",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 40,
+      "name": "Pizzeria Florian",
+      "city": "East Aurora"
+    },
+    {
+      "rank": 41,
+      "name": "Penelope Pizza",
+      "city": "Tucson"
+    },
+    {
+      "rank": 42,
+      "name": "Pizza Baby",
+      "city": "Charlotte"
+    },
+    {
+      "rank": 43,
+      "name": "Coda di Volpe",
+      "city": "Chicago"
+    },
+    {
+      "rank": 44,
+      "name": "Angeli's Pizzeria",
+      "city": "Baltimore"
+    },
+    {
+      "rank": 45,
+      "name": "Lincoln Winebar",
+      "city": "Mount Vernon"
+    },
+    {
+      "rank": 46,
+      "name": "Hapa Pizza",
+      "city": "Beaverton"
+    },
+    {
+      "rank": 47,
+      "name": "Si Cara",
+      "city": "Cambridge"
+    },
+    {
+      "rank": 48,
+      "name": "Nostrana",
+      "city": "Portland"
+    },
+    {
+      "rank": 49,
+      "name": "Quattro",
+      "city": "Boston"
+    },
+    {
+      "rank": 50,
+      "name": "Lucky Dough Pizza",
+      "city": "Pensacola"
+    }
+  ]
+}

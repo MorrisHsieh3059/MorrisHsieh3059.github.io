@@ -1,0 +1,508 @@
+{
+  "list": "50-best-restaurants",
+  "region": "World",
+  "year": 2021,
+  "source": "https://www.theworlds50best.com/list/1-50/previous-lists + PR 51-100",
+  "entries": [
+    {
+      "rank": 1,
+      "name": "Noma",
+      "city": "Copenhagen"
+    },
+    {
+      "rank": 2,
+      "name": "Geranium",
+      "city": "Copenhagen"
+    },
+    {
+      "rank": 3,
+      "name": "Asador Etxebarri",
+      "city": "Atxondo"
+    },
+    {
+      "rank": 4,
+      "name": "Central",
+      "city": "Lima"
+    },
+    {
+      "rank": 5,
+      "name": "Disfrutar",
+      "city": "Barcelona"
+    },
+    {
+      "rank": 6,
+      "name": "Frantzén",
+      "city": "Stockholm"
+    },
+    {
+      "rank": 7,
+      "name": "Maido",
+      "city": "Lima"
+    },
+    {
+      "rank": 8,
+      "name": "Odette",
+      "city": "Singapore"
+    },
+    {
+      "rank": 9,
+      "name": "Pujol",
+      "city": "Mexico City"
+    },
+    {
+      "rank": 10,
+      "name": "The Chairman",
+      "city": "Hong Kong"
+    },
+    {
+      "rank": 11,
+      "name": "Den",
+      "city": "Tokyo"
+    },
+    {
+      "rank": 12,
+      "name": "Steirereck",
+      "city": "Vienna"
+    },
+    {
+      "rank": 13,
+      "name": "Don Julio",
+      "city": "Buenos Aires"
+    },
+    {
+      "rank": 14,
+      "name": "Mugaritz",
+      "city": "San Sebastian"
+    },
+    {
+      "rank": 15,
+      "name": "Lido 84",
+      "city": "Gardone Riviera"
+    },
+    {
+      "rank": 16,
+      "name": "Elkano",
+      "city": "Getaria"
+    },
+    {
+      "rank": 17,
+      "name": "A Casa do Porco",
+      "city": "São Paulo"
+    },
+    {
+      "rank": 18,
+      "name": "Piazza Duomo",
+      "city": "Alba"
+    },
+    {
+      "rank": 19,
+      "name": "Narisawa",
+      "city": "Tokyo"
+    },
+    {
+      "rank": 20,
+      "name": "DiverXO",
+      "city": "Madrid"
+    },
+    {
+      "rank": 21,
+      "name": "Hiša Franko",
+      "city": "Kobarid"
+    },
+    {
+      "rank": 22,
+      "name": "Cosme",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 23,
+      "name": "Arpège",
+      "city": "Paris"
+    },
+    {
+      "rank": 24,
+      "name": "Septime",
+      "city": "Paris"
+    },
+    {
+      "rank": 25,
+      "name": "White Rabbit",
+      "city": "Moscow"
+    },
+    {
+      "rank": 26,
+      "name": "Le Calandre",
+      "city": "Rubano"
+    },
+    {
+      "rank": 27,
+      "name": "Quintonil",
+      "city": "Mexico City"
+    },
+    {
+      "rank": 28,
+      "name": "Benu",
+      "city": "San Francisco"
+    },
+    {
+      "rank": 29,
+      "name": "Reale",
+      "city": "Castel di Sangro"
+    },
+    {
+      "rank": 30,
+      "name": "Twins Garden",
+      "city": "Moscow"
+    },
+    {
+      "rank": 31,
+      "name": "Restaurant Tim Raue",
+      "city": "Berlin"
+    },
+    {
+      "rank": 32,
+      "name": "The Clove Club",
+      "city": "London"
+    },
+    {
+      "rank": 33,
+      "name": "Lyle's",
+      "city": "London"
+    },
+    {
+      "rank": 34,
+      "name": "Burnt Ends",
+      "city": "Singapore"
+    },
+    {
+      "rank": 35,
+      "name": "Ultraviolet by Paul Pairet",
+      "city": "Shanghai"
+    },
+    {
+      "rank": 36,
+      "name": "Hof Van Cleve",
+      "city": "Kruishoutem"
+    },
+    {
+      "rank": 37,
+      "name": "SingleThread",
+      "city": "Healdsburg"
+    },
+    {
+      "rank": 38,
+      "name": "Boragó",
+      "city": "Santiago"
+    },
+    {
+      "rank": 39,
+      "name": "Florilège",
+      "city": "Tokyo"
+    },
+    {
+      "rank": 40,
+      "name": "Sühring",
+      "city": "Bangkok"
+    },
+    {
+      "rank": 41,
+      "name": "Alléno Paris au Pavillon Ledoyen",
+      "city": "Paris"
+    },
+    {
+      "rank": 42,
+      "name": "Belcanto",
+      "city": "Lisbon"
+    },
+    {
+      "rank": 43,
+      "name": "Atomix",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 44,
+      "name": "Le Bernardin",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 45,
+      "name": "Nobelhart & Schmutzig",
+      "city": "Berlin"
+    },
+    {
+      "rank": 46,
+      "name": "Leo",
+      "city": "Bogotá"
+    },
+    {
+      "rank": 47,
+      "name": "Maaemo",
+      "city": "Oslo"
+    },
+    {
+      "rank": 48,
+      "name": "Atelier Crenn",
+      "city": "San Francisco"
+    },
+    {
+      "rank": 49,
+      "name": "Azurmendi",
+      "city": "Larrabetzu"
+    },
+    {
+      "rank": 50,
+      "name": "Wolfgat",
+      "city": "Paternoster"
+    },
+    {
+      "rank": 51,
+      "name": "Nihonryori RyuGin",
+      "city": "Tokyo"
+    },
+    {
+      "rank": 52,
+      "name": "Uliassi",
+      "city": "Senigallia"
+    },
+    {
+      "rank": 53,
+      "name": "Nerua",
+      "city": "Bilbao"
+    },
+    {
+      "rank": 54,
+      "name": "St. Hubertus",
+      "city": "San Cassiano"
+    },
+    {
+      "rank": 55,
+      "name": "Chef's Table at Brooklyn Fare",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 56,
+      "name": "Sud 777",
+      "city": "Mexico City"
+    },
+    {
+      "rank": 57,
+      "name": "Brae",
+      "city": "Birregurra"
+    },
+    {
+      "rank": 58,
+      "name": "Alchemist",
+      "city": "Copenhagen"
+    },
+    {
+      "rank": 59,
+      "name": "Schloss Schauenstein",
+      "city": "Fürstenau"
+    },
+    {
+      "rank": 60,
+      "name": "Mikla",
+      "city": "Istanbul"
+    },
+    {
+      "rank": 61,
+      "name": "D.O.M.",
+      "city": "São Paulo"
+    },
+    {
+      "rank": 62,
+      "name": "Mingles",
+      "city": "Seoul"
+    },
+    {
+      "rank": 63,
+      "name": "Sorn",
+      "city": "Bangkok"
+    },
+    {
+      "rank": 64,
+      "name": "Core by Clare Smyth",
+      "city": "London"
+    },
+    {
+      "rank": 65,
+      "name": "Dinner by Heston Blumenthal",
+      "city": "London"
+    },
+    {
+      "rank": 66,
+      "name": "The Jane",
+      "city": "Antwerp"
+    },
+    {
+      "rank": 67,
+      "name": "Oteque",
+      "city": "Rio de Janeiro"
+    },
+    {
+      "rank": 68,
+      "name": "Alcalde",
+      "city": "Guadalajara"
+    },
+    {
+      "rank": 69,
+      "name": "De Librije",
+      "city": "Zwolle"
+    },
+    {
+      "rank": 70,
+      "name": "Alinea",
+      "city": "Chicago"
+    },
+    {
+      "rank": 71,
+      "name": "Vea",
+      "city": "Hong Kong"
+    },
+    {
+      "rank": 72,
+      "name": "Le Du",
+      "city": "Bangkok"
+    },
+    {
+      "rank": 73,
+      "name": "Il Ristorante Luca Fantin",
+      "city": "Tokyo"
+    },
+    {
+      "rank": 74,
+      "name": "Quique Dacosta",
+      "city": "Dénia"
+    },
+    {
+      "rank": 75,
+      "name": "Sazenka",
+      "city": "Tokyo"
+    },
+    {
+      "rank": 76,
+      "name": "La Cime",
+      "city": "Osaka"
+    },
+    {
+      "rank": 77,
+      "name": "Willem Hiele",
+      "city": "Koksijde"
+    },
+    {
+      "rank": 78,
+      "name": "Brat",
+      "city": "London"
+    },
+    {
+      "rank": 79,
+      "name": "Aponiente",
+      "city": "El Puerto de Santa María"
+    },
+    {
+      "rank": 80,
+      "name": "El Chato",
+      "city": "Bogotá"
+    },
+    {
+      "rank": 81,
+      "name": "La Colombe",
+      "city": "Cape Town"
+    },
+    {
+      "rank": 82,
+      "name": "Indian Accent",
+      "city": "New Delhi"
+    },
+    {
+      "rank": 83,
+      "name": "Epicure",
+      "city": "Paris"
+    },
+    {
+      "rank": 84,
+      "name": "Le Clarence",
+      "city": "Paris"
+    },
+    {
+      "rank": 85,
+      "name": "Lasai",
+      "city": "Rio de Janeiro"
+    },
+    {
+      "rank": 86,
+      "name": "Restaurant David Toutain",
+      "city": "Paris"
+    },
+    {
+      "rank": 87,
+      "name": "Ikoyi",
+      "city": "London"
+    },
+    {
+      "rank": 88,
+      "name": "Belon",
+      "city": "Hong Kong"
+    },
+    {
+      "rank": 89,
+      "name": "Amass",
+      "city": "Copenhagen"
+    },
+    {
+      "rank": 90,
+      "name": "Mil",
+      "city": "Moray"
+    },
+    {
+      "rank": 91,
+      "name": "La Grenouillère",
+      "city": "La Madelaine-sous-Montreuil"
+    },
+    {
+      "rank": 92,
+      "name": "Fyn",
+      "city": "Cape Town"
+    },
+    {
+      "rank": 93,
+      "name": "Gaa",
+      "city": "Bangkok"
+    },
+    {
+      "rank": 94,
+      "name": "Arzak",
+      "city": "San Sebastian"
+    },
+    {
+      "rank": 95,
+      "name": "Kjolle",
+      "city": "Lima"
+    },
+    {
+      "rank": 96,
+      "name": "Astrid y Gastón",
+      "city": "Lima"
+    },
+    {
+      "rank": 97,
+      "name": "Attica",
+      "city": "Melbourne"
+    },
+    {
+      "rank": 98,
+      "name": "Alo",
+      "city": "Toronto"
+    },
+    {
+      "rank": 99,
+      "name": "L'Effervescence",
+      "city": "Tokyo"
+    },
+    {
+      "rank": 100,
+      "name": "Amber",
+      "city": "taking in"
+    }
+  ]
+}

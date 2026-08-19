@@ -1,0 +1,508 @@
+{
+  "list": "50-best-bars",
+  "region": "World",
+  "year": 2024,
+  "source": "https://www.theworlds50best.com/bars/list/1-50/previous-lists",
+  "entries": [
+    {
+      "rank": 1,
+      "name": "Handshake Speakeasy",
+      "city": "Mexico City"
+    },
+    {
+      "rank": 2,
+      "name": "Bar Leone",
+      "city": "Hong Kong"
+    },
+    {
+      "rank": 3,
+      "name": "Sips",
+      "city": "Barcelona"
+    },
+    {
+      "rank": 4,
+      "name": "Tayēr + Elementary",
+      "city": "London"
+    },
+    {
+      "rank": 5,
+      "name": "Jigger & Pony",
+      "city": "Singapore"
+    },
+    {
+      "rank": 6,
+      "name": "Line",
+      "city": "Athens"
+    },
+    {
+      "rank": 7,
+      "name": "Tres Monos",
+      "city": "Buenos Aires"
+    },
+    {
+      "rank": 8,
+      "name": "Alquímico",
+      "city": "Cartagena"
+    },
+    {
+      "rank": 9,
+      "name": "Zest",
+      "city": "Seoul"
+    },
+    {
+      "rank": 10,
+      "name": "Paradiso",
+      "city": "Barcelona"
+    },
+    {
+      "rank": 11,
+      "name": "Himkok",
+      "city": "Oslo"
+    },
+    {
+      "rank": 12,
+      "name": "BKK Social Club",
+      "city": "Bangkok"
+    },
+    {
+      "rank": 13,
+      "name": "Connaught Bar",
+      "city": "London"
+    },
+    {
+      "rank": 14,
+      "name": "Double Chicken Please",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 15,
+      "name": "Overstory",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 16,
+      "name": "Lady Bee",
+      "city": "Lima"
+    },
+    {
+      "rank": 17,
+      "name": "Baba au Rum",
+      "city": "Athens"
+    },
+    {
+      "rank": 18,
+      "name": "Coa",
+      "city": "Hong Kong"
+    },
+    {
+      "rank": 19,
+      "name": "The Cambridge Public House",
+      "city": "Paris"
+    },
+    {
+      "rank": 20,
+      "name": "Tlecān",
+      "city": "Mexico City"
+    },
+    {
+      "rank": 21,
+      "name": "Caretaker's Cottage",
+      "city": "Melbourne"
+    },
+    {
+      "rank": 22,
+      "name": "CoChinChina",
+      "city": "Buenos Aires"
+    },
+    {
+      "rank": 23,
+      "name": "Salmon Guru",
+      "city": "Madrid"
+    },
+    {
+      "rank": 24,
+      "name": "Martiny's",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 25,
+      "name": "Bar Benfiddich",
+      "city": "Tokyo"
+    },
+    {
+      "rank": 26,
+      "name": "Maybe Sammy",
+      "city": "Sydney"
+    },
+    {
+      "rank": 27,
+      "name": "Superbueno",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 28,
+      "name": "Nutmeg & Clove",
+      "city": "Singapore"
+    },
+    {
+      "rank": 29,
+      "name": "Satan's Whiskers",
+      "city": "London"
+    },
+    {
+      "rank": 30,
+      "name": "Panda & Sons",
+      "city": "Edinburgh"
+    },
+    {
+      "rank": 31,
+      "name": "Tan Tan",
+      "city": "São Paulo"
+    },
+    {
+      "rank": 32,
+      "name": "Licorería Limantour",
+      "city": "Mexico City"
+    },
+    {
+      "rank": 33,
+      "name": "Drink Kong",
+      "city": "Rome"
+    },
+    {
+      "rank": 34,
+      "name": "Jewel of the South",
+      "city": "New Orleans"
+    },
+    {
+      "rank": 35,
+      "name": "Byrdi",
+      "city": "Melbourne"
+    },
+    {
+      "rank": 36,
+      "name": "Locale Firenze",
+      "city": "Florence"
+    },
+    {
+      "rank": 37,
+      "name": "Scarfes Bar",
+      "city": "London"
+    },
+    {
+      "rank": 38,
+      "name": "Moebius Milano",
+      "city": "Milan"
+    },
+    {
+      "rank": 39,
+      "name": "Bar Nouveau",
+      "city": "Paris"
+    },
+    {
+      "rank": 40,
+      "name": "Mimi Kakushi",
+      "city": "Dubai"
+    },
+    {
+      "rank": 41,
+      "name": "Bar Us",
+      "city": "Bangkok"
+    },
+    {
+      "rank": 42,
+      "name": "Virtù",
+      "city": "Tokyo"
+    },
+    {
+      "rank": 43,
+      "name": "Atlas",
+      "city": "Singapore"
+    },
+    {
+      "rank": 44,
+      "name": "La Sala de Laura",
+      "city": "Bogotá"
+    },
+    {
+      "rank": 45,
+      "name": "Röda Huset",
+      "city": "Stockholm"
+    },
+    {
+      "rank": 46,
+      "name": "Florería Atlántico",
+      "city": "Buenos Aires"
+    },
+    {
+      "rank": 47,
+      "name": "Analogue Initiative",
+      "city": "Singapore"
+    },
+    {
+      "rank": 48,
+      "name": "El Gallo Altanero",
+      "city": "Guadalajara"
+    },
+    {
+      "rank": 49,
+      "name": "Danico",
+      "city": "Paris"
+    },
+    {
+      "rank": 50,
+      "name": "1930",
+      "city": "Milan"
+    },
+    {
+      "rank": 51,
+      "name": "The Bar in Front of the Bar",
+      "city": "Athens"
+    },
+    {
+      "rank": 52,
+      "name": "Kwãnt Mayfair",
+      "city": "London"
+    },
+    {
+      "rank": 53,
+      "name": "Freni e Frizioni",
+      "city": "Rome"
+    },
+    {
+      "rank": 54,
+      "name": "The SG Club",
+      "city": "Tokyo"
+    },
+    {
+      "rank": 55,
+      "name": "Arca",
+      "city": "Tulum"
+    },
+    {
+      "rank": 56,
+      "name": "Cat Bite Club",
+      "city": "Singapore"
+    },
+    {
+      "rank": 57,
+      "name": "Mahaniyom Cocktail Bar",
+      "city": "Bangkok"
+    },
+    {
+      "rank": 58,
+      "name": "Argo",
+      "city": "Hong Kong"
+    },
+    {
+      "rank": 59,
+      "name": "Little Red Door",
+      "city": "Paris"
+    },
+    {
+      "rank": 60,
+      "name": "The Clumsies",
+      "city": "Athens"
+    },
+    {
+      "rank": 61,
+      "name": "A Bar with Shapes For a Name",
+      "city": "London"
+    },
+    {
+      "rank": 62,
+      "name": "Mirror Bar",
+      "city": "Bratislava"
+    },
+    {
+      "rank": 63,
+      "name": "Hope & Sesame",
+      "city": "Guangzhou"
+    },
+    {
+      "rank": 64,
+      "name": "Thunderbolt",
+      "city": "Los Angeles"
+    },
+    {
+      "rank": 65,
+      "name": "Angelita",
+      "city": "Madrid"
+    },
+    {
+      "rank": 66,
+      "name": "Café La Trova",
+      "city": "Miami"
+    },
+    {
+      "rank": 67,
+      "name": "Native",
+      "city": "Singapore"
+    },
+    {
+      "rank": 68,
+      "name": "Barro Negro",
+      "city": "Athens"
+    },
+    {
+      "rank": 69,
+      "name": "Carnaval",
+      "city": "Lima"
+    },
+    {
+      "rank": 70,
+      "name": "Bar Pompette",
+      "city": "Toronto"
+    },
+    {
+      "rank": 71,
+      "name": "Bar Cham",
+      "city": "Seoul"
+    },
+    {
+      "rank": 72,
+      "name": "Svanen",
+      "city": "Oslo"
+    },
+    {
+      "rank": 73,
+      "name": "Wax On",
+      "city": "Berlin"
+    },
+    {
+      "rank": 74,
+      "name": "Night Hawk",
+      "city": "Singapore"
+    },
+    {
+      "rank": 75,
+      "name": "Hero Bar",
+      "city": "Nairobi"
+    },
+    {
+      "rank": 76,
+      "name": "LPM Dubai",
+      "city": "Dubai"
+    },
+    {
+      "rank": 77,
+      "name": "Bird",
+      "city": "Copenhagen"
+    },
+    {
+      "rank": 78,
+      "name": "L'Antiquario",
+      "city": "Naples"
+    },
+    {
+      "rank": 79,
+      "name": "Dante",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 80,
+      "name": "Katana Kitten",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 81,
+      "name": "Sin + Tax",
+      "city": "Johannesburg"
+    },
+    {
+      "rank": 82,
+      "name": "The Savory Project",
+      "city": "Hong Kong"
+    },
+    {
+      "rank": 83,
+      "name": "Baltra Bar",
+      "city": "Mexico City"
+    },
+    {
+      "rank": 84,
+      "name": "Attaboy",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 85,
+      "name": "Vesper",
+      "city": "Bangkok"
+    },
+    {
+      "rank": 86,
+      "name": "Smoke & Bitters",
+      "city": "Hiriketiya"
+    },
+    {
+      "rank": 87,
+      "name": "Rayo",
+      "city": "Mexico City"
+    },
+    {
+      "rank": 88,
+      "name": "Pacific Cocktail Haven",
+      "city": "San Francisco"
+    },
+    {
+      "rank": 89,
+      "name": "The Bellwood",
+      "city": "Tokyo"
+    },
+    {
+      "rank": 90,
+      "name": "Amaro",
+      "city": "London"
+    },
+    {
+      "rank": 91,
+      "name": "Zapote Bar",
+      "city": "Playa del Carmen"
+    },
+    {
+      "rank": 92,
+      "name": "Camparino in Galleria",
+      "city": "Milan"
+    },
+    {
+      "rank": 93,
+      "name": "Hanky Panky",
+      "city": "Mexico City"
+    },
+    {
+      "rank": 94,
+      "name": "Red Frog",
+      "city": "Lisbon"
+    },
+    {
+      "rank": 95,
+      "name": "Nouvelle Vague",
+      "city": "Tirana"
+    },
+    {
+      "rank": 96,
+      "name": "Cantina OK!",
+      "city": "Sydney"
+    },
+    {
+      "rank": 97,
+      "name": "Employees Only",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 98,
+      "name": "Penrose",
+      "city": "Kuala Lumpur"
+    },
+    {
+      "rank": 99,
+      "name": "Viajante87",
+      "city": "London"
+    },
+    {
+      "rank": 100,
+      "name": "Above Board",
+      "city": "Melbourne"
+    }
+  ]
+}

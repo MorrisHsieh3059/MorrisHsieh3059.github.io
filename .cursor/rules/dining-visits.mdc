@@ -11,7 +11,7 @@ When Morris names a restaurant and visit date, finish the visit in this order. D
 
 2. **Michelin (live)** — Search the current Michelin Guide. Record `stars` 1–3 + `status` (`current`|`former`), or `rank` `gourmand`|`selected` (no `stars`), or skip Michelin. Copy cuisine/city from the listing. NYC city is `New York, NY`.
 
-3. **Awards (cache first)** — `python3 scripts/dining-rankings.py lookup "Name"`. Check every slug in `ACCOLADE_LISTS`: 50 Best restaurants/bars (World, North America, Europe), NYT 100 Best (2023–2026, region `New York`), 101 Best burgers/steakhouses (World), 50 Top Pizza (World, North America, Europe), OAD if it appears. Cache miss or stale year → web-search the **official** list, then `python3 scripts/dining-rankings.py add ...`. Never invent a rank or a city subset.
+3. **Awards (cache first)** — `python3 scripts/dining-rankings.py lookup "Name"`. Check every slug in `ACCOLADE_LISTS`: 50 Best restaurants/bars (World, North America, Europe), NYT 100 Best (2023–2026, region `New York`; **2025 ranked 1–10 only, the other 90 are listed with no rank**), 101 Best burgers/steakhouses (World), 50 Top Pizza (World, North America, Europe), OAD if it appears. Copy `city` from the cache hit (visit JSON `city`; NYC is `New York, NY`). Cache miss or stale year → web-search the **official** list, then `python3 scripts/dining-rankings.py add ...` with `--city`. Never invent a rank or a city subset.
 
 4. **JSON** — Michelin only → `data/michelin.json`. Award only → `data/award.json` (`accolades[]` with closed-set `list` slugs). Both → **same `id`**, one photo folder. `menu` is `à la carte` | `full tasting` | `restaurant week`. `pictures` starts `[]`. Dual-listed meals share photos.
 

@@ -18,3 +18,8 @@ _to_delete/
 
 # Personal scratch notes, not part of the site.
 _rundown.txt
+
+# Local dining-rankings ingest inputs (optional; used by
+# scripts/dining-rankings-ingest.py). The committed artifacts are
+# components/dining/rankings/lists/*.json and rankings.json.
+components/dining/rankings/sources/

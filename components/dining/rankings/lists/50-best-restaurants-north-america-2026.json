@@ -1,0 +1,258 @@
+{
+  "list": "50-best-restaurants",
+  "region": "North America",
+  "year": 2026,
+  "source": "https://www.prnewswire.com/news-releases/smyth-in-chicago-is-named-no1-in-the-list-of-north-americas-50-best-restaurants-2026-302785274.html",
+  "entries": [
+    {
+      "rank": 1,
+      "name": "Smyth",
+      "city": "Chicago"
+    },
+    {
+      "rank": 2,
+      "name": "Eight",
+      "city": "Calgary"
+    },
+    {
+      "rank": 3,
+      "name": "Restaurant Pearl Morissette",
+      "city": "Lincoln"
+    },
+    {
+      "rank": 4,
+      "name": "Dakar NOLA",
+      "city": "New Orleans"
+    },
+    {
+      "rank": 5,
+      "name": "Mon Lapin",
+      "city": "Montreal"
+    },
+    {
+      "rank": 6,
+      "name": "Albi",
+      "city": "Washington, DC"
+    },
+    {
+      "rank": 7,
+      "name": "Atomix",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 8,
+      "name": "Quetzal",
+      "city": "Toronto"
+    },
+    {
+      "rank": 9,
+      "name": "Tanière3",
+      "city": "Quebec City"
+    },
+    {
+      "rank": 10,
+      "name": "César",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 11,
+      "name": "Kalaya",
+      "city": "Philadelphia"
+    },
+    {
+      "rank": 12,
+      "name": "Le Veau d'Or",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 13,
+      "name": "Le Bernardin",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 14,
+      "name": "Kabawa",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 15,
+      "name": "Le Violon",
+      "city": "Montreal"
+    },
+    {
+      "rank": 16,
+      "name": "SingleThread",
+      "city": "Healdsburg"
+    },
+    {
+      "rank": 17,
+      "name": "Published on Main",
+      "city": "Vancouver"
+    },
+    {
+      "rank": 18,
+      "name": "Jungsik",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 19,
+      "name": "Penny",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 20,
+      "name": "Emeril's",
+      "city": "New Orleans"
+    },
+    {
+      "rank": 21,
+      "name": "Chubby Fish",
+      "city": "Charleston"
+    },
+    {
+      "rank": 22,
+      "name": "Saison",
+      "city": "San Francisco"
+    },
+    {
+      "rank": 23,
+      "name": "Aska",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 24,
+      "name": "Moon Rabbit",
+      "city": "Washington, DC"
+    },
+    {
+      "rank": 25,
+      "name": "Edulis",
+      "city": "Toronto"
+    },
+    {
+      "rank": 26,
+      "name": "Holbox",
+      "city": "Los Angeles"
+    },
+    {
+      "rank": 27,
+      "name": "Beba",
+      "city": "Montreal"
+    },
+    {
+      "rank": 28,
+      "name": "Mhel",
+      "city": "Toronto"
+    },
+    {
+      "rank": 29,
+      "name": "Avize",
+      "city": "Atlanta"
+    },
+    {
+      "rank": 30,
+      "name": "Acamaya",
+      "city": "New Orleans"
+    },
+    {
+      "rank": 31,
+      "name": "Addison by William Bradley",
+      "city": "San Diego"
+    },
+    {
+      "rank": 32,
+      "name": "Providence",
+      "city": "Los Angeles"
+    },
+    {
+      "rank": 33,
+      "name": "Benu",
+      "city": "San Francisco"
+    },
+    {
+      "rank": 34,
+      "name": "Sabayon",
+      "city": "Montreal"
+    },
+    {
+      "rank": 35,
+      "name": "AnnaLena",
+      "city": "Vancouver"
+    },
+    {
+      "rank": 36,
+      "name": "Corima",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 37,
+      "name": "Dōgon by Kwame Onwuachi",
+      "city": "Washington, DC"
+    },
+    {
+      "rank": 38,
+      "name": "Torrisi",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 39,
+      "name": "Tatiana by Kwame Onwuachi",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 40,
+      "name": "Friday Saturday Sunday",
+      "city": "Philadelphia"
+    },
+    {
+      "rank": 41,
+      "name": "Semma",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 42,
+      "name": "Pascual",
+      "city": "Washington, DC"
+    },
+    {
+      "rank": 43,
+      "name": "Gramercy Tavern",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 44,
+      "name": "Atelier Crenn",
+      "city": "San Francisco"
+    },
+    {
+      "rank": 45,
+      "name": "Sons & Daughters",
+      "city": "San Francisco"
+    },
+    {
+      "rank": 46,
+      "name": "Somni",
+      "city": "Los Angeles"
+    },
+    {
+      "rank": 47,
+      "name": "Wild Blue",
+      "city": "Whistler"
+    },
+    {
+      "rank": 48,
+      "name": "The Pine",
+      "city": "Collingwood"
+    },
+    {
+      "rank": 49,
+      "name": "Kato",
+      "city": "Los Angeles"
+    },
+    {
+      "rank": 50,
+      "name": "Diane's Place",
+      "city": "Minneapolis"
+    }
+  ]
+}

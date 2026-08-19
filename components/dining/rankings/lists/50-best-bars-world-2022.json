@@ -1,0 +1,258 @@
+{
+  "list": "50-best-bars",
+  "region": "World",
+  "year": 2022,
+  "source": "https://www.theworlds50best.com/bars/list/1-50/previous-lists",
+  "entries": [
+    {
+      "rank": 1,
+      "name": "Paradiso",
+      "city": "Barcelona"
+    },
+    {
+      "rank": 2,
+      "name": "Tayēr + Elementary",
+      "city": "London"
+    },
+    {
+      "rank": 3,
+      "name": "Sips",
+      "city": "Barcelona"
+    },
+    {
+      "rank": 4,
+      "name": "Licorería Limantour",
+      "city": "Mexico City"
+    },
+    {
+      "rank": 5,
+      "name": "Little Red Door",
+      "city": "Paris"
+    },
+    {
+      "rank": 6,
+      "name": "Double Chicken Please",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 7,
+      "name": "Two Schmucks",
+      "city": "Barcelona"
+    },
+    {
+      "rank": 8,
+      "name": "Connaught Bar",
+      "city": "London"
+    },
+    {
+      "rank": 9,
+      "name": "Katana Kitten",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 10,
+      "name": "Alquímico",
+      "city": "Cartagena"
+    },
+    {
+      "rank": 11,
+      "name": "Handshake Speakeasy",
+      "city": "Mexico City"
+    },
+    {
+      "rank": 12,
+      "name": "Jigger & Pony",
+      "city": "Singapore"
+    },
+    {
+      "rank": 13,
+      "name": "Hanky Panky",
+      "city": "Mexico City"
+    },
+    {
+      "rank": 14,
+      "name": "BKK Social Club",
+      "city": "Bangkok"
+    },
+    {
+      "rank": 15,
+      "name": "Salmon Guru",
+      "city": "Madrid"
+    },
+    {
+      "rank": 16,
+      "name": "Drink Kong",
+      "city": "Rome"
+    },
+    {
+      "rank": 17,
+      "name": "Coa",
+      "city": "Hong Kong"
+    },
+    {
+      "rank": 18,
+      "name": "Florería Atlántico",
+      "city": "Buenos Aires"
+    },
+    {
+      "rank": 19,
+      "name": "The Clumsies",
+      "city": "Athens"
+    },
+    {
+      "rank": 20,
+      "name": "Baba au Rum",
+      "city": "Athens"
+    },
+    {
+      "rank": 21,
+      "name": "Café La Trova",
+      "city": "Miami"
+    },
+    {
+      "rank": 22,
+      "name": "Attaboy",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 23,
+      "name": "Satan's Whiskers",
+      "city": "London"
+    },
+    {
+      "rank": 24,
+      "name": "Tropic City",
+      "city": "Bangkok"
+    },
+    {
+      "rank": 25,
+      "name": "Kumiko",
+      "city": "Chicago"
+    },
+    {
+      "rank": 26,
+      "name": "Sidecar",
+      "city": "New Delhi"
+    },
+    {
+      "rank": 27,
+      "name": "Tres Monos",
+      "city": "Buenos Aires"
+    },
+    {
+      "rank": 28,
+      "name": "Argo",
+      "city": "Hong Kong"
+    },
+    {
+      "rank": 29,
+      "name": "Maybe Sammy",
+      "city": "Sydney"
+    },
+    {
+      "rank": 30,
+      "name": "Swift",
+      "city": "London"
+    },
+    {
+      "rank": 31,
+      "name": "Line",
+      "city": "Athens"
+    },
+    {
+      "rank": 32,
+      "name": "Baltra Bar",
+      "city": "Mexico City"
+    },
+    {
+      "rank": 33,
+      "name": "Manhattan",
+      "city": "Singapore"
+    },
+    {
+      "rank": 34,
+      "name": "Overstory",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 35,
+      "name": "1930",
+      "city": "Milan"
+    },
+    {
+      "rank": 36,
+      "name": "Dante",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 37,
+      "name": "A Bar with Shapes for a Name",
+      "city": "London"
+    },
+    {
+      "rank": 38,
+      "name": "Zuma",
+      "city": "Dubai"
+    },
+    {
+      "rank": 39,
+      "name": "Locale Firenze",
+      "city": "Florence"
+    },
+    {
+      "rank": 40,
+      "name": "Red Frog",
+      "city": "Lisbon"
+    },
+    {
+      "rank": 41,
+      "name": "Cantina OK!",
+      "city": "Sydney"
+    },
+    {
+      "rank": 42,
+      "name": "CoChinChina",
+      "city": "Buenos Aires"
+    },
+    {
+      "rank": 43,
+      "name": "Himkok",
+      "city": "Oslo"
+    },
+    {
+      "rank": 44,
+      "name": "Carnaval",
+      "city": "Lima"
+    },
+    {
+      "rank": 45,
+      "name": "Galaxy Bar",
+      "city": "Dubai"
+    },
+    {
+      "rank": 46,
+      "name": "L'Antiquario",
+      "city": "Naples"
+    },
+    {
+      "rank": 47,
+      "name": "Employees Only",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 48,
+      "name": "Bar Benfiddich",
+      "city": "Tokyo"
+    },
+    {
+      "rank": 49,
+      "name": "Lucy's Flower Shop",
+      "city": "Stockholm"
+    },
+    {
+      "rank": 50,
+      "name": "Bulgari Bar",
+      "city": "Dubai"
+    }
+  ]
+}
