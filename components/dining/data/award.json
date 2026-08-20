@@ -1364,5 +1364,54 @@
         "rank": 27
       }
     ]
+  },
+  {
+    "id": "the-dough-bros-112725",
+    "name": "The Dough Bros",
+    "city": "Galway, Ireland",
+    "date": "2025-11-27",
+    "menu": "à la carte",
+    "cuisines": [
+      "Pizza"
+    ],
+    "pictures": [
+      "0.jpeg",
+      "1.jpeg",
+      "2.jpeg",
+      "3.jpeg",
+      "4.jpeg",
+      "5.jpeg",
+      "6.jpeg",
+      "7.jpeg",
+      "8.jpeg",
+      "9.jpeg",
+      "10.jpeg"
+    ],
+    "accolades": [
+      {
+        "list": "50-best-pizza",
+        "region": "World",
+        "year": 2022,
+        "rank": 79
+      },
+      {
+        "list": "50-best-pizza",
+        "region": "Europe",
+        "year": 2022,
+        "rank": 19
+      },
+      {
+        "list": "50-best-pizza",
+        "region": "Europe",
+        "year": 2021,
+        "rank": 27
+      },
+      {
+        "list": "50-best-pizza",
+        "region": "Europe",
+        "year": 2020,
+        "rank": 21
+      }
+    ]
   }
 ]
