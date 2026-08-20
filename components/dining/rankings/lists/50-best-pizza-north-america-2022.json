@@ -1,0 +1,258 @@
+{
+  "list": "50-best-pizza",
+  "region": "North America",
+  "year": 2022,
+  "source": "https://www.50toppizza.it/50-top-pizza-usa-2022-the-pizzeria-una-pizza-napoletana-in-new-york-has-been-named-the-best-pizzeria-in-the-usa/",
+  "entries": [
+    {
+      "rank": 1,
+      "name": "Una Pizza Napoletana",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 2,
+      "name": "Tony's Pizza Napoletana",
+      "city": "San Francisco"
+    },
+    {
+      "rank": 3,
+      "name": "Ribalta NYC",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 4,
+      "name": "Razza Pizza Artigianale",
+      "city": "Jersey City"
+    },
+    {
+      "rank": 5,
+      "name": "'O Munaciello",
+      "city": "Miami"
+    },
+    {
+      "rank": 6,
+      "name": "Spacca Napoli Pizzeria",
+      "city": "Chicago"
+    },
+    {
+      "rank": 7,
+      "name": "Song' E Napule",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 8,
+      "name": "La Leggenda Pizzeria",
+      "city": "Miami"
+    },
+    {
+      "rank": 9,
+      "name": "Pizzana",
+      "city": "Los Angeles"
+    },
+    {
+      "rank": 10,
+      "name": "Kesté Fulton",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 11,
+      "name": "Ken's Artisan Pizza",
+      "city": "Portland"
+    },
+    {
+      "rank": 12,
+      "name": "Pizzeria Bianco",
+      "city": "Phoenix"
+    },
+    {
+      "rank": 13,
+      "name": "Jay's Artisan Pizzeria",
+      "city": "Kenmore"
+    },
+    {
+      "rank": 14,
+      "name": "Ops",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 15,
+      "name": "Doppio Zero",
+      "city": "San Francisco"
+    },
+    {
+      "rank": 16,
+      "name": "Lovely's Fifty Fifty",
+      "city": "Portland"
+    },
+    {
+      "rank": 17,
+      "name": "Partenope Ristorante",
+      "city": "Dallas"
+    },
+    {
+      "rank": 18,
+      "name": "Apizza Scholls",
+      "city": "Portland"
+    },
+    {
+      "rank": 19,
+      "name": "Flour House",
+      "city": "San Luis Obispo"
+    },
+    {
+      "rank": 20,
+      "name": "Forcella",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 21,
+      "name": "Pizzeria Mozza",
+      "city": "Los Angeles"
+    },
+    {
+      "rank": 22,
+      "name": "Roberta's",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 23,
+      "name": "Pizzeria Beddia",
+      "city": "Philadelphia"
+    },
+    {
+      "rank": 24,
+      "name": "Mission Pizza Napoletana",
+      "city": "Winston-Salem"
+    },
+    {
+      "rank": 25,
+      "name": "Inferno Pizzeria Napoletana",
+      "city": "Darnestown"
+    },
+    {
+      "rank": 26,
+      "name": "A 16",
+      "city": "San Francisco"
+    },
+    {
+      "rank": 27,
+      "name": "San Matteo – Pizzeria e Cucina",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 28,
+      "name": "Brick Fire Tavern",
+      "city": "Honolulu"
+    },
+    {
+      "rank": 29,
+      "name": "Del Popolo",
+      "city": "San Francisco"
+    },
+    {
+      "rank": 30,
+      "name": "Pasquale Jones",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 31,
+      "name": "Forno Rosso",
+      "city": "Chicago"
+    },
+    {
+      "rank": 32,
+      "name": "Il Forno",
+      "city": "San Antonio"
+    },
+    {
+      "rank": 33,
+      "name": "Pasquale's Pizzeria",
+      "city": "South Kingstown"
+    },
+    {
+      "rank": 34,
+      "name": "Stanzione 87",
+      "city": "Miami"
+    },
+    {
+      "rank": 35,
+      "name": "Coals Artisan Pizza",
+      "city": "Louisville"
+    },
+    {
+      "rank": 36,
+      "name": "Flour + Water Pizzeria",
+      "city": "San Francisco"
+    },
+    {
+      "rank": 37,
+      "name": "Robert's Pizza and Dough Company",
+      "city": "Chicago"
+    },
+    {
+      "rank": 38,
+      "name": "Pomo",
+      "city": "Scottsdale"
+    },
+    {
+      "rank": 39,
+      "name": "Bufalina Due",
+      "city": "Austin"
+    },
+    {
+      "rank": 40,
+      "name": "Nostrana",
+      "city": "Portland"
+    },
+    {
+      "rank": 41,
+      "name": "Basil & Barley Pizzeria Napoletana",
+      "city": "Colorado Springs"
+    },
+    {
+      "rank": 42,
+      "name": "Angelina's Pizzeria Napoletana",
+      "city": "Irvine"
+    },
+    {
+      "rank": 43,
+      "name": "Scottie's Pizza Parlor",
+      "city": "Portland"
+    },
+    {
+      "rank": 44,
+      "name": "Cart-Driver RiNo",
+      "city": "Denver"
+    },
+    {
+      "rank": 45,
+      "name": "Bricco Coal Fired Pizza",
+      "city": "Haddon Township"
+    },
+    {
+      "rank": 46,
+      "name": "Roostica Wood-Fire Pizzeria",
+      "city": "Key West"
+    },
+    {
+      "rank": 47,
+      "name": "Diavola",
+      "city": "Indianapolis"
+    },
+    {
+      "rank": 48,
+      "name": "Spark Pizza",
+      "city": "Redmond"
+    },
+    {
+      "rank": 49,
+      "name": "Fabrica Pizza",
+      "city": "Tampa"
+    },
+    {
+      "rank": 50,
+      "name": "Craft 64",
+      "city": "Scottsdale"
+    }
+  ]
+}

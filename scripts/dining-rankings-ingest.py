@@ -614,7 +614,16 @@ def ingest_na_europe_bars() -> None:
         ), "Europe")
 
 
+def ingest_pizza_history() -> None:
+    """50 Top Pizza World / Europe / North America from 2020 (complete official lists)."""
+    from dining_pizza_history import pizza_lists
+
+    for region, year, source, entries in pizza_lists():
+        write_list("50-best-pizza", region, year, source, rows(*entries))
+
+
 def ingest_pizza() -> None:
+    """Current-year 50 Top Pizza lists. History (from 2020) is ingest_pizza_history()."""
     europe = rows(
             (1, "Napoli on the Road"), (2, "Baldoria"), (3, "IMperfetto"),
             (4, "50 Kalò"), (5, "Sartoria Panatieri"), (6, "Pizza Zulu"),
@@ -1053,6 +1062,7 @@ def main() -> int:
     ingest_world_bars()
     ingest_na_europe_bars()
     ingest_pizza()
+    ingest_pizza_history()
     ingest_steaks()
     ingest_steaks_history()
     ingest_burgers()
