@@ -1,0 +1,513 @@
+{
+  "list": "101-best-steakhouse",
+  "region": "World",
+  "year": 2025,
+  "source": "https://www.worldbeststeaks.com/press-releases-2025",
+  "entries": [
+    {
+      "rank": 1,
+      "name": "Parrilla Don Julio",
+      "city": "Buenos Aires"
+    },
+    {
+      "rank": 2,
+      "name": "Margaret",
+      "city": "Sydney"
+    },
+    {
+      "rank": 3,
+      "name": "Laia Erretegia",
+      "city": "Hondarribia"
+    },
+    {
+      "rank": 4,
+      "name": "I Due Cippi",
+      "city": "Saturnia"
+    },
+    {
+      "rank": 5,
+      "name": "Burnt Ends",
+      "city": "Singapore"
+    },
+    {
+      "rank": 6,
+      "name": "Bodega El Capricho",
+      "city": "Jiménez de Jamuz"
+    },
+    {
+      "rank": 7,
+      "name": "Casa Julián",
+      "city": "Tolosa"
+    },
+    {
+      "rank": 8,
+      "name": "Lana",
+      "city": "Madrid"
+    },
+    {
+      "rank": 9,
+      "name": "AG",
+      "city": "Stockholm"
+    },
+    {
+      "rank": 10,
+      "name": "COTE",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 11,
+      "name": "Ibai",
+      "city": "London"
+    },
+    {
+      "rank": 12,
+      "name": "Rockpool Bar & Grill",
+      "city": "Sydney"
+    },
+    {
+      "rank": 13,
+      "name": "Asador Bastian",
+      "city": "Chicago"
+    },
+    {
+      "rank": 14,
+      "name": "The International",
+      "city": "Sydney"
+    },
+    {
+      "rank": 15,
+      "name": "Born & Bred",
+      "city": "Seoul"
+    },
+    {
+      "rank": 16,
+      "name": "Firedoor",
+      "city": "Sydney"
+    },
+    {
+      "rank": 17,
+      "name": "La Tête d'Or",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 18,
+      "name": "Victor Churchill",
+      "city": "Melbourne"
+    },
+    {
+      "rank": 19,
+      "name": "Carcasse",
+      "city": "Koksijde"
+    },
+    {
+      "rank": 20,
+      "name": "Porteño",
+      "city": "Sydney"
+    },
+    {
+      "rank": 21,
+      "name": "Capa",
+      "city": "Copenhagen"
+    },
+    {
+      "rank": 22,
+      "name": "Gillis",
+      "city": "Gent"
+    },
+    {
+      "rank": 23,
+      "name": "Hawksmoor",
+      "city": "London"
+    },
+    {
+      "rank": 24,
+      "name": "Brat",
+      "city": "London"
+    },
+    {
+      "rank": 25,
+      "name": "La Braseria",
+      "city": "Osio Sotto"
+    },
+    {
+      "rank": 26,
+      "name": "Elisa",
+      "city": "Vancouver"
+    },
+    {
+      "rank": 27,
+      "name": "Nikuya Tanaka",
+      "city": "Tokyo"
+    },
+    {
+      "rank": 28,
+      "name": "Los 33",
+      "city": "Madrid"
+    },
+    {
+      "rank": 29,
+      "name": "Regina Bistecca",
+      "city": "Florence"
+    },
+    {
+      "rank": 30,
+      "name": "Tributo",
+      "city": "Quito"
+    },
+    {
+      "rank": 31,
+      "name": "Amaren",
+      "city": "Bilbao"
+    },
+    {
+      "rank": 32,
+      "name": "The Gidley",
+      "city": "Sydney"
+    },
+    {
+      "rank": 33,
+      "name": "Beefbar",
+      "city": "Monaco"
+    },
+    {
+      "rank": 34,
+      "name": "Anahi",
+      "city": "Paris"
+    },
+    {
+      "rank": 35,
+      "name": "Fogón",
+      "city": "Buenos Aires"
+    },
+    {
+      "rank": 36,
+      "name": "Aalia",
+      "city": "Sydney"
+    },
+    {
+      "rank": 37,
+      "name": "Steer Dining Room",
+      "city": "Melbourne"
+    },
+    {
+      "rank": 38,
+      "name": "11 Woodfire",
+      "city": "Dubai"
+    },
+    {
+      "rank": 39,
+      "name": "Lutyens Grill",
+      "city": "London"
+    },
+    {
+      "rank": 40,
+      "name": "Miyoshi",
+      "city": "Kyoto"
+    },
+    {
+      "rank": 41,
+      "name": "Aragawa",
+      "city": "London"
+    },
+    {
+      "rank": 42,
+      "name": "Clover Grill",
+      "city": "Paris"
+    },
+    {
+      "rank": 43,
+      "name": "Gwen",
+      "city": "Los Angeles"
+    },
+    {
+      "rank": 44,
+      "name": "4 Charles Prime Rib",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 45,
+      "name": "Gimlet",
+      "city": "Melbourne"
+    },
+    {
+      "rank": 46,
+      "name": "Kitan-in",
+      "city": "Osaka"
+    },
+    {
+      "rank": 47,
+      "name": "Knife",
+      "city": "Dallas"
+    },
+    {
+      "rank": 48,
+      "name": "Asador Nicolás",
+      "city": "Tolosa"
+    },
+    {
+      "rank": 49,
+      "name": "Niku Steakhouse",
+      "city": "San Francisco"
+    },
+    {
+      "rank": 50,
+      "name": "Fireside",
+      "city": "Hong Kong"
+    },
+    {
+      "rank": 51,
+      "name": "Shell House",
+      "city": "Sydney"
+    },
+    {
+      "rank": 52,
+      "name": "Jeffrey's",
+      "city": "Austin"
+    },
+    {
+      "rank": 53,
+      "name": "Bistecca",
+      "city": "Singapore"
+    },
+    {
+      "rank": 54,
+      "name": "Koki",
+      "city": "Hanoi"
+    },
+    {
+      "rank": 55,
+      "name": "Blok",
+      "city": "Pontyclun"
+    },
+    {
+      "rank": 56,
+      "name": "Elena",
+      "city": "Buenos Aires"
+    },
+    {
+      "rank": 57,
+      "name": "Matilda 159 Domain",
+      "city": "Melbourne"
+    },
+    {
+      "rank": 58,
+      "name": "Keens",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 59,
+      "name": "CUT by Wolfgang Puck",
+      "city": "Singapore"
+    },
+    {
+      "rank": 60,
+      "name": "The Bazaar",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 61,
+      "name": "Char",
+      "city": "Tenerife"
+    },
+    {
+      "rank": 62,
+      "name": "The Cut Bar & Grill",
+      "city": "Sydney"
+    },
+    {
+      "rank": 63,
+      "name": "Minetta Tavern",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 64,
+      "name": "Grill Royal",
+      "city": "Berlin"
+    },
+    {
+      "rank": 65,
+      "name": "Beef & Glory",
+      "city": "Vienna"
+    },
+    {
+      "rank": 66,
+      "name": "Shatōburian",
+      "city": "Singapore"
+    },
+    {
+      "rank": 67,
+      "name": "Holsteins",
+      "city": "Monterrey"
+    },
+    {
+      "rank": 68,
+      "name": "Firewood",
+      "city": "George Town"
+    },
+    {
+      "rank": 69,
+      "name": "Prime + Proper",
+      "city": "Detroit"
+    },
+    {
+      "rank": 70,
+      "name": "The Devonshire",
+      "city": "London"
+    },
+    {
+      "rank": 71,
+      "name": "Swift & Sons",
+      "city": "Chicago"
+    },
+    {
+      "rank": 72,
+      "name": "The Grand Bar & Grill",
+      "city": "Helsinki"
+    },
+    {
+      "rank": 73,
+      "name": "Gallaghers",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 74,
+      "name": "Maven",
+      "city": "Antwerp"
+    },
+    {
+      "rank": 75,
+      "name": "American Cut",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 76,
+      "name": "Jacobs & Co.",
+      "city": "Toronto"
+    },
+    {
+      "rank": 77,
+      "name": "Bavette's",
+      "city": "Chicago"
+    },
+    {
+      "rank": 78,
+      "name": "Izzy's",
+      "city": "San Francisco"
+    },
+    {
+      "rank": 79,
+      "name": "Beef",
+      "city": "Kyiv"
+    },
+    {
+      "rank": 80,
+      "name": "The Steak House",
+      "city": "Hong Kong"
+    },
+    {
+      "rank": 81,
+      "name": "Sala de Corte",
+      "city": "Lisbon"
+    },
+    {
+      "rank": 82,
+      "name": "Williams Butchers Table",
+      "city": "Zurich"
+    },
+    {
+      "rank": 83,
+      "name": "Niku Kappō Jō",
+      "city": "Tokyo"
+    },
+    {
+      "rank": 84,
+      "name": "Nuri Steakhouse",
+      "city": "Dallas"
+    },
+    {
+      "rank": 85,
+      "name": "Porter & Rye",
+      "city": "Glasgow"
+    },
+    {
+      "rank": 86,
+      "name": "Okadamae",
+      "city": "Tokyo"
+    },
+    {
+      "rank": 87,
+      "name": "Vuur",
+      "city": "Stellenbosch"
+    },
+    {
+      "rank": 88,
+      "name": "Gage & Tollner",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 89,
+      "name": "Guinea Grill",
+      "city": "London"
+    },
+    {
+      "rank": 90,
+      "name": "Meatguy",
+      "city": "Jakarta"
+    },
+    {
+      "rank": 91,
+      "name": "Meatmaiden",
+      "city": "Melbourne"
+    },
+    {
+      "rank": 92,
+      "name": "Grill Americano",
+      "city": "Melbourne"
+    },
+    {
+      "rank": 93,
+      "name": "20 Chapel",
+      "city": "Sydney"
+    },
+    {
+      "rank": 94,
+      "name": "Fife Lane",
+      "city": "Mount Maunganui"
+    },
+    {
+      "rank": 95,
+      "name": "Hermanos",
+      "city": "Buenos Aires"
+    },
+    {
+      "rank": 96,
+      "name": "Fukutatei The Ukai",
+      "city": "Osaka"
+    },
+    {
+      "rank": 97,
+      "name": "The Blockman",
+      "city": "Johannesburg"
+    },
+    {
+      "rank": 98,
+      "name": "Sugita",
+      "city": "Tokyo"
+    },
+    {
+      "rank": 99,
+      "name": "Bistecca",
+      "city": "Sydney"
+    },
+    {
+      "rank": 100,
+      "name": "Wagyumafia Steakhouse",
+      "city": "Tokyo"
+    },
+    {
+      "rank": 101,
+      "name": "Brutus Tavern",
+      "city": "Athens"
+    }
+  ]
+}
