@@ -1,0 +1,133 @@
+{
+  "list": "101-best-burgers",
+  "region": "World",
+  "year": 2025,
+  "source": "https://www.timeout.com/news/the-surprising-european-city-home-to-the-worlds-best-burger-091725",
+  "entries": [
+    {
+      "rank": 1,
+      "name": "Hundred Burgers",
+      "city": "Valencia"
+    },
+    {
+      "rank": 2,
+      "name": "Bleecker Burger",
+      "city": "London"
+    },
+    {
+      "rank": 3,
+      "name": "Black Bear Burger",
+      "city": "London"
+    },
+    {
+      "rank": 4,
+      "name": "Popl Burger",
+      "city": "Copenhagen"
+    },
+    {
+      "rank": 5,
+      "name": "Funky Chicken Food Truck",
+      "city": "Stockholm"
+    },
+    {
+      "rank": 6,
+      "name": "Gasoline Grill",
+      "city": "Copenhagen"
+    },
+    {
+      "rank": 7,
+      "name": "La Birra Bar",
+      "city": "Buenos Aires"
+    },
+    {
+      "rank": 8,
+      "name": "Hawksmoor",
+      "city": "London"
+    },
+    {
+      "rank": 9,
+      "name": "Burger & Beyond",
+      "city": "London"
+    },
+    {
+      "rank": 10,
+      "name": "Next Door",
+      "city": "Sydney"
+    },
+    {
+      "rank": 11,
+      "name": "Dove",
+      "city": "London"
+    },
+    {
+      "rank": 12,
+      "name": "The Gidley",
+      "city": "Sydney"
+    },
+    {
+      "rank": 13,
+      "name": "Sip & Guzzle",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 14,
+      "name": "Charrd",
+      "city": "Melbourne"
+    },
+    {
+      "rank": 15,
+      "name": "Nowon",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 16,
+      "name": "All or Nothing Burger",
+      "city": "Alicante"
+    },
+    {
+      "rank": 17,
+      "name": "Gui's Burger",
+      "city": "Ashiya"
+    },
+    {
+      "rank": 18,
+      "name": "11 Woodfire",
+      "city": "Dubai"
+    },
+    {
+      "rank": 19,
+      "name": "The Loyalist",
+      "city": "Chicago"
+    },
+    {
+      "rank": 20,
+      "name": "Salt Shed",
+      "city": "Brighton"
+    },
+    {
+      "rank": 21,
+      "name": "Red Hook Tavern",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 22,
+      "name": "Reburger",
+      "city": "Florence"
+    },
+    {
+      "rank": 23,
+      "name": "4 Charles Prime Rib",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 24,
+      "name": "Amboy",
+      "city": "Los Angeles"
+    },
+    {
+      "rank": 25,
+      "name": "Heard",
+      "city": "London"
+    }
+  ]
+}

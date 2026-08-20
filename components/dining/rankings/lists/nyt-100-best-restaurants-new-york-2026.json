@@ -1,0 +1,508 @@
+{
+  "list": "nyt-100-best-restaurants",
+  "region": "New York",
+  "year": 2026,
+  "source": "Morris NYT 100 Best table (official ranks; 2025 top 10 ranked, rest listed unranked)",
+  "entries": [
+    {
+      "rank": 1,
+      "name": "Kabawa",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 2,
+      "name": "Yamada",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 3,
+      "name": "Torrisi",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 4,
+      "name": "Meju",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 5,
+      "name": "Jean-Georges",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 6,
+      "name": "Borgo",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 7,
+      "name": "Atomix",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 8,
+      "name": "Aquavit",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 9,
+      "name": "Semma",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 10,
+      "name": "Mama Lee",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 11,
+      "name": "Sushi Sho",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 12,
+      "name": "Tatiana by Kwame Onwuachi",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 13,
+      "name": "Via Carota",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 14,
+      "name": "Kono",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 15,
+      "name": "Claud",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 16,
+      "name": "Aska",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 17,
+      "name": "AbuQir Seafood",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 18,
+      "name": "Smithereens",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 19,
+      "name": "Khao Kang",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 20,
+      "name": "The Four Horsemen",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 21,
+      "name": "Le Bernardin",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 22,
+      "name": "Warung Selasa at Indo Java",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 23,
+      "name": "Toné Cafe",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 24,
+      "name": "Kappo Sono",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 25,
+      "name": "Levant",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 26,
+      "name": "Mắm",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 27,
+      "name": "Sofreh",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 28,
+      "name": "Keens Steakhouse",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 29,
+      "name": "Chambers",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 30,
+      "name": "Sunn’s",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 31,
+      "name": "Yemenat",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 32,
+      "name": "The Bar Room at the Modern",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 33,
+      "name": "Bánh Anh Em",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 34,
+      "name": "Estela",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 35,
+      "name": "Penny",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 36,
+      "name": "Lilia",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 37,
+      "name": "Corima",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 38,
+      "name": "Zaab Zaab",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 39,
+      "name": "Golden Diner",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 40,
+      "name": "Casa Mono and Bar Jamón",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 41,
+      "name": "Jungsik",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 42,
+      "name": "Ajo y Oregano",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 43,
+      "name": "Saga",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 44,
+      "name": "Carnitas Ramirez",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 45,
+      "name": "Szechuan Mountain House",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 46,
+      "name": "Yoon Haeundae Galbi",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 47,
+      "name": "Superiority Burger",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 48,
+      "name": "ABCV",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 49,
+      "name": "Taste Good",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 50,
+      "name": "King",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 51,
+      "name": "Cho Dang Gol",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 52,
+      "name": "Thai Diner",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 53,
+      "name": "Roman’s",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 54,
+      "name": "Ha’s Snack Bar",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 55,
+      "name": "Dukagjini Burek",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 56,
+      "name": "Daniel",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 57,
+      "name": "Eyval",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 58,
+      "name": "Hellbender",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 59,
+      "name": "Lungi",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 60,
+      "name": "Saranrom Thai",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 61,
+      "name": "Taiwanese Gourmet",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 62,
+      "name": "Amdo Momo",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 63,
+      "name": "Rezdôra",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 64,
+      "name": "Txikito",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 65,
+      "name": "Laghman Express",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 66,
+      "name": "Dhamaka",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 67,
+      "name": "Nepali Bhanchha Ghar",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 68,
+      "name": "Renee’s Kitchenette and Grill",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 69,
+      "name": "Shukette",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 70,
+      "name": "Taco Mix",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 71,
+      "name": "Lola’s",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 72,
+      "name": "Kingston Tropical",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 73,
+      "name": "Hop Lee",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 74,
+      "name": "Birria-Landia",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 75,
+      "name": "Maison Passerelle",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 76,
+      "name": "Lei",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 77,
+      "name": "Cocina Consuelo",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 78,
+      "name": "Dar Lbahja",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 79,
+      "name": "Kisa",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 80,
+      "name": "Asian Bowl",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 81,
+      "name": "Shaw-naé’s House",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 82,
+      "name": "Una Pizza Napoletana",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 83,
+      "name": "White Bear",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 84,
+      "name": "Ci Siamo",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 85,
+      "name": "Uncle Ray’s Chicken Rice",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 86,
+      "name": "Okiboru House of Tsukemen",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 87,
+      "name": "188 Bakery Cuchifritos",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 88,
+      "name": "Trinciti Roti Shop",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 89,
+      "name": "Ho Foods",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 90,
+      "name": "Tamales Lupita",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 91,
+      "name": "Cas West Indian & American Restaurant",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 92,
+      "name": "Barney Greengrass",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 93,
+      "name": "Lakruwana",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 94,
+      "name": "Accra Express",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 95,
+      "name": "A&A Bake and Doubles",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 96,
+      "name": "Çka Ka Qëllu",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 97,
+      "name": "Temple Canteen",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 98,
+      "name": "Randazzo’s Clam Bar",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 99,
+      "name": "Chalupas Poblanas El Tlecuile",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 100,
+      "name": "Kabab King",
+      "city": "New York, NY"
+    }
+  ]
+}
