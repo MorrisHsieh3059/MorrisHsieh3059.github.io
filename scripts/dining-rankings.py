@@ -157,7 +157,7 @@ def award_entries() -> list[dict]:
 
 
 def merge_entries(primary: list[dict], extra: list[dict]) -> list[dict]:
-    """Keep the first row for each name+list+region+year (ignore rank in the key)."""
+    """Keep the first row for each name+list+region+year+city (ignore rank in the key)."""
     seen = set()
     out = []
     for e in primary + extra:
@@ -166,6 +166,7 @@ def merge_entries(primary: list[dict], extra: list[dict]) -> list[dict]:
             e.get("list") or "",
             region_key(e.get("list") or "", e.get("region")),
             int(e["year"]) if e.get("year") is not None else None,
+            norm(e.get("city") or ""),
         )
         if not k[0] or not k[1] or k in seen:
             continue

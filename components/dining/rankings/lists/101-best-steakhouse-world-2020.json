@@ -1,0 +1,58 @@
+{
+  "list": "101-best-steakhouse",
+  "region": "World",
+  "year": 2020,
+  "source": "https://www.worldbeststeaks.com/ (Wayback 2020-08-09 top 10)",
+  "entries": [
+    {
+      "rank": 1,
+      "name": "Firedoor",
+      "city": "Sydney"
+    },
+    {
+      "rank": 2,
+      "name": "El Capricho",
+      "city": "Jiménez de Jamuz"
+    },
+    {
+      "rank": 3,
+      "name": "Parrilla Don Julio",
+      "city": "Buenos Aires"
+    },
+    {
+      "rank": 4,
+      "name": "Hawksmoor",
+      "city": "London"
+    },
+    {
+      "rank": 5,
+      "name": "Asador Etxebarri",
+      "city": "Axpe"
+    },
+    {
+      "rank": 6,
+      "name": "CUT",
+      "city": "Beverly Hills"
+    },
+    {
+      "rank": 7,
+      "name": "Butcher and Singer",
+      "city": "Philadelphia"
+    },
+    {
+      "rank": 8,
+      "name": "Gibsons Italia",
+      "city": "Chicago"
+    },
+    {
+      "rank": 9,
+      "name": "Porter House",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 10,
+      "name": "Beast",
+      "city": "London"
+    }
+  ]
+}

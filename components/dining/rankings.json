@@ -2,6 +2,231 @@
   "updated": "2026-08-19",
   "entries": [
     {
+      "name": "Hundred Burgers",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2025,
+      "rank": 1,
+      "city": "Valencia",
+      "source": "https://www.timeout.com/news/the-surprising-european-city-home-to-the-worlds-best-burger-091725"
+    },
+    {
+      "name": "Bleecker Burger",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2025,
+      "rank": 2,
+      "city": "London",
+      "source": "https://www.timeout.com/news/the-surprising-european-city-home-to-the-worlds-best-burger-091725"
+    },
+    {
+      "name": "Black Bear Burger",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2025,
+      "rank": 3,
+      "city": "London",
+      "source": "https://www.timeout.com/news/the-surprising-european-city-home-to-the-worlds-best-burger-091725"
+    },
+    {
+      "name": "Popl Burger",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2025,
+      "rank": 4,
+      "city": "Copenhagen",
+      "source": "https://www.timeout.com/news/the-surprising-european-city-home-to-the-worlds-best-burger-091725"
+    },
+    {
+      "name": "Funky Chicken Food Truck",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2025,
+      "rank": 5,
+      "city": "Stockholm",
+      "source": "https://www.timeout.com/news/the-surprising-european-city-home-to-the-worlds-best-burger-091725"
+    },
+    {
+      "name": "Gasoline Grill",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2025,
+      "rank": 6,
+      "city": "Copenhagen",
+      "source": "https://www.timeout.com/news/the-surprising-european-city-home-to-the-worlds-best-burger-091725"
+    },
+    {
+      "name": "La Birra Bar",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2025,
+      "rank": 7,
+      "city": "Buenos Aires",
+      "source": "https://www.timeout.com/news/the-surprising-european-city-home-to-the-worlds-best-burger-091725"
+    },
+    {
+      "name": "Hawksmoor",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2025,
+      "rank": 8,
+      "city": "London",
+      "source": "https://www.timeout.com/news/the-surprising-european-city-home-to-the-worlds-best-burger-091725"
+    },
+    {
+      "name": "Burger & Beyond",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2025,
+      "rank": 9,
+      "city": "London",
+      "source": "https://www.timeout.com/news/the-surprising-european-city-home-to-the-worlds-best-burger-091725"
+    },
+    {
+      "name": "Next Door",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2025,
+      "rank": 10,
+      "city": "Sydney",
+      "source": "https://www.timeout.com/news/the-surprising-european-city-home-to-the-worlds-best-burger-091725"
+    },
+    {
+      "name": "Dove",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2025,
+      "rank": 11,
+      "city": "London",
+      "source": "https://www.timeout.com/news/the-surprising-european-city-home-to-the-worlds-best-burger-091725"
+    },
+    {
+      "name": "The Gidley",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2025,
+      "rank": 12,
+      "city": "Sydney",
+      "source": "https://www.timeout.com/news/the-surprising-european-city-home-to-the-worlds-best-burger-091725"
+    },
+    {
+      "name": "Sip & Guzzle",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2025,
+      "rank": 13,
+      "city": "New York, NY",
+      "source": "https://www.timeout.com/news/the-surprising-european-city-home-to-the-worlds-best-burger-091725"
+    },
+    {
+      "name": "Charrd",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2025,
+      "rank": 14,
+      "city": "Melbourne",
+      "source": "https://www.timeout.com/news/the-surprising-european-city-home-to-the-worlds-best-burger-091725"
+    },
+    {
+      "name": "Nowon",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2025,
+      "rank": 15,
+      "city": "New York, NY",
+      "source": "https://www.timeout.com/news/the-surprising-european-city-home-to-the-worlds-best-burger-091725"
+    },
+    {
+      "name": "All or Nothing Burger",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2025,
+      "rank": 16,
+      "city": "Alicante",
+      "source": "https://www.timeout.com/news/the-surprising-european-city-home-to-the-worlds-best-burger-091725"
+    },
+    {
+      "name": "Gui's Burger",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2025,
+      "rank": 17,
+      "city": "Ashiya",
+      "source": "https://www.timeout.com/news/the-surprising-european-city-home-to-the-worlds-best-burger-091725"
+    },
+    {
+      "name": "11 Woodfire",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2025,
+      "rank": 18,
+      "city": "Dubai",
+      "source": "https://www.timeout.com/news/the-surprising-european-city-home-to-the-worlds-best-burger-091725"
+    },
+    {
+      "name": "The Loyalist",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2025,
+      "rank": 19,
+      "city": "Chicago",
+      "source": "https://www.timeout.com/news/the-surprising-european-city-home-to-the-worlds-best-burger-091725"
+    },
+    {
+      "name": "Salt Shed",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2025,
+      "rank": 20,
+      "city": "Brighton",
+      "source": "https://www.timeout.com/news/the-surprising-european-city-home-to-the-worlds-best-burger-091725"
+    },
+    {
+      "name": "Red Hook Tavern",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2025,
+      "rank": 21,
+      "city": "New York, NY",
+      "source": "https://www.timeout.com/news/the-surprising-european-city-home-to-the-worlds-best-burger-091725"
+    },
+    {
+      "name": "Reburger",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2025,
+      "rank": 22,
+      "city": "Florence",
+      "source": "https://www.timeout.com/news/the-surprising-european-city-home-to-the-worlds-best-burger-091725"
+    },
+    {
+      "name": "4 Charles Prime Rib",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2025,
+      "rank": 23,
+      "city": "New York, NY",
+      "source": "https://www.timeout.com/news/the-surprising-european-city-home-to-the-worlds-best-burger-091725"
+    },
+    {
+      "name": "Amboy",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2025,
+      "rank": 24,
+      "city": "Los Angeles",
+      "source": "https://www.timeout.com/news/the-surprising-european-city-home-to-the-worlds-best-burger-091725"
+    },
+    {
+      "name": "Heard",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2025,
+      "rank": 25,
+      "city": "London",
+      "source": "https://www.timeout.com/news/the-surprising-european-city-home-to-the-worlds-best-burger-091725"
+    },
+    {
       "name": "Bleecker Burger",
       "list": "101-best-burgers",
       "region": "World",
@@ -9,6 +234,15 @@
       "rank": 1,
       "city": "London",
       "source": "https://joinpearl.co/lists/2026-worlds-101-best-burgers + Timeout UK (7, 72)"
+    },
+    {
+      "name": "Bleeker Burger",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2026,
+      "rank": 1,
+      "city": "London, UK",
+      "source": "award.json"
     },
     {
       "name": "Black Bear Burger",
@@ -54,6 +288,15 @@
       "rank": 6,
       "city": "New York, NY",
       "source": "https://joinpearl.co/lists/2026-worlds-101-best-burgers + Timeout UK (7, 72)"
+    },
+    {
+      "name": "Sips & Guzzle",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2026,
+      "rank": 6,
+      "city": "New York",
+      "source": "award.json"
     },
     {
       "name": "Hawksmoor St Pancras",
@@ -794,6 +1037,15 @@
       "source": "https://joinpearl.co/lists/2026-worlds-101-best-burgers + Timeout UK (7, 72)"
     },
     {
+      "name": "Grindhouse",
+      "list": "101-best-burgers",
+      "region": "World",
+      "year": 2026,
+      "rank": 89,
+      "city": "São Paulo",
+      "source": "https://joinpearl.co/lists/2026-worlds-101-best-burgers + Timeout UK (7, 72)"
+    },
+    {
       "name": "Dash Burger",
       "list": "101-best-burgers",
       "region": "World",
@@ -891,6 +1143,3822 @@
       "rank": 101,
       "city": "Los Angeles",
       "source": "https://joinpearl.co/lists/2026-worlds-101-best-burgers + Timeout UK (7, 72)"
+    },
+    {
+      "name": "Firedoor",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2020,
+      "rank": 1,
+      "city": "Sydney",
+      "source": "https://www.worldbeststeaks.com/ (Wayback 2020-08-09 top 10)"
+    },
+    {
+      "name": "El Capricho",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2020,
+      "rank": 2,
+      "city": "Jiménez de Jamuz",
+      "source": "https://www.worldbeststeaks.com/ (Wayback 2020-08-09 top 10)"
+    },
+    {
+      "name": "Parrilla Don Julio",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2020,
+      "rank": 3,
+      "city": "Buenos Aires",
+      "source": "https://www.worldbeststeaks.com/ (Wayback 2020-08-09 top 10)"
+    },
+    {
+      "name": "Hawksmoor",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2020,
+      "rank": 4,
+      "city": "London",
+      "source": "https://www.worldbeststeaks.com/ (Wayback 2020-08-09 top 10)"
+    },
+    {
+      "name": "Asador Etxebarri",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2020,
+      "rank": 5,
+      "city": "Axpe",
+      "source": "https://www.worldbeststeaks.com/ (Wayback 2020-08-09 top 10)"
+    },
+    {
+      "name": "CUT",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2020,
+      "rank": 6,
+      "city": "Beverly Hills",
+      "source": "https://www.worldbeststeaks.com/ (Wayback 2020-08-09 top 10)"
+    },
+    {
+      "name": "Butcher and Singer",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2020,
+      "rank": 7,
+      "city": "Philadelphia",
+      "source": "https://www.worldbeststeaks.com/ (Wayback 2020-08-09 top 10)"
+    },
+    {
+      "name": "Gibsons Italia",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2020,
+      "rank": 8,
+      "city": "Chicago",
+      "source": "https://www.worldbeststeaks.com/ (Wayback 2020-08-09 top 10)"
+    },
+    {
+      "name": "Porter House",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2020,
+      "rank": 9,
+      "city": "New York, NY",
+      "source": "https://www.worldbeststeaks.com/ (Wayback 2020-08-09 top 10)"
+    },
+    {
+      "name": "Beast",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2020,
+      "rank": 10,
+      "city": "London",
+      "source": "https://www.worldbeststeaks.com/ (Wayback 2020-08-09 top 10)"
+    },
+    {
+      "name": "Firedoor",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2021,
+      "rank": 1,
+      "city": "Sydney",
+      "source": "https://en.wikipedia.org/wiki/World%27s_101_Best_Steak_Restaurants"
+    },
+    {
+      "name": "Parrilla Don Julio",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2021,
+      "rank": 2,
+      "city": "Buenos Aires",
+      "source": "https://en.wikipedia.org/wiki/World%27s_101_Best_Steak_Restaurants"
+    },
+    {
+      "name": "Hawksmoor",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2021,
+      "rank": 3,
+      "city": "London",
+      "source": "https://en.wikipedia.org/wiki/World%27s_101_Best_Steak_Restaurants"
+    },
+    {
+      "name": "Asador Etxebarri",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2021,
+      "rank": 4,
+      "city": "Axpe",
+      "source": "https://en.wikipedia.org/wiki/World%27s_101_Best_Steak_Restaurants"
+    },
+    {
+      "name": "El Capricho",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2021,
+      "rank": 5,
+      "city": "Jiménez de Jamuz",
+      "source": "https://en.wikipedia.org/wiki/World%27s_101_Best_Steak_Restaurants"
+    },
+    {
+      "name": "Butcher and Singer",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2021,
+      "rank": 6,
+      "city": "Philadelphia",
+      "source": "https://en.wikipedia.org/wiki/World%27s_101_Best_Steak_Restaurants"
+    },
+    {
+      "name": "Gibsons Italia",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2021,
+      "rank": 7,
+      "city": "Chicago",
+      "source": "https://en.wikipedia.org/wiki/World%27s_101_Best_Steak_Restaurants"
+    },
+    {
+      "name": "Porter House",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2021,
+      "rank": 8,
+      "city": "New York, NY",
+      "source": "https://en.wikipedia.org/wiki/World%27s_101_Best_Steak_Restaurants"
+    },
+    {
+      "name": "Keens",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2021,
+      "rank": 9,
+      "city": "New York, NY",
+      "source": "https://en.wikipedia.org/wiki/World%27s_101_Best_Steak_Restaurants"
+    },
+    {
+      "name": "CUT",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2021,
+      "rank": 10,
+      "city": "Beverly Hills",
+      "source": "https://en.wikipedia.org/wiki/World%27s_101_Best_Steak_Restaurants"
+    },
+    {
+      "name": "Hawksmoor",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 1,
+      "city": "London",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Parrilla Don Julio",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 2,
+      "city": "Buenos Aires",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Firedoor",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 3,
+      "city": "Sydney",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Keens",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 4,
+      "city": "New York, NY",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Gibsons Italia",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 5,
+      "city": "Chicago",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "CUT",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 6,
+      "city": "Beverly Hills",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Bavette's Steakhouse",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 7,
+      "city": "Las Vegas",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Carcasse",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 8,
+      "city": "Koksijde",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "El Capricho",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 9,
+      "city": "Jiménez de Jamuz",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Nick & Stef's",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 10,
+      "city": "Los Angeles",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Restaurang AG",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 11,
+      "city": "Stockholm",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Rockpool Bar and Grill",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 12,
+      "city": "Sydney",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Butcher and Singer",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 13,
+      "city": "Philadelphia",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Prime + Proper",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 14,
+      "city": "Detroit",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Porter House",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 15,
+      "city": "New York, NY",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Guard and Grace",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 16,
+      "city": "Denver",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Chophouse",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 17,
+      "city": "Sydney",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "F.X. Buckley",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 18,
+      "city": "Dublin",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "COTE",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 19,
+      "city": "New York, NY",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Beef & Glory",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 20,
+      "city": "Vienna",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Bistecca",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 21,
+      "city": "Singapore",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Beast",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 22,
+      "city": "London",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Casa Julián de Tolosa",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 23,
+      "city": "Tolosa",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Dstrikt",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 24,
+      "city": "Vienna",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Goodman",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 25,
+      "city": "London",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Knife",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 26,
+      "city": "Dallas",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Trattoria Dall'Oste",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 27,
+      "city": "Florence",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Baltaire",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 28,
+      "city": "Los Angeles",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Braceria Bifulco",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 29,
+      "city": "Naples",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "American Cut Tribeca",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 30,
+      "city": "New York, NY",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Gallaghers",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 31,
+      "city": "New York, NY",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Mr Porter",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 32,
+      "city": "Amsterdam",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Grill Royal",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 33,
+      "city": "Berlin",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Kingsleys",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 34,
+      "city": "Sydney",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Porter & Rye",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 35,
+      "city": "Glasgow",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Anahi",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 36,
+      "city": "Paris",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Le Boeuf Volant",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 37,
+      "city": "Paris",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Prime Steak Club",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 38,
+      "city": "Mexico City",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "George Prime Steak",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 39,
+      "city": "Munich",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "La Maison de l'Aubrac",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 40,
+      "city": "Paris",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "La Cabrera",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 41,
+      "city": "Buenos Aires",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Flat Iron",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 42,
+      "city": "London",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "George Prime Steak",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 43,
+      "city": "Prague",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Maven",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 44,
+      "city": "Antwerp",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Antica Macelleria Cecchini",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 45,
+      "city": "Panzano",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "The Grill",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 46,
+      "city": "Munich",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Guinea Grill",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 47,
+      "city": "London",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Beefbar",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 48,
+      "city": "Monte Carlo",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Zelman Meats",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 49,
+      "city": "London",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Sala de Corte",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 50,
+      "city": "Lisbon",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Peter Luger",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 51,
+      "city": "New York, NY",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "A Figueira Rubaiyat",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 52,
+      "city": "São Paulo",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Rowley's",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 53,
+      "city": "London",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Brick Steakhouse",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 54,
+      "city": "Guadalajara",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "800°C",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 55,
+      "city": "Moscow",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Swift & Sons",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 56,
+      "city": "Chicago",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Holsteins Steakhouse",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 57,
+      "city": "Guadalajara",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Bazaar Meat",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 58,
+      "city": "Las Vegas",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Aragawa",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 59,
+      "city": "Tokyo",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "La Brigada",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 60,
+      "city": "Buenos Aires",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Parador La Huella",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 61,
+      "city": "José Ignacio",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "The Blacklock",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 62,
+      "city": "London",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Williams Butcher Table",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 63,
+      "city": "Zurich",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Barclay Prime",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 64,
+      "city": "Philadelphia",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Jervois Steak House",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 65,
+      "city": "Auckland",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Clover Grill",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 66,
+      "city": "Paris",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Wolfgang's",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 67,
+      "city": "New York, NY",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "NV-80",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 68,
+      "city": "Cape Town",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Meat & Liquor",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 69,
+      "city": "New Plymouth",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Les Oreilles et la Queue",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 70,
+      "city": "Paris",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Rib'n Reef",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 71,
+      "city": "Montreal",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Retour",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 72,
+      "city": "Copenhagen",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "L'Argot",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 73,
+      "city": "Lyon",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "APL",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 74,
+      "city": "Los Angeles",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Marco Pierre White",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 75,
+      "city": "Dublin",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Beef",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 76,
+      "city": "Kyiv",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Butcher & Vine",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 77,
+      "city": "Melbourne",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Butcher & Grill",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 78,
+      "city": "Cape Town",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Ojo de Agua",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 79,
+      "city": "Frankfurt",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Stripsteak",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 80,
+      "city": "Miami Beach",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Gwen",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 81,
+      "city": "Los Angeles",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "The Coal Shed",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 82,
+      "city": "London",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Napa Grill",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 83,
+      "city": "Zurich",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Prime 68",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 84,
+      "city": "Dubai",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Leña",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 85,
+      "city": "Marbella",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "The Meat Co.",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 86,
+      "city": "Dubai",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Amaren",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 87,
+      "city": "Bilbao",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Midtown Grill",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 88,
+      "city": "Amsterdam",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Catch Steak",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 89,
+      "city": "New York, NY",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Marcelleria",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 90,
+      "city": "Melbourne",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Osteria di Nandone",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 91,
+      "city": "Scarperia",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Braceria Elvetica",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 92,
+      "city": "Lugano",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Griffins",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 93,
+      "city": "Stockholm",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Bowery Meat Co.",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 94,
+      "city": "New York, NY",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Sparks",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 95,
+      "city": "New York, NY",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Beef",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 96,
+      "city": "Geneva",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Entrecote",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 97,
+      "city": "Melbourne",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Bateau",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 98,
+      "city": "Seattle",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Jean-Georges",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 99,
+      "city": "Las Vegas",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Asina Luna",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 100,
+      "city": "Milan",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Wadakin",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2022,
+      "rank": 101,
+      "city": "Osaka",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Parrilla Don Julio",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 1,
+      "city": "Buenos Aires",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Hawksmoor",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 2,
+      "city": "London",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "American Cut Tribeca",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 3,
+      "city": "New York, NY",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Carcasse",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 4,
+      "city": "Koksijde",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "El Capricho",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 5,
+      "city": "Jiménez de Jamuz",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "F.X. Buckley",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 6,
+      "city": "Dublin",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "I Due Cippi",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 7,
+      "city": "Saturnia",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Rockpool Bar and Grill",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 8,
+      "city": "Sydney",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Lana",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 9,
+      "city": "Madrid",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Bazaar Meat",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 10,
+      "city": "Las Vegas",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Restaurang AG",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 11,
+      "city": "Stockholm",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "CUT at 45 Park Lane",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 12,
+      "city": "London",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "COTE",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 13,
+      "city": "New York, NY",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Amaren",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 14,
+      "city": "Bilbao",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Guard and Grace",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 15,
+      "city": "Denver",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Porter House",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 16,
+      "city": "New York, NY",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Gibsons Italia",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 17,
+      "city": "Chicago",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Bavette's Steakhouse",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 18,
+      "city": "Las Vegas",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Beef & Glory",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 19,
+      "city": "Vienna",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Gallaghers",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 20,
+      "city": "New York, NY",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Casa Julián de Tolosa",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 21,
+      "city": "Tolosa",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Prime + Proper",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 22,
+      "city": "Detroit",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Bistecca",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 23,
+      "city": "Singapore",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Trattoria Dall'Oste",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 24,
+      "city": "Florence",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Knife",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 25,
+      "city": "Dallas",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Nick & Stef's",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 26,
+      "city": "Los Angeles",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Keens",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 27,
+      "city": "New York, NY",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Piatao",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 28,
+      "city": "Madrid",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Dstrikt",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 29,
+      "city": "Vienna",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "George Prime Steak",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 30,
+      "city": "Munich",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Kingsleys",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 31,
+      "city": "Sydney",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Bistecca",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 32,
+      "city": "Sydney",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Maven",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 33,
+      "city": "Antwerp",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Sala de Corte",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 34,
+      "city": "Lisbon",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Klaw",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 35,
+      "city": "Miami",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Elisa",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 36,
+      "city": "Vancouver",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Beast",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 37,
+      "city": "London",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Peter Luger",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 38,
+      "city": "New York, NY",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Le Petit Beefbar",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 39,
+      "city": "London",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Porteño",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 40,
+      "city": "Sydney",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Goodman",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 41,
+      "city": "London",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "La Braseria",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 42,
+      "city": "Osio Sotto",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "The Gidley",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 43,
+      "city": "Sydney",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Anahi",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 44,
+      "city": "Paris",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Regina Bistecca",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 45,
+      "city": "Florence",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "800°C",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 46,
+      "city": "Moscow",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Butcher and Singer",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 47,
+      "city": "Philadelphia",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "La Cabrera",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 48,
+      "city": "Buenos Aires",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Beef",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 49,
+      "city": "Geneva",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "A Figueira Rubaiyat",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 50,
+      "city": "São Paulo",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Steer Dining Room",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 51,
+      "city": "Melbourne",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "The Blacklock",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 52,
+      "city": "London",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Gwen",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 53,
+      "city": "Los Angeles",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Williams Butcher Table",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 54,
+      "city": "Zurich",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Porter & Rye",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 55,
+      "city": "Glasgow",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Swift & Sons",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 56,
+      "city": "Chicago",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Barclay Prime",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 57,
+      "city": "Philadelphia",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Napa Grill",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 58,
+      "city": "Zurich",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Le Boeuf Volant",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 59,
+      "city": "Paris",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Grill Royal",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 60,
+      "city": "Berlin",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Temper",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 61,
+      "city": "London",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Rowley's",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 62,
+      "city": "London",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Mr Porter",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 63,
+      "city": "Amsterdam",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Brick Steakhouse",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 64,
+      "city": "Guadalajara",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Jervois Steak House",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 65,
+      "city": "Auckland",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Asina Luna",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 66,
+      "city": "Milan",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Guinea Grill",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 67,
+      "city": "London",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "NV-80",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 68,
+      "city": "Cape Town",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Meat & Liquor",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 69,
+      "city": "New Plymouth",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Pasture",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 70,
+      "city": "Cardiff",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "The Grill",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 71,
+      "city": "Munich",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Braceria Elvetica",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 72,
+      "city": "Lugano",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "La Maison de l'Aubrac",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 73,
+      "city": "Paris",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Steakhouse",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 74,
+      "city": "Seoul",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Baltaire",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 75,
+      "city": "Los Angeles",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Sparks",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 76,
+      "city": "New York, NY",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Butcher & Vine",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 77,
+      "city": "Melbourne",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Bifrò",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 78,
+      "city": "Turin",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Tributo",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 79,
+      "city": "Quito",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Stripsteak",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 80,
+      "city": "Miami Beach",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Rib'n Reef",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 81,
+      "city": "Montreal",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Retour",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 82,
+      "city": "Copenhagen",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Fife Lane",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 83,
+      "city": "Mount Maunganui",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Niku Steakhouse",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 84,
+      "city": "San Francisco",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Butcher's Block",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 85,
+      "city": "Singapore",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Beef",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 86,
+      "city": "Kyiv",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Clover Grill",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 87,
+      "city": "Paris",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Midtown Grill",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 88,
+      "city": "Amsterdam",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Catch Steak",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 89,
+      "city": "New York, NY",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Marcelleria",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 90,
+      "city": "Melbourne",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Zelman Meats",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 91,
+      "city": "London",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Bull & Bell",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 92,
+      "city": "Griffith",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Griffins",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 93,
+      "city": "Stockholm",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Bowery Meat Co.",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 94,
+      "city": "New York, NY",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "El Santuari",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 95,
+      "city": "Les Masies de Voltregà",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Butcher & Grill",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 96,
+      "city": "Cape Town",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Entrecote",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 97,
+      "city": "Melbourne",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Bateau",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 98,
+      "city": "Seattle",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Jean-Georges",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 99,
+      "city": "Las Vegas",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "The Meat Co.",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 100,
+      "city": "Dubai",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Gillis",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2023,
+      "rank": 101,
+      "city": "Gent",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Parrilla Don Julio",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 1,
+      "city": "Buenos Aires",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Bodega El Capricho",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 2,
+      "city": "Jiménez de Jamuz",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Margaret",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 3,
+      "city": "Sydney",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "COTE",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 4,
+      "city": "New York, NY",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Carcasse",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 5,
+      "city": "Koksijde",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "I Due Cippi",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 6,
+      "city": "Saturnia",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Laia Erretegia",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 7,
+      "city": "Hondarribia",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Rockpool Bar & Grill",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 8,
+      "city": "Sydney",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Restaurang AG",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 9,
+      "city": "Stockholm",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "CUT at 45 Park Lane",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 10,
+      "city": "London",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Victor Churchill",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 11,
+      "city": "Melbourne",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Hawksmoor",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 12,
+      "city": "Dublin",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Casa Julián de Tolosa",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 13,
+      "city": "Tolosa",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Asador Bastian",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 14,
+      "city": "Chicago",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Los 33",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 15,
+      "city": "Madrid",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Amaren",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 16,
+      "city": "Bilbao",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Steer Dining Room",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 17,
+      "city": "Melbourne",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Lana",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 18,
+      "city": "Madrid",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Regina Bistecca",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 19,
+      "city": "Florence",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Elisa",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 20,
+      "city": "Vancouver",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Niku Steakhouse",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 21,
+      "city": "San Francisco",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Beefbar",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 22,
+      "city": "New York, NY",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Capa",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 23,
+      "city": "Copenhagen",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "The Gidley",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 24,
+      "city": "Sydney",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Jeffrey's",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 25,
+      "city": "Austin",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Prime Steak Club",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 26,
+      "city": "Mexico City",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Dorian",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 27,
+      "city": "London",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Aragawa",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 28,
+      "city": "London",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "La Braseria",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 29,
+      "city": "Osio Sotto",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Beef & Glory",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 30,
+      "city": "Vienna",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Gillis",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 31,
+      "city": "Gent",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Holsteins",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 32,
+      "city": "Monterrey",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Tributo",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 33,
+      "city": "Quito",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "American Cut",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 34,
+      "city": "New York, NY",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Anahi",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 35,
+      "city": "Paris",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Fogón",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 36,
+      "city": "Buenos Aires",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Bifrò",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 37,
+      "city": "Turin",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Bistecca",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 38,
+      "city": "Singapore",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Bazaar Meat",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 39,
+      "city": "Chicago",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Keens",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 40,
+      "city": "New York, NY",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Beast",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 41,
+      "city": "London",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Klaw",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 42,
+      "city": "Miami",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Trattoria Dall'Oste",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 43,
+      "city": "Florence",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Gwen",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 44,
+      "city": "Los Angeles",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Bistecca",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 45,
+      "city": "Sydney",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Clover Grill",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 46,
+      "city": "Paris",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Guard and Grace",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 47,
+      "city": "Denver",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Pasture",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 48,
+      "city": "Cardiff",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Maven",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 49,
+      "city": "Antwerp",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "F.X. Buckley",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 50,
+      "city": "Dublin",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Williams Butcherstable",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 51,
+      "city": "Zurich",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Knife",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 52,
+      "city": "Dallas",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Sala de Corte",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 53,
+      "city": "Lisbon",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Grill im Künstlerhaus",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 54,
+      "city": "Munich",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Goodman",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 55,
+      "city": "London",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Baltaire",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 56,
+      "city": "Los Angeles",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Napa Grill",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 57,
+      "city": "Zurich",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Asina Luna",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 58,
+      "city": "Milan",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Piatao",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 59,
+      "city": "Madrid",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Prime + Proper",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 60,
+      "city": "Detroit",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Gallaghers",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 61,
+      "city": "New York, NY",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Swift & Sons",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 62,
+      "city": "Chicago",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "George Prime Steak",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 63,
+      "city": "Munich",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "La Cabrera",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 64,
+      "city": "Buenos Aires",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Asador Nicolás",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 65,
+      "city": "Tolosa",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Nick & Stef's",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 66,
+      "city": "Los Angeles",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Bavette's Steakhouse",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 67,
+      "city": "Chicago",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Beef",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 68,
+      "city": "Kyiv",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Fife Lane",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 69,
+      "city": "Mount Maunganui",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Fireside",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 70,
+      "city": "Hong Kong",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Porteño",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 71,
+      "city": "Sydney",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Elena",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 72,
+      "city": "Buenos Aires",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Jacobs & Co.",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 73,
+      "city": "Toronto",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Lutyens Grill",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 74,
+      "city": "London",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "GT Prime",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 75,
+      "city": "Chicago",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Temper",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 76,
+      "city": "London",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Porter House",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 77,
+      "city": "New York, NY",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Brick Steakhouse",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 78,
+      "city": "Guadalajara",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Le Boeuf Volant",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 79,
+      "city": "Paris",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Gibsons Italia",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 80,
+      "city": "Chicago",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Varrone",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 81,
+      "city": "Milan",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Porter & Rye",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 82,
+      "city": "Glasgow",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Grill Royal",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 83,
+      "city": "Berlin",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Peter Luger",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 84,
+      "city": "New York, NY",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Minetta Tavern",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 85,
+      "city": "New York, NY",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Entrecote",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 86,
+      "city": "Melbourne",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Dstrikt",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 87,
+      "city": "Vienna",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Vuur",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 88,
+      "city": "Stellenbosch",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Kingsleys",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 89,
+      "city": "Sydney",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Beef",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 90,
+      "city": "Geneva",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "A Figueira Rubaiyat",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 91,
+      "city": "São Paulo",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "The Meat Co.",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 92,
+      "city": "Dubai",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Grill",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 93,
+      "city": "Hamburg",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Gimlet",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 94,
+      "city": "Melbourne",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Taberna Pedraza",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 95,
+      "city": "Madrid",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Griffins",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 96,
+      "city": "Stockholm",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Guinea Grill",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 97,
+      "city": "London",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Grill Americano",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 98,
+      "city": "Melbourne",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "NV-80",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 99,
+      "city": "Cape Town",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "The Grand Bar & Grill",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 100,
+      "city": "Helsinki",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "The Steak House",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2024,
+      "rank": 101,
+      "city": "Hong Kong",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Parrilla Don Julio",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 1,
+      "city": "Buenos Aires",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Margaret",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 2,
+      "city": "Sydney",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Laia Erretegia",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 3,
+      "city": "Hondarribia",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "I Due Cippi",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 4,
+      "city": "Saturnia",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Burnt Ends",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 5,
+      "city": "Singapore",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Bodega El Capricho",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 6,
+      "city": "Jiménez de Jamuz",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Casa Julián",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 7,
+      "city": "Tolosa",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Lana",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 8,
+      "city": "Madrid",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "AG",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 9,
+      "city": "Stockholm",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "COTE",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 10,
+      "city": "New York, NY",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Ibai",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 11,
+      "city": "London",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Rockpool Bar & Grill",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 12,
+      "city": "Sydney",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Asador Bastian",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 13,
+      "city": "Chicago",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "The International",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 14,
+      "city": "Sydney",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Born & Bred",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 15,
+      "city": "Seoul",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Firedoor",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 16,
+      "city": "Sydney",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "La Tête d'Or",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 17,
+      "city": "New York, NY",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Victor Churchill",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 18,
+      "city": "Melbourne",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Carcasse",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 19,
+      "city": "Koksijde",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Porteño",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 20,
+      "city": "Sydney",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Capa",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 21,
+      "city": "Copenhagen",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Gillis",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 22,
+      "city": "Gent",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Hawksmoor",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 23,
+      "city": "London",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Brat",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 24,
+      "city": "London",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "La Braseria",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 25,
+      "city": "Osio Sotto",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Elisa",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 26,
+      "city": "Vancouver",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Nikuya Tanaka",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 27,
+      "city": "Tokyo",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Los 33",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 28,
+      "city": "Madrid",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Regina Bistecca",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 29,
+      "city": "Florence",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Tributo",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 30,
+      "city": "Quito",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Amaren",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 31,
+      "city": "Bilbao",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "The Gidley",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 32,
+      "city": "Sydney",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Beefbar",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 33,
+      "city": "Monaco",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Anahi",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 34,
+      "city": "Paris",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Fogón",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 35,
+      "city": "Buenos Aires",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Aalia",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 36,
+      "city": "Sydney",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Steer Dining Room",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 37,
+      "city": "Melbourne",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "11 Woodfire",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 38,
+      "city": "Dubai",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Lutyens Grill",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 39,
+      "city": "London",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Miyoshi",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 40,
+      "city": "Kyoto",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Aragawa",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 41,
+      "city": "London",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Clover Grill",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 42,
+      "city": "Paris",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Gwen",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 43,
+      "city": "Los Angeles",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "4 Charles Prime Rib",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 44,
+      "city": "New York, NY",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Gimlet",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 45,
+      "city": "Melbourne",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Kitan-in",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 46,
+      "city": "Osaka",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Knife",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 47,
+      "city": "Dallas",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Asador Nicolás",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 48,
+      "city": "Tolosa",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Niku Steakhouse",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 49,
+      "city": "San Francisco",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Fireside",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 50,
+      "city": "Hong Kong",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Shell House",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 51,
+      "city": "Sydney",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Jeffrey's",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 52,
+      "city": "Austin",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Bistecca",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 53,
+      "city": "Singapore",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Koki",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 54,
+      "city": "Hanoi",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Blok",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 55,
+      "city": "Pontyclun",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Elena",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 56,
+      "city": "Buenos Aires",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Matilda 159 Domain",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 57,
+      "city": "Melbourne",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Keens",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 58,
+      "city": "New York, NY",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "CUT by Wolfgang Puck",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 59,
+      "city": "Singapore",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "The Bazaar",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 60,
+      "city": "New York, NY",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Char",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 61,
+      "city": "Tenerife",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "The Cut Bar & Grill",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 62,
+      "city": "Sydney",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Minetta Tavern",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 63,
+      "city": "New York, NY",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Grill Royal",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 64,
+      "city": "Berlin",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Beef & Glory",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 65,
+      "city": "Vienna",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Shatōburian",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 66,
+      "city": "Singapore",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Holsteins",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 67,
+      "city": "Monterrey",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Firewood",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 68,
+      "city": "George Town",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Prime + Proper",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 69,
+      "city": "Detroit",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "The Devonshire",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 70,
+      "city": "London",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Swift & Sons",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 71,
+      "city": "Chicago",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "The Grand Bar & Grill",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 72,
+      "city": "Helsinki",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Gallaghers",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 73,
+      "city": "New York, NY",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Maven",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 74,
+      "city": "Antwerp",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "American Cut",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 75,
+      "city": "New York, NY",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Jacobs & Co.",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 76,
+      "city": "Toronto",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Bavette's",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 77,
+      "city": "Chicago",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Izzy's",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 78,
+      "city": "San Francisco",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Beef",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 79,
+      "city": "Kyiv",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "The Steak House",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 80,
+      "city": "Hong Kong",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Sala de Corte",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 81,
+      "city": "Lisbon",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Williams Butchers Table",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 82,
+      "city": "Zurich",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Niku Kappō Jō",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 83,
+      "city": "Tokyo",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Nuri Steakhouse",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 84,
+      "city": "Dallas",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Porter & Rye",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 85,
+      "city": "Glasgow",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Okadamae",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 86,
+      "city": "Tokyo",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Vuur",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 87,
+      "city": "Stellenbosch",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Gage & Tollner",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 88,
+      "city": "New York, NY",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Guinea Grill",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 89,
+      "city": "London",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Meatguy",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 90,
+      "city": "Jakarta",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Meatmaiden",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 91,
+      "city": "Melbourne",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Grill Americano",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 92,
+      "city": "Melbourne",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "20 Chapel",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 93,
+      "city": "Sydney",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Fife Lane",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 94,
+      "city": "Mount Maunganui",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Hermanos",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 95,
+      "city": "Buenos Aires",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Fukutatei The Ukai",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 96,
+      "city": "Osaka",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "The Blockman",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 97,
+      "city": "Johannesburg",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Sugita",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 98,
+      "city": "Tokyo",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Bistecca",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 99,
+      "city": "Sydney",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Wagyumafia Steakhouse",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 100,
+      "city": "Tokyo",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
+    },
+    {
+      "name": "Brutus Tavern",
+      "list": "101-best-steakhouse",
+      "region": "World",
+      "year": 2025,
+      "rank": 101,
+      "city": "Athens",
+      "source": "https://www.worldbeststeaks.com/press-releases-2025"
     },
     {
       "name": "La Cúpula",
@@ -6779,6 +10847,15 @@
       "source": "https://www.theworlds50best.com/stories/News/the-worlds-50-best-bars-2025-the-list-revealed.html + PR 51-100"
     },
     {
+      "name": "Sips",
+      "list": "50-best-bars",
+      "region": "World",
+      "year": 2025,
+      "rank": 3,
+      "city": "Barcelona, Spain",
+      "source": "award.json"
+    },
+    {
       "name": "Paradiso",
       "list": "50-best-bars",
       "region": "World",
@@ -6786,6 +10863,15 @@
       "rank": 4,
       "city": "Barcelona",
       "source": "https://www.theworlds50best.com/stories/News/the-worlds-50-best-bars-2025-the-list-revealed.html + PR 51-100"
+    },
+    {
+      "name": "Paradiso",
+      "list": "50-best-bars",
+      "region": "World",
+      "year": 2025,
+      "rank": 4,
+      "city": "Barcelona, Spain",
+      "source": "award.json"
     },
     {
       "name": "Tayēr + Elementary",
@@ -6876,6 +10962,15 @@
       "rank": 14,
       "city": "Oslo",
       "source": "https://www.theworlds50best.com/stories/News/the-worlds-50-best-bars-2025-the-list-revealed.html + PR 51-100"
+    },
+    {
+      "name": "Himkok",
+      "list": "50-best-bars",
+      "region": "World",
+      "year": 2025,
+      "rank": 14,
+      "city": "Olso, Norway",
+      "source": "award.json"
     },
     {
       "name": "Bar Us",
@@ -7040,6 +11135,15 @@
       "source": "https://www.theworlds50best.com/stories/News/the-worlds-50-best-bars-2025-the-list-revealed.html + PR 51-100"
     },
     {
+      "name": "Svanen",
+      "list": "50-best-bars",
+      "region": "World",
+      "year": 2025,
+      "rank": 32,
+      "city": "Olso, Norway",
+      "source": "award.json"
+    },
+    {
       "name": "Sastrería Martinez",
       "list": "50-best-bars",
       "region": "World",
@@ -7101,6 +11205,15 @@
       "rank": 39,
       "city": "New York, NY",
       "source": "https://www.theworlds50best.com/stories/News/the-worlds-50-best-bars-2025-the-list-revealed.html + PR 51-100"
+    },
+    {
+      "name": "Sips & Guzzle",
+      "list": "50-best-bars",
+      "region": "World",
+      "year": 2025,
+      "rank": 39,
+      "city": "New York",
+      "source": "award.json"
     },
     {
       "name": "Drink Kong",
@@ -7679,6 +11792,15 @@
       "source": "https://www.prnewswire.com/news-releases/line-in-athens-is-no1-as-the-inaugural-list-of-europes-50-best-bars-2026-is-revealed-302815104.html"
     },
     {
+      "name": "Sips",
+      "list": "50-best-bars",
+      "region": "Europe",
+      "year": 2026,
+      "rank": 3,
+      "city": "Barcelona, Spain",
+      "source": "award.json"
+    },
+    {
       "name": "Himkok",
       "list": "50-best-bars",
       "region": "Europe",
@@ -7686,6 +11808,15 @@
       "rank": 4,
       "city": "Oslo",
       "source": "https://www.prnewswire.com/news-releases/line-in-athens-is-no1-as-the-inaugural-list-of-europes-50-best-bars-2026-is-revealed-302815104.html"
+    },
+    {
+      "name": "Himkok",
+      "list": "50-best-bars",
+      "region": "Europe",
+      "year": 2026,
+      "rank": 4,
+      "city": "Olso, Norway",
+      "source": "award.json"
     },
     {
       "name": "Bar Nouveau",
@@ -7731,6 +11862,15 @@
       "rank": 9,
       "city": "Barcelona",
       "source": "https://www.prnewswire.com/news-releases/line-in-athens-is-no1-as-the-inaugural-list-of-europes-50-best-bars-2026-is-revealed-302815104.html"
+    },
+    {
+      "name": "Paradiso",
+      "list": "50-best-bars",
+      "region": "Europe",
+      "year": 2026,
+      "rank": 9,
+      "city": "Barcelona, Spain",
+      "source": "award.json"
     },
     {
       "name": "Connaught Bar",
@@ -7785,6 +11925,15 @@
       "rank": 15,
       "city": "Oslo",
       "source": "https://www.prnewswire.com/news-releases/line-in-athens-is-no1-as-the-inaugural-list-of-europes-50-best-bars-2026-is-revealed-302815104.html"
+    },
+    {
+      "name": "Svanen",
+      "list": "50-best-bars",
+      "region": "Europe",
+      "year": 2026,
+      "rank": 15,
+      "city": "Olso, Norway",
+      "source": "award.json"
     },
     {
       "name": "Nouvelle Vague",
@@ -8100,6 +12249,15 @@
       "rank": 50,
       "city": "Innsbruck",
       "source": "https://www.prnewswire.com/news-releases/line-in-athens-is-no1-as-the-inaugural-list-of-europes-50-best-bars-2026-is-revealed-302815104.html"
+    },
+    {
+      "name": "Sips & Guzzle",
+      "list": "50-best-bars",
+      "region": "New America",
+      "year": 2026,
+      "rank": 1,
+      "city": "New York",
+      "source": "award.json"
     },
     {
       "name": "Sip & Guzzle",
@@ -9065,6 +13223,15 @@
       "source": "https://www.50toppizza.it/50-top-pizza-world-2025-una-pizza-napoletana-by-anthony-mangieri-in-new-york-and-i-masanielli-by-francesco-martucci-in-caserta-these-are-the-best-pizzerias-in-the-world/"
     },
     {
+      "name": "Napoli on the Road",
+      "list": "50-best-pizza",
+      "region": "World",
+      "year": 2025,
+      "rank": 5,
+      "city": "London, UK",
+      "source": "award.json"
+    },
+    {
       "name": "Seu Pizza Illuminati",
       "list": "50-best-pizza",
       "region": "World",
@@ -9981,6 +14148,15 @@
       "rank": 1,
       "city": "London",
       "source": "https://www.50toppizza.it/50-top-pizza-europa-2026-napoli-on-the-road-in-london-is-the-best-pizzeria-in-europe-for-2026/"
+    },
+    {
+      "name": "Napoli on the Road",
+      "list": "50-best-pizza",
+      "region": "Europe",
+      "year": 2026,
+      "rank": 1,
+      "city": "London, UK",
+      "source": "award.json"
     },
     {
       "name": "Baldoria",

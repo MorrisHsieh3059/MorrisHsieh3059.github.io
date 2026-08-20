@@ -1,0 +1,513 @@
+{
+  "list": "101-best-steakhouse",
+  "region": "World",
+  "year": 2022,
+  "source": "https://www.worldbeststeaks.com/press-releases-2025",
+  "entries": [
+    {
+      "rank": 1,
+      "name": "Hawksmoor",
+      "city": "London"
+    },
+    {
+      "rank": 2,
+      "name": "Parrilla Don Julio",
+      "city": "Buenos Aires"
+    },
+    {
+      "rank": 3,
+      "name": "Firedoor",
+      "city": "Sydney"
+    },
+    {
+      "rank": 4,
+      "name": "Keens",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 5,
+      "name": "Gibsons Italia",
+      "city": "Chicago"
+    },
+    {
+      "rank": 6,
+      "name": "CUT",
+      "city": "Beverly Hills"
+    },
+    {
+      "rank": 7,
+      "name": "Bavette's Steakhouse",
+      "city": "Las Vegas"
+    },
+    {
+      "rank": 8,
+      "name": "Carcasse",
+      "city": "Koksijde"
+    },
+    {
+      "rank": 9,
+      "name": "El Capricho",
+      "city": "Jiménez de Jamuz"
+    },
+    {
+      "rank": 10,
+      "name": "Nick & Stef's",
+      "city": "Los Angeles"
+    },
+    {
+      "rank": 11,
+      "name": "Restaurang AG",
+      "city": "Stockholm"
+    },
+    {
+      "rank": 12,
+      "name": "Rockpool Bar and Grill",
+      "city": "Sydney"
+    },
+    {
+      "rank": 13,
+      "name": "Butcher and Singer",
+      "city": "Philadelphia"
+    },
+    {
+      "rank": 14,
+      "name": "Prime + Proper",
+      "city": "Detroit"
+    },
+    {
+      "rank": 15,
+      "name": "Porter House",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 16,
+      "name": "Guard and Grace",
+      "city": "Denver"
+    },
+    {
+      "rank": 17,
+      "name": "Chophouse",
+      "city": "Sydney"
+    },
+    {
+      "rank": 18,
+      "name": "F.X. Buckley",
+      "city": "Dublin"
+    },
+    {
+      "rank": 19,
+      "name": "COTE",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 20,
+      "name": "Beef & Glory",
+      "city": "Vienna"
+    },
+    {
+      "rank": 21,
+      "name": "Bistecca",
+      "city": "Singapore"
+    },
+    {
+      "rank": 22,
+      "name": "Beast",
+      "city": "London"
+    },
+    {
+      "rank": 23,
+      "name": "Casa Julián de Tolosa",
+      "city": "Tolosa"
+    },
+    {
+      "rank": 24,
+      "name": "Dstrikt",
+      "city": "Vienna"
+    },
+    {
+      "rank": 25,
+      "name": "Goodman",
+      "city": "London"
+    },
+    {
+      "rank": 26,
+      "name": "Knife",
+      "city": "Dallas"
+    },
+    {
+      "rank": 27,
+      "name": "Trattoria Dall'Oste",
+      "city": "Florence"
+    },
+    {
+      "rank": 28,
+      "name": "Baltaire",
+      "city": "Los Angeles"
+    },
+    {
+      "rank": 29,
+      "name": "Braceria Bifulco",
+      "city": "Naples"
+    },
+    {
+      "rank": 30,
+      "name": "American Cut Tribeca",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 31,
+      "name": "Gallaghers",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 32,
+      "name": "Mr Porter",
+      "city": "Amsterdam"
+    },
+    {
+      "rank": 33,
+      "name": "Grill Royal",
+      "city": "Berlin"
+    },
+    {
+      "rank": 34,
+      "name": "Kingsleys",
+      "city": "Sydney"
+    },
+    {
+      "rank": 35,
+      "name": "Porter & Rye",
+      "city": "Glasgow"
+    },
+    {
+      "rank": 36,
+      "name": "Anahi",
+      "city": "Paris"
+    },
+    {
+      "rank": 37,
+      "name": "Le Boeuf Volant",
+      "city": "Paris"
+    },
+    {
+      "rank": 38,
+      "name": "Prime Steak Club",
+      "city": "Mexico City"
+    },
+    {
+      "rank": 39,
+      "name": "George Prime Steak",
+      "city": "Munich"
+    },
+    {
+      "rank": 40,
+      "name": "La Maison de l'Aubrac",
+      "city": "Paris"
+    },
+    {
+      "rank": 41,
+      "name": "La Cabrera",
+      "city": "Buenos Aires"
+    },
+    {
+      "rank": 42,
+      "name": "Flat Iron",
+      "city": "London"
+    },
+    {
+      "rank": 43,
+      "name": "George Prime Steak",
+      "city": "Prague"
+    },
+    {
+      "rank": 44,
+      "name": "Maven",
+      "city": "Antwerp"
+    },
+    {
+      "rank": 45,
+      "name": "Antica Macelleria Cecchini",
+      "city": "Panzano"
+    },
+    {
+      "rank": 46,
+      "name": "The Grill",
+      "city": "Munich"
+    },
+    {
+      "rank": 47,
+      "name": "Guinea Grill",
+      "city": "London"
+    },
+    {
+      "rank": 48,
+      "name": "Beefbar",
+      "city": "Monte Carlo"
+    },
+    {
+      "rank": 49,
+      "name": "Zelman Meats",
+      "city": "London"
+    },
+    {
+      "rank": 50,
+      "name": "Sala de Corte",
+      "city": "Lisbon"
+    },
+    {
+      "rank": 51,
+      "name": "Peter Luger",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 52,
+      "name": "A Figueira Rubaiyat",
+      "city": "São Paulo"
+    },
+    {
+      "rank": 53,
+      "name": "Rowley's",
+      "city": "London"
+    },
+    {
+      "rank": 54,
+      "name": "Brick Steakhouse",
+      "city": "Guadalajara"
+    },
+    {
+      "rank": 55,
+      "name": "800°C",
+      "city": "Moscow"
+    },
+    {
+      "rank": 56,
+      "name": "Swift & Sons",
+      "city": "Chicago"
+    },
+    {
+      "rank": 57,
+      "name": "Holsteins Steakhouse",
+      "city": "Guadalajara"
+    },
+    {
+      "rank": 58,
+      "name": "Bazaar Meat",
+      "city": "Las Vegas"
+    },
+    {
+      "rank": 59,
+      "name": "Aragawa",
+      "city": "Tokyo"
+    },
+    {
+      "rank": 60,
+      "name": "La Brigada",
+      "city": "Buenos Aires"
+    },
+    {
+      "rank": 61,
+      "name": "Parador La Huella",
+      "city": "José Ignacio"
+    },
+    {
+      "rank": 62,
+      "name": "The Blacklock",
+      "city": "London"
+    },
+    {
+      "rank": 63,
+      "name": "Williams Butcher Table",
+      "city": "Zurich"
+    },
+    {
+      "rank": 64,
+      "name": "Barclay Prime",
+      "city": "Philadelphia"
+    },
+    {
+      "rank": 65,
+      "name": "Jervois Steak House",
+      "city": "Auckland"
+    },
+    {
+      "rank": 66,
+      "name": "Clover Grill",
+      "city": "Paris"
+    },
+    {
+      "rank": 67,
+      "name": "Wolfgang's",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 68,
+      "name": "NV-80",
+      "city": "Cape Town"
+    },
+    {
+      "rank": 69,
+      "name": "Meat & Liquor",
+      "city": "New Plymouth"
+    },
+    {
+      "rank": 70,
+      "name": "Les Oreilles et la Queue",
+      "city": "Paris"
+    },
+    {
+      "rank": 71,
+      "name": "Rib'n Reef",
+      "city": "Montreal"
+    },
+    {
+      "rank": 72,
+      "name": "Retour",
+      "city": "Copenhagen"
+    },
+    {
+      "rank": 73,
+      "name": "L'Argot",
+      "city": "Lyon"
+    },
+    {
+      "rank": 74,
+      "name": "APL",
+      "city": "Los Angeles"
+    },
+    {
+      "rank": 75,
+      "name": "Marco Pierre White",
+      "city": "Dublin"
+    },
+    {
+      "rank": 76,
+      "name": "Beef",
+      "city": "Kyiv"
+    },
+    {
+      "rank": 77,
+      "name": "Butcher & Vine",
+      "city": "Melbourne"
+    },
+    {
+      "rank": 78,
+      "name": "Butcher & Grill",
+      "city": "Cape Town"
+    },
+    {
+      "rank": 79,
+      "name": "Ojo de Agua",
+      "city": "Frankfurt"
+    },
+    {
+      "rank": 80,
+      "name": "Stripsteak",
+      "city": "Miami Beach"
+    },
+    {
+      "rank": 81,
+      "name": "Gwen",
+      "city": "Los Angeles"
+    },
+    {
+      "rank": 82,
+      "name": "The Coal Shed",
+      "city": "London"
+    },
+    {
+      "rank": 83,
+      "name": "Napa Grill",
+      "city": "Zurich"
+    },
+    {
+      "rank": 84,
+      "name": "Prime 68",
+      "city": "Dubai"
+    },
+    {
+      "rank": 85,
+      "name": "Leña",
+      "city": "Marbella"
+    },
+    {
+      "rank": 86,
+      "name": "The Meat Co.",
+      "city": "Dubai"
+    },
+    {
+      "rank": 87,
+      "name": "Amaren",
+      "city": "Bilbao"
+    },
+    {
+      "rank": 88,
+      "name": "Midtown Grill",
+      "city": "Amsterdam"
+    },
+    {
+      "rank": 89,
+      "name": "Catch Steak",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 90,
+      "name": "Marcelleria",
+      "city": "Melbourne"
+    },
+    {
+      "rank": 91,
+      "name": "Osteria di Nandone",
+      "city": "Scarperia"
+    },
+    {
+      "rank": 92,
+      "name": "Braceria Elvetica",
+      "city": "Lugano"
+    },
+    {
+      "rank": 93,
+      "name": "Griffins",
+      "city": "Stockholm"
+    },
+    {
+      "rank": 94,
+      "name": "Bowery Meat Co.",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 95,
+      "name": "Sparks",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 96,
+      "name": "Beef",
+      "city": "Geneva"
+    },
+    {
+      "rank": 97,
+      "name": "Entrecote",
+      "city": "Melbourne"
+    },
+    {
+      "rank": 98,
+      "name": "Bateau",
+      "city": "Seattle"
+    },
+    {
+      "rank": 99,
+      "name": "Jean-Georges",
+      "city": "Las Vegas"
+    },
+    {
+      "rank": 100,
+      "name": "Asina Luna",
+      "city": "Milan"
+    },
+    {
+      "rank": 101,
+      "name": "Wadakin",
+      "city": "Osaka"
+    }
+  ]
+}

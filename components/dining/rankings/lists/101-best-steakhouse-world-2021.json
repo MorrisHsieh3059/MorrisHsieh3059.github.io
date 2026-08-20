@@ -1,0 +1,58 @@
+{
+  "list": "101-best-steakhouse",
+  "region": "World",
+  "year": 2021,
+  "source": "https://en.wikipedia.org/wiki/World%27s_101_Best_Steak_Restaurants",
+  "entries": [
+    {
+      "rank": 1,
+      "name": "Firedoor",
+      "city": "Sydney"
+    },
+    {
+      "rank": 2,
+      "name": "Parrilla Don Julio",
+      "city": "Buenos Aires"
+    },
+    {
+      "rank": 3,
+      "name": "Hawksmoor",
+      "city": "London"
+    },
+    {
+      "rank": 4,
+      "name": "Asador Etxebarri",
+      "city": "Axpe"
+    },
+    {
+      "rank": 5,
+      "name": "El Capricho",
+      "city": "Jiménez de Jamuz"
+    },
+    {
+      "rank": 6,
+      "name": "Butcher and Singer",
+      "city": "Philadelphia"
+    },
+    {
+      "rank": 7,
+      "name": "Gibsons Italia",
+      "city": "Chicago"
+    },
+    {
+      "rank": 8,
+      "name": "Porter House",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 9,
+      "name": "Keens",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 10,
+      "name": "CUT",
+      "city": "Beverly Hills"
+    }
+  ]
+}
