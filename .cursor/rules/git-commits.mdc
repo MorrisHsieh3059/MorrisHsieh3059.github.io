@@ -1,0 +1,28 @@
+---
+description: Conventional commit titles scoped to site sections
+alwaysApply: true
+---
+
+# Git commit titles
+
+Format: `type(scope): summary`
+
+**Types**
+
+- `backend` — section data (JSON, visit photos, ranking cache) and scripts that feed it
+- `frontend` — HTML, CSS, JS, and UI for that section
+- `chore` — tooling, CI, build, Cursor rules, dependencies
+- `docs` — README and similar
+
+**Scopes** — nav section, lowercase: `dining`, `travel`, `resume`, `faith`, `about`, `contact`, `intro`. Cross-cutting site or build work: `site`. WIP: `nyc`, `gallery`. Do not use Dining/Faith sub-tabs (`timeline`, `michelin`, `award`, `devotion`) as the scope.
+
+- One line, imperative, lowercase after the colon
+- Scope is the primary section touched; mixed changes → dominant section or split commits
+- Dining visit ship commits use `backend(dining):`
+
+Examples:
+
+- `backend(dining): add Four Twenty Five visits`
+- `frontend(dining): pack Timeline cards on mobile`
+- `chore(dining): cache 50 Top Pizza lists`
+- `chore(site): add commit title Cursor rule`
