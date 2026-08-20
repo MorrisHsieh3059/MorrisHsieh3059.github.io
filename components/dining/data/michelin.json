@@ -477,6 +477,48 @@
     ]
   },
   {
+    "id": "viva-il-futuro-112223",
+    "name": "Viva il Futuro",
+    "date": "2023-11-22",
+    "stars": 1,
+    "status": "current",
+    "cuisines": [
+      "Italian",
+      "Creative"
+    ],
+    "menu": "full tasting",
+    "city": "Milan, Italy",
+    "pictures": [
+      "0.jpeg",
+      "1.jpeg",
+      "2.jpeg",
+      "3.jpeg",
+      "4.jpeg",
+      "5.jpeg",
+      "6.jpeg",
+      "7.jpeg",
+      "8.jpeg",
+      "9.jpeg",
+      "10.jpeg",
+      "11.jpeg",
+      "12.jpeg",
+      "13.jpeg",
+      "14.jpeg",
+      "15.jpeg",
+      "16.jpeg",
+      "17.jpeg",
+      "18.jpeg",
+      "19.jpeg",
+      "20.jpeg",
+      "21.jpeg",
+      "22.jpeg",
+      "23.jpeg",
+      "24.jpeg",
+      "25.jpeg",
+      "26.jpeg"
+    ]
+  },
+  {
     "id": "8282-080126",
     "name": "8282",
     "date": "2026-08-01",
