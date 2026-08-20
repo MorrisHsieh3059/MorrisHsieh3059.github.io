@@ -1326,5 +1326,43 @@
         "rank": 84
       }
     ]
+  },
+  {
+    "id": "trattoria-dalloste-112723",
+    "name": "Trattoria Dall'Oste",
+    "city": "Florence",
+    "date": "2023-11-27",
+    "menu": "à la carte",
+    "cuisines": [
+      "Tuscan"
+    ],
+    "pictures": [
+      "0.jpeg",
+      "1.jpeg",
+      "2.jpeg",
+      "3.jpeg",
+      "4.jpeg",
+      "5.jpeg"
+    ],
+    "accolades": [
+      {
+        "list": "101-best-steakhouse",
+        "region": "World",
+        "year": 2024,
+        "rank": 43
+      },
+      {
+        "list": "101-best-steakhouse",
+        "region": "World",
+        "year": 2023,
+        "rank": 24
+      },
+      {
+        "list": "101-best-steakhouse",
+        "region": "World",
+        "year": 2022,
+        "rank": 27
+      }
+    ]
   }
 ]
