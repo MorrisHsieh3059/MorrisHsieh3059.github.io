@@ -1,0 +1,258 @@
+{
+  "list": "50-best-pizza",
+  "region": "Europe",
+  "year": 2020,
+  "source": "https://www.50toppizza.it/50-top-europe-2020/",
+  "entries": [
+    {
+      "rank": 1,
+      "name": "50 Kalò di Ciro Salvo Pizzeria London",
+      "city": "London"
+    },
+    {
+      "rank": 2,
+      "name": "Via Toledo Enopizzeria",
+      "city": "Vienna"
+    },
+    {
+      "rank": 3,
+      "name": "Bijou",
+      "city": "Paris"
+    },
+    {
+      "rank": 4,
+      "name": "Bæst",
+      "city": "Copenhagen"
+    },
+    {
+      "rank": 5,
+      "name": "La Pizza è Bella",
+      "city": "Brussels"
+    },
+    {
+      "rank": 6,
+      "name": "Malafemmena",
+      "city": "Berlin"
+    },
+    {
+      "rank": 7,
+      "name": "Lilla Napoli",
+      "city": "Falkenberg"
+    },
+    {
+      "rank": 8,
+      "name": "nNea",
+      "city": "Amsterdam"
+    },
+    {
+      "rank": 9,
+      "name": "Pizzeria Luca",
+      "city": "Copenhagen"
+    },
+    {
+      "rank": 10,
+      "name": "Fratelli Figurato",
+      "city": "Madrid"
+    },
+    {
+      "rank": 11,
+      "name": "Kytaly",
+      "city": "Geneva"
+    },
+    {
+      "rank": 12,
+      "name": "La Bottega Siciliana",
+      "city": "Moscow"
+    },
+    {
+      "rank": 13,
+      "name": "L'Antica Pizzeria",
+      "city": "London"
+    },
+    {
+      "rank": 14,
+      "name": "Daroco Bourse",
+      "city": "Paris"
+    },
+    {
+      "rank": 15,
+      "name": "Pizzeria Luca",
+      "city": "Helsinki"
+    },
+    {
+      "rank": 16,
+      "name": "Cirillo's",
+      "city": "Dublin"
+    },
+    {
+      "rank": 17,
+      "name": "60 Secondi Pizza Napoletana",
+      "city": "Munich"
+    },
+    {
+      "rank": 18,
+      "name": "Oi Vita Pizzeria",
+      "city": "London"
+    },
+    {
+      "rank": 19,
+      "name": "Faggio Pizzeria",
+      "city": "Paris"
+    },
+    {
+      "rank": 20,
+      "name": "Vinoteket",
+      "city": "Oslo"
+    },
+    {
+      "rank": 21,
+      "name": "The Dough Bros",
+      "city": "Galway"
+    },
+    {
+      "rank": 22,
+      "name": "Forno d'Oro",
+      "city": "Lisbon"
+    },
+    {
+      "rank": 23,
+      "name": "'O Ver St. James's",
+      "city": "London"
+    },
+    {
+      "rank": 24,
+      "name": "Araldo Arte del Gusto",
+      "city": "Madrid"
+    },
+    {
+      "rank": 25,
+      "name": "Vicoli di Napoli",
+      "city": "London"
+    },
+    {
+      "rank": 26,
+      "name": "Guillaume Grasso La vera Pizza Napoletana",
+      "city": "Paris"
+    },
+    {
+      "rank": 27,
+      "name": "Dalmata",
+      "city": "Paris"
+    },
+    {
+      "rank": 28,
+      "name": "MadreLievito Llacuna",
+      "city": "Barcelona"
+    },
+    {
+      "rank": 29,
+      "name": "Peppe Pizzeria",
+      "city": "Paris"
+    },
+    {
+      "rank": 30,
+      "name": "La Piola Pizza",
+      "city": "Brussels"
+    },
+    {
+      "rank": 31,
+      "name": "Acqua & Farina",
+      "city": "Lugano"
+    },
+    {
+      "rank": 32,
+      "name": "La Balmesina",
+      "city": "Barcelona"
+    },
+    {
+      "rank": 33,
+      "name": "Double Zero Neapolitan Pizza",
+      "city": "Manchester"
+    },
+    {
+      "rank": 34,
+      "name": "Positano",
+      "city": "Kyiv"
+    },
+    {
+      "rank": 35,
+      "name": "Sodo Pizza",
+      "city": "London"
+    },
+    {
+      "rank": 36,
+      "name": "Oro di Napoli",
+      "city": "Santa Cruz de Tenerife"
+    },
+    {
+      "rank": 37,
+      "name": "Paesano Pizza",
+      "city": "Glasgow"
+    },
+    {
+      "rank": 38,
+      "name": "450°C",
+      "city": "Turku"
+    },
+    {
+      "rank": 39,
+      "name": "NAPLES Authentic Neapolitan Pizza",
+      "city": "Fürth"
+    },
+    {
+      "rank": 40,
+      "name": "Pizza Nuova",
+      "city": "Prague"
+    },
+    {
+      "rank": 41,
+      "name": "450 Gradi",
+      "city": "Lidingö"
+    },
+    {
+      "rank": 42,
+      "name": "De Superette Pizza",
+      "city": "Ghent"
+    },
+    {
+      "rank": 43,
+      "name": "Scrocchiarella",
+      "city": "Moscow"
+    },
+    {
+      "rank": 44,
+      "name": "Belli di Mamma",
+      "city": "Budapest"
+    },
+    {
+      "rank": 45,
+      "name": "Majstor I Margarita",
+      "city": "Belgrade"
+    },
+    {
+      "rank": 46,
+      "name": "Pizza 22 cm",
+      "city": "Moscow"
+    },
+    {
+      "rank": 47,
+      "name": "Animaletto Pizza Bar",
+      "city": "Bucharest"
+    },
+    {
+      "rank": 48,
+      "name": "Nonna Pizzeria",
+      "city": "Warsaw"
+    },
+    {
+      "rank": 49,
+      "name": "Ave Pizza",
+      "city": "Warsaw"
+    },
+    {
+      "rank": 50,
+      "name": "Kaja Pizza Köök",
+      "city": "Tallinn"
+    }
+  ]
+}

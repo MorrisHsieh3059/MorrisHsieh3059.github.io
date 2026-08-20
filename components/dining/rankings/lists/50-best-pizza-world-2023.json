@@ -1,0 +1,513 @@
+{
+  "list": "50-best-pizza",
+  "region": "World",
+  "year": 2023,
+  "source": "https://www.50toppizza.it/50-top-pizza-world-2023-i-masanielli-di-francesco-martucci-e-10-diego-vitagliano-pizzeria-sono-le-migliori-pizzerie-del-mondo/",
+  "entries": [
+    {
+      "rank": 1,
+      "name": "10 Diego Vitagliano Pizzeria",
+      "city": "Naples"
+    },
+    {
+      "rank": 1,
+      "name": "I Masanielli – Francesco Martucci",
+      "city": "Caserta"
+    },
+    {
+      "rank": 2,
+      "name": "Una Pizza Napoletana",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 3,
+      "name": "Sartoria Panatieri",
+      "city": "Barcelona"
+    },
+    {
+      "rank": 4,
+      "name": "The Pizza Bar on 38th",
+      "city": "Tokyo"
+    },
+    {
+      "rank": 5,
+      "name": "I Tigli",
+      "city": "San Bonifacio"
+    },
+    {
+      "rank": 6,
+      "name": "Seu Pizza Illuminati",
+      "city": "Rome"
+    },
+    {
+      "rank": 7,
+      "name": "50 Kalò",
+      "city": "Naples"
+    },
+    {
+      "rank": 8,
+      "name": "Bottega",
+      "city": "Beijing"
+    },
+    {
+      "rank": 9,
+      "name": "180g Pizzeria Romana",
+      "city": "Rome"
+    },
+    {
+      "rank": 10,
+      "name": "I Masanielli – Sasà Martucci",
+      "city": "Caserta"
+    },
+    {
+      "rank": 11,
+      "name": "Razza Pizza Artigianale",
+      "city": "Jersey City"
+    },
+    {
+      "rank": 12,
+      "name": "Francesco & Salvatore Salvo",
+      "city": "Naples"
+    },
+    {
+      "rank": 13,
+      "name": "Bæst",
+      "city": "Copenhagen"
+    },
+    {
+      "rank": 14,
+      "name": "50 Kalò",
+      "city": "London"
+    },
+    {
+      "rank": 15,
+      "name": "Dry Milano",
+      "city": "Milan"
+    },
+    {
+      "rank": 16,
+      "name": "Cambia-Menti di Ciccio Vitiello",
+      "city": "Caserta"
+    },
+    {
+      "rank": 17,
+      "name": "Via Toledo Enopizzeria",
+      "city": "Vienna"
+    },
+    {
+      "rank": 18,
+      "name": "Ken's Artisan Pizza",
+      "city": "Portland"
+    },
+    {
+      "rank": 19,
+      "name": "Tony's Pizza Napoletana",
+      "city": "San Francisco"
+    },
+    {
+      "rank": 20,
+      "name": "La Notizia 94",
+      "city": "Naples"
+    },
+    {
+      "rank": 21,
+      "name": "Pizzeria Bianco",
+      "city": "Phoenix"
+    },
+    {
+      "rank": 22,
+      "name": "Ribalta",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 23,
+      "name": "Pizzeria Peppe – Napoli sta' ca'",
+      "city": "Tokyo"
+    },
+    {
+      "rank": 24,
+      "name": "Confine",
+      "city": "Milan"
+    },
+    {
+      "rank": 25,
+      "name": "'O Munaciello",
+      "city": "Miami"
+    },
+    {
+      "rank": 26,
+      "name": "Le Grotticelle",
+      "city": "Caggiano"
+    },
+    {
+      "rank": 27,
+      "name": "Carlo Sammarco Pizzeria 2.0",
+      "city": "Aversa"
+    },
+    {
+      "rank": 28,
+      "name": "Jay's Artisan Pizzeria",
+      "city": "Kenmore"
+    },
+    {
+      "rank": 29,
+      "name": "Pepe in Grani",
+      "city": "Caiazzo"
+    },
+    {
+      "rank": 30,
+      "name": "La Cascina dei Sapori",
+      "city": "Rezzato"
+    },
+    {
+      "rank": 31,
+      "name": "Apogeo",
+      "city": "Pietrasanta"
+    },
+    {
+      "rank": 32,
+      "name": "Pizza Zulù",
+      "city": "Fürth"
+    },
+    {
+      "rank": 33,
+      "name": "Song' E Napule",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 34,
+      "name": "Denis",
+      "city": "Milan"
+    },
+    {
+      "rank": 35,
+      "name": "BOB Alchimia a Spicchi",
+      "city": "Montepaone Lido"
+    },
+    {
+      "rank": 36,
+      "name": "Allegrìo",
+      "city": "Rome"
+    },
+    {
+      "rank": 37,
+      "name": "Pizzeria Da Lioniello",
+      "city": "Succivo"
+    },
+    {
+      "rank": 38,
+      "name": "Ti Amo",
+      "city": "Buenos Aires"
+    },
+    {
+      "rank": 39,
+      "name": "400 Gradi",
+      "city": "Lecce"
+    },
+    {
+      "rank": 40,
+      "name": "Pupillo Pura Pizza",
+      "city": "Frosinone"
+    },
+    {
+      "rank": 41,
+      "name": "48h Pizza e Gnocchi Bar",
+      "city": "Melbourne"
+    },
+    {
+      "rank": 42,
+      "name": "Fratelli Figurato",
+      "city": "Madrid"
+    },
+    {
+      "rank": 43,
+      "name": "Fiata by Salvatore Fiata",
+      "city": "Hong Kong"
+    },
+    {
+      "rank": 44,
+      "name": "Via Toledo Enopizzeria",
+      "city": "Dubai"
+    },
+    {
+      "rank": 45,
+      "name": "Forza",
+      "city": "Helsinki"
+    },
+    {
+      "rank": 46,
+      "name": "Napoli on the Road",
+      "city": "London"
+    },
+    {
+      "rank": 47,
+      "name": "Dante's Pizzeria Napoletana",
+      "city": "Auckland"
+    },
+    {
+      "rank": 48,
+      "name": "nNea",
+      "city": "Amsterdam"
+    },
+    {
+      "rank": 49,
+      "name": "Pizza Massilia",
+      "city": "Bangkok"
+    },
+    {
+      "rank": 50,
+      "name": "La Balmesina",
+      "city": "Barcelona"
+    },
+    {
+      "rank": 51,
+      "name": "QT Pizza Bar",
+      "city": "São Paulo"
+    },
+    {
+      "rank": 52,
+      "name": "Pizzeria Mazzie",
+      "city": "Bangkok"
+    },
+    {
+      "rank": 53,
+      "name": "IMperfetto",
+      "city": "Puteaux"
+    },
+    {
+      "rank": 54,
+      "name": "Crosta Pizzeria",
+      "city": "Makati"
+    },
+    {
+      "rank": 55,
+      "name": "'O Scugnizzo",
+      "city": "Arezzo"
+    },
+    {
+      "rank": 56,
+      "name": "Renato Bosco Pizzeria",
+      "city": "San Martino Buon Albergo"
+    },
+    {
+      "rank": 57,
+      "name": "Frumento",
+      "city": "Acireale"
+    },
+    {
+      "rank": 58,
+      "name": "Sbanco",
+      "city": "Rome"
+    },
+    {
+      "rank": 59,
+      "name": "Fandango",
+      "city": "Potenza"
+    },
+    {
+      "rank": 60,
+      "name": "Pizzeria Le Parùle",
+      "city": "Ercolano"
+    },
+    {
+      "rank": 61,
+      "name": "Giovanni Santarpia",
+      "city": "Florence"
+    },
+    {
+      "rank": 62,
+      "name": "La Pizza è Bella Gourmet",
+      "city": "Brussels"
+    },
+    {
+      "rank": 63,
+      "name": "Al Taglio",
+      "city": "Sydney"
+    },
+    {
+      "rank": 64,
+      "name": "Baldoria",
+      "city": "Madrid"
+    },
+    {
+      "rank": 65,
+      "name": "Giangi Pizza e Ricerca",
+      "city": "Arielli"
+    },
+    {
+      "rank": 66,
+      "name": "Pizzeria Panetteria Bosco",
+      "city": "Tempio Pausania"
+    },
+    {
+      "rank": 67,
+      "name": "Modus",
+      "city": "Milan"
+    },
+    {
+      "rank": 68,
+      "name": "Clementina",
+      "city": "Fiumicino"
+    },
+    {
+      "rank": 69,
+      "name": "La Bolla",
+      "city": "Caserta"
+    },
+    {
+      "rank": 70,
+      "name": "Palazzo Petrucci Pizzeria",
+      "city": "Naples"
+    },
+    {
+      "rank": 71,
+      "name": "'O Fiore Mio",
+      "city": "Faenza"
+    },
+    {
+      "rank": 72,
+      "name": "Kesté",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 73,
+      "name": "La Leggenda Pizzeria",
+      "city": "Miami"
+    },
+    {
+      "rank": 74,
+      "name": "Sant'Isidoro – Pizza & Bolle",
+      "city": "Rome"
+    },
+    {
+      "rank": 75,
+      "name": "I Borboni Pizzeria",
+      "city": "Pontecagnano Faiano"
+    },
+    {
+      "rank": 76,
+      "name": "Pasquale's Pizzeria Napoletana",
+      "city": "South Kingstown"
+    },
+    {
+      "rank": 77,
+      "name": "Kytaly",
+      "city": "Geneva"
+    },
+    {
+      "rank": 78,
+      "name": "Maiori",
+      "city": "Cagliari"
+    },
+    {
+      "rank": 79,
+      "name": "La Piola Pizza",
+      "city": "Brussels"
+    },
+    {
+      "rank": 80,
+      "name": "Forno d'Oro",
+      "city": "Lisbon"
+    },
+    {
+      "rank": 81,
+      "name": "Demaio",
+      "city": "Bilbao"
+    },
+    {
+      "rank": 82,
+      "name": "Pizza Strada",
+      "city": "Tokyo"
+    },
+    {
+      "rank": 83,
+      "name": "Pizzeria Chicco",
+      "city": "Colle di Val d'Elsa"
+    },
+    {
+      "rank": 84,
+      "name": "What the Crust",
+      "city": "Cairo"
+    },
+    {
+      "rank": 85,
+      "name": "A Pizza da Mooca",
+      "city": "São Paulo"
+    },
+    {
+      "rank": 86,
+      "name": "L'Antica Pizzeria",
+      "city": "London"
+    },
+    {
+      "rank": 87,
+      "name": "Malafemmena",
+      "city": "Berlin"
+    },
+    {
+      "rank": 88,
+      "name": "Pizza Studio Tamaki Roppongi",
+      "city": "Tokyo"
+    },
+    {
+      "rank": 89,
+      "name": "Surt",
+      "city": "Copenhagen"
+    },
+    {
+      "rank": 90,
+      "name": "Il Caffè",
+      "city": "Dubai"
+    },
+    {
+      "rank": 91,
+      "name": "Guillaume Grasso",
+      "city": "Paris"
+    },
+    {
+      "rank": 92,
+      "name": "Ops",
+      "city": "New York, NY"
+    },
+    {
+      "rank": 93,
+      "name": "Spacca Napoli Pizzeria",
+      "city": "Chicago"
+    },
+    {
+      "rank": 94,
+      "name": "'O Ver",
+      "city": "London"
+    },
+    {
+      "rank": 95,
+      "name": "Pizzeria Luca",
+      "city": "Copenhagen"
+    },
+    {
+      "rank": 96,
+      "name": "a mano",
+      "city": "Makati"
+    },
+    {
+      "rank": 97,
+      "name": "Fabrica Pizza",
+      "city": "Tampa"
+    },
+    {
+      "rank": 98,
+      "name": "San Gennaro",
+      "city": "Zurich"
+    },
+    {
+      "rank": 99,
+      "name": "Matto Napoletano",
+      "city": "Skopje"
+    },
+    {
+      "rank": 100,
+      "name": "Leggera Pizza Napoletana",
+      "city": "São Paulo"
+    }
+  ]
+}

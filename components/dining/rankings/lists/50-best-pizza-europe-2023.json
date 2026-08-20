@@ -1,0 +1,258 @@
+{
+  "list": "50-best-pizza",
+  "region": "Europe",
+  "year": 2023,
+  "source": "https://www.50toppizza.it/50-top-pizza-europa-2023-sartoria-panatieri-has-been-named-the-best-pizzeria-in-europe/",
+  "entries": [
+    {
+      "rank": 1,
+      "name": "Sartoria Panatieri",
+      "city": "Barcelona"
+    },
+    {
+      "rank": 2,
+      "name": "Bæst",
+      "city": "Copenhagen"
+    },
+    {
+      "rank": 3,
+      "name": "50 Kalò",
+      "city": "London"
+    },
+    {
+      "rank": 4,
+      "name": "Via Toledo Enopizzeria",
+      "city": "Vienna"
+    },
+    {
+      "rank": 5,
+      "name": "Pizza Zulù",
+      "city": "Fürth"
+    },
+    {
+      "rank": 6,
+      "name": "Fratelli Figurato",
+      "city": "Madrid"
+    },
+    {
+      "rank": 7,
+      "name": "Forza",
+      "city": "Helsinki"
+    },
+    {
+      "rank": 8,
+      "name": "Napoli on the Road",
+      "city": "London"
+    },
+    {
+      "rank": 9,
+      "name": "nNea",
+      "city": "Amsterdam"
+    },
+    {
+      "rank": 10,
+      "name": "La Balmesina",
+      "city": "Barcelona"
+    },
+    {
+      "rank": 11,
+      "name": "IMperfetto",
+      "city": "Puteaux"
+    },
+    {
+      "rank": 12,
+      "name": "La Pizza è Bella Gourmet",
+      "city": "Brussels"
+    },
+    {
+      "rank": 13,
+      "name": "Baldoria",
+      "city": "Madrid"
+    },
+    {
+      "rank": 14,
+      "name": "Kytaly",
+      "city": "Geneva"
+    },
+    {
+      "rank": 15,
+      "name": "La Piola Pizza",
+      "city": "Brussels"
+    },
+    {
+      "rank": 16,
+      "name": "Forno d'Oro",
+      "city": "Lisbon"
+    },
+    {
+      "rank": 17,
+      "name": "Demaio",
+      "city": "Bilbao"
+    },
+    {
+      "rank": 18,
+      "name": "L'Antica Pizzeria",
+      "city": "London"
+    },
+    {
+      "rank": 19,
+      "name": "Malafemmena",
+      "city": "Berlin"
+    },
+    {
+      "rank": 20,
+      "name": "Surt",
+      "city": "Copenhagen"
+    },
+    {
+      "rank": 21,
+      "name": "Guillaume Grasso",
+      "city": "Paris"
+    },
+    {
+      "rank": 22,
+      "name": "'O Ver",
+      "city": "London"
+    },
+    {
+      "rank": 23,
+      "name": "Pizzeria Luca",
+      "city": "Copenhagen"
+    },
+    {
+      "rank": 24,
+      "name": "San Gennaro",
+      "city": "Zurich"
+    },
+    {
+      "rank": 25,
+      "name": "Matto Napoletano",
+      "city": "Skopje"
+    },
+    {
+      "rank": 26,
+      "name": "Belli di Mamma",
+      "city": "Budapest"
+    },
+    {
+      "rank": 27,
+      "name": "Little Pyg",
+      "city": "Dublin"
+    },
+    {
+      "rank": 28,
+      "name": "Odori",
+      "city": "Athens"
+    },
+    {
+      "rank": 29,
+      "name": "Piazza Sorrento",
+      "city": "Krefeld"
+    },
+    {
+      "rank": 30,
+      "name": "La Manifattura",
+      "city": "Paris"
+    },
+    {
+      "rank": 31,
+      "name": "Pizzeria Luca",
+      "city": "Helsinki"
+    },
+    {
+      "rank": 32,
+      "name": "Mr. Pizza",
+      "city": "Dortmund"
+    },
+    {
+      "rank": 33,
+      "name": "Majstor I Margarita",
+      "city": "Belgrade"
+    },
+    {
+      "rank": 34,
+      "name": "Ostro.",
+      "city": "Gdańsk"
+    },
+    {
+      "rank": 35,
+      "name": "450°C",
+      "city": "Turku"
+    },
+    {
+      "rank": 36,
+      "name": "Cloud Factory",
+      "city": "Esch-sur-Alzette"
+    },
+    {
+      "rank": 37,
+      "name": "Animaletto Pizza Bar",
+      "city": "Bucharest"
+    },
+    {
+      "rank": 38,
+      "name": "Ciao a Tutti",
+      "city": "Warsaw"
+    },
+    {
+      "rank": 39,
+      "name": "Pietra",
+      "city": "Belgrade"
+    },
+    {
+      "rank": 40,
+      "name": "Pop's Pizza",
+      "city": "Ljubljana"
+    },
+    {
+      "rank": 41,
+      "name": "Oro di Napoli",
+      "city": "Santa Cruz de Tenerife"
+    },
+    {
+      "rank": 42,
+      "name": "Arte Bianca",
+      "city": "Sagres"
+    },
+    {
+      "rank": 43,
+      "name": "Franko's Pizza & Bar",
+      "city": "Zagreb"
+    },
+    {
+      "rank": 44,
+      "name": "Dalmata",
+      "city": "Paris"
+    },
+    {
+      "rank": 45,
+      "name": "Infraganti Pizza Bar",
+      "city": "Alicante"
+    },
+    {
+      "rank": 46,
+      "name": "Zielona Górka",
+      "city": "Pabianice"
+    },
+    {
+      "rank": 47,
+      "name": "Sapori Italiani U Taliana",
+      "city": "Bratislava"
+    },
+    {
+      "rank": 48,
+      "name": "PEPPO'S – Pizzeria Contemporanea",
+      "city": "Riga"
+    },
+    {
+      "rank": 49,
+      "name": "Pizza Nuova",
+      "city": "Prague"
+    },
+    {
+      "rank": 50,
+      "name": "Kaja Pizza Köök",
+      "city": "Tallinn"
+    }
+  ]
+}
