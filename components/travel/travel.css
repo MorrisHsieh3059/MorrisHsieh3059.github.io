@@ -378,28 +378,148 @@
 }
 
 @media (max-width: 991px) {
+	/* Split the travel pane: map stays put, trip cards scroll underneath. */
+	.travel-section {
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+	}
+
 	.travel-section .section-block {
+		flex: 1 1 auto;
+		min-height: 0;
+		display: flex;
+		flex-direction: column;
 		padding-right: 40px;
+		padding-bottom: 12px;
+	}
+
+	.travel-section .container-fluid {
+		flex: 1 1 auto;
+		min-width: 0;
+		min-height: 0;
+		width: 100%;
+		max-width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		padding-left: 0;
+		padding-right: 0;
+		overflow: hidden;
+	}
+
+	.travel-section .section-header {
+		flex: 0 0 auto;
+	}
+
+	.travel-section .section-header > h2 {
+		font-size: 22px;
+		letter-spacing: 3px;
+	}
+
+	.travel-stats {
+		flex: 0 0 auto;
+		margin: 0.45rem 0 0.2rem;
+		font-size: 0.78rem;
+		line-height: 1.45;
+		overflow-wrap: anywhere;
+		word-break: break-word;
+	}
+
+	.travel-notice {
+		flex: 0 0 auto;
 	}
 
 	.travel-layout {
-		grid-template-columns: 1fr;
+		flex: 1 1 auto;
+		min-width: 0;
+		min-height: 0;
+		max-width: 100%;
+		display: flex;
+		flex-direction: column;
+		grid-template-columns: none;
+		margin-top: 0.55rem;
+		gap: 0.65rem;
+		overflow: hidden;
+	}
+
+	.travel-map-panel {
+		flex: 0 1 42%;
+		min-width: 0;
+		min-height: 140px;
+		max-width: 100%;
+		max-height: 48%;
+		display: flex;
+		flex-direction: column;
 	}
 
 	.travel-map-wrap {
-		height: clamp(240px, 42vh, 420px);
-		height: clamp(240px, 42dvh, 420px);
-		min-height: 240px;
+		flex: 1 1 auto;
+		width: 100%;
+		height: 100%;
+		min-height: 0;
 	}
 
 	.travel-cards-sidebar {
+		flex: 1 1 58%;
+		min-width: 0;
+		min-height: 0;
+		max-width: 100%;
 		height: auto;
+		position: relative;
+	}
+
+	.travel-cards-sidebar::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		height: 28px;
+		pointer-events: none;
+		background: linear-gradient(to top, #f0f0f0, rgba(240, 240, 240, 0));
+	}
+
+	.travel-cards-panel {
+		overflow-y: auto;
+		overflow-x: hidden;
+		-webkit-overflow-scrolling: touch;
+		overscroll-behavior: contain;
+		touch-action: pan-y;
+		padding-bottom: 1.25rem;
+	}
+
+	.travel-panel-title {
+		margin-bottom: 0.5rem;
 	}
 
 	.travel-hover-card {
 		width: calc(100% - 24px);
 		left: 12px;
 		right: 12px;
+	}
+
+	.travel-map-legend {
+		font-size: 0.68rem;
+		padding: 0.35rem 0.55rem;
+		bottom: 8px;
+		left: 8px;
+		max-width: calc(100% - 16px);
+	}
+
+	.travel-map-legend span {
+		margin-right: 0.5rem;
+	}
+
+	.trip-card {
+		padding: 0.9rem 1rem;
+		margin-bottom: 0.7rem;
+		max-width: 100%;
+	}
+
+	.trip-card:hover,
+	.trip-card.active {
+		transform: none;
 	}
 }
 
@@ -408,10 +528,8 @@
 		padding-right: 24px;
 	}
 
-	.travel-map-wrap {
-		height: clamp(220px, 38vh, 360px);
-		height: clamp(220px, 38dvh, 360px);
-		min-height: 220px;
+	.travel-panel-hint {
+		display: none;
 	}
 
 	.trip-card,
@@ -421,5 +539,26 @@
 	.trip-card .trip-counts,
 	.trip-card .cities {
 		overflow-wrap: break-word;
+	}
+}
+
+@media (max-width: 991px) and (orientation: landscape) {
+	.travel-section {
+		padding-top: 28px;
+	}
+
+	.travel-section .section-header > h2 {
+		font-size: 18px;
+		letter-spacing: 2px;
+	}
+
+	.travel-stats {
+		margin: 0.25rem 0 0;
+	}
+
+	.travel-map-panel {
+		flex-basis: 36%;
+		max-height: 42%;
+		min-height: 110px;
 	}
 }

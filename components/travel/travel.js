@@ -485,6 +485,15 @@
 		}
 		defaultCenter = map.getCenter();
 		defaultZoom = map.getZoom();
+
+		if (typeof ResizeObserver !== 'undefined') {
+			var mapEl = document.getElementById('travel-map');
+			if (mapEl) {
+				new ResizeObserver(function () {
+					map.invalidateSize();
+				}).observe(mapEl);
+			}
+		}
 	}
 
 	function addMarker(id, lat, lng, isHome, data, trips, visitCount, maxVisits) {
