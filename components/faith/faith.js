@@ -24,10 +24,12 @@
 		}
 	}
 
-	$(document).on('click', '.faith-tab-toggle', function (e) {
-		e.preventDefault();
-		showFaithTab($(this).data('faith-tab'));
-	});
+	function applyFaithRoute(route, meta) {
+		if (!route || route.section !== 'faith') return;
+		var tab = route.faithTab || 'devotion';
+		var delay = meta && meta.animated ? 1300 : 0;
+		setTimeout(function () { showFaithTab(tab); }, delay);
+	}
 
 	// Title-case a string, preserving all-caps acronyms as-is (e.g. "OT"),
 	// splitting on spaces AND hyphens so slugs like "bible-recap-2026"
@@ -360,24 +362,15 @@
 	}
 
 	/*=========================================================================
-		Lazy-init once the Faith section is actually visited (matches the
-		pattern used by dining.js/travel.js/nyc.js), and honor a sidebar
-		submenu click that requested a specific tab.
+		Router-driven init — SiteRouter loads this file, then fires
+		site:route. Tab clicks and deep links (/faith/other/) share the
+		same path.
 	=========================================================================*/
-	$(document).on('click', '.section-toggle[data-section="faith"]', function () {
-		var tab = $(this).data('faith-tab');
-		if (tab) {
-			setTimeout(function () { showFaithTab(tab); }, 1300);
-		} else if ($('.faith-panel[data-faith-panel="devotion"]').hasClass('active')) {
-			setTimeout(ensureInit, 1300);
-		}
+	$(document).on('site:route', function (e, route, meta) {
+		applyFaithRoute(route, meta);
 	});
-
-	$(window).on('load', function () {
-		if (!$('#faith').hasClass('active')) return;
-		if ($('.faith-panel[data-faith-panel="devotion"]').hasClass('active')) {
-			ensureInit();
-		}
-	});
+	if (window.SiteRouter && $('#faith').hasClass('active')) {
+		applyFaithRoute(window.SiteRouter.current(), { animated: false });
+	}
 
 }(jQuery));

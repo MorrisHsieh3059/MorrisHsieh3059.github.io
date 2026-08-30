@@ -11,5 +11,6 @@ This is a static site. GitHub Actions runs `npm ci` + `npm run build` and deploy
 - Preview with `npm run build` (or `npm start`). Do not commit `dist/`, `vendor/`, `cache/`, `node_modules/`, or `.DS_Store`.
 - `theme/` and `bootstrap/` are unmodified third-party. Site-specific CSS/JS goes in `assets/` or `components/<section>/`.
 - `vendor/` is gitignored but some files are still historically tracked — do not add more vendor files.
-- Live sections are whatever is in `build/template.html` nav + `COMPONENTS` in `build/build.js`. **NYC is WIP** (not wired). **Gallery** is built but the nav link is commented out — do not re-enable or delete either unless asked.
+- Live sections are whatever is in `build/template.html` nav + `COMPONENTS` in `build/build.js`. **NYC is WIP** (not wired). **Gallery** is built but the nav link and `<!--@include:gallery-->` stay commented out — do not re-enable or delete either unless asked (inlining it would download tens of MB of photos on every visit).
+- URLs are paths (`/about/`, `/dining/michelin/`), not hashes. `build.js` copies `index.html` into each route folder so GitHub Pages refresh works.
 - Resume: GPA only, no semester grades.

@@ -8,6 +8,7 @@
 	<meta name="author" content="Morris Chun-Mo Hsieh">
 
 	<title>Morris Hsieh</title>
+	<base href="/">
 
 	<link rel="icon" type="image/x-icon" href="img/favicon.ico">
 	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
@@ -27,7 +28,6 @@
 	<link rel="stylesheet" href="css/dining.css">
 	<link rel="stylesheet" href="css/faith.css">
 	<link rel="stylesheet" href="vendor/fontawesome/css/all.min.css">
-	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
 </head>
 
 <body>
@@ -45,7 +45,7 @@
 		<div class="page-border border-top"></div>
 		<div class="page-border border-bottom"></div>
 
-		<a href="#" class="menu-btn">
+		<a href="/" class="menu-btn">
 			<span class="lines">
 				<span class="l1"></span>
 				<span class="l2"></span>
@@ -56,28 +56,28 @@
 		<div class="menu">
 			<div class="inner">
 				<ul class="menu-items">
-					<li><a href="#" class="section-toggle" data-section="intro">Home</a></li>
-					<li><a href="#about" class="section-toggle" data-section="about">About</a></li>
-					<li><a href="#resume" class="section-toggle" data-section="resume">Resume</a></li>
-					<li><a href="#travel" class="section-toggle" data-section="travel">Travel</a></li>
+					<li><a href="/" class="section-toggle" data-section="intro">Home</a></li>
+					<li><a href="/about/" class="section-toggle" data-section="about">About</a></li>
+					<li><a href="/resume/" class="section-toggle" data-section="resume">Resume</a></li>
+					<li><a href="/travel/" class="section-toggle" data-section="travel">Travel</a></li>
 					<li class="menu-item-has-children">
-						<a href="#" class="menu-parent-toggle">Dining</a>
+						<a href="/dining/" class="menu-parent-toggle">Dining</a>
 						<ul class="submenu">
-							<li><a href="#dining" class="section-toggle" data-section="dining" data-dining-tab="timeline">Timeline</a></li>
-							<li><a href="#dining" class="section-toggle" data-section="dining" data-dining-tab="michelin">Michelin Stars</a></li>
-							<li><a href="#dining" class="section-toggle" data-section="dining" data-dining-tab="gourmand">Michelin Guide</a></li>
-							<li><a href="#dining" class="section-toggle" data-section="dining" data-dining-tab="award">Award</a></li>
+							<li><a href="/dining/" class="section-toggle" data-section="dining" data-dining-tab="timeline">Timeline</a></li>
+							<li><a href="/dining/michelin/" class="section-toggle" data-section="dining" data-dining-tab="michelin">Michelin Stars</a></li>
+							<li><a href="/dining/gourmand/" class="section-toggle" data-section="dining" data-dining-tab="gourmand">Michelin Guide</a></li>
+							<li><a href="/dining/award/" class="section-toggle" data-section="dining" data-dining-tab="award">Award</a></li>
 						</ul>
 					</li>
 					<li class="menu-item-has-children">
-						<a href="#" class="menu-parent-toggle">Faith</a>
+						<a href="/faith/" class="menu-parent-toggle">Faith</a>
 						<ul class="submenu">
-							<li><a href="#faith" class="section-toggle" data-section="faith" data-faith-tab="devotion">Daily Devotion</a></li>
-							<li><a href="#faith" class="section-toggle" data-section="faith" data-faith-tab="other">Other</a></li>
+							<li><a href="/faith/" class="section-toggle" data-section="faith" data-faith-tab="devotion">Daily Devotion</a></li>
+							<li><a href="/faith/other/" class="section-toggle" data-section="faith" data-faith-tab="other">Other</a></li>
 						</ul>
 					</li>
-					<!-- <li><a href="#portfolio" class="section-toggle" data-section="portfolio">Gallery</a></li> -->
-					<li><a href="#contact" class="section-toggle" data-section="contact">Contact</a></li>
+					<!-- <li><a href="/portfolio/" class="section-toggle" data-section="portfolio">Gallery</a></li> -->
+					<li><a href="/contact/" class="section-toggle" data-section="contact">Contact</a></li>
 				</ul>
 			</div>
 		</div>
@@ -99,7 +99,7 @@
 
 			<!--@include:faith-->
 
-			<!--@include:gallery-->
+			<!-- Gallery is WIP — keep the component, do not inline until the nav link is enabled. -->
 
 			<!--@include:contact-->
 
@@ -107,15 +107,8 @@
 	</div>
 
 	<script src="js/jquery.min.js"></script>
-	<script src="js/jquery.shuffle.min.js"></script>
 	<script src="js/owl.carousel.min.js"></script>
 	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/validator.min.js"></script>
 	<script src="js/script.js"></script>
-	<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
-	<script src="js/travel.js"></script>
-	<script src="js/dining.js"></script>
-	<script src="https://unpkg.com/marked@11.1.1/marked.min.js"></script>
-	<script src="js/faith.js"></script>
 </body>
 </html>

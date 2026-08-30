@@ -1,48 +1,252 @@
 $(function(){
 	"use strict";
 
-	var sect = $( window.location.hash ),
-		portfolio = $('.portfolio-items');
+	/*=========================================================================
+		Path router — GitHub Pages serves about/index.html etc., so refresh
+		works. In-app clicks use history.pushState so the address bar stays
+		hash-free ( /dining/michelin/ not #dining ).
+	=========================================================================*/
+	var HASH_REDIRECTS = {
+		'#intro': '/',
+		'#about': '/about/',
+		'#resume': '/resume/',
+		'#travel': '/travel/',
+		'#dining': '/dining/',
+		'#faith': '/faith/',
+		'#contact': '/contact/',
+		'#portfolio': '/'
+	};
 
-	if(sect.length == 1){
+	var SECTION_TITLES = {
+		intro: 'Morris Hsieh',
+		about: 'About — Morris Hsieh',
+		resume: 'Resume — Morris Hsieh',
+		travel: 'Travel — Morris Hsieh',
+		dining: 'Dining — Morris Hsieh',
+		faith: 'Faith — Morris Hsieh',
+		contact: 'Contact — Morris Hsieh'
+	};
+
+	var loadedAssets = {};
+
+	function normalizePath(pathname) {
+		var path = (pathname || '/').replace(/\/index\.html$/i, '');
+		if (path.length > 1) path = path.replace(/\/+$/, '');
+		return path || '/';
+	}
+
+	function parsePath(pathname) {
+		var parts = normalizePath(pathname).replace(/^\//, '').split('/').filter(Boolean);
+		var head = parts[0] || '';
+		var sub = parts[1] || '';
+
+		if (!head) return { section: 'intro' };
+		if (head === 'dining') {
+			var diningTab = sub || 'timeline';
+			if (diningTab !== 'timeline' && diningTab !== 'michelin' && diningTab !== 'gourmand' && diningTab !== 'award') {
+				diningTab = 'timeline';
+			}
+			return { section: 'dining', diningTab: diningTab };
+		}
+		if (head === 'faith') {
+			var faithTab = sub || 'devotion';
+			if (faithTab !== 'devotion' && faithTab !== 'other') faithTab = 'devotion';
+			return { section: 'faith', faithTab: faithTab };
+		}
+		if (head === 'about' || head === 'resume' || head === 'travel' || head === 'contact') {
+			return { section: head };
+		}
+		return { section: 'intro' };
+	}
+
+	function pathFor(route) {
+		if (!route || route.section === 'intro') return '/';
+		if (route.section === 'dining') {
+			var diningTab = route.diningTab || 'timeline';
+			return diningTab === 'timeline' ? '/dining/' : '/dining/' + diningTab + '/';
+		}
+		if (route.section === 'faith') {
+			var faithTab = route.faithTab || 'devotion';
+			return faithTab === 'devotion' ? '/faith/' : '/faith/' + faithTab + '/';
+		}
+		return '/' + route.section + '/';
+	}
+
+	function routeFromLink($el) {
+		return {
+			section: $el.data('section') || 'intro',
+			diningTab: $el.data('dining-tab'),
+			faithTab: $el.data('faith-tab')
+		};
+	}
+
+	function sameSection(a, b) {
+		return a && b && a.section === b.section;
+	}
+
+	function setDocumentTitle(route) {
+		document.title = SECTION_TITLES[route.section] || 'Morris Hsieh';
+	}
+
+	function setActiveSection(route) {
+		var $sect = $('#' + route.section);
+		if (!$sect.length) return;
 		$('.section.active').removeClass('active');
-		sect.addClass('active');
-		if( sect.hasClass('border-d') ){
+		$sect.addClass('active');
+		if ($sect.hasClass('border-d')) {
 			$('body').addClass('border-dark');
+		} else {
+			$('body').removeClass('border-dark');
 		}
 	}
+
+	function loadScript(src) {
+		if (loadedAssets[src]) return loadedAssets[src];
+		loadedAssets[src] = new Promise(function (resolve, reject) {
+			var s = document.createElement('script');
+			s.src = src;
+			s.onload = resolve;
+			s.onerror = reject;
+			document.body.appendChild(s);
+		});
+		return loadedAssets[src];
+	}
+
+	function loadStylesheet(href) {
+		if (loadedAssets[href]) return loadedAssets[href];
+		loadedAssets[href] = new Promise(function (resolve, reject) {
+			if (document.querySelector('link[href="' + href + '"]')) {
+				resolve();
+				return;
+			}
+			var l = document.createElement('link');
+			l.rel = 'stylesheet';
+			l.href = href;
+			l.crossOrigin = '';
+			l.onload = resolve;
+			l.onerror = reject;
+			document.head.appendChild(l);
+		});
+		return loadedAssets[href];
+	}
+
+	function loadSectionAssets(route) {
+		if (route.section === 'travel') {
+			return loadStylesheet('https://unpkg.com/leaflet@1.9.4/dist/leaflet.css')
+				.then(function () { return loadScript('https://unpkg.com/leaflet@1.9.4/dist/leaflet.js'); })
+				.then(function () { return loadScript('js/travel.js'); });
+		}
+		if (route.section === 'dining') {
+			return loadScript('js/dining.js');
+		}
+		if (route.section === 'faith') {
+			return loadScript('https://unpkg.com/marked@11.1.1/marked.min.js')
+				.then(function () { return loadScript('js/faith.js'); });
+		}
+		return Promise.resolve();
+	}
+
+	function switchSection(route) {
+		var $sect = $('#' + route.section);
+		var $current = $('.section.active');
+		if ($sect.length !== 1) return;
+		if ($sect.hasClass('active') || $('body').hasClass('section-switching')) return;
+
+		$('body').removeClass('menu-open');
+		$('body').addClass('section-switching');
+		if ($sect.index() < $current.index()) {
+			$('body').addClass('up');
+		} else {
+			$('body').addClass('down');
+		}
+		setTimeout(function () {
+			$('body').removeClass('section-switching up down');
+		}, 2500);
+		setTimeout(function () {
+			setActiveSection(route);
+		}, 1250);
+	}
+
+	var currentRoute = { section: 'intro' };
+
+	function applyRoute(route, options) {
+		options = options || {};
+		var $sect = $('#' + route.section);
+		if (!$sect.length) route = { section: 'intro' };
+
+		var animated = !!options.animate && !sameSection(currentRoute, route) && !$sect.hasClass('active');
+		currentRoute = route;
+		setDocumentTitle(route);
+
+		if (animated) {
+			switchSection(route);
+		} else if (!$sect.hasClass('active')) {
+			setActiveSection(route);
+		}
+		$('body').removeClass('menu-open');
+
+		loadSectionAssets(route).then(function () {
+			$(document).trigger('site:route', [route, { animated: animated }]);
+		});
+	}
+
+	function go(route, options) {
+		options = options || {};
+		var next = pathFor(route);
+		if (options.replace) {
+			history.replaceState(route, '', next);
+		} else if (normalizePath(location.pathname) !== normalizePath(next)) {
+			history.pushState(route, '', next);
+		}
+		applyRoute(route, options);
+	}
+
+	window.SiteRouter = {
+		go: go,
+		pathFor: pathFor,
+		current: function () { return currentRoute; },
+		parsePath: parsePath
+	};
+
+	if (location.hash && HASH_REDIRECTS[location.hash]) {
+		history.replaceState(null, '', HASH_REDIRECTS[location.hash]);
+	}
+
+	currentRoute = parsePath(location.pathname);
+	setActiveSection(currentRoute);
+	setDocumentTitle(currentRoute);
+	history.replaceState(currentRoute, '', pathFor(currentRoute));
+	loadSectionAssets(currentRoute).then(function () {
+		$(document).trigger('site:route', [currentRoute, { animated: false }]);
+	});
+
+	$(window).on('popstate', function () {
+		applyRoute(parsePath(location.pathname), { animate: true });
+	});
 
 	/*=========================================================================
 		Magnific Popup (Project Popup initialization)
 	=========================================================================*/
-	$('.view-project').magnificPopup({
-		type: 'inline',
-		fixedContentPos: false,
-		fixedBgPos: true,
-		overflowY: 'auto',
-		closeBtnInside: true,
-		preloader: false,
-		midClick: true,
-		removalDelay: 300,
-		mainClass: 'my-mfp-zoom-in'
-	});
+	if ($('.view-project').length) {
+		$('.view-project').magnificPopup({
+			type: 'inline',
+			fixedContentPos: false,
+			fixedBgPos: true,
+			overflowY: 'auto',
+			closeBtnInside: true,
+			preloader: false,
+			midClick: true,
+			removalDelay: 300,
+			mainClass: 'my-mfp-zoom-in'
+		});
+	}
 
 	$(window).on('load', function(){
 		$('body').addClass('loaded');
-
-		/*=========================================================================
-			Portfolio Grid
-		=========================================================================*/
-		portfolio.shuffle();
-		$('.portfolio-filters > li > a').on('click', function (e) {
-			e.preventDefault();
-			var groupName = $(this).attr('data-group');
-			$('.portfolio-filters > li > a').removeClass('active');
-			$(this).addClass('active');
-			portfolio.shuffle('shuffle', groupName );
-		});
-
 	});
+	setTimeout(function () {
+		$('body').addClass('loaded');
+	}, 2000);
 
 	/*=========================================================================
 		Menu items with a submenu (e.g. Dining) — clicking the parent
@@ -73,137 +277,21 @@ $(function(){
 	});
 
 	/*=========================================================================
-		Navigation Functions
+		Navigation — path URLs, keep the existing section wipe animation
 	=========================================================================*/
-	$('.section-toggle').on('click', function(){
-		var $this = $(this),
-			sect = $( '#' + $this.data('section') ),
-			current_sect = $('.section.active');
-		if(sect.length == 1){
-			if( sect.hasClass('active') == false && $('body').hasClass('section-switching') == false ){
-				$('body').removeClass('menu-open');
-				$('body').addClass('section-switching');
-				if( sect.index() < current_sect.index() ){
-					$('body').addClass('up');
-				}else{
-					$('body').addClass('down');
-				}
-				setTimeout(function(){
-					$('body').removeClass('section-switching up down');
-				}, 2500);
-				setTimeout(function(){
-					current_sect.removeClass('active');
-					sect.addClass('active');
-				}, 1250);
-				if( sect.hasClass('border-d') ){
-					$('body').addClass('border-dark');
-				}else{
-					$('body').removeClass('border-dark');
-				}
-			}
-		}
+	$('.section-toggle').on('click', function(e){
+		e.preventDefault();
+		go(routeFromLink($(this)), { animate: true });
 	});
 
-
-	/*=========================================================================
-		Testimonials Slider
-	=========================================================================*/
-	$('.testimonials-slider').owlCarousel({
-		items: 2,
-		responsive:{
-			992: {
-				items: 2
-			},
-			0: {
-				items: 1
-			}
-		}
+	$(document).on('click', '.dining-tab-toggle', function (e) {
+		e.preventDefault();
+		go({ section: 'dining', diningTab: $(this).data('dining-tab') });
 	});
 
-
-
-
-
-	/*=========================================================================
-		Contact Form
-	=========================================================================*/
-	function isJSON(val){
-		var str = val.replace(/\\./g, '@').replace(/"[^"\\\n\r]*"/g, '');
-		return (/^[,:{}\[\]0-9.\-+Eaeflnr-u \n\r\t]*$/).test(str);
-	}
-	$('#contact-form').validator().on('submit', function (e) {
-
-		if (!e.isDefaultPrevented()) {
-			// If there is no any error in validation then send the message
-
-			e.preventDefault();
-			var $this = $(this),
-
-				//You can edit alerts here
-				alerts = {
-
-					success:
-					"<div class='form-group' >\
-						<div class='alert alert-success' role='alert'> \
-							<strong>Message Sent!</strong> We'll be in touch as soon as possible\
-						</div>\
-					</div>",
-
-
-					error:
-					"<div class='form-group' >\
-						<div class='alert alert-danger' role='alert'> \
-							<strong>Oops!</strong> Sorry, an error occurred. Try again.\
-						</div>\
-					</div>"
-
-				};
-
-			$.ajax({
-
-				url: 'mail.php',
-				type: 'post',
-				data: $this.serialize(),
-				success: function(data){
-
-					if( isJSON(data) ){
-
-						data = $.parseJSON(data);
-
-						if(data['error'] == false){
-
-							$('#contact-form-result').html(alerts.success);
-
-							$('#contact-form').trigger('reset');
-
-						}else{
-
-							$('#contact-form-result').html(
-							"<div class='form-group' >\
-								<div class='alert alert-danger alert-dismissible' role='alert'> \
-									<button type='button' class='close' data-dismiss='alert' aria-label='Close' > \
-										<i class='ion-ios-close-empty' ></i> \
-									</button> \
-									"+ data['error'] +"\
-								</div>\
-							</div>"
-							);
-
-						}
-
-
-					}else{
-						$('#contact-form-result').html(alerts.error);
-					}
-
-				},
-				error: function(){
-					$('#contact-form-result').html(alerts.error);
-				}
-			});
-		}
+	$(document).on('click', '.faith-tab-toggle', function (e) {
+		e.preventDefault();
+		go({ section: 'faith', faithTab: $(this).data('faith-tab') });
 	});
-
-
 
 });
