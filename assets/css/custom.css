@@ -29,9 +29,18 @@ html {
 	background-color: var(--frame-gutter);
 }
 
-/* Theme opens the drawer via :hover; touch devices need the class. */
+/* Theme opens the drawer via :hover; touch devices need the class.
+   After a page click, menu-dismissed keeps it closed even if the
+   pointer is still over the panel (CSS :hover would otherwise hold
+   it open). */
 body.menu-open .menu {
 	width: 300px;
+}
+
+body.menu-dismissed .menu,
+body.menu-dismissed .menu:hover,
+body.menu-dismissed .menu-btn:hover + .menu {
+	width: 0;
 }
 
 .main-content > .sections {

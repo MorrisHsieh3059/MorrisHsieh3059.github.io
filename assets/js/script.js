@@ -178,7 +178,7 @@ $(function(){
 		if ($sect.length !== 1) return;
 		if ($sect.hasClass('active') || $('body').hasClass('section-switching')) return;
 
-		$('body').removeClass('menu-open');
+		closeMenu();
 		$('body').addClass('section-switching');
 		if ($sect.index() < $current.index()) {
 			$('body').addClass('up');
@@ -209,7 +209,7 @@ $(function(){
 		} else if (!$sect.hasClass('active')) {
 			setActiveSection(route);
 		}
-		$('body').removeClass('menu-open');
+		closeMenu();
 
 		loadSectionAssets(route).then(function () {
 			$(document).trigger('site:route', [route, { animated: animated }]);
@@ -264,6 +264,14 @@ $(function(){
 		Menu items with a submenu (e.g. Dining) — clicking the parent
 		expands its sub-links instead of navigating.
 	=========================================================================*/
+	function closeMenu() {
+		$('body').removeClass('menu-open').addClass('menu-dismissed');
+	}
+
+	function allowMenuOpen() {
+		$('body').removeClass('menu-dismissed');
+	}
+
 	$('.menu-parent-toggle').on('click', function(e){
 		e.preventDefault();
 		var $item = $(this).closest('.menu-item-has-children');
@@ -277,15 +285,18 @@ $(function(){
 	$('.menu-btn').on('click', function(e){
 		e.preventDefault();
 		e.stopPropagation();
+		allowMenuOpen();
 		$('body').toggleClass('menu-open');
 	});
+
+	$('.menu-btn').on('mouseenter', allowMenuOpen);
 
 	$('.menu').on('click', function(e){
 		e.stopPropagation();
 	});
 
 	$(document).on('click', function(){
-		$('body').removeClass('menu-open');
+		closeMenu();
 	});
 
 	/*=========================================================================
