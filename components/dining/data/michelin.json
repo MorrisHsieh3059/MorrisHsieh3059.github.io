@@ -47,6 +47,31 @@
     ]
   },
   {
+    "id": "the-modern-082126",
+    "name": "The Modern",
+    "date": "2026-08-21",
+    "stars": 2,
+    "status": "current",
+    "cuisines": [
+      "Contemporary"
+    ],
+    "sub": {
+      "isSharedKitchen": true,
+      "name": "The Bar room at the Modern"
+    },
+    "menu": "à la carte",
+    "city": "New York, NY",
+    "pictures": [
+      "0.jpeg",
+      "1.jpeg",
+      "2.jpeg",
+      "3.jpeg",
+      "4.jpeg",
+      "5.jpeg",
+      "6.jpeg"
+    ]
+  },
+  {
     "id": "four-twenty-five-072426",
     "name": "Four Twenty Five",
     "date": "2026-07-24",
