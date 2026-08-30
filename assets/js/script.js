@@ -29,6 +29,11 @@ $(function(){
 
 	var loadedAssets = {};
 
+	// N5 wipe: theme keyframes stay the same (cover ~45–55%, then recede).
+	// Duration is overridden in custom.css. Swap the section at mid-wipe.
+	var SECTION_WIPE_MS = 1000;
+	var SECTION_SWAP_MS = 500;
+
 	function normalizePath(pathname) {
 		var path = (pathname || '/').replace(/\/index\.html$/i, '');
 		if (path.length > 1) path = path.replace(/\/+$/, '');
@@ -187,10 +192,10 @@ $(function(){
 		}
 		setTimeout(function () {
 			$('body').removeClass('section-switching up down');
-		}, 2500);
+		}, SECTION_WIPE_MS);
 		setTimeout(function () {
 			setActiveSection(route);
-		}, 1250);
+		}, SECTION_SWAP_MS);
 	}
 
 	var currentRoute = { section: 'intro' };
@@ -212,7 +217,10 @@ $(function(){
 		$('body').removeClass('menu-open');
 
 		loadSectionAssets(route).then(function () {
-			$(document).trigger('site:route', [route, { animated: animated }]);
+			$(document).trigger('site:route', [route, {
+				animated: animated,
+				swapMs: SECTION_SWAP_MS
+			}]);
 		});
 	}
 
@@ -231,7 +239,9 @@ $(function(){
 		go: go,
 		pathFor: pathFor,
 		current: function () { return currentRoute; },
-		parsePath: parsePath
+		parsePath: parsePath,
+		wipeMs: SECTION_WIPE_MS,
+		swapMs: SECTION_SWAP_MS
 	};
 
 	if (location.hash && HASH_REDIRECTS[location.hash]) {
