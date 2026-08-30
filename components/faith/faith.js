@@ -3,6 +3,7 @@
 
 	var initialized = false;
 	var devotionData = null;
+	var popupBodies = {};
 
 	/*=========================================================================
 		Daily Devotion / Other tab switching — driven by both the in-section
@@ -27,7 +28,7 @@
 	function applyFaithRoute(route, meta) {
 		if (!route || route.section !== 'faith') return;
 		var tab = route.faithTab || 'devotion';
-		var delay = meta && meta.animated ? 1300 : 0;
+		var delay = meta && meta.animated ? (meta.swapMs || 500) : 0;
 		setTimeout(function () { showFaithTab(tab); }, delay);
 	}
 
@@ -156,10 +157,10 @@
 		);
 	}
 
-	// Renders devotion.content as Markdown via the CDN-loaded `marked`
-	// library (see build/template.html). Falls back to escaped plain text
-	// with line breaks preserved if the library failed to load, so a
-	// network hiccup degrades gracefully instead of breaking the popup.
+	// Renders devotion.content as Markdown via the vendored `marked`
+	// library (lazy-loaded with this section). Falls back to escaped
+	// plain text with line breaks preserved if the library failed to
+	// load, so a hiccup degrades gracefully instead of breaking the popup.
 	function renderMarkdown(text) {
 		if (window.marked && typeof window.marked.parse === 'function') {
 			return window.marked.parse(text || '');
@@ -175,6 +176,7 @@
 		if (!hasContent(devotion)) return '';
 
 		var id = devotionId(devotion);
+		popupBodies[id] = devotion.content;
 
 		return (
 			'<div id="popup-' + id + '" class="popup mfp-hide">' +
@@ -184,7 +186,7 @@
 						'<div class="devotion-meta devotion-meta-date"><i class="fas fa-calendar-alt"></i>' + formatDevotionDate(devotion.date) + '</div>' +
 						'<div class="devotion-meta devotion-meta-tags">' + metaLineHtml(devotion) + '</div>' +
 					'</div>' +
-					'<div class="devotion-popup-content">' + renderMarkdown(devotion.content) + '</div>' +
+					'<div class="devotion-popup-content"></div>' +
 				'</div>' +
 			'</div>'
 		);
@@ -342,7 +344,16 @@
 			preloader: false,
 			midClick: true,
 			removalDelay: 300,
-			mainClass: 'my-mfp-zoom-in devotion-popup'
+			mainClass: 'my-mfp-zoom-in devotion-popup',
+			callbacks: {
+				open: function () {
+					var $body = this.content.find('.devotion-popup-content');
+					if ($body.data('ready')) return;
+					var id = (this.content.attr('id') || '').replace(/^popup-/, '');
+					$body.html(renderMarkdown(popupBodies[id] || ''));
+					$body.data('ready', true);
+				}
+			}
 		});
 	}
 

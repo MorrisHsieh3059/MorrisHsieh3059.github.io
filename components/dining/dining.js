@@ -40,7 +40,7 @@
 	function applyDiningRoute(route, meta) {
 		if (!route || route.section !== 'dining') return;
 		var tab = route.diningTab || 'timeline';
-		var delay = meta && meta.animated ? 1300 : 0;
+		var delay = meta && meta.animated ? (meta.swapMs || 500) : 0;
 		setTimeout(function () { showDiningTab(tab); }, delay);
 	}
 
@@ -133,6 +133,113 @@
 		return 'img/dining/visits/' + visit.id + '/' + name;
 	}
 
+	function escapeAttr(value) {
+		return String(value || '')
+			.replace(/&/g, '&amp;')
+			.replace(/"/g, '&quot;')
+			.replace(/</g, '&lt;');
+	}
+
+	function coverHtml(visit, countClass) {
+		var pictures = visit.pictures || [];
+		if (!pictures.length) {
+			return '<div class="michelin-card-photo"><div class="michelin-card-photo-placeholder"><i class="fas fa-camera"></i></div></div>';
+		}
+		var count = pictures.length > 1
+			? '<span class="' + countClass + '">' + pictures.length + ' photos</span>'
+			: '';
+		return '<div class="michelin-card-photo">' +
+			'<img data-src="' + photoPath(visit, pictures[0], 'thumb') + '" alt="" decoding="async">' +
+			count + '</div>';
+	}
+
+	function hydrateCovers(root) {
+		var scope = root && root.querySelectorAll ? root : document;
+		var imgs = scope.querySelectorAll('.michelin-card-photo img[data-src], .award-card-photo img[data-src]');
+		if (!imgs.length) return;
+
+		function reveal(img) {
+			if (!img.dataset.src) return;
+			img.src = img.dataset.src;
+			img.removeAttribute('data-src');
+		}
+
+		if (!('IntersectionObserver' in window)) {
+			for (var i = 0; i < imgs.length; i++) reveal(imgs[i]);
+			return;
+		}
+
+		var io = new IntersectionObserver(function (entries) {
+			entries.forEach(function (entry) {
+				if (!entry.isIntersecting) return;
+				reveal(entry.target);
+				io.unobserve(entry.target);
+			});
+		}, { rootMargin: '160px' });
+
+		for (var j = 0; j < imgs.length; j++) io.observe(imgs[j]);
+	}
+
+	function popupPhotoAttrs(visit) {
+		return ' data-photo-base="' + escapeAttr('img/dining/visits/' + visit.id) + '"' +
+			' data-photos="' + escapeAttr((visit.pictures || []).join(',')) + '"' +
+			' data-photo-alt="' + escapeAttr(visit.name) + '"';
+	}
+
+	function fillPopupSlider($content) {
+		var $slider = $content.find('.popup-slider');
+		if ($slider.children().length) return $slider;
+		var root = $content.closest('.popup')[0] || $content[0];
+		var base = (root.getAttribute('data-photo-base') || '').replace(/\/$/, '');
+		var photos = (root.getAttribute('data-photos') || '').split(',').filter(Boolean);
+		var alt = root.getAttribute('data-photo-alt') || '';
+		var html;
+		if (!photos.length) {
+			html = '<div class="item"><div class="michelin-card-photo-placeholder"><i class="fas fa-camera"></i> No photos yet</div></div>';
+		} else {
+			html = photos.map(function (filename) {
+				return '<div class="item"><figure><img src="' + base + '/' + filename + '" alt="' + escapeAttr(alt) + '" decoding="async"></figure></div>';
+			}).join('');
+		}
+		$slider.html(html);
+		return $slider;
+	}
+
+	var POPUP_NAV = ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>'];
+
+	function bindVisitPopups($cards, extraClass) {
+		$cards.magnificPopup({
+			type: 'inline',
+			fixedContentPos: false,
+			fixedBgPos: true,
+			overflowY: 'auto',
+			closeBtnInside: true,
+			preloader: false,
+			midClick: true,
+			removalDelay: 300,
+			mainClass: 'my-mfp-zoom-in michelin-popup' + (extraClass ? ' ' + extraClass : ''),
+			callbacks: {
+				open: function () {
+					var $slider = fillPopupSlider(this.content);
+					$slider.owlCarousel({
+						items: 1,
+						loop: $slider.find('.item').length > 1,
+						nav: true,
+						dots: true,
+						autoplay: false,
+						navText: POPUP_NAV
+					});
+				},
+				close: function () {
+					var $slider = this.content.find('.popup-slider');
+					if ($slider.data('owl.carousel')) {
+						$slider.trigger('destroy.owl.carousel');
+					}
+				}
+			}
+		});
+	}
+
 	function visitPopupNs(popupNs, fallback) {
 		return typeof popupNs === 'string' && popupNs ? popupNs : fallback;
 	}
@@ -222,19 +329,9 @@
 
 	function cardHtml(visit, popupNs) {
 		popupNs = visitPopupNs(popupNs, 'michelin');
-		var pictures = visit.pictures || [];
-		var coverStyle = pictures.length
-			? ' style="background-image:url(\'' + photoPath(visit, pictures[0], 'thumb') + '\')"'
-			: '';
-		var photoInner = pictures.length
-			? (pictures.length > 1
-				? '<span class="michelin-card-photo-count">' + pictures.length + ' photos</span>'
-				: '')
-			: '<div class="michelin-card-photo-placeholder"><i class="fas fa-camera"></i></div>';
-
 		return (
 			'<a href="#popup-' + popupNs + '-' + visit.id + '" class="michelin-card" data-cuisine="' + cuisineList(visit).join(',') + '" data-menu="' + (visit.menu || '') + '">' +
-				'<div class="michelin-card-photo"' + coverStyle + '>' + photoInner + '</div>' +
+				coverHtml(visit, 'michelin-card-photo-count') +
 				'<div class="michelin-card-body">' +
 					'<h4 class="michelin-card-title">' + titleHtml(visit) + '</h4>' +
 					sharedKitchenHtml(visit) +
@@ -246,24 +343,15 @@
 
 	function popupHtml(visit, popupNs) {
 		popupNs = visitPopupNs(popupNs, 'michelin');
-		var pictures = visit.pictures || [];
-		var slides = pictures.map(function (filename) {
-			return '<div class="item"><figure><img src="' + photoPath(visit, filename) + '" alt="' + visit.name + '" loading="lazy"></figure></div>';
-		}).join('');
-
-		if (!slides) {
-			slides = '<div class="item"><div class="michelin-card-photo-placeholder"><i class="fas fa-camera"></i> No photos yet</div></div>';
-		}
-
 		return (
-			'<div id="popup-' + popupNs + '-' + visit.id + '" class="popup mfp-hide">' +
+			'<div id="popup-' + popupNs + '-' + visit.id + '" class="popup mfp-hide"' + popupPhotoAttrs(visit) + '>' +
 				'<div class="popup-inner">' +
 					'<div class="michelin-popup-header">' +
 						'<h4>' + titleHtml(visit) + '</h4>' +
 						sharedKitchenHtml(visit) +
 						metaHtml(visit) +
 					'</div>' +
-					'<div class="popup-slider owl-carousel">' + slides + '</div>' +
+					'<div class="popup-slider owl-carousel"></div>' +
 				'</div>' +
 			'</div>'
 		);
@@ -326,19 +414,9 @@
 
 	function cardHtmlGourmand(visit, popupNs) {
 		popupNs = visitPopupNs(popupNs, 'gourmand');
-		var pictures = visit.pictures || [];
-		var coverStyle = pictures.length
-			? ' style="background-image:url(\'' + photoPath(visit, pictures[0], 'thumb') + '\')"'
-			: '';
-		var photoInner = pictures.length
-			? (pictures.length > 1
-				? '<span class="michelin-card-photo-count">' + pictures.length + ' photos</span>'
-				: '')
-			: '<div class="michelin-card-photo-placeholder"><i class="fas fa-camera"></i></div>';
-
 		return (
 			'<a href="#popup-' + popupNs + '-' + visit.id + '" class="michelin-card" data-cuisine="' + cuisineList(visit).join(',') + '" data-menu="' + (visit.menu || '') + '">' +
-				'<div class="michelin-card-photo"' + coverStyle + '>' + photoInner + '</div>' +
+				coverHtml(visit, 'michelin-card-photo-count') +
 				'<div class="michelin-card-body">' +
 					'<h4 class="michelin-card-title">' + titleHtmlGourmand(visit) + '</h4>' +
 					sharedKitchenHtml(visit) +
@@ -350,24 +428,15 @@
 
 	function popupHtmlGourmand(visit, popupNs) {
 		popupNs = visitPopupNs(popupNs, 'gourmand');
-		var pictures = visit.pictures || [];
-		var slides = pictures.map(function (filename) {
-			return '<div class="item"><figure><img src="' + photoPath(visit, filename) + '" alt="' + visit.name + '" loading="lazy"></figure></div>';
-		}).join('');
-
-		if (!slides) {
-			slides = '<div class="item"><div class="michelin-card-photo-placeholder"><i class="fas fa-camera"></i> No photos yet</div></div>';
-		}
-
 		return (
-			'<div id="popup-' + popupNs + '-' + visit.id + '" class="popup mfp-hide">' +
+			'<div id="popup-' + popupNs + '-' + visit.id + '" class="popup mfp-hide"' + popupPhotoAttrs(visit) + '>' +
 				'<div class="popup-inner">' +
 					'<div class="michelin-popup-header">' +
 						'<h4>' + titleHtmlGourmand(visit) + '</h4>' +
 						sharedKitchenHtml(visit) +
 						metaHtml(visit) +
 					'</div>' +
-					'<div class="popup-slider owl-carousel">' + slides + '</div>' +
+					'<div class="popup-slider owl-carousel"></div>' +
 				'</div>' +
 			'</div>'
 		);
@@ -459,36 +528,8 @@
 		var popupsHtml = visits.map(popupHtmlGourmand).join('');
 		$grid.html(cardsHtml + popupsHtml);
 		applyFiltersGourmand();
-
-		$grid.find('.michelin-card').magnificPopup({
-			type: 'inline',
-			fixedContentPos: false,
-			fixedBgPos: true,
-			overflowY: 'auto',
-			closeBtnInside: true,
-			preloader: false,
-			midClick: true,
-			removalDelay: 300,
-			mainClass: 'my-mfp-zoom-in michelin-popup',
-			callbacks: {
-				open: function () {
-					this.content.find('.popup-slider').owlCarousel({
-						items: 1,
-						loop: this.content.find('.popup-slider .item').length > 1,
-						nav: true,
-						dots: true,
-						autoplay: false,
-						navText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>']
-					});
-				},
-				close: function () {
-					var $slider = this.content.find('.popup-slider');
-					if ($slider.data('owl.carousel')) {
-						$slider.trigger('destroy.owl.carousel');
-					}
-				}
-			}
-		});
+		hydrateCovers($grid[0]);
+		bindVisitPopups($grid.find('.michelin-card'));
 	}
 
 	/*=========================================================================
@@ -717,20 +758,11 @@
 
 	function cardHtmlAward(visit, popupNs) {
 		popupNs = visitPopupNs(popupNs, 'award');
-		var pictures = visit.pictures || [];
-		var coverStyle = pictures.length
-			? ' style="background-image:url(\'' + photoPath(visit, pictures[0], 'thumb') + '\')"'
-			: '';
-		var photoInner = pictures.length
-			? (pictures.length > 1
-				? '<span class="award-card-photo-count">' + pictures.length + ' photos</span>'
-				: '')
-			: '<div class="award-card-photo-placeholder"><i class="fas fa-camera"></i></div>';
 		var accoladeSlugs = accoladesList(visit).map(function (a) { return a.list; }).filter(Boolean);
 
 		return (
 			'<a href="#popup-' + popupNs + '-' + visit.id + '" class="award-card" data-cuisine="' + cuisineList(visit).join(',') + '" data-accolades="' + accoladeSlugs.join(',') + '">' +
-				'<div class="award-card-photo"' + coverStyle + '>' + photoInner + '</div>' +
+				coverHtml(visit, 'award-card-photo-count') +
 				'<div class="award-card-body">' +
 					'<h4 class="award-card-title">' + titleHtmlAward(visit) + '</h4>' +
 					accoladesHtml(visit) +
@@ -742,24 +774,15 @@
 
 	function popupHtmlAward(visit, popupNs) {
 		popupNs = visitPopupNs(popupNs, 'award');
-		var pictures = visit.pictures || [];
-		var slides = pictures.map(function (filename) {
-			return '<div class="item"><figure><img src="' + photoPath(visit, filename) + '" alt="' + visit.name + '" loading="lazy"></figure></div>';
-		}).join('');
-
-		if (!slides) {
-			slides = '<div class="item"><div class="award-card-photo-placeholder"><i class="fas fa-camera"></i> No photos yet</div></div>';
-		}
-
 		return (
-			'<div id="popup-' + popupNs + '-' + visit.id + '" class="popup mfp-hide' + (popupNs === 'award' ? '' : ' award-popup') + '">' +
+			'<div id="popup-' + popupNs + '-' + visit.id + '" class="popup mfp-hide' + (popupNs === 'award' ? '' : ' award-popup') + '"' + popupPhotoAttrs(visit) + '>' +
 				'<div class="popup-inner">' +
 					'<div class="award-popup-header">' +
 						'<h4>' + titleHtmlAward(visit) + '</h4>' +
 						accoladesHtml(visit) +
 						metaHtmlAward(visit) +
 					'</div>' +
-					'<div class="popup-slider owl-carousel">' + slides + '</div>' +
+					'<div class="popup-slider owl-carousel"></div>' +
 				'</div>' +
 			'</div>'
 		);
@@ -885,36 +908,8 @@
 		var popupsHtml = visits.map(popupHtmlAward).join('');
 		$grid.html(cardsHtml + popupsHtml);
 		applyAwardFilters();
-
-		$grid.find('.award-card').magnificPopup({
-			type: 'inline',
-			fixedContentPos: false,
-			fixedBgPos: true,
-			overflowY: 'auto',
-			closeBtnInside: true,
-			preloader: false,
-			midClick: true,
-			removalDelay: 300,
-			mainClass: 'my-mfp-zoom-in michelin-popup award-popup',
-			callbacks: {
-				open: function () {
-					this.content.find('.popup-slider').owlCarousel({
-						items: 1,
-						loop: this.content.find('.popup-slider .item').length > 1,
-						nav: true,
-						dots: true,
-						autoplay: false,
-						navText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>']
-					});
-				},
-				close: function () {
-					var $slider = this.content.find('.popup-slider');
-					if ($slider.data('owl.carousel')) {
-						$slider.trigger('destroy.owl.carousel');
-					}
-				}
-			}
-		});
+		hydrateCovers($grid[0]);
+		bindVisitPopups($grid.find('.award-card'), 'award-popup');
 	}
 
 	function loadAwardData() {
@@ -961,36 +956,8 @@
 		var popupsHtml = visits.map(popupHtml).join('');
 		$grid.html(cardsHtml + popupsHtml);
 		applyFilters();
-
-		$grid.find('.michelin-card').magnificPopup({
-			type: 'inline',
-			fixedContentPos: false,
-			fixedBgPos: true,
-			overflowY: 'auto',
-			closeBtnInside: true,
-			preloader: false,
-			midClick: true,
-			removalDelay: 300,
-			mainClass: 'my-mfp-zoom-in michelin-popup',
-			callbacks: {
-				open: function () {
-					this.content.find('.popup-slider').owlCarousel({
-						items: 1,
-						loop: this.content.find('.popup-slider .item').length > 1,
-						nav: true,
-						dots: true,
-						autoplay: false,
-						navText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>']
-					});
-				},
-				close: function () {
-					var $slider = this.content.find('.popup-slider');
-					if ($slider.data('owl.carousel')) {
-						$slider.trigger('destroy.owl.carousel');
-					}
-				}
-			}
-		});
+		hydrateCovers($grid[0]);
+		bindVisitPopups($grid.find('.michelin-card'));
 	}
 
 	// One JSON file backs both the Michelin (star) and Gourmand tabs, split
@@ -1096,21 +1063,12 @@
 
 	function timelineCardHtml(entry) {
 		var visit = entry.visit;
-		var pictures = visit.pictures || [];
-		var coverStyle = pictures.length
-			? ' style="background-image:url(\'' + photoPath(visit, pictures[0], 'thumb') + '\')"'
-			: '';
-		var photoInner = pictures.length
-			? (pictures.length > 1
-				? '<span class="michelin-card-photo-count">' + pictures.length + ' photos</span>'
-				: '')
-			: '<div class="michelin-card-photo-placeholder"><i class="fas fa-camera"></i></div>';
 		var cardClass = entry.kind === 'award' ? 'award-card' : 'michelin-card';
 		var city = visit.city || '';
 
 		return (
 			'<a href="#popup-timeline-' + visit.id + '" class="' + cardClass + ' dining-timeline-card">' +
-				'<div class="michelin-card-photo"' + coverStyle + '>' + photoInner + '</div>' +
+				coverHtml(visit, 'michelin-card-photo-count') +
 				'<div class="dining-timeline-card-body">' +
 					'<div class="dining-timeline-card-line1">' +
 						timelineMichelinMarks(visit) +
@@ -1193,36 +1151,9 @@
 
 		$track.html(html);
 		$popups.html(entries.map(timelinePopupHtml).join(''));
-
-		$track.find('.michelin-card, .award-card').magnificPopup({
-			type: 'inline',
-			fixedContentPos: false,
-			fixedBgPos: true,
-			overflowY: 'auto',
-			closeBtnInside: true,
-			preloader: false,
-			midClick: true,
-			removalDelay: 300,
-			mainClass: 'my-mfp-zoom-in michelin-popup',
-			callbacks: {
-				open: function () {
-					this.content.find('.popup-slider').owlCarousel({
-						items: 1,
-						loop: this.content.find('.popup-slider .item').length > 1,
-						nav: true,
-						dots: true,
-						autoplay: false,
-						navText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>']
-					});
-				},
-				close: function () {
-					var $slider = this.content.find('.popup-slider');
-					if ($slider.data('owl.carousel')) {
-						$slider.trigger('destroy.owl.carousel');
-					}
-				}
-			}
-		});
+		hydrateCovers($track[0]);
+		bindVisitPopups($track.find('.michelin-card'));
+		bindVisitPopups($track.find('.award-card'), 'award-popup');
 
 		bindTimeline();
 		requestAnimationFrame(function () {

@@ -4,7 +4,7 @@
 For each JPEG in components/dining/img/visits/<id>/:
 
   0.jpeg        lightbox / display (max 2000px, q85)
-  0.thumb.jpeg  card cover (max 800px, q80)
+  0.thumb.jpeg  card cover (max 640px, q72)
 
 Camera originals are replaced by the display file — keep print copies
 outside git. Re-run after dropping new visit folders; already-processed
@@ -28,9 +28,9 @@ ROOT = Path(__file__).resolve().parent.parent
 VISITS = ROOT / "components" / "dining" / "img" / "visits"
 
 DISPLAY_MAX = 2000
-THUMB_MAX = 800
+THUMB_MAX = 640
 DISPLAY_QUALITY = 85
-THUMB_QUALITY = 80
+THUMB_QUALITY = 72
 # Skip if a thumb exists, the display file is already web-sized, and small.
 SKIP_MAX_BYTES = 500_000
 IMAGE_SUFFIXES = {".jpeg", ".jpg"}

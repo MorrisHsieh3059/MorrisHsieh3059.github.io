@@ -29,6 +29,11 @@ $(function(){
 
 	var loadedAssets = {};
 
+	// N5 wipe: theme keyframes stay the same (cover ~45–55%, then recede).
+	// Duration is overridden in custom.css. Swap the section at mid-wipe.
+	var SECTION_WIPE_MS = 1000;
+	var SECTION_SWAP_MS = 500;
+
 	function normalizePath(pathname) {
 		var path = (pathname || '/').replace(/\/index\.html$/i, '');
 		if (path.length > 1) path = path.replace(/\/+$/, '');
@@ -130,18 +135,44 @@ $(function(){
 		return loadedAssets[href];
 	}
 
+	function loadPopupLibs() {
+		return Promise.all([
+			loadStylesheet('css/magnific-popup.css'),
+			loadScript('js/jquery.magnific-popup.min.js')
+		]);
+	}
+
 	function loadSectionAssets(route) {
 		if (route.section === 'travel') {
-			return loadStylesheet('https://unpkg.com/leaflet@1.9.4/dist/leaflet.css')
-				.then(function () { return loadScript('https://unpkg.com/leaflet@1.9.4/dist/leaflet.js'); })
-				.then(function () { return loadScript('js/travel.js'); });
+			return Promise.all([
+				loadStylesheet('css/travel.css'),
+				loadStylesheet('vendor/leaflet/leaflet.css')
+			]).then(function () {
+				return loadScript('vendor/leaflet/leaflet.js');
+			}).then(function () {
+				return loadScript('js/travel.js');
+			});
 		}
 		if (route.section === 'dining') {
-			return loadScript('js/dining.js');
+			return Promise.all([
+				loadStylesheet('css/dining.css'),
+				loadStylesheet('css/owl.carousel.css'),
+				loadPopupLibs()
+			]).then(function () {
+				return loadScript('js/owl.carousel.min.js');
+			}).then(function () {
+				return loadScript('js/dining.js');
+			});
 		}
 		if (route.section === 'faith') {
-			return loadScript('https://unpkg.com/marked@11.1.1/marked.min.js')
-				.then(function () { return loadScript('js/faith.js'); });
+			return Promise.all([
+				loadStylesheet('css/faith.css'),
+				loadPopupLibs()
+			]).then(function () {
+				return loadScript('vendor/marked/marked.min.js');
+			}).then(function () {
+				return loadScript('js/faith.js');
+			});
 		}
 		return Promise.resolve();
 	}
@@ -161,10 +192,10 @@ $(function(){
 		}
 		setTimeout(function () {
 			$('body').removeClass('section-switching up down');
-		}, 2500);
+		}, SECTION_WIPE_MS);
 		setTimeout(function () {
 			setActiveSection(route);
-		}, 1250);
+		}, SECTION_SWAP_MS);
 	}
 
 	var currentRoute = { section: 'intro' };
@@ -186,7 +217,10 @@ $(function(){
 		$('body').removeClass('menu-open');
 
 		loadSectionAssets(route).then(function () {
-			$(document).trigger('site:route', [route, { animated: animated }]);
+			$(document).trigger('site:route', [route, {
+				animated: animated,
+				swapMs: SECTION_SWAP_MS
+			}]);
 		});
 	}
 
@@ -205,7 +239,9 @@ $(function(){
 		go: go,
 		pathFor: pathFor,
 		current: function () { return currentRoute; },
-		parsePath: parsePath
+		parsePath: parsePath,
+		wipeMs: SECTION_WIPE_MS,
+		swapMs: SECTION_SWAP_MS
 	};
 
 	if (location.hash && HASH_REDIRECTS[location.hash]) {
@@ -224,29 +260,15 @@ $(function(){
 		applyRoute(parsePath(location.pathname), { animate: true });
 	});
 
-	/*=========================================================================
-		Magnific Popup (Project Popup initialization)
-	=========================================================================*/
-	if ($('.view-project').length) {
-		$('.view-project').magnificPopup({
-			type: 'inline',
-			fixedContentPos: false,
-			fixedBgPos: true,
-			overflowY: 'auto',
-			closeBtnInside: true,
-			preloader: false,
-			midClick: true,
-			removalDelay: 300,
-			mainClass: 'my-mfp-zoom-in'
-		});
+	function markLoaded() {
+		document.body.classList.add('loaded');
 	}
-
-	$(window).on('load', function(){
-		$('body').addClass('loaded');
-	});
-	setTimeout(function () {
-		$('body').addClass('loaded');
-	}, 2000);
+	if (document.readyState === 'complete') {
+		markLoaded();
+	} else {
+		$(window).on('load', markLoaded);
+	}
+	setTimeout(markLoaded, 600);
 
 	/*=========================================================================
 		Menu items with a submenu (e.g. Dining) — clicking the parent
