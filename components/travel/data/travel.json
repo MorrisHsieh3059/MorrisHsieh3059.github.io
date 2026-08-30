@@ -1332,7 +1332,7 @@
   "trips": [
     {
       "id": "trip-053",
-      "title": "2026 (Jun 20 - Jun 29): Lithuania·Morocco·Norway·Spain·United Kingdom",
+      "title": "2026 (Jun 20 - Jun 29): Lithuania·Norway·United Kingdom·Spain·Morocco",
       "startDate": "2026-06-20",
       "endDate": "2026-06-29",
       "cities": [
@@ -1349,10 +1349,10 @@
       ],
       "countries": [
         "Lithuania",
-        "Morocco",
         "Norway",
+        "United Kingdom",
         "Spain",
-        "United Kingdom"
+        "Morocco"
       ],
       "cityIds": [
         "camden-town-united-kingdom",
@@ -1593,7 +1593,7 @@
     },
     {
       "id": "trip-047",
-      "title": "2025 (Oct 26 - Nov 15): South Korea·Taiwan·United States",
+      "title": "2025 (Oct 26 - Nov 15): Taiwan·South Korea·United States",
       "startDate": "2025-10-26",
       "endDate": "2025-11-15",
       "cities": [
@@ -1607,8 +1607,8 @@
         "El Segundo"
       ],
       "countries": [
-        "South Korea",
         "Taiwan",
+        "South Korea",
         "United States"
       ],
       "cityIds": [
@@ -3258,7 +3258,7 @@
     },
     {
       "id": "trip-004",
-      "title": "2016 (Apr 18 - Apr 30): Czech Republic·Norway·Poland·Russia·Slovenia",
+      "title": "2016 (Apr 18 - Apr 30): Slovenia·Poland·Norway·Czech Republic·Russia",
       "startDate": "2016-04-18",
       "endDate": "2016-04-30",
       "cities": [
@@ -3271,11 +3271,11 @@
         "Saint Petersburg"
       ],
       "countries": [
-        "Czech Republic",
-        "Norway",
+        "Slovenia",
         "Poland",
-        "Russia",
-        "Slovenia"
+        "Norway",
+        "Czech Republic",
+        "Russia"
       ],
       "cityIds": [
         "kupchino-russia",
@@ -3340,7 +3340,7 @@
     },
     {
       "id": "trip-003",
-      "title": "2015 (Apr 19 - May 01): Estonia·Finland·Poland·Russia·Sweden",
+      "title": "2015 (Apr 19 - May 01): Russia·Finland·Estonia·Sweden·Poland",
       "startDate": "2015-04-19",
       "endDate": "2015-05-01",
       "cities": [
@@ -3351,11 +3351,11 @@
         "Warsaw"
       ],
       "countries": [
-        "Estonia",
-        "Finland",
-        "Poland",
         "Russia",
-        "Sweden"
+        "Finland",
+        "Estonia",
+        "Sweden",
+        "Poland"
       ],
       "cityIds": [
         "admiralteisky-russia",

@@ -284,6 +284,19 @@ def cluster_trips(visits: list[dict]) -> list[list[dict]]:
     return trips
 
 
+def unique_in_order(values: list[str], skip: set[str] | None = None) -> list[str]:
+    """Keep first-seen order; drop blanks and items in skip (e.g. Unknown)."""
+    ignore = skip or set()
+    seen: set[str] = set()
+    out: list[str] = []
+    for value in values:
+        if not value or value in ignore or value in seen:
+            continue
+        seen.add(value)
+        out.append(value)
+    return out
+
+
 def trip_title(start: datetime, end: datetime, countries: list[str]) -> str:
     year = start.year
     if start.year == end.year:
@@ -332,7 +345,6 @@ def build_output(visits: list[dict], source_note: str) -> dict:
 
         start = min(v["start"] for v in group)
         end = max((v.get("end") or v["start"]) for v in group)
-        countries = sorted({v["country"] for v in group if v["country"] != "Unknown"})
 
         # Chronological route (dedupe consecutive same city) for map lines & card display
         route: list[dict] = []
@@ -351,6 +363,12 @@ def build_output(visits: list[dict], source_note: str) -> dict:
                 }
             )
             last_ck = ck
+
+        # First visit along the route, not A–Z — titles and card lists follow this.
+        countries = unique_in_order(
+            [r["country"] for r in route],
+            skip={"Unknown"},
+        )
 
         # Each city counts once per trip, even if revisited within the journey.
         for ck in cities_in_trip:
