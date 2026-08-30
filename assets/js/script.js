@@ -130,18 +130,44 @@ $(function(){
 		return loadedAssets[href];
 	}
 
+	function loadPopupLibs() {
+		return Promise.all([
+			loadStylesheet('css/magnific-popup.css'),
+			loadScript('js/jquery.magnific-popup.min.js')
+		]);
+	}
+
 	function loadSectionAssets(route) {
 		if (route.section === 'travel') {
-			return loadStylesheet('https://unpkg.com/leaflet@1.9.4/dist/leaflet.css')
-				.then(function () { return loadScript('https://unpkg.com/leaflet@1.9.4/dist/leaflet.js'); })
-				.then(function () { return loadScript('js/travel.js'); });
+			return Promise.all([
+				loadStylesheet('css/travel.css'),
+				loadStylesheet('vendor/leaflet/leaflet.css')
+			]).then(function () {
+				return loadScript('vendor/leaflet/leaflet.js');
+			}).then(function () {
+				return loadScript('js/travel.js');
+			});
 		}
 		if (route.section === 'dining') {
-			return loadScript('js/dining.js');
+			return Promise.all([
+				loadStylesheet('css/dining.css'),
+				loadStylesheet('css/owl.carousel.css'),
+				loadPopupLibs()
+			]).then(function () {
+				return loadScript('js/owl.carousel.min.js');
+			}).then(function () {
+				return loadScript('js/dining.js');
+			});
 		}
 		if (route.section === 'faith') {
-			return loadScript('https://unpkg.com/marked@11.1.1/marked.min.js')
-				.then(function () { return loadScript('js/faith.js'); });
+			return Promise.all([
+				loadStylesheet('css/faith.css'),
+				loadPopupLibs()
+			]).then(function () {
+				return loadScript('vendor/marked/marked.min.js');
+			}).then(function () {
+				return loadScript('js/faith.js');
+			});
 		}
 		return Promise.resolve();
 	}
@@ -224,29 +250,15 @@ $(function(){
 		applyRoute(parsePath(location.pathname), { animate: true });
 	});
 
-	/*=========================================================================
-		Magnific Popup (Project Popup initialization)
-	=========================================================================*/
-	if ($('.view-project').length) {
-		$('.view-project').magnificPopup({
-			type: 'inline',
-			fixedContentPos: false,
-			fixedBgPos: true,
-			overflowY: 'auto',
-			closeBtnInside: true,
-			preloader: false,
-			midClick: true,
-			removalDelay: 300,
-			mainClass: 'my-mfp-zoom-in'
-		});
+	function markLoaded() {
+		document.body.classList.add('loaded');
 	}
-
-	$(window).on('load', function(){
-		$('body').addClass('loaded');
-	});
-	setTimeout(function () {
-		$('body').addClass('loaded');
-	}, 2000);
+	if (document.readyState === 'complete') {
+		markLoaded();
+	} else {
+		$(window).on('load', markLoaded);
+	}
+	setTimeout(markLoaded, 600);
 
 	/*=========================================================================
 		Menu items with a submenu (e.g. Dining) — clicking the parent

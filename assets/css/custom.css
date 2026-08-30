@@ -218,6 +218,12 @@ body.menu-open .menu {
 	color: var(--nyc-blue);
 }
 
+.contact-info > i.fas {
+	text-align: center;
+	line-height: 1;
+	padding-top: 4px;
+}
+
 /*=======================================================
 	About — "My Interests" cards
 	Bootstrap 3's grid floats columns rather than stretching them, so

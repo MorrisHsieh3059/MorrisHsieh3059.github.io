@@ -17,14 +17,16 @@
     "dev:watch": "concurrently -n build,serve -c blue,green \"npm run build:watch\" \"npm run serve:watch\""
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "5.8.1",
     "@fontsource/lora": "^5.2.5",
-    "@fontsource/roboto-mono": "^5.2.5"
+    "@fontsource/roboto-mono": "^5.2.5",
+    "@fortawesome/fontawesome-free": "5.8.1",
+    "leaflet": "^1.9.4",
+    "marked": "^11.1.1"
   },
   "devDependencies": {
-    "serve": "^14.2.4",
-    "nodemon": "^3.1.0",
     "browser-sync": "^2.29.3",
-    "concurrently": "^8.2.2"
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.1.0",
+    "serve": "^14.2.4"
   }
 }
