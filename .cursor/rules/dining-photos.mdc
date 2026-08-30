@@ -11,7 +11,7 @@ When adding or changing files under `components/dining/img/visits/`:
 
 1. One folder per visit: `components/dining/img/visits/<id>/`. Cover is `0.jpeg` (Morris names it). Remaining images become `1.jpeg`, `2.jpeg`, … in increasing alphabetical order of their **original** filenames. Skip `0.jpeg` and `*.thumb.jpeg`.
 2. Dual-listed meals (Michelin + Award): two JSON entries, **same `id`**, one photo folder.
-3. Run `npm run compress-dining -- <id>` **before** staging. That writes web-sized display JPEGs (max 2000px) and `*.thumb.jpeg` card covers. Passing `<id>` avoids re-encoding other visits.
+3. Run `npm run compress-dining -- <id>` **before** staging. That writes display JPEGs (max 2000px, q85) and `*.thumb.jpeg` card covers (max 640px, q72). Passing `<id>` avoids re-encoding other visits. To rewrite every existing thumb without touching display files: `python3 scripts/compress-dining-photos.py --thumbs-only`.
 4. Cards must use `photoPath(visit, file, 'thumb')`; the lightbox uses `photoPath(visit, file)`.
 5. Do not commit until every listed picture has both `N.jpeg` and `N.thumb.jpeg`.
 
