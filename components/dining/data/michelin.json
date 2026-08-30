@@ -1,5 +1,25 @@
 [
   {
+    "id": "crown-shy-082426",
+    "name": "Crown Shy",
+    "date": "2026-08-24",
+    "stars": 1,
+    "status": "current",
+    "cuisines": [
+      "American",
+      "Contemporary"
+    ],
+    "menu": "restaurant week",
+    "city": "New York, NY",
+    "pictures": [
+      "0.jpeg",
+      "1.jpeg",
+      "2.jpeg",
+      "3.jpeg",
+      "4.jpeg"
+    ]
+  },
+  {
     "id": "jg-melon-082226",
     "name": "J.G. Melon",
     "date": "2026-08-22",
