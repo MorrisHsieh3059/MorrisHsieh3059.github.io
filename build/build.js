@@ -239,6 +239,10 @@ function main() {
     path.join(root, 'assets', 'img', 'favicon.ico'),
     path.join(dist, 'favicon.ico')
   );
+  copyFile(
+    path.join(root, 'assets', 'site.webmanifest'),
+    path.join(dist, 'site.webmanifest')
+  );
 
   for (const name of COMPONENTS) {
     const compDir = path.join(root, 'components', name);
