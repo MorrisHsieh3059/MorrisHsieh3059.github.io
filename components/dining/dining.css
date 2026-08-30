@@ -303,8 +303,7 @@
 	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
-.michelin-card-photo,
-.award-card-photo {
+.michelin-card-photo {
 	height: 170px;
 	background-color: #eee;
 	background-size: cover;
@@ -313,8 +312,7 @@
 	overflow: hidden;
 }
 
-.michelin-card-photo img,
-.award-card-photo img {
+.michelin-card-photo img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
@@ -333,8 +331,7 @@
 	border-radius: 999px;
 }
 
-.michelin-card-photo-placeholder,
-.award-card-photo-placeholder {
+.michelin-card-photo-placeholder {
 	height: 100%;
 	display: flex;
 	align-items: center;

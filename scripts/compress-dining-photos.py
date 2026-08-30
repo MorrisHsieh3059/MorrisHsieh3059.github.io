@@ -14,6 +14,7 @@ Usage:
   python3 scripts/compress-dining-photos.py
   python3 scripts/compress-dining-photos.py coqodaq-081826
   python3 scripts/compress-dining-photos.py --force
+  python3 scripts/compress-dining-photos.py --thumbs-only
 """
 from __future__ import annotations
 
@@ -100,15 +101,33 @@ def process(path: Path, force: bool) -> str:
     return f"{before / 1000:.0f}K -> {display_bytes / 1000:.0f}K  {display.size[0]}x{display.size[1]}"
 
 
+def process_thumb_only(path: Path) -> str:
+    dest = thumb_path(path)
+    before = dest.stat().st_size if dest.exists() else 0
+    img = load(path)
+    thumb = fit(img, THUMB_MAX)
+    after = save_jpeg(thumb, dest, THUMB_QUALITY)
+    return f"thumb {before / 1000:.0f}K -> {after / 1000:.0f}K  {thumb.size[0]}x{thumb.size[1]}"
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--force", action="store_true", help="re-encode even if already processed")
+    parser.add_argument("--force", action="store_true", help="re-encode display + thumb even if already processed")
+    parser.add_argument(
+        "--thumbs-only",
+        action="store_true",
+        help="rewrite *.thumb.jpeg from existing display files; do not touch N.jpeg",
+    )
     parser.add_argument(
         "visits",
         nargs="*",
         help="optional visit folder ids under img/visits/ (default: all visits)",
     )
     args = parser.parse_args()
+
+    if args.force and args.thumbs_only:
+        print("use --force or --thumbs-only, not both", file=sys.stderr)
+        return 2
 
     if not VISITS.is_dir():
         print(f"missing {VISITS}", file=sys.stderr)
@@ -131,22 +150,34 @@ def main() -> int:
     before_total = 0
     after_total = 0
     for path in files:
-        before_total += path.stat().st_size
-        result = process(path, args.force)
+        if args.thumbs_only:
+            dest = thumb_path(path)
+            before_total += dest.stat().st_size if dest.exists() else 0
+            result = process_thumb_only(path)
+            after_total += thumb_path(path).stat().st_size
+        else:
+            before_total += path.stat().st_size
+            result = process(path, args.force)
+            after_total += path.stat().st_size
         if result == "skip":
             skipped += 1
-            after_total += path.stat().st_size
             continue
         done += 1
-        after_total += path.stat().st_size
         print(f"  {path.relative_to(VISITS)}  {result}")
 
     thumb_bytes = sum(p.stat().st_size for p in VISITS.rglob("*") if p.is_file() and is_thumb(p))
-    print(
-        f"\n{done} encoded, {skipped} skipped, "
-        f"display {before_total / 1e6:.0f} MB -> {after_total / 1e6:.0f} MB, "
-        f"thumbs {thumb_bytes / 1e6:.0f} MB"
-    )
+    if args.thumbs_only:
+        print(
+            f"\n{done} thumbs rewritten, "
+            f"{before_total / 1e6:.1f} MB -> {after_total / 1e6:.1f} MB "
+            f"(on-disk thumbs now {thumb_bytes / 1e6:.1f} MB)"
+        )
+    else:
+        print(
+            f"\n{done} encoded, {skipped} skipped, "
+            f"display {before_total / 1e6:.0f} MB -> {after_total / 1e6:.0f} MB, "
+            f"thumbs {thumb_bytes / 1e6:.0f} MB"
+        )
     return 0
 
 
