@@ -422,8 +422,7 @@
 	}
 
 	.travel-map-panel {
-		flex: 0 1 auto;
-		min-height: 0;
+		flex: 0 0 auto;
 	}
 
 	.travel-map-wrap {
@@ -432,8 +431,9 @@
 		min-height: 140px;
 	}
 
+	/* flex-basis 0 so card content cannot steal height from the map */
 	.travel-cards-sidebar {
-		flex: 1 1 auto;
+		flex: 1 1 0;
 		min-height: 0;
 		height: auto;
 	}
