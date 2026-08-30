@@ -1,5 +1,30 @@
 [
   {
+    "id": "crown-shy-082426",
+    "name": "Crown Shy",
+    "city": "New York, NY",
+    "date": "2026-08-24",
+    "menu": "restaurant week",
+    "cuisines": [
+      "American",
+      "Contemporary"
+    ],
+    "pictures": [
+      "0.jpeg",
+      "1.jpeg",
+      "2.jpeg",
+      "3.jpeg",
+      "4.jpeg"
+    ],
+    "accolades": [
+      {
+        "list": "nyt-100-best-restaurants",
+        "region": "New York",
+        "year": 2025
+      }
+    ]
+  },
+  {
     "id": "moon-rabbit-070326",
     "name": "Moon Rabbit",
     "date": "2026-07-03",
