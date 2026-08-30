@@ -378,22 +378,69 @@
 }
 
 @media (max-width: 991px) {
+	/* Pin title / stats / map; only the trip-journal cards scroll. */
+	.travel-section.section {
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+	}
+
 	.travel-section .section-block {
+		flex: 1 1 auto;
+		min-height: 0;
+		display: flex;
+		flex-direction: column;
 		padding-right: 40px;
+		padding-bottom: 16px;
+	}
+
+	.travel-section .container-fluid {
+		flex: 1 1 auto;
+		min-height: 0;
+		display: flex;
+		flex-direction: column;
+	}
+
+	/* Bootstrap 3 clearfix would become stray flex items. */
+	.travel-section .container-fluid:before,
+	.travel-section .container-fluid:after {
+		display: none;
+	}
+
+	.travel-section .section-header,
+	.travel-section .travel-stats,
+	.travel-section .travel-notice {
+		flex-shrink: 0;
 	}
 
 	.travel-layout {
-		grid-template-columns: 1fr;
+		display: flex;
+		flex-direction: column;
+		flex: 1 1 auto;
+		min-height: 0;
+		margin-top: 0.75rem;
+	}
+
+	.travel-map-panel {
+		flex: 0 1 auto;
+		min-height: 0;
 	}
 
 	.travel-map-wrap {
-		height: clamp(240px, 42vh, 420px);
-		height: clamp(240px, 42dvh, 420px);
-		min-height: 240px;
+		height: clamp(160px, 30vh, 280px);
+		height: clamp(160px, 30dvh, 280px);
+		min-height: 140px;
 	}
 
 	.travel-cards-sidebar {
+		flex: 1 1 auto;
+		min-height: 0;
 		height: auto;
+	}
+
+	.travel-cards-panel {
+		-webkit-overflow-scrolling: touch;
+		overscroll-behavior: contain;
 	}
 
 	.travel-hover-card {
@@ -406,12 +453,19 @@
 @media (max-width: 767px) {
 	.travel-section .section-block {
 		padding-right: 24px;
+		padding-bottom: calc(12px + var(--safe-bottom, 0px));
 	}
 
 	.travel-map-wrap {
-		height: clamp(220px, 38vh, 360px);
-		height: clamp(220px, 38dvh, 360px);
-		min-height: 220px;
+		height: clamp(140px, 26vh, 220px);
+		height: clamp(140px, 26dvh, 220px);
+		min-height: 120px;
+	}
+
+	.travel-stats {
+		margin-top: 0.65rem;
+		font-size: 0.78rem;
+		line-height: 1.45;
 	}
 
 	.trip-card,
@@ -421,5 +475,13 @@
 	.trip-card .trip-counts,
 	.trip-card .cities {
 		overflow-wrap: break-word;
+	}
+}
+
+@media (max-width: 991px) and (max-height: 540px) {
+	.travel-map-wrap {
+		height: clamp(110px, 22vh, 160px);
+		height: clamp(110px, 22dvh, 160px);
+		min-height: 100px;
 	}
 }
