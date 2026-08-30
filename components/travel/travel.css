@@ -378,27 +378,36 @@
 }
 
 @media (max-width: 991px) {
-	/* Pin title / stats / map; only the trip-journal cards scroll. */
+	/* Pin title / stats / map; only the trip-journal cards scroll.
+	   min-width:0 on the flex chain so long titles cannot blow past the page frame. */
 	.travel-section.section {
 		overflow: hidden;
 		display: flex;
 		flex-direction: column;
+		max-width: 100%;
 	}
 
 	.travel-section .section-block {
 		flex: 1 1 auto;
+		min-width: 0;
 		min-height: 0;
+		max-width: 100%;
 		display: flex;
 		flex-direction: column;
-		padding-right: 40px;
+		padding-right: 24px;
 		padding-bottom: 16px;
+		box-sizing: border-box;
 	}
 
 	.travel-section .container-fluid {
 		flex: 1 1 auto;
+		min-width: 0;
 		min-height: 0;
+		max-width: 100%;
+		width: 100%;
 		display: flex;
 		flex-direction: column;
+		box-sizing: border-box;
 	}
 
 	/* Bootstrap 3 clearfix would become stray flex items. */
@@ -411,6 +420,35 @@
 	.travel-section .travel-stats,
 	.travel-section .travel-notice {
 		flex-shrink: 0;
+		max-width: 100%;
+		min-width: 0;
+	}
+
+	/* Room for the hamburger so JOURNAL stays inside the frame. */
+	.travel-section .section-header {
+		padding-right: 52px;
+		box-sizing: border-box;
+	}
+
+	.travel-section .section-header > h2 {
+		font-size: 22px;
+		letter-spacing: 2px;
+		max-width: 100%;
+		overflow-wrap: anywhere;
+	}
+
+	.travel-section .travel-stats {
+		overflow-wrap: anywhere;
+	}
+
+	.travel-layout,
+	.travel-map-panel,
+	.travel-map-wrap,
+	.travel-cards-sidebar,
+	.travel-cards-panel {
+		max-width: 100%;
+		min-width: 0;
+		box-sizing: border-box;
 	}
 
 	.travel-layout {
@@ -429,6 +467,12 @@
 		height: clamp(240px, 42vh, 420px);
 		height: clamp(240px, 42dvh, 420px);
 		min-height: 240px;
+		overflow: hidden;
+	}
+
+	.travel-map-legend {
+		max-width: calc(100% - 16px);
+		box-sizing: border-box;
 	}
 
 	/* flex-basis 0 so card content cannot steal height from the map */
@@ -441,25 +485,15 @@
 	.travel-cards-panel {
 		-webkit-overflow-scrolling: touch;
 		overscroll-behavior: contain;
+		overflow-x: hidden;
 	}
 
 	.travel-hover-card {
 		width: calc(100% - 24px);
+		max-width: calc(100% - 24px);
 		left: 12px;
 		right: 12px;
-	}
-}
-
-@media (max-width: 767px) {
-	.travel-section .section-block {
-		padding-right: 24px;
-		padding-bottom: calc(12px + var(--safe-bottom, 0px));
-	}
-
-	.travel-map-wrap {
-		height: clamp(220px, 38vh, 360px);
-		height: clamp(220px, 38dvh, 360px);
-		min-height: 220px;
+		box-sizing: border-box;
 	}
 
 	.trip-card,
@@ -468,7 +502,27 @@
 	.trip-card p,
 	.trip-card .trip-counts,
 	.trip-card .cities {
-		overflow-wrap: break-word;
+		max-width: 100%;
+		overflow-wrap: anywhere;
+	}
+}
+
+@media (max-width: 767px) {
+	.travel-section .section-block {
+		padding-left: 16px;
+		padding-right: 16px;
+		padding-bottom: calc(12px + var(--safe-bottom, 0px));
+	}
+
+	.travel-section .section-header > h2 {
+		font-size: 18px;
+		letter-spacing: 1px;
+	}
+
+	.travel-map-wrap {
+		height: clamp(220px, 38vh, 360px);
+		height: clamp(220px, 38dvh, 360px);
+		min-height: 220px;
 	}
 }
 
