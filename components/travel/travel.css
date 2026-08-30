@@ -426,9 +426,9 @@
 	}
 
 	.travel-map-wrap {
-		height: clamp(160px, 30vh, 280px);
-		height: clamp(160px, 30dvh, 280px);
-		min-height: 140px;
+		height: clamp(240px, 42vh, 420px);
+		height: clamp(240px, 42dvh, 420px);
+		min-height: 240px;
 	}
 
 	/* flex-basis 0 so card content cannot steal height from the map */
@@ -457,15 +457,9 @@
 	}
 
 	.travel-map-wrap {
-		height: clamp(140px, 26vh, 220px);
-		height: clamp(140px, 26dvh, 220px);
-		min-height: 120px;
-	}
-
-	.travel-stats {
-		margin-top: 0.65rem;
-		font-size: 0.78rem;
-		line-height: 1.45;
+		height: clamp(220px, 38vh, 360px);
+		height: clamp(220px, 38dvh, 360px);
+		min-height: 220px;
 	}
 
 	.trip-card,
