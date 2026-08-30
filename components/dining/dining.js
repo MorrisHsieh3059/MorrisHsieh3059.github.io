@@ -190,6 +190,11 @@
 		bar program and a restaurant sharing one kitchen). visit.sub is
 		optional; only isSharedKitchen: true renders anything.
 
+		Michelin / Timeline title is the kitchen that holds the Michelin
+		distinction (The Modern). sub.name is the room actually visited
+		(The Bar Room at the Modern). Award-tab title is separate: if the
+		sister room itself holds the accolade, award.json uses that name.
+
 		visit.sub: { isSharedKitchen: true|false, name: "" }
 	=========================================================================*/
 	function sharedKitchenHtml(visit) {
@@ -1112,6 +1117,7 @@
 						'<span class="dining-timeline-card-name">' + visit.name + '</span>' +
 						timelineAwardMarks(visit) +
 					'</div>' +
+					sharedKitchenHtml(visit) +
 					'<div class="dining-timeline-card-line2">' +
 						'<span>' + formatVisitDate(visit.date) + '</span>' +
 						(city ? '<span class="dining-timeline-card-dot"> · </span><span>' + city + '</span>' : '') +

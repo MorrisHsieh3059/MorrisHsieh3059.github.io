@@ -48,7 +48,7 @@
   },
   {
     "id": "the-bar-room-at-the-modern-082126",
-    "name": "The Bar room at the Modern",
+    "name": "The Modern",
     "date": "2026-08-21",
     "stars": 2,
     "status": "current",
@@ -57,7 +57,7 @@
     ],
     "sub": {
       "isSharedKitchen": true,
-      "name": "The Modern"
+      "name": "The Bar room at the Modern"
     },
     "menu": "à la carte",
     "city": "New York, NY",
