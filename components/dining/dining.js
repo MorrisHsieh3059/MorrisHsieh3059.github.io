@@ -37,10 +37,12 @@
 		}
 	}
 
-	$(document).on('click', '.dining-tab-toggle', function (e) {
-		e.preventDefault();
-		showDiningTab($(this).data('dining-tab'));
-	});
+	function applyDiningRoute(route, meta) {
+		if (!route || route.section !== 'dining') return;
+		var tab = route.diningTab || 'timeline';
+		var delay = meta && meta.animated ? 1300 : 0;
+		setTimeout(function () { showDiningTab(tab); }, delay);
+	}
 
 	/*=========================================================================
 		Star rating badge — an original design (small red star shapes),
@@ -1515,29 +1517,15 @@
 	}
 
 	/*=========================================================================
-		Lazy-init once the Dining section is actually visited (matches the
-		pattern used by nyc.js / travel.js), and honor a sidebar submenu
-		click that requested a specific tab.
+		Router-driven init — SiteRouter loads this file, then fires
+		site:route. Tab clicks and deep links (/dining/michelin/) share
+		the same path.
 	=========================================================================*/
-	$(document).on('click', '.section-toggle[data-section="dining"]', function () {
-		var tab = $(this).data('dining-tab');
-		if (tab) {
-			setTimeout(function () { showDiningTab(tab); }, 1300);
-		} else {
-			setTimeout(function () { showDiningTab('timeline'); }, 1300);
-		}
+	$(document).on('site:route', function (e, route, meta) {
+		applyDiningRoute(route, meta);
 	});
-
-	$(window).on('load', function () {
-		if (!$('#dining').hasClass('active')) return;
-		if ($('.dining-panel[data-dining-panel="award"]').hasClass('active')) {
-			ensureInitAward();
-		} else if ($('.dining-panel[data-dining-panel="timeline"]').hasClass('active')) {
-			ensureInit();
-			ensureInitAward();
-		} else {
-			ensureInit();
-		}
-	});
+	if (window.SiteRouter && $('#dining').hasClass('active')) {
+		applyDiningRoute(window.SiteRouter.current(), { animated: false });
+	}
 
 }(jQuery));

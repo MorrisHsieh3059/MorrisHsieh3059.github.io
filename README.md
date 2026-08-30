@@ -4,6 +4,8 @@ Personal site for Morris Chun-Mo Hsieh (谢君模), built on the N5 minimal resu
 
 **Live URL:** https://morrishsieh3059.github.io
 
+Sections use path URLs (`/about/`, `/dining/michelin/`, `/faith/`) — no `#` in the address bar. GitHub Pages serves a copy of the page at each path so refresh works.
+
 ## Sections
 
 - **Home** — Hero with NYC skyline

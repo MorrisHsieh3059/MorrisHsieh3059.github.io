@@ -583,16 +583,22 @@
 		});
 	}
 
-	$(window).on('load', function () {
-		if ($('#travel-map').length) {
+	function applyTravelRoute(route, meta) {
+		if (!route || route.section !== 'travel') return;
+		if ($('#travel-map').length && !travelData) {
 			loadTravel();
 		}
-	});
-
-	$(document).on('click', '.section-toggle[data-section="travel"]', function () {
+		var delay = meta && meta.animated ? 1300 : 50;
 		setTimeout(function () {
 			if (map) map.invalidateSize();
-		}, 1300);
+		}, delay);
+	}
+
+	$(document).on('site:route', function (e, route, meta) {
+		applyTravelRoute(route, meta);
 	});
+	if (window.SiteRouter && $('#travel').hasClass('active')) {
+		applyTravelRoute(window.SiteRouter.current(), { animated: false });
+	}
 
 }(jQuery));

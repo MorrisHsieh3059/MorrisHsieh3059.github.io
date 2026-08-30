@@ -28,6 +28,23 @@ const COMPONENTS = [
   'home', 'about', 'resume', 'travel', 'dining', 'faith', 'gallery', 'contact',
 ];
 
+// Extra copies of index.html so GitHub Pages (and `serve`) resolve
+// /about/, /dining/michelin/, etc. without a hash. Refresh stays a 200.
+const ROUTES = [
+  'about',
+  'resume',
+  'travel',
+  'contact',
+  'dining',
+  'dining/timeline',
+  'dining/michelin',
+  'dining/gourmand',
+  'dining/award',
+  'faith',
+  'faith/devotion',
+  'faith/other',
+];
+
 function rmrf(dir) {
   fs.rmSync(dir, { recursive: true, force: true });
 }
@@ -70,6 +87,16 @@ function assembleIndex() {
   fs.writeFileSync(path.join(dist, 'index.html'), html);
 }
 
+function writeRoutePages() {
+  const html = fs.readFileSync(path.join(dist, 'index.html'), 'utf8');
+  for (const route of ROUTES) {
+    const dir = path.join(dist, route);
+    fs.mkdirSync(dir, { recursive: true });
+    fs.writeFileSync(path.join(dir, 'index.html'), html);
+  }
+  fs.writeFileSync(path.join(dist, '404.html'), html);
+}
+
 function main() {
   rmrf(dist);
   fs.mkdirSync(dist, { recursive: true });
@@ -109,6 +136,7 @@ function main() {
   }
 
   assembleIndex();
+  writeRoutePages();
   fs.writeFileSync(path.join(dist, '.nojekyll'), '');
 
   console.log(`Built site into ${path.relative(root, dist)}/`);
