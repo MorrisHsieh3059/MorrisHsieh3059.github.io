@@ -40,7 +40,7 @@
 	function applyDiningRoute(route, meta) {
 		if (!route || route.section !== 'dining') return;
 		var tab = route.diningTab || 'timeline';
-		var delay = meta && meta.animated ? (meta.swapMs || 500) : 0;
+		var delay = meta && meta.animated ? 1300 : 0;
 		setTimeout(function () { showDiningTab(tab); }, delay);
 	}
 
