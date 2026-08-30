@@ -1,0 +1,46 @@
+---
+description: How to name shared-kitchen visits on Michelin, Award, and Timeline
+alwaysApply: true
+---
+
+# Shared-kitchen visits
+
+A sister room can share a Michelin-listed kitchen (The Bar Room at the Modern / The Modern, Nougatine / Jean-Georges). Title and `sub` are per tab — do not copy the Award name onto the Michelin card.
+
+## Michelin Stars / Guide (`data/michelin.json`)
+
+- `name` = the kitchen that holds the Michelin distinction (stars, Bib Gourmand, or Selected).
+- `sub` = `{ "isSharedKitchen": true, "name": "<room actually visited>" }`.
+- Exception: if the sister room itself has its **own** Michelin listing (stars or `rank`), `name` is that listing and `sub.name` is the sibling kitchen.
+
+Canonical example — both Bar Room meals, stars belong to The Modern:
+
+```json
+{
+  "name": "The Modern",
+  "stars": 2,
+  "sub": { "isSharedKitchen": true, "name": "The Bar room at the Modern" }
+}
+```
+
+Wrong: swapping those two strings so the Michelin card titles the Bar Room. That also splits star totals (dedup is by `name`).
+
+## Award (`data/award.json`)
+
+- `name` = the name on the award list, not the sibling starred dining room.
+- If the sister room is the one listed (NYT, 50 Best, …), use that room as `name` even when Michelin credits the other kitchen.
+- Do not add `sub` here unless Award cards start rendering a shared tag.
+
+The Bar Room is on NYT 100 Best → Award title is `The Bar room at the Modern`. Dual-listed meals still share one `id` and photo folder.
+
+## Timeline
+
+Michelin-backed visits (including dual-listed) use the **same title + shared tag as the Michelin tab**. Merge keeps the Michelin `name` / `sub` and only attaches `accolades`. Award-only visits keep the Award `name`.
+
+## Checklist
+
+1. Look up who holds the Michelin listing vs who holds the award — they can differ.
+2. Michelin JSON: starred/listed kitchen in `name`, room sat in `sub.name` (unless that room has its own listing).
+3. Award JSON: awarded concept in `name`.
+4. Confirm Timeline matches the Michelin card, not the Award card.
+5. Jean-Georges + Nougatine follows the same pattern as The Modern + The Bar Room.
