@@ -1,0 +1,17 @@
+{
+  "name": "Morris Hsieh",
+  "short_name": "Morris",
+  "icons": [
+    {
+      "src": "img/favicon-192x192.png?v=3",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "img/favicon-512x512.png?v=3",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "display": "browser"
+}

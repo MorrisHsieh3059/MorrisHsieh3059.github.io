@@ -230,6 +230,20 @@ function main() {
   copyDir(path.join(root, 'assets', 'js'), path.join(dist, 'js'));
   copyDir(path.join(root, 'assets', 'img'), path.join(dist, 'img'));
 
+  // iOS Safari Favorites requests these at the domain root (not img/).
+  // A 404 there leaves the old cached hoodie avatar on the home screen.
+  const appleTouch = path.join(root, 'assets', 'img', 'apple-touch-icon.png');
+  copyFile(appleTouch, path.join(dist, 'apple-touch-icon.png'));
+  copyFile(appleTouch, path.join(dist, 'apple-touch-icon-precomposed.png'));
+  copyFile(
+    path.join(root, 'assets', 'img', 'favicon.ico'),
+    path.join(dist, 'favicon.ico')
+  );
+  copyFile(
+    path.join(root, 'assets', 'site.webmanifest'),
+    path.join(dist, 'site.webmanifest')
+  );
+
   for (const name of COMPONENTS) {
     const compDir = path.join(root, 'components', name);
     if (!fs.existsSync(compDir)) continue;
