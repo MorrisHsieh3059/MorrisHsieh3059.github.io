@@ -155,7 +155,7 @@
 
 	function hydrateCovers(root) {
 		var scope = root && root.querySelectorAll ? root : document;
-		var imgs = scope.querySelectorAll('.michelin-card-photo img[data-src], .award-card-photo img[data-src]');
+		var imgs = scope.querySelectorAll('.michelin-card-photo img[data-src]');
 		if (!imgs.length) return;
 
 		function reveal(img) {
