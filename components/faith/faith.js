@@ -28,7 +28,7 @@
 	function applyFaithRoute(route, meta) {
 		if (!route || route.section !== 'faith') return;
 		var tab = route.faithTab || 'devotion';
-		var delay = meta && meta.animated ? (meta.swapMs || 500) : 0;
+		var delay = meta && meta.animated ? 1300 : 0;
 		setTimeout(function () { showFaithTab(tab); }, delay);
 	}
 

@@ -29,14 +29,6 @@ html {
 	background-color: var(--frame-gutter);
 }
 
-/* Theme wipe is 2.5s; keep the same keyframes, run them in 1s. */
-body.section-switching.down .animation-block,
-body.section-switching.up .animation-block {
-	-webkit-animation-duration: 1s;
-	-moz-animation-duration: 1s;
-	animation-duration: 1s;
-}
-
 /* Theme opens the drawer via :hover; touch devices need the class. */
 body.menu-open .menu {
 	width: 300px;

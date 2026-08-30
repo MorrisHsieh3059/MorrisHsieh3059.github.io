@@ -588,7 +588,7 @@
 		if ($('#travel-map').length && !travelData) {
 			loadTravel();
 		}
-		var delay = meta && meta.animated ? (meta.swapMs || 500) : 50;
+		var delay = meta && meta.animated ? 1300 : 50;
 		setTimeout(function () {
 			if (map) map.invalidateSize();
 		}, delay);
