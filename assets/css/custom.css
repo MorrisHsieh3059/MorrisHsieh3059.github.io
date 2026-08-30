@@ -81,7 +81,7 @@ body.menu-open .menu {
 	justify-content: center;
 }
 
-.identity-tags span {
+.identity-tags a {
 	background: rgba(255, 255, 255, 0.15);
 	border: 1px solid rgba(255, 255, 255, 0.35);
 	color: #fff;
@@ -89,6 +89,13 @@ body.menu-open .menu {
 	font-family: 'Roboto Mono', sans-serif;
 	font-size: 0.78rem;
 	letter-spacing: 0.03em;
+	text-decoration: none;
+}
+
+.identity-tags a:hover,
+.identity-tags a:focus {
+	background: rgba(255, 255, 255, 0.28);
+	color: #fff;
 }
 
 .nyc-accent .color {
