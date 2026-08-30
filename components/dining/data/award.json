@@ -25,6 +25,33 @@
     ]
   },
   {
+    "id": "the-modern-082126",
+    "name": "The Bar room at the Modern",
+    "city": "New York, NY",
+    "date": "2026-08-21",
+    "menu": "à la carte",
+    "cuisines": [
+      "Contemporary"
+    ],
+    "pictures": [
+      "0.jpeg",
+      "1.jpeg",
+      "2.jpeg",
+      "3.jpeg",
+      "4.jpeg",
+      "5.jpeg",
+      "6.jpeg"
+    ],
+    "accolades": [
+      {
+        "list": "nyt-100-best-restaurants",
+        "region": "New York",
+        "year": 2026,
+        "rank": 32
+      }
+    ]
+  },
+  {
     "id": "moon-rabbit-070326",
     "name": "Moon Rabbit",
     "date": "2026-07-03",
