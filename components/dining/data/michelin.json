@@ -1,5 +1,49 @@
 [
   {
+    "id": "chola-083026",
+    "name": "Chola",
+    "date": "2026-08-30",
+    "rank": "selected",
+    "status": "current",
+    "cuisines": [
+      "Indian",
+      "Regional Cuisine"
+    ],
+    "menu": "à la carte",
+    "city": "New York, NY",
+    "pictures": [
+      "0.jpeg",
+      "1.jpeg",
+      "2.jpeg",
+      "3.jpeg",
+      "4.jpeg",
+      "5.jpeg",
+      "6.jpeg"
+    ]
+  },
+  {
+    "id": "8282-082926",
+    "name": "8282",
+    "date": "2026-08-29",
+    "rank": "gourmand",
+    "status": "current",
+    "cuisines": [
+      "Korean",
+      "Fusion"
+    ],
+    "menu": "à la carte",
+    "city": "New York, NY",
+    "pictures": [
+      "0.jpeg",
+      "1.jpeg",
+      "2.jpeg",
+      "3.jpeg",
+      "4.jpeg",
+      "5.jpeg",
+      "6.jpeg"
+    ]
+  },
+  {
     "id": "crown-shy-082426",
     "name": "Crown Shy",
     "date": "2026-08-24",
