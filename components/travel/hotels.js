@@ -8,7 +8,6 @@
 	var visits = [];
 	var map = null;
 	var markers = [];
-	var $hoverCard = null;
 	var loaded = false;
 
 	function formatVisitDate(dateStr) {
@@ -74,7 +73,7 @@
 		}).forEach(function (visit) {
 			var hotel = visitHotel(visit);
 			if (!hotel) return;
-			var $card = $('<button type="button" class="hotel-card" data-visit-id="' + visit.id + '"></button>');
+			var $card = $('<article class="hotel-card" data-visit-id="' + visit.id + '" tabindex="0"></article>');
 			$card.append(coverHtml(visit));
 			$card.append(
 				'<div class="hotel-card-body">' +
@@ -87,38 +86,42 @@
 			$card.on('click', function () {
 				focusVisit(visit.id);
 			});
+			$card.on('keydown', function (e) {
+				if (e.key === 'Enter' || e.key === ' ') {
+					e.preventDefault();
+					focusVisit(visit.id);
+				}
+			});
 			$grid.append($card);
 		});
 	}
 
-	function visitCardHtml(visit, hotel) {
-		return '<h5>' + hotel.name + '</h5>' +
-			'<div class="meta">' + hotel.brand + '</div>' +
-			'<div class="meta"><i class="fas fa-map-marker-alt"></i> ' + locationText(hotel) + '</div>' +
-			'<div class="meta"><i class="fas fa-calendar-alt"></i> ' + formatVisitDate(visit.date) + '</div>';
+	function popupHtml(visit, hotel) {
+		return '<strong>' + hotel.name + '</strong>' +
+			'<div class="hotel-popup-brand">' + hotel.brand + '</div>' +
+			'<div>' + locationText(hotel) + '</div>' +
+			'<div>' + formatVisitDate(visit.date) + '</div>';
 	}
 
-	function showHoverCard(html) {
-		if (!$hoverCard) return;
-		$hoverCard.html(html).addClass('visible');
-	}
-
-	function hideHoverCard() {
-		if ($hoverCard) $hoverCard.removeClass('visible');
+	function markerEl(m) {
+		if (!m.el) m.el = m.marker.getElement();
+		return m.el;
 	}
 
 	function focusVisit(visitId) {
 		var found = null;
 		markers.forEach(function (m) {
 			var on = m.visit.id === visitId;
-			m.el.classList.toggle('highlight', on);
+			var el = markerEl(m);
+			if (el) el.classList.toggle('highlight', on);
 			if (on) found = m;
+			else m.marker.closePopup();
 		});
 		$('.hotel-card').removeClass('active');
 		$('.hotel-card[data-visit-id="' + visitId + '"]').addClass('active');
 		if (!found || !map) return;
-		showHoverCard(visitCardHtml(found.visit, found.hotel));
 		map.setView(found.marker.getLatLng(), Math.max(map.getZoom(), 6), { animate: true });
+		found.marker.openPopup();
 	}
 
 	function addPin(visit, hotel) {
@@ -132,14 +135,13 @@
 			icon: icon,
 			keyboard: false
 		}).addTo(map);
-		var el = marker.getElement();
 
-		marker.on('click', function (e) {
-			L.DomEvent.stopPropagation(e);
+		marker.bindPopup(popupHtml(visit, hotel), { closeButton: false, maxWidth: 240 });
+		marker.on('click', function () {
 			focusVisit(visit.id);
 		});
 
-		markers.push({ marker: marker, el: el, visit: visit, hotel: hotel });
+		markers.push({ marker: marker, el: marker.getElement(), visit: visit, hotel: hotel });
 	}
 
 	function initMap() {
@@ -151,14 +153,10 @@
 			zoomSnap: 0.25
 		}).setView([20, 10], 2);
 
-		L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-			attribution: '&copy; OpenStreetMap &copy; CARTO',
-			subdomains: 'abcd',
+		L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+			attribution: '&copy; OpenStreetMap',
 			maxZoom: 19
 		}).addTo(map);
-
-		$hoverCard = $('#hotel-hover-card');
-		map.on('click', hideHoverCard);
 
 		visits.forEach(function (visit) {
 			var hotel = visitHotel(visit);
