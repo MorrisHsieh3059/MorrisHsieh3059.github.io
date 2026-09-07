@@ -1,0 +1,42 @@
+---
+description: End-to-end flow when Morris logs a hotel stay or stop-by (Travel > Hotel Collection)
+alwaysApply: true
+---
+
+# New hotel visit
+
+When Morris names a hotel, finish the visit in this order. Do not stop after JSON.
+
+1. **Catalog name** — Find the hotel in `components/travel/data/hotels.json` (grep by city or brand) and use its `id` as `hotelId`. Card title, brand, family, city, and pin all come from that row. Not in the catalog → add a catalog row first (`id`, `name`, `brand`, `family`, `city`, `country`, `lat`, `lng`; brand/family pairs: Waldorf Astoria → Hilton Honors, The Ritz-Carlton → Marriott Bonvoy, Four Seasons → Four Seasons, Fairmont → ALL Accor). Never log a visit to an uncatalogued hotel.
+
+2. **Type + dates** — `stay` = slept there (`date` is check-in, `checkout` is the morning he left; nights render as `checkout − date`). `stop-by` = drink, meal, or a look; no `checkout`. If Morris did not say which, or gave no date, **ask** — do not default silently (the renderer treats a missing `type` as `stay`, so a guess ships as a stay).
+
+3. **Id** — `kebab-name-MMDDYY` from the hotel's short name + `date` (check-in). Repeat visits get a new id. Example: `the-roosevelt-new-orleans-011926`.
+
+4. **JSON** — Append to `components/travel/data/hotel-visits.json`. `pictures` starts `[]`.
+
+```json
+{
+  "id": "kebab-name-MMDDYY",
+  "hotelId": "<catalog id from hotels.json>",
+  "type": "stay",
+  "date": "YYYY-MM-DD",
+  "checkout": "YYYY-MM-DD",
+  "pictures": []
+}
+```
+
+`type` is `stay` | `stop-by`. `checkout` is stay-only; omit it for a stop-by.
+
+5. **Photos** — `mkdir -p components/travel/img/visits/<id>/`. Local agent: `open components/travel/img/visits/<id>/` (macOS) so Morris can drop files; a cloud agent cannot open Finder, so tell him the path. **Stop until he drops files.** Keep `0.jpeg` (cover, Morris names it). Rename the rest `1.jpeg`, `2.jpeg`, … sorted A–Z by **original** filename, then write `pictures`. Run `npm run compress-travel -- <id>` (same encode as dining: display max 2000px q85, `N.thumb.jpeg` max 640px q72). Passing `<id>` avoids re-encoding other visits. Every listed file needs `N.jpeg` + `N.thumb.jpeg`. Cards use `photoPath(visit, file, 'thumb')`; full size is `photoPath(visit, file)` at `img/travel/visits/<id>/`.
+
+6. **Ship** — Commit JSON + compressed photos + thumbs only: `backend(travel): add <Hotel short name> <stay|stop-by>` (e.g. `backend(travel): add Roosevelt New Orleans stay`). Tab UI changes are `frontend(travel):`. Push.
+
+## Do not
+
+- Copy `name`, `brand`, `family`, `city`, `country`, `lat`, `lng` onto the visit — they live in the catalog only.
+- Invent a catalog row's coordinates or brand; look them up.
+- Default `type` or `date` when Morris left them out.
+- Add `checkout` to a `stop-by`, or omit it from a `stay`.
+- Commit camera originals, or a visit whose `pictures` lack a `N.thumb.jpeg`.
+- Re-compress other visits or touch `components/dining/`.
