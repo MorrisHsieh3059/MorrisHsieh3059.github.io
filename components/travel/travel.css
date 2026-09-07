@@ -86,9 +86,8 @@
 }
 
 .hotel-totals-icon {
-	height: 16px;
-	width: auto;
-	max-width: 50px;
+	height: 22px;
+	width: 22px;
 	object-fit: contain;
 	flex: 0 0 auto;
 }
