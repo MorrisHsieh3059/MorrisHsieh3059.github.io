@@ -19,11 +19,51 @@
 	var markers = [];
 	var loaded = false;
 
+	var ATLANTIC = [35, -40];
+	var ATLANTIC_ZOOM = 3;
+
 	function formatVisitDate(dateStr) {
 		if (!dateStr) return '';
 		var d = new Date(dateStr + 'T00:00:00');
 		if (isNaN(d.getTime())) return dateStr;
 		return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+	}
+
+	function stayNights(visit) {
+		if (!visit.date || !visit.checkout) return 0;
+		var a = new Date(visit.date + 'T00:00:00');
+		var b = new Date(visit.checkout + 'T00:00:00');
+		if (isNaN(a.getTime()) || isNaN(b.getTime())) return 0;
+		return Math.max(0, Math.round((b - a) / 86400000));
+	}
+
+	function formatStayDates(visit) {
+		if (!visit.checkout || visit.checkout === visit.date) {
+			return formatVisitDate(visit.date);
+		}
+		var a = new Date(visit.date + 'T00:00:00');
+		var b = new Date(visit.checkout + 'T00:00:00');
+		if (isNaN(a.getTime()) || isNaN(b.getTime())) return formatVisitDate(visit.date);
+		if (a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth()) {
+			return a.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) +
+				'–' + b.getDate() + ', ' + a.getFullYear();
+		}
+		return formatVisitDate(visit.date) + ' – ' + formatVisitDate(visit.checkout);
+	}
+
+	function stayNightsLabel(visit) {
+		var nights = stayNights(visit);
+		if (!nights) return '';
+		return nights === 1 ? '1 night' : nights + ' nights';
+	}
+
+	function timelineMonthParts(key) {
+		var d = new Date(key + '-01T00:00:00');
+		if (isNaN(d.getTime())) return { month: key, year: '' };
+		return {
+			month: d.toLocaleDateString('en-US', { month: 'short' }),
+			year: String(d.getFullYear())
+		};
 	}
 
 	function locationText(hotel) {
@@ -139,11 +179,15 @@
 	function applyFilters() {
 		var visible = 0;
 
-		$('.hotel-card').each(function () {
+		$('.hotel-timeline-station').each(function () {
 			var match = (selectedBrand() === 'all' || $(this).attr('data-brand') === selectedBrand()) &&
 				(selectedFamily() === 'all' || $(this).attr('data-family') === selectedFamily());
 			$(this).toggleClass('hotel-card-hidden', !match);
 			if (match) visible++;
+		});
+		$('.hotel-timeline-month').each(function () {
+			var any = $(this).find('.hotel-timeline-station').not('.hotel-card-hidden').length > 0;
+			$(this).toggle(any);
 		});
 
 		markers.forEach(function (m) {
@@ -178,52 +222,92 @@
 			count + '</div>';
 	}
 
+	function bindVisitCard($card, visit) {
+		$card.on('click', function () {
+			focusVisit(visit.id);
+		});
+		$card.on('keydown', function (e) {
+			if (e.key === 'Enter' || e.key === ' ') {
+				e.preventDefault();
+				focusVisit(visit.id);
+			}
+		});
+	}
+
+	function visitCard($cardBody, visit, hotel) {
+		var nights = stayNightsLabel(visit);
+		$cardBody.append(
+			'<h4>' + hotel.name + '</h4>' +
+			'<div class="hotel-card-brand">' + hotel.brand + '</div>' +
+			'<div class="hotel-card-family">' + hotel.family + '</div>' +
+			'<div class="hotel-card-meta"><i class="fas fa-map-marker-alt"></i> ' + locationText(hotel) + '</div>' +
+			'<div class="hotel-card-meta"><i class="fas fa-calendar-alt"></i> ' + formatStayDates(visit) +
+				(nights ? ' · ' + nights : '') + '</div>'
+		);
+	}
+
 	function renderCards() {
-		var $grid = $('#hotel-cards');
-		$grid.empty();
+		var $track = $('#hotel-cards');
+		$track.empty();
 
 		if (!visits.length) {
-			$grid.append('<p class="hotel-empty hotel-empty-none">No hotel visits yet. Stays will show as pins on the map.</p>');
+			$track.append('<p class="hotel-empty hotel-empty-none">No hotel visits yet. Stays will show as pins on the map.</p>');
 			applyFilters();
 			return;
 		}
 
-		visits.slice().sort(function (a, b) {
+		var sorted = visits.slice().sort(function (a, b) {
 			return (b.date || '').localeCompare(a.date || '');
-		}).forEach(function (visit) {
-			var hotel = visitHotel(visit);
-			if (!hotel) return;
-			var $card = $('<article class="hotel-card" data-visit-id="' + visit.id + '" data-brand="' + hotel.brand + '" data-family="' + hotel.family + '" tabindex="0"></article>');
-			$card.append(coverHtml(visit));
-			$card.append(
-				'<div class="hotel-card-body">' +
-					'<h4>' + hotel.name + '</h4>' +
-					'<div class="hotel-card-brand">' + hotel.brand + '</div>' +
-					'<div class="hotel-card-family">' + hotel.family + '</div>' +
-					'<div class="hotel-card-meta"><i class="fas fa-map-marker-alt"></i> ' + locationText(hotel) + '</div>' +
-					'<div class="hotel-card-meta"><i class="fas fa-calendar-alt"></i> ' + formatVisitDate(visit.date) + '</div>' +
-				'</div>'
+		});
+		var groups = [];
+		var current = null;
+		sorted.forEach(function (visit) {
+			if (!visitHotel(visit)) return;
+			var key = (visit.date || '').slice(0, 7);
+			if (!current || current.key !== key) {
+				current = { key: key, visits: [] };
+				groups.push(current);
+			}
+			current.visits.push(visit);
+		});
+
+		$track.append('<div class="hotel-timeline-rail" aria-hidden="true"></div>');
+		groups.forEach(function (group) {
+			var parts = timelineMonthParts(group.key);
+			var $month = $('<section class="hotel-timeline-month" data-month="' + group.key + '"></section>');
+			$month.append(
+				'<header class="hotel-timeline-month-label">' +
+					'<span class="hotel-timeline-month-name">' + parts.month + '</span>' +
+					'<span class="hotel-timeline-month-year">' + parts.year + '</span>' +
+				'</header>'
 			);
-			$card.on('click', function () {
-				focusVisit(visit.id);
+			var $stations = $('<div class="hotel-timeline-stations"></div>');
+			group.visits.forEach(function (visit) {
+				var hotel = visitHotel(visit);
+				var $station = $('<article class="hotel-timeline-station" data-visit-id="' + visit.id + '" data-brand="' + hotel.brand + '" data-family="' + hotel.family + '"></article>');
+				$station.append('<span class="hotel-timeline-node" aria-hidden="true"></span>');
+				var $card = $('<div class="hotel-card" data-visit-id="' + visit.id + '" tabindex="0"></div>');
+				$card.append(coverHtml(visit));
+				var $body = $('<div class="hotel-card-body"></div>');
+				visitCard($body, visit, hotel);
+				$card.append($body);
+				bindVisitCard($card, visit);
+				$station.append($card);
+				$stations.append($station);
 			});
-			$card.on('keydown', function (e) {
-				if (e.key === 'Enter' || e.key === ' ') {
-					e.preventDefault();
-					focusVisit(visit.id);
-				}
-			});
-			$grid.append($card);
+			$month.append($stations);
+			$track.append($month);
 		});
 		applyFilters();
 	}
 
 	function popupHtml(visit, hotel) {
+		var nights = stayNightsLabel(visit);
 		return '<strong>' + hotel.name + '</strong>' +
 			'<div class="hotel-popup-brand">' + hotel.brand + '</div>' +
 			'<div class="hotel-popup-family">' + hotel.family + '</div>' +
 			'<div>' + locationText(hotel) + '</div>' +
-			'<div>' + formatVisitDate(visit.date) + '</div>';
+			'<div>' + formatStayDates(visit) + (nights ? ' · ' + nights : '') + '</div>';
 	}
 
 	function markerEl(m) {
@@ -274,7 +358,7 @@
 			scrollWheelZoom: true,
 			zoomControl: true,
 			zoomSnap: 0.25
-		}).setView([20, 10], 2);
+		}).setView(ATLANTIC, ATLANTIC_ZOOM);
 
 		L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 			attribution: '&copy; OpenStreetMap',
@@ -287,15 +371,6 @@
 				addPin(visit, hotel);
 			}
 		});
-
-		if (markers.length === 1) {
-			map.setView(markers[0].marker.getLatLng(), 5);
-		} else if (markers.length > 1) {
-			var bounds = L.latLngBounds(markers.map(function (m) {
-				return m.marker.getLatLng();
-			}));
-			map.fitBounds(bounds, { padding: [36, 36], maxZoom: 5 });
-		}
 	}
 
 	function loadHotels() {
