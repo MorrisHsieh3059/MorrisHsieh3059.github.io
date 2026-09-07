@@ -227,7 +227,14 @@
 	letter-spacing: 0.04em;
 	text-transform: uppercase;
 	color: var(--accent, #303F9F);
-	margin: 0.2rem 0 0.35rem;
+	margin: 0.2rem 0 0;
+}
+
+.hotel-popup-family {
+	font-family: 'Roboto Mono', sans-serif;
+	font-size: 0.7rem;
+	color: #888;
+	margin: 0.1rem 0 0.35rem;
 }
 
 .leaflet-popup-content {
@@ -342,7 +349,13 @@
 	letter-spacing: 0.04em;
 	text-transform: uppercase;
 	color: var(--accent, #303F9F);
-	margin-bottom: 0.45rem;
+}
+
+.hotel-card-family {
+	font-family: 'Roboto Mono', sans-serif;
+	font-size: 0.72rem;
+	color: #888;
+	margin: 0.15rem 0 0.45rem;
 }
 
 .hotel-card-meta {
