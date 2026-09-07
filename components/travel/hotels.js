@@ -12,6 +12,23 @@
 
 	var FAMILIES = ['Hilton Honors', 'Marriott Bonvoy', 'Four Seasons', 'ALL Accor'];
 
+	var VISIT_TYPES = [
+		{ value: 'stay', label: 'Stay' },
+		{ value: 'stop-by', label: 'Stop by' }
+	];
+
+	function visitType(visit) {
+		return visit.type === 'stop-by' ? 'stop-by' : 'stay';
+	}
+
+	function visitTypeLabel(visit) {
+		var t = visitType(visit);
+		for (var i = 0; i < VISIT_TYPES.length; i++) {
+			if (VISIT_TYPES[i].value === t) return VISIT_TYPES[i].label;
+		}
+		return t;
+	}
+
 	var hotels = [];
 	var hotelById = {};
 	var visits = [];
@@ -139,12 +156,14 @@
 		$container.find('.hotel-select-list').css('width', width + 'px');
 	}
 
-	function populateSelect($container, values, allLabel) {
+	function populateSelect($container, options, allLabel) {
 		var $list = $container.find('.hotel-select-list');
 		$list.empty();
 		$list.append($('<li></li>').attr('data-value', 'all').addClass('active').text(allLabel));
-		values.forEach(function (v) {
-			$list.append($('<li></li>').attr('data-value', v).text(v));
+		options.forEach(function (o) {
+			var value = typeof o === 'string' ? o : o.value;
+			var label = typeof o === 'string' ? o : o.label;
+			$list.append($('<li></li>').attr('data-value', value).text(label));
 		});
 		$container.attr('data-value', 'all');
 		$container.find('.hotel-select-btn').text(allLabel);
@@ -154,6 +173,7 @@
 	function populateFilters() {
 		populateSelect($('#hotel-filter-brand'), BRANDS.map(function (b) { return b.name; }), 'All Brands');
 		populateSelect($('#hotel-filter-family'), FAMILIES, 'All Families');
+		populateSelect($('#hotel-filter-type'), VISIT_TYPES, 'All Types');
 	}
 
 	function selectedBrand() {
@@ -164,16 +184,22 @@
 		return $('#hotel-filter-family').attr('data-value') || 'all';
 	}
 
-	function matchesHotel(hotel) {
+	function selectedType() {
+		return $('#hotel-filter-type').attr('data-value') || 'all';
+	}
+
+	function matchesVisit(visit, hotel) {
 		if (!hotel) return false;
 		var brand = selectedBrand();
 		var family = selectedFamily();
+		var type = selectedType();
 		return (brand === 'all' || hotel.brand === brand) &&
-			(family === 'all' || hotel.family === family);
+			(family === 'all' || hotel.family === family) &&
+			(type === 'all' || visitType(visit) === type);
 	}
 
 	function filtersAreAll() {
-		return selectedBrand() === 'all' && selectedFamily() === 'all';
+		return selectedBrand() === 'all' && selectedFamily() === 'all' && selectedType() === 'all';
 	}
 
 	function applyFilters() {
@@ -181,7 +207,8 @@
 
 		$('.hotel-timeline-station').each(function () {
 			var match = (selectedBrand() === 'all' || $(this).attr('data-brand') === selectedBrand()) &&
-				(selectedFamily() === 'all' || $(this).attr('data-family') === selectedFamily());
+				(selectedFamily() === 'all' || $(this).attr('data-family') === selectedFamily()) &&
+				(selectedType() === 'all' || $(this).attr('data-type') === selectedType());
 			$(this).toggleClass('hotel-card-hidden', !match);
 			if (match) visible++;
 		});
@@ -191,7 +218,7 @@
 		});
 
 		markers.forEach(function (m) {
-			var match = matchesHotel(m.hotel);
+			var match = matchesVisit(m.visit, m.hotel);
 			if (!map) return;
 			if (match) {
 				if (!map.hasLayer(m.marker)) m.marker.addTo(map);
@@ -237,7 +264,10 @@
 	function visitCard($cardBody, visit, hotel) {
 		var nights = stayNightsLabel(visit);
 		$cardBody.append(
-			'<h4>' + hotel.name + '</h4>' +
+			'<div class="hotel-card-top">' +
+				'<h4>' + hotel.name + '</h4>' +
+				'<span class="hotel-card-type hotel-card-type-' + visitType(visit) + '">' + visitTypeLabel(visit) + '</span>' +
+			'</div>' +
 			'<div class="hotel-card-brand">' + hotel.brand + '</div>' +
 			'<div class="hotel-card-family">' + hotel.family + '</div>' +
 			'<div class="hotel-card-meta"><i class="fas fa-map-marker-alt"></i> ' + locationText(hotel) + '</div>' +
@@ -284,7 +314,7 @@
 			var $stations = $('<div class="hotel-timeline-stations"></div>');
 			group.visits.forEach(function (visit) {
 				var hotel = visitHotel(visit);
-				var $station = $('<article class="hotel-timeline-station" data-visit-id="' + visit.id + '" data-brand="' + hotel.brand + '" data-family="' + hotel.family + '"></article>');
+				var $station = $('<article class="hotel-timeline-station" data-visit-id="' + visit.id + '" data-brand="' + hotel.brand + '" data-family="' + hotel.family + '" data-type="' + visitType(visit) + '"></article>');
 				$station.append('<span class="hotel-timeline-node" aria-hidden="true"></span>');
 				var $card = $('<div class="hotel-card" data-visit-id="' + visit.id + '" tabindex="0"></div>');
 				$card.append(coverHtml(visit));
@@ -307,7 +337,7 @@
 			'<div class="hotel-popup-brand">' + hotel.brand + '</div>' +
 			'<div class="hotel-popup-family">' + hotel.family + '</div>' +
 			'<div>' + locationText(hotel) + '</div>' +
-			'<div>' + formatStayDates(visit) + (nights ? ' · ' + nights : '') + '</div>';
+			'<div>' + visitTypeLabel(visit) + ' · ' + formatStayDates(visit) + (nights ? ' · ' + nights : '') + '</div>';
 	}
 
 	function markerEl(m) {
