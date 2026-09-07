@@ -12,7 +12,7 @@ Sections use path URLs (`/about/`, `/dining/michelin/`, `/faith/`) — no `#` in
 - **About** — Bio, interests, skills
 - **Resume** — Work experience & education (GPA only, no semester grades)
 - **NYC** — City life, history, walking routes
-- **Travel** — Travel journal entries
+- **Travel** — Travel journal and hotel collection (Waldorf Astoria, The Ritz-Carlton, Four Seasons, Fairmont)
 - **Dining** — Restaurant picks in NYC & abroad
 - **Gallery** — Photo gallery with filters
 - **Contact** — Email & social links
@@ -94,6 +94,23 @@ python3 components/travel/scripts/parse-timeline.py /path/to/Takeout/
 3. Save the file, then run `npm run build-travel` with that path
 
 Home bases are fixed: **Taipei** (until Aug 1, 2022) and **NYC** (since Aug 2, 2022). A trip starts when you leave base and ends when you return — shown as home pins, not travel destinations.
+
+### Hotel Collection
+
+`/travel/hotels/` is a second Travel tab. `data/hotels.json` is the luxury-hotel catalog (Waldorf Astoria, The Ritz-Carlton, Four Seasons, Fairmont). `data/hotel-visits.json` is the stay log. Visited hotels show as fixed-size pins on the map.
+
+**Add a stay:** look up the hotel in `hotels.json`, then append a visit:
+
+```json
+{
+  "id": "kebab-name-MMDDYY",
+  "hotelId": "catalog-id",
+  "date": "YYYY-MM-DD",
+  "pictures": []
+}
+```
+
+Photos use the dining convention: `components/travel/img/visits/<id>/`, cover `0.jpeg`, then `1.jpeg`, `2.jpeg`, … plus matching `*.thumb.jpeg` files.
 
 ## Updating content
 

@@ -1,5 +1,222 @@
 /* Travel section — map (≥70%) + trip cards sidebar */
 
+.travel-tabs {
+	position: relative;
+	list-style: none;
+	margin: 0.75rem 0 1.25rem;
+	padding: 0;
+	font-size: 0;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+	flex-shrink: 0;
+}
+
+.travel-tabs > li {
+	display: inline-block;
+	font-size: 14px;
+	margin: 0;
+}
+
+.travel-tabs > li > a {
+	display: inline-block;
+	padding: 0.45rem 1.2rem;
+	border: 1px solid #ddd;
+	border-radius: 999px;
+	color: #777;
+	font-family: 'Roboto Mono', sans-serif;
+	font-weight: 700;
+	font-size: 0.8rem;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	text-decoration: none;
+	transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.travel-tabs > li > a:hover {
+	color: var(--accent);
+	border-color: var(--accent);
+}
+
+.travel-tabs > li > a.active {
+	color: #fff;
+	background: var(--accent);
+	border-color: var(--accent);
+}
+
+.travel-panel {
+	display: none;
+}
+
+.travel-panel.active {
+	display: block;
+}
+
+.hotel-intro {
+	margin: 0 0 0.75rem;
+	color: #666;
+}
+
+.hotel-map-wrap {
+	position: relative;
+	width: 100%;
+	height: clamp(300px, calc(100vh - 380px), 520px);
+	height: clamp(300px, calc(100dvh - 380px), 520px);
+	background: #e8eaf6;
+	border: 1px solid #d0d0d0;
+	margin-bottom: 1.25rem;
+}
+
+#hotel-map {
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+}
+
+.hotel-visit-marker {
+	background: transparent;
+	border: none;
+}
+
+.hotel-pin {
+	width: 22px;
+	height: 22px;
+	box-sizing: border-box;
+	border-radius: 50%;
+	background: #303F9F;
+	border: 2px solid #fff;
+	box-shadow: 0 0 0 1px #303F9F, 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.hotel-visit-marker.highlight .hotel-pin {
+	background: #FFC72C;
+	box-shadow: 0 0 0 1px #c9a000, 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.hotel-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+	gap: 1.25rem;
+}
+
+.hotel-empty {
+	color: #888;
+	grid-column: 1 / -1;
+}
+
+.hotel-card {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	padding: 0;
+	border: none;
+	background: #fff;
+	text-align: left;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+	overflow: hidden;
+	cursor: pointer;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hotel-card:hover,
+.hotel-card.active {
+	transform: translateY(-3px);
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.hotel-card-photo {
+	height: 150px;
+	background: #eee;
+	position: relative;
+	overflow: hidden;
+}
+
+.hotel-card-photo img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+
+.hotel-card-photo-placeholder {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #bbb;
+	font-size: 1.4rem;
+}
+
+.hotel-card-photo-count {
+	position: absolute;
+	right: 0.6rem;
+	bottom: 0.6rem;
+	background: rgba(0, 0, 0, 0.6);
+	color: #fff;
+	font-size: 0.75rem;
+	padding: 0.15rem 0.45rem;
+}
+
+.hotel-card-body {
+	padding: 0.9rem 1rem 1rem;
+}
+
+.hotel-card-body h4 {
+	font-family: 'Roboto Mono', sans-serif;
+	font-size: 0.98rem;
+	margin: 0 0 0.25rem;
+}
+
+.hotel-card-brand {
+	font-family: 'Roboto Mono', sans-serif;
+	font-size: 0.75rem;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	color: var(--accent, #303F9F);
+	margin-bottom: 0.45rem;
+}
+
+.hotel-card-meta {
+	font-size: 0.82rem;
+	color: #777;
+	margin-top: 0.2rem;
+}
+
+.hotel-card-meta i {
+	margin-right: 0.3rem;
+	color: var(--accent, #303F9F);
+}
+
+@media (max-width: 991px) {
+	.travel-panel[data-travel-panel="journal"].active {
+		display: flex;
+		flex-direction: column;
+		flex: 1 1 auto;
+		min-height: 0;
+	}
+
+	.travel-section:has([data-travel-panel="hotels"].active) {
+		overflow: auto;
+		display: block;
+	}
+
+	.travel-section:has([data-travel-panel="hotels"].active) .section-block,
+	.travel-section:has([data-travel-panel="hotels"].active) .container-fluid {
+		display: block;
+		height: auto;
+		min-height: 0;
+	}
+
+	.hotel-map-wrap {
+		height: clamp(240px, 42vh, 420px);
+		height: clamp(240px, 42dvh, 420px);
+		min-height: 240px;
+	}
+}
+
 .travel-panel-title {
 	font-family: 'Roboto Mono', sans-serif;
 	font-size: 0.95rem;

@@ -38,6 +38,8 @@ const ROUTES = [
   'about',
   'resume',
   'travel',
+  'travel/journal',
+  'travel/hotels',
   'contact',
   'dining',
   'dining/timeline',

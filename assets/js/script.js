@@ -53,7 +53,12 @@ $(function(){
 			if (faithTab !== 'devotion' && faithTab !== 'other') faithTab = 'devotion';
 			return { section: 'faith', faithTab: faithTab };
 		}
-		if (head === 'about' || head === 'resume' || head === 'travel' || head === 'contact') {
+		if (head === 'travel') {
+			var travelTab = sub || 'journal';
+			if (travelTab !== 'journal' && travelTab !== 'hotels') travelTab = 'journal';
+			return { section: 'travel', travelTab: travelTab };
+		}
+		if (head === 'about' || head === 'resume' || head === 'contact') {
 			return { section: head };
 		}
 		return { section: 'intro' };
@@ -69,6 +74,10 @@ $(function(){
 			var faithTab = route.faithTab || 'devotion';
 			return faithTab === 'devotion' ? '/faith/' : '/faith/' + faithTab + '/';
 		}
+		if (route.section === 'travel') {
+			var travelTab = route.travelTab || 'journal';
+			return travelTab === 'journal' ? '/travel/' : '/travel/' + travelTab + '/';
+		}
 		return '/' + route.section + '/';
 	}
 
@@ -76,7 +85,8 @@ $(function(){
 		return {
 			section: $el.data('section') || 'intro',
 			diningTab: $el.data('dining-tab'),
-			faithTab: $el.data('faith-tab')
+			faithTab: $el.data('faith-tab'),
+			travelTab: $el.data('travel-tab')
 		};
 	}
 
@@ -146,6 +156,8 @@ $(function(){
 				return loadScript('vendor/leaflet/leaflet.js');
 			}).then(function () {
 				return loadScript('js/travel.js');
+			}).then(function () {
+				return loadScript('js/hotels.js');
 			});
 		}
 		if (route.section === 'dining') {
@@ -315,6 +327,11 @@ $(function(){
 	$(document).on('click', '.faith-tab-toggle', function (e) {
 		e.preventDefault();
 		go({ section: 'faith', faithTab: $(this).data('faith-tab') });
+	});
+
+	$(document).on('click', '.travel-tab-toggle', function (e) {
+		e.preventDefault();
+		go({ section: 'travel', travelTab: $(this).data('travel-tab') });
 	});
 
 });

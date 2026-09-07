@@ -7,27 +7,49 @@
 							<h2>My <strong class="color">Travel</strong> Journal</h2>
 						</div>
 
-						<div id="travel-stats" class="travel-stats"></div>
-						<div id="travel-notice" class="travel-notice" style="display:none;"></div>
+						<ul class="travel-tabs">
+							<li><a href="/travel/" class="travel-tab-toggle active" data-travel-tab="journal">Journal</a></li>
+							<li><a href="/travel/hotels/" class="travel-tab-toggle" data-travel-tab="hotels">Hotel Collection</a></li>
+						</ul>
 
-						<div class="travel-layout">
-							<div class="travel-map-panel">
-								<div class="travel-map-wrap">
-									<div id="travel-map"></div>
-									<div id="travel-hover-card" class="travel-hover-card"></div>
-									<div class="travel-map-legend">
-										<span class="legend-home">Home base</span>
-										<span class="legend-heat">Revisit heat <span class="heat-gradient"></span></span>
-										<span class="legend-route">Trip route (hover / tap)</span>
+						<div class="travel-panel active" data-travel-panel="journal">
+							<div id="travel-stats" class="travel-stats"></div>
+							<div id="travel-notice" class="travel-notice" style="display:none;"></div>
+
+							<div class="travel-layout">
+								<div class="travel-map-panel">
+									<div class="travel-map-wrap">
+										<div id="travel-map"></div>
+										<div id="travel-hover-card" class="travel-hover-card"></div>
+										<div class="travel-map-legend">
+											<span class="legend-home">Home base</span>
+											<span class="legend-heat">Revisit heat <span class="heat-gradient"></span></span>
+											<span class="legend-route">Trip route (hover / tap)</span>
+										</div>
 									</div>
 								</div>
+								<aside class="travel-cards-sidebar">
+									<h3 class="travel-panel-title"><i class="fas fa-suitcase-rolling"></i> Trip journal <span class="travel-panel-hint">one card per journey</span></h3>
+									<div class="travel-cards-panel" id="travel-cards">
+										<p style="color:#888;">Loading travel data…</p>
+									</div>
+								</aside>
 							</div>
-							<aside class="travel-cards-sidebar">
-								<h3 class="travel-panel-title"><i class="fas fa-suitcase-rolling"></i> Trip journal <span class="travel-panel-hint">one card per journey</span></h3>
-								<div class="travel-cards-panel" id="travel-cards">
-									<p style="color:#888;">Loading travel data…</p>
-								</div>
-							</aside>
+						</div>
+
+						<div class="travel-panel" data-travel-panel="hotels">
+							<p class="hotel-intro">
+								Stays at Waldorf Astoria, The Ritz-Carlton, Four Seasons, and Fairmont.
+								Visited hotels appear as pins on the map.
+							</p>
+							<div id="hotel-stats" class="travel-stats"></div>
+							<div class="hotel-map-wrap">
+								<div id="hotel-map"></div>
+								<div id="hotel-hover-card" class="travel-hover-card"></div>
+							</div>
+							<div class="hotel-grid" id="hotel-cards">
+								<p class="hotel-empty">Loading hotel visits…</p>
+							</div>
 						</div>
 					</div>
 				</div>

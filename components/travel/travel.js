@@ -583,15 +583,30 @@
 		});
 	}
 
+	function showTravelTab(tab) {
+		if (tab !== 'journal' && tab !== 'hotels') return;
+
+		$('.travel-tab-toggle').removeClass('active');
+		$('.travel-tab-toggle[data-travel-tab="' + tab + '"]').addClass('active');
+		$('.travel-panel').removeClass('active');
+		$('.travel-panel[data-travel-panel="' + tab + '"]').addClass('active');
+
+		if (tab === 'journal') {
+			if ($('#travel-map').length && !travelData) {
+				loadTravel();
+			} else if (map) {
+				map.invalidateSize();
+			}
+		} else if (window.HotelCollection) {
+			window.HotelCollection.show();
+		}
+	}
+
 	function applyTravelRoute(route, meta) {
 		if (!route || route.section !== 'travel') return;
-		if ($('#travel-map').length && !travelData) {
-			loadTravel();
-		}
-		var delay = meta && meta.animated ? 1300 : 50;
-		setTimeout(function () {
-			if (map) map.invalidateSize();
-		}, delay);
+		var tab = route.travelTab || 'journal';
+		var delay = meta && meta.animated ? 1300 : 0;
+		setTimeout(function () { showTravelTab(tab); }, delay);
 	}
 
 	$(document).on('site:route', function (e, route, meta) {
