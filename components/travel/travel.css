@@ -54,11 +54,6 @@
 	display: block;
 }
 
-.hotel-intro {
-	margin: 0 0 1.25rem;
-	color: #666;
-}
-
 .hotel-totals {
 	display: flex;
 	flex-wrap: wrap;
