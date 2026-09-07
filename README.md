@@ -106,15 +106,16 @@ Home bases are fixed: **Taipei** (until Aug 1, 2022) and **NYC** (since Aug 2, 2
 | Four Seasons | Four Seasons |
 | Fairmont | ALL Accor |
 
-`data/hotel-visits.json` is the stay log. Name, brand, family, city, and coordinates come from the catalog via `hotelId` — do not copy those onto the visit. Visited hotels show as fixed-size pins on the map.
+`data/hotel-visits.json` is the stay log. Name, brand, family, city, and coordinates come from the catalog via `hotelId` — do not copy those onto the visit. Visited hotels show as fixed-size pins on the map. The map opens centered on the Atlantic (Europe and the Americas together). Stay cards sit in a vertical timeline in the right-hand column.
 
-**Add a stay:** look up the hotel in `hotels.json`, then append a visit:
+**Add a stay:** look up the hotel in `hotels.json`, then append a visit. `date` is check-in; `checkout` is the morning you left. Nights are `checkout − date`.
 
 ```json
 {
   "id": "kebab-name-MMDDYY",
   "hotelId": "catalog-id",
   "date": "YYYY-MM-DD",
+  "checkout": "YYYY-MM-DD",
   "pictures": []
 }
 ```
