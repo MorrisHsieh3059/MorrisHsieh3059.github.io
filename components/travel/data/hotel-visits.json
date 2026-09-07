@@ -6,5 +6,12 @@
     "date": "2026-01-19",
     "checkout": "2026-01-20",
     "pictures": []
+  },
+  {
+    "id": "the-ritz-carlton-boston-090626",
+    "hotelId": "the-ritz-carlton-boston",
+    "type": "stop-by",
+    "date": "2026-09-06",
+    "pictures": []
   }
 ]
