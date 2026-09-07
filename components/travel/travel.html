@@ -42,13 +42,25 @@
 								Stays at Waldorf Astoria, The Ritz-Carlton, Four Seasons, and Fairmont.
 								Visited hotels appear as pins on the map.
 							</p>
-							<div id="hotel-stats" class="travel-stats"></div>
+							<div id="hotel-stats" class="hotel-totals"></div>
+							<div class="hotel-filters">
+								<div class="hotel-filter">
+									<span class="hotel-filter-label">Brand</span>
+									<div class="hotel-select" id="hotel-filter-brand" data-value="all">
+										<button type="button" class="hotel-select-btn">All Brands</button>
+										<ul class="hotel-select-list">
+											<li data-value="all" class="active">All Brands</li>
+										</ul>
+									</div>
+								</div>
+							</div>
 							<div class="hotel-map-wrap">
 								<div id="hotel-map"></div>
 							</div>
 							<div class="hotel-grid" id="hotel-cards">
 								<p class="hotel-empty">Loading hotel visits…</p>
 							</div>
+							<p class="hotel-empty hotel-filter-empty" id="hotel-filter-empty" style="display:none;">No stays match this brand.</p>
 						</div>
 					</div>
 				</div>

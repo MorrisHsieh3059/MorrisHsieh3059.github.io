@@ -3,6 +3,13 @@
 
 	var PIN_SIZE = 22;
 
+	var BRANDS = [
+		{ name: 'Waldorf Astoria', slug: 'waldorf-astoria' },
+		{ name: 'The Ritz-Carlton', slug: 'ritz-carlton' },
+		{ name: 'Four Seasons', slug: 'four-seasons' },
+		{ name: 'Fairmont', slug: 'fairmont' }
+	];
+
 	var hotels = [];
 	var hotelById = {};
 	var visits = [];
@@ -34,16 +41,111 @@
 		return hotelById[visit.hotelId] || null;
 	}
 
+	function brandIconPath(slug) {
+		return 'img/travel/brands/' + slug + '.svg';
+	}
+
+	function visitBrand(visit) {
+		var hotel = visitHotel(visit);
+		return hotel ? hotel.brand : '';
+	}
+
 	function renderStats() {
-		var hotelIds = {};
+		var counts = {};
+		BRANDS.forEach(function (b) { counts[b.name] = 0; });
 		visits.forEach(function (v) {
-			if (v.hotelId) hotelIds[v.hotelId] = true;
+			var brand = visitBrand(v);
+			if (brand && counts[brand] != null) counts[brand]++;
 		});
-		$('#hotel-stats').html(
-			'stays: ' + visits.length +
-			' | hotels: ' + Object.keys(hotelIds).length +
-			' | catalog: ' + hotels.length
-		);
+
+		var groups = BRANDS.map(function (b) {
+			return (
+				'<span class="hotel-totals-group">' +
+					'<img class="hotel-totals-icon" src="' + brandIconPath(b.slug) + '" alt="">' +
+					'<span>' + b.name + '</span> ' +
+					'<strong>' + counts[b.name] + '</strong>' +
+				'</span>'
+			);
+		});
+		$('#hotel-stats').html(groups.join('<span class="hotel-totals-sep">|</span>'));
+	}
+
+	function sizeSelectToContent($container) {
+		var $btn = $container.find('.hotel-select-btn');
+		var $measure = $('<span></span>').css({
+			position: 'absolute',
+			visibility: 'hidden',
+			whiteSpace: 'nowrap',
+			fontFamily: $btn.css('font-family'),
+			fontSize: $btn.css('font-size'),
+			fontWeight: $btn.css('font-weight'),
+			letterSpacing: $btn.css('letter-spacing')
+		}).appendTo('body');
+
+		var maxTextWidth = 0;
+		$container.find('.hotel-select-list li').each(function () {
+			$measure.text($(this).text());
+			maxTextWidth = Math.max(maxTextWidth, $measure.outerWidth());
+		});
+		$measure.remove();
+
+		var btnPaddingLeft = parseFloat($btn.css('padding-left')) || 0;
+		var btnPaddingRight = parseFloat($btn.css('padding-right')) || 0;
+		var width = Math.ceil(maxTextWidth + btnPaddingLeft + btnPaddingRight + 4);
+
+		$btn.css('width', width + 'px');
+		$container.find('.hotel-select-list').css('width', width + 'px');
+	}
+
+	function populateBrandFilter() {
+		var $container = $('#hotel-filter-brand');
+		var $list = $container.find('.hotel-select-list');
+		$list.empty();
+		$list.append($('<li></li>').attr('data-value', 'all').addClass('active').text('All Brands'));
+		BRANDS.forEach(function (b) {
+			$list.append($('<li></li>').attr('data-value', b.name).text(b.name));
+		});
+		$container.attr('data-value', 'all');
+		$container.find('.hotel-select-btn').text('All Brands');
+		sizeSelectToContent($container);
+	}
+
+	function selectedBrand() {
+		return $('#hotel-filter-brand').attr('data-value') || 'all';
+	}
+
+	function matchesBrand(brand) {
+		var selected = selectedBrand();
+		return selected === 'all' || brand === selected;
+	}
+
+	function applyBrandFilter() {
+		var brand = selectedBrand();
+		var visible = 0;
+
+		$('.hotel-card').each(function () {
+			var match = matchesBrand($(this).attr('data-brand'));
+			$(this).toggleClass('hotel-card-hidden', !match);
+			if (match) visible++;
+		});
+
+		markers.forEach(function (m) {
+			var match = matchesBrand(m.hotel.brand);
+			if (!map) return;
+			if (match) {
+				if (!map.hasLayer(m.marker)) m.marker.addTo(map);
+			} else {
+				m.marker.closePopup();
+				if (map.hasLayer(m.marker)) map.removeLayer(m.marker);
+			}
+			var el = markerEl(m);
+			if (el) el.classList.toggle('highlight', false);
+		});
+		$('.hotel-card').removeClass('active');
+
+		var noVisits = !visits.length;
+		$('.hotel-empty-none').toggle(noVisits && brand === 'all');
+		$('#hotel-filter-empty').toggle((noVisits && brand !== 'all') || (!noVisits && visible === 0));
 	}
 
 	function coverHtml(visit) {
@@ -64,7 +166,8 @@
 		$grid.empty();
 
 		if (!visits.length) {
-			$grid.append('<p class="hotel-empty">No hotel visits yet. Stays will show as pins on the map.</p>');
+			$grid.append('<p class="hotel-empty hotel-empty-none">No hotel visits yet. Stays will show as pins on the map.</p>');
+			applyBrandFilter();
 			return;
 		}
 
@@ -73,7 +176,7 @@
 		}).forEach(function (visit) {
 			var hotel = visitHotel(visit);
 			if (!hotel) return;
-			var $card = $('<article class="hotel-card" data-visit-id="' + visit.id + '" tabindex="0"></article>');
+			var $card = $('<article class="hotel-card" data-visit-id="' + visit.id + '" data-brand="' + hotel.brand + '" tabindex="0"></article>');
 			$card.append(coverHtml(visit));
 			$card.append(
 				'<div class="hotel-card-body">' +
@@ -94,6 +197,7 @@
 			});
 			$grid.append($card);
 		});
+		applyBrandFilter();
 	}
 
 	function popupHtml(visit, hotel) {
@@ -192,14 +296,42 @@
 			hotels.forEach(function (h) {
 				hotelById[h.id] = h;
 			});
+			populateBrandFilter();
 			renderStats();
 			renderCards();
 			initMap();
+			applyBrandFilter();
 			if (map) map.invalidateSize();
 		}).fail(function () {
 			$('#hotel-cards').html('<p class="hotel-empty">Could not load hotel data.</p>');
 		});
 	}
+
+	$(document).on('click', '.hotel-select-btn', function (e) {
+		e.preventDefault();
+		e.stopPropagation();
+		var $container = $(this).closest('.hotel-select');
+		var wasOpen = $container.hasClass('open');
+		$('.hotel-select').removeClass('open');
+		if (!wasOpen) $container.addClass('open');
+	});
+
+	$(document).on('click', '.hotel-select-list li', function () {
+		var $li = $(this);
+		var $container = $li.closest('.hotel-select');
+		$container.attr('data-value', $li.attr('data-value'));
+		$container.find('.hotel-select-btn').text($li.text());
+		$container.find('.hotel-select-list li').removeClass('active');
+		$li.addClass('active');
+		$container.removeClass('open');
+		applyBrandFilter();
+	});
+
+	$(document).on('click', function (e) {
+		if (!$(e.target).closest('.hotel-select').length) {
+			$('.hotel-select').removeClass('open');
+		}
+	});
 
 	window.HotelCollection = {
 		show: function () {
