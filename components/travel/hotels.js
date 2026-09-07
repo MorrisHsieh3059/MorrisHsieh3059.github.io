@@ -84,7 +84,7 @@
 	}
 
 	function brandIconPath(slug) {
-		return 'img/travel/brands/' + slug + '.svg';
+		return 'img/travel/brands/' + slug + '.png';
 	}
 
 	function visitBrand(visit) {
