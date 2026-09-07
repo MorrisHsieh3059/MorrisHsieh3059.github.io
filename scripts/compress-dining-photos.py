@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Resize dining visit photos for the website.
+"""Resize visit photos for the website (dining by default, travel with --section).
 
-For each JPEG in components/dining/img/visits/<id>/:
+For each JPEG in components/<section>/img/visits/<id>/:
 
   0.jpeg        lightbox / display (max 2000px, q85)
   0.thumb.jpeg  card cover (max 640px, q72)
@@ -15,6 +15,7 @@ Usage:
   python3 scripts/compress-dining-photos.py coqodaq-081826
   python3 scripts/compress-dining-photos.py --force
   python3 scripts/compress-dining-photos.py --thumbs-only
+  python3 scripts/compress-dining-photos.py --section travel the-roosevelt-new-orleans-011926
 """
 from __future__ import annotations
 
@@ -26,6 +27,7 @@ from pathlib import Path
 from PIL import Image, ImageOps
 
 ROOT = Path(__file__).resolve().parent.parent
+SECTIONS = ("dining", "travel")
 VISITS = ROOT / "components" / "dining" / "img" / "visits"
 
 DISPLAY_MAX = 2000
@@ -111,7 +113,14 @@ def process_thumb_only(path: Path) -> str:
 
 
 def main() -> int:
+    global VISITS
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--section",
+        choices=SECTIONS,
+        default="dining",
+        help="which components/<section>/img/visits/ tree to process (default: dining)",
+    )
     parser.add_argument("--force", action="store_true", help="re-encode display + thumb even if already processed")
     parser.add_argument(
         "--thumbs-only",
@@ -129,6 +138,7 @@ def main() -> int:
         print("use --force or --thumbs-only, not both", file=sys.stderr)
         return 2
 
+    VISITS = ROOT / "components" / args.section / "img" / "visits"
     if not VISITS.is_dir():
         print(f"missing {VISITS}", file=sys.stderr)
         return 1
