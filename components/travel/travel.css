@@ -92,6 +92,12 @@
 	flex: 0 0 auto;
 }
 
+.hotel-totals-group-stay .hotel-totals-icon {
+	object-fit: cover;
+	border-radius: 50%;
+	background: #fff;
+}
+
 .hotel-totals-sep {
 	color: #ccc;
 }

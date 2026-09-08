@@ -7,9 +7,9 @@ alwaysApply: true
 
 When Morris names a hotel, finish the visit in this order. Do not stop after JSON.
 
-1. **Catalog name** — Find the hotel in `components/travel/data/hotels.json` (grep by city or brand) and use its `id` as `hotelId`. Card title, brand, family, city, and map pin all come from that row plus visit `type`. Not in the catalog → add a catalog row first (`id`, `name`, `brand`, `family`, `city`, `country`, `lat`, `lng`; brand/family pairs: Waldorf Astoria → Hilton Honors, The Ritz-Carlton → Marriott Bonvoy, Four Seasons → Four Seasons, Fairmont → ALL Accor). Never log a visit to an uncatalogued hotel.
+1. **Catalog name** — Find the hotel in `components/travel/data/hotels.json` (grep by city or brand) and use its `id` as `hotelId`. Card title, brand, family, city, and map pin all come from that row plus visit `type`. Not in the catalog → add a catalog row first (`id`, `name`, `brand`, `family`, `city`, `country`, `lat`, `lng`; brand/family pairs: Waldorf Astoria / Conrad / NoMad → Hilton Honors, The Ritz-Carlton / St. Regis / EDITION / W Hotels / JW Marriott → Marriott Bonvoy, Four Seasons → Four Seasons, Fairmont → ALL Accor). Never log a visit to an uncatalogued hotel.
 
-2. **Type + dates** — `stay` = slept there (`date` is check-in, `checkout` is the morning he left; nights render as `checkout − date`). `stop-by` = drink, meal, or a look; no `checkout`. If Morris did not say which, or gave no date, **ask** — do not default silently (the renderer treats a missing `type` as `stay`, so a guess ships as a stay). Map pin is automatic from `type` + catalog `brand`: stay uses `components/travel/img/brands/<slug>-stay.png` (colored emblem only, no wordmark; Fairmont stay is the original F on gold `#C5A35A`); stop-by uses the original black-and-white `components/travel/img/brands/<slug>.png`. Slugs: `waldorf-astoria`, `ritz-carlton`, `four-seasons`, `fairmont`. Do not put pin fields on the visit JSON. A new catalog brand also needs both icon files before any visit can pin.
+2. **Type + dates** — `stay` = slept there (`date` is check-in, `checkout` is the morning he left; nights render as `checkout − date`). `stop-by` = drink, meal, or a look; no `checkout`. If Morris did not say which, or gave no date, **ask** — do not default silently (the renderer treats a missing `type` as `stay`, so a guess ships as a stay). Map pin is automatic from `type` + catalog `brand`: stay uses `components/travel/img/brands/<slug>-stay.png` (colored official emblem only, no wordmark; Fairmont stay is the original F on gold `#C5A35A`); stop-by uses the original black-and-white `components/travel/img/brands/<slug>.png`. If a brand has no official color emblem, both files use the black-and-white official mark until Morris supplies color art. Slugs: `waldorf-astoria`, `conrad`, `nomad`, `ritz-carlton`, `st-regis`, `edition`, `w-hotels`, `jw-marriott`, `four-seasons`, `fairmont`. Do not put pin fields on the visit JSON. A new catalog brand also needs both icon files before any visit can pin.
 
 3. **Id** — `kebab-name-MMDDYY` from the hotel's short name + `date` (check-in). Repeat visits get a new id. Example: `the-roosevelt-new-orleans-011926`.
 
@@ -36,7 +36,7 @@ When Morris names a hotel, finish the visit in this order. Do not stop after JSO
 
 - Copy `name`, `brand`, `family`, `city`, `country`, `lat`, `lng` onto the visit — they live in the catalog only.
 - Invent a catalog row's coordinates or brand; look them up.
-- Invent or replace brand pin art when logging a visit — the four stay/stop-by pairs already exist.
+- Invent or replace brand pin art when logging a visit — the stay/stop-by pairs already exist for every listed brand.
 - Default `type` or `date` when Morris left them out.
 - Add `checkout` to a `stop-by`, or omit it from a `stay`.
 - Commit camera originals, or a visit whose `pictures` lack a `N.thumb.jpeg`.
