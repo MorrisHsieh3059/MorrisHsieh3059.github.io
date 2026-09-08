@@ -1,7 +1,7 @@
 (function ($) {
 	'use strict';
 
-	var PIN_SIZE = 22;
+	var PIN_SIZE = 40;
 
 	var BRANDS = [
 		{ name: 'Waldorf Astoria', slug: 'waldorf-astoria', family: 'Hilton Honors' },
@@ -102,6 +102,22 @@
 
 	function brandIconPath(slug) {
 		return 'img/travel/brands/' + slug + '.png';
+	}
+
+	function brandSlug(hotel) {
+		for (var i = 0; i < BRANDS.length; i++) {
+			if (BRANDS[i].name === hotel.brand) return BRANDS[i].slug;
+		}
+		return '';
+	}
+
+	function pinIconPath(hotel, visit) {
+		var slug = brandSlug(hotel);
+		if (!slug) return '';
+		if (visitType(visit) === 'stay') {
+			return 'img/travel/brands/' + slug + '-stay.png';
+		}
+		return brandIconPath(slug);
 	}
 
 	function visitBrand(visit) {
@@ -351,6 +367,7 @@
 			var on = m.visit.id === visitId;
 			var el = markerEl(m);
 			if (el) el.classList.toggle('highlight', on);
+			m.marker.setZIndexOffset(on ? 1000 : 0);
 			if (on) found = m;
 			else m.marker.closePopup();
 		});
@@ -362,9 +379,13 @@
 	}
 
 	function addPin(visit, hotel) {
+		var type = visitType(visit);
+		var src = pinIconPath(hotel, visit);
 		var icon = L.divIcon({
-			className: 'hotel-visit-marker',
-			html: '<div class="hotel-pin"></div>',
+			className: 'hotel-visit-marker hotel-visit-marker-' + type,
+			html: '<div class="hotel-pin hotel-pin-' + type + '">' +
+				(src ? '<img src="' + src + '" alt="" draggable="false">' : '') +
+				'</div>',
 			iconSize: [PIN_SIZE, PIN_SIZE],
 			iconAnchor: [PIN_SIZE / 2, PIN_SIZE / 2]
 		});
