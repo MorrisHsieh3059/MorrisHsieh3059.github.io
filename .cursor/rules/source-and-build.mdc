@@ -5,7 +5,7 @@ alwaysApply: true
 
 # Source vs generated
 
-This is a static site. GitHub Actions runs `npm ci` + `npm run build` and deploys `dist/`.
+This is a static site. The live host is **https://morrishsieh.me** (Cloudflare), not GitHub Pages. GitHub Actions (`.github/workflows/ci.yml`) runs `npm ci` + `npm run build` as a check only — it must not publish `dist/` to `*.github.io`. Keep the GitHub repo private.
 
 - Edit `components/`, `assets/`, `build/template.html`, `build/build.js`. Never edit `dist/`.
 - Preview with `npm run build` (or `npm start`). Do not commit `dist/`, `vendor/`, `cache/`, `node_modules/`, or `.DS_Store`.

@@ -2,7 +2,7 @@
 
 Personal site for Morris Chun-Mo Hsieh (谢君模), built on the N5 minimal resume template.
 
-**Live URL:** https://morrishsieh3059.github.io
+**Live URL:** https://morrishsieh.me
 
 Sections use path URLs (`/about/`, `/dining/michelin/`, `/faith/`) — no `#` in the address bar. GitHub Pages serves a copy of the page at each path so refresh works.
 
@@ -70,12 +70,12 @@ npm start       # builds, then serves dist/ at http://localhost:8000
 
 ## Deployment
 
-A GitHub Actions workflow (`.github/workflows/deploy.yml`) builds the site
-and publishes `dist/` to GitHub Pages on every push to `main`. There's
-nothing to build or commit manually.
+The public site is **https://morrishsieh.me** (Cloudflare). This GitHub
+repo is source only — it should stay **private**, and GitHub Pages should
+stay **off**. Do not publish `dist/` to `*.github.io`.
 
-**One-time setup:** in the repo's Settings → Pages, set "Build and
-deployment → Source" to **GitHub Actions** (not "Deploy from a branch").
+`.github/workflows/ci.yml` runs `npm ci`, the gate crypto check, and
+`npm run build` on pushes and pull requests. It does not deploy.
 
 ## Travel data (Google Timeline)
 
@@ -107,7 +107,7 @@ npm run build
 
 Each tab has its own passphrase. Restore a fresh clone for editing with the same env vars and `npm run gate-decrypt`. Put them in a gitignored `.env` if you do not want them in your shell history.
 
-A password overlay alone is not enough on GitHub Pages (everything in `dist/` is public). Encryption is what keeps the tab contents unreadable without the passphrase. Making the GitHub repo private hides source history; it does **not** hide the live Pages site, and a `username.github.io` repo needs GitHub Pro for Pages to keep working if it becomes private.
+A password overlay alone is not enough on a public host (everything Cloudflare serves is fetchable). Encryption is what keeps the tab contents unreadable without the passphrase. Making the GitHub repo private hides source and git history from the public; it does not hide `morrishsieh.me`.
 
 ### Hotel Collection
 
