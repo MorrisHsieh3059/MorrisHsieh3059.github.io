@@ -28,9 +28,11 @@ When Morris names a hotel, finish the visit in this order. Do not stop after JSO
 
 `type` is `stay` | `stop-by`. `checkout` is stay-only; omit it for a stop-by.
 
-5. **Photos** — `mkdir -p components/travel/img/visits/<id>/`. Local agent: `open components/travel/img/visits/<id>/` (macOS) so Morris can drop files; a cloud agent cannot open Finder, so tell him the path. **Stop until he drops files.** Keep `0.jpeg` (cover, Morris names it). Rename the rest `1.jpeg`, `2.jpeg`, … sorted A–Z by **original** filename, then write `pictures`. Run `npm run compress-travel -- <id>` (same encode as dining: display max 2000px q85, `N.thumb.jpeg` max 640px q72). Passing `<id>` avoids re-encoding other visits. Every listed file needs `N.jpeg` + `N.thumb.jpeg`. Cards use `photoPath(visit, file, 'thumb')`; full size is `photoPath(visit, file)` at `img/travel/visits/<id>/`.
+5. **Photos** — `mkdir -p components/travel/img/visits/<id>/`. Local agent: `open components/travel/img/visits/<id>/` (macOS) so Morris can drop files; a cloud agent cannot open Finder, so tell him the path. **Stop until he drops files.** Keep `0.jpeg` (cover, Morris names it). Rename the rest `1.jpeg`, `2.jpeg`, … sorted A–Z by **original** filename, then write `pictures`. Run `npm run compress-travel -- <id>` (same encode as dining: display max 2000px q85, `N.thumb.jpeg` max 640px q72). Passing `<id>` avoids re-encoding other visits. Every listed file needs `N.jpeg` + `N.thumb.jpeg`. Cards read decrypted blob URLs after unlock — do not point them at a public `img/travel/visits/` path.
 
-6. **Ship** — Commit JSON + compressed photos + thumbs only: `backend(travel): add <Hotel short name> <stay|stop-by>` (e.g. `backend(travel): add Roosevelt New Orleans stay`). Tab UI changes are `frontend(travel):`. Push.
+6. **Encrypt** — Hotel Collection is a gated tab. After JSON + photos are ready: `GATE_DEVOTION_PASSWORD=... GATE_HOTELS_PASSWORD=... npm run gate-encrypt`. The passphrases come from Morris / the environment, never from git. This rewrites `components/gated/hotel-collection.enc` and `components/gated/hotel-media.enc`.
+
+7. **Ship** — Commit the updated `components/gated/*` envelopes only, not plaintext JSON or visit photos: `backend(travel): add <Hotel short name> <stay|stop-by>` (e.g. `backend(travel): add Roosevelt New Orleans stay`). Tab UI changes are `frontend(travel):`. Push. If the working copy is missing plaintext catalog/visits, restore them first with `npm run gate-decrypt`.
 
 ## Do not
 
@@ -40,4 +42,5 @@ When Morris names a hotel, finish the visit in this order. Do not stop after JSO
 - Default `type` or `date` when Morris left them out.
 - Add `checkout` to a `stop-by`, or omit it from a `stay`.
 - Commit camera originals, or a visit whose `pictures` lack a `N.thumb.jpeg`.
+- Commit plaintext `hotels.json`, `hotel-visits.json`, or `img/visits/` — those are gitignored. Only `components/gated/*` is public.
 - Re-compress other visits or touch `components/dining/`.

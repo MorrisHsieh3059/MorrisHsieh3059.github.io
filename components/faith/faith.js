@@ -358,18 +358,29 @@
 	}
 
 	function loadData() {
-		$.getJSON('data/devotions.json').done(function (data) {
+		if (!window.SiteGate) {
+			$('#devotion-grid').html('<p class="devotion-empty">Devotion data unavailable.</p>');
+			return;
+		}
+		window.SiteGate.decryptJson('devotion', 'data/devotions.enc').then(function (data) {
 			devotionData = data;
 			render(data);
-		}).fail(function () {
+		}).catch(function () {
 			$('#devotion-grid').html('<p class="devotion-empty">Devotion data unavailable.</p>');
 		});
 	}
 
 	function ensureInit() {
-		if (initialized) return;
-		initialized = true;
-		loadData();
+		if (!window.SiteGate) return;
+		window.SiteGate.require(
+			'.faith-panel[data-faith-panel="devotion"]',
+			'devotion',
+			function () {
+				if (initialized) return;
+				initialized = true;
+				loadData();
+			}
+		);
 	}
 
 	/*=========================================================================

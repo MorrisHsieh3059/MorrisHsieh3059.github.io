@@ -38,6 +38,7 @@
 	var hotels = [];
 	var hotelById = {};
 	var visits = [];
+	var mediaUrls = {};
 	var map = null;
 	var markers = [];
 	var loaded = false;
@@ -94,12 +95,24 @@
 		return parts.join(', ');
 	}
 
-	function photoPath(visit, filename, variant) {
+	function mediaKey(visit, filename, variant) {
 		var name = filename;
 		if (variant === 'thumb') {
 			name = filename.replace(/(\.[^.]+)$/, '.thumb$1');
 		}
-		return 'img/travel/visits/' + visit.id + '/' + name;
+		return visit.id + '/' + name;
+	}
+
+	function photoPath(visit, filename, variant) {
+		return mediaUrls[mediaKey(visit, filename, variant)] || '';
+	}
+
+	function blobUrl(bytes, name) {
+		var type = 'application/octet-stream';
+		if (/\.jpe?g$/i.test(name)) type = 'image/jpeg';
+		else if (/\.png$/i.test(name)) type = 'image/png';
+		else if (/\.webp$/i.test(name)) type = 'image/webp';
+		return URL.createObjectURL(new Blob([bytes], { type: type }));
 	}
 
 	function visitHotel(visit) {
@@ -273,14 +286,15 @@
 
 	function coverHtml(visit) {
 		var pictures = visit.pictures || [];
-		if (!pictures.length) {
+		var src = pictures.length ? photoPath(visit, pictures[0], 'thumb') : '';
+		if (!src) {
 			return '<div class="hotel-card-photo"><div class="hotel-card-photo-placeholder"><i class="fas fa-camera"></i></div></div>';
 		}
 		var count = pictures.length > 1
 			? '<span class="hotel-card-photo-count">' + pictures.length + ' photos</span>'
 			: '';
 		return '<div class="hotel-card-photo">' +
-			'<img src="' + photoPath(visit, pictures[0], 'thumb') + '" alt="" decoding="async">' +
+			'<img src="' + src + '" alt="" decoding="async">' +
 			count + '</div>';
 	}
 
@@ -443,32 +457,54 @@
 		});
 	}
 
+	function hydrateCollection(collection, media) {
+		hotels = (collection && collection.hotels) || [];
+		visits = (collection && collection.visits) || [];
+		hotelById = {};
+		hotels.forEach(function (h) {
+			hotelById[h.id] = h;
+		});
+		Object.keys(media || {}).forEach(function (rel) {
+			mediaUrls[rel] = blobUrl(media[rel], rel);
+		});
+		populateFilters();
+		renderStats();
+		renderCards();
+		initMap();
+		applyFilters();
+		if (map) map.invalidateSize();
+	}
+
 	function loadHotels() {
 		if (loaded) {
 			if (map) map.invalidateSize();
 			return;
 		}
-		loaded = true;
-
-		$.when(
-			$.getJSON('data/hotels.json'),
-			$.getJSON('data/hotel-visits.json')
-		).done(function (hotelRes, visitRes) {
-			hotels = hotelRes[0] || [];
-			visits = visitRes[0] || [];
-			hotelById = {};
-			hotels.forEach(function (h) {
-				hotelById[h.id] = h;
-			});
-			populateFilters();
-			renderStats();
-			renderCards();
-			initMap();
-			applyFilters();
-			if (map) map.invalidateSize();
-		}).fail(function () {
+		if (!window.SiteGate) {
 			$('#hotel-cards').html('<p class="hotel-empty">Could not load hotel data.</p>');
-		});
+			return;
+		}
+
+		window.SiteGate.require(
+			'.travel-panel[data-travel-panel="hotels"]',
+			'hotels',
+			function () {
+				if (loaded) {
+					if (map) map.invalidateSize();
+					return;
+				}
+				loaded = true;
+				Promise.all([
+					window.SiteGate.decryptJson('hotels', 'data/hotel-collection.enc'),
+					window.SiteGate.decryptArchive('hotels', 'data/hotel-media.enc')
+				]).then(function (results) {
+					hydrateCollection(results[0], results[1]);
+				}).catch(function () {
+					loaded = false;
+					$('#hotel-cards').html('<p class="hotel-empty">Could not load hotel data.</p>');
+				});
+			}
+		);
 	}
 
 	$(document).on('click', '.hotel-select-btn', function (e) {
