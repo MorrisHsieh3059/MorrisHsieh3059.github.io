@@ -12,6 +12,6 @@ This is a static site. The live host is **https://morrishsieh.me** (Cloudflare),
 - `theme/` and `bootstrap/` are unmodified third-party. Site-specific CSS/JS goes in `assets/` or `components/<section>/`.
 - `vendor/` is gitignored but some files are still historically tracked — do not add more vendor files.
 - Live sections are whatever is in `build/template.html` nav + `COMPONENTS` in `build/build.js`. **NYC is WIP** (not wired). **Gallery** is built but the nav link and `<!--@include:gallery-->` stay commented out — do not re-enable or delete either unless asked (inlining it would download tens of MB of photos on every visit).
-- URLs are paths (`/about/`, `/dining/michelin/`), not hashes. `build.js` copies `index.html` into each route folder so GitHub Pages refresh works.
+- URLs are paths (`/about/`, `/dining/michelin/`), not hashes. `build.js` copies `index.html` into each route folder so a refresh on those paths stays a 200.
 - Resume: GPA only, no semester grades.
 - **Private tabs** (Daily Devotion, Hotel Collection): the live site only ships AES-GCM envelopes from `components/gated/`. Do not copy `devotions.json`, `hotels.json`, `hotel-visits.json`, or `components/travel/img/visits/` into `dist/`. Never commit the unlock passphrases (use `GATE_DEVOTION_PASSWORD` / `GATE_HOTELS_PASSWORD` or a gitignored `.env`). After editing plaintext, run `npm run gate-encrypt` and commit the updated `components/gated/*` files only. Each tab has its own key — one password must not open the other.
