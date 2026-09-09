@@ -154,12 +154,10 @@
 		return new Promise(function (resolve) { setTimeout(resolve, wait); });
 	}
 
-	function formHtml(title) {
+	function formHtml() {
 		return (
 			'<div class="site-gate-card">' +
-				'<p class="site-gate-kicker">Private</p>' +
-				'<h3 class="site-gate-title">' + title + '</h3>' +
-				'<p class="site-gate-copy">This tab is locked. Enter the password to open it.</p>' +
+				'<p class="site-gate-copy">contact Morris for password!</p>' +
 				'<form class="site-gate-form" autocomplete="off">' +
 					'<label class="site-gate-sr" for="site-gate-password">Password</label>' +
 					'<input id="site-gate-password" class="site-gate-input" type="password" name="gate-password" autocomplete="off" spellcheck="false" required>' +
@@ -196,7 +194,7 @@
 			return;
 		}
 		if ($host.find('.site-gate-form').length) return;
-		$host.removeAttr('hidden').html(formHtml(title));
+		$host.removeAttr('hidden').html(formHtml());
 		$panel.find('.site-gate-content').attr('hidden', 'hidden');
 
 		$host.find('.site-gate-form').on('submit', function (e) {

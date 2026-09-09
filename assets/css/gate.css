@@ -22,25 +22,10 @@
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
-.site-gate-kicker {
-	margin: 0 0 0.35rem;
-	font-family: 'Roboto Mono', sans-serif;
-	font-size: 0.72rem;
-	font-weight: 700;
-	letter-spacing: 0.14em;
-	text-transform: uppercase;
-	color: var(--accent, #303F9F);
-}
-
-.site-gate-title {
-	margin: 0 0 0.55rem;
-	font-size: 1.35rem;
-	color: #222;
-}
-
 .site-gate-copy {
 	margin: 0 0 1.15rem;
-	color: #666;
+	color: #333;
+	font-size: 1.15rem;
 }
 
 .site-gate-form {
