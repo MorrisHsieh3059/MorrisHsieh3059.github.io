@@ -5,7 +5,13 @@
 
 	var BRANDS = [
 		{ name: 'Waldorf Astoria', slug: 'waldorf-astoria', family: 'Hilton Honors' },
+		{ name: 'Conrad', slug: 'conrad', family: 'Hilton Honors' },
+		{ name: 'NoMad', slug: 'nomad', family: 'Hilton Honors' },
 		{ name: 'The Ritz-Carlton', slug: 'ritz-carlton', family: 'Marriott Bonvoy' },
+		{ name: 'St. Regis', slug: 'st-regis', family: 'Marriott Bonvoy' },
+		{ name: 'EDITION', slug: 'edition', family: 'Marriott Bonvoy' },
+		{ name: 'W Hotels', slug: 'w-hotels', family: 'Marriott Bonvoy' },
+		{ name: 'JW Marriott', slug: 'jw-marriott', family: 'Marriott Bonvoy' },
 		{ name: 'Four Seasons', slug: 'four-seasons', family: 'Four Seasons' },
 		{ name: 'Fairmont', slug: 'fairmont', family: 'ALL Accor' }
 	];
@@ -100,7 +106,10 @@
 		return hotelById[visit.hotelId] || null;
 	}
 
-	function brandIconPath(slug) {
+	function brandIconPath(slug, variant) {
+		if (variant === 'stay') {
+			return 'img/travel/brands/' + slug + '-stay.png';
+		}
 		return 'img/travel/brands/' + slug + '.png';
 	}
 
@@ -111,11 +120,20 @@
 		return '';
 	}
 
+	function brandHasStay(name) {
+		for (var i = 0; i < visits.length; i++) {
+			if (visitBrand(visits[i]) === name && visitType(visits[i]) === 'stay') {
+				return true;
+			}
+		}
+		return false;
+	}
+
 	function pinIconPath(hotel, visit) {
 		var slug = brandSlug(hotel);
 		if (!slug) return '';
 		if (visitType(visit) === 'stay') {
-			return 'img/travel/brands/' + slug + '-stay.png';
+			return brandIconPath(slug, 'stay');
 		}
 		return brandIconPath(slug);
 	}
@@ -134,9 +152,10 @@
 		});
 
 		var groups = BRANDS.map(function (b) {
+			var stayed = brandHasStay(b.name);
 			return (
-				'<span class="hotel-totals-group">' +
-					'<img class="hotel-totals-icon" src="' + brandIconPath(b.slug) + '" alt="">' +
+				'<span class="hotel-totals-group' + (stayed ? ' hotel-totals-group-stay' : '') + '">' +
+					'<img class="hotel-totals-icon" src="' + brandIconPath(b.slug, stayed ? 'stay' : '') + '" alt="">' +
 					'<span>' + b.name + '</span> ' +
 					'<strong>' + counts[b.name] + '</strong>' +
 				'</span>'
