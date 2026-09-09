@@ -19,18 +19,6 @@ _to_delete/
 # Personal scratch notes, not part of the site.
 _rundown.txt
 
-# Local passphrase for encrypting private tabs. Never commit this.
-.env
-.env.local
-
-# Daily Devotion + Hotel Collection plaintext. Only components/gated/*.enc
-# is committed; restore locally with `npm run gate-decrypt`.
-components/faith/data/devotions.json
-components/travel/data/hotels.json
-components/travel/data/hotel-visits.json
-components/travel/img/visits/*
-!components/travel/img/visits/.gitkeep
-
 # Local dining-rankings ingest inputs (optional; used by
 # scripts/dining-rankings-ingest.py). The committed artifacts are
 # components/dining/rankings/lists/*.json and rankings.json.

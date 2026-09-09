@@ -22,8 +22,5 @@ jobs:
       - name: Install dependencies (also vendors Font Awesome + Google Fonts)
         run: npm ci
 
-      - name: Check gated-file crypto
-        run: npm run test:gate
-
       - name: Build site into dist/
         run: npm run build

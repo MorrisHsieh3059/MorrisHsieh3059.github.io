@@ -1,0 +1,17 @@
+[
+  {
+    "id": "the-roosevelt-new-orleans-011926",
+    "hotelId": "the-roosevelt-new-orleans-a-waldorf-astoria-hotel",
+    "type": "stay",
+    "date": "2026-01-19",
+    "checkout": "2026-01-20",
+    "pictures": ["0.jpeg"]
+  },
+  {
+    "id": "the-ritz-carlton-boston-090626",
+    "hotelId": "the-ritz-carlton-boston",
+    "type": "stop-by",
+    "date": "2026-09-06",
+    "pictures": ["0.jpeg"]
+  }
+]
