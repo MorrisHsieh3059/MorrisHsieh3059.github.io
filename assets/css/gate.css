@@ -1,0 +1,106 @@
+/* Password gate for Daily Devotion + Hotel Collection. */
+
+.site-gate {
+	display: flex;
+	justify-content: center;
+	padding: 2.5rem 0 3rem;
+}
+
+.site-gate[hidden] {
+	display: none;
+}
+
+.site-gate-content[hidden] {
+	display: none;
+}
+
+.site-gate-card {
+	width: min(28rem, 100%);
+	padding: 1.75rem 1.6rem 1.6rem;
+	background: #fff;
+	border-left: 4px solid var(--accent, #303F9F);
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.site-gate-kicker {
+	margin: 0 0 0.35rem;
+	font-family: 'Roboto Mono', sans-serif;
+	font-size: 0.72rem;
+	font-weight: 700;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	color: var(--accent, #303F9F);
+}
+
+.site-gate-title {
+	margin: 0 0 0.55rem;
+	font-size: 1.35rem;
+	color: #222;
+}
+
+.site-gate-copy {
+	margin: 0 0 1.15rem;
+	color: #666;
+}
+
+.site-gate-form {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.6rem;
+}
+
+.site-gate-input {
+	flex: 1 1 10rem;
+	min-width: 0;
+	height: 2.6rem;
+	padding: 0 0.8rem;
+	border: 1px solid #ddd;
+	border-radius: 2px;
+	font-family: 'Roboto Mono', sans-serif;
+	font-size: 1rem;
+}
+
+.site-gate-input:focus {
+	outline: none;
+	border-color: var(--accent, #303F9F);
+}
+
+.site-gate-submit {
+	height: 2.6rem;
+	padding: 0 1.15rem;
+	border: 1px solid var(--accent, #303F9F);
+	border-radius: 2px;
+	background: var(--accent, #303F9F);
+	color: #fff;
+	font-family: 'Roboto Mono', sans-serif;
+	font-weight: 700;
+	font-size: 0.8rem;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.site-gate-submit:disabled {
+	opacity: 0.65;
+}
+
+.site-gate-error {
+	margin: 0.85rem 0 0;
+	color: #a94442;
+	font-size: 0.9rem;
+}
+
+.site-gate-error[hidden] {
+	display: none;
+}
+
+.site-gate-sr {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}

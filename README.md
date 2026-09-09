@@ -95,9 +95,23 @@ python3 components/travel/scripts/parse-timeline.py /path/to/Takeout/
 
 Home bases are fixed: **Taipei** (until Aug 1, 2022) and **NYC** (since Aug 2, 2022). A trip starts when you leave base and ends when you return — shown as home pins, not travel destinations.
 
+## Private tabs
+
+Daily Devotion (`/faith/`) and Hotel Collection (`/travel/hotels/`) are locked. The deployed site only contains AES-256-GCM envelopes in `data/*.enc` — not the JSON or visit photos. Unlocking happens in the browser; the passphrase is **not** in this repository.
+
+```bash
+# After editing the gitignored plaintext files:
+GATE_PASSWORD=... npm run gate-encrypt   # writes components/gated/*
+npm run build
+```
+
+Restore a fresh clone for editing with `GATE_PASSWORD=... npm run gate-decrypt`. Put the passphrase in a gitignored `.env` if you do not want it in your shell history.
+
+A password overlay alone is not enough on GitHub Pages (everything in `dist/` is public). Encryption is what keeps the tab contents unreadable without the passphrase. Making the GitHub repo private hides source history; it does **not** hide the live Pages site, and a `username.github.io` repo needs GitHub Pro for Pages to keep working if it becomes private.
+
 ### Hotel Collection
 
-`/travel/hotels/` is a second Travel tab. `data/hotels.json` is the luxury-hotel catalog (Waldorf Astoria, The Ritz-Carlton, Four Seasons, Fairmont). Each catalog row has `brand` plus `family` (the loyalty group that brand belongs to):
+`/travel/hotels/` is a second Travel tab (password-gated). `components/travel/data/hotels.json` is the luxury-hotel catalog (Waldorf Astoria, The Ritz-Carlton, Four Seasons, Fairmont) and is gitignored; the committed copy is `components/gated/hotel-collection.enc`. Each catalog row has `brand` plus `family` (the loyalty group that brand belongs to):
 
 | Brand | Family |
 | --- | --- |
@@ -106,9 +120,9 @@ Home bases are fixed: **Taipei** (until Aug 1, 2022) and **NYC** (since Aug 2, 2
 | Four Seasons | Four Seasons |
 | Fairmont | ALL Accor |
 
-`data/hotel-visits.json` is the stay log. Name, brand, family, city, and coordinates come from the catalog via `hotelId` — do not copy those onto the visit. Visited hotels show as fixed-size pins on the map. The map opens centered on the Atlantic (Europe and the Americas together). Stay cards sit in a vertical timeline in the right-hand column.
+`components/travel/data/hotel-visits.json` is the stay log (also gitignored; packed into the same encrypted envelope). Name, brand, family, city, and coordinates come from the catalog via `hotelId` — do not copy those onto the visit. Visited hotels show as fixed-size pins on the map. The map opens centered on the Atlantic (Europe and the Americas together). Stay cards sit in a vertical timeline in the right-hand column.
 
-**Add a visit:** look up the hotel in `hotels.json`, then append a visit. `type` is `stay` (overnight; `date` is check-in, `checkout` is the morning you left, nights are `checkout − date`) or `stop-by` (dropped in for a drink, meal, or a look — no `checkout`).
+**Add a visit:** decrypt if needed (`npm run gate-decrypt`), look up the hotel in `hotels.json`, then append a visit. `type` is `stay` (overnight; `date` is check-in, `checkout` is the morning you left, nights are `checkout − date`) or `stop-by` (dropped in for a drink, meal, or a look — no `checkout`). After photos, run `npm run gate-encrypt` and commit `components/gated/*` only.
 
 ```json
 {

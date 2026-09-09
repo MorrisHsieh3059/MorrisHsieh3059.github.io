@@ -358,18 +358,29 @@
 	}
 
 	function loadData() {
-		$.getJSON('data/devotions.json').done(function (data) {
+		if (!window.SiteGate) {
+			$('#devotion-grid').html('<p class="devotion-empty">Devotion data unavailable.</p>');
+			return;
+		}
+		window.SiteGate.decryptJson('data/devotions.enc').then(function (data) {
 			devotionData = data;
 			render(data);
-		}).fail(function () {
+		}).catch(function () {
 			$('#devotion-grid').html('<p class="devotion-empty">Devotion data unavailable.</p>');
 		});
 	}
 
 	function ensureInit() {
-		if (initialized) return;
-		initialized = true;
-		loadData();
+		if (!window.SiteGate) return;
+		window.SiteGate.require(
+			'.faith-panel[data-faith-panel="devotion"]',
+			'Daily Devotion',
+			function () {
+				if (initialized) return;
+				initialized = true;
+				loadData();
+			}
+		);
 	}
 
 	/*=========================================================================

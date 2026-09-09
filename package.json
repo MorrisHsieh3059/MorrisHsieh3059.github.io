@@ -6,6 +6,9 @@
   "scripts": {
     "postinstall": "node scripts/vendor-assets.js",
     "build": "node build/build.js",
+    "gate-encrypt": "node scripts/gate-encrypt.js",
+    "gate-decrypt": "node scripts/gate-decrypt.js",
+    "test:gate": "node scripts/gate-crypto.test.js",
     "build-travel": "python3 components/travel/scripts/parse-timeline.py ../Downloads/location-history.json",
     "build-nyc": "python3 components/nyc/scripts/parse-nyc.py ../Downloads/location-history.json && python3 components/nyc/scripts/match-nyc-streets.py ../Downloads/location-history.json",
     "build-nyc-offline": "python3 components/nyc/scripts/parse-nyc.py ../Downloads/location-history.json && python3 components/nyc/scripts/match-nyc-streets.py --offline ../Downloads/location-history.json",

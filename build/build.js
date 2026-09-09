@@ -139,13 +139,24 @@ function copyFile(src, dest) {
   fs.copyFileSync(src, dest);
 }
 
-function copyDir(src, dest) {
+// Plaintext for Daily Devotion + Hotel Collection stays out of dist/.
+// The browser only receives AES-GCM envelopes from components/gated/.
+const GATED_DATA_FILES = new Set([
+  'devotions.json',
+  'hotels.json',
+  'hotel-visits.json',
+]);
+const GATED_IMG_DIRS = new Set(['visits']);
+
+function copyDir(src, dest, opts = {}) {
   if (!fs.existsSync(src)) return;
   fs.mkdirSync(dest, { recursive: true });
   for (const entry of fs.readdirSync(src, { withFileTypes: true })) {
+    if (opts.skipFiles && opts.skipFiles.has(entry.name)) continue;
+    if (opts.skipDirs && entry.isDirectory() && opts.skipDirs.has(entry.name)) continue;
     const from = path.join(src, entry.name);
     const to = path.join(dest, entry.name);
-    if (entry.isDirectory()) copyDir(from, to);
+    if (entry.isDirectory()) copyDir(from, to, opts);
     else copyFile(from, to);
   }
 }
@@ -158,6 +169,36 @@ function copyListed(srcDir, destDir, names) {
       continue;
     }
     copyFile(from, path.join(destDir, name));
+  }
+}
+
+function walkFiles(dir, acc = []) {
+  if (!fs.existsSync(dir)) return acc;
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) walkFiles(full, acc);
+    else acc.push(full);
+  }
+  return acc;
+}
+
+function assertNoGatedPlaintext() {
+  const leaks = [];
+  for (const file of walkFiles(path.join(dist, 'data'))) {
+    if (GATED_DATA_FILES.has(path.basename(file))) leaks.push(path.relative(dist, file));
+  }
+  const visitImgs = path.join(dist, 'img', 'travel', 'visits');
+  if (fs.existsSync(visitImgs)) {
+    for (const file of walkFiles(visitImgs)) leaks.push(path.relative(dist, file));
+  }
+  if (leaks.length) {
+    throw new Error('build.js: gated plaintext leaked into dist/: ' + leaks.join(', '));
+  }
+  const required = ['gate.json', 'gate-ok.enc', 'devotions.enc', 'hotel-collection.enc', 'hotel-media.enc'];
+  for (const name of required) {
+    if (!fs.existsSync(path.join(dist, 'data', name))) {
+      throw new Error('build.js: missing encrypted payload dist/data/' + name + ' — run npm run gate-encrypt');
+    }
   }
 }
 
@@ -257,10 +298,16 @@ function main() {
       }
     }
     if (!SKIP_IMG.has(name)) {
-      copyDir(path.join(compDir, 'img'), path.join(dist, 'img', name));
+      const imgOpts = name === 'travel' ? { skipDirs: GATED_IMG_DIRS } : {};
+      copyDir(path.join(compDir, 'img'), path.join(dist, 'img', name), imgOpts);
     }
-    copyDir(path.join(compDir, 'data'), path.join(dist, 'data'));
+    copyDir(path.join(compDir, 'data'), path.join(dist, 'data'), {
+      skipFiles: GATED_DATA_FILES,
+    });
   }
+
+  copyDir(path.join(root, 'components', 'gated'), path.join(dist, 'data'));
+  assertNoGatedPlaintext();
 
   assembleIndex();
   writeRoutePages();
