@@ -362,7 +362,7 @@
 			$('#devotion-grid').html('<p class="devotion-empty">Devotion data unavailable.</p>');
 			return;
 		}
-		window.SiteGate.decryptJson('data/devotions.enc').then(function (data) {
+		window.SiteGate.decryptJson('devotion', 'data/devotions.enc').then(function (data) {
 			devotionData = data;
 			render(data);
 		}).catch(function () {
@@ -374,7 +374,7 @@
 		if (!window.SiteGate) return;
 		window.SiteGate.require(
 			'.faith-panel[data-faith-panel="devotion"]',
-			'Daily Devotion',
+			'devotion',
 			function () {
 				if (initialized) return;
 				initialized = true;

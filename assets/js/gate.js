@@ -9,9 +9,9 @@
 	var CANARY = 'ok';
 
 	var meta = null;
-	var cryptoKey = null;
-	var unlocking = null;
-	var failCount = 0;
+	var keys = {};
+	var unlocking = {};
+	var failCount = {};
 
 	function bytesEqual(view, expected) {
 		if (view.length !== expected.length) return false;
@@ -36,6 +36,13 @@
 				meta = json;
 				return meta;
 			});
+	}
+
+	function tabParams(params, gateId) {
+		if (!params || !params.tabs || !params.tabs[gateId]) {
+			throw new Error('unknown gate');
+		}
+		return params.tabs[gateId];
 	}
 
 	function deriveKey(password, params) {
@@ -109,8 +116,9 @@
 		return files;
 	}
 
-	function verifyKey(key) {
-		return fetchAndDecrypt('data/gate-ok.enc', key).then(function (plain) {
+	function verifyKey(gateId, tab, key) {
+		var canary = 'data/' + (tab.ok || (gateId + '-ok.enc'));
+		return fetchAndDecrypt(canary, key).then(function (plain) {
 			if (new TextDecoder().decode(plain) !== CANARY) {
 				throw new Error('bad canary');
 			}
@@ -118,49 +126,53 @@
 		});
 	}
 
-	function unlockWithPassword(password) {
-		if (cryptoKey) return Promise.resolve(cryptoKey);
+	function unlockWithPassword(gateId, password) {
+		if (keys[gateId]) return Promise.resolve(keys[gateId]);
 		if (!hasWebCrypto()) {
 			return Promise.reject(new Error('browser'));
 		}
-		if (unlocking) return unlocking;
-		unlocking = loadMeta()
+		if (unlocking[gateId]) return unlocking[gateId];
+		unlocking[gateId] = loadMeta()
 			.then(function (params) {
-				return deriveKey(password, params);
+				var tab = tabParams(params, gateId);
+				return deriveKey(password, tab).then(function (key) {
+					return verifyKey(gateId, tab, key);
+				});
 			})
-			.then(verifyKey)
 			.then(function (key) {
-				cryptoKey = key;
-				failCount = 0;
+				keys[gateId] = key;
+				failCount[gateId] = 0;
 				return key;
 			})
 			.catch(function (err) {
-				failCount += 1;
+				failCount[gateId] = (failCount[gateId] || 0) + 1;
 				throw err;
 			})
 			.finally(function () {
-				unlocking = null;
+				unlocking[gateId] = null;
 			});
-		return unlocking;
+		return unlocking[gateId];
 	}
 
 	function decodeJson(buffer) {
 		return JSON.parse(new TextDecoder().decode(buffer));
 	}
 
-	function delayForFailures() {
-		if (failCount < 4) return Promise.resolve();
-		var wait = Math.min(8000, 400 * Math.pow(2, failCount - 4));
+	function delayForFailures(gateId) {
+		var n = failCount[gateId] || 0;
+		if (n < 4) return Promise.resolve();
+		var wait = Math.min(8000, 400 * Math.pow(2, n - 4));
 		return new Promise(function (resolve) { setTimeout(resolve, wait); });
 	}
 
-	function formHtml() {
+	function formHtml(gateId) {
+		var inputId = 'site-gate-password-' + gateId;
 		return (
 			'<div class="site-gate-card">' +
 				'<p class="site-gate-copy">contact Morris for password!</p>' +
 				'<form class="site-gate-form" autocomplete="off">' +
-					'<label class="site-gate-sr" for="site-gate-password">Password</label>' +
-					'<input id="site-gate-password" class="site-gate-input" type="password" name="gate-password" autocomplete="off" spellcheck="false" required>' +
+					'<label class="site-gate-sr" for="' + inputId + '">Password</label>' +
+					'<input id="' + inputId + '" class="site-gate-input" type="password" name="gate-password" autocomplete="off" spellcheck="false" required>' +
 					'<button type="submit" class="site-gate-submit">Unlock</button>' +
 				'</form>' +
 				'<p class="site-gate-error" hidden></p>' +
@@ -182,19 +194,19 @@
 		$panel.find('.site-gate-content').removeAttr('hidden');
 	}
 
-	function mountForm($panel, title, onUnlock) {
+	function mountForm($panel, gateId, onUnlock) {
 		var $host = $panel.find('.site-gate');
 		if (!$host.length) {
 			onUnlock();
 			return;
 		}
-		if (cryptoKey) {
+		if (keys[gateId]) {
 			reveal($panel);
 			onUnlock();
 			return;
 		}
 		if ($host.find('.site-gate-form').length) return;
-		$host.removeAttr('hidden').html(formHtml());
+		$host.removeAttr('hidden').html(formHtml(gateId));
 		$panel.find('.site-gate-content').attr('hidden', 'hidden');
 
 		$host.find('.site-gate-form').on('submit', function (e) {
@@ -204,9 +216,9 @@
 			if (!password) return;
 			$btn.prop('disabled', true);
 			setError($host, '');
-			delayForFailures()
+			delayForFailures(gateId)
 				.then(function () {
-					return unlockWithPassword(password);
+					return unlockWithPassword(gateId, password);
 				})
 				.then(function () {
 					$host.find('.site-gate-input').val('');
@@ -230,28 +242,35 @@
 		}, 0);
 	}
 
-	function requireUnlock(panelSelector, title, onUnlock) {
+	function requireUnlock(panelSelector, gateId, onUnlock) {
 		var $panel = $(panelSelector);
-		if (cryptoKey) {
+		if (keys[gateId]) {
 			reveal($panel);
 			onUnlock();
 			return;
 		}
-		mountForm($panel, title, onUnlock);
+		mountForm($panel, gateId, onUnlock);
+	}
+
+	function keyOrReject(gateId) {
+		if (!keys[gateId]) return Promise.reject(new Error('locked'));
+		return Promise.resolve(keys[gateId]);
 	}
 
 	window.SiteGate = {
-		isUnlocked: function () {
-			return !!cryptoKey;
+		isUnlocked: function (gateId) {
+			return !!keys[gateId];
 		},
 		require: requireUnlock,
-		decryptJson: function (url) {
-			if (!cryptoKey) return Promise.reject(new Error('locked'));
-			return fetchAndDecrypt(url, cryptoKey).then(decodeJson);
+		decryptJson: function (gateId, url) {
+			return keyOrReject(gateId).then(function (key) {
+				return fetchAndDecrypt(url, key).then(decodeJson);
+			});
 		},
-		decryptArchive: function (url) {
-			if (!cryptoKey) return Promise.reject(new Error('locked'));
-			return fetchAndDecrypt(url, cryptoKey).then(unpackArchive);
+		decryptArchive: function (gateId, url) {
+			return keyOrReject(gateId).then(function (key) {
+				return fetchAndDecrypt(url, key).then(unpackArchive);
+			});
 		}
 	};
 

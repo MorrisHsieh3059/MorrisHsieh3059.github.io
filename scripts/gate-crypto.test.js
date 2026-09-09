@@ -23,8 +23,11 @@ const files = crypto.unpackArchive(packed);
 assert.strictEqual(files['a/one.txt'].toString('utf8'), 'one');
 assert.deepStrictEqual(Array.from(files['b/two.bin']), [1, 2, 3]);
 
-const meta = crypto.publicMeta(salt);
-assert.strictEqual(meta.kdf, 'PBKDF2');
-assert.strictEqual(crypto.saltFromMeta(meta).equals(salt), true);
+const saltB = Buffer.alloc(crypto.SALT_LEN, 9);
+const meta = crypto.publicMeta({ devotion: salt, hotels: saltB });
+assert.strictEqual(meta.v, 2);
+assert.strictEqual(meta.tabs.devotion.kdf, 'PBKDF2');
+assert.strictEqual(crypto.saltFromMeta(meta.tabs.devotion).equals(salt), true);
+assert.strictEqual(crypto.saltFromMeta(meta.tabs.hotels).equals(saltB), true);
 
 console.log('gate-crypto: ok');

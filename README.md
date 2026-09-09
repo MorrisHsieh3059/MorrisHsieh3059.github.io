@@ -101,11 +101,11 @@ Daily Devotion (`/faith/`) and Hotel Collection (`/travel/hotels/`) are locked. 
 
 ```bash
 # After editing the gitignored plaintext files:
-GATE_PASSWORD=... npm run gate-encrypt   # writes components/gated/*
+GATE_DEVOTION_PASSWORD=... GATE_HOTELS_PASSWORD=... npm run gate-encrypt
 npm run build
 ```
 
-Restore a fresh clone for editing with `GATE_PASSWORD=... npm run gate-decrypt`. Put the passphrase in a gitignored `.env` if you do not want it in your shell history.
+Each tab has its own passphrase. Restore a fresh clone for editing with the same env vars and `npm run gate-decrypt`. Put them in a gitignored `.env` if you do not want them in your shell history.
 
 A password overlay alone is not enough on GitHub Pages (everything in `dist/` is public). Encryption is what keeps the tab contents unreadable without the passphrase. Making the GitHub repo private hides source history; it does **not** hide the live Pages site, and a `username.github.io` repo needs GitHub Pro for Pages to keep working if it becomes private.
 

@@ -1,14 +1,13 @@
 /**
  * AES-256-GCM helpers for the private Daily Devotion + Hotel Collection
- * payloads. The passphrase never belongs in git — callers read it from
- * GATE_PASSWORD (env or a gitignored .env).
+ * payloads. Passphrases never belong in git — callers read them from
+ * GATE_DEVOTION_PASSWORD / GATE_HOTELS_PASSWORD (env or a gitignored .env).
  *
  * On-disk envelope (binary):
  *   GATE1 (5) | iv (12) | ciphertext || 16-byte GCM tag
  *
- * KDF parameters live in the public gate.json (salt is not secret).
- * One salt is shared across every gated file so the browser derives
- * the key once per unlock.
+ * KDF parameters live in the public gate.json (salts are not secret).
+ * Each tab has its own salt and key so one password cannot open the other.
  */
 'use strict';
 
@@ -52,13 +51,23 @@ function decryptBuffer(envelope, key) {
   return Buffer.concat([decipher.update(body), decipher.final()]);
 }
 
-function publicMeta(salt) {
+function tabMeta(salt, okFile) {
   return {
-    v: 1,
     kdf: 'PBKDF2',
     hash: 'SHA-256',
     iter: ITERATIONS,
-    salt: Buffer.from(salt).toString('base64')
+    salt: Buffer.from(salt).toString('base64'),
+    ok: okFile
+  };
+}
+
+function publicMeta(tabSalts) {
+  return {
+    v: 2,
+    tabs: {
+      devotion: tabMeta(tabSalts.devotion, 'devotion-ok.enc'),
+      hotels: tabMeta(tabSalts.hotels, 'hotels-ok.enc')
+    }
   };
 }
 
@@ -77,9 +86,30 @@ function saltFromMeta(meta) {
   return salt;
 }
 
-function loadExistingSalt(gateJsonPath) {
-  if (!fs.existsSync(gateJsonPath)) return crypto.randomBytes(SALT_LEN);
-  return saltFromMeta(readMeta(gateJsonPath));
+function tabIds() {
+  return ['devotion', 'hotels'];
+}
+
+function envNameForTab(tabId) {
+  if (tabId === 'devotion') return 'GATE_DEVOTION_PASSWORD';
+  if (tabId === 'hotels') return 'GATE_HOTELS_PASSWORD';
+  throw new Error('unknown gated tab: ' + tabId);
+}
+
+function loadExistingTabSalts(gateJsonPath) {
+  const salts = {
+    devotion: crypto.randomBytes(SALT_LEN),
+    hotels: crypto.randomBytes(SALT_LEN)
+  };
+  if (!fs.existsSync(gateJsonPath)) return salts;
+  const meta = readMeta(gateJsonPath);
+  if (!meta.tabs) return salts;
+  tabIds().forEach((id) => {
+    if (meta.tabs[id] && meta.tabs[id].salt) {
+      salts[id] = saltFromMeta(meta.tabs[id]);
+    }
+  });
+  return salts;
 }
 
 const ARCHIVE_MAGIC = Buffer.from('GAR1');
@@ -136,13 +166,21 @@ function loadDotEnv(rootDir) {
   });
 }
 
-function requirePassword(rootDir) {
+function requireTabPasswords(rootDir, needed) {
   loadDotEnv(rootDir);
-  const password = process.env.GATE_PASSWORD;
-  if (!password) {
-    throw new Error('Set GATE_PASSWORD in the environment (or a gitignored .env). Do not commit it.');
+  const ids = needed && needed.length ? needed : tabIds();
+  const passwords = {};
+  const missing = [];
+  ids.forEach((id) => {
+    const envName = envNameForTab(id);
+    const value = process.env[envName];
+    if (!value) missing.push(envName);
+    else passwords[id] = value;
+  });
+  if (missing.length) {
+    throw new Error('Set ' + missing.join(' and ') + ' in the environment (or a gitignored .env). Do not commit them.');
   }
-  return password;
+  return passwords;
 }
 
 module.exports = {
@@ -157,11 +195,14 @@ module.exports = {
   encryptBuffer,
   decryptBuffer,
   publicMeta,
+  tabMeta,
   readMeta,
   saltFromMeta,
-  loadExistingSalt,
+  tabIds,
+  envNameForTab,
+  loadExistingTabSalts,
   packArchive,
   unpackArchive,
   loadDotEnv,
-  requirePassword
+  requireTabPasswords
 };

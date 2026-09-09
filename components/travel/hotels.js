@@ -487,7 +487,7 @@
 
 		window.SiteGate.require(
 			'.travel-panel[data-travel-panel="hotels"]',
-			'Hotel Collection',
+			'hotels',
 			function () {
 				if (loaded) {
 					if (map) map.invalidateSize();
@@ -495,8 +495,8 @@
 				}
 				loaded = true;
 				Promise.all([
-					window.SiteGate.decryptJson('data/hotel-collection.enc'),
-					window.SiteGate.decryptArchive('data/hotel-media.enc')
+					window.SiteGate.decryptJson('hotels', 'data/hotel-collection.enc'),
+					window.SiteGate.decryptArchive('hotels', 'data/hotel-media.enc')
 				]).then(function (results) {
 					hydrateCollection(results[0], results[1]);
 				}).catch(function () {

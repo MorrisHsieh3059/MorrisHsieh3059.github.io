@@ -194,7 +194,14 @@ function assertNoGatedPlaintext() {
   if (leaks.length) {
     throw new Error('build.js: gated plaintext leaked into dist/: ' + leaks.join(', '));
   }
-  const required = ['gate.json', 'gate-ok.enc', 'devotions.enc', 'hotel-collection.enc', 'hotel-media.enc'];
+  const required = [
+    'gate.json',
+    'devotion-ok.enc',
+    'hotels-ok.enc',
+    'devotions.enc',
+    'hotel-collection.enc',
+    'hotel-media.enc',
+  ];
   for (const name of required) {
     if (!fs.existsSync(path.join(dist, 'data', name))) {
       throw new Error('build.js: missing encrypted payload dist/data/' + name + ' — run npm run gate-encrypt');

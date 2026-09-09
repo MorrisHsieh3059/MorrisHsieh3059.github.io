@@ -1,10 +1,12 @@
 #!/usr/bin/env node
 /**
  * Encrypt Daily Devotion + Hotel Collection plaintext into
- * components/gated/*.enc for commit and deploy. The passphrase stays
- * in GATE_PASSWORD — never write it into this repo.
+ * components/gated/*.enc for commit and deploy. Passphrases stay
+ * in GATE_DEVOTION_PASSWORD / GATE_HOTELS_PASSWORD — never write
+ * them into this repo.
  *
- * Usage: GATE_PASSWORD=... npm run gate-encrypt
+ * Usage:
+ *   GATE_DEVOTION_PASSWORD=... GATE_HOTELS_PASSWORD=... npm run gate-encrypt
  */
 'use strict';
 
@@ -43,35 +45,37 @@ function collectVisitPhotos() {
   return files;
 }
 
+function write(name, buf) {
+  fs.writeFileSync(path.join(outDir, name), buf);
+  console.log('wrote components/gated/' + name + ' (' + buf.length + ' bytes)');
+}
+
 function main() {
-  const password = crypto.requirePassword(root);
+  const passwords = crypto.requireTabPasswords(root);
   fs.mkdirSync(outDir, { recursive: true });
 
   const gateJsonPath = path.join(outDir, 'gate.json');
-  const salt = crypto.loadExistingSalt(gateJsonPath);
-  const key = crypto.deriveKey(password, salt);
+  const salts = crypto.loadExistingTabSalts(gateJsonPath);
+  const devotionKey = crypto.deriveKey(passwords.devotion, salts.devotion);
+  const hotelsKey = crypto.deriveKey(passwords.hotels, salts.hotels);
 
   const collection = {
     hotels: JSON.parse(mustRead(HOTELS).toString('utf8')),
     visits: JSON.parse(mustRead(VISITS).toString('utf8'))
   };
 
-  const writes = [
-    ['gate.json', Buffer.from(JSON.stringify(crypto.publicMeta(salt)) + '\n', 'utf8')],
-    ['gate-ok.enc', crypto.encryptBuffer(Buffer.from('ok', 'utf8'), key)],
-    ['devotions.enc', crypto.encryptBuffer(mustRead(DEVOTIONS), key)],
-    ['hotel-collection.enc', crypto.encryptBuffer(Buffer.from(JSON.stringify(collection), 'utf8'), key)],
-    ['hotel-media.enc', crypto.encryptBuffer(crypto.packArchive(collectVisitPhotos()), key)]
-  ];
+  write('gate.json', Buffer.from(JSON.stringify(crypto.publicMeta(salts)) + '\n', 'utf8'));
+  write('devotion-ok.enc', crypto.encryptBuffer(Buffer.from('ok', 'utf8'), devotionKey));
+  write('hotels-ok.enc', crypto.encryptBuffer(Buffer.from('ok', 'utf8'), hotelsKey));
+  write('devotions.enc', crypto.encryptBuffer(mustRead(DEVOTIONS), devotionKey));
+  write('hotel-collection.enc', crypto.encryptBuffer(Buffer.from(JSON.stringify(collection), 'utf8'), hotelsKey));
+  write('hotel-media.enc', crypto.encryptBuffer(crypto.packArchive(collectVisitPhotos()), hotelsKey));
 
-  writes.forEach(([name, buf]) => {
-    if (name === 'gate.json') {
-      fs.writeFileSync(path.join(outDir, name), buf);
-    } else {
-      fs.writeFileSync(path.join(outDir, name), buf);
-    }
-    console.log('wrote components/gated/' + name + ' (' + buf.length + ' bytes)');
-  });
+  const stale = path.join(outDir, 'gate-ok.enc');
+  if (fs.existsSync(stale)) {
+    fs.unlinkSync(stale);
+    console.log('removed components/gated/gate-ok.enc');
+  }
 }
 
 main();
