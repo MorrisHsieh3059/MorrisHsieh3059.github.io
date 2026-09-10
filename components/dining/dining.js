@@ -794,7 +794,8 @@
 		rankings in the same year, e.g. a regional + a global rank, still
 		only counts once, same dedup-by-name principle as the MICHELIN
 		star totals above). Only these six groups get a tile, by design —
-		OAD's three tiers aren't shown here.
+		OAD's three tiers aren't shown here. Labels stay short (icon carries
+		the list identity); groups render high-count → low-count.
 	=========================================================================*/
 	var AWARD_STAT_GROUPS = [
 		{ list: '50-best-restaurants', label: 'Restaurant' },
