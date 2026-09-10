@@ -158,8 +158,8 @@
 		return $counter;
 	}
 
-	function bindVisitPopups($cards) {
-		$cards.magnificPopup({
+	function visitPopupSettings() {
+		return {
 			type: 'inline',
 			fixedContentPos: false,
 			fixedBgPos: true,
@@ -197,7 +197,19 @@
 					}
 				}
 			}
-		});
+		};
+	}
+
+	function bindVisitPopups($cards) {
+		$cards.magnificPopup(visitPopupSettings());
+	}
+
+	function openVisitLightbox(visitId) {
+		var $src = $('#popup-hotel-' + visitId);
+		if (!$src.length) return;
+		$.magnificPopup.open($.extend({}, visitPopupSettings(), {
+			items: { src: $src, type: 'inline' }
+		}));
 	}
 
 	function visitHotel(visit) {
@@ -487,13 +499,28 @@
 		applyFilters();
 	}
 
-	function mapPopupHtml(visit, hotel) {
+	function mapPopupCard(visit, hotel) {
 		var nights = stayNightsLabel(visit);
-		return '<strong>' + hotel.name + '</strong>' +
-			'<div class="hotel-popup-brand">' + hotel.brand + '</div>' +
-			'<div class="hotel-popup-family">' + hotel.family + '</div>' +
-			'<div>' + locationText(hotel) + '</div>' +
-			'<div>' + visitTypeLabel(visit) + ' · ' + formatStayDates(visit) + (nights ? ' · ' + nights : '') + '</div>';
+		var pictures = visit.pictures || [];
+		var hint = pictures.length
+			? '<div class="hotel-map-popup-hint"><i class="fas fa-images"></i> View photos</div>'
+			: '';
+		var $card = $(
+			'<a href="#popup-hotel-' + visit.id + '" class="hotel-map-popup-card" data-visit-id="' + visit.id + '">' +
+				'<strong>' + hotel.name + '</strong>' +
+				'<div class="hotel-popup-brand">' + hotel.brand + '</div>' +
+				'<div class="hotel-popup-family">' + hotel.family + '</div>' +
+				'<div>' + locationText(hotel) + '</div>' +
+				'<div>' + visitTypeLabel(visit) + ' · ' + formatStayDates(visit) + (nights ? ' · ' + nights : '') + '</div>' +
+				hint +
+			'</a>'
+		);
+		$card.on('click', function (e) {
+			e.preventDefault();
+			e.stopPropagation();
+			openVisitLightbox(visit.id);
+		});
+		return $card[0];
 	}
 
 	function markerEl(m) {
@@ -534,7 +561,7 @@
 			keyboard: false
 		}).addTo(map);
 
-		marker.bindPopup(mapPopupHtml(visit, hotel), { closeButton: false, maxWidth: 240 });
+		marker.bindPopup(mapPopupCard(visit, hotel), { closeButton: false, maxWidth: 240 });
 		marker.on('click', function () {
 			focusVisit(visit.id);
 		});
