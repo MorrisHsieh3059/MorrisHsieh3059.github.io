@@ -569,25 +569,41 @@
 		markers.push({ marker: marker, el: marker.getElement(), visit: visit, hotel: hotel });
 	}
 
-	function initMap() {
-		if (typeof L === 'undefined' || map) return;
+	function hotelVisitCountries() {
+		var names = {};
+		visits.forEach(function (visit) {
+			var hotel = visitHotel(visit);
+			if (hotel && hotel.country) names[hotel.country] = true;
+		});
+		return Object.keys(names);
+	}
 
-		map = L.map('hotel-map', {
-			scrollWheelZoom: true,
-			zoomControl: true,
+	function paintVisitedCountries(travelCountries) {
+		var names = {};
+		if (!map || !window.TravelMaps) return;
+		hotelVisitCountries().concat(travelCountries || []).forEach(function (name) {
+			if (name) names[name] = true;
+		});
+		TravelMaps.addVisitedCountries(map, Object.keys(names));
+	}
+
+	function initMap() {
+		if (typeof L === 'undefined' || !window.TravelMaps || map) return;
+
+		map = TravelMaps.createMap('hotel-map', {
 			zoomSnap: 0.25
 		}).setView(ATLANTIC, ATLANTIC_ZOOM);
-
-		L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-			attribution: '&copy; OpenStreetMap',
-			maxZoom: 19
-		}).addTo(map);
 
 		visits.forEach(function (visit) {
 			var hotel = visitHotel(visit);
 			if (hotel && hotel.lat != null && hotel.lng != null) {
 				addPin(visit, hotel);
 			}
+		});
+
+		paintVisitedCountries([]);
+		$.getJSON('data/travel.json').done(function (data) {
+			paintVisitedCountries(TravelMaps.countriesFromTravel(data));
 		});
 	}
 

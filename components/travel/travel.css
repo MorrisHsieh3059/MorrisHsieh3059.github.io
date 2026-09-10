@@ -246,7 +246,7 @@
 	flex: 1 1 auto;
 	width: 100%;
 	min-height: 0;
-	background: #e8eaf6;
+	background: #d5d5d5;
 	border: 1px solid #d0d0d0;
 }
 
@@ -254,6 +254,7 @@
 	width: 100%;
 	height: 100%;
 	z-index: 1;
+	background: #d5d5d5;
 }
 
 .hotel-popup-brand {
@@ -872,7 +873,7 @@
 	flex: 1 1 auto;
 	width: 100%;
 	min-height: 0;
-	background: #e8eaf6;
+	background: #d5d5d5;
 	border: 1px solid #d0d0d0;
 }
 
@@ -880,6 +881,12 @@
 	width: 100%;
 	height: 100%;
 	z-index: 1;
+	background: #d5d5d5;
+}
+
+#travel-map .leaflet-tile-pane,
+#hotel-map .leaflet-tile-pane {
+	filter: grayscale(1);
 }
 
 .travel-map-legend {
@@ -897,6 +904,18 @@
 .travel-map-legend span {
 	display: inline-block;
 	margin-right: 0.75rem;
+}
+
+.legend-visited::before {
+	content: '';
+	display: inline-block;
+	width: 12px;
+	height: 10px;
+	margin-right: 4px;
+	vertical-align: middle;
+	background: #9ec9e8;
+	border: 1px solid #6fa8c9;
+	box-sizing: border-box;
 }
 
 .legend-home::before,

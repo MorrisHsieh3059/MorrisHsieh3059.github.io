@@ -159,6 +159,8 @@ $(function(){
 			}).then(function () {
 				return loadScript('vendor/leaflet/leaflet.js');
 			}).then(function () {
+				return loadScript('js/map-base.js');
+			}).then(function () {
 				return loadScript('js/travel.js');
 			}).then(function () {
 				return loadScript('js/hotels.js');
