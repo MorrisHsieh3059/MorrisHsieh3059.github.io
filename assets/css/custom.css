@@ -392,6 +392,12 @@ body.menu-dismissed .menu-btn:hover + .menu {
 		display: contents;
 	}
 
+	.tagline-left,
+	.tagline-right,
+	.tagline-sep {
+		white-space: nowrap;
+	}
+
 	.tagline-left {
 		text-align: right;
 	}
