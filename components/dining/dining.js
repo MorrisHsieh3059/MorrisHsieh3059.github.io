@@ -832,7 +832,10 @@
 				'</span>'
 			);
 		});
-		return groupsHtml.join('<span class="award-totals-sep">|</span>');
+		// Leading "|" lives on each group via CSS ::before; an inner flex row
+		// is pulled left and the outer box clips, so a wrapped line never
+		// starts or ends with a pipe.
+		return '<span class="award-totals-inner">' + groupsHtml.join('') + '</span>';
 	}
 
 	/*=========================================================================
