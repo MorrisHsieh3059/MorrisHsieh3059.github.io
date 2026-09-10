@@ -55,10 +55,7 @@
 }
 
 .hotel-totals {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	gap: 0.6rem 1.1rem;
+	overflow: hidden;
 	margin: 0 0 1.25rem;
 	padding: 0.75rem 1.25rem;
 	background: #fff;
@@ -73,11 +70,29 @@
 	display: none;
 }
 
+/* Leading "|" on each group; inner row pulled left + outer overflow clips
+   so a wrapped line never starts or ends with a pipe. */
+.hotel-totals-inner {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	row-gap: 0.6rem;
+	margin-left: -2.2rem;
+}
+
 .hotel-totals-group {
 	display: inline-flex;
 	align-items: center;
 	gap: 0.45rem;
 	white-space: nowrap;
+}
+
+.hotel-totals-group::before {
+	content: '|';
+	flex: 0 0 2.2rem;
+	width: 2.2rem;
+	color: #ccc;
+	text-align: center;
 }
 
 .hotel-totals-group strong {
@@ -96,10 +111,6 @@
 	object-fit: cover;
 	border-radius: 50%;
 	background: #fff;
-}
-
-.hotel-totals-sep {
-	color: #ccc;
 }
 
 .hotel-filters {
@@ -606,11 +617,20 @@
 	}
 
 	.hotel-totals {
-		gap: 0.4rem 0.7rem;
 		margin-bottom: 0.65rem;
 		padding: 0.55rem 0.85rem;
 		font-size: 0.82rem;
 		overflow-wrap: anywhere;
+	}
+
+	.hotel-totals-inner {
+		margin-left: -1.6rem;
+		row-gap: 0.4rem;
+	}
+
+	.hotel-totals-group::before {
+		flex: 0 0 1.6rem;
+		width: 1.6rem;
 	}
 
 	.hotel-totals-mobile-hide {

@@ -100,14 +100,15 @@
 		});
 
 		return (
-			'<span class="michelin-totals-group">' +
-				'<span class="mich-star"></span>' +
-				'<strong>' + current + '</strong> Current' +
-			'</span>' +
-			'<span class="michelin-totals-sep">|</span>' +
-			'<span class="michelin-totals-group">' +
-				'<span class="mich-star mich-star-former"></span>' +
-				'<strong>' + former + '</strong> Former' +
+			'<span class="michelin-totals-inner">' +
+				'<span class="michelin-totals-group">' +
+					'<span class="mich-star"></span>' +
+					'<strong>' + current + '</strong> Current' +
+				'</span>' +
+				'<span class="michelin-totals-group">' +
+					'<span class="mich-star mich-star-former"></span>' +
+					'<strong>' + former + '</strong> Former' +
+				'</span>' +
 			'</span>'
 		);
 	}
@@ -455,7 +456,8 @@
 			}
 		});
 
-		var groups = ['gourmand', 'selected'].map(function (rank) {
+		var groups = [];
+		['gourmand', 'selected'].forEach(function (rank) {
 			var current = 0, former = 0;
 			Object.keys(latestByName).forEach(function (key) {
 				var v = latestByName[key];
@@ -463,19 +465,20 @@
 				if (v.status === 'former') { former++; } else { current++; }
 			});
 			var meta = RANK_META[rank];
-			return (
+			groups.push(
 				'<span class="michelin-totals-group">' +
 					'<img class="mich-bib-icon" src="' + iconPath(meta.icon) + '" alt="' + meta.label + '">' +
 					'<strong>' + current + '</strong> Current' +
-				'</span>' +
-				'<span class="michelin-totals-sep">|</span>' +
+				'</span>'
+			);
+			groups.push(
 				'<span class="michelin-totals-group">' +
 					'<img class="mich-bib-icon mich-bib-icon-former" src="' + iconPath(meta.icon) + '" alt="' + meta.label + '">' +
 					'<strong>' + former + '</strong> Former' +
 				'</span>'
 			);
 		});
-		return groups.join('<span class="michelin-totals-sep">|</span>');
+		return '<span class="michelin-totals-inner">' + groups.join('') + '</span>';
 	}
 
 	function populateFiltersGourmand(visits) {
