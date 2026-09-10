@@ -413,17 +413,10 @@
 	}
 
 	function initMap() {
-		if (typeof L === 'undefined') return;
+		if (typeof L === 'undefined' || !window.TravelMaps) return;
 
-		map = L.map('travel-map', {
-			scrollWheelZoom: true,
-			zoomControl: true
-		}).setView([30, 10], 2);
-
-		L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-			attribution: '&copy; OpenStreetMap',
-			maxZoom: 19
-		}).addTo(map);
+		map = TravelMaps.createMap('travel-map').setView([30, 10], 2);
+		TravelMaps.addVisitedCountries(map, TravelMaps.countriesFromTravel(travelData));
 
 		$hoverCard = $('#travel-hover-card');
 
