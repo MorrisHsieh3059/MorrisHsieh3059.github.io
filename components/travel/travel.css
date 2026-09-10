@@ -396,6 +396,10 @@
 	border-top-color: var(--accent, #303F9F);
 }
 
+.hotel-popup .popup-slider .owl-dot.active span {
+	background: var(--accent, #303F9F);
+}
+
 .hotel-visit-popup-header {
 	padding: 1.5rem 2.5rem 1.25rem;
 }
