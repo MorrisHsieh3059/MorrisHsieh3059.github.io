@@ -690,6 +690,49 @@
 	background: var(--michelin-red);
 }
 
+@media (max-width: 991px) {
+	/* Compact one-line filters — same pattern as Hotel Collection. */
+	.michelin-filters {
+		flex-wrap: nowrap;
+		gap: 0.35rem;
+		margin-bottom: 0.85rem;
+	}
+
+	.michelin-filter {
+		width: auto;
+		flex: 1 1 0;
+		min-width: 0;
+		gap: 0;
+	}
+
+	.michelin-filter-label {
+		display: none;
+	}
+
+	.michelin-select {
+		min-width: 0;
+		width: 100%;
+	}
+
+	.michelin-select-btn {
+		width: 100% !important;
+		max-width: 100%;
+		box-sizing: border-box;
+		padding: 0.35rem 1.45rem 0.35rem 0.55rem;
+		font-size: 0.68rem;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		background-position: right 0.55rem center;
+	}
+
+	.michelin-select-list {
+		width: max(100%, 148px) !important;
+		min-width: 100%;
+		left: 0;
+		right: auto;
+	}
+}
+
 @media (max-width: 767px) {
 	.michelin-grid,
 	.award-grid {
@@ -706,21 +749,6 @@
 		padding: 0.5rem 0.85rem;
 		font-size: 0.72rem;
 		letter-spacing: 0.5px;
-	}
-
-	.michelin-filter {
-		width: 100%;
-		justify-content: space-between;
-	}
-
-	.michelin-select {
-		min-width: 0;
-		flex: 1 1 auto;
-	}
-
-	.michelin-select-btn {
-		width: 100%;
-		box-sizing: border-box;
 	}
 
 	.michelin-popup-header,
