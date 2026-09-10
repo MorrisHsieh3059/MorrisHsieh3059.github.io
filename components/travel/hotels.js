@@ -249,17 +249,29 @@
 			if (brand && counts[brand] != null) counts[brand]++;
 		});
 
-		var groups = BRANDS.map(function (b) {
+		// Visit-count desc; stable BRANDS order on ties. Mobile CSS keeps top 4 only.
+		var ranked = BRANDS.slice().sort(function (a, b) {
+			var diff = counts[b.name] - counts[a.name];
+			if (diff) return diff;
+			return BRANDS.indexOf(a) - BRANDS.indexOf(b);
+		});
+
+		var parts = [];
+		ranked.forEach(function (b, i) {
 			var stayed = brandHasStay(b.name);
-			return (
-				'<span class="hotel-totals-group' + (stayed ? ' hotel-totals-group-stay' : '') + '">' +
+			var hide = i >= 4 ? ' hotel-totals-mobile-hide' : '';
+			if (i) {
+				parts.push('<span class="hotel-totals-sep' + hide + '">|</span>');
+			}
+			parts.push(
+				'<span class="hotel-totals-group' + (stayed ? ' hotel-totals-group-stay' : '') + hide + '">' +
 					'<img class="hotel-totals-icon" src="' + brandIconPath(b.slug, stayed ? 'stay' : '') + '" alt="">' +
 					'<span>' + b.name + '</span> ' +
 					'<strong>' + counts[b.name] + '</strong>' +
 				'</span>'
 			);
 		});
-		$('#hotel-stats').html(groups.join('<span class="hotel-totals-sep">|</span>'));
+		$('#hotel-stats').html(parts.join(''));
 	}
 
 	function sizeSelectToContent($container) {
