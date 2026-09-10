@@ -82,9 +82,13 @@ body.menu-dismissed .menu-btn:hover + .menu {
 	opacity: 0.95;
 }
 
+.tagline-sep,
+.tagline-pipe {
+	padding: 0 0.45em;
+}
+
 /* Desktop: keep the heading and tagline on one line. */
-.intro-nl,
-.tagline-nl {
+.intro-nl {
 	display: none;
 }
 
@@ -376,12 +380,33 @@ body.menu-dismissed .menu-btn:hover + .menu {
 		letter-spacing: 0.04em;
 	}
 
-	.tagline-pipe {
-		display: none;
+	.tagline {
+		display: grid;
+		grid-template-columns: 1fr auto 1fr;
+		column-gap: 0.45em;
+		justify-items: stretch;
+		width: 100%;
 	}
 
-	.tagline-nl {
-		display: block;
+	.tagline-row {
+		display: contents;
+	}
+
+	.tagline-left {
+		text-align: right;
+	}
+
+	.tagline-right {
+		text-align: left;
+	}
+
+	.tagline-sep {
+		padding: 0;
+		text-align: center;
+	}
+
+	.tagline-pipe {
+		display: none;
 	}
 
 	.identity-tags {
