@@ -62,30 +62,57 @@
 	color: #888;
 }
 
-.michelin-totals {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	gap: 0.6rem 1.1rem;
+.michelin-totals,
+.award-totals {
+	overflow: hidden;
 	margin: 0 0 1.75rem;
 	padding: 0.75rem 1.25rem;
 	background: #fff;
-	border-left: 4px solid var(--michelin-red);
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 	font-family: 'Roboto Mono', sans-serif;
 	font-size: 0.95rem;
 	color: #444;
 }
 
-.michelin-totals:empty {
+.michelin-totals {
+	border-left: 4px solid var(--michelin-red);
+}
+
+.award-totals {
+	border-left: 4px solid var(--award-brown);
+}
+
+.michelin-totals:empty,
+.award-totals:empty {
 	display: none;
 }
 
-.michelin-totals-group {
+/* Leading "|" on each group; inner row pulled left + outer overflow clips
+   so a wrapped line never starts or ends with a pipe. */
+.michelin-totals-inner,
+.award-totals-inner {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	row-gap: 0.6rem;
+	margin-left: -2.2rem;
+}
+
+.michelin-totals-group,
+.award-totals-group {
 	display: inline-flex;
 	align-items: center;
 	gap: 0.45rem;
 	white-space: nowrap;
+}
+
+.michelin-totals-group::before,
+.award-totals-group::before {
+	content: '|';
+	flex: 0 0 2.2rem;
+	width: 2.2rem;
+	color: #ccc;
+	text-align: center;
 }
 
 .michelin-totals-group .mich-star {
@@ -98,44 +125,7 @@
 	height: 16px;
 }
 
-.michelin-totals-group strong {
-	color: #222;
-	font-size: 1.05rem;
-}
-
-.michelin-totals-sep,
-.award-totals-sep {
-	color: #ccc;
-}
-
-/* Award tab's stats banner has five named groups instead of two, so it
-   wraps on narrow screens rather than forcing everything onto one line. */
-.award-totals {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	gap: 0.6rem 1.1rem;
-	margin: 0 0 1.75rem;
-	padding: 0.75rem 1.25rem;
-	background: #fff;
-	border-left: 4px solid var(--award-brown);
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-	font-family: 'Roboto Mono', sans-serif;
-	font-size: 0.95rem;
-	color: #444;
-}
-
-.award-totals:empty {
-	display: none;
-}
-
-.award-totals-group {
-	display: inline-flex;
-	align-items: center;
-	gap: 0.45rem;
-	white-space: nowrap;
-}
-
+.michelin-totals-group strong,
 .award-totals-group strong {
 	color: #222;
 	font-size: 1.05rem;

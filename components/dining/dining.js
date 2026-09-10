@@ -100,14 +100,15 @@
 		});
 
 		return (
-			'<span class="michelin-totals-group">' +
-				'<span class="mich-star"></span>' +
-				'<strong>' + current + '</strong> Current' +
-			'</span>' +
-			'<span class="michelin-totals-sep">|</span>' +
-			'<span class="michelin-totals-group">' +
-				'<span class="mich-star mich-star-former"></span>' +
-				'<strong>' + former + '</strong> Former' +
+			'<span class="michelin-totals-inner">' +
+				'<span class="michelin-totals-group">' +
+					'<span class="mich-star"></span>' +
+					'<strong>' + current + '</strong> Current' +
+				'</span>' +
+				'<span class="michelin-totals-group">' +
+					'<span class="mich-star mich-star-former"></span>' +
+					'<strong>' + former + '</strong> Former' +
+				'</span>' +
 			'</span>'
 		);
 	}
@@ -455,7 +456,8 @@
 			}
 		});
 
-		var groups = ['gourmand', 'selected'].map(function (rank) {
+		var groups = [];
+		['gourmand', 'selected'].forEach(function (rank) {
 			var current = 0, former = 0;
 			Object.keys(latestByName).forEach(function (key) {
 				var v = latestByName[key];
@@ -463,19 +465,20 @@
 				if (v.status === 'former') { former++; } else { current++; }
 			});
 			var meta = RANK_META[rank];
-			return (
+			groups.push(
 				'<span class="michelin-totals-group">' +
 					'<img class="mich-bib-icon" src="' + iconPath(meta.icon) + '" alt="' + meta.label + '">' +
 					'<strong>' + current + '</strong> Current' +
-				'</span>' +
-				'<span class="michelin-totals-sep">|</span>' +
+				'</span>'
+			);
+			groups.push(
 				'<span class="michelin-totals-group">' +
 					'<img class="mich-bib-icon mich-bib-icon-former" src="' + iconPath(meta.icon) + '" alt="' + meta.label + '">' +
 					'<strong>' + former + '</strong> Former' +
 				'</span>'
 			);
 		});
-		return groups.join('<span class="michelin-totals-sep">|</span>');
+		return '<span class="michelin-totals-inner">' + groups.join('') + '</span>';
 	}
 
 	function populateFiltersGourmand(visits) {
@@ -794,19 +797,20 @@
 		rankings in the same year, e.g. a regional + a global rank, still
 		only counts once, same dedup-by-name principle as the MICHELIN
 		star totals above). Only these six groups get a tile, by design —
-		OAD's three tiers aren't shown here.
+		OAD's three tiers aren't shown here. Labels stay short (icon carries
+		the list identity); groups render high-count → low-count.
 	=========================================================================*/
 	var AWARD_STAT_GROUPS = [
-		{ list: '50-best-restaurants', label: 'Top 50 Restaurant' },
-		{ list: '50-best-bars', label: 'Top 50 Bars' },
-		{ list: '101-best-steakhouse', label: '101 Best Steakhouse' },
-		{ list: '101-best-burgers', label: '101 Best Burgers' },
-		{ list: '50-best-pizza', label: 'Top 50 Pizza' },
-		{ list: 'nyt-100-best-restaurants', label: 'NYT 100 Best' }
+		{ list: '50-best-restaurants', label: 'Restaurant' },
+		{ list: '50-best-bars', label: 'Bars' },
+		{ list: '101-best-steakhouse', label: 'Steakhouse' },
+		{ list: '101-best-burgers', label: 'Burgers' },
+		{ list: '50-best-pizza', label: 'Pizza' },
+		{ list: 'nyt-100-best-restaurants', label: '100 Best' }
 	];
 
 	function awardTotalsHtml(visits) {
-		var groupsHtml = AWARD_STAT_GROUPS.map(function (group) {
+		var groups = AWARD_STAT_GROUPS.map(function (group) {
 			var names = {};
 			visits.forEach(function (v) {
 				var key = (v.name || '').trim().toLowerCase();
@@ -814,7 +818,11 @@
 				var hasThisList = accoladesList(v).some(function (a) { return a.list === group.list; });
 				if (hasThisList) names[key] = true;
 			});
-			var count = Object.keys(names).length;
+			return { list: group.list, label: group.label, count: Object.keys(names).length };
+		});
+		groups.sort(function (a, b) { return b.count - a.count; });
+
+		var groupsHtml = groups.map(function (group) {
 			var icon = accoladeListMeta(group.list).icon;
 			var iconHtml = icon
 				? '<img class="award-totals-icon" src="' + iconPath(icon) + '" alt="">'
@@ -823,11 +831,14 @@
 				'<span class="award-totals-group">' +
 					iconHtml +
 					'<span>' + group.label + '</span> ' +
-					'<strong>' + count + '</strong>' +
+					'<strong>' + group.count + '</strong>' +
 				'</span>'
 			);
 		});
-		return groupsHtml.join('<span class="award-totals-sep">|</span>');
+		// Leading "|" lives on each group via CSS ::before; an inner flex row
+		// is pulled left and the outer box clips, so a wrapped line never
+		// starts or ends with a pipe.
+		return '<span class="award-totals-inner">' + groupsHtml.join('') + '</span>';
 	}
 
 	/*=========================================================================

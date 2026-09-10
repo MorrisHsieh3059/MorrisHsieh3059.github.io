@@ -260,9 +260,6 @@
 		ranked.forEach(function (b, i) {
 			var stayed = brandHasStay(b.name);
 			var hide = i >= 4 ? ' hotel-totals-mobile-hide' : '';
-			if (i) {
-				parts.push('<span class="hotel-totals-sep' + hide + '">|</span>');
-			}
 			parts.push(
 				'<span class="hotel-totals-group' + (stayed ? ' hotel-totals-group-stay' : '') + hide + '">' +
 					'<img class="hotel-totals-icon" src="' + brandIconPath(b.slug, stayed ? 'stay' : '') + '" alt="">' +
@@ -271,7 +268,8 @@
 				'</span>'
 			);
 		});
-		$('#hotel-stats').html(parts.join(''));
+		// Leading "|" via CSS ::before + overflow clip — same as dining stats banners.
+		$('#hotel-stats').html('<span class="hotel-totals-inner">' + parts.join('') + '</span>');
 	}
 
 	function sizeSelectToContent($container) {
