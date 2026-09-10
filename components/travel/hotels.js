@@ -135,6 +135,28 @@
 	}
 
 	var POPUP_NAV = ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>'];
+	// Dots stay readable on a phone up to about this many; beyond that use a counter.
+	var POPUP_DOTS_MAX = 12;
+
+	function ensurePhotoCounter($slider, total) {
+		var $counter = $slider.find('> .hotel-popup-photo-count');
+		if (!$counter.length) {
+			$counter = $('<div class="hotel-popup-photo-count" aria-live="polite"></div>');
+			$slider.append($counter);
+		}
+		function syncFromEvent(e) {
+			var index = 0;
+			if (e && e.relatedTarget && typeof e.relatedTarget.relative === 'function') {
+				index = e.relatedTarget.relative(e.item.index);
+			} else if (e && e.item && typeof e.item.index === 'number') {
+				index = ((e.item.index % total) + total) % total;
+			}
+			$counter.text((index + 1) + ' / ' + total);
+		}
+		$slider.off('changed.owl.carousel.hotelCount').on('changed.owl.carousel.hotelCount', syncFromEvent);
+		$counter.text('1 / ' + total);
+		return $counter;
+	}
 
 	function bindVisitPopups($cards) {
 		$cards.magnificPopup({
@@ -154,17 +176,22 @@
 						: '';
 					if (visitId) focusVisit(visitId);
 					var $slider = fillPopupSlider(this.content);
+					var count = $slider.find('.item').length;
+					var useDots = count > 1 && count <= POPUP_DOTS_MAX;
 					$slider.owlCarousel({
 						items: 1,
-						loop: $slider.find('.item').length > 1,
-						nav: true,
-						dots: true,
+						loop: count > 1,
+						nav: count > 1,
+						dots: useDots,
 						autoplay: false,
 						navText: POPUP_NAV
 					});
+					if (count > 1) ensurePhotoCounter($slider, count);
 				},
 				close: function () {
 					var $slider = this.content.find('.popup-slider');
+					$slider.off('changed.owl.carousel.hotelCount');
+					this.content.find('.hotel-popup-photo-count').remove();
 					if ($slider.data('owl.carousel')) {
 						$slider.trigger('destroy.owl.carousel');
 					}
