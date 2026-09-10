@@ -51,11 +51,16 @@
 }
 
 .travel-panel.active {
-	display: block;
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 auto;
+	min-height: 0;
+	overflow: hidden;
 }
 
 .hotel-totals {
 	overflow: hidden;
+	flex-shrink: 0;
 	margin: 0 0 1.25rem;
 	padding: 0.75rem 1.25rem;
 	background: #fff;
@@ -118,6 +123,7 @@
 	flex-wrap: wrap;
 	gap: 1.25rem;
 	align-items: center;
+	flex-shrink: 0;
 	margin: 0 0 1.5rem;
 }
 
@@ -218,12 +224,18 @@
 
 .hotel-layout {
 	display: grid;
-	grid-template-columns: minmax(0, 7fr) minmax(260px, 3fr);
+	grid-template-columns: minmax(0, 7fr) minmax(0, 3fr);
+	grid-template-rows: minmax(0, 1fr);
 	gap: 0.85rem;
 	align-items: stretch;
+	flex: 1 1 auto;
+	min-height: 0;
+	overflow: hidden;
 }
 
 .hotel-map-panel {
+	display: flex;
+	flex-direction: column;
 	min-width: 0;
 	min-height: 0;
 	height: 100%;
@@ -231,9 +243,9 @@
 
 .hotel-map-wrap {
 	position: relative;
+	flex: 1 1 auto;
 	width: 100%;
-	height: clamp(320px, calc(100vh - 380px), 560px);
-	height: clamp(320px, calc(100dvh - 380px), 560px);
+	min-height: 0;
 	background: #e8eaf6;
 	border: 1px solid #d0d0d0;
 }
@@ -307,10 +319,11 @@
 
 .hotel-timeline {
 	min-width: 0;
-	height: clamp(320px, calc(100vh - 380px), 560px);
-	height: clamp(320px, calc(100dvh - 380px), 560px);
+	min-height: 0;
+	height: 100%;
 	display: flex;
 	flex-direction: column;
+	overflow: hidden;
 }
 
 .hotel-timeline-scroller {
@@ -694,18 +707,17 @@
 	}
 
 	.hotel-map-panel {
-		flex: 0 1 auto;
+		flex: 1.15 1 0;
 		min-height: 0;
 		height: auto;
 		max-width: 100%;
 		min-width: 0;
 	}
 
-	/* Same map budget as Journal; shrink when stats/filters eat height. */
 	.hotel-map-wrap {
-		height: clamp(240px, 42vh, 420px);
-		height: clamp(240px, 42dvh, 420px);
-		min-height: 180px;
+		flex: 1 1 auto;
+		height: auto;
+		min-height: 0;
 		max-width: 100%;
 		min-width: 0;
 		box-sizing: border-box;
@@ -754,28 +766,77 @@
 	margin-left: 0.35rem;
 }
 
-/* Fit map + cards inside the blue page frame (main-content inset + section chrome) */
+/* Fill the blue page frame; map + sidebar take leftover height with a bottom gutter. */
+.travel-section.section {
+	overflow: hidden;
+	overscroll-behavior: none;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	max-width: 100%;
+}
+
 .travel-section .section-block {
+	flex: 1 1 auto;
+	min-height: 0;
+	display: flex;
+	flex-direction: column;
 	padding-right: 44px;
+	padding-bottom: 2.5vh;
+	padding-bottom: 2.5dvh;
+	box-sizing: border-box;
+}
+
+.travel-section .container-fluid {
+	flex: 1 1 auto;
+	min-width: 0;
+	min-height: 0;
+	max-width: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
+}
+
+.travel-section .container-fluid:before,
+.travel-section .container-fluid:after {
+	display: none;
+}
+
+.travel-section .section-header,
+.travel-section .travel-tabs,
+.travel-section .travel-stats,
+.travel-section .travel-notice,
+.travel-section .hotel-totals,
+.travel-section .hotel-filters {
+	flex-shrink: 0;
 }
 
 .travel-layout {
 	display: grid;
-	grid-template-columns: minmax(0, 1fr) minmax(220px, 24%);
+	grid-template-columns: minmax(0, 3fr) minmax(0, 1fr);
+	grid-template-rows: minmax(0, 1fr);
 	gap: 0.75rem;
 	margin-top: 1rem;
 	align-items: stretch;
+	flex: 1 1 auto;
+	min-height: 0;
+	overflow: hidden;
 }
 
 .travel-map-panel {
+	display: flex;
+	flex-direction: column;
 	min-width: 0;
+	min-height: 0;
+	height: 100%;
 }
 
 .travel-map-wrap {
 	position: relative;
+	flex: 1 1 auto;
 	width: 100%;
-	height: clamp(300px, calc(100vh - 340px), 520px);
-	height: clamp(300px, calc(100dvh - 340px), 520px);
+	min-height: 0;
 	background: #e8eaf6;
 	border: 1px solid #d0d0d0;
 }
@@ -938,14 +999,16 @@
 
 .travel-cards-sidebar {
 	min-width: 0;
-	height: clamp(300px, calc(100vh - 340px), 520px);
-	height: clamp(300px, calc(100dvh - 340px), 520px);
+	min-height: 0;
+	height: 100%;
 	display: flex;
 	flex-direction: column;
 	padding: 0;
+	overflow: hidden;
 }
 
 .travel-stats {
+	flex-shrink: 0;
 	margin: 1rem 0 0.5rem;
 	font-family: 'Roboto Mono', sans-serif;
 	font-size: 0.88rem;
@@ -1129,7 +1192,8 @@
 		display: flex;
 		flex-direction: column;
 		padding-right: 24px;
-		padding-bottom: 16px;
+		padding-bottom: 2vh;
+		padding-bottom: 2dvh;
 		box-sizing: border-box;
 	}
 
@@ -1199,16 +1263,19 @@
 		flex: 1 1 auto;
 		min-height: 0;
 		margin-top: 0.75rem;
+		overflow: hidden;
 	}
 
 	.travel-map-panel {
-		flex: 0 0 auto;
+		flex: 1.15 1 0;
+		min-height: 0;
+		height: auto;
 	}
 
 	.travel-map-wrap {
-		height: clamp(240px, 42vh, 420px);
-		height: clamp(240px, 42dvh, 420px);
-		min-height: 240px;
+		flex: 1 1 auto;
+		height: auto;
+		min-height: 0;
 		overflow: hidden;
 	}
 
@@ -1253,19 +1320,13 @@
 	.travel-section .section-block {
 		padding-left: 16px;
 		padding-right: 16px;
-		padding-bottom: calc(12px + var(--safe-bottom, 0px));
+		padding-bottom: calc(2vh + var(--safe-bottom, 0px));
+		padding-bottom: calc(2dvh + var(--safe-bottom, 0px));
 	}
 
 	.travel-section .section-header > h2 {
 		font-size: 18px;
 		letter-spacing: 1px;
-	}
-
-	.travel-map-wrap,
-	.hotel-map-wrap {
-		height: clamp(220px, 38vh, 360px);
-		height: clamp(220px, 38dvh, 360px);
-		min-height: 220px;
 	}
 
 	/* Match dining visit popup mobile packing */
@@ -1315,11 +1376,3 @@
 	}
 }
 
-@media (max-width: 991px) and (max-height: 540px) {
-	.travel-map-wrap,
-	.hotel-map-wrap {
-		height: clamp(110px, 22vh, 160px);
-		height: clamp(110px, 22dvh, 160px);
-		min-height: 100px;
-	}
-}
