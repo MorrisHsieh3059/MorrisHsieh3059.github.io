@@ -82,6 +82,12 @@ body.menu-dismissed .menu-btn:hover + .menu {
 	opacity: 0.95;
 }
 
+/* Desktop: keep the heading and tagline on one line. */
+.intro-nl,
+.tagline-nl {
+	display: none;
+}
+
 .identity-tags {
 	margin-top: 1.5rem;
 	display: flex;
@@ -361,9 +367,21 @@ body.menu-dismissed .menu-btn:hover + .menu {
 		line-height: 1.15;
 	}
 
+	.section-main .intro-text h1 .intro-nl {
+		display: block;
+	}
+
 	.section-main .intro-text p {
 		font-size: 0.92rem;
 		letter-spacing: 0.04em;
+	}
+
+	.tagline-pipe {
+		display: none;
+	}
+
+	.tagline-nl {
+		display: block;
 	}
 
 	.identity-tags {
