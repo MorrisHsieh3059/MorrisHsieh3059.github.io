@@ -680,6 +680,22 @@
 	background: var(--michelin-red);
 }
 
+.popup-photo-count {
+	position: absolute;
+	right: 0.75rem;
+	bottom: 0.55rem;
+	z-index: 2;
+	padding: 0.2rem 0.55rem;
+	border-radius: 999px;
+	background: rgba(0, 0, 0, 0.55);
+	color: #fff;
+	font-family: 'Roboto Mono', sans-serif;
+	font-size: 0.72rem;
+	font-weight: 700;
+	letter-spacing: 0.04em;
+	pointer-events: none;
+}
+
 @media (max-width: 991px) {
 	/* Compact one-line filters — same pattern as Hotel Collection. */
 	.michelin-filters {
@@ -749,6 +765,12 @@
 	.michelin-popup-header h4,
 	.award-popup-header h4 {
 		font-size: 1.15rem;
+	}
+
+	.popup-photo-count {
+		bottom: 0.7rem;
+		right: 0.65rem;
+		font-size: 0.68rem;
 	}
 }
 

@@ -208,6 +208,26 @@
 
 	var POPUP_NAV = ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>'];
 
+	function ensurePhotoCounter($slider, total) {
+		var $counter = $slider.find('> .popup-photo-count');
+		if (!$counter.length) {
+			$counter = $('<div class="popup-photo-count" aria-live="polite"></div>');
+			$slider.append($counter);
+		}
+		function syncFromEvent(e) {
+			var index = 0;
+			if (e && e.relatedTarget && typeof e.relatedTarget.relative === 'function') {
+				index = e.relatedTarget.relative(e.item.index);
+			} else if (e && e.item && typeof e.item.index === 'number') {
+				index = ((e.item.index % total) + total) % total;
+			}
+			$counter.text((index + 1) + ' / ' + total);
+		}
+		$slider.off('changed.owl.carousel.diningCount').on('changed.owl.carousel.diningCount', syncFromEvent);
+		$counter.text('1 / ' + total);
+		return $counter;
+	}
+
 	function bindVisitPopups($cards, extraClass) {
 		$cards.magnificPopup({
 			type: 'inline',
@@ -222,17 +242,21 @@
 			callbacks: {
 				open: function () {
 					var $slider = fillPopupSlider(this.content);
+					var count = $slider.find('.item').length;
 					$slider.owlCarousel({
 						items: 1,
-						loop: $slider.find('.item').length > 1,
-						nav: true,
-						dots: true,
+						loop: count > 1,
+						nav: count > 1,
+						dots: false,
 						autoplay: false,
 						navText: POPUP_NAV
 					});
+					if (count > 1) ensurePhotoCounter($slider, count);
 				},
 				close: function () {
 					var $slider = this.content.find('.popup-slider');
+					$slider.off('changed.owl.carousel.diningCount');
+					this.content.find('.popup-photo-count').remove();
 					if ($slider.data('owl.carousel')) {
 						$slider.trigger('destroy.owl.carousel');
 					}
