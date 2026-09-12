@@ -225,58 +225,92 @@
 		return waterCache[key];
 	}
 
+	function currentWorld(map, zoom) {
+		var wrap = Math.pow(2, zoom);
+		var worldPx = 256 * wrap;
+		var centerX = map.project(map.getCenter(), zoom).x;
+		return Math.floor(centerX / worldPx);
+	}
+
 	function visibleTiles(map, zoom) {
+		var wrap = Math.pow(2, zoom);
+		var worldIndex = currentWorld(map, zoom);
+		var origin = worldIndex * wrap;
 		var nw = map.project(map.getBounds().getNorthWest(), zoom);
 		var se = map.project(map.getBounds().getSouthEast(), zoom);
+		var minX = Math.max(Math.floor(nw.x / 256), origin);
+		var maxX = Math.min(Math.floor(se.x / 256), origin + wrap - 1);
+		var minY = Math.max(Math.floor(nw.y / 256), 0);
+		var maxY = Math.min(Math.floor(se.y / 256), wrap - 1);
 		var tiles = [];
-		var minX = Math.floor(nw.x / 256);
-		var maxX = Math.floor(se.x / 256);
-		var minY = Math.floor(nw.y / 256);
-		var maxY = Math.floor(se.y / 256);
-		var wrap = Math.pow(2, zoom);
-		for (var x = minX; x <= maxX; x++) {
-			for (var y = minY; y <= maxY; y++) {
-				if (y < 0 || y >= wrap) continue;
-				tiles.push({
-					x: ((x % wrap) + wrap) % wrap,
-					y: y,
-					worldX: x
-				});
+		var seen = {};
+		var x, y, tx, key;
+		for (x = minX; x <= maxX; x++) {
+			tx = x - origin;
+			for (y = minY; y <= maxY; y++) {
+				key = tx + '/' + y;
+				if (seen[key]) continue;
+				seen[key] = true;
+				tiles.push({ x: tx, y: y, worldX: x });
 			}
 		}
 		return tiles;
 	}
 
-	function punchRenderer(renderer, ringsByTile) {
-		var map = renderer._map;
+	function withLayerCanvas(renderer, fn) {
 		var ctx = renderer._ctx;
 		var bounds = renderer._bounds;
-		if (!map || !ctx || !bounds) return;
-		var zoom = Math.floor(map.getZoom());
+		if (!ctx || !bounds) return;
 		var retina = L.Browser.retina ? 2 : 1;
 		ctx.save();
 		ctx.setTransform(retina, 0, 0, retina, -bounds.min.x * retina, -bounds.min.y * retina);
-		ctx.globalCompositeOperation = 'destination-out';
-		ctx.beginPath();
-		Object.keys(ringsByTile).forEach(function (key) {
-			var parts = key.split('/');
-			var worldX = Number(parts[1]);
-			var worldY = Number(parts[2]);
-			ringsByTile[key].forEach(function (item) {
-				var ring = item.ring;
-				if (!ring.length) return;
-				var scale = 256 / item.extent;
-				for (var i = 0; i < ring.length; i++) {
-					var world = L.point(worldX * 256 + ring[i][0] * scale, worldY * 256 + ring[i][1] * scale);
-					var pt = map.latLngToLayerPoint(map.unproject(world, zoom));
-					if (i === 0) ctx.moveTo(pt.x, pt.y);
-					else ctx.lineTo(pt.x, pt.y);
-				}
-				ctx.closePath();
-			});
-		});
-		ctx.fill('evenodd');
+		fn(ctx);
 		ctx.restore();
+	}
+
+	function clipToCurrentWorld(renderer) {
+		var map = renderer._map;
+		if (!map) return;
+		var zoom = map.getZoom();
+		var worldPx = 256 * Math.pow(2, zoom);
+		var worldIndex = currentWorld(map, zoom);
+		var minAbs = worldIndex * worldPx;
+		var top = map.latLngToLayerPoint(map.unproject(L.point(minAbs, 0), zoom));
+		var bot = map.latLngToLayerPoint(map.unproject(L.point(minAbs + worldPx, worldPx), zoom));
+		withLayerCanvas(renderer, function (ctx) {
+			ctx.globalCompositeOperation = 'destination-in';
+			ctx.beginPath();
+			ctx.rect(top.x, top.y, bot.x - top.x, bot.y - top.y);
+			ctx.fill();
+		});
+	}
+
+	function punchRenderer(renderer, ringsByTile) {
+		var map = renderer._map;
+		if (!map) return;
+		var zoom = Math.floor(map.getZoom());
+		withLayerCanvas(renderer, function (ctx) {
+			ctx.globalCompositeOperation = 'destination-out';
+			ctx.beginPath();
+			Object.keys(ringsByTile).forEach(function (key) {
+				var parts = key.split('/');
+				var worldX = Number(parts[1]);
+				var worldY = Number(parts[2]);
+				ringsByTile[key].forEach(function (item) {
+					var ring = item.ring;
+					if (!ring.length) return;
+					var scale = 256 / item.extent;
+					for (var i = 0; i < ring.length; i++) {
+						var world = L.point(worldX * 256 + ring[i][0] * scale, worldY * 256 + ring[i][1] * scale);
+						var pt = map.latLngToLayerPoint(map.unproject(world, zoom));
+						if (i === 0) ctx.moveTo(pt.x, pt.y);
+						else ctx.lineTo(pt.x, pt.y);
+					}
+					ctx.closePath();
+				});
+			});
+			ctx.fill('evenodd');
+		});
 	}
 
 	function attachWaterClip(renderer) {
@@ -284,6 +318,7 @@
 		var gen = 0;
 		renderer._updatePaths = function () {
 			orig.call(this);
+			clipToCurrentWorld(this);
 			var map = this._map;
 			if (!map || map.getZoom() < WATER_MIN_Z) return;
 			var zoom = Math.min(Math.floor(map.getZoom()), WATER_MAX_Z);
@@ -303,7 +338,7 @@
 						ringsByTile[item.key] = item.rings;
 					}
 				});
-				punchRenderer(self, ringsByTile, zoom);
+				punchRenderer(self, ringsByTile);
 			});
 		};
 	}
@@ -326,7 +361,7 @@
 			if (map._visitedCountryLayer) {
 				map.removeLayer(map._visitedCountryLayer);
 			}
-			var renderer = L.canvas({ padding: 1, pane: 'visitedCountries' });
+			var renderer = L.canvas({ padding: 0.1, pane: 'visitedCountries' });
 			attachWaterClip(renderer);
 			map._visitedCountryLayer = L.geoJSON(data, {
 				pane: 'visitedCountries',
