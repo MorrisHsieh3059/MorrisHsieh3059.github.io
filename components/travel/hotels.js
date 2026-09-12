@@ -435,6 +435,15 @@
 			maxZoom: 19
 		}).addTo(map);
 
+		if (window.TravelCountryLayer) {
+			var visited = {};
+			visits.forEach(function (visit) {
+				var hotel = visitHotel(visit);
+				if (hotel && hotel.country) visited[hotel.country] = true;
+			});
+			window.TravelCountryLayer.addTo(map, Object.keys(visited));
+		}
+
 		visits.forEach(function (visit) {
 			var hotel = visitHotel(visit);
 			if (hotel && hotel.lat != null && hotel.lng != null) {

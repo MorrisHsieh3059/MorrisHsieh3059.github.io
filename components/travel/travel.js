@@ -425,6 +425,17 @@
 			maxZoom: 19
 		}).addTo(map);
 
+		if (window.TravelCountryLayer) {
+			var visited = {};
+			(travelData.homeBases || []).forEach(function (home) {
+				if (home.country) visited[home.country] = true;
+			});
+			(travelData.cities || []).forEach(function (city) {
+				if (city.country) visited[city.country] = true;
+			});
+			window.TravelCountryLayer.addTo(map, Object.keys(visited));
+		}
+
 		$hoverCard = $('#travel-hover-card');
 
 		$hoverCard.off('mouseenter mouseleave click').on('mouseenter', function () {
@@ -583,14 +594,15 @@
 	}
 
 	function showTravelTab(tab) {
-		if (tab !== 'journal' && tab !== 'hotels') return;
+		if (tab === 'journal') tab = 'journey';
+		if (tab !== 'journey' && tab !== 'hotels') return;
 
 		$('.travel-tab-toggle').removeClass('active');
 		$('.travel-tab-toggle[data-travel-tab="' + tab + '"]').addClass('active');
 		$('.travel-panel').removeClass('active');
 		$('.travel-panel[data-travel-panel="' + tab + '"]').addClass('active');
 
-		if (tab === 'journal') {
+		if (tab === 'journey') {
 			if ($('#travel-map').length && !travelData) {
 				loadTravel();
 			} else if (map) {
@@ -603,7 +615,7 @@
 
 	function applyTravelRoute(route, meta) {
 		if (!route || route.section !== 'travel') return;
-		var tab = route.travelTab || 'journal';
+		var tab = route.travelTab || 'journey';
 		var delay = meta && meta.animated ? 1300 : 0;
 		setTimeout(function () { showTravelTab(tab); }, delay);
 	}

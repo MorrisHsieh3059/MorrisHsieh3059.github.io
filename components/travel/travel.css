@@ -517,7 +517,7 @@
 }
 
 @media (max-width: 991px) {
-	.travel-panel[data-travel-panel="journal"].active {
+	.travel-panel[data-travel-panel="journey"].active {
 		display: flex;
 		flex-direction: column;
 		flex: 1 1 auto;
@@ -621,6 +621,14 @@
 	z-index: 1;
 }
 
+.leaflet-visitedCountries-pane {
+	pointer-events: none;
+}
+
+.leaflet-visitedCountries-pane path {
+	shape-rendering: geometricPrecision;
+}
+
 .travel-map-legend {
 	position: absolute;
 	bottom: 12px;
@@ -636,6 +644,30 @@
 .travel-map-legend span {
 	display: inline-block;
 	margin-right: 0.75rem;
+}
+
+.hotel-map-legend {
+	position: absolute;
+	bottom: 12px;
+	left: 12px;
+	z-index: 500;
+	background: rgba(255, 255, 255, 0.92);
+	padding: 0.5rem 0.75rem;
+	font-size: 0.78rem;
+	font-family: 'Roboto Mono', sans-serif;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.legend-country::before {
+	content: '';
+	display: inline-block;
+	width: 12px;
+	height: 9px;
+	margin-right: 4px;
+	vertical-align: middle;
+	background: rgba(61, 90, 254, 0.4);
+	border: 1px solid #303F9F;
+	box-sizing: border-box;
 }
 
 .legend-home::before,
@@ -945,7 +977,7 @@
 }
 
 @media (max-width: 991px) {
-	/* Pin title / stats / map; only the trip-journal cards scroll.
+	/* Pin title / stats / map; only the trip-journey cards scroll.
 	   min-width:0 on the flex chain so long titles cannot blow past the page frame. */
 	.travel-section.section {
 		overflow: hidden;
