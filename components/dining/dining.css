@@ -62,30 +62,57 @@
 	color: #888;
 }
 
-.michelin-totals {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	gap: 0.6rem 1.1rem;
+.michelin-totals,
+.award-totals {
+	overflow: hidden;
 	margin: 0 0 1.75rem;
 	padding: 0.75rem 1.25rem;
 	background: #fff;
-	border-left: 4px solid var(--michelin-red);
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 	font-family: 'Roboto Mono', sans-serif;
 	font-size: 0.95rem;
 	color: #444;
 }
 
-.michelin-totals:empty {
+.michelin-totals {
+	border-left: 4px solid var(--michelin-red);
+}
+
+.award-totals {
+	border-left: 4px solid var(--award-brown);
+}
+
+.michelin-totals:empty,
+.award-totals:empty {
 	display: none;
 }
 
-.michelin-totals-group {
+/* Leading "|" on each group; inner row pulled left + outer overflow clips
+   so a wrapped line never starts or ends with a pipe. */
+.michelin-totals-inner,
+.award-totals-inner {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	row-gap: 0.6rem;
+	margin-left: -2.2rem;
+}
+
+.michelin-totals-group,
+.award-totals-group {
 	display: inline-flex;
 	align-items: center;
 	gap: 0.45rem;
 	white-space: nowrap;
+}
+
+.michelin-totals-group::before,
+.award-totals-group::before {
+	content: '|';
+	flex: 0 0 2.2rem;
+	width: 2.2rem;
+	color: #ccc;
+	text-align: center;
 }
 
 .michelin-totals-group .mich-star {
@@ -98,44 +125,7 @@
 	height: 16px;
 }
 
-.michelin-totals-group strong {
-	color: #222;
-	font-size: 1.05rem;
-}
-
-.michelin-totals-sep,
-.award-totals-sep {
-	color: #ccc;
-}
-
-/* Award tab's stats banner has five named groups instead of two, so it
-   wraps on narrow screens rather than forcing everything onto one line. */
-.award-totals {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	gap: 0.6rem 1.1rem;
-	margin: 0 0 1.75rem;
-	padding: 0.75rem 1.25rem;
-	background: #fff;
-	border-left: 4px solid var(--award-brown);
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-	font-family: 'Roboto Mono', sans-serif;
-	font-size: 0.95rem;
-	color: #444;
-}
-
-.award-totals:empty {
-	display: none;
-}
-
-.award-totals-group {
-	display: inline-flex;
-	align-items: center;
-	gap: 0.45rem;
-	white-space: nowrap;
-}
-
+.michelin-totals-group strong,
 .award-totals-group strong {
 	color: #222;
 	font-size: 1.05rem;
@@ -690,6 +680,65 @@
 	background: var(--michelin-red);
 }
 
+.popup-photo-count {
+	position: absolute;
+	right: 0.75rem;
+	bottom: 0.55rem;
+	z-index: 2;
+	padding: 0.2rem 0.55rem;
+	border-radius: 999px;
+	background: rgba(0, 0, 0, 0.55);
+	color: #fff;
+	font-family: 'Roboto Mono', sans-serif;
+	font-size: 0.72rem;
+	font-weight: 700;
+	letter-spacing: 0.04em;
+	pointer-events: none;
+}
+
+@media (max-width: 991px) {
+	/* Compact one-line filters — same pattern as Hotel Collection. */
+	.michelin-filters {
+		flex-wrap: nowrap;
+		gap: 0.35rem;
+		margin-bottom: 0.85rem;
+	}
+
+	.michelin-filter {
+		width: auto;
+		flex: 1 1 0;
+		min-width: 0;
+		gap: 0;
+	}
+
+	.michelin-filter-label {
+		display: none;
+	}
+
+	.michelin-select {
+		min-width: 0;
+		width: 100%;
+	}
+
+	.michelin-select-btn {
+		width: 100% !important;
+		max-width: 100%;
+		box-sizing: border-box;
+		padding: 0.35rem 1.45rem 0.35rem 0.55rem;
+		font-size: 0.68rem;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		background-position: right 0.55rem center;
+	}
+
+	.michelin-select-list {
+		width: max(100%, 148px) !important;
+		min-width: 100%;
+		left: 0;
+		right: auto;
+	}
+}
+
 @media (max-width: 767px) {
 	.michelin-grid,
 	.award-grid {
@@ -708,21 +757,6 @@
 		letter-spacing: 0.5px;
 	}
 
-	.michelin-filter {
-		width: 100%;
-		justify-content: space-between;
-	}
-
-	.michelin-select {
-		min-width: 0;
-		flex: 1 1 auto;
-	}
-
-	.michelin-select-btn {
-		width: 100%;
-		box-sizing: border-box;
-	}
-
 	.michelin-popup-header,
 	.award-popup-header {
 		padding: 1.1rem 1.2rem 1rem;
@@ -731,6 +765,12 @@
 	.michelin-popup-header h4,
 	.award-popup-header h4 {
 		font-size: 1.15rem;
+	}
+
+	.popup-photo-count {
+		bottom: 0.7rem;
+		right: 0.65rem;
+		font-size: 0.68rem;
 	}
 }
 

@@ -102,6 +102,116 @@
 		return 'img/travel/visits/' + visit.id + '/' + name;
 	}
 
+	function escapeAttr(value) {
+		return String(value || '')
+			.replace(/&/g, '&amp;')
+			.replace(/"/g, '&quot;')
+			.replace(/</g, '&lt;');
+	}
+
+	function popupPhotoAttrs(visit, hotel) {
+		return ' data-photo-base="' + escapeAttr('img/travel/visits/' + visit.id) + '"' +
+			' data-photos="' + escapeAttr((visit.pictures || []).join(',')) + '"' +
+			' data-photo-alt="' + escapeAttr(hotel ? hotel.name : '') + '"';
+	}
+
+	function fillPopupSlider($content) {
+		var $slider = $content.find('.popup-slider');
+		if ($slider.children().length) return $slider;
+		var root = $content.closest('.popup')[0] || $content[0];
+		var base = (root.getAttribute('data-photo-base') || '').replace(/\/$/, '');
+		var photos = (root.getAttribute('data-photos') || '').split(',').filter(Boolean);
+		var alt = root.getAttribute('data-photo-alt') || '';
+		var html;
+		if (!photos.length) {
+			html = '<div class="item"><div class="hotel-card-photo-placeholder"><i class="fas fa-camera"></i> No photos yet</div></div>';
+		} else {
+			html = photos.map(function (filename) {
+				return '<div class="item"><figure><img src="' + base + '/' + filename + '" alt="' + escapeAttr(alt) + '" decoding="async"></figure></div>';
+			}).join('');
+		}
+		$slider.html(html);
+		return $slider;
+	}
+
+	var POPUP_NAV = ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>'];
+	// Dots stay readable on a phone up to about this many; beyond that use a counter.
+	var POPUP_DOTS_MAX = 12;
+
+	function ensurePhotoCounter($slider, total) {
+		var $counter = $slider.find('> .hotel-popup-photo-count');
+		if (!$counter.length) {
+			$counter = $('<div class="hotel-popup-photo-count" aria-live="polite"></div>');
+			$slider.append($counter);
+		}
+		function syncFromEvent(e) {
+			var index = 0;
+			if (e && e.relatedTarget && typeof e.relatedTarget.relative === 'function') {
+				index = e.relatedTarget.relative(e.item.index);
+			} else if (e && e.item && typeof e.item.index === 'number') {
+				index = ((e.item.index % total) + total) % total;
+			}
+			$counter.text((index + 1) + ' / ' + total);
+		}
+		$slider.off('changed.owl.carousel.hotelCount').on('changed.owl.carousel.hotelCount', syncFromEvent);
+		$counter.text('1 / ' + total);
+		return $counter;
+	}
+
+	function visitPopupSettings() {
+		return {
+			type: 'inline',
+			fixedContentPos: false,
+			fixedBgPos: true,
+			overflowY: 'auto',
+			closeBtnInside: true,
+			preloader: false,
+			midClick: true,
+			removalDelay: 300,
+			mainClass: 'my-mfp-zoom-in michelin-popup hotel-popup',
+			callbacks: {
+				open: function () {
+					var visitId = this.currItem && this.currItem.el
+						? this.currItem.el.attr('data-visit-id')
+						: '';
+					if (visitId) focusVisit(visitId);
+					var $slider = fillPopupSlider(this.content);
+					var count = $slider.find('.item').length;
+					var useDots = count > 1 && count <= POPUP_DOTS_MAX;
+					$slider.owlCarousel({
+						items: 1,
+						loop: count > 1,
+						nav: count > 1,
+						dots: useDots,
+						autoplay: false,
+						navText: POPUP_NAV
+					});
+					if (count > 1) ensurePhotoCounter($slider, count);
+				},
+				close: function () {
+					var $slider = this.content.find('.popup-slider');
+					$slider.off('changed.owl.carousel.hotelCount');
+					this.content.find('.hotel-popup-photo-count').remove();
+					if ($slider.data('owl.carousel')) {
+						$slider.trigger('destroy.owl.carousel');
+					}
+				}
+			}
+		};
+	}
+
+	function bindVisitPopups($cards) {
+		$cards.magnificPopup(visitPopupSettings());
+	}
+
+	function openVisitLightbox(visitId) {
+		var $src = $('#popup-hotel-' + visitId);
+		if (!$src.length) return;
+		$.magnificPopup.open($.extend({}, visitPopupSettings(), {
+			items: { src: $src, type: 'inline' }
+		}));
+	}
+
 	function visitHotel(visit) {
 		return hotelById[visit.hotelId] || null;
 	}
@@ -151,17 +261,27 @@
 			if (brand && counts[brand] != null) counts[brand]++;
 		});
 
-		var groups = BRANDS.map(function (b) {
+		// Visit-count desc; stable BRANDS order on ties. Mobile CSS keeps top 4 only.
+		var ranked = BRANDS.slice().sort(function (a, b) {
+			var diff = counts[b.name] - counts[a.name];
+			if (diff) return diff;
+			return BRANDS.indexOf(a) - BRANDS.indexOf(b);
+		});
+
+		var parts = [];
+		ranked.forEach(function (b, i) {
 			var stayed = brandHasStay(b.name);
-			return (
-				'<span class="hotel-totals-group' + (stayed ? ' hotel-totals-group-stay' : '') + '">' +
+			var hide = i >= 4 ? ' hotel-totals-mobile-hide' : '';
+			parts.push(
+				'<span class="hotel-totals-group' + (stayed ? ' hotel-totals-group-stay' : '') + hide + '">' +
 					'<img class="hotel-totals-icon" src="' + brandIconPath(b.slug, stayed ? 'stay' : '') + '" alt="">' +
 					'<span>' + b.name + '</span> ' +
 					'<strong>' + counts[b.name] + '</strong>' +
 				'</span>'
 			);
 		});
-		$('#hotel-stats').html(groups.join('<span class="hotel-totals-sep">|</span>'));
+		// Leading "|" via CSS ::before + overflow clip — same as dining stats banners.
+		$('#hotel-stats').html('<span class="hotel-totals-inner">' + parts.join('') + '</span>');
 	}
 
 	function sizeSelectToContent($container) {
@@ -284,21 +404,9 @@
 			count + '</div>';
 	}
 
-	function bindVisitCard($card, visit) {
-		$card.on('click', function () {
-			focusVisit(visit.id);
-		});
-		$card.on('keydown', function (e) {
-			if (e.key === 'Enter' || e.key === ' ') {
-				e.preventDefault();
-				focusVisit(visit.id);
-			}
-		});
-	}
-
-	function visitCard($cardBody, visit, hotel) {
+	function visitCardBodyHtml(visit, hotel) {
 		var nights = stayNightsLabel(visit);
-		$cardBody.append(
+		return (
 			'<div class="hotel-card-top">' +
 				'<h4>' + hotel.name + '</h4>' +
 				'<span class="hotel-card-type hotel-card-type-' + visitType(visit) + '">' + visitTypeLabel(visit) + '</span>' +
@@ -311,9 +419,33 @@
 		);
 	}
 
+	function visitPopupHtml(visit, hotel) {
+		var nights = stayNightsLabel(visit);
+		return (
+			'<div id="popup-hotel-' + visit.id + '" class="popup mfp-hide"' + popupPhotoAttrs(visit, hotel) + '>' +
+				'<div class="popup-inner">' +
+					'<div class="hotel-visit-popup-header">' +
+						'<div class="hotel-card-top">' +
+							'<h4>' + hotel.name + '</h4>' +
+							'<span class="hotel-card-type hotel-card-type-' + visitType(visit) + '">' + visitTypeLabel(visit) + '</span>' +
+						'</div>' +
+						'<div class="hotel-card-brand">' + hotel.brand + '</div>' +
+						'<div class="hotel-card-family">' + hotel.family + '</div>' +
+						'<div class="hotel-card-meta"><i class="fas fa-map-marker-alt"></i> ' + locationText(hotel) + '</div>' +
+						'<div class="hotel-card-meta"><i class="fas fa-calendar-alt"></i> ' + formatStayDates(visit) +
+							(nights ? ' · ' + nights : '') + '</div>' +
+					'</div>' +
+					'<div class="popup-slider owl-carousel"></div>' +
+				'</div>' +
+			'</div>'
+		);
+	}
+
 	function renderCards() {
 		var $track = $('#hotel-cards');
+		var $popups = $('#hotel-visit-popups');
 		$track.empty();
+		$popups.empty();
 
 		if (!visits.length) {
 			$track.append('<p class="hotel-empty hotel-empty-none">No hotel visits yet. Stays will show as pins on the map.</p>');
@@ -326,6 +458,7 @@
 		});
 		var groups = [];
 		var current = null;
+		var popupParts = [];
 		sorted.forEach(function (visit) {
 			if (!visitHotel(visit)) return;
 			var key = (visit.date || '').slice(0, 7);
@@ -351,28 +484,43 @@
 				var hotel = visitHotel(visit);
 				var $station = $('<article class="hotel-timeline-station" data-visit-id="' + visit.id + '" data-brand="' + hotel.brand + '" data-family="' + hotel.family + '" data-type="' + visitType(visit) + '"></article>');
 				$station.append('<span class="hotel-timeline-node" aria-hidden="true"></span>');
-				var $card = $('<div class="hotel-card" data-visit-id="' + visit.id + '" tabindex="0"></div>');
+				var $card = $('<a href="#popup-hotel-' + visit.id + '" class="hotel-card" data-visit-id="' + visit.id + '"></a>');
 				$card.append(coverHtml(visit));
-				var $body = $('<div class="hotel-card-body"></div>');
-				visitCard($body, visit, hotel);
-				$card.append($body);
-				bindVisitCard($card, visit);
+				$card.append('<div class="hotel-card-body">' + visitCardBodyHtml(visit, hotel) + '</div>');
 				$station.append($card);
 				$stations.append($station);
+				popupParts.push(visitPopupHtml(visit, hotel));
 			});
 			$month.append($stations);
 			$track.append($month);
 		});
+		$popups.html(popupParts.join(''));
+		bindVisitPopups($track.find('.hotel-card'));
 		applyFilters();
 	}
 
-	function popupHtml(visit, hotel) {
+	function mapPopupCard(visit, hotel) {
 		var nights = stayNightsLabel(visit);
-		return '<strong>' + hotel.name + '</strong>' +
-			'<div class="hotel-popup-brand">' + hotel.brand + '</div>' +
-			'<div class="hotel-popup-family">' + hotel.family + '</div>' +
-			'<div>' + locationText(hotel) + '</div>' +
-			'<div>' + visitTypeLabel(visit) + ' · ' + formatStayDates(visit) + (nights ? ' · ' + nights : '') + '</div>';
+		var pictures = visit.pictures || [];
+		var hint = pictures.length
+			? '<div class="hotel-map-popup-hint"><i class="fas fa-images"></i> View photos</div>'
+			: '';
+		var $card = $(
+			'<a href="#popup-hotel-' + visit.id + '" class="hotel-map-popup-card" data-visit-id="' + visit.id + '">' +
+				'<strong>' + hotel.name + '</strong>' +
+				'<div class="hotel-popup-brand">' + hotel.brand + '</div>' +
+				'<div class="hotel-popup-family">' + hotel.family + '</div>' +
+				'<div>' + locationText(hotel) + '</div>' +
+				'<div>' + visitTypeLabel(visit) + ' · ' + formatStayDates(visit) + (nights ? ' · ' + nights : '') + '</div>' +
+				hint +
+			'</a>'
+		);
+		$card.on('click', function (e) {
+			e.preventDefault();
+			e.stopPropagation();
+			openVisitLightbox(visit.id);
+		});
+		return $card[0];
 	}
 
 	function markerEl(m) {
@@ -413,7 +561,7 @@
 			keyboard: false
 		}).addTo(map);
 
-		marker.bindPopup(popupHtml(visit, hotel), { closeButton: false, maxWidth: 240 });
+		marker.bindPopup(mapPopupCard(visit, hotel), { closeButton: false, maxWidth: 240 });
 		marker.on('click', function () {
 			focusVisit(visit.id);
 		});
@@ -421,28 +569,26 @@
 		markers.push({ marker: marker, el: marker.getElement(), visit: visit, hotel: hotel });
 	}
 
-	function initMap() {
-		if (typeof L === 'undefined' || map) return;
+	function hotelVisitCountries() {
+		var names = {};
+		visits.forEach(function (visit) {
+			var hotel = visitHotel(visit);
+			if (hotel && hotel.country) names[hotel.country] = true;
+		});
+		return Object.keys(names);
+	}
 
-		map = L.map('hotel-map', {
-			scrollWheelZoom: true,
-			zoomControl: true,
+	function paintVisitedCountries() {
+		if (!map || !window.TravelCountryLayer) return;
+		window.TravelCountryLayer.addTo(map, hotelVisitCountries());
+	}
+
+	function initMap() {
+		if (typeof L === 'undefined' || !window.TravelMaps || map) return;
+
+		map = TravelMaps.createMap('hotel-map', {
 			zoomSnap: 0.25
 		}).setView(ATLANTIC, ATLANTIC_ZOOM);
-
-		L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-			attribution: '&copy; OpenStreetMap',
-			maxZoom: 19
-		}).addTo(map);
-
-		if (window.TravelCountryLayer) {
-			var visited = {};
-			visits.forEach(function (visit) {
-				var hotel = visitHotel(visit);
-				if (hotel && hotel.country) visited[hotel.country] = true;
-			});
-			window.TravelCountryLayer.addTo(map, Object.keys(visited));
-		}
 
 		visits.forEach(function (visit) {
 			var hotel = visitHotel(visit);
@@ -450,6 +596,8 @@
 				addPin(visit, hotel);
 			}
 		});
+
+		paintVisitedCountries();
 	}
 
 	function loadHotels() {

@@ -152,9 +152,15 @@ $(function(){
 		if (route.section === 'travel') {
 			return Promise.all([
 				loadStylesheet('css/travel.css'),
-				loadStylesheet('vendor/leaflet/leaflet.css')
+				loadStylesheet('css/owl.carousel.css'),
+				loadStylesheet('vendor/leaflet/leaflet.css'),
+				loadPopupLibs()
 			]).then(function () {
+				return loadScript('js/owl.carousel.min.js');
+			}).then(function () {
 				return loadScript('vendor/leaflet/leaflet.js');
+			}).then(function () {
+				return loadScript('js/map-base.js');
 			}).then(function () {
 				return loadScript('js/country-layer.js');
 			}).then(function () {

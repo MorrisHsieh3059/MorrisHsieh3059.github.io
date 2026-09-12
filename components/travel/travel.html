@@ -70,10 +70,12 @@
 								</div>
 							</div>
 							<div class="hotel-layout">
-								<div class="hotel-map-wrap">
-									<div id="hotel-map"></div>
-									<div class="hotel-map-legend">
-										<span class="legend-country">Visited country</span>
+								<div class="hotel-map-panel">
+									<div class="hotel-map-wrap">
+										<div id="hotel-map"></div>
+										<div class="travel-map-legend hotel-map-legend">
+											<span class="legend-country">Visited country</span>
+										</div>
 									</div>
 								</div>
 								<aside class="hotel-timeline">
@@ -81,8 +83,9 @@
 										<div class="hotel-timeline-track" id="hotel-cards">
 											<p class="hotel-empty">Loading hotel visits…</p>
 										</div>
+										<p class="hotel-empty hotel-filter-empty" id="hotel-filter-empty" style="display:none;">No stays match these filters.</p>
 									</div>
-									<p class="hotel-empty hotel-filter-empty" id="hotel-filter-empty" style="display:none;">No stays match these filters.</p>
+									<div class="hotel-visit-popups" id="hotel-visit-popups"></div>
 								</aside>
 							</div>
 						</div>
