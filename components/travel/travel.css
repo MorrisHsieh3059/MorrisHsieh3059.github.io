@@ -1073,6 +1073,16 @@
 		box-sizing: border-box;
 	}
 
+	.travel-map-legend .legend-home,
+	.travel-map-legend .legend-heat,
+	.travel-map-legend .legend-route {
+		display: none;
+	}
+
+	.travel-map-legend .legend-country {
+		margin-right: 0;
+	}
+
 	/* flex-basis 0 so card content cannot steal height from the map */
 	.travel-cards-sidebar {
 		flex: 1 1 0;
