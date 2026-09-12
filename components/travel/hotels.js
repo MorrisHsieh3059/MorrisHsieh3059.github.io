@@ -578,13 +578,9 @@
 		return Object.keys(names);
 	}
 
-	function paintVisitedCountries(travelCountries) {
-		var names = {};
-		if (!map || !window.TravelMaps) return;
-		hotelVisitCountries().concat(travelCountries || []).forEach(function (name) {
-			if (name) names[name] = true;
-		});
-		TravelMaps.addVisitedCountries(map, Object.keys(names));
+	function paintVisitedCountries() {
+		if (!map || !window.TravelCountryLayer) return;
+		window.TravelCountryLayer.addTo(map, hotelVisitCountries());
 	}
 
 	function initMap() {
@@ -601,10 +597,7 @@
 			}
 		});
 
-		paintVisitedCountries([]);
-		$.getJSON('data/travel.json').done(function (data) {
-			paintVisitedCountries(TravelMaps.countriesFromTravel(data));
-		});
+		paintVisitedCountries();
 	}
 
 	function loadHotels() {

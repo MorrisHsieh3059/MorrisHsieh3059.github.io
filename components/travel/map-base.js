@@ -1,8 +1,8 @@
 (function ($) {
 	'use strict';
 
-	// Shared Leaflet setup for Journal + Hotel Collection:
-	// one world (no wrap copies), grayscale tiles, visited countries in light blue.
+	// Shared Leaflet setup for Journey + Hotel Collection:
+	// one world (no wrap copies), grayscale tiles. Country fill is TravelCountryLayer.
 	var WORLD_SW = [-85, -180];
 	var WORLD_NE = [85, 180];
 	var VISITED_FILL = '#9ec9e8';

@@ -39,6 +39,7 @@ const ROUTES = [
   'resume',
   'travel',
   'travel/journal',
+  'travel/journey',
   'travel/hotels',
   'contact',
   'dining',

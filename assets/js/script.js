@@ -54,8 +54,9 @@ $(function(){
 			return { section: 'faith', faithTab: faithTab };
 		}
 		if (head === 'travel') {
-			var travelTab = sub || 'journal';
-			if (travelTab !== 'journal' && travelTab !== 'hotels') travelTab = 'journal';
+			var travelTab = sub || 'journey';
+			if (travelTab === 'journal') travelTab = 'journey';
+			if (travelTab !== 'journey' && travelTab !== 'hotels') travelTab = 'journey';
 			return { section: 'travel', travelTab: travelTab };
 		}
 		if (head === 'about' || head === 'resume' || head === 'contact') {
@@ -75,8 +76,8 @@ $(function(){
 			return faithTab === 'devotion' ? '/faith/' : '/faith/' + faithTab + '/';
 		}
 		if (route.section === 'travel') {
-			var travelTab = route.travelTab || 'journal';
-			return travelTab === 'journal' ? '/travel/' : '/travel/' + travelTab + '/';
+			var travelTab = route.travelTab || 'journey';
+			return travelTab === 'journey' ? '/travel/' : '/travel/' + travelTab + '/';
 		}
 		return '/' + route.section + '/';
 	}
@@ -160,6 +161,8 @@ $(function(){
 				return loadScript('vendor/leaflet/leaflet.js');
 			}).then(function () {
 				return loadScript('js/map-base.js');
+			}).then(function () {
+				return loadScript('js/country-layer.js');
 			}).then(function () {
 				return loadScript('js/travel.js');
 			}).then(function () {

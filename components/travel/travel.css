@@ -647,8 +647,8 @@
 }
 
 @media (max-width: 991px) {
-	/* Pin chrome + map; journal cards / hotel timeline scroll in-box. */
-	.travel-panel[data-travel-panel="journal"].active,
+	/* Pin chrome + map; journey cards / hotel timeline scroll in-box. */
+	.travel-panel[data-travel-panel="journey"].active,
 	.travel-panel[data-travel-panel="hotels"].active {
 		display: flex;
 		flex-direction: column;
@@ -889,6 +889,14 @@
 	filter: grayscale(1);
 }
 
+.leaflet-visitedCountries-pane {
+	pointer-events: none;
+}
+
+.leaflet-visitedCountries-pane path {
+	shape-rendering: geometricPrecision;
+}
+
 .travel-map-legend {
 	position: absolute;
 	bottom: 12px;
@@ -906,15 +914,14 @@
 	margin-right: 0.75rem;
 }
 
-.legend-visited::before {
+.legend-country::before {
 	content: '';
 	display: inline-block;
 	width: 12px;
-	height: 10px;
+	height: 9px;
 	margin-right: 4px;
 	vertical-align: middle;
-	background: #9ec9e8;
-	border: 1px solid #6fa8c9;
+	background: rgba(61, 90, 254, 0.45);
 	box-sizing: border-box;
 }
 
@@ -1227,7 +1234,7 @@
 }
 
 @media (max-width: 991px) {
-	/* Pin title / stats / map; only the trip-journal cards scroll.
+	/* Pin title / stats / map; only the trip-journey cards scroll.
 	   min-width:0 on the flex chain so long titles cannot blow past the page frame. */
 	.travel-section.section {
 		overflow: hidden;
@@ -1336,6 +1343,16 @@
 	.travel-map-legend {
 		max-width: calc(100% - 16px);
 		box-sizing: border-box;
+	}
+
+	.travel-map-legend .legend-home,
+	.travel-map-legend .legend-heat,
+	.travel-map-legend .legend-route {
+		display: none;
+	}
+
+	.travel-map-legend .legend-country {
+		margin-right: 0;
 	}
 
 	/* flex-basis 0 so card content cannot steal height from the map */
