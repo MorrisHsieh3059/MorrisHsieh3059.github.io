@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-03T22:30:39.628485+00:00",
-  "sourceNote": "Parsed 9770 visits from location-history.json",
+  "generatedAt": "2026-09-12T18:20:49.421729+00:00",
+  "sourceNote": "Parsed 10065 visits from location-history.json",
   "homeBases": [
     {
       "id": "home-taipei",
@@ -782,16 +782,17 @@
       "id": "washington-d-c-united-states",
       "city": "Washington, D.C.",
       "country": "United States",
-      "lat": 38.90308,
-      "lng": -77.01863,
-      "visits": 4,
+      "lat": 38.90692,
+      "lng": -77.02617,
+      "visits": 5,
       "firstVisit": "2024-07-22",
-      "lastVisit": "2026-05-21",
+      "lastVisit": "2026-07-05",
       "tripIds": [
         "trip-031",
         "trip-036",
         "trip-045",
-        "trip-052"
+        "trip-052",
+        "trip-054"
       ]
     },
     {
@@ -1327,9 +1328,154 @@
       "tripIds": [
         "trip-053"
       ]
+    },
+    {
+      "id": "floris-united-states",
+      "city": "Floris",
+      "country": "United States",
+      "lat": 38.95225,
+      "lng": -77.45789,
+      "visits": 1,
+      "firstVisit": "2026-07-06",
+      "lastVisit": "2026-07-06",
+      "tripIds": [
+        "trip-054"
+      ]
+    },
+    {
+      "id": "new-paltz-united-states",
+      "city": "New Paltz",
+      "country": "United States",
+      "lat": 41.73195,
+      "lng": -74.1856,
+      "visits": 1,
+      "firstVisit": "2026-08-08",
+      "lastVisit": "2026-08-08",
+      "tripIds": [
+        "trip-055"
+      ]
+    },
+    {
+      "id": "bar-harbor-united-states",
+      "city": "Bar Harbor",
+      "country": "United States",
+      "lat": 44.30962,
+      "lng": -68.2035,
+      "visits": 1,
+      "firstVisit": "2026-09-06",
+      "lastVisit": "2026-09-06",
+      "tripIds": [
+        "trip-056"
+      ]
+    },
+    {
+      "id": "boston-united-states",
+      "city": "Boston",
+      "country": "United States",
+      "lat": 42.34742,
+      "lng": -71.08172,
+      "visits": 1,
+      "firstVisit": "2026-09-07",
+      "lastVisit": "2026-09-07",
+      "tripIds": [
+        "trip-056"
+      ]
     }
   ],
   "trips": [
+    {
+      "id": "trip-056",
+      "title": "2026 (Sep 06 - Sep 07): United States",
+      "startDate": "2026-09-06",
+      "endDate": "2026-09-07",
+      "cities": [
+        "Bar Harbor",
+        "Boston"
+      ],
+      "countries": [
+        "United States"
+      ],
+      "cityIds": [
+        "bar-harbor-united-states",
+        "boston-united-states"
+      ],
+      "route": [
+        {
+          "cityId": "bar-harbor-united-states",
+          "city": "Bar Harbor",
+          "country": "United States",
+          "lat": 44.30962,
+          "lng": -68.2035
+        },
+        {
+          "cityId": "boston-united-states",
+          "city": "Boston",
+          "country": "United States",
+          "lat": 42.34742,
+          "lng": -71.08172
+        }
+      ],
+      "photos": []
+    },
+    {
+      "id": "trip-055",
+      "title": "2026 (Aug 08 - Aug 08): United States",
+      "startDate": "2026-08-08",
+      "endDate": "2026-08-08",
+      "cities": [
+        "New Paltz"
+      ],
+      "countries": [
+        "United States"
+      ],
+      "cityIds": [
+        "new-paltz-united-states"
+      ],
+      "route": [
+        {
+          "cityId": "new-paltz-united-states",
+          "city": "New Paltz",
+          "country": "United States",
+          "lat": 41.73195,
+          "lng": -74.1856
+        }
+      ],
+      "photos": []
+    },
+    {
+      "id": "trip-054",
+      "title": "2026 (Jul 03 - Jul 06): United States",
+      "startDate": "2026-07-03",
+      "endDate": "2026-07-06",
+      "cities": [
+        "Washington, D.C.",
+        "Floris"
+      ],
+      "countries": [
+        "United States"
+      ],
+      "cityIds": [
+        "floris-united-states",
+        "washington-d-c-united-states"
+      ],
+      "route": [
+        {
+          "cityId": "washington-d-c-united-states",
+          "city": "Washington, D.C.",
+          "country": "United States",
+          "lat": 38.9165,
+          "lng": -77.04491
+        },
+        {
+          "cityId": "floris-united-states",
+          "city": "Floris",
+          "country": "United States",
+          "lat": 38.95225,
+          "lng": -77.45789
+        }
+      ],
+      "photos": []
+    },
     {
       "id": "trip-053",
       "title": "2026 (Jun 20 - Jun 29): Lithuania·Norway·United Kingdom·Spain·Morocco",
@@ -3455,9 +3601,9 @@
     }
   ],
   "stats": {
-    "totalTrips": 53,
-    "totalTripDays": 243,
-    "totalCities": 99,
+    "totalTrips": 56,
+    "totalTripDays": 250,
+    "totalCities": 103,
     "totalCountries": 21
   }
 }
