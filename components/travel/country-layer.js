@@ -270,17 +270,23 @@
 
 	function clipToCurrentWorld(renderer) {
 		var map = renderer._map;
-		if (!map) return;
+		var bounds = renderer._bounds;
+		if (!map || !bounds) return;
 		var zoom = map.getZoom();
 		var worldPx = 256 * Math.pow(2, zoom);
 		var worldIndex = currentWorld(map, zoom);
 		var minAbs = worldIndex * worldPx;
 		var top = map.latLngToLayerPoint(map.unproject(L.point(minAbs, 0), zoom));
 		var bot = map.latLngToLayerPoint(map.unproject(L.point(minAbs + worldPx, worldPx), zoom));
+		var left = Math.max(Math.min(top.x, bot.x), bounds.min.x);
+		var right = Math.min(Math.max(top.x, bot.x), bounds.max.x);
+		var north = Math.max(Math.min(top.y, bot.y), bounds.min.y);
+		var south = Math.min(Math.max(top.y, bot.y), bounds.max.y);
+		if (right <= left || south <= north) return;
 		withLayerCanvas(renderer, function (ctx) {
 			ctx.globalCompositeOperation = 'destination-in';
 			ctx.beginPath();
-			ctx.rect(top.x, top.y, bot.x - top.x, bot.y - top.y);
+			ctx.rect(left, north, right - left, south - north);
 			ctx.fill();
 		});
 	}
@@ -314,9 +320,9 @@
 	}
 
 	function attachWaterClip(renderer) {
-		var orig = renderer._updatePaths;
+		var orig = renderer._redraw;
 		var gen = 0;
-		renderer._updatePaths = function () {
+		renderer._redraw = function () {
 			orig.call(this);
 			clipToCurrentWorld(this);
 			var map = this._map;
