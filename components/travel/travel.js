@@ -201,14 +201,110 @@
 		});
 	}
 
+	var CONTINENT_ORDER = [
+		'Asia', 'Europe', 'Africa', 'North America', 'South America', 'Oceania'
+	];
+
+	// Site country strings from travel.json. Russia is Europe (visits are
+	// St. Petersburg). Unmapped names fall through to Other.
+	var COUNTRY_CONTINENT = {
+		'Canada': 'North America',
+		'China': 'Asia',
+		'Czech Republic': 'Europe',
+		'Estonia': 'Europe',
+		'Finland': 'Europe',
+		'Ireland': 'Europe',
+		'Italy': 'Europe',
+		'Japan': 'Asia',
+		'Lithuania': 'Europe',
+		'Malaysia': 'Asia',
+		'Morocco': 'Africa',
+		'Norway': 'Europe',
+		'Poland': 'Europe',
+		'Russia': 'Europe',
+		'Slovenia': 'Europe',
+		'South Korea': 'Asia',
+		'Spain': 'Europe',
+		'Sweden': 'Europe',
+		'Taiwan': 'Asia',
+		'United Kingdom': 'Europe',
+		'United States': 'North America'
+	};
+
+	function escapeHtml(value) {
+		return String(value)
+			.replace(/&/g, '&amp;')
+			.replace(/</g, '&lt;')
+			.replace(/>/g, '&gt;')
+			.replace(/"/g, '&quot;');
+	}
+
+	function visitedCountries() {
+		var names = {};
+		(travelData.cities || []).forEach(function (city) {
+			if (city.country && city.country !== 'Unknown') {
+				names[city.country] = true;
+			}
+		});
+		return Object.keys(names).sort();
+	}
+
+	function countriesTooltipHtml(countries) {
+		var groups = {};
+		countries.forEach(function (name) {
+			var continent = COUNTRY_CONTINENT[name] || 'Other';
+			if (!groups[continent]) groups[continent] = [];
+			groups[continent].push(name);
+		});
+		var lines = [];
+		CONTINENT_ORDER.concat(['Other']).forEach(function (continent) {
+			var list = groups[continent];
+			if (!list || !list.length) return;
+			lines.push(
+				'<span class="travel-countries-group">' +
+					'<strong>' + continent + ':</strong> ' +
+					list.map(escapeHtml).join(', ') +
+				'</span>'
+			);
+		});
+		return lines.join('');
+	}
+
+	function bindCountriesTip() {
+		var $stats = $('#travel-stats');
+		$stats.off('click.countriesTip').on('click.countriesTip', '.travel-stats-countries', function (e) {
+			if (finePointerHover()) return;
+			e.stopPropagation();
+			$(this).toggleClass('is-open');
+		});
+		$(document).off('click.countriesTip').on('click.countriesTip', function () {
+			$stats.find('.travel-stats-countries').removeClass('is-open');
+		});
+	}
+
 	function renderStats() {
 		var s = travelData.stats || {};
+		var countries = visitedCountries();
+		var countriesHtml = 'countries: ' + (s.totalCountries || countries.length || 0);
+		var tipHtml = '';
+		if (countries.length) {
+			countriesHtml =
+				'<span class="travel-stats-countries" tabindex="0">' +
+					countriesHtml +
+				'</span>';
+			tipHtml =
+				'<span class="travel-countries-tip" role="tooltip">' +
+					countriesTooltipHtml(countries) +
+				'</span>';
+		}
 		$('#travel-stats').html(
 			'trips: ' + (s.totalTrips || 0) +
 			' | trip days: ' + (s.totalTripDays || 0) +
 			' | cities: ' + (s.totalCities || 0) +
-			' | countries: ' + (s.totalCountries || 0)
+			' | ' + countriesHtml +
+			tipHtml
 		);
+		bindCountriesTip();
 		if (travelData.sourceNote && !travelData.trips.length) {
 			$('#travel-notice').text(travelData.sourceNote).show();
 		} else {
