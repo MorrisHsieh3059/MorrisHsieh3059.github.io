@@ -1,0 +1,135 @@
+/*=======================================================
+	Resume — company marks + compact mobile titles
+=======================================================*/
+.resume-heading {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.28em 0.4em;
+	margin: 0 0 5px;
+	line-height: 1.3;
+}
+
+.resume-sep {
+	color: rgba(0, 0, 0, 0.35);
+	font-weight: 400;
+}
+
+.resume-company {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.32em;
+	min-width: 0;
+}
+
+.resume-company-icon {
+	width: 1.05em;
+	height: 1.05em;
+	object-fit: contain;
+	flex: 0 0 auto;
+	border-radius: 2px;
+}
+
+.resume-heading .is-short {
+	display: none;
+}
+
+.resume-dates {
+	font-size: 18px;
+	color: #4c4c4cbd;
+}
+
+.education-summary .resume-heading {
+	margin-bottom: 0.25rem;
+}
+
+@media (max-width: 768px) {
+	.resume-section .section-block {
+		padding-left: 20px;
+		padding-right: 20px;
+		padding-bottom: 56px;
+	}
+
+	.resume-section .timeline {
+		padding-bottom: 20px;
+	}
+
+	.resume-section .timeline > li {
+		padding-left: 28px;
+		margin-bottom: 22px;
+	}
+
+	.resume-section .timeline > li > .timeline-content {
+		padding: 14px 12px;
+	}
+
+	.resume-section .timeline > li > .timeline-content:before {
+		left: -28px;
+		width: 28px;
+	}
+
+	.resume-section .timeline > li > .timeline-content:after {
+		left: -36px;
+	}
+
+	.resume-heading {
+		flex-wrap: nowrap;
+		font-size: 13px;
+		letter-spacing: -0.03em;
+		white-space: nowrap;
+	}
+
+	.resume-heading .is-full {
+		display: none;
+	}
+
+	.resume-heading .is-short {
+		display: inline;
+	}
+
+	.resume-dates {
+		font-size: 12px;
+	}
+
+	.resume-section .timeline-content > em {
+		margin-top: 6px;
+		margin-bottom: 6px;
+	}
+
+	.resume-section .timeline-content > p {
+		font-size: 12px;
+		line-height: 1.5;
+	}
+
+	.education-summary {
+		padding: 1rem 0.95rem;
+	}
+
+	.education-summary .resume-heading {
+		font-size: 13px;
+		letter-spacing: -0.03em;
+	}
+
+	.education-summary p {
+		font-size: 12px;
+		margin-bottom: 0.2rem;
+	}
+}
+
+@media (max-width: 400px) {
+	.resume-section .section-block {
+		padding-left: 14px;
+		padding-right: 14px;
+		padding-bottom: 40px;
+	}
+
+	.resume-heading,
+	.education-summary .resume-heading {
+		font-size: 11.5px;
+	}
+
+	.resume-company-icon {
+		width: 1em;
+		height: 1em;
+	}
+}
