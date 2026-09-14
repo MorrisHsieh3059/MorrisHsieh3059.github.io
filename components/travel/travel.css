@@ -1417,6 +1417,57 @@
 		overflow-wrap: anywhere;
 	}
 
+	/* Anchor tips to the stats / tab row so a wrapped label cannot push
+	   them off-screen, but keep the card content-sized — not full-bleed. */
+	.travel-tabs {
+		position: relative;
+		z-index: 26;
+	}
+
+	.travel-tab-with-info,
+	.travel-tabs > li > a,
+	.travel-stats-label {
+		position: static;
+	}
+
+	.travel-stats-info {
+		font-size: 0.8em;
+		padding: 0.28em;
+		margin-left: 0.02em;
+		vertical-align: middle;
+	}
+
+	.travel-stats-tip {
+		left: 0;
+		right: auto;
+		width: max-content;
+		max-width: min(18.5rem, 100%);
+		box-sizing: border-box;
+		font-size: 0.72rem;
+		padding: 0.65rem 0.75rem;
+		max-height: min(42vh, 18rem);
+		overflow-y: auto;
+		-webkit-overflow-scrolling: touch;
+		overscroll-behavior: contain;
+	}
+
+	.travel-stats-info.is-open + .travel-stats-tip,
+	.travel-stats-info:focus + .travel-stats-tip {
+		pointer-events: auto;
+	}
+
+	.travel-stats-tip--years {
+		display: grid;
+		grid-template-columns: auto auto;
+		column-gap: 0.85rem;
+		row-gap: 0.28rem;
+	}
+
+	.travel-stats-tip-row {
+		overflow-wrap: anywhere;
+		word-break: break-word;
+	}
+
 	.travel-layout,
 	.travel-map-panel,
 	.travel-map-wrap,

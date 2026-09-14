@@ -355,7 +355,7 @@
 		}));
 	}
 
-	function hoverStat(label, value, tipHtml, ariaLabel) {
+	function hoverStat(label, value, tipHtml, ariaLabel, tipClass) {
 		if (!tipHtml) return label + ': ' + value;
 		return '<span class="travel-stats-item">' +
 			'<span class="travel-stats-label">' +
@@ -364,7 +364,8 @@
 					escapeHtml(ariaLabel || label) + '">' +
 					'<i class="fas fa-info-circle" aria-hidden="true"></i>' +
 				'</button>' +
-				'<span class="travel-stats-tip" role="tooltip">' + tipHtml + '</span>' +
+				'<span class="travel-stats-tip' + (tipClass ? ' ' + tipClass : '') +
+					'" role="tooltip">' + tipHtml + '</span>' +
 			'</span>' +
 			': ' + value +
 			'</span>';
@@ -380,6 +381,9 @@
 			$root.find('.travel-stats-info').not($el).removeClass('is-open');
 			$el.toggleClass('is-open');
 		});
+		$root.off('click.statsTipKeep', '.travel-stats-tip').on('click.statsTipKeep', '.travel-stats-tip', function (e) {
+			e.stopPropagation();
+		});
 		$(document).off('click.statsTip').on('click.statsTip', function () {
 			$root.find('.travel-stats-info').removeClass('is-open');
 		});
@@ -390,9 +394,9 @@
 		var years = tripYearStats();
 		var countries = visitedCountries();
 		$('#travel-stats').html(
-			hoverStat('trips', s.totalTrips || 0, tripsTooltipHtml(years), 'Trips by year') +
+			hoverStat('trips', s.totalTrips || 0, tripsTooltipHtml(years), 'Trips by year', 'travel-stats-tip--years') +
 			' | ' +
-			hoverStat('trip days', s.totalTripDays || 0, tripDaysTooltipHtml(years), 'Trip days by year') +
+			hoverStat('trip days', s.totalTripDays || 0, tripDaysTooltipHtml(years), 'Trip days by year', 'travel-stats-tip--years') +
 			' | ' +
 			hoverStat('cities', s.totalCities || 0, citiesTooltipHtml(countries), 'Cities by region') +
 			' | ' +
