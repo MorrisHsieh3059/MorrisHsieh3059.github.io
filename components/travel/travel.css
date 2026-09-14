@@ -1417,8 +1417,8 @@
 		overflow-wrap: anywhere;
 	}
 
-	/* Tips size to the stats / tab row, not the trigger word — otherwise
-	   Europe lists and year stacks blow past the phone frame. */
+	/* Anchor tips to the stats / tab row so a wrapped label cannot push
+	   them off-screen, but keep the card content-sized — not full-bleed. */
 	.travel-tabs {
 		position: relative;
 		z-index: 26;
@@ -1439,9 +1439,9 @@
 
 	.travel-stats-tip {
 		left: 0;
-		right: 0;
-		width: auto;
-		max-width: none;
+		right: auto;
+		width: max-content;
+		max-width: min(18.5rem, 100%);
 		box-sizing: border-box;
 		font-size: 0.72rem;
 		padding: 0.65rem 0.75rem;
@@ -1458,8 +1458,8 @@
 
 	.travel-stats-tip--years {
 		display: grid;
-		grid-template-columns: repeat(2, minmax(0, 1fr));
-		column-gap: 0.75rem;
+		grid-template-columns: auto auto;
+		column-gap: 0.85rem;
 		row-gap: 0.28rem;
 	}
 
