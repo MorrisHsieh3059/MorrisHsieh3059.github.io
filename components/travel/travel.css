@@ -20,6 +20,19 @@
 	margin: 0;
 }
 
+.travel-tab-with-info {
+	position: relative;
+	z-index: 25;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.28rem;
+}
+
+.travel-tab-info {
+	vertical-align: middle;
+	font-size: 0.7rem;
+}
+
 .travel-tabs > li > a {
 	display: inline-block;
 	padding: 0.45rem 1.2rem;
@@ -1095,6 +1108,8 @@
 	padding: 0;
 	border: 0;
 	background: none;
+	-webkit-appearance: none;
+	appearance: none;
 	color: #b0b0b0;
 	font-size: 0.62em;
 	line-height: 1;

@@ -371,17 +371,17 @@
 	}
 
 	function bindStatsTips() {
-		var $stats = $('#travel-stats');
-		$stats.off('click.statsTip').on('click.statsTip', '.travel-stats-info', function (e) {
+		var $root = $('#travel');
+		$root.off('click.statsTip', '.travel-stats-info').on('click.statsTip', '.travel-stats-info', function (e) {
 			e.preventDefault();
 			e.stopPropagation();
 			if (finePointerHover()) return;
 			var $el = $(this);
-			$stats.find('.travel-stats-info').not($el).removeClass('is-open');
+			$root.find('.travel-stats-info').not($el).removeClass('is-open');
 			$el.toggleClass('is-open');
 		});
 		$(document).off('click.statsTip').on('click.statsTip', function () {
-			$stats.find('.travel-stats-info').removeClass('is-open');
+			$root.find('.travel-stats-info').removeClass('is-open');
 		});
 	}
 
@@ -801,6 +801,8 @@
 		var delay = meta && meta.animated ? 1300 : 0;
 		setTimeout(function () { showTravelTab(tab); }, delay);
 	}
+
+	bindStatsTips();
 
 	$(document).on('site:route', function (e, route, meta) {
 		applyTravelRoute(route, meta);
