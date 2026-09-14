@@ -286,23 +286,20 @@
 		var s = travelData.stats || {};
 		var countries = visitedCountries();
 		var countriesHtml = 'countries: ' + (s.totalCountries || countries.length || 0);
-		var tipHtml = '';
 		if (countries.length) {
 			countriesHtml =
 				'<span class="travel-stats-countries" tabindex="0">' +
 					countriesHtml +
-				'</span>';
-			tipHtml =
-				'<span class="travel-countries-tip" role="tooltip">' +
-					countriesTooltipHtml(countries) +
+					'<span class="travel-countries-tip" role="tooltip">' +
+						countriesTooltipHtml(countries) +
+					'</span>' +
 				'</span>';
 		}
 		$('#travel-stats').html(
 			'trips: ' + (s.totalTrips || 0) +
 			' | trip days: ' + (s.totalTripDays || 0) +
 			' | cities: ' + (s.totalCities || 0) +
-			' | ' + countriesHtml +
-			tipHtml
+			' | ' + countriesHtml
 		);
 		bindCountriesTip();
 		if (travelData.sourceNote && !travelData.trips.length) {

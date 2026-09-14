@@ -1081,6 +1081,8 @@
 }
 
 .travel-stats-countries {
+	position: relative;
+	display: inline-block;
 	cursor: help;
 	border-bottom: 1px dotted currentColor;
 }
@@ -1095,7 +1097,7 @@
 	flex-direction: column;
 	gap: 0.4rem;
 	width: max-content;
-	max-width: min(26rem, 100%);
+	max-width: min(26rem, calc(100vw - 2.5rem));
 	padding: 0.75rem 0.9rem;
 	background: #fff;
 	border-left: 4px solid var(--accent, #303F9F);
@@ -1112,10 +1114,10 @@
 	transition: opacity 0.15s ease, visibility 0.15s ease;
 }
 
-.travel-stats:has(.travel-stats-countries:hover) .travel-countries-tip,
-.travel-stats:has(.travel-stats-countries:focus) .travel-countries-tip,
-.travel-stats:has(.travel-stats-countries:focus-within) .travel-countries-tip,
-.travel-stats:has(.travel-stats-countries.is-open) .travel-countries-tip {
+.travel-stats-countries:hover .travel-countries-tip,
+.travel-stats-countries:focus .travel-countries-tip,
+.travel-stats-countries:focus-within .travel-countries-tip,
+.travel-stats-countries.is-open .travel-countries-tip {
 	opacity: 1;
 	visibility: visible;
 }
@@ -1352,13 +1354,6 @@
 
 	.travel-section .travel-stats {
 		overflow-wrap: anywhere;
-	}
-
-	.travel-countries-tip {
-		left: 0;
-		right: 0;
-		width: auto;
-		max-width: none;
 	}
 
 	.travel-layout,
