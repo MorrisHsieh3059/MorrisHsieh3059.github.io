@@ -239,14 +239,63 @@
 			.replace(/"/g, '&quot;');
 	}
 
-	function visitedCountries() {
-		var names = {};
-		(travelData.cities || []).forEach(function (city) {
-			if (city.country && city.country !== 'Unknown') {
-				names[city.country] = true;
+	function nextIsoDate(iso) {
+		var d = new Date(iso + 'T00:00:00');
+		d.setDate(d.getDate() + 1);
+		var month = d.getMonth() + 1;
+		var day = d.getDate();
+		return d.getFullYear() + '-' +
+			(month < 10 ? '0' : '') + month + '-' +
+			(day < 10 ? '0' : '') + day;
+	}
+
+	function tripYearStats() {
+		var byYear = {};
+		function yearRow(year) {
+			if (!byYear[year]) byYear[year] = { year: year, trips: 0, days: 0 };
+			return byYear[year];
+		}
+		(travelData.trips || []).forEach(function (trip) {
+			if (!trip.startDate || !trip.endDate) return;
+			yearRow(trip.startDate.slice(0, 4)).trips += 1;
+			var cur = trip.startDate;
+			while (cur <= trip.endDate) {
+				yearRow(cur.slice(0, 4)).days += 1;
+				cur = nextIsoDate(cur);
 			}
 		});
-		return Object.keys(names).sort();
+		return Object.keys(byYear).sort().reverse().map(function (year) {
+			return byYear[year];
+		});
+	}
+
+	function countryLastVisit() {
+		var latest = {};
+		(travelData.cities || []).forEach(function (city) {
+			if (!city.country || city.country === 'Unknown' || !city.lastVisit) return;
+			if (!latest[city.country] || city.lastVisit > latest[city.country]) {
+				latest[city.country] = city.lastVisit;
+			}
+		});
+		return latest;
+	}
+
+	function visitedCountries() {
+		var latest = countryLastVisit();
+		return Object.keys(latest).sort(function (a, b) {
+			var diff = latest[b].localeCompare(latest[a]);
+			if (diff) return diff;
+			return a.localeCompare(b);
+		});
+	}
+
+	function tipRowsHtml(rows) {
+		return rows.map(function (row) {
+			return '<span class="travel-stats-tip-row">' +
+				'<strong>' + escapeHtml(row.label) + ':</strong> ' +
+				escapeHtml(row.value) +
+				'</span>';
+		}).join('');
 	}
 
 	function countriesTooltipHtml(countries) {
@@ -256,52 +305,69 @@
 			if (!groups[continent]) groups[continent] = [];
 			groups[continent].push(name);
 		});
-		var lines = [];
-		CONTINENT_ORDER.concat(['Other']).forEach(function (continent) {
+		return tipRowsHtml(CONTINENT_ORDER.concat(['Other']).reduce(function (rows, continent) {
 			var list = groups[continent];
-			if (!list || !list.length) return;
-			lines.push(
-				'<span class="travel-countries-group">' +
-					'<strong>' + continent + ':</strong> ' +
-					list.map(escapeHtml).join(', ') +
-				'</span>'
-			);
-		});
-		return lines.join('');
+			if (list && list.length) {
+				rows.push({ label: continent, value: list.join(', ') });
+			}
+			return rows;
+		}, []));
 	}
 
-	function bindCountriesTip() {
+	function tripsTooltipHtml(years) {
+		return tipRowsHtml(years.filter(function (row) {
+			return row.trips;
+		}).map(function (row) {
+			return { label: row.year, value: String(row.trips) };
+		}));
+	}
+
+	function tripDaysTooltipHtml(years) {
+		return tipRowsHtml(years.filter(function (row) {
+			return row.days;
+		}).map(function (row) {
+			return {
+				label: row.year,
+				value: row.days + (row.days === 1 ? ' day' : ' days')
+			};
+		}));
+	}
+
+	function hoverStat(label, value, tipHtml) {
+		if (!tipHtml) return label + ': ' + value;
+		return '<span class="travel-stats-hover" tabindex="0">' +
+			label + ': ' + value +
+			'<span class="travel-stats-tip" role="tooltip">' + tipHtml + '</span>' +
+			'</span>';
+	}
+
+	function bindStatsTips() {
 		var $stats = $('#travel-stats');
-		$stats.off('click.countriesTip').on('click.countriesTip', '.travel-stats-countries', function (e) {
+		$stats.off('click.statsTip').on('click.statsTip', '.travel-stats-hover', function (e) {
 			if (finePointerHover()) return;
 			e.stopPropagation();
-			$(this).toggleClass('is-open');
+			var $el = $(this);
+			$stats.find('.travel-stats-hover').not($el).removeClass('is-open');
+			$el.toggleClass('is-open');
 		});
-		$(document).off('click.countriesTip').on('click.countriesTip', function () {
-			$stats.find('.travel-stats-countries').removeClass('is-open');
+		$(document).off('click.statsTip').on('click.statsTip', function () {
+			$stats.find('.travel-stats-hover').removeClass('is-open');
 		});
 	}
 
 	function renderStats() {
 		var s = travelData.stats || {};
+		var years = tripYearStats();
 		var countries = visitedCountries();
-		var countriesHtml = 'countries: ' + (s.totalCountries || countries.length || 0);
-		if (countries.length) {
-			countriesHtml =
-				'<span class="travel-stats-countries" tabindex="0">' +
-					countriesHtml +
-					'<span class="travel-countries-tip" role="tooltip">' +
-						countriesTooltipHtml(countries) +
-					'</span>' +
-				'</span>';
-		}
 		$('#travel-stats').html(
-			'trips: ' + (s.totalTrips || 0) +
-			' | trip days: ' + (s.totalTripDays || 0) +
+			hoverStat('trips', s.totalTrips || 0, tripsTooltipHtml(years)) +
+			' | ' +
+			hoverStat('trip days', s.totalTripDays || 0, tripDaysTooltipHtml(years)) +
 			' | cities: ' + (s.totalCities || 0) +
-			' | ' + countriesHtml
+			' | ' +
+			hoverStat('countries', s.totalCountries || countries.length || 0, countriesTooltipHtml(countries))
 		);
-		bindCountriesTip();
+		bindStatsTips();
 		if (travelData.sourceNote && !travelData.trips.length) {
 			$('#travel-notice').text(travelData.sourceNote).show();
 		} else {

@@ -1080,14 +1080,14 @@
 	letter-spacing: 0.02em;
 }
 
-.travel-stats-countries {
+.travel-stats-hover {
 	position: relative;
 	display: inline-block;
 	cursor: help;
 	border-bottom: 1px dotted currentColor;
 }
 
-.travel-countries-tip {
+.travel-stats-tip {
 	position: absolute;
 	top: calc(100% + 0.45rem);
 	left: 0;
@@ -1114,19 +1114,19 @@
 	transition: opacity 0.15s ease, visibility 0.15s ease;
 }
 
-.travel-stats-countries:hover .travel-countries-tip,
-.travel-stats-countries:focus .travel-countries-tip,
-.travel-stats-countries:focus-within .travel-countries-tip,
-.travel-stats-countries.is-open .travel-countries-tip {
+.travel-stats-hover:hover .travel-stats-tip,
+.travel-stats-hover:focus .travel-stats-tip,
+.travel-stats-hover:focus-within .travel-stats-tip,
+.travel-stats-hover.is-open .travel-stats-tip {
 	opacity: 1;
 	visibility: visible;
 }
 
-.travel-countries-group {
+.travel-stats-tip-row {
 	display: block;
 }
 
-.travel-countries-group strong {
+.travel-stats-tip-row strong {
 	color: #222;
 	font-weight: 700;
 }
