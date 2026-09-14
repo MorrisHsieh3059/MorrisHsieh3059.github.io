@@ -166,7 +166,7 @@
 			$card.append('<h4>' + trip.title + '</h4>');
 			$card.append(
 				'<div class="trip-counts">' + nCities + ' ' + (nCities === 1 ? 'city' : 'cities') +
-				' · ' + nCountries + ' ' + (nCountries === 1 ? 'country' : 'countries') + '</div>'
+				' · ' + nCountries + ' ' + (nCountries === 1 ? 'region' : 'regions') + '</div>'
 			);
 			if (trip.cities && trip.cities.length) {
 				$card.append('<div class="cities">' + formatRouteCities(trip) + '</div>');
@@ -201,14 +201,204 @@
 		});
 	}
 
+	var CONTINENT_ORDER = [
+		'Asia', 'Europe', 'Africa', 'North America', 'South America', 'Oceania'
+	];
+
+	// Site country strings from travel.json. Russia is Europe (visits are
+	// St. Petersburg). Unmapped names fall through to Other.
+	var COUNTRY_CONTINENT = {
+		'Canada': 'North America',
+		'China': 'Asia',
+		'Czech Republic': 'Europe',
+		'Estonia': 'Europe',
+		'Finland': 'Europe',
+		'Ireland': 'Europe',
+		'Italy': 'Europe',
+		'Japan': 'Asia',
+		'Lithuania': 'Europe',
+		'Malaysia': 'Asia',
+		'Morocco': 'Africa',
+		'Norway': 'Europe',
+		'Poland': 'Europe',
+		'Russia': 'Europe',
+		'Slovenia': 'Europe',
+		'South Korea': 'Asia',
+		'Spain': 'Europe',
+		'Sweden': 'Europe',
+		'Taiwan': 'Asia',
+		'Hong Kong': 'Asia',
+		'Macau': 'Asia',
+		'United Kingdom': 'Europe',
+		'United States': 'North America'
+	};
+
+	function escapeHtml(value) {
+		return String(value)
+			.replace(/&/g, '&amp;')
+			.replace(/</g, '&lt;')
+			.replace(/>/g, '&gt;')
+			.replace(/"/g, '&quot;');
+	}
+
+	function nextIsoDate(iso) {
+		var d = new Date(iso + 'T00:00:00');
+		d.setDate(d.getDate() + 1);
+		var month = d.getMonth() + 1;
+		var day = d.getDate();
+		return d.getFullYear() + '-' +
+			(month < 10 ? '0' : '') + month + '-' +
+			(day < 10 ? '0' : '') + day;
+	}
+
+	function tripYearStats() {
+		var byYear = {};
+		function yearRow(year) {
+			if (!byYear[year]) byYear[year] = { year: year, trips: 0, days: 0 };
+			return byYear[year];
+		}
+		(travelData.trips || []).forEach(function (trip) {
+			if (!trip.startDate || !trip.endDate) return;
+			yearRow(trip.startDate.slice(0, 4)).trips += 1;
+			var cur = trip.startDate;
+			while (cur <= trip.endDate) {
+				yearRow(cur.slice(0, 4)).days += 1;
+				cur = nextIsoDate(cur);
+			}
+		});
+		return Object.keys(byYear).sort().reverse().map(function (year) {
+			return byYear[year];
+		});
+	}
+
+	function countryLastVisit() {
+		var latest = {};
+		(travelData.cities || []).forEach(function (city) {
+			if (!city.country || city.country === 'Unknown' || !city.lastVisit) return;
+			if (!latest[city.country] || city.lastVisit > latest[city.country]) {
+				latest[city.country] = city.lastVisit;
+			}
+		});
+		return latest;
+	}
+
+	function visitedCountries() {
+		var latest = countryLastVisit();
+		return Object.keys(latest).sort(function (a, b) {
+			var diff = latest[b].localeCompare(latest[a]);
+			if (diff) return diff;
+			return a.localeCompare(b);
+		});
+	}
+
+	function tipRowsHtml(rows) {
+		return rows.map(function (row) {
+			return '<span class="travel-stats-tip-row">' +
+				'<strong>' + escapeHtml(row.label) + ':</strong> ' +
+				escapeHtml(row.value) +
+				'</span>';
+		}).join('');
+	}
+
+	function continentRowsHtml(countries, formatValue) {
+		var groups = {};
+		countries.forEach(function (name) {
+			var continent = COUNTRY_CONTINENT[name] || 'Other';
+			if (!groups[continent]) groups[continent] = [];
+			groups[continent].push(formatValue ? formatValue(name) : name);
+		});
+		return tipRowsHtml(CONTINENT_ORDER.concat(['Other']).reduce(function (rows, continent) {
+			var list = groups[continent];
+			if (list && list.length) {
+				rows.push({ label: continent, value: list.join(', ') });
+			}
+			return rows;
+		}, []));
+	}
+
+	function countriesTooltipHtml(countries) {
+		return continentRowsHtml(countries);
+	}
+
+	function cityCountsByCountry() {
+		var counts = {};
+		(travelData.cities || []).forEach(function (city) {
+			if (!city.country || city.country === 'Unknown') return;
+			counts[city.country] = (counts[city.country] || 0) + 1;
+		});
+		return counts;
+	}
+
+	function citiesTooltipHtml(countries) {
+		var counts = cityCountsByCountry();
+		return continentRowsHtml(countries, function (name) {
+			return name + ' (' + (counts[name] || 0) + ')';
+		});
+	}
+
+	function tripsTooltipHtml(years) {
+		return tipRowsHtml(years.filter(function (row) {
+			return row.trips;
+		}).map(function (row) {
+			return { label: row.year, value: String(row.trips) };
+		}));
+	}
+
+	function tripDaysTooltipHtml(years) {
+		return tipRowsHtml(years.filter(function (row) {
+			return row.days;
+		}).map(function (row) {
+			return {
+				label: row.year,
+				value: row.days + (row.days === 1 ? ' day' : ' days')
+			};
+		}));
+	}
+
+	function hoverStat(label, value, tipHtml, ariaLabel) {
+		if (!tipHtml) return label + ': ' + value;
+		return '<span class="travel-stats-item">' +
+			'<span class="travel-stats-label">' +
+				escapeHtml(label) +
+				'<button type="button" class="travel-stats-info" aria-label="' +
+					escapeHtml(ariaLabel || label) + '">' +
+					'<i class="fas fa-info-circle" aria-hidden="true"></i>' +
+				'</button>' +
+				'<span class="travel-stats-tip" role="tooltip">' + tipHtml + '</span>' +
+			'</span>' +
+			': ' + value +
+			'</span>';
+	}
+
+	function bindStatsTips() {
+		var $root = $('#travel');
+		$root.off('click.statsTip', '.travel-stats-info').on('click.statsTip', '.travel-stats-info', function (e) {
+			e.preventDefault();
+			e.stopPropagation();
+			if (finePointerHover()) return;
+			var $el = $(this);
+			$root.find('.travel-stats-info').not($el).removeClass('is-open');
+			$el.toggleClass('is-open');
+		});
+		$(document).off('click.statsTip').on('click.statsTip', function () {
+			$root.find('.travel-stats-info').removeClass('is-open');
+		});
+	}
+
 	function renderStats() {
 		var s = travelData.stats || {};
+		var years = tripYearStats();
+		var countries = visitedCountries();
 		$('#travel-stats').html(
-			'trips: ' + (s.totalTrips || 0) +
-			' | trip days: ' + (s.totalTripDays || 0) +
-			' | cities: ' + (s.totalCities || 0) +
-			' | countries: ' + (s.totalCountries || 0)
+			hoverStat('trips', s.totalTrips || 0, tripsTooltipHtml(years), 'Trips by year') +
+			' | ' +
+			hoverStat('trip days', s.totalTripDays || 0, tripDaysTooltipHtml(years), 'Trip days by year') +
+			' | ' +
+			hoverStat('cities', s.totalCities || 0, citiesTooltipHtml(countries), 'Cities by region') +
+			' | ' +
+			hoverStat('regions', s.totalCountries || countries.length || 0, countriesTooltipHtml(countries), 'Regions by continent')
 		);
+		bindStatsTips();
 		if (travelData.sourceNote && !travelData.trips.length) {
 			$('#travel-notice').text(travelData.sourceNote).show();
 		} else {
@@ -611,6 +801,8 @@
 		var delay = meta && meta.animated ? 1300 : 0;
 		setTimeout(function () { showTravelTab(tab); }, delay);
 	}
+
+	bindStatsTips();
 
 	$(document).on('site:route', function (e, route, meta) {
 		applyTravelRoute(route, meta);

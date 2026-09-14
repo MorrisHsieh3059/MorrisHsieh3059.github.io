@@ -8,7 +8,15 @@
 						</div>
 
 						<ul class="travel-tabs">
-							<li><a href="/travel/" class="travel-tab-toggle active" data-travel-tab="journey">Journey</a></li>
+							<li class="travel-tab-with-info">
+								<a href="/travel/" class="travel-tab-toggle active" data-travel-tab="journey">
+									Journey
+									<span class="travel-stats-info travel-tab-info" tabindex="0" role="button" aria-label="About Journey data">
+										<i class="fas fa-info-circle" aria-hidden="true"></i>
+									</span>
+									<span class="travel-stats-tip" role="tooltip">This feature comes from Google Timeline, so some data is missing. Total countries visited so far: 23</span>
+								</a>
+							</li>
 							<li><a href="/travel/hotels/" class="travel-tab-toggle" data-travel-tab="hotels">Hotel Collection</a></li>
 						</ul>
 
@@ -22,7 +30,7 @@
 										<div id="travel-map"></div>
 										<div id="travel-hover-card" class="travel-hover-card"></div>
 										<div class="travel-map-legend">
-											<span class="legend-country">Visited country</span>
+											<span class="legend-country">Visited region</span>
 											<span class="legend-home">Home base</span>
 											<span class="legend-heat">Revisit heat <span class="heat-gradient"></span></span>
 											<span class="legend-route">Trip route (hover / tap)</span>
@@ -74,7 +82,7 @@
 									<div class="hotel-map-wrap">
 										<div id="hotel-map"></div>
 										<div class="travel-map-legend hotel-map-legend">
-											<span class="legend-country">Visited country</span>
+											<span class="legend-country">Visited region</span>
 										</div>
 									</div>
 								</div>

@@ -20,8 +20,19 @@
 	margin: 0;
 }
 
+.travel-tab-with-info {
+	position: relative;
+	z-index: 25;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.28rem;
+}
+
 .travel-tabs > li > a {
-	display: inline-block;
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4em;
 	padding: 0.45rem 1.2rem;
 	border: 1px solid #ddd;
 	border-radius: 999px;
@@ -33,6 +44,28 @@
 	text-transform: uppercase;
 	text-decoration: none;
 	transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.travel-tab-info {
+	font-size: 0.7em;
+	letter-spacing: 0;
+	vertical-align: middle;
+}
+
+.travel-tab-toggle.active .travel-tab-info {
+	color: rgba(255, 255, 255, 0.8);
+}
+
+.travel-tab-toggle.active .travel-tab-info:hover,
+.travel-tab-toggle.active .travel-tab-info:focus,
+.travel-tab-toggle.active .travel-tab-info.is-open {
+	color: #fff;
+}
+
+.travel-tab-toggle .travel-stats-tip {
+	text-transform: none;
+	letter-spacing: 0;
+	font-weight: 400;
 }
 
 .travel-tabs > li > a:hover {
@@ -1069,6 +1102,8 @@
 }
 
 .travel-stats {
+	position: relative;
+	z-index: 20;
 	flex-shrink: 0;
 	margin: 1rem 0 0.5rem;
 	font-family: 'Roboto Mono', sans-serif;
@@ -1076,6 +1111,85 @@
 	font-weight: 700;
 	color: #333;
 	letter-spacing: 0.02em;
+}
+
+.travel-stats-item {
+	display: inline;
+}
+
+.travel-stats-label {
+	position: relative;
+	display: inline;
+}
+
+.travel-stats-info {
+	display: inline-block;
+	margin: 0 0 0 0.14em;
+	padding: 0;
+	border: 0;
+	background: none;
+	-webkit-appearance: none;
+	appearance: none;
+	color: #b0b0b0;
+	font-size: 0.62em;
+	line-height: 1;
+	vertical-align: super;
+	cursor: help;
+}
+
+.travel-stats-info:hover,
+.travel-stats-info:focus,
+.travel-stats-info.is-open {
+	color: var(--accent, #303F9F);
+	outline: none;
+}
+
+.travel-tabs .travel-tab-info {
+	font-size: 0.85em;
+	vertical-align: middle;
+}
+
+.travel-stats-tip {
+	position: absolute;
+	top: calc(100% + 0.45rem);
+	left: 0;
+	right: auto;
+	z-index: 30;
+	display: flex;
+	flex-direction: column;
+	gap: 0.4rem;
+	width: max-content;
+	max-width: min(26rem, calc(100vw - 2.5rem));
+	padding: 0.75rem 0.9rem;
+	background: #fff;
+	border-left: 4px solid var(--accent, #303F9F);
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+	font-weight: 400;
+	font-size: 0.78rem;
+	letter-spacing: 0;
+	color: #444;
+	line-height: 1.45;
+	text-align: left;
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+	transition: opacity 0.15s ease, visibility 0.15s ease;
+}
+
+.travel-stats-info:hover + .travel-stats-tip,
+.travel-stats-info:focus + .travel-stats-tip,
+.travel-stats-info.is-open + .travel-stats-tip {
+	opacity: 1;
+	visibility: visible;
+}
+
+.travel-stats-tip-row {
+	display: block;
+}
+
+.travel-stats-tip-row strong {
+	color: #222;
+	font-weight: 700;
 }
 
 .travel-cards-panel {
