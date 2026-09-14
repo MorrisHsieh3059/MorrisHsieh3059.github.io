@@ -28,13 +28,11 @@
 	gap: 0.28rem;
 }
 
-.travel-tab-info {
-	vertical-align: middle;
-	font-size: 0.7rem;
-}
-
 .travel-tabs > li > a {
-	display: inline-block;
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4em;
 	padding: 0.45rem 1.2rem;
 	border: 1px solid #ddd;
 	border-radius: 999px;
@@ -46,6 +44,28 @@
 	text-transform: uppercase;
 	text-decoration: none;
 	transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.travel-tab-info {
+	font-size: 0.7em;
+	letter-spacing: 0;
+	vertical-align: middle;
+}
+
+.travel-tab-toggle.active .travel-tab-info {
+	color: rgba(255, 255, 255, 0.8);
+}
+
+.travel-tab-toggle.active .travel-tab-info:hover,
+.travel-tab-toggle.active .travel-tab-info:focus,
+.travel-tab-toggle.active .travel-tab-info.is-open {
+	color: #fff;
+}
+
+.travel-tab-toggle .travel-stats-tip {
+	text-transform: none;
+	letter-spacing: 0;
+	font-weight: 400;
 }
 
 .travel-tabs > li > a:hover {
@@ -1122,6 +1142,11 @@
 .travel-stats-info.is-open {
 	color: var(--accent, #303F9F);
 	outline: none;
+}
+
+.travel-tabs .travel-tab-info {
+	font-size: 0.85em;
+	vertical-align: middle;
 }
 
 .travel-stats-tip {
