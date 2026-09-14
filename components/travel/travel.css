@@ -1080,11 +1080,33 @@
 	letter-spacing: 0.02em;
 }
 
-.travel-stats-hover {
+.travel-stats-item {
+	display: inline;
+}
+
+.travel-stats-label {
 	position: relative;
+	display: inline;
+}
+
+.travel-stats-info {
 	display: inline-block;
+	margin: 0 0 0 0.14em;
+	padding: 0;
+	border: 0;
+	background: none;
+	color: #b0b0b0;
+	font-size: 0.62em;
+	line-height: 1;
+	vertical-align: super;
 	cursor: help;
-	border-bottom: 1px dotted currentColor;
+}
+
+.travel-stats-info:hover,
+.travel-stats-info:focus,
+.travel-stats-info.is-open {
+	color: var(--accent, #303F9F);
+	outline: none;
 }
 
 .travel-stats-tip {
@@ -1114,10 +1136,9 @@
 	transition: opacity 0.15s ease, visibility 0.15s ease;
 }
 
-.travel-stats-hover:hover .travel-stats-tip,
-.travel-stats-hover:focus .travel-stats-tip,
-.travel-stats-hover:focus-within .travel-stats-tip,
-.travel-stats-hover.is-open .travel-stats-tip {
+.travel-stats-info:hover + .travel-stats-tip,
+.travel-stats-info:focus + .travel-stats-tip,
+.travel-stats-info.is-open + .travel-stats-tip {
 	opacity: 1;
 	visibility: visible;
 }

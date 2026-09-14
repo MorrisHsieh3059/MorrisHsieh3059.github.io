@@ -166,7 +166,7 @@
 			$card.append('<h4>' + trip.title + '</h4>');
 			$card.append(
 				'<div class="trip-counts">' + nCities + ' ' + (nCities === 1 ? 'city' : 'cities') +
-				' · ' + nCountries + ' ' + (nCountries === 1 ? 'country' : 'countries') + '</div>'
+				' · ' + nCountries + ' ' + (nCountries === 1 ? 'region' : 'regions') + '</div>'
 			);
 			if (trip.cities && trip.cities.length) {
 				$card.append('<div class="cities">' + formatRouteCities(trip) + '</div>');
@@ -227,6 +227,8 @@
 		'Spain': 'Europe',
 		'Sweden': 'Europe',
 		'Taiwan': 'Asia',
+		'Hong Kong': 'Asia',
+		'Macau': 'Asia',
 		'United Kingdom': 'Europe',
 		'United States': 'North America'
 	};
@@ -298,12 +300,12 @@
 		}).join('');
 	}
 
-	function countriesTooltipHtml(countries) {
+	function continentRowsHtml(countries, formatValue) {
 		var groups = {};
 		countries.forEach(function (name) {
 			var continent = COUNTRY_CONTINENT[name] || 'Other';
 			if (!groups[continent]) groups[continent] = [];
-			groups[continent].push(name);
+			groups[continent].push(formatValue ? formatValue(name) : name);
 		});
 		return tipRowsHtml(CONTINENT_ORDER.concat(['Other']).reduce(function (rows, continent) {
 			var list = groups[continent];
@@ -312,6 +314,26 @@
 			}
 			return rows;
 		}, []));
+	}
+
+	function countriesTooltipHtml(countries) {
+		return continentRowsHtml(countries);
+	}
+
+	function cityCountsByCountry() {
+		var counts = {};
+		(travelData.cities || []).forEach(function (city) {
+			if (!city.country || city.country === 'Unknown') return;
+			counts[city.country] = (counts[city.country] || 0) + 1;
+		});
+		return counts;
+	}
+
+	function citiesTooltipHtml(countries) {
+		var counts = cityCountsByCountry();
+		return continentRowsHtml(countries, function (name) {
+			return name + ' (' + (counts[name] || 0) + ')';
+		});
 	}
 
 	function tripsTooltipHtml(years) {
@@ -333,25 +355,33 @@
 		}));
 	}
 
-	function hoverStat(label, value, tipHtml) {
+	function hoverStat(label, value, tipHtml, ariaLabel) {
 		if (!tipHtml) return label + ': ' + value;
-		return '<span class="travel-stats-hover" tabindex="0">' +
-			label + ': ' + value +
-			'<span class="travel-stats-tip" role="tooltip">' + tipHtml + '</span>' +
+		return '<span class="travel-stats-item">' +
+			'<span class="travel-stats-label">' +
+				escapeHtml(label) +
+				'<button type="button" class="travel-stats-info" aria-label="' +
+					escapeHtml(ariaLabel || label) + '">' +
+					'<i class="fas fa-info-circle" aria-hidden="true"></i>' +
+				'</button>' +
+				'<span class="travel-stats-tip" role="tooltip">' + tipHtml + '</span>' +
+			'</span>' +
+			': ' + value +
 			'</span>';
 	}
 
 	function bindStatsTips() {
 		var $stats = $('#travel-stats');
-		$stats.off('click.statsTip').on('click.statsTip', '.travel-stats-hover', function (e) {
-			if (finePointerHover()) return;
+		$stats.off('click.statsTip').on('click.statsTip', '.travel-stats-info', function (e) {
+			e.preventDefault();
 			e.stopPropagation();
+			if (finePointerHover()) return;
 			var $el = $(this);
-			$stats.find('.travel-stats-hover').not($el).removeClass('is-open');
+			$stats.find('.travel-stats-info').not($el).removeClass('is-open');
 			$el.toggleClass('is-open');
 		});
 		$(document).off('click.statsTip').on('click.statsTip', function () {
-			$stats.find('.travel-stats-hover').removeClass('is-open');
+			$stats.find('.travel-stats-info').removeClass('is-open');
 		});
 	}
 
@@ -360,12 +390,13 @@
 		var years = tripYearStats();
 		var countries = visitedCountries();
 		$('#travel-stats').html(
-			hoverStat('trips', s.totalTrips || 0, tripsTooltipHtml(years)) +
+			hoverStat('trips', s.totalTrips || 0, tripsTooltipHtml(years), 'Trips by year') +
 			' | ' +
-			hoverStat('trip days', s.totalTripDays || 0, tripDaysTooltipHtml(years)) +
-			' | cities: ' + (s.totalCities || 0) +
+			hoverStat('trip days', s.totalTripDays || 0, tripDaysTooltipHtml(years), 'Trip days by year') +
 			' | ' +
-			hoverStat('countries', s.totalCountries || countries.length || 0, countriesTooltipHtml(countries))
+			hoverStat('cities', s.totalCities || 0, citiesTooltipHtml(countries), 'Cities by region') +
+			' | ' +
+			hoverStat('regions', s.totalCountries || countries.length || 0, countriesTooltipHtml(countries), 'Regions by continent')
 		);
 		bindStatsTips();
 		if (travelData.sourceNote && !travelData.trips.length) {
