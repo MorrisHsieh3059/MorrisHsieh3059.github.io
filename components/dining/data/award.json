@@ -1,5 +1,58 @@
 [
   {
+    "id": "corima-092626",
+    "name": "Corima",
+    "city": "New York, NY",
+    "date": "2026-09-26",
+    "menu": "à la carte",
+    "cuisines": [
+      "Mexican",
+      "Contemporary"
+    ],
+    "pictures": [
+      "0.jpeg",
+      "1.jpeg",
+      "2.jpeg",
+      "3.jpeg",
+      "4.jpeg",
+      "5.jpeg",
+      "6.jpeg",
+      "7.jpeg",
+      "8.jpeg",
+      "9.jpeg",
+      "10.jpeg",
+      "11.jpeg",
+      "12.jpeg",
+      "13.jpeg",
+      "14.jpeg",
+      "15.jpeg",
+      "16.jpeg",
+      "17.jpeg",
+      "18.jpeg",
+      "19.jpeg"
+    ],
+    "accolades": [
+      {
+        "list": "nyt-100-best-restaurants",
+        "region": "New York",
+        "year": 2026,
+        "rank": 37
+      },
+      {
+        "list": "50-best-restaurants",
+        "region": "North America",
+        "year": 2026,
+        "rank": 36
+      },
+      {
+        "list": "50-best-restaurants",
+        "region": "North America",
+        "year": 2025,
+        "rank": 36
+      }
+    ]
+  },
+  {
     "id": "borgo-092126",
     "name": "Borgo",
     "city": "New York, NY",
