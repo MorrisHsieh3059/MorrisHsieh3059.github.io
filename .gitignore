@@ -19,6 +19,10 @@ _to_delete/
 # Personal scratch notes, not part of the site.
 _rundown.txt
 
+# Private location exports (Google Timeline / Takeout). Never commit.
+location-history.json
+Timeline.json
+
 # Local dining-rankings ingest inputs (optional; used by
 # scripts/dining-rankings-ingest.py). The committed artifacts are
 # components/dining/rankings/lists/*.json and rankings.json.

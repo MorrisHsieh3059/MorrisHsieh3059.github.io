@@ -7,6 +7,7 @@
     "postinstall": "node scripts/vendor-assets.js",
     "build": "node build/build.js",
     "build-travel": "python3 components/travel/scripts/parse-timeline.py ../Downloads/location-history.json",
+    "import-timeline": "python3 scripts/import-timeline-trips.py",
     "build-nyc": "python3 components/nyc/scripts/parse-nyc.py ../Downloads/location-history.json && python3 components/nyc/scripts/match-nyc-streets.py ../Downloads/location-history.json",
     "build-nyc-offline": "python3 components/nyc/scripts/parse-nyc.py ../Downloads/location-history.json && python3 components/nyc/scripts/match-nyc-streets.py --offline ../Downloads/location-history.json",
     "compress-dining": "python3 scripts/compress-dining-photos.py",

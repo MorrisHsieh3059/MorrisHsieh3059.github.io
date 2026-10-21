@@ -95,6 +95,17 @@ python3 components/travel/scripts/parse-timeline.py /path/to/Takeout/
 
 Home bases are fixed: **Taipei** (until Aug 1, 2022) and **NYC** (since Aug 2, 2022). A trip starts when you leave base and ends when you return — shown as home pins, not travel destinations.
 
+### Add a trip from a phone Timeline export
+
+`build-travel` rebuilds every trip from a full history file. An on-device export (`Timeline.json`, from Maps → Your Timeline → Settings → Export) only covers recent days, so running it on that file would wipe older trips. Merge the new ones instead:
+
+```bash
+python3 scripts/import-timeline-trips.py /path/to/Timeline.json          # print new trips
+python3 scripts/import-timeline-trips.py /path/to/Timeline.json --write  # merge into data/travel.json
+```
+
+Requires `reverse_geocoder` (`pip install reverse_geocoder`), the same offline geocoder as `parse-timeline.py`. Place visits outside the home radius become one trip per time away. Dates are the phone's local calendar days. Cities come from those visits, not from the flight path. Do not commit `Timeline.json` or `location-history.json`.
+
 ### Hotel Collection
 
 `/travel/hotels/` is a second Travel tab. `data/hotels.json` is the luxury-hotel catalog (Waldorf Astoria, The Ritz-Carlton, Four Seasons, Fairmont). Each catalog row has `brand` plus `family` (the loyalty group that brand belongs to):
