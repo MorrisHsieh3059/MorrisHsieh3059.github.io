@@ -1026,8 +1026,11 @@
 	=========================================================================*/
 	function mergeTimelineVisits(michelin, award) {
 		var awardById = {};
-		(award || []).forEach(function (v) {
-			if (v && v.id) awardById[v.id] = v;
+		var awardOrder = {};
+		(award || []).forEach(function (v, i) {
+			if (!v || !v.id) return;
+			awardById[v.id] = v;
+			awardOrder[v.id] = i;
 		});
 
 		var byId = {};
@@ -1051,7 +1054,14 @@
 		return Object.keys(byId).map(function (id) {
 			return byId[id];
 		}).sort(function (a, b) {
-			return (b.visit.date || '').localeCompare(a.visit.date || '');
+			var byDate = (b.visit.date || '').localeCompare(a.visit.date || '');
+			if (byDate) return byDate;
+			// Files are newest-first. A same-day pair keeps that order when
+			// both visits are in award.json; otherwise the merge order stands.
+			var ai = awardOrder[a.visit.id];
+			var bi = awardOrder[b.visit.id];
+			if (ai !== undefined && bi !== undefined && ai !== bi) return ai - bi;
+			return 0;
 		});
 	}
 
