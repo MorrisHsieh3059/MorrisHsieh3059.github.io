@@ -1,5 +1,30 @@
 [
   {
+    "id": "library-bar-101726",
+    "name": "Library Bar",
+    "date": "2026-10-17",
+    "accolades": [
+      {
+        "list": "50-best-bars",
+        "region": "North America",
+        "year": 2026,
+        "rank": 19
+      },
+      {
+        "list": "50-best-bars",
+        "region": "North America",
+        "year": 2025,
+        "rank": 51
+      }
+    ],
+    "cuisines": [
+      "Bar"
+    ],
+    "menu": "à la carte",
+    "city": "Toronto",
+    "pictures": []
+  },
+  {
     "id": "corima-092626",
     "name": "Corima",
     "city": "New York, NY",
