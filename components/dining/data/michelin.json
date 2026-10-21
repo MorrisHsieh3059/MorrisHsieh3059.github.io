@@ -1,18 +1,5 @@
 [
   {
-    "id": "quetzal-101726",
-    "name": "Quetzal",
-    "date": "2026-10-17",
-    "stars": 1,
-    "status": "current",
-    "cuisines": [
-      "Mexican"
-    ],
-    "menu": "full tasting",
-    "city": "Toronto",
-    "pictures": []
-  },
-  {
     "id": "corima-092626",
     "name": "Corima",
     "date": "2026-09-26",
