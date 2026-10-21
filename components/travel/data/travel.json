@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-12T18:20:49.421729+00:00",
-  "sourceNote": "Parsed 10065 visits from location-history.json",
+  "generatedAt": "2026-10-21T01:43:31.660543+00:00",
+  "sourceNote": "Parsed 10065 visits from location-history.json; Merged 1 trip from an on-device Timeline export",
   "homeBases": [
     {
       "id": "home-taipei",
@@ -1380,9 +1380,47 @@
       "tripIds": [
         "trip-056"
       ]
+    },
+    {
+      "id": "toronto-canada",
+      "city": "Toronto",
+      "country": "Canada",
+      "lat": 43.64965,
+      "lng": -79.38413,
+      "visits": 1,
+      "firstVisit": "2026-10-17",
+      "lastVisit": "2026-10-18",
+      "tripIds": [
+        "trip-057"
+      ]
     }
   ],
   "trips": [
+    {
+      "id": "trip-057",
+      "title": "2026 (Oct 17 - Oct 18): Canada",
+      "startDate": "2026-10-17",
+      "endDate": "2026-10-18",
+      "cities": [
+        "Toronto"
+      ],
+      "countries": [
+        "Canada"
+      ],
+      "cityIds": [
+        "toronto-canada"
+      ],
+      "route": [
+        {
+          "cityId": "toronto-canada",
+          "city": "Toronto",
+          "country": "Canada",
+          "lat": 43.64543,
+          "lng": -79.38075
+        }
+      ],
+      "photos": []
+    },
     {
       "id": "trip-056",
       "title": "2026 (Sep 06 - Sep 07): United States",
@@ -3601,9 +3639,9 @@
     }
   ],
   "stats": {
-    "totalTrips": 56,
-    "totalTripDays": 250,
-    "totalCities": 103,
+    "totalTrips": 57,
+    "totalTripDays": 252,
+    "totalCities": 104,
     "totalCountries": 21
   }
 }
