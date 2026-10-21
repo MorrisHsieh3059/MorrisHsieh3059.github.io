@@ -1,5 +1,51 @@
 [
   {
+    "id": "quetzal-101726",
+    "name": "Quetzal",
+    "city": "Toronto",
+    "date": "2026-10-17",
+    "menu": "full tasting",
+    "cuisines": [
+      "Mexican"
+    ],
+    "pictures": [
+      "0.jpeg",
+      "1.jpeg",
+      "2.jpeg",
+      "3.jpeg",
+      "4.jpeg",
+      "5.jpeg",
+      "6.jpeg",
+      "7.jpeg",
+      "8.jpeg",
+      "9.jpeg",
+      "10.jpeg",
+      "11.jpeg",
+      "12.jpeg",
+      "13.jpeg",
+      "14.jpeg",
+      "15.jpeg",
+      "16.jpeg",
+      "17.jpeg",
+      "18.jpeg",
+      "19.jpeg"
+    ],
+    "accolades": [
+      {
+        "list": "50-best-restaurants",
+        "region": "North America",
+        "year": 2026,
+        "rank": 8
+      },
+      {
+        "list": "50-best-restaurants",
+        "region": "North America",
+        "year": 2025,
+        "rank": 11
+      }
+    ]
+  },
+  {
     "id": "library-bar-101726",
     "name": "Library Bar",
     "date": "2026-10-17",
