@@ -1398,8 +1398,8 @@
   "trips": [
     {
       "id": "trip-057",
-      "title": "2026 (Oct 17 - Oct 18): Canada",
-      "startDate": "2026-10-17",
+      "title": "2026 (Oct 16 - Oct 18): Canada",
+      "startDate": "2026-10-16",
       "endDate": "2026-10-18",
       "cities": [
         "Toronto"
@@ -3640,7 +3640,7 @@
   ],
   "stats": {
     "totalTrips": 57,
-    "totalTripDays": 252,
+    "totalTripDays": 253,
     "totalCities": 104,
     "totalCountries": 21
   }
