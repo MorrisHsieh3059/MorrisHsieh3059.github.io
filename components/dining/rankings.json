@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-19",
+  "updated": "2026-10-21",
   "entries": [
     {
       "name": "Hundred Burgers",
@@ -10818,6 +10818,15 @@
       "rank": 50,
       "city": "New Orleans",
       "source": "https://www.barandrestaurant.com/people/north-americas-50-best-bars-2025-revealed"
+    },
+    {
+      "name": "Library Bar",
+      "list": "50-best-bars",
+      "region": "North America",
+      "year": 2025,
+      "rank": 51,
+      "city": "Toronto",
+      "source": "https://www.theworlds50best.com/stories/News/north-americas-50-best-bars-2025-the-51-100-list.html"
     },
     {
       "name": "Bar Leone",
