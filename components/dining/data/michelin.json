@@ -10,7 +10,13 @@
     ],
     "menu": "à la carte",
     "city": "New York, NY",
-    "pictures": []
+    "pictures": [
+      "0.jpeg",
+      "1.jpeg",
+      "2.jpeg",
+      "3.jpeg",
+      "4.jpeg"
+    ]
   },
   {
     "id": "quetzal-101726",
