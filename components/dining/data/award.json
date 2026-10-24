@@ -1,5 +1,30 @@
 [
   {
+    "id": "nowon-102326",
+    "name": "Nowon",
+    "date": "2026-10-23",
+    "accolades": [
+      {
+        "list": "101-best-burgers",
+        "region": "World",
+        "year": 2026,
+        "rank": 8
+      },
+      {
+        "list": "101-best-burgers",
+        "region": "World",
+        "year": 2025,
+        "rank": 15
+      }
+    ],
+    "cuisines": [
+      "Korean"
+    ],
+    "menu": "à la carte",
+    "city": "New York, NY",
+    "pictures": []
+  },
+  {
     "id": "library-bar-101726",
     "name": "Library Bar",
     "date": "2026-10-17",
