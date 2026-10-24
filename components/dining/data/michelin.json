@@ -1,5 +1,18 @@
 [
   {
+    "id": "la-dong-102326",
+    "name": "La Dong",
+    "date": "2026-10-23",
+    "rank": "gourmand",
+    "status": "current",
+    "cuisines": [
+      "Vietnamese"
+    ],
+    "menu": "à la carte",
+    "city": "New York, NY",
+    "pictures": []
+  },
+  {
     "id": "quetzal-101726",
     "name": "Quetzal",
     "date": "2026-10-17",
