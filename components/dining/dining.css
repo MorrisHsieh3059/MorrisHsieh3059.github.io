@@ -64,7 +64,6 @@
 
 .michelin-totals,
 .award-totals {
-	overflow: hidden;
 	margin: 0 0 1.75rem;
 	padding: 0.75rem 1.25rem;
 	background: #fff;
@@ -95,7 +94,7 @@
 	flex-wrap: wrap;
 	align-items: center;
 	row-gap: 0.6rem;
-	margin-left: -2.2rem;
+	overflow: hidden;
 }
 
 .michelin-totals-group,
@@ -104,6 +103,8 @@
 	align-items: center;
 	gap: 0.45rem;
 	white-space: nowrap;
+	margin-left: -2.2rem;
+	padding-left: 2.2rem;
 }
 
 .michelin-totals-group::before,
@@ -111,6 +112,7 @@
 	content: '|';
 	flex: 0 0 2.2rem;
 	width: 2.2rem;
+	margin-left: -2.2rem;
 	color: #ccc;
 	text-align: center;
 }
