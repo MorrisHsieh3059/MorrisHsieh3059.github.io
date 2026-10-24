@@ -1056,6 +1056,11 @@
 		}).sort(function (a, b) {
 			var byDate = (b.visit.date || '').localeCompare(a.visit.date || '');
 			if (byDate) return byDate;
+			var aTimelineOrder = a.visit.timelineOrder;
+			var bTimelineOrder = b.visit.timelineOrder;
+			if (aTimelineOrder !== undefined && bTimelineOrder !== undefined && aTimelineOrder !== bTimelineOrder) {
+				return aTimelineOrder - bTimelineOrder;
+			}
 			// Files are newest-first. A same-day pair keeps that order when
 			// both visits are in award.json; otherwise the merge order stands.
 			var ai = awardOrder[a.visit.id];
