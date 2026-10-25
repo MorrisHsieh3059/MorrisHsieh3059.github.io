@@ -205,6 +205,26 @@
     ]
   },
   {
+    "id": "blue-hill-at-stone-barns-100326",
+    "name": "Blue Hill at Stone Barns",
+    "city": "Pocantico Hills",
+    "date": "2026-10-03",
+    "menu": "short set menu",
+    "cuisines": [
+      "American",
+      "Contemporary"
+    ],
+    "pictures": [],
+    "accolades": [
+      {
+        "list": "50-best-restaurants",
+        "region": "World",
+        "year": 2022,
+        "rank": 74
+      }
+    ]
+  },
+  {
     "id": "corima-092626",
     "name": "Corima",
     "city": "New York, NY",
