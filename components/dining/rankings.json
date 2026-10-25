@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-21",
+  "updated": "2026-10-25",
   "entries": [
     {
       "name": "Hundred Burgers",
@@ -13358,6 +13358,15 @@
       "source": "https://www.50toppizza.it/50-top-europe-2020/"
     },
     {
+      "name": "The Dough Bros",
+      "list": "50-best-pizza",
+      "region": "Europe",
+      "year": 2020,
+      "rank": 21,
+      "city": "Galway, Ireland",
+      "source": "award.json"
+    },
+    {
       "name": "Forno d'Oro",
       "list": "50-best-pizza",
       "region": "Europe",
@@ -13860,6 +13869,15 @@
       "rank": 27,
       "city": "Galway",
       "source": "https://www.50toppizza.it/50-top-europe-2021-peppe-pizzeria-in-paris-has-been-named-this-years-best-european-pizzeria/"
+    },
+    {
+      "name": "The Dough Bros",
+      "list": "50-best-pizza",
+      "region": "Europe",
+      "year": 2021,
+      "rank": 27,
+      "city": "Galway, Ireland",
+      "source": "award.json"
     },
     {
       "name": "La Bottega Siciliana",
@@ -14688,6 +14706,15 @@
       "rank": 19,
       "city": "Galway",
       "source": "https://www.50toppizza.it/50-top-pizza-europe-2022-peppe-pizzeria-in-paris-has-been-named-the-best-pizzeria-in-europe/"
+    },
+    {
+      "name": "The Dough Bros",
+      "list": "50-best-pizza",
+      "region": "Europe",
+      "year": 2022,
+      "rank": 19,
+      "city": "Galway, Ireland",
+      "source": "award.json"
     },
     {
       "name": "San Gennaro",
@@ -16128,6 +16155,15 @@
       "rank": 79,
       "city": "Galway",
       "source": "https://www.50toppizza.it/50-top-pizza-world-2022-i-masanielli-di-francesco-martucci-e-una-pizza-napoletana-di-anthony-mangieri-trionfano-ex-aequo-come-migliori-pizzerie-del-mondo/"
+    },
+    {
+      "name": "The Dough Bros",
+      "list": "50-best-pizza",
+      "region": "World",
+      "year": 2022,
+      "rank": 79,
+      "city": "Galway, Ireland",
+      "source": "award.json"
     },
     {
       "name": "San Gennaro",
@@ -22941,6 +22977,51 @@
       "rank": 50,
       "city": "Pensacola",
       "source": "https://www.50toppizza.it/50-top-pizza-usa-2026-una-pizza-napoletana-in-new-york-is-the-best-pizzeria-in-the-usa-for-2026/"
+    },
+    {
+      "name": "Eleven Madison Park",
+      "list": "50-best-restaurants",
+      "region": "World",
+      "year": 2014,
+      "rank": 4,
+      "city": "New York, NY",
+      "source": "https://www.the50.com/restaurants/best-in-the-world/previous-list/2014"
+    },
+    {
+      "name": "Eleven Madison Park",
+      "list": "50-best-restaurants",
+      "region": "World",
+      "year": 2015,
+      "rank": 5,
+      "city": "New York, NY",
+      "source": "https://www.the50.com/restaurants/best-in-the-world/previous-list/2015"
+    },
+    {
+      "name": "Eleven Madison Park",
+      "list": "50-best-restaurants",
+      "region": "World",
+      "year": 2016,
+      "rank": 3,
+      "city": "New York, NY",
+      "source": "https://www.the50.com/restaurants/best-in-the-world/previous-list/2016"
+    },
+    {
+      "name": "Eleven Madison Park",
+      "list": "50-best-restaurants",
+      "region": "World",
+      "year": 2017,
+      "rank": 1,
+      "city": "New York, NY",
+      "source": "https://www.the50.com/restaurants/best-in-the-world/previous-list/2017"
+    },
+    {
+      "name": "Eleven Madison Park",
+      "list": "50-best-restaurants",
+      "region": "World",
+      "year": 2018,
+      "rank": 4,
+      "city": "New York, NY",
+      "source": "https://www.the50.com/restaurants/best-in-the-world/previous-list/2018"
     },
     {
       "name": "Noma",
