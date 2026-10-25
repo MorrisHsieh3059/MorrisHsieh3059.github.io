@@ -100,7 +100,7 @@
 		});
 
 		return (
-			'<span class="michelin-totals-inner">' +
+			'<span class="michelin-totals-inner"><span class="michelin-totals-row">' +
 				'<span class="michelin-totals-group">' +
 					'<span class="mich-star"></span>' +
 					'<strong>' + current + '</strong> Current' +
@@ -109,7 +109,7 @@
 					'<span class="mich-star mich-star-former"></span>' +
 					'<strong>' + former + '</strong> Former' +
 				'</span>' +
-			'</span>'
+			'</span></span>'
 		);
 	}
 
@@ -502,7 +502,7 @@
 				'</span>'
 			);
 		});
-		return '<span class="michelin-totals-inner">' + groups.join('') + '</span>';
+		return '<span class="michelin-totals-inner"><span class="michelin-totals-row">' + groups.join('') + '</span></span>';
 	}
 
 	function populateFiltersGourmand(visits) {
@@ -859,10 +859,10 @@
 				'</span>'
 			);
 		});
-		// Leading "|" lives on each group via CSS ::before; an inner flex row
-		// is pulled left and the outer box clips, so a wrapped line never
-		// starts or ends with a pipe.
-		return '<span class="award-totals-inner">' + groupsHtml.join('') + '</span>';
+		// Leading "|" lives on each group via CSS ::before. The row is shifted
+		// left inside a clip box so a wrapped line never starts or ends with
+		// a pipe, and the pipes between groups keep their gap.
+		return '<span class="award-totals-inner"><span class="award-totals-row">' + groupsHtml.join('') + '</span></span>';
 	}
 
 	/*=========================================================================

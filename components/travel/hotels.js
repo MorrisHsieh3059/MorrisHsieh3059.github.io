@@ -280,8 +280,9 @@
 				'</span>'
 			);
 		});
-		// Leading "|" via CSS ::before + overflow clip — same as dining stats banners.
-		$('#hotel-stats').html('<span class="hotel-totals-inner">' + parts.join('') + '</span>');
+		// Leading "|" via CSS ::before. The row is shifted left inside a clip
+		// box — same as the dining stats banners — so pipes only sit between groups.
+		$('#hotel-stats').html('<span class="hotel-totals-inner"><span class="hotel-totals-row">' + parts.join('') + '</span></span>');
 	}
 
 	function sizeSelectToContent($container) {

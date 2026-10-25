@@ -107,14 +107,21 @@
 	display: none;
 }
 
-/* Leading "|" on each group; inner row pulled left + outer overflow clips
-   so a wrapped line never starts or ends with a pipe. */
+/* Each group leads with "|". The row sits 2.2rem left of a clip box, so the
+   pipe at the start of every line (including wraps) is hidden. Pipes between
+   groups stay in normal flow. */
 .hotel-totals-inner {
+	display: block;
+	overflow: hidden;
+}
+
+.hotel-totals-row {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
 	row-gap: 0.6rem;
-	overflow: hidden;
+	margin-left: -2.2rem;
+	width: calc(100% + 2.2rem);
 }
 
 .hotel-totals-group {
@@ -122,15 +129,12 @@
 	align-items: center;
 	gap: 0.45rem;
 	white-space: nowrap;
-	margin-left: -2.2rem;
-	padding-left: 2.2rem;
 }
 
 .hotel-totals-group::before {
 	content: '|';
 	flex: 0 0 2.2rem;
 	width: 2.2rem;
-	margin-left: -2.2rem;
 	color: #ccc;
 	text-align: center;
 }
@@ -707,19 +711,15 @@
 		overflow-wrap: anywhere;
 	}
 
-	.hotel-totals-inner {
+	.hotel-totals-row {
 		row-gap: 0.4rem;
-	}
-
-	.hotel-totals-group {
 		margin-left: -1.6rem;
-		padding-left: 1.6rem;
+		width: calc(100% + 1.6rem);
 	}
 
 	.hotel-totals-group::before {
 		flex: 0 0 1.6rem;
 		width: 1.6rem;
-		margin-left: -1.6rem;
 	}
 
 	.hotel-totals-mobile-hide {
