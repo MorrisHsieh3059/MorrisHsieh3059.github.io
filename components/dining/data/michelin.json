@@ -106,7 +106,19 @@
     ],
     "menu": "short set menu",
     "city": "Tarrytown, NY",
-    "pictures": []
+    "pictures": [
+      "0.jpeg",
+      "1.jpeg",
+      "2.jpeg",
+      "3.jpeg",
+      "4.jpeg",
+      "5.jpeg",
+      "6.jpeg",
+      "7.jpeg",
+      "8.jpeg",
+      "9.jpeg",
+      "10.jpeg"
+    ]
   },
   {
     "id": "corima-092626",
