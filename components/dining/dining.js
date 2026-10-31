@@ -70,15 +70,24 @@
 	}
 
 	/*=========================================================================
-		Totals banner — sum of current vs. former MICHELIN stars, counted
-		once per distinct restaurant (not once per visit) so a restaurant
-		you've dined at multiple times only contributes its star count a
-		single time. When a restaurant has more than one visit logged, the
-		most recent visit's stars/status is used, since that reflects its
-		current standing.
+		Totals banner.
+
+		Current / Former — sum of MICHELIN stars, once per restaurant.
+		Repeat visits contribute a single time, using the latest visit's
+		stars and status.
+
+		Formal — one per restaurant that has an à la carte or full tasting
+		visit. Restaurant week alone does not count. A restaurant with
+		both (Crown Shy) counts once. This is a restaurant count, not a
+		sum of stars.
 	=========================================================================*/
+	function isFormalMenu(menu) {
+		return menu === 'à la carte' || menu === 'full tasting';
+	}
+
 	function totalsHtml(visits) {
 		var latestByName = {};
+		var formalNames = {};
 		visits.forEach(function (v) {
 			var key = (v.name || '').trim().toLowerCase();
 			if (!key) return;
@@ -86,6 +95,7 @@
 			if (!existing || new Date(v.date) > new Date(existing.date)) {
 				latestByName[key] = v;
 			}
+			if (isFormalMenu(v.menu)) formalNames[key] = true;
 		});
 
 		var current = 0, former = 0;
@@ -99,6 +109,8 @@
 			}
 		});
 
+		var formal = Object.keys(formalNames).length;
+
 		return (
 			'<span class="michelin-totals-inner"><span class="michelin-totals-row">' +
 				'<span class="michelin-totals-group">' +
@@ -108,6 +120,18 @@
 				'<span class="michelin-totals-group">' +
 					'<span class="mich-star mich-star-former"></span>' +
 					'<strong>' + former + '</strong> Former' +
+				'</span>' +
+				'<span class="michelin-totals-group michelin-totals-formal">' +
+					'<span class="mich-star"></span>' +
+					'<strong>' + formal + '</strong>' +
+					'<span class="michelin-formal-label">Formal' +
+						'<button type="button" class="michelin-formal-info" aria-label="How Formal is counted" aria-describedby="michelin-formal-tip" aria-expanded="false">' +
+							'<i class="fas fa-info-circle" aria-hidden="true"></i>' +
+						'</button>' +
+						'<span class="michelin-formal-tip" id="michelin-formal-tip" role="tooltip">' +
+							'Unique Michelin restaurants with an à la carte or full tasting visit. Restaurant week alone is not counted.' +
+						'</span>' +
+					'</span>' +
 				'</span>' +
 			'</span></span>'
 		);
@@ -1514,5 +1538,23 @@
 	if (window.SiteRouter && $('#dining').hasClass('active')) {
 		applyDiningRoute(window.SiteRouter.current(), { animated: false });
 	}
+
+	// Hover/focus shows the Formal tip in CSS. Tap toggles it on touch screens.
+	$('#dining').on('click', '.michelin-formal-info', function (e) {
+		e.preventDefault();
+		e.stopPropagation();
+		if (window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+		var $el = $(this);
+		var open = !$el.hasClass('is-open');
+		$('#dining .michelin-formal-info').removeClass('is-open').attr('aria-expanded', 'false');
+		if (open) $el.addClass('is-open').attr('aria-expanded', 'true');
+	});
+	$(document).on('click.michelinFormalTip', function () {
+		$('#dining .michelin-formal-info').removeClass('is-open').attr('aria-expanded', 'false');
+	});
+	$(document).on('keydown.michelinFormalTip', function (e) {
+		if (e.key !== 'Escape') return;
+		$('#dining .michelin-formal-info').removeClass('is-open').attr('aria-expanded', 'false');
+	});
 
 }(jQuery));

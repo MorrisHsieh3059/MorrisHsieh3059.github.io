@@ -74,6 +74,8 @@
 }
 
 .michelin-totals {
+	position: relative;
+	z-index: 4;
 	border-left: 4px solid var(--michelin-red);
 }
 
@@ -88,11 +90,94 @@
 
 /* Each group leads with "|". The row sits 2.2rem left of a clip box, so the
    pipe at the start of every line (including wraps) is hidden. Pipes between
-   groups stay in normal flow. */
+   groups stay in normal flow. Negative insets let the Formal tip hang
+   outside the banner. */
 .michelin-totals-inner,
 .award-totals-inner {
 	display: block;
-	overflow: hidden;
+	clip-path: inset(-4rem -100vw -18rem 0);
+}
+
+.michelin-formal-label {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+}
+
+.michelin-formal-info {
+	display: inline-flex;
+	align-items: center;
+	margin: 0 0 0 0.28rem;
+	padding: 0;
+	border: 0;
+	background: none;
+	color: #b0b0b0;
+	font-size: 0.78rem;
+	line-height: 1;
+	cursor: help;
+}
+
+.michelin-formal-info:hover,
+.michelin-formal-info:focus,
+.michelin-formal-info.is-open {
+	color: var(--michelin-red);
+}
+
+.michelin-formal-info:focus {
+	outline: none;
+}
+
+.michelin-formal-info:focus-visible {
+	outline: 2px solid var(--michelin-red);
+	outline-offset: 2px;
+}
+
+.michelin-formal-tip {
+	position: absolute;
+	top: calc(100% + 0.55rem);
+	left: 0;
+	z-index: 5;
+	width: max-content;
+	max-width: min(22rem, calc(100vw - 3rem));
+	padding: 0.7rem 0.85rem;
+	background: #fff;
+	border-left: 4px solid var(--michelin-red);
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+	font-family: inherit;
+	font-weight: 400;
+	font-size: 0.78rem;
+	letter-spacing: 0;
+	line-height: 1.45;
+	color: #444;
+	text-align: left;
+	white-space: normal;
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+	transition: opacity 0.15s ease, visibility 0.15s ease;
+}
+
+.michelin-formal-info:hover + .michelin-formal-tip,
+.michelin-formal-info:focus + .michelin-formal-tip,
+.michelin-formal-info.is-open + .michelin-formal-tip {
+	opacity: 1;
+	visibility: visible;
+}
+
+/* On a phone the tip is anchored to the banner, not the word Formal,
+   so a wrapped second line cannot push it off the right edge. */
+@media (max-width: 767px) {
+	.michelin-formal-label {
+		position: static;
+	}
+
+	.michelin-formal-tip {
+		top: calc(100% + 0.35rem);
+		left: 1.25rem;
+		right: 1.25rem;
+		width: auto;
+		max-width: none;
+	}
 }
 
 .michelin-totals-row,

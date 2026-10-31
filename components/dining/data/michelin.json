@@ -95,20 +95,6 @@
     ]
   },
   {
-    "id": "blue-hill-at-stone-barns-100326",
-    "name": "Blue Hill at Stone Barns",
-    "date": "2026-10-03",
-    "stars": 2,
-    "status": "current",
-    "cuisines": [
-      "American",
-      "Contemporary"
-    ],
-    "menu": "short set menu",
-    "city": "Tarrytown, NY",
-    "pictures": []
-  },
-  {
     "id": "corima-092626",
     "name": "Corima",
     "date": "2026-09-26",
