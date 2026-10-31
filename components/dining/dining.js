@@ -70,16 +70,15 @@
 	}
 
 	/*=========================================================================
-		Totals banner.
+		Totals banner. Every figure is a star total, once per restaurant.
+		Repeat visits use the latest visit's stars and status.
 
-		Current / Former — sum of MICHELIN stars, once per restaurant.
-		Repeat visits contribute a single time, using the latest visit's
-		stars and status.
+		Current / Former — all starred restaurants, split by status.
 
-		Formal — one per restaurant that has an à la carte or full tasting
-		visit. Restaurant week alone does not count. A restaurant with
-		both (Crown Shy) counts once. This is a restaurant count, not a
-		sum of stars.
+		Formal — stars from current restaurants that have an à la carte
+		or full tasting visit. Restaurant week alone does not qualify.
+		A restaurant with both still contributes its stars once. Former
+		stars are left out.
 	=========================================================================*/
 	function isFormalMenu(menu) {
 		return menu === 'à la carte' || menu === 'full tasting';
@@ -98,7 +97,7 @@
 			if (isFormalMenu(v.menu)) formalNames[key] = true;
 		});
 
-		var current = 0, former = 0;
+		var current = 0, former = 0, formal = 0;
 		Object.keys(latestByName).forEach(function (key) {
 			var v = latestByName[key];
 			var count = parseInt(v.stars, 10) || 0;
@@ -106,10 +105,9 @@
 				former += count;
 			} else {
 				current += count;
+				if (formalNames[key]) formal += count;
 			}
 		});
-
-		var formal = Object.keys(formalNames).length;
 
 		return (
 			'<span class="michelin-totals-inner"><span class="michelin-totals-row">' +
@@ -129,7 +127,7 @@
 							'<i class="fas fa-info-circle" aria-hidden="true"></i>' +
 						'</button>' +
 						'<span class="michelin-formal-tip" id="michelin-formal-tip" role="tooltip">' +
-							'Unique Michelin restaurants with an à la carte or full tasting visit. Restaurant week alone is not counted.' +
+							'Unique Michelin stars for formal dining (à la carte or full tasting). Restaurant week and former stars are left out.' +
 						'</span>' +
 					'</span>' +
 				'</span>' +
