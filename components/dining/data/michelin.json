@@ -1,5 +1,48 @@
 [
   {
+    "id": "cheli-110126",
+    "name": "Cheli",
+    "date": "2026-11-01",
+    "rank": "gourmand",
+    "status": "current",
+    "cuisines": [
+      "Chinese",
+      "Shanghainese"
+    ],
+    "menu": "à la carte",
+    "city": "New York, NY",
+    "pictures": [
+      "0.jpeg",
+      "1.jpeg",
+      "2.jpeg",
+      "3.jpeg",
+      "4.jpeg",
+      "5.jpeg"
+    ]
+  },
+  {
+    "id": "kanyakumari-103126",
+    "name": "Kanyakumari",
+    "date": "2026-10-31",
+    "rank": "selected",
+    "status": "current",
+    "cuisines": [
+      "Indian",
+      "Regional Cuisine"
+    ],
+    "menu": "à la carte",
+    "city": "New York, NY",
+    "pictures": [
+      "0.jpeg",
+      "1.jpeg",
+      "2.jpeg",
+      "3.jpeg",
+      "4.jpeg",
+      "5.jpeg",
+      "6.jpeg"
+    ]
+  },
+  {
     "id": "eleven-madison-park-102426",
     "name": "Eleven Madison Park",
     "date": "2026-10-24",
