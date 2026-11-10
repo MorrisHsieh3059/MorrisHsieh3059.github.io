@@ -1388,7 +1388,7 @@
       "lat": 43.64965,
       "lng": -79.38413,
       "visits": 1,
-      "firstVisit": "2026-10-17",
+      "firstVisit": "2026-10-16",
       "lastVisit": "2026-10-18",
       "tripIds": [
         "trip-057"
@@ -3640,7 +3640,7 @@
   ],
   "stats": {
     "totalTrips": 57,
-    "totalTripDays": 252,
+    "totalTripDays": 253,
     "totalCities": 104,
     "totalCountries": 21
   }
