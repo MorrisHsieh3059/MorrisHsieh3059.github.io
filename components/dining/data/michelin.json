@@ -1,5 +1,25 @@
 [
   {
+    "id": "yingtao-110926",
+    "name": "YingTao",
+    "date": "2026-11-09",
+    "stars": 1,
+    "status": "current",
+    "cuisines": [
+      "Contemporary",
+      "Chinese"
+    ],
+    "menu": "full tasting",
+    "city": "New York, NY",
+    "collab": {
+      "name": "Lu Shang Lu",
+      "stars": 2,
+      "city": "Beijing",
+      "status": "current"
+    },
+    "pictures": []
+  },
+  {
     "id": "eleven-madison-park-102426",
     "name": "Eleven Madison Park",
     "date": "2026-10-24",
