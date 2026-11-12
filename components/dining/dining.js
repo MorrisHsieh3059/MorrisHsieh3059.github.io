@@ -70,19 +70,39 @@
 	}
 
 	/*=========================================================================
+		Menu rank, highest first. Formal is every rank above restaurant week.
+
+		chef's counter > full tasting > à la carte > restaurant week
+	=========================================================================*/
+	var MENU_ORDER = ["chef's counter", 'full tasting', 'à la carte', 'restaurant week'];
+
+	function menuRank(menu) {
+		var rank = MENU_ORDER.indexOf(menu);
+		return rank === -1 ? MENU_ORDER.length : rank;
+	}
+
+	function isFormalMenu(menu) {
+		return MENU_ORDER.indexOf(menu) !== -1 && menu !== 'restaurant week';
+	}
+
+	/*=========================================================================
 		Totals banner.
 
 		Current / Former — sum of MICHELIN stars, once per restaurant.
 		Repeat visits contribute a single time, using the latest visit's
 		stars and status.
 
-		Formal — one per restaurant that has an à la carte or full tasting
-		visit. Restaurant week alone does not count. A restaurant with
-		both (Crown Shy) counts once. This is a restaurant count, not a
-		sum of stars.
+		Formal — that same star sum, for restaurants with a chef's counter,
+		full tasting, or à la carte visit. Restaurant week alone is left
+		out. A restaurant with both still contributes its stars once.
+		A guest kitchen counts the same way when the shared meal is formal.
 	=========================================================================*/
-	function isFormalMenu(menu) {
-		return menu === 'à la carte' || menu === 'full tasting';
+	function rememberLatestStarred(latestByName, key, record) {
+		if (!key) return;
+		var existing = latestByName[key];
+		if (!existing || new Date(record.date) > new Date(existing.date)) {
+			latestByName[key] = record;
+		}
 	}
 
 	function totalsHtml(visits) {
@@ -91,14 +111,24 @@
 		visits.forEach(function (v) {
 			var key = (v.name || '').trim().toLowerCase();
 			if (!key) return;
-			var existing = latestByName[key];
-			if (!existing || new Date(v.date) > new Date(existing.date)) {
-				latestByName[key] = v;
-			}
+			rememberLatestStarred(latestByName, key, v);
 			if (isFormalMenu(v.menu)) formalNames[key] = true;
+			// A guest chef's stars count once under the guest restaurant.
+			// A later visit in that restaurant's own name replaces this row.
+			var collab = v.collab;
+			if (!collab || !collab.name) return;
+			var ckey = String(collab.name).trim().toLowerCase();
+			if (!ckey || ckey === key) return;
+			rememberLatestStarred(latestByName, ckey, {
+				name: collab.name,
+				date: v.date,
+				stars: collab.stars,
+				status: collab.status || 'current'
+			});
+			if (isFormalMenu(v.menu)) formalNames[ckey] = true;
 		});
 
-		var current = 0, former = 0;
+		var current = 0, former = 0, formal = 0;
 		Object.keys(latestByName).forEach(function (key) {
 			var v = latestByName[key];
 			var count = parseInt(v.stars, 10) || 0;
@@ -107,9 +137,8 @@
 			} else {
 				current += count;
 			}
+			if (formalNames[key]) formal += count;
 		});
-
-		var formal = Object.keys(formalNames).length;
 
 		return (
 			'<span class="michelin-totals-inner"><span class="michelin-totals-row">' +
@@ -129,7 +158,7 @@
 							'<i class="fas fa-info-circle" aria-hidden="true"></i>' +
 						'</button>' +
 						'<span class="michelin-formal-tip" id="michelin-formal-tip" role="tooltip">' +
-							'Unique Michelin restaurants with an à la carte or full tasting visit. Restaurant week alone is not counted.' +
+							'Does not count restaurant week.' +
 						'</span>' +
 					'</span>' +
 				'</span>' +
@@ -332,11 +361,55 @@
 		return cuisineList(visit).join(' · ');
 	}
 
+	function collabRecord(visit) {
+		var collab = visit && visit.collab;
+		if (!collab || !collab.name) return null;
+		return collab;
+	}
+
+	function threeStarClass(visit) {
+		var count = parseInt(visit.stars, 10) || 0;
+		var collab = collabRecord(visit);
+		if (collab) count = Math.max(count, parseInt(collab.stars, 10) || 0);
+		return count === 3 ? ' michelin-card-stars-3' : '';
+	}
+
+	function threeStarFrame(visit) {
+		if (!threeStarClass(visit)) return '';
+		return '<span class="michelin-deco" aria-hidden="true">' +
+			'<i class="michelin-deco-corner michelin-deco-tl"></i>' +
+			'<i class="michelin-deco-corner michelin-deco-tr"></i>' +
+			'<i class="michelin-deco-corner michelin-deco-bl"></i>' +
+			'<i class="michelin-deco-corner michelin-deco-br"></i>' +
+			'<i class="michelin-deco-rule michelin-deco-top"></i>' +
+			'<i class="michelin-deco-rule michelin-deco-bottom"></i>' +
+			'<i class="michelin-deco-rule michelin-deco-left"></i>' +
+			'<i class="michelin-deco-rule michelin-deco-right"></i>' +
+		'</span>';
+	}
+
 	function titleHtml(visit) {
+		var collab = collabRecord(visit);
+		if (!collab) {
+			return (
+				'<span class="michelin-card-title-name">' + visit.name + '</span>' +
+				'<span class="michelin-card-title-sep">|</span>' +
+				starsHtml(visit)
+			);
+		}
 		return (
-			'<span class="michelin-card-title-name">' + visit.name + '</span>' +
-			'<span class="michelin-card-title-sep">|</span>' +
-			starsHtml(visit)
+			'<span class="michelin-collab-side">' +
+				'<span class="michelin-card-title-name">' + visit.name + '</span>' +
+				starsHtml(visit) +
+			'</span>' +
+			'<span class="michelin-card-title-x">・</span>' +
+			'<span class="michelin-collab-side">' +
+				'<span class="michelin-card-title-name">' + collab.name + '</span>' +
+				starsHtml({
+					stars: collab.stars,
+					status: collab.status || 'current'
+				}) +
+			'</span>'
 		);
 	}
 
@@ -363,6 +436,28 @@
 			'</div>';
 	}
 
+	/*=========================================================================
+		Chef collaboration — the meal is at the host restaurant (visit.name,
+		visit.stars). visit.collab is the guest kitchen. The title reads
+		"Host ★ ・ Guest ★★". Its stars count once in the banner under
+		collab.name.
+
+		visit.collab: { name: "", stars: 1-3, city: "", status?: "current"|"former" }
+	=========================================================================*/
+	function collabHtml(visit) {
+		var collab = visit.collab;
+		if (!collab || !collab.name) return '';
+		var stars = starsHtml({
+			stars: collab.stars,
+			status: collab.status || 'current'
+		});
+		return '<div class="michelin-shared-kitchen michelin-collab">' +
+			'<i class="fas fa-handshake"></i>' +
+			'<span>' + collab.name + '</span>' +
+			stars +
+			'</div>';
+	}
+
 	function metaHtml(visit) {
 		return (
 			'<div class="michelin-meta">' +
@@ -379,9 +474,10 @@
 	function cardHtml(visit, popupNs) {
 		popupNs = visitPopupNs(popupNs, 'michelin');
 		return (
-			'<a href="#popup-' + popupNs + '-' + visit.id + '" class="michelin-card" data-cuisine="' + cuisineList(visit).join(',') + '" data-menu="' + (visit.menu || '') + '">' +
+			'<a href="#popup-' + popupNs + '-' + visit.id + '" class="michelin-card' + threeStarClass(visit) + '" data-cuisine="' + cuisineList(visit).join(',') + '" data-menu="' + (visit.menu || '') + '" data-stars="' + starFilterValues(visit).join(',') + '">' +
 				coverHtml(visit, 'michelin-card-photo-count') +
 				'<div class="michelin-card-body">' +
+					threeStarFrame(visit) +
 					'<h4 class="michelin-card-title">' + titleHtml(visit) + '</h4>' +
 					sharedKitchenHtml(visit) +
 					metaHtml(visit) +
@@ -393,9 +489,10 @@
 	function popupHtml(visit, popupNs) {
 		popupNs = visitPopupNs(popupNs, 'michelin');
 		return (
-			'<div id="popup-' + popupNs + '-' + visit.id + '" class="popup mfp-hide"' + popupPhotoAttrs(visit) + '>' +
+			'<div id="popup-' + popupNs + '-' + visit.id + '" class="popup mfp-hide' + threeStarClass(visit) + '"' + popupPhotoAttrs(visit) + '>' +
 				'<div class="popup-inner">' +
 					'<div class="michelin-popup-header">' +
+						threeStarFrame(visit) +
 						'<h4>' + titleHtml(visit) + '</h4>' +
 						sharedKitchenHtml(visit) +
 						metaHtml(visit) +
@@ -469,6 +566,7 @@
 				'<div class="michelin-card-body">' +
 					'<h4 class="michelin-card-title">' + titleHtmlGourmand(visit) + '</h4>' +
 					sharedKitchenHtml(visit) +
+					collabHtml(visit) +
 					metaHtml(visit) +
 				'</div>' +
 			'</a>'
@@ -483,6 +581,7 @@
 					'<div class="michelin-popup-header">' +
 						'<h4>' + titleHtmlGourmand(visit) + '</h4>' +
 						sharedKitchenHtml(visit) +
+						collabHtml(visit) +
 						metaHtml(visit) +
 					'</div>' +
 					'<div class="popup-slider owl-carousel"></div>' +
@@ -535,7 +634,7 @@
 			cuisineList(v).forEach(function (tag) { cuisineValues.push(tag); });
 		});
 		populateCustomSelect($('#gourmand-filter-cuisine'), cuisineValues, 'All Cuisines');
-		populateCustomSelect($('#gourmand-filter-menu'), visits.map(function (v) { return v.menu; }), 'All Menus');
+		populateCustomSelect($('#gourmand-filter-menu'), visits.map(function (v) { return v.menu; }), 'All Menus', menuRank);
 	}
 
 	function applyFiltersGourmand() {
@@ -591,18 +690,41 @@
 		so the option text can be centered/styled — native <select>
 		popups ignore that CSS in most browsers.
 	=========================================================================*/
-	function populateCustomSelect($container, values, allLabel) {
+	var STAR_FILTER_LABELS = { '1': 'One star', '2': 'Two stars', '3': 'Three stars' };
+
+	function starFilterValues(visit) {
+		var stars = [];
+		function add(count) {
+			var n = parseInt(count, 10);
+			if (n < 1 || n > 3) return;
+			var key = String(n);
+			if (stars.indexOf(key) === -1) stars.push(key);
+		}
+		add(visit.stars);
+		var collab = collabRecord(visit);
+		if (collab) add(collab.stars);
+		return stars;
+	}
+
+	function populateCustomSelect($container, values, allLabel, rankOf, labelOf) {
 		var unique = [];
 		values.forEach(function (v) {
 			if (v && unique.indexOf(v) === -1) unique.push(v);
 		});
-		unique.sort(function (a, b) { return a.localeCompare(b); });
+		unique.sort(function (a, b) {
+			if (rankOf) {
+				var byRank = rankOf(a) - rankOf(b);
+				if (byRank) return byRank;
+			}
+			return a.localeCompare(b);
+		});
 
 		var $list = $container.find('.michelin-select-list');
 		$list.empty();
 		$list.append($('<li></li>').attr('data-value', 'all').addClass('active').text(allLabel));
 		unique.forEach(function (v) {
-			$list.append($('<li></li>').attr('data-value', v).text(v));
+			var label = labelOf ? labelOf(v) : v;
+			$list.append($('<li></li>').attr('data-value', v).text(label));
 		});
 		$container.attr('data-value', 'all');
 		$container.find('.michelin-select-btn').text(allLabel);
@@ -647,21 +769,33 @@
 		visits.forEach(function (v) {
 			cuisineList(v).forEach(function (tag) { cuisineValues.push(tag); });
 		});
+		var starValues = [];
+		visits.forEach(function (v) {
+			starFilterValues(v).forEach(function (n) { starValues.push(n); });
+		});
+		populateCustomSelect($('#michelin-filter-stars'), starValues, 'All Stars', function (n) {
+			return parseInt(n, 10);
+		}, function (n) {
+			return STAR_FILTER_LABELS[n] || n;
+		});
 		populateCustomSelect($('#michelin-filter-cuisine'), cuisineValues, 'All Cuisines');
-		populateCustomSelect($('#michelin-filter-menu'), visits.map(function (v) { return v.menu; }), 'All Menus');
+		populateCustomSelect($('#michelin-filter-menu'), visits.map(function (v) { return v.menu; }), 'All Menus', menuRank);
 	}
 
 	function applyFilters() {
+		var stars = String($('#michelin-filter-stars').attr('data-value') || 'all');
 		var cuisine = $('#michelin-filter-cuisine').attr('data-value') || 'all';
 		var menu = $('#michelin-filter-menu').attr('data-value') || 'all';
 		var visibleCount = 0;
 
 		$('#michelin-grid .michelin-card').each(function () {
 			var $card = $(this);
+			var cardStars = ($card.attr('data-stars') || '').split(',').filter(Boolean);
 			var cardCuisines = ($card.attr('data-cuisine') || '').split(',').filter(Boolean);
 			var matches =
+				(stars === 'all' || cardStars.indexOf(stars) !== -1) &&
 				(cuisine === 'all' || cardCuisines.indexOf(cuisine) !== -1) &&
-				(menu === 'all' || $card.data('menu') === menu);
+				(menu === 'all' || $card.attr('data-menu') === menu);
 
 			$card.toggleClass('michelin-card-hidden', !matches);
 			if (matches) visibleCount++;
@@ -1135,18 +1269,40 @@
 		return '<span class="dining-timeline-card-icon dining-timeline-card-icon-award">' + parts.join('') + '</span>';
 	}
 
+	function timelineCollabHtml(visit) {
+		var collab = collabRecord(visit);
+		return (
+			'<span class="dining-timeline-collab">' +
+				'<span class="dining-timeline-card-name">' + visit.name + '</span>' +
+				'<span class="dining-timeline-card-icon dining-timeline-card-icon-mich">' + starsHtml(visit) + '</span>' +
+				'<span class="michelin-card-title-x">・</span>' +
+				'<span class="dining-timeline-card-name">' + collab.name + '</span>' +
+				'<span class="dining-timeline-card-icon dining-timeline-card-icon-mich">' + starsHtml({
+					stars: collab.stars,
+					status: collab.status || 'current'
+				}) + '</span>' +
+			'</span>'
+		);
+	}
+
 	function timelineCardHtml(entry) {
 		var visit = entry.visit;
 		var cardClass = entry.kind === 'award' ? 'award-card' : 'michelin-card';
 		var city = visit.city || '';
 
+		var collab = collabRecord(visit);
+		var identity = (collab && visit.stars)
+			? timelineCollabHtml(visit)
+			: timelineMichelinMarks(visit) +
+				'<span class="dining-timeline-card-name">' + visit.name + '</span>';
+
 		return (
-			'<a href="#popup-timeline-' + visit.id + '" class="' + cardClass + ' dining-timeline-card">' +
+			'<a href="#popup-timeline-' + visit.id + '" class="' + cardClass + threeStarClass(visit) + ' dining-timeline-card">' +
 				coverHtml(visit, 'michelin-card-photo-count') +
 				'<div class="dining-timeline-card-body">' +
+					threeStarFrame(visit) +
 					'<div class="dining-timeline-card-line1">' +
-						timelineMichelinMarks(visit) +
-						'<span class="dining-timeline-card-name">' + visit.name + '</span>' +
+						identity +
 						timelineAwardMarks(visit) +
 					'</div>' +
 					sharedKitchenHtml(visit) +

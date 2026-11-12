@@ -443,6 +443,20 @@
 	color: #ccc;
 }
 
+.michelin-collab-side {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.35rem;
+}
+
+.michelin-card-title-x {
+	color: #000;
+	font-weight: 500;
+	line-height: 1;
+	flex: 0 0 auto;
+	align-self: center;
+}
+
 /* One line per accolade (e.g. "World's 50 Best Restaurants · World
    2026 — #5"), stacked beneath the restaurant name — a restaurant can
    hold several simultaneous accolades, so each gets its own line
@@ -580,6 +594,10 @@
 	font-size: 0.7rem;
 }
 
+.michelin-collab .michelin-stars {
+	margin-left: 0.15rem;
+}
+
 /*=======================================================
 	Michelin visit popup (photo carousel) — centered in the
 	viewport with a framed card around the content.
@@ -618,6 +636,67 @@
 .award-popup .popup-inner {
 	border-top-color: var(--accent);
 }
+
+/* Art Deco frame, only on the white text panel. Scaled down from the
+   200px corner tile so the rules stay hairline. */
+.michelin-card-stars-3 .michelin-card-body,
+.michelin-card-stars-3 .dining-timeline-card-body,
+.michelin-popup .michelin-card-stars-3 .michelin-popup-header {
+	position: relative;
+}
+
+.michelin-card-stars-3 .michelin-card-body {
+	padding: 1.05rem 1.55rem 1.35rem;
+}
+
+.michelin-deco {
+	position: absolute;
+	inset: 0;
+	z-index: 4;
+	pointer-events: none;
+}
+
+.michelin-deco-corner {
+	position: absolute;
+	z-index: 2;
+	width: 18px;
+	height: 18px;
+	background: url('../img/dining/icons/art-deco-corner.png') 0 0 / 18px 18px no-repeat;
+}
+
+.michelin-deco-tl { top: 0; left: 0; }
+.michelin-deco-tr { top: 0; right: 0; transform: scaleX(-1); }
+.michelin-deco-bl { bottom: 0; left: 0; transform: scaleY(-1); }
+.michelin-deco-br { bottom: 0; right: 0; transform: scale(-1); }
+
+.michelin-deco-rule {
+	position: absolute;
+	z-index: 1;
+}
+
+/* Rules are the plain gilt bands at the far edge of the corner tile,
+   stretched along the card. Same 18px scale as the corners. */
+.michelin-deco-top,
+.michelin-deco-bottom {
+	left: 12px;
+	right: 12px;
+	height: 4.5px;
+	background: url('../img/dining/icons/art-deco-corner.png') 100% 0 / 1000% 18px no-repeat;
+}
+
+.michelin-deco-top { top: 0; }
+.michelin-deco-bottom { bottom: 0; transform: scaleY(-1); }
+
+.michelin-deco-left,
+.michelin-deco-right {
+	top: 12px;
+	bottom: 12px;
+	width: 4.5px;
+	background: url('../img/dining/icons/art-deco-corner.png') 0 100% / 18px 1000% no-repeat;
+}
+
+.michelin-deco-left { left: 0; }
+.michelin-deco-right { right: 0; transform: scaleX(-1); }
 
 .michelin-popup .mfp-close {
 	color: #333;
@@ -1052,6 +1131,27 @@
 	flex-wrap: nowrap;
 	gap: 0.4rem;
 	min-width: 0;
+}
+
+.dining-timeline-collab {
+	display: flex;
+	align-items: center;
+	gap: 0.28rem;
+	min-width: 0;
+	flex: 1 1 auto;
+}
+
+.dining-timeline-collab .dining-timeline-card-name {
+	flex: 0 1 auto;
+}
+
+.dining-timeline-collab .dining-timeline-card-name:last-of-type {
+	flex: 1 1 auto;
+	min-width: 0;
+}
+
+.dining-timeline-collab .michelin-card-title-x {
+	font-size: 0.92rem;
 }
 
 .dining-timeline-card-name {
