@@ -1,0 +1,925 @@
+{
+  "id": "brussels",
+  "version": "v1",
+  "draft": true,
+  "country": {
+    "en": "Belgium",
+    "zh": "比利时"
+  },
+  "flag": "img/travel/flags/be.svg",
+  "cover": "img/travel/flags/be.svg",
+  "coverFit": "contain",
+  "name": {
+    "en": "Brussels",
+    "zh": "布鲁塞尔"
+  },
+  "dates": {
+    "start": "2026-12-30",
+    "end": "2027-01-01"
+  },
+  "days": [
+    {
+      "date": "2026-12-31",
+      "weekday": "Thu",
+      "title": {
+        "en": "New Year's Eve · Grand-Place, Comics Museum, Fine Arts, Sablon · NYE dinner + fireworks",
+        "zh": "跨年夜 · 大广场、漫画博物馆、美术馆、萨布隆 · 晚饭和烟火"
+      },
+      "stops": [
+        {
+          "type": "hotel",
+          "status": "confirmed",
+          "name": {
+            "en": "Hilton Brussels Grand Place",
+            "zh": "Hilton Brussels Grand Place"
+          },
+          "lat": 50.845819,
+          "lng": 4.355727,
+          "arrive": null,
+          "leave": null,
+          "website": "https://www.hilton.com/en/hotels/brugrhi-hilton-brussels-grand-place/",
+          "hours": {
+            "en": "Weekdays 7–10 AM",
+            "zh": "平日 7:00–10:00"
+          },
+          "notes": {
+            "en": "Hotel breakfast 8:00 AM",
+            "zh": "酒店早餐 8:00"
+          },
+          "mustOrder": [
+            {
+              "name": "Belgian waffles",
+              "gloss": {
+                "en": "",
+                "zh": "比利时华夫饼"
+              }
+            },
+            {
+              "name": "Croissant",
+              "gloss": {
+                "en": "",
+                "zh": "可颂"
+              }
+            }
+          ],
+          "transit": {
+            "mode": "walk",
+            "label": {
+              "en": "walk",
+              "zh": "步行"
+            },
+            "duration": "5 min"
+          }
+        },
+        {
+          "type": "sight",
+          "status": "confirmed",
+          "name": {
+            "en": "Grand-Place",
+            "zh": "布鲁塞尔大广场"
+          },
+          "lat": 50.8467139,
+          "lng": 4.3525151,
+          "arrive": "9:00 AM",
+          "leave": "9:50 AM",
+          "website": "https://www.plaisirsdhiver.be/en",
+          "nativeName": "Grand-Place / Grote Markt",
+          "hours": {
+            "en": "Outdoor",
+            "zh": "户外"
+          },
+          "notes": {
+            "en": "Grand-Place, Manneken Pis, Jeanneke Pis",
+            "zh": "大广场、尿尿小童、Jeanneke Pis"
+          },
+          "mustSee": [
+            {
+              "text": {
+                "en": "Grand-Place guild houses",
+                "zh": "大广场上的公会大楼"
+              }
+            },
+            {
+              "text": {
+                "en": "Manneken Pis (4 min walk)",
+                "zh": "尿尿小童（走 4 分钟）"
+              }
+            },
+            {
+              "name": "Jeanneke Pis"
+            }
+          ],
+          "transit": {
+            "mode": "walk",
+            "label": {
+              "en": "walk",
+              "zh": "步行"
+            },
+            "duration": "3 min"
+          }
+        },
+        {
+          "type": "restaurant",
+          "status": "confirmed",
+          "name": {
+            "en": "Maison Dandoy",
+            "zh": "Maison Dandoy"
+          },
+          "lat": 50.8461416,
+          "lng": 4.3519427,
+          "arrive": "10:00 AM",
+          "leave": null,
+          "website": "https://www.maisondandoy.com/",
+          "nativeName": "Maison Dandoy (Rue Charles Buls)",
+          "hours": {
+            "en": "Official holiday hours: Dec 31 open to 18:00; tea room from 10:00",
+            "zh": "官方假日时间：12月31日开到 18:00，茶室 10:00 起"
+          },
+          "notes": {
+            "en": "Waffle (tea room opens 10:00)",
+            "zh": "华夫饼（茶室 10:00 开）"
+          },
+          "mustOrder": [
+            {
+              "name": "Gaufre de Bruxelles",
+              "gloss": {
+                "en": "sucre glace",
+                "zh": "糖粉布鲁塞尔华夫饼"
+              }
+            },
+            {
+              "name": "Gaufre de Liège"
+            },
+            {
+              "name": "Speculoos"
+            }
+          ],
+          "backups": [
+            {
+              "name": "Maison Dandoy, Galerie du Roi tea room",
+              "note": {
+                "en": "same 10–18",
+                "zh": "同样 10:00–18:00"
+              }
+            }
+          ],
+          "transit": {
+            "mode": "walk",
+            "label": {
+              "en": "walk",
+              "zh": "步行"
+            },
+            "duration": "5 min"
+          }
+        },
+        {
+          "type": "sight",
+          "status": "confirmed",
+          "name": {
+            "en": "Royal Saint-Hubert Galleries",
+            "zh": "圣于贝尔长廊"
+          },
+          "lat": 50.848192,
+          "lng": 4.355129,
+          "arrive": "10:25 AM",
+          "leave": null,
+          "website": "https://www.galeries.be/",
+          "nativeName": "Galeries Royales Saint-Hubert",
+          "hours": {
+            "en": "Arcade open; shop hours",
+            "zh": "拱廊开着，店铺各自营业"
+          },
+          "notes": {
+            "en": "Galeries Royales Saint-Hubert, La Monnaie, Place des Martyrs",
+            "zh": "圣于贝尔长廊、La Monnaie、烈士广场"
+          },
+          "mustSee": [
+            {
+              "text": {
+                "en": "Glass-roofed arcade",
+                "zh": "玻璃顶拱廊"
+              }
+            },
+            {
+              "text": {
+                "en": "La Monnaie (exterior)",
+                "zh": "La Monnaie 外观"
+              }
+            },
+            {
+              "name": "Place des Martyrs"
+            }
+          ],
+          "transit": {
+            "mode": "walk",
+            "label": {
+              "en": "walk",
+              "zh": "步行"
+            },
+            "duration": "0–2 min (inside the gallery)"
+          }
+        },
+        {
+          "type": "restaurant",
+          "status": "confirmed",
+          "name": {
+            "en": "Neuhaus (Galerie de la Reine)",
+            "zh": "Neuhaus (Galerie de la Reine)"
+          },
+          "lat": 50.84753,
+          "lng": 4.354895,
+          "arrive": "10:25 AM",
+          "leave": null,
+          "website": "https://www.neuhauschocolates.com/en_BE/stores/detail?store=38",
+          "nativeName": "Neuhaus Galerie de la Reine",
+          "hours": {
+            "en": "Dec 31 10:00–21:00",
+            "zh": "12月31日 10:00–21:00"
+          },
+          "notes": {
+            "en": "Chocolate: the shop where the praline was invented (1912)",
+            "zh": "巧克力：发明夹心巧克力的那家店（1912）"
+          },
+          "mustOrder": [
+            {
+              "name": "Pralines",
+              "gloss": {
+                "en": "classic assortment",
+                "zh": "夹心巧克力（经典礼盒）"
+              }
+            }
+          ],
+          "backups": [
+            {
+              "name": "Wittamer (Sablon)",
+              "note": {
+                "en": "listed Dec 31 7:00–18:30",
+                "zh": "名单上 12 月 31 日 7:00–18:30"
+              }
+            }
+          ],
+          "transit": {
+            "mode": "walk",
+            "label": {
+              "en": "walk",
+              "zh": "步行"
+            },
+            "duration": "6 min"
+          }
+        },
+        {
+          "type": "sight",
+          "status": "confirmed",
+          "name": {
+            "en": "Cathedral of St. Michael and St. Gudula",
+            "zh": "圣米歇尔与圣古都勒大教堂"
+          },
+          "lat": 50.8478433,
+          "lng": 4.3600607,
+          "arrive": "10:50 AM",
+          "leave": null,
+          "website": "https://cathedralisbruxellensis.be/",
+          "nativeName": "Cathédrale des Saints-Michel-et-Gudule",
+          "hours": {
+            "en": "Mon–Fri 8 AM–6 PM (no visits during 12:30 Mass); free, treasury",
+            "zh": "周一到周五 8:00–18:00（12:30 弥撒期间不参观）。免费，珍宝馆另说"
+          },
+          "notes": {
+            "en": "Cathedral (20 min)",
+            "zh": "大教堂（20 分钟）"
+          },
+          "mustSee": [
+            {
+              "text": {
+                "en": "Cathedral nave",
+                "zh": "教堂中殿"
+              }
+            },
+            {
+              "text": {
+                "en": "Treasury",
+                "zh": "珍宝馆"
+              }
+            }
+          ],
+          "transit": {
+            "mode": "walk",
+            "label": {
+              "en": "walk",
+              "zh": "步行"
+            },
+            "duration": "7 min"
+          }
+        },
+        {
+          "type": "sight",
+          "status": "tentative",
+          "name": {
+            "en": "Comics Art Museum",
+            "zh": "比利时漫画博物馆"
+          },
+          "lat": 50.851249,
+          "lng": 4.360178,
+          "arrive": "11:20 AM",
+          "leave": "12:05 PM",
+          "website": "https://www.comicscenter.net/en/",
+          "nativeName": "Centre Belge de la Bande Dessinée",
+          "hours": {
+            "en": "Dec 31 10 AM–5 PM (last entry 4)",
+            "zh": "12月31日 10:00–17:00（最晚 16:00 入场）"
+          },
+          "notes": {
+            "en": "Comics Art Museum + Congress Column",
+            "zh": "漫画艺术博物馆，再看国会柱"
+          },
+          "mustSee": [
+            {
+              "text": {
+                "en": "Belgian comic art (Tintin, Smurfs)",
+                "zh": "比利时漫画（丁丁、蓝精灵）"
+              }
+            },
+            {
+              "text": {
+                "en": "Congress Column (nearby)",
+                "zh": "国会柱（就在旁边）"
+              }
+            }
+          ],
+          "transit": {
+            "mode": "walk",
+            "label": {
+              "en": "walk",
+              "zh": "步行"
+            },
+            "duration": "9 min"
+          }
+        },
+        {
+          "type": "restaurant",
+          "status": "tentative",
+          "name": {
+            "en": "Aux Armes de Bruxelles",
+            "zh": "Aux Armes de Bruxelles"
+          },
+          "lat": 50.848086,
+          "lng": 4.353896,
+          "arrive": "12:15 PM",
+          "leave": "1:15 PM",
+          "website": "https://www.auxarmesdebruxelles.com/",
+          "hours": {
+            "en": "Official site Tue–Sun 12:00–22:30; NYE not published – confirm when booking",
+            "zh": "官网：周二到周日 12:00–22:30。跨年夜还没公布，订的时候再确认"
+          },
+          "notes": {
+            "en": "Lunch",
+            "zh": "午饭"
+          },
+          "mustOrder": [
+            {
+              "name": "Moules marinières et frites"
+            },
+            {
+              "name": "Carbonnade flamande"
+            },
+            {
+              "name": "Crêpes flambées",
+              "gloss": {
+                "en": "tableside",
+                "zh": "桌边火焰薄饼"
+              }
+            }
+          ],
+          "backups": [
+            {
+              "name": "In 't Spinnekopke"
+            },
+            {
+              "name": "Fin de Siècle"
+            },
+            {
+              "name": "Noordzee – Mer du Nord",
+              "note": {
+                "en": "official Thu 11–18:30 but one holiday list says closed Dec 31",
+                "zh": "官方周四 11:00–18:30，但有一份假日名单写 12 月 31 日关门"
+              }
+            }
+          ],
+          "transit": {
+            "mode": "walk",
+            "label": {
+              "en": "walk",
+              "zh": "步行"
+            },
+            "duration": "13 min (uphill via Parc de Bruxelles and the Royal Palace)"
+          }
+        },
+        {
+          "type": "sight",
+          "status": "tentative",
+          "name": {
+            "en": "Royal Museums of Fine Arts of Belgium (+ Magritte)",
+            "zh": "比利时皇家美术馆"
+          },
+          "lat": 50.84168,
+          "lng": 4.358238,
+          "arrive": "1:30 PM",
+          "leave": "3:00 PM",
+          "website": "https://fine-arts-museum.be/en",
+          "nativeName": "Musées royaux des Beaux-Arts de Belgique (+ Musée Magritte)",
+          "hours": {
+            "en": "Dec 31 closes 3 PM",
+            "zh": "12月31日 15:00 关门"
+          },
+          "notes": {
+            "en": "Royal Museums of Fine Arts (+ Magritte), 1.5 h",
+            "zh": "皇家美术馆（含马格利特），1.5 小时"
+          },
+          "mustSee": [
+            {
+              "name": "Bruegel"
+            },
+            {
+              "name": "Rubens"
+            },
+            {
+              "text": {
+                "en": "Magritte Museum",
+                "zh": "马格利特美术馆"
+              }
+            }
+          ],
+          "transit": {
+            "mode": "walk",
+            "label": {
+              "en": "walk",
+              "zh": "步行"
+            },
+            "duration": "6 min"
+          }
+        },
+        {
+          "type": "sight",
+          "status": "confirmed",
+          "name": {
+            "en": "Mont des Arts",
+            "zh": "艺术山"
+          },
+          "lat": 50.843863,
+          "lng": 4.356766,
+          "arrive": "3:00 PM",
+          "leave": null,
+          "website": null,
+          "nativeName": "Mont des Arts / Kunstberg",
+          "hours": {
+            "en": "Outdoor",
+            "zh": "户外"
+          },
+          "notes": {
+            "en": "Mont des Arts view, MIM facade (15 min)",
+            "zh": "艺术山的视野，看一眼 MIM 外立面（15 分钟）"
+          },
+          "mustSee": [
+            {
+              "text": {
+                "en": "City view from Mont des Arts",
+                "zh": "从艺术山看城区"
+              }
+            },
+            {
+              "text": {
+                "en": "Old England building (MIM) Art Nouveau facade",
+                "zh": "Old England 大楼（乐器博物馆）的新艺术外立面"
+              }
+            }
+          ],
+          "transit": {
+            "mode": "walk",
+            "label": {
+              "en": "walk",
+              "zh": "步行"
+            },
+            "duration": "8 min"
+          }
+        },
+        {
+          "type": "sight",
+          "status": "tentative",
+          "name": {
+            "en": "Notre-Dame du Sablon & Grand Sablon",
+            "zh": "萨布隆圣母教堂"
+          },
+          "lat": 50.840333,
+          "lng": 4.356199,
+          "arrive": "3:25 PM",
+          "leave": null,
+          "website": null,
+          "nativeName": "Église Notre-Dame du Sablon & Place du Grand Sablon",
+          "hours": {
+            "en": "Church hours; squares outdoor",
+            "zh": "教堂按开放时间，广场是露天的"
+          },
+          "notes": {
+            "en": "Sablon church + squares, chocolate (40 min)",
+            "zh": "萨布隆教堂和两个广场，巧克力（40 分钟）"
+          },
+          "mustSee": [
+            {
+              "name": "Notre-Dame du Sablon"
+            },
+            {
+              "text": {
+                "en": "Grand Sablon & Petit Sablon squares",
+                "zh": "大萨布隆广场和小萨布隆广场"
+              }
+            },
+            {
+              "text": {
+                "en": "Pierre Marcolini chocolate",
+                "zh": "Pierre Marcolini 的巧克力"
+              }
+            },
+            {
+              "name": "Pierre Marcolini (Grand Sablon)",
+              "gloss": {
+                "en": "Pierre Marcolini",
+                "zh": "Pierre Marcolini"
+              }
+            }
+          ],
+          "transit": {
+            "mode": "walk",
+            "label": {
+              "en": "walk",
+              "zh": "步行"
+            },
+            "duration": "9 min"
+          }
+        },
+        {
+          "type": "sight",
+          "status": "confirmed",
+          "name": {
+            "en": "Palace of Justice & Marolles lift",
+            "zh": "司法宫"
+          },
+          "lat": 50.836658,
+          "lng": 4.351605,
+          "arrive": "4:05 PM",
+          "leave": null,
+          "website": null,
+          "nativeName": "Palais de Justice + ascenseur des Marolles",
+          "hours": {
+            "en": "Exterior (long-running scaffolding)",
+            "zh": "看外观（外面长期有脚手架）"
+          },
+          "notes": {
+            "en": "Palais de Justice + Poelaert lift view at sunset (~4:45 PM)",
+            "zh": "司法宫，Poelaert 电梯看日落（大约 16:45）"
+          },
+          "mustSee": [
+            {
+              "text": {
+                "en": "Sunset view from Place Poelaert",
+                "zh": "Poelaert 广场看日落"
+              }
+            },
+            {
+              "text": {
+                "en": "Free lift down to the Marolles",
+                "zh": "免费电梯下到马罗勒区"
+              }
+            },
+            {
+              "text": {
+                "en": "Église de la Chapelle on the way back",
+                "zh": "回来路上的 Église de la Chapelle"
+              }
+            }
+          ],
+          "transit": {
+            "mode": "walk",
+            "label": {
+              "en": "lift + walk",
+              "zh": "电梯 + 步行"
+            },
+            "duration": "25 min (Poelaert lift down to the Marolles, then walk)",
+            "note": {
+              "en": "or taxi 10 min",
+              "zh": "或出租车 10 分钟"
+            }
+          }
+        },
+        {
+          "type": "sight",
+          "status": "tentative",
+          "name": {
+            "en": "Winter Wonders, Sainte-Catherine",
+            "zh": "圣凯瑟琳圣诞市集"
+          },
+          "lat": 50.85073,
+          "lng": 4.347695,
+          "arrive": "5:10 PM",
+          "leave": null,
+          "website": "https://www.plaisirsdhiver.be/en",
+          "nativeName": "Plaisirs d'Hiver – Place Sainte-Catherine",
+          "hours": {
+            "en": "Market closes 6 PM",
+            "zh": "市集 18:00 收"
+          },
+          "notes": {
+            "en": "Last Winter Wonders mulled wine",
+            "zh": "圣诞市集最后一杯热红酒"
+          },
+          "mustSee": [
+            {
+              "text": {
+                "en": "Winter Wonders market (closes 6 PM Dec 31)",
+                "zh": "圣诞市集（12 月 31 日 18:00 收）"
+              }
+            }
+          ],
+          "transit": {
+            "mode": "walk",
+            "label": {
+              "en": "walk",
+              "zh": "步行"
+            },
+            "duration": "13 min"
+          }
+        },
+        {
+          "type": "hotel",
+          "status": "confirmed",
+          "name": {
+            "en": "Hilton Brussels Grand Place",
+            "zh": "Hilton Brussels Grand Place"
+          },
+          "lat": 50.845819,
+          "lng": 4.355727,
+          "arrive": "5:50 PM",
+          "leave": "6:45 PM",
+          "website": "https://www.hilton.com/en/hotels/brugrhi-hilton-brussels-grand-place/",
+          "notes": {
+            "en": "Rest, change (smart)",
+            "zh": "回酒店歇一下，换衣服（要正式一点）"
+          },
+          "transit": {
+            "mode": "walk",
+            "label": {
+              "en": "walk",
+              "zh": "步行"
+            },
+            "duration": "15 min"
+          }
+        },
+        {
+          "type": "restaurant",
+          "status": "needs-decision",
+          "name": {
+            "en": "In 't Spinnekopke",
+            "zh": "In 't Spinnekopke"
+          },
+          "lat": 50.848382,
+          "lng": 4.343549,
+          "arrive": "7:00 PM",
+          "leave": null,
+          "website": "https://spinnekopke.be/fr/",
+          "hours": {
+            "en": "Official site Thu evening 18:00–21:30; NYE not published – confirm when booking",
+            "zh": "官网：周四晚 18:00–21:30。跨年夜还没公布，订的时候再确认"
+          },
+          "notes": {
+            "en": "NYE dinner",
+            "zh": "跨年晚饭"
+          },
+          "mustOrder": [
+            {
+              "name": "Moules-frites",
+              "gloss": {
+                "en": "mussels and fries",
+                "zh": "淡菜配薯条"
+              }
+            },
+            {
+              "name": "Waterzooi"
+            },
+            {
+              "name": "Croquettes aux crevettes grises"
+            }
+          ],
+          "backups": [
+            {
+              "name": "Aux Armes de Bruxelles"
+            },
+            {
+              "name": "Nüetnigenough",
+              "note": {
+                "en": "Thu 17–22:30",
+                "zh": "周四 17:00–22:30"
+              }
+            },
+            {
+              "name": "The Iris NYE package",
+              "note": {
+                "en": "incl. dinner + fireworks view (see NYE plan)",
+                "zh": "含晚饭和看烟火（见跨年安排）"
+              }
+            }
+          ],
+          "transit": {
+            "mode": "metro",
+            "label": {
+              "en": "metro + walk",
+              "zh": "地铁 + 步行"
+            },
+            "duration": "~20–25 min (metro line 6 De Brouckère → Heysel) + 5 min walk"
+          },
+          "alternatives": [
+            {
+              "name": {
+                "en": "The Iris",
+                "zh": "The Iris"
+              },
+              "lat": 50.8372475,
+              "lng": 4.357612,
+              "website": "https://theiris.be/festive",
+              "nativeName": "The Iris (The Hotel Brussels, 26th floor)",
+              "note": {
+                "en": "The Iris – 6-course dinner with wines, champagne at midnight, fireworks view from the 26th floor, DJ to 2 AM",
+                "zh": "The Iris：六道菜配酒，午夜香槟，26 楼看烟火，DJ 放到凌晨 2 点"
+              }
+            }
+          ]
+        },
+        {
+          "type": "sight",
+          "status": "needs-decision",
+          "name": {
+            "en": "Atomium (NYE fireworks)",
+            "zh": "原子塔"
+          },
+          "lat": 50.894921,
+          "lng": 4.341377,
+          "arrive": null,
+          "leave": "after midnight",
+          "website": "https://atomium.be/",
+          "nativeName": "Atomium",
+          "hours": {
+            "en": "Free public show; site opens 9 PM",
+            "zh": "免费公开演出，场地 21:00 开"
+          },
+          "notes": {
+            "en": "Official NYE fireworks at the Atomium (DJ from 9 PM, fireworks at midnight)",
+            "zh": "原子球官方跨年烟火（21:00 起有 DJ，午夜放烟花）"
+          },
+          "mustSee": [
+            {
+              "text": {
+                "en": "Midnight fireworks at the Atomium",
+                "zh": "原子球午夜烟火"
+              }
+            }
+          ],
+          "transit": {
+            "mode": "metro",
+            "label": {
+              "en": "metro",
+              "zh": "地铁"
+            },
+            "duration": null,
+            "note": {
+              "en": "STIB 2026 NYE night service not yet published (last year free 12–5:30 AM, metro to 2:30 AM)",
+              "zh": "布鲁塞尔 2026 跨年夜班车还没公布（去年午夜到凌晨 5:30 免费，地铁开到 2:30）"
+            }
+          }
+        },
+        {
+          "type": "hotel",
+          "status": "confirmed",
+          "name": {
+            "en": "Hilton Brussels Grand Place",
+            "zh": "Hilton Brussels Grand Place"
+          },
+          "lat": 50.845819,
+          "lng": 4.355727,
+          "arrive": null,
+          "leave": null,
+          "website": "https://www.hilton.com/en/hotels/brugrhi-hilton-brussels-grand-place/",
+          "notes": {
+            "en": "Back to hotel (wake 6:45 AM for the flight)",
+            "zh": "回酒店（明天 6:45 起去赶飞机）"
+          }
+        }
+      ],
+      "notes": [
+        {
+          "en": "Safety: stay in the centre/Upper Town · avoid Molenbeek, Anderlecht and Schaerbeek after dark on NYE.",
+          "zh": "跨年夜天黑后留在市中心和上城。Molenbeek、Anderlecht、Schaerbeek 别去。"
+        }
+      ]
+    },
+    {
+      "date": "2027-01-01",
+      "weekday": "Fri",
+      "title": {
+        "en": "New Year's Day · Brussels → Newark",
+        "zh": "元旦 · 布鲁塞尔回纽瓦克"
+      },
+      "stops": [
+        {
+          "type": "hotel",
+          "status": "confirmed",
+          "name": {
+            "en": "Hilton Brussels Grand Place",
+            "zh": "Hilton Brussels Grand Place"
+          },
+          "lat": 50.845819,
+          "lng": 4.355727,
+          "arrive": null,
+          "leave": "8:15 AM",
+          "website": "https://www.hilton.com/en/hotels/brugrhi-hilton-brussels-grand-place/",
+          "hours": {
+            "en": "Weekday hours 7–10 AM; holiday hours",
+            "zh": "平日 7:00–10:00，假日时间另说"
+          },
+          "notes": {
+            "en": "Breakfast 7:00 AM; check out",
+            "zh": "7:00 早餐，然后退房"
+          },
+          "backups": [
+            {
+              "name": "Eat at BRU after security"
+            }
+          ],
+          "transit": {
+            "mode": "train",
+            "label": {
+              "en": "walk + train",
+              "zh": "步行 + 火车"
+            },
+            "duration": "3 min walk to Bruxelles-Central + 17–20 min train",
+            "note": {
+              "en": "Holiday timetable · 2:45–3 h before",
+              "zh": "假日时刻表。提前 2 小时 45 分到 3 小时出门"
+            }
+          }
+        },
+        {
+          "type": "airport",
+          "status": "confirmed",
+          "name": {
+            "en": "Brussels Airport",
+            "zh": "布鲁塞尔机场"
+          },
+          "lat": 50.898374,
+          "lng": 4.48249,
+          "arrive": "8:45 AM",
+          "leave": "11:15 AM",
+          "website": "https://www.brusselsairport.be/",
+          "nativeName": "Brussels Airport (Zaventem)",
+          "notes": {
+            "en": "Check in, security (no US preclearance)",
+            "zh": "值机、安检（这里没有美国出境预检）"
+          },
+          "transit": {
+            "mode": "flight",
+            "label": {
+              "en": "flight",
+              "zh": "飞机"
+            },
+            "duration": "8h 10m",
+            "detail": {
+              "en": "Brussels to Newark",
+              "zh": "布鲁塞尔到纽瓦克"
+            }
+          }
+        },
+        {
+          "type": "airport",
+          "status": "confirmed",
+          "name": {
+            "en": "EWR",
+            "zh": "纽瓦克机场"
+          },
+          "lat": 40.689064,
+          "lng": -74.177255,
+          "arrive": "1:25 PM",
+          "leave": null,
+          "website": "https://www.newarkairport.com/",
+          "nativeName": "Newark Liberty International Airport",
+          "notes": {
+            "en": "Arrive Newark; immigration at EWR",
+            "zh": "到纽瓦克，在机场过关"
+          }
+        }
+      ],
+      "notes": [
+        {
+          "en": "Most shops, museums and restaurants closed Jan 1 morning · no sightseeing planned.",
+          "zh": "1 月 1 日上午商店、博物馆、餐厅大多不开。这天早上不安排景点。"
+        }
+      ]
+    }
+  ]
+}

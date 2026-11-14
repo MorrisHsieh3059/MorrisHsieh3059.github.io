@@ -1,0 +1,624 @@
+{
+  "id": "bratislava",
+  "version": "v1",
+  "draft": true,
+  "country": {
+    "en": "Slovakia",
+    "zh": "斯洛伐克"
+  },
+  "flag": "img/travel/flags/sk.svg",
+  "cover": "img/travel/flags/sk.svg",
+  "coverFit": "contain",
+  "name": {
+    "en": "Bratislava",
+    "zh": "布拉迪斯拉发"
+  },
+  "dates": {
+    "start": "2026-12-29",
+    "end": "2026-12-29"
+  },
+  "days": [
+    {
+      "date": "2026-12-29",
+      "weekday": "Tue",
+      "title": {
+        "en": "Bratislava day trip (~7 h) · sleep Vienna",
+        "zh": "布拉迪斯拉发一日游（大约 7 小时）· 回维也纳睡"
+      },
+      "stops": [
+        {
+          "type": "hotel",
+          "status": "needs-decision",
+          "name": {
+            "en": "Vienna hotel – not booked",
+            "zh": "维也纳酒店（未定）"
+          },
+          "lat": null,
+          "lng": null,
+          "arrive": null,
+          "leave": "8:40 AM",
+          "website": null,
+          "nativeName": "Vienna hotel (TBD)",
+          "notes": {
+            "en": "Hotel breakfast 8:00 AM",
+            "zh": "酒店早餐 8:00"
+          },
+          "backups": [
+            {
+              "name": "Café Sperl",
+              "note": {
+                "en": "Tue from 7",
+                "zh": "周二起 7:00"
+              }
+            }
+          ],
+          "transit": {
+            "mode": "tram",
+            "label": {
+              "en": "tram",
+              "zh": "有轨电车"
+            },
+            "duration": "15–20 min (tram D)"
+          }
+        },
+        {
+          "type": "sight",
+          "status": "needs-decision",
+          "name": {
+            "en": "Upper Belvedere (The Kiss)",
+            "zh": "上美景宫"
+          },
+          "lat": 48.191541,
+          "lng": 16.380888,
+          "arrive": "9:00 AM",
+          "leave": "9:45 AM",
+          "website": "https://www.belvedere.at/en",
+          "nativeName": "Oberes Belvedere",
+          "hours": {
+            "en": "Daily 9 AM–6 PM",
+            "zh": "每天 9:00–18:00"
+          },
+          "notes": {
+            "en": "Upper Belvedere – highlights only (45 min); moved from Dec 27, awaiting a decision",
+            "zh": "上美景宫，只看重点（45 分钟）。从 12 月 27 日挪过来的，还等拍板"
+          },
+          "mustSee": [
+            {
+              "text": {
+                "en": "Gustav Klimt – Der Kuss (The Kiss)",
+                "zh": "克林姆的 Der Kuss（《吻》）"
+              }
+            }
+          ],
+          "transit": {
+            "mode": "walk",
+            "label": {
+              "en": "walk",
+              "zh": "步行"
+            },
+            "duration": "14 min",
+            "note": {
+              "en": "Leave Belvedere by 9:50 · allow 5 min to buy the Bratislava-Ticket in the station",
+              "zh": "9:50 前离开美景宫。车站里留 5 分钟买一日票"
+            }
+          }
+        },
+        {
+          "type": "station",
+          "status": "tentative",
+          "name": {
+            "en": "Vienna Central Station",
+            "zh": "维也纳中央车站"
+          },
+          "lat": 48.184988,
+          "lng": 16.377939,
+          "arrive": null,
+          "leave": "10:14 AM",
+          "website": null,
+          "nativeName": "Wien Hauptbahnhof",
+          "notes": {
+            "en": "Train to Bratislava",
+            "zh": "坐火车去布拉迪斯拉发"
+          },
+          "transit": {
+            "mode": "train",
+            "label": {
+              "en": "train",
+              "zh": "火车"
+            },
+            "duration": "~56 min",
+            "detail": {
+              "en": "Vienna to Bratislava",
+              "zh": "维也纳到布拉迪斯拉发"
+            },
+            "note": {
+              "en": "Wien Hbf 10:14 → Bratislava hl. st. ~11:10 (hourly at :14). No boat: Twin City Liner has no sailings after Dec 20 · Tight: if missed, take the 11:14 and shift the day by 1 h",
+              "zh": "维也纳火车总站 10:14 出发，大约 11:10 到布拉迪斯拉发总站（每小时 :14）。12 月 20 日之后没有船。赶不上就坐 11:14，整天顺延 1 小时"
+            }
+          }
+        },
+        {
+          "type": "station",
+          "status": "tentative",
+          "name": {
+            "en": "Bratislava main station",
+            "zh": "布拉迪斯拉发总站"
+          },
+          "lat": 48.158799,
+          "lng": 17.106022,
+          "arrive": "~11:10 AM",
+          "leave": null,
+          "website": null,
+          "nativeName": "Bratislava hlavná stanica",
+          "notes": {
+            "en": "Arrive Bratislava",
+            "zh": "到布拉迪斯拉发"
+          },
+          "transit": {
+            "mode": "walk",
+            "label": {
+              "en": "walk",
+              "zh": "步行"
+            },
+            "duration": "21 min",
+            "note": {
+              "en": "or taxi 5–8 min",
+              "zh": "或出租车 5–8 分钟"
+            }
+          }
+        },
+        {
+          "type": "restaurant",
+          "status": "tentative",
+          "name": {
+            "en": "Slovak Pub",
+            "zh": "Slovak Pub"
+          },
+          "lat": 48.148335,
+          "lng": 17.11241,
+          "arrive": "11:40 AM",
+          "leave": null,
+          "website": "https://www.slovakpub.sk/",
+          "hours": {
+            "en": "Official site Mon–Fri 11:00–22:00",
+            "zh": "官网：周一到周五 11:00–22:00"
+          },
+          "notes": {
+            "en": "Lunch (walk-in only, before the noon rush)",
+            "zh": "午饭（不接受订位，中午人多之前到）"
+          },
+          "mustOrder": [
+            {
+              "name": "Bryndzové halušky"
+            },
+            {
+              "name": "Bryndzové pirohy"
+            },
+            {
+              "name": "Strapačky"
+            }
+          ],
+          "backups": [
+            {
+              "name": "Bratislavský meštiansky pivovar Drevená"
+            },
+            {
+              "name": "Bratislava Flagship",
+              "note": {
+                "en": "Mon–Thu 11–22",
+                "zh": "周一到周四 11:00–22:00"
+              }
+            },
+            {
+              "name": "Viecha U Sedliaka",
+              "note": {
+                "en": "Mon–Sat 11–22",
+                "zh": "周一到周六 11:00–22:00"
+              }
+            }
+          ],
+          "transit": {
+            "mode": "walk",
+            "label": {
+              "en": "walk",
+              "zh": "步行"
+            },
+            "duration": "8 min"
+          }
+        },
+        {
+          "type": "sight",
+          "status": "confirmed",
+          "name": {
+            "en": "Main Square & Christmas market",
+            "zh": "主广场圣诞市集"
+          },
+          "lat": 48.143465,
+          "lng": 17.108242,
+          "arrive": "12:45 PM",
+          "leave": null,
+          "website": "https://bratislavskevianoce.sk/",
+          "nativeName": "Hlavné námestie (Vianočné trhy)",
+          "hours": {
+            "en": "Market Nov 26 – Jan 3",
+            "zh": "市集 11月26日到 1月3日"
+          },
+          "notes": {
+            "en": "Old Town: Michael's Gate, Main Square Christmas market",
+            "zh": "老城：Michael's Gate，主广场圣诞市集"
+          },
+          "mustSee": [
+            {
+              "name": "Michalská brána"
+            },
+            {
+              "text": {
+                "en": "Hlavné námestie Christmas market",
+                "zh": "主广场圣诞市集"
+              }
+            }
+          ],
+          "transit": {
+            "mode": "walk",
+            "label": {
+              "en": "walk",
+              "zh": "步行"
+            },
+            "duration": "4 min"
+          }
+        },
+        {
+          "type": "sight",
+          "status": "tentative",
+          "name": {
+            "en": "Old Town Hall (City Museum)",
+            "zh": "旧市政厅"
+          },
+          "lat": 48.143755,
+          "lng": 17.108792,
+          "arrive": "1:20 PM",
+          "leave": null,
+          "website": "https://mmb.sk/en/locations/old-town-hall",
+          "nativeName": "Stará radnica (Múzeum mesta Bratislavy)",
+          "hours": {
+            "en": "Tue 10 AM–6 PM",
+            "zh": "周二 10:00–18:00"
+          },
+          "notes": {
+            "en": "Old Town Hall – City Museum (40 min)",
+            "zh": "旧市政厅城市博物馆（40 分钟）"
+          },
+          "mustSee": [
+            {
+              "text": {
+                "en": "Old Town Hall (City Museum)",
+                "zh": "旧市政厅（城市博物馆）"
+              }
+            }
+          ],
+          "transit": {
+            "mode": "walk",
+            "label": {
+              "en": "walk",
+              "zh": "步行"
+            },
+            "duration": "7 min"
+          }
+        },
+        {
+          "type": "sight",
+          "status": "tentative",
+          "name": {
+            "en": "St. Martin's Cathedral",
+            "zh": "圣马丁大教堂"
+          },
+          "lat": 48.141977,
+          "lng": 17.104885,
+          "arrive": "2:10 PM",
+          "leave": null,
+          "website": null,
+          "nativeName": "Dóm svätého Martina",
+          "hours": {
+            "en": "Tue 9–11:30 AM & 1–6 PM",
+            "zh": "周二 9:00–11:30、13:00–18:00"
+          },
+          "notes": {
+            "en": "St. Martin's Cathedral (20 min)",
+            "zh": "圣马丁大教堂（20 分钟）"
+          },
+          "mustSee": [
+            {
+              "text": {
+                "en": "Coronation church of Hungarian kings",
+                "zh": "匈牙利国王加冕的教堂"
+              }
+            }
+          ],
+          "transit": {
+            "mode": "walk",
+            "label": {
+              "en": "walk",
+              "zh": "步行"
+            },
+            "duration": "12 min (uphill)"
+          }
+        },
+        {
+          "type": "sight",
+          "status": "confirmed",
+          "name": {
+            "en": "Bratislava Castle",
+            "zh": "布拉迪斯拉发城堡"
+          },
+          "lat": 48.142587,
+          "lng": 17.100469,
+          "arrive": "2:45 PM",
+          "leave": null,
+          "website": "https://visitbratislava.sk/bratislavsky-hrad-navsteva/",
+          "nativeName": "Bratislavský hrad",
+          "hours": {
+            "en": "Grounds winter 9 AM–4 PM · museum closed Tuesdays",
+            "zh": "冬天院子 9:00–16:00。博物馆周二关"
+          },
+          "notes": {
+            "en": "Castle grounds and views (45 min)",
+            "zh": "城堡院子和视野（45 分钟）"
+          },
+          "mustSee": [
+            {
+              "text": {
+                "en": "Castle grounds and views over the Danube",
+                "zh": "城堡院子，看多瑙河"
+              }
+            }
+          ],
+          "transit": {
+            "mode": "walk",
+            "label": {
+              "en": "walk",
+              "zh": "步行"
+            },
+            "duration": "12–15 min (downhill, across the bridge)"
+          }
+        },
+        {
+          "type": "sight",
+          "status": "tentative",
+          "name": {
+            "en": "UFO Observation Deck",
+            "zh": "UFO 观景台"
+          },
+          "lat": 48.136869,
+          "lng": 17.104585,
+          "arrive": "3:45 PM",
+          "leave": null,
+          "website": "https://www.u-f-o.sk/",
+          "nativeName": "UFO vyhliadková veža (Most SNP)",
+          "hours": {
+            "en": "Dec daily 10 AM–11 PM",
+            "zh": "12月每天 10:00–23:00"
+          },
+          "notes": {
+            "en": "UFO Observation Deck at sunset (~4:05 PM), 40 min",
+            "zh": "UFO 观景台看日落（大约 16:05），40 分钟"
+          },
+          "mustSee": [
+            {
+              "text": {
+                "en": "Sunset view over Bratislava",
+                "zh": "看布拉迪斯拉发的日落"
+              }
+            }
+          ],
+          "transit": {
+            "mode": "walk",
+            "label": {
+              "en": "walk",
+              "zh": "步行"
+            },
+            "duration": "7 min"
+          }
+        },
+        {
+          "type": "restaurant",
+          "status": "tentative",
+          "name": {
+            "en": "Konditorei Kormuth",
+            "zh": "Konditorei Kormuth"
+          },
+          "lat": 48.143524,
+          "lng": 17.107275,
+          "arrive": "4:35 PM",
+          "leave": null,
+          "website": "https://konditoreikormuth.sk/",
+          "hours": {
+            "en": "Official site Mon–Tue 9:00–21:00; minimum spend per person",
+            "zh": "官网：周一、周二 9:00–21:00，每人有最低消费"
+          },
+          "notes": {
+            "en": "Coffee + Bratislavský rožok (30 min)",
+            "zh": "咖啡配 Bratislavský rožok（30 分钟）"
+          },
+          "mustOrder": [
+            {
+              "name": "Bratislavský rožok (orechový alebo makový)"
+            },
+            {
+              "name": "Domáce torty"
+            }
+          ],
+          "transit": {
+            "mode": "walk",
+            "label": {
+              "en": "walk",
+              "zh": "步行"
+            },
+            "duration": "13 min"
+          }
+        },
+        {
+          "type": "sight",
+          "status": "tentative",
+          "name": {
+            "en": "Blue Church",
+            "zh": "蓝教堂"
+          },
+          "lat": 48.14336,
+          "lng": 17.116741,
+          "arrive": "5:10 PM",
+          "leave": null,
+          "website": null,
+          "nativeName": "Kostol svätej Alžbety (Modrý kostolík)",
+          "optional": true,
+          "notes": {
+            "en": "Blue Church exterior (10 min, optional – skip if behind)",
+            "zh": "蓝色教堂看外观（10 分钟，可选，赶时间就跳过）"
+          },
+          "mustSee": [
+            {
+              "text": {
+                "en": "Art Nouveau blue exterior",
+                "zh": "新艺术风格的蓝色外观"
+              }
+            }
+          ],
+          "transit": {
+            "mode": "taxi",
+            "label": {
+              "en": "taxi",
+              "zh": "出租车"
+            },
+            "duration": "10 min",
+            "note": {
+              "en": "Don't walk to the station – not enough time",
+              "zh": "别走路去车站，来不及"
+            }
+          }
+        },
+        {
+          "type": "station",
+          "status": "tentative",
+          "name": {
+            "en": "Bratislava main station",
+            "zh": "布拉迪斯拉发总站"
+          },
+          "lat": 48.158799,
+          "lng": 17.106022,
+          "arrive": null,
+          "leave": "5:50 PM",
+          "website": null,
+          "nativeName": "Bratislava hlavná stanica",
+          "notes": {
+            "en": "Train back to Vienna",
+            "zh": "坐火车回维也纳"
+          },
+          "transit": {
+            "mode": "train",
+            "label": {
+              "en": "train",
+              "zh": "火车"
+            },
+            "duration": "~56 min",
+            "detail": {
+              "en": "Bratislava to Vienna",
+              "zh": "布拉迪斯拉发到维也纳"
+            },
+            "note": {
+              "en": "Bratislava hl. st. 5:50 PM → Wien Hbf 6:46 PM",
+              "zh": "布拉迪斯拉发总站 17:50 → 维也纳火车总站 18:46"
+            }
+          }
+        },
+        {
+          "type": "station",
+          "status": "tentative",
+          "name": {
+            "en": "Vienna Central Station",
+            "zh": "维也纳中央车站"
+          },
+          "lat": 48.184988,
+          "lng": 16.377939,
+          "arrive": "6:46 PM",
+          "leave": null,
+          "website": null,
+          "nativeName": "Wien Hauptbahnhof",
+          "notes": {
+            "en": "Back in Vienna",
+            "zh": "回到维也纳"
+          },
+          "transit": {
+            "mode": "taxi",
+            "label": {
+              "en": "taxi",
+              "zh": "出租车"
+            },
+            "duration": "20–25 min (rush hour)"
+          }
+        },
+        {
+          "type": "restaurant",
+          "status": "tentative",
+          "name": {
+            "en": "Mayer am Pfarrplatz (Heuriger)",
+            "zh": "Mayer am Pfarrplatz (Heuriger)"
+          },
+          "lat": 48.255131,
+          "lng": 16.358983,
+          "arrive": "7:45 PM",
+          "leave": null,
+          "website": "https://www.pfarrplatz.at/",
+          "nativeName": "Mayer am Pfarrplatz",
+          "hours": {
+            "en": "Wiener Wein official listing: Mon–Thu from 16:00, closed only Dec 24 & 31",
+            "zh": "Wiener Wein 官方：周一到周四 16:00 起，只有 12月24日和 31日关"
+          },
+          "notes": {
+            "en": "Dinner at a Heuriger",
+            "zh": "在 Heuriger 吃晚饭"
+          },
+          "mustOrder": [
+            {
+              "name": "Buffet: Schweinsbraten, Liptauer"
+            },
+            {
+              "name": "Gemischter Satz",
+              "gloss": {
+                "en": "house wine",
+                "zh": "混酿（店家的酒）"
+              }
+            }
+          ],
+          "backups": [
+            {
+              "name": "Plachutta Wollzeile",
+              "note": {
+                "en": "daily 11:30–23:30",
+                "zh": "每天 11:30–23:30"
+              }
+            },
+            {
+              "name": "Figlmüller Wollzeile"
+            },
+            {
+              "name": "Meissl & Schadn"
+            }
+          ]
+        }
+      ],
+      "notes": [
+        {
+          "en": "Bratislava Castle museum is closed Tuesdays (grounds open) · Old Town Hall museum open Tuesday.",
+          "zh": "城堡里的博物馆周二关（院子开着）。旧市政厅博物馆周二开。"
+        },
+        {
+          "en": "Prater Giant Ferris Wheel is an optional Dec 29 evening extra (Dec daily 10 AM–10:15 PM).",
+          "zh": "普拉特摩天轮是 12 月 29 日晚上的可选项（12 月每天 10:00–22:15）。"
+        }
+      ]
+    }
+  ],
+  "subtitle": {
+    "en": "day trip from Vienna",
+    "zh": "从维也纳出发的一日游"
+  }
+}

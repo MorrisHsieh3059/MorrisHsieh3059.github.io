@@ -1,0 +1,1177 @@
+{
+  "id": "berlin",
+  "version": "v1",
+  "draft": true,
+  "country": {
+    "en": "Germany",
+    "zh": "德国"
+  },
+  "flag": "img/travel/flags/de.svg",
+  "cover": "img/travel/flags/de.svg",
+  "coverFit": "contain",
+  "name": {
+    "en": "Berlin",
+    "zh": "柏林"
+  },
+  "dates": {
+    "start": "2026-12-23",
+    "end": "2026-12-27"
+  },
+  "days": [
+    {
+      "date": "2026-12-23",
+      "weekday": "Wed",
+      "title": {
+        "en": "NYC → Charlotte → Munich (overnight flight)",
+        "zh": "纽约 → 夏洛特 → 慕尼黑（红眼航班）"
+      },
+      "stops": [
+        {
+          "type": "airport",
+          "status": "confirmed",
+          "name": {
+            "en": "JFK",
+            "zh": "肯尼迪机场"
+          },
+          "lat": 40.642948,
+          "lng": -73.779373,
+          "arrive": null,
+          "leave": "11:55 AM",
+          "website": "https://www.jfkairport.com/",
+          "nativeName": "John F. Kennedy International Airport",
+          "notes": {
+            "en": "Fly to Charlotte",
+            "zh": "飞去夏洛特"
+          },
+          "transit": {
+            "mode": "flight",
+            "label": {
+              "en": "flight",
+              "zh": "飞机"
+            },
+            "duration": "2h 10m",
+            "detail": {
+              "en": "New York to Charlotte",
+              "zh": "纽约到夏洛特"
+            }
+          }
+        },
+        {
+          "type": "airport",
+          "status": "confirmed",
+          "name": {
+            "en": "CLT",
+            "zh": "夏洛特机场"
+          },
+          "lat": 35.212978,
+          "lng": -80.945656,
+          "arrive": "2:05 PM",
+          "leave": "4:55 PM",
+          "website": "https://www.cltairport.com/",
+          "nativeName": "Charlotte Douglas International Airport",
+          "notes": {
+            "en": "Connect to the overnight flight",
+            "zh": "转乘过夜航班"
+          },
+          "transit": {
+            "mode": "flight",
+            "label": {
+              "en": "flight",
+              "zh": "飞机"
+            },
+            "duration": "overnight; arrives 7:30 AM Dec 24",
+            "durationZh": "过夜，12 月 24 日早上 7:30 到"
+          }
+        }
+      ]
+    },
+    {
+      "date": "2026-12-24",
+      "weekday": "Thu",
+      "title": {
+        "en": "Christmas Eve · Munich → Berlin",
+        "zh": "平安夜 · 慕尼黑到柏林"
+      },
+      "stops": [
+        {
+          "type": "airport",
+          "status": "confirmed",
+          "name": {
+            "en": "Munich Airport T2",
+            "zh": "慕尼黑机场 T2"
+          },
+          "lat": 48.354238,
+          "lng": 11.791024,
+          "arrive": "7:30 AM",
+          "leave": "12:15 PM",
+          "website": "https://www.munich-airport.com/",
+          "nativeName": "Flughafen München Terminal 2",
+          "notes": {
+            "en": "Land, collect bags and re-check (separate ticket); airport breakfast",
+            "zh": "落地，取行李再托运（另一张票），在机场吃早餐"
+          },
+          "mustOrder": [
+            {
+              "name": "Brezel",
+              "gloss": {
+                "en": "pretzel",
+                "zh": "碱水面包"
+              }
+            },
+            {
+              "name": "Weißwurst",
+              "gloss": {
+                "en": "white sausage",
+                "zh": "白香肠"
+              }
+            }
+          ],
+          "transit": {
+            "mode": "flight",
+            "label": {
+              "en": "flight",
+              "zh": "飞机"
+            },
+            "duration": "1h 10m",
+            "detail": {
+              "en": "Munich to Berlin",
+              "zh": "慕尼黑到柏林"
+            }
+          }
+        },
+        {
+          "type": "airport",
+          "status": "confirmed",
+          "name": {
+            "en": "Berlin Brandenburg Airport T1",
+            "zh": "柏林机场 T1"
+          },
+          "lat": 52.3657974,
+          "lng": 13.4888906,
+          "arrive": "1:25 PM",
+          "leave": "2:00 PM",
+          "website": "https://ber.berlin-airport.de/",
+          "nativeName": "Flughafen Berlin Brandenburg Terminal 1",
+          "notes": {
+            "en": "Arrive Berlin, exit terminal (~10 min)",
+            "zh": "到柏林，出航站楼（大约 10 分钟）"
+          },
+          "transit": {
+            "mode": "train",
+            "label": {
+              "en": "train + walk",
+              "zh": "火车 + 步行"
+            },
+            "duration": "~35 min (train to Zoo) + 2 min walk in station",
+            "note": {
+              "en": "Holiday timetable · if flight late or bags slow, taxi ~45 min",
+              "zh": "假日时刻表。飞机晚了或行李慢，出租车大约 45 分钟"
+            }
+          }
+        },
+        {
+          "type": "restaurant",
+          "status": "tentative",
+          "name": {
+            "en": "Curry 36 (Zoo station)",
+            "zh": "Curry 36 (Zoo station)"
+          },
+          "lat": 52.506552,
+          "lng": 13.332461,
+          "arrive": "2:40 PM",
+          "leave": "2:55 PM",
+          "website": "https://curry36.de/",
+          "nativeName": "Curry 36 Bahnhof Zoo",
+          "hours": {
+            "en": "Daily 8 AM–5 AM",
+            "zh": "每天 8:00 到次日 5:00"
+          },
+          "notes": {
+            "en": "Late lunch: currywurst (15 min)",
+            "zh": "晚点的午饭：currywurst（15 分钟）"
+          },
+          "mustOrder": [
+            {
+              "name": "Currywurst ohne Darm"
+            },
+            {
+              "name": "Pommes mit Mayo"
+            }
+          ],
+          "backups": [
+            {
+              "name": "Gendarmenmarkt Christmas market stalls (3:45 PM)",
+              "note": {
+                "en": "Dec 24 12–6 PM, 2025 schedule",
+                "zh": "12 月 24 日 12:00–18:00，这是 2025 年的时间"
+              }
+            },
+            {
+              "name": "Lutter & Wegner",
+              "note": {
+                "en": "daily from 12",
+                "zh": "每天 12 点起"
+              }
+            }
+          ],
+          "transit": {
+            "mode": "walk",
+            "label": {
+              "en": "walk",
+              "zh": "步行"
+            },
+            "duration": "4 min"
+          }
+        },
+        {
+          "type": "hotel",
+          "status": "confirmed",
+          "name": {
+            "en": "Waldorf Astoria Berlin",
+            "zh": "Waldorf Astoria Berlin"
+          },
+          "lat": 52.505584,
+          "lng": 13.332911,
+          "arrive": "3:00 PM",
+          "leave": "3:15 PM",
+          "website": "https://www.hilton.com/en/hotels/berwawa-waldorf-astoria-berlin/",
+          "notes": {
+            "en": "Check in / drop bags (check-in 3:00 PM)",
+            "zh": "入住，把行李放下（下午 3 点可以进房）"
+          },
+          "transit": {
+            "mode": "train",
+            "label": {
+              "en": "walk + S-Bahn + walk",
+              "zh": "步行 + S-Bahn + 步行"
+            },
+            "duration": "~25 min (4 min walk to Zoo, S-Bahn ~10 min to Friedrichstraße, walk 15 min)",
+            "note": {
+              "en": "Holiday service every 10 min",
+              "zh": "假日大约 10 分钟一班"
+            }
+          }
+        },
+        {
+          "type": "sight",
+          "status": "tentative",
+          "name": {
+            "en": "Gendarmenmarkt Christmas market",
+            "zh": "御林广场圣诞市集"
+          },
+          "lat": 52.51357,
+          "lng": 13.392297,
+          "arrive": "3:45 PM",
+          "leave": "4:45 PM",
+          "website": "https://www.weihnachtsmarkt-berlin.de/en/",
+          "nativeName": "WeihnachtsZauber Gendarmenmarkt",
+          "hours": {
+            "en": "Official 2026 hours: Dec 24 11 AM–6 PM",
+            "zh": "2026 年官方时间：12月24日 11:00–18:00"
+          },
+          "notes": {
+            "en": "Christmas market stroll (Glühwein optional)",
+            "zh": "逛圣诞市集（热红酒可喝可不喝）"
+          },
+          "mustSee": [
+            {
+              "text": {
+                "en": "WeihnachtsZauber market stalls",
+                "zh": "圣诞市集的摊位"
+              }
+            },
+            {
+              "name": "Glühwein",
+              "gloss": {
+                "en": "hot spiced wine",
+                "zh": "热红酒"
+              }
+            }
+          ],
+          "transit": {
+            "mode": "walk",
+            "label": {
+              "en": "walk",
+              "zh": "步行"
+            },
+            "duration": "18 min",
+            "note": {
+              "en": "Along Unter den Linden",
+              "zh": "沿菩提树下大街"
+            }
+          }
+        },
+        {
+          "type": "sight",
+          "status": "confirmed",
+          "name": {
+            "en": "Brandenburg Gate",
+            "zh": "勃兰登堡门"
+          },
+          "lat": 52.51627,
+          "lng": 13.377703,
+          "arrive": "5:05 PM",
+          "leave": null,
+          "website": "https://www.berlin.de/sehenswuerdigkeiten/3560266-3558930-brandenburger-tor.html",
+          "nativeName": "Brandenburger Tor",
+          "hours": {
+            "en": "Outdoor",
+            "zh": "户外"
+          },
+          "notes": {
+            "en": "Walk Unter den Linden to Brandenburg Gate + Reichstag exterior (30 min)",
+            "zh": "沿菩提树下大街走到勃兰登堡门，再看一眼国会大厦外观（30 分钟）"
+          },
+          "mustSee": [
+            {
+              "text": {
+                "en": "Brandenburger Tor lit after sunset (~3:55 PM)",
+                "zh": "日落后勃兰登堡门会亮灯（大约 15:55）"
+              }
+            },
+            {
+              "text": {
+                "en": "Reichstag exterior (dome closed all day Dec 24)",
+                "zh": "国会大厦外观（12 月 24 日穹顶全天关闭）"
+              }
+            },
+            {
+              "name": "Reichstagsgebäude (Kuppel)",
+              "gloss": {
+                "en": "Reichstag Building & dome",
+                "zh": "国会大厦和穹顶"
+              }
+            }
+          ],
+          "transit": {
+            "mode": "walk",
+            "label": {
+              "en": "walk",
+              "zh": "步行"
+            },
+            "duration": "5 min"
+          }
+        },
+        {
+          "type": "sight",
+          "status": "confirmed",
+          "name": {
+            "en": "Memorial to the Murdered Jews of Europe",
+            "zh": "欧洲被害犹太人纪念碑"
+          },
+          "lat": 52.513873,
+          "lng": 13.378735,
+          "arrive": "5:40 PM",
+          "leave": null,
+          "website": "https://www.stiftung-denkmal.de/en/",
+          "nativeName": "Denkmal für die ermordeten Juden Europas",
+          "hours": {
+            "en": "24h",
+            "zh": "全天"
+          },
+          "notes": {
+            "en": "Open-air memorial (20 min)",
+            "zh": "露天纪念碑（20 分钟）"
+          },
+          "mustSee": [
+            {
+              "text": {
+                "en": "Field of 2,711 concrete stelae (open-air)",
+                "zh": "露天，2711 根混凝土柱"
+              }
+            }
+          ],
+          "transit": {
+            "mode": "walk",
+            "label": {
+              "en": "walk",
+              "zh": "步行"
+            },
+            "duration": "15 min"
+          }
+        },
+        {
+          "type": "restaurant",
+          "status": "tentative",
+          "name": {
+            "en": "Lutter & Wegner",
+            "zh": "Lutter & Wegner"
+          },
+          "lat": 52.513212,
+          "lng": 13.391178,
+          "arrive": "6:30 PM",
+          "leave": "~9:00 PM",
+          "website": "https://l-w-berlin.de/",
+          "nativeName": "Lutter & Wegner am Gendarmenmarkt",
+          "hours": {
+            "en": "Official site: open 365 days; Christmas menu Dec 24–26",
+            "zh": "官网：全年开。12月24–26日有圣诞菜单"
+          },
+          "notes": {
+            "en": "Christmas Eve dinner",
+            "zh": "平安夜的晚饭"
+          },
+          "mustOrder": [
+            {
+              "name": "Weihnachtsmenü",
+              "gloss": {
+                "en": "Christmas menu",
+                "zh": "圣诞套餐"
+              }
+            },
+            {
+              "name": "Wiener Schnitzel",
+              "gloss": {
+                "en": "breaded veal cutlet",
+                "zh": "维也纳炸小牛排"
+              }
+            },
+            {
+              "name": "Gänsebraten",
+              "gloss": {
+                "en": "roast goose",
+                "zh": "烤鹅"
+              }
+            }
+          ],
+          "backups": [
+            {
+              "name": "Borchardt",
+              "note": {
+                "en": "3 min walk",
+                "zh": "走 3 分钟"
+              }
+            },
+            {
+              "name": "Zur letzten Instanz",
+              "note": {
+                "en": "Christmas Eve opening",
+                "zh": "平安夜开门情况"
+              }
+            }
+          ],
+          "transit": {
+            "mode": "taxi",
+            "label": {
+              "en": "taxi",
+              "zh": "出租车"
+            },
+            "duration": "12–15 min",
+            "note": {
+              "en": "Christmas Eve public transport reduced · take a taxi",
+              "zh": "平安夜公交少，坐出租车"
+            }
+          }
+        },
+        {
+          "type": "hotel",
+          "status": "confirmed",
+          "name": {
+            "en": "Waldorf Astoria Berlin",
+            "zh": "Waldorf Astoria Berlin"
+          },
+          "lat": 52.505584,
+          "lng": 13.332911,
+          "arrive": "~9:00 PM",
+          "leave": null,
+          "website": "https://www.hilton.com/en/hotels/berwawa-waldorf-astoria-berlin/",
+          "notes": {
+            "en": "Back to hotel",
+            "zh": "回酒店"
+          }
+        }
+      ],
+      "notes": [
+        {
+          "en": "Optional: Berliner Dom vespers, public services at 2, 4, 6 PM.",
+          "zh": "可选：柏林大教堂晚祷，公开礼拜在 14:00、16:00、18:00。"
+        },
+        {
+          "en": "Closed Dec 24: state museums, Reichstag dome, Charlottenburg Palace · shops close ~2 PM.",
+          "zh": "12 月 24 日关门：国立博物馆、国会大厦穹顶、夏洛滕堡宫。商店大约下午 2 点打烊。"
+        }
+      ]
+    },
+    {
+      "date": "2026-12-25",
+      "weekday": "Fri",
+      "title": {
+        "en": "Christmas Day · Museum Island, Topography of Terror, Reichstag dome",
+        "zh": "圣诞节 · 博物馆岛、恐怖地形图、国会大厦穹顶"
+      },
+      "stops": [
+        {
+          "type": "hotel",
+          "status": "confirmed",
+          "name": {
+            "en": "Waldorf Astoria Berlin",
+            "zh": "Waldorf Astoria Berlin"
+          },
+          "lat": 52.505584,
+          "lng": 13.332911,
+          "arrive": null,
+          "leave": "9:20 AM",
+          "website": "https://www.hilton.com/en/hotels/berwawa-waldorf-astoria-berlin/",
+          "notes": {
+            "en": "Hotel breakfast 8:30 AM",
+            "zh": "酒店早餐 8:30"
+          },
+          "transit": {
+            "mode": "train",
+            "label": {
+              "en": "S-Bahn + walk",
+              "zh": "S-Bahn + 步行"
+            },
+            "duration": "30–35 min (S-Bahn Zoo → Hackescher Markt 15 min + walk 10 min)",
+            "note": {
+              "en": "or taxi 15 min · +10 min holiday buffer included",
+              "zh": "或出租车 15 分钟（已经含 10 分钟假日富余）"
+            }
+          }
+        },
+        {
+          "type": "sight",
+          "status": "tentative",
+          "name": {
+            "en": "Neues Museum (Nefertiti)",
+            "zh": "新博物馆"
+          },
+          "lat": 52.520155,
+          "lng": 13.397738,
+          "arrive": "10:00 AM",
+          "leave": "~12:00 PM",
+          "website": "https://www.smb.museum/en/museums-institutions/neues-museum/home/",
+          "nativeName": "Neues Museum",
+          "hours": {
+            "en": "10 AM–6 PM",
+            "zh": "10:00–18:00"
+          },
+          "notes": {
+            "en": "Neues Museum at opening (2 h)",
+            "zh": "新博物馆一开门就进（2 小时）"
+          },
+          "mustSee": [
+            {
+              "name": "Büste der Nofretete (Nefertiti bust)"
+            }
+          ],
+          "transit": {
+            "mode": "walk",
+            "label": {
+              "en": "walk",
+              "zh": "步行"
+            },
+            "duration": "4 min"
+          }
+        },
+        {
+          "type": "sight",
+          "status": "confirmed",
+          "name": {
+            "en": "Berlin Cathedral",
+            "zh": "柏林大教堂"
+          },
+          "lat": 52.519082,
+          "lng": 13.401094,
+          "arrive": "12:15 PM",
+          "leave": "12:30 PM",
+          "website": "https://www.berlinerdom.de/",
+          "nativeName": "Berliner Dom",
+          "notes": {
+            "en": "Cathedral and Lustgarten exterior",
+            "zh": "大教堂和露天花园，看外观"
+          },
+          "mustSee": [
+            {
+              "text": {
+                "en": "Berliner Dom exterior",
+                "zh": "柏林大教堂外观"
+              }
+            },
+            {
+              "text": {
+                "en": "Lustgarten",
+                "zh": "露天花园"
+              }
+            }
+          ],
+          "transit": {
+            "mode": "walk",
+            "label": {
+              "en": "walk",
+              "zh": "步行"
+            },
+            "duration": "14 min"
+          }
+        },
+        {
+          "type": "restaurant",
+          "status": "tentative",
+          "name": {
+            "en": "Borchardt",
+            "zh": "Borchardt"
+          },
+          "lat": 52.515003,
+          "lng": 13.390388,
+          "arrive": "12:45 PM",
+          "leave": "2:05 PM",
+          "website": "https://www.borchardt-restaurant.de/",
+          "hours": {
+            "en": "Official site: daily from 11:30; open Christmas Eve 2023; confirm when booking",
+            "zh": "官网：每天 11:30 起。2023 年平安夜开过，订的时候再确认"
+          },
+          "notes": {
+            "en": "Lunch",
+            "zh": "午饭"
+          },
+          "mustOrder": [
+            {
+              "name": "Wiener Schnitzel vom Kalb mit Kartoffel-Gurkensalat"
+            }
+          ],
+          "backups": [
+            {
+              "name": "Lutter & Wegner",
+              "note": {
+                "en": "2 min walk",
+                "zh": "走 2 分钟"
+              }
+            },
+            {
+              "name": "Zur letzten Instanz",
+              "note": {
+                "en": "Fri lunch 12–15, holiday",
+                "zh": "周五午饭 12:00–15:00，假日另说"
+              }
+            }
+          ],
+          "transit": {
+            "mode": "walk",
+            "label": {
+              "en": "walk",
+              "zh": "步行"
+            },
+            "duration": "19 min"
+          }
+        },
+        {
+          "type": "sight",
+          "status": "confirmed",
+          "name": {
+            "en": "Topography of Terror",
+            "zh": "恐怖地形图"
+          },
+          "lat": 52.506214,
+          "lng": 13.384155,
+          "arrive": "2:30 PM",
+          "leave": null,
+          "website": "https://www.topographie.de/en/",
+          "nativeName": "Topographie des Terrors",
+          "hours": {
+            "en": "10 AM–8 PM",
+            "zh": "10:00–20:00"
+          },
+          "notes": {
+            "en": "Topography of Terror (1.5 h, free)",
+            "zh": "恐怖地形图（1.5 小时，免费）"
+          },
+          "mustSee": [
+            {
+              "text": {
+                "en": "Outdoor exhibition along the Berlin Wall remnant",
+                "zh": "沿残墙的户外展览"
+              }
+            }
+          ],
+          "transit": {
+            "mode": "walk",
+            "label": {
+              "en": "walk",
+              "zh": "步行"
+            },
+            "duration": "5 min"
+          }
+        },
+        {
+          "type": "sight",
+          "status": "confirmed",
+          "name": {
+            "en": "Checkpoint Charlie",
+            "zh": "查理检查哨"
+          },
+          "lat": 52.507432,
+          "lng": 13.390381,
+          "arrive": null,
+          "leave": "4:15 PM",
+          "website": null,
+          "hours": {
+            "en": "Outdoor",
+            "zh": "户外"
+          },
+          "notes": {
+            "en": "Checkpoint Charlie",
+            "zh": "查理检查哨"
+          },
+          "transit": {
+            "mode": "walk",
+            "label": {
+              "en": "walk",
+              "zh": "步行"
+            },
+            "duration": "25–30 min",
+            "note": {
+              "en": "Arrive 15 min early for security",
+              "zh": "提前 15 分钟到，要安检"
+            }
+          }
+        },
+        {
+          "type": "sight",
+          "status": "tentative",
+          "name": {
+            "en": "Reichstag Building & dome",
+            "zh": "国会大厦穹顶"
+          },
+          "lat": 52.518654,
+          "lng": 13.376102,
+          "arrive": "5:00 PM",
+          "leave": "~5:45 PM",
+          "website": "https://www.bundestag.de/en/visittheBundestag",
+          "nativeName": "Reichstagsgebäude (Kuppel)",
+          "hours": {
+            "en": "Open Dec 25",
+            "zh": "12月25日开"
+          },
+          "notes": {
+            "en": "Reichstag dome (45 min)",
+            "zh": "国会大厦穹顶（45 分钟）"
+          },
+          "mustSee": [
+            {
+              "text": {
+                "en": "Glass dome and rooftop terrace",
+                "zh": "玻璃穹顶和屋顶平台"
+              }
+            }
+          ],
+          "transit": {
+            "mode": "taxi",
+            "label": {
+              "en": "taxi",
+              "zh": "出租车"
+            },
+            "duration": "12–15 min",
+            "note": {
+              "en": "or U5 + U8 ~35 min",
+              "zh": "或 U5 转 U8，大约 35 分钟"
+            }
+          }
+        },
+        {
+          "type": "restaurant",
+          "status": "tentative",
+          "name": {
+            "en": "Max und Moritz",
+            "zh": "Max und Moritz"
+          },
+          "lat": 52.502619,
+          "lng": 13.414004,
+          "arrive": "7:00 PM",
+          "leave": "~9:00 PM",
+          "website": "https://maxundmoritzberlin.de/",
+          "hours": {
+            "en": "Official site: daily from 18:00; closed only Dec 24 & 31",
+            "zh": "官网：每天 18:00 起。只有 12月24日和 31日关"
+          },
+          "notes": {
+            "en": "Dinner",
+            "zh": "晚饭"
+          },
+          "mustOrder": [
+            {
+              "name": "Berliner Eisbein"
+            },
+            {
+              "name": "Königsberger Klopse"
+            },
+            {
+              "name": "Molle",
+              "gloss": {
+                "en": "house-brewed beer",
+                "zh": "店里自酿的啤酒"
+              }
+            }
+          ],
+          "backups": [
+            {
+              "name": "Lutter & Wegner"
+            },
+            {
+              "name": "Borchardt"
+            },
+            {
+              "name": "Henne",
+              "note": {
+                "en": "reportedly closed Dec 24–25",
+                "zh": "据说 12 月 24–25 日关门"
+              }
+            }
+          ],
+          "transit": {
+            "mode": "taxi",
+            "label": {
+              "en": "taxi",
+              "zh": "出租车"
+            },
+            "duration": "15 min",
+            "note": {
+              "en": "or U8 + S-Bahn ~40 min · few trains on Christmas night",
+              "zh": "或 U8 转 S-Bahn，大约 40 分钟。圣诞夜车很少"
+            }
+          }
+        },
+        {
+          "type": "hotel",
+          "status": "confirmed",
+          "name": {
+            "en": "Waldorf Astoria Berlin",
+            "zh": "Waldorf Astoria Berlin"
+          },
+          "lat": 52.505584,
+          "lng": 13.332911,
+          "arrive": "~9:00 PM",
+          "leave": null,
+          "website": "https://www.hilton.com/en/hotels/berwawa-waldorf-astoria-berlin/",
+          "notes": {
+            "en": "Back to hotel",
+            "zh": "回酒店"
+          }
+        }
+      ]
+    },
+    {
+      "date": "2026-12-26",
+      "weekday": "Sat",
+      "title": {
+        "en": "Boxing Day · Wall Memorial, East Side Gallery, TV Tower",
+        "zh": "节礼日 · 柏林墙纪念地、东边画廊、电视塔"
+      },
+      "stops": [
+        {
+          "type": "hotel",
+          "status": "confirmed",
+          "name": {
+            "en": "Waldorf Astoria Berlin",
+            "zh": "Waldorf Astoria Berlin"
+          },
+          "lat": 52.505584,
+          "lng": 13.332911,
+          "arrive": null,
+          "leave": "9:25 AM",
+          "website": "https://www.hilton.com/en/hotels/berwawa-waldorf-astoria-berlin/",
+          "notes": {
+            "en": "Hotel breakfast 8:30 AM",
+            "zh": "酒店早餐 8:30"
+          },
+          "transit": {
+            "mode": "train",
+            "label": {
+              "en": "S-Bahn + walk",
+              "zh": "S-Bahn + 步行"
+            },
+            "duration": "30–35 min (S-Bahn Zoo → Friedrichstraße → S1/S2 Nordbahnhof) + 3 min walk",
+            "note": {
+              "en": "or taxi 15 min · +10 min holiday buffer included",
+              "zh": "或出租车 15 分钟（已经含 10 分钟假日富余）"
+            }
+          }
+        },
+        {
+          "type": "sight",
+          "status": "confirmed",
+          "name": {
+            "en": "Berlin Wall Memorial",
+            "zh": "柏林墙纪念地"
+          },
+          "lat": 52.537513,
+          "lng": 13.394675,
+          "arrive": "10:00 AM",
+          "leave": "11:30 AM",
+          "website": "https://www.berliner-mauer-gedenkstaette.de/en/",
+          "nativeName": "Gedenkstätte Berliner Mauer",
+          "hours": {
+            "en": "Open-air 8 AM–10 PM, Documentation Center 10 AM–6 PM",
+            "zh": "露天 8:00–22:00，文献中心 10:00–18:00"
+          },
+          "notes": {
+            "en": "Berlin Wall Memorial (1.5 h)",
+            "zh": "柏林墙纪念地（1.5 小时）"
+          },
+          "mustSee": [
+            {
+              "text": {
+                "en": "Bernauer Straße open-air memorial",
+                "zh": "Bernauer Straße 露天纪念地"
+              }
+            },
+            {
+              "text": {
+                "en": "Documentation Center viewing tower",
+                "zh": "文献中心的观景塔"
+              }
+            }
+          ],
+          "transit": {
+            "mode": "metro",
+            "label": {
+              "en": "S-Bahn + U-Bahn",
+              "zh": "S-Bahn + U-Bahn"
+            },
+            "duration": "30 min (S1/S2 → Friedrichstraße → U6 Mehringdamm)"
+          }
+        },
+        {
+          "type": "restaurant",
+          "status": "tentative",
+          "name": {
+            "en": "Curry 36 (Mehringdamm)",
+            "zh": "Curry 36 (Mehringdamm)"
+          },
+          "lat": 52.493492,
+          "lng": 13.387687,
+          "arrive": "12:00 PM",
+          "leave": "12:55 PM",
+          "website": "https://curry36.de/mehringdamm/",
+          "nativeName": "Curry 36 Mehringdamm",
+          "hours": {
+            "en": "Daily 9 AM–5 AM",
+            "zh": "每天 9:00 到次日 5:00"
+          },
+          "notes": {
+            "en": "Lunch: currywurst",
+            "zh": "午饭：currywurst"
+          },
+          "mustOrder": [
+            {
+              "name": "Currywurst ohne Darm"
+            },
+            {
+              "name": "Pommes"
+            }
+          ],
+          "backups": [
+            {
+              "name": "Curry 36 Bahnhof Zoo",
+              "note": {
+                "en": "daily 8–5",
+                "zh": "每天 8:00–17:00"
+              }
+            },
+            {
+              "name": "Borchardt"
+            }
+          ],
+          "transit": {
+            "mode": "metro",
+            "label": {
+              "en": "U-Bahn + walk",
+              "zh": "U-Bahn + 步行"
+            },
+            "duration": "30 min (U6 → U1/U3 Warschauer Str. 20 min + walk 10 min)"
+          }
+        },
+        {
+          "type": "sight",
+          "status": "confirmed",
+          "name": {
+            "en": "East Side Gallery",
+            "zh": "东边画廊"
+          },
+          "lat": 52.504454,
+          "lng": 13.440839,
+          "arrive": "1:30 PM",
+          "leave": null,
+          "website": "https://www.stiftung-berliner-mauer.de/en/east-side-gallery",
+          "hours": {
+            "en": "Open-air 24h",
+            "zh": "露天，全天"
+          },
+          "notes": {
+            "en": "East Side Gallery (1 h)",
+            "zh": "东边画廊（1 小时）"
+          },
+          "mustSee": [
+            {
+              "text": {
+                "en": "Longest surviving stretch of the Berlin Wall, painted murals",
+                "zh": "留下来最长的一段柏林墙，上面有画"
+              }
+            }
+          ],
+          "transit": {
+            "mode": "train",
+            "label": {
+              "en": "walk + S-Bahn",
+              "zh": "步行 + S-Bahn"
+            },
+            "duration": "20 min (walk along the wall to Ostbahnhof, S-Bahn to Alexanderplatz)"
+          }
+        },
+        {
+          "type": "sight",
+          "status": "tentative",
+          "name": {
+            "en": "Berlin TV Tower",
+            "zh": "柏林电视塔"
+          },
+          "lat": 52.520828,
+          "lng": 13.409421,
+          "arrive": "3:15 PM",
+          "leave": null,
+          "website": "https://tv-turm.de/en/",
+          "nativeName": "Berliner Fernsehturm",
+          "hours": {
+            "en": "10 AM–11 PM on Dec 25–26",
+            "zh": "12月25–26日 10:00–23:00"
+          },
+          "notes": {
+            "en": "TV Tower for sunset (~3:55 PM), 1 h",
+            "zh": "电视塔看日落（大约 15:55），待 1 小时"
+          },
+          "mustSee": [
+            {
+              "text": {
+                "en": "Sunset view from the observation deck",
+                "zh": "观景台看日落"
+              }
+            }
+          ],
+          "transit": {
+            "mode": "walk",
+            "label": {
+              "en": "walk",
+              "zh": "步行"
+            },
+            "duration": "9 min"
+          }
+        },
+        {
+          "type": "sight",
+          "status": "tentative",
+          "name": {
+            "en": "DDR Museum",
+            "zh": "东德博物馆"
+          },
+          "lat": 52.51944,
+          "lng": 13.402238,
+          "arrive": "4:30 PM",
+          "leave": null,
+          "website": "https://www.ddr-museum.de/en",
+          "optional": true,
+          "notes": {
+            "en": "DDR Museum (optional, 1 h)",
+            "zh": "东德博物馆（可选，1 小时）"
+          },
+          "transit": {
+            "mode": "walk",
+            "label": {
+              "en": "walk",
+              "zh": "步行"
+            },
+            "duration": "16 min"
+          }
+        },
+        {
+          "type": "restaurant",
+          "status": "tentative",
+          "name": {
+            "en": "Lutter & Wegner",
+            "zh": "Lutter & Wegner"
+          },
+          "lat": 52.513212,
+          "lng": 13.391178,
+          "arrive": "6:45 PM",
+          "leave": "~8:45 PM",
+          "website": "https://l-w-berlin.de/",
+          "nativeName": "Lutter & Wegner am Gendarmenmarkt",
+          "hours": {
+            "en": "open 365 days",
+            "zh": "全年无休"
+          },
+          "notes": {
+            "en": "Dinner (swap to Zur letzten Instanz if it confirms it is open)",
+            "zh": "晚饭（Zur letzten Instanz 如果确认开门，就改去那里）"
+          },
+          "mustOrder": [
+            {
+              "name": "Wiener Schnitzel",
+              "gloss": {
+                "en": "breaded veal cutlet",
+                "zh": "维也纳炸小牛排"
+              }
+            },
+            {
+              "name": "Gänsebraten",
+              "gloss": {
+                "en": "roast goose",
+                "zh": "烤鹅"
+              }
+            }
+          ],
+          "backups": [
+            {
+              "name": "Zur letzten Instanz",
+              "note": {
+                "en": "Berlin's oldest restaurant (1621) · Sat 12–15, 17:30–23 · holiday hours not published – switch here if they confirm",
+                "zh": "柏林最老的餐厅之一（1621）。周六 12:00–15:00、17:30–23:00。假日时间还没公布，确认开门再改过来"
+              }
+            },
+            {
+              "name": "Max und Moritz",
+              "note": {
+                "en": "from 18:00 Dec 26",
+                "zh": "12 月 26 日起 18:00"
+              }
+            },
+            {
+              "name": "Henne",
+              "note": {
+                "en": "fried chicken · Dec 26",
+                "zh": "炸鸡 · 12 月 26 日"
+              }
+            }
+          ],
+          "transit": {
+            "mode": "taxi",
+            "label": {
+              "en": "taxi",
+              "zh": "出租车"
+            },
+            "duration": "10–15 min",
+            "note": {
+              "en": "or S-Bahn ~25 min",
+              "zh": "或 S-Bahn，大约 25 分钟"
+            }
+          }
+        },
+        {
+          "type": "hotel",
+          "status": "confirmed",
+          "name": {
+            "en": "Waldorf Astoria Berlin",
+            "zh": "Waldorf Astoria Berlin"
+          },
+          "lat": 52.505584,
+          "lng": 13.332911,
+          "arrive": "~8:45 PM",
+          "leave": null,
+          "website": "https://www.hilton.com/en/hotels/berwawa-waldorf-astoria-berlin/",
+          "notes": {
+            "en": "Back to hotel",
+            "zh": "回酒店"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,666 @@
+/* Travel Guide — phone-first walking notes. Map left on desktop, above the timeline on a phone. */
+
+.travel-panel[data-travel-panel="guide"].active {
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 auto;
+	min-height: 0;
+	overflow: hidden;
+}
+
+.guide-root {
+	flex: 1 1 auto;
+	min-height: 0;
+	min-width: 0;
+	display: flex;
+	flex-direction: column;
+	color: #333;
+	font-family: Lora, "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+
+.guide-root[lang="zh-Hans"] .guide-kicker,
+.guide-root[lang="zh-Hans"] .guide-draft,
+.guide-root[lang="zh-Hans"] .guide-status,
+.guide-root[lang="zh-Hans"] .guide-day,
+.guide-root[lang="zh-Hans"] .guide-lang-btn,
+.guide-root[lang="zh-Hans"] .guide-time,
+.guide-root[lang="zh-Hans"] .guide-leg {
+	letter-spacing: 0;
+	text-transform: none;
+}
+
+.guide-toolbar {
+	display: flex;
+	align-items: flex-start;
+	gap: 0.65rem;
+	flex-shrink: 0;
+	margin: 0 0 0.65rem;
+}
+
+.guide-heading {
+	flex: 1 1 auto;
+	min-width: 0;
+}
+
+.guide-back {
+	flex: 0 0 auto;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.35rem;
+	min-height: 44px;
+	padding: 0.2rem 0;
+	color: var(--accent, #303F9F);
+	font-family: "Roboto Mono", "PingFang SC", "Microsoft YaHei", sans-serif;
+	font-size: 0.72rem;
+	font-weight: 700;
+	letter-spacing: 0.04em;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.guide-root[lang="zh-Hans"] .guide-back {
+	letter-spacing: 0;
+	text-transform: none;
+	font-size: 0.85rem;
+}
+
+.guide-city-name {
+	margin: 0;
+	font-family: "Roboto Mono", "PingFang SC", "Microsoft YaHei", sans-serif;
+	font-size: 1.05rem;
+	font-weight: 700;
+	color: #222;
+	line-height: 1.2;
+}
+
+.guide-city-sub,
+.guide-city-dates,
+.guide-card-dates,
+.guide-card-sub {
+	display: block;
+	margin: 0.1rem 0 0;
+	color: #777;
+	font-size: 0.82rem;
+}
+
+.guide-draft {
+	display: inline-block;
+	margin-top: 0.35rem;
+	padding: 0.12rem 0.5rem;
+	border: 1px solid #e2d3b0;
+	border-radius: 999px;
+	background: #fbf7ee;
+	color: #8a6a2f;
+	font-family: "Roboto Mono", "PingFang SC", "Microsoft YaHei", sans-serif;
+	font-size: 0.65rem;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+}
+
+.guide-lang {
+	display: inline-flex;
+	flex: 0 0 auto;
+	margin-left: auto;
+	border: 1px solid #ddd;
+	border-radius: 999px;
+	overflow: hidden;
+	background: #fff;
+}
+
+.guide-lang-btn {
+	appearance: none;
+	border: 0;
+	background: transparent;
+	min-width: 44px;
+	min-height: 36px;
+	padding: 0.35rem 0.7rem;
+	color: #777;
+	font-family: "Roboto Mono", "PingFang SC", "Microsoft YaHei", sans-serif;
+	font-size: 0.75rem;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.guide-lang-btn.is-active {
+	background: var(--accent, #303F9F);
+	color: #fff;
+}
+
+.guide-lang-btn:focus-visible,
+.guide-day:focus-visible,
+.guide-back:focus-visible,
+.guide-card:focus-visible,
+.guide-icon-btn:focus-visible,
+.guide-stop:focus-visible {
+	outline: 2px solid var(--accent, #303F9F);
+	outline-offset: 2px;
+}
+
+.guide-scroll {
+	flex: 1 1 auto;
+	min-height: 0;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+	overscroll-behavior: contain;
+}
+
+.guide-cards {
+	display: flex;
+	flex-direction: column;
+	gap: 0.65rem;
+	padding-bottom: 0.5rem;
+}
+
+.guide-card {
+	display: flex;
+	align-items: center;
+	gap: 0.85rem;
+	min-height: 84px;
+	padding: 0.55rem;
+	background: #fff;
+	border-radius: 2px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+	color: inherit;
+	text-decoration: none;
+}
+
+.guide-card-cover {
+	flex: 0 0 84px;
+	width: 84px;
+	height: 56px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #f3f3f3;
+	overflow: hidden;
+}
+
+.guide-card-cover img {
+	width: 100%;
+	height: 100%;
+}
+
+.guide-card-cover.fit-contain img {
+	object-fit: contain;
+	padding: 4px;
+}
+
+.guide-card-cover.fit-cover img {
+	object-fit: cover;
+}
+
+.guide-card-name {
+	display: block;
+	font-family: "Roboto Mono", "PingFang SC", "Microsoft YaHei", sans-serif;
+	font-size: 1rem;
+	font-weight: 700;
+	color: #222;
+}
+
+.guide-days {
+	display: flex;
+	gap: 0.4rem;
+	flex-shrink: 0;
+	margin: 0 0 0.45rem;
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+.guide-day {
+	flex: 0 0 auto;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 0.05rem;
+	min-height: 44px;
+	padding: 0.35rem 0.75rem;
+	border: 1px solid #ddd;
+	border-radius: 999px;
+	background: #fff;
+	color: #666;
+	font-family: "Roboto Mono", "PingFang SC", "Microsoft YaHei", sans-serif;
+	font-size: 0.72rem;
+	font-weight: 700;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+.guide-day-date {
+	font-weight: 400;
+	letter-spacing: 0;
+	text-transform: none;
+	color: #999;
+	font-size: 0.68rem;
+}
+
+.guide-day.is-active {
+	background: var(--accent, #303F9F);
+	border-color: var(--accent, #303F9F);
+	color: #fff;
+}
+
+.guide-day.is-active .guide-day-date {
+	color: rgba(255, 255, 255, 0.8);
+}
+
+.guide-day-title {
+	flex-shrink: 0;
+	margin: 0 0 0.5rem;
+	color: #555;
+	font-size: 0.92rem;
+	line-height: 1.35;
+}
+
+.guide-split {
+	flex: 1 1 auto;
+	min-height: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0.6rem;
+}
+
+.guide-map-panel {
+	flex: 0 0 auto;
+	height: 38vh;
+	height: 38dvh;
+	min-height: 200px;
+	max-height: 320px;
+}
+
+.guide-map {
+	width: 100%;
+	height: 100%;
+	background: #d5d5d5;
+	border: 1px solid #d0d0d0;
+	z-index: 1;
+}
+
+.guide-map .leaflet-control-attribution {
+	font-size: 10px;
+	max-width: 70%;
+}
+
+.leaflet-marker-icon.guide-marker {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #fff;
+	border: 2px solid var(--accent, #303F9F);
+	border-radius: 50%;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.28);
+}
+
+.guide-marker span {
+	font-family: "Roboto Mono", sans-serif;
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 1;
+	color: var(--accent, #303F9F);
+}
+
+.guide-marker.is-tentative {
+	background: #f7f8fc;
+	border-style: dashed;
+}
+
+.guide-marker.is-decision {
+	background: #fbf7ee;
+	border-color: #b0893e;
+}
+
+.guide-marker.is-decision span {
+	color: #8a6a2f;
+}
+
+.guide-marker.is-active {
+	background: var(--accent, #303F9F);
+	border-style: solid;
+	border-color: var(--accent, #303F9F);
+	z-index: 800 !important;
+}
+
+.guide-marker.is-active span,
+.guide-marker.is-active.is-decision span {
+	color: #fff;
+}
+
+.guide-marker.is-active.is-decision {
+	background: #8a6a2f;
+	border-color: #8a6a2f;
+}
+
+.guide-timeline {
+	flex: 1 1 auto;
+	min-height: 0;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+	overscroll-behavior: contain;
+	background: #fff;
+	border: 1px solid #e6e6e6;
+}
+
+.guide-stop {
+	padding: 0.75rem 0.8rem 0.85rem;
+	border-bottom: 1px solid #eee;
+	cursor: pointer;
+}
+
+.guide-stop.is-active {
+	background: #f4f6fb;
+	box-shadow: inset 3px 0 0 var(--accent, #303F9F);
+}
+
+.guide-stop-top {
+	display: flex;
+	align-items: flex-start;
+	gap: 0.55rem;
+}
+
+.guide-stop-num {
+	flex: 0 0 auto;
+	width: 26px;
+	height: 26px;
+	margin-top: 0.1rem;
+	border: 2px solid var(--accent, #303F9F);
+	border-radius: 50%;
+	background: #fff;
+	color: var(--accent, #303F9F);
+	font-family: "Roboto Mono", sans-serif;
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 22px;
+	text-align: center;
+}
+
+.guide-stop-num.is-tentative {
+	border-style: dashed;
+	background: #f7f8fc;
+}
+
+.guide-stop-num.is-decision {
+	border-color: #b0893e;
+	color: #8a6a2f;
+	background: #fbf7ee;
+}
+
+.guide-stop.is-active .guide-stop-num {
+	background: var(--accent, #303F9F);
+	border-style: solid;
+	border-color: var(--accent, #303F9F);
+	color: #fff;
+}
+
+.guide-stop-titles {
+	flex: 1 1 auto;
+	min-width: 0;
+}
+
+.guide-stop-titles h3 {
+	margin: 0;
+	font-family: Lora, "PingFang SC", "Microsoft YaHei", sans-serif;
+	font-size: 1.05rem;
+	font-weight: 700;
+	line-height: 1.25;
+	color: #222;
+}
+
+.guide-native {
+	margin: 0.1rem 0 0;
+	color: #888;
+	font-size: 0.82rem;
+}
+
+.guide-chips {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.3rem;
+	margin: 0.3rem 0 0;
+}
+
+.guide-status,
+.guide-type,
+.guide-kicker {
+	font-family: "Roboto Mono", "PingFang SC", "Microsoft YaHei", sans-serif;
+	font-size: 0.62rem;
+	font-weight: 700;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+}
+
+.guide-status {
+	padding: 0.08rem 0.4rem;
+	border-radius: 999px;
+}
+
+.guide-status.is-confirmed {
+	color: #8a8a8a;
+	background: #f3f3f3;
+}
+
+.guide-status.is-tentative {
+	color: #5c6a9a;
+	background: #f4f6fb;
+	border: 1px dashed #c5ccea;
+}
+
+.guide-status.is-decision {
+	color: #8a6a2f;
+	background: #fbf7ee;
+	border: 1px solid #e2d3b0;
+}
+
+.guide-status.is-optional,
+.guide-type {
+	color: #999;
+}
+
+.guide-stop-actions {
+	display: flex;
+	flex: 0 0 auto;
+	gap: 0.25rem;
+}
+
+.guide-icon-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 44px;
+	height: 44px;
+	border: 1px solid #e2e2e2;
+	border-radius: 50%;
+	background: #fff;
+	color: var(--accent, #303F9F);
+	text-decoration: none;
+}
+
+.guide-icon-btn:hover,
+.guide-icon-btn:focus-visible {
+	border-color: var(--accent, #303F9F);
+	color: var(--accent, #303F9F);
+}
+
+.guide-time,
+.guide-hours {
+	margin: 0.35rem 0 0 2.1rem;
+	color: #555;
+	font-family: "Roboto Mono", "PingFang SC", "Microsoft YaHei", sans-serif;
+	font-size: 0.75rem;
+}
+
+.guide-notes {
+	margin: 0.4rem 0 0 2.1rem;
+	color: #444;
+	font-size: 0.92rem;
+	line-height: 1.45;
+}
+
+.guide-must,
+.guide-alts {
+	margin: 0.45rem 0 0 2.1rem;
+}
+
+.guide-kicker {
+	color: var(--accent, #303F9F);
+}
+
+.guide-must ul,
+.guide-alts ul,
+.guide-day-notes {
+	list-style: none;
+	margin: 0.2rem 0 0;
+	padding: 0;
+}
+
+.guide-must li,
+.guide-alts li {
+	position: relative;
+	margin: 0.18rem 0;
+	padding-left: 0.7rem;
+	font-size: 0.88rem;
+	line-height: 1.4;
+}
+
+.guide-must li::before,
+.guide-alts li::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0.55em;
+	width: 4px;
+	height: 4px;
+	border-radius: 50%;
+	background: var(--accent, #303F9F);
+}
+
+.guide-must-name {
+	font-weight: 700;
+}
+
+.guide-must-gloss,
+.guide-alt-note {
+	color: #777;
+}
+
+.guide-alts li {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.15rem 0.45rem;
+	padding-right: 0;
+}
+
+.guide-alts .guide-stop-actions {
+	margin-left: auto;
+}
+
+.guide-alts .guide-icon-btn {
+	width: 36px;
+	height: 36px;
+}
+
+.guide-backup {
+	margin: 0.4rem 0 0 2.1rem;
+	color: #666;
+	font-size: 0.8rem;
+	line-height: 1.4;
+}
+
+.guide-leg {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	gap: 0.35rem 0.55rem;
+	padding: 0.4rem 0.8rem 0.4rem 2.55rem;
+	background: #fafafa;
+	color: #777;
+	font-family: "Roboto Mono", "PingFang SC", "Microsoft YaHei", sans-serif;
+	font-size: 0.72rem;
+}
+
+.guide-leg i {
+	color: var(--accent, #303F9F);
+}
+
+.guide-leg-note {
+	flex: 1 1 100%;
+	color: #999;
+	font-family: Lora, "PingFang SC", "Microsoft YaHei", sans-serif;
+	font-size: 0.8rem;
+}
+
+.guide-day-notes {
+	padding: 0.7rem 0.9rem 1rem;
+	color: #777;
+	font-size: 0.82rem;
+}
+
+.guide-day-notes li {
+	margin: 0.25rem 0;
+}
+
+.guide-loading,
+.guide-message {
+	margin: 0.5rem 0;
+	color: #777;
+}
+
+@media (min-width: 768px) {
+	.guide-cards {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+		gap: 0.9rem;
+	}
+
+	.guide-card {
+		flex-direction: column;
+		align-items: stretch;
+		gap: 0;
+		padding: 0;
+		overflow: hidden;
+		min-height: 0;
+	}
+
+	.guide-card-cover {
+		width: 100%;
+		flex-basis: auto;
+		height: 120px;
+	}
+
+	.guide-card-body {
+		padding: 0.85rem 0.95rem 1rem;
+	}
+}
+
+@media (min-width: 992px) {
+	.guide-split {
+		flex-direction: row;
+		align-items: stretch;
+		gap: 0.75rem;
+	}
+
+	.guide-map-panel {
+		flex: 1.15 1 0;
+		height: auto;
+		max-height: none;
+		min-height: 0;
+	}
+
+	.guide-timeline {
+		flex: 0.9 1 0;
+		min-width: 280px;
+	}
+}
+
+@media (max-width: 991px) {
+	.travel-panel[data-travel-panel="guide"].active,
+	.guide-root,
+	.guide-split,
+	.guide-map-panel,
+	.guide-timeline,
+	.guide-scroll {
+		max-width: 100%;
+		min-width: 0;
+	}
+}
