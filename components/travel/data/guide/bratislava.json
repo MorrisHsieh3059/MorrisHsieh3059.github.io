@@ -30,7 +30,7 @@
           "type": "hotel",
           "status": "needs-decision",
           "name": {
-            "en": "Vienna hotel – not booked",
+            "en": "Vienna hotel",
             "zh": "维也纳酒店（未定）"
           },
           "lat": null,

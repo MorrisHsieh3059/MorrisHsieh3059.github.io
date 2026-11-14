@@ -8,7 +8,9 @@
  * Re-running on a later export in the same shape replaces those files.
  *
  * Public page: strips personal names, flight and train numbers, emails,
- * phone numbers, prices, confirmation codes, and "reserve now" notes.
+ * phone numbers, prices, confirmation codes, "reserve now" notes,
+ * guest counts, reservation holds, and seating times that depend on a
+ * flight delay. Published hours and kitchen-close times stay.
  * Chinese copy comes from scripts/guide-zh.json (Simplified, keyed by the
  * sanitized English). Place and dish names stay in the original language.
  */
@@ -104,7 +106,7 @@ function sanitize(input) {
   s = s.replace(/\bTony\b/g, '');
   s = s.replace(/awaiting Morris's OK/gi, 'awaiting a decision');
   s = s.replace(/awaiting OK/gi, 'awaiting a decision');
-  s = s.replace(/Morris to book/gi, 'not booked yet');
+  s = s.replace(/Morris to book/gi, '');
   s = s.replace(/\bMorris\b/g, '');
   s = s.replace(/founded by Rev\. Stephen Tong\s*唐崇荣;?\s*/g, '');
   s = s.replace(/\bSecretary\b/g, '');
@@ -113,6 +115,7 @@ function sanitize(input) {
   s = s.replace(/\bprepay(?:ment)?\b/gi, '');
   s = s.replace(/[✅☑️⚠️❌]/g, '');
   s = s.replace(/\bvia FRA\b/g, 'via Frankfurt');
+  s = stripBookingDetails(s);
   s = s.replace(/,\s*,/g, ',');
   s = s.replace(/\(\s*,\s*/g, '(');
   s = s.replace(/,\s*\)/g, ')');
@@ -125,10 +128,38 @@ function sanitize(input) {
   s = s.replace(/\s+,/g, ',');
   s = s.replace(/\s{2,}/g, ' ');
   s = s.replace(/\s+([,.;])/g, '$1');
+  s = s.replace(/\s*,\s*(?=[;·])/g, '');
+  s = s.replace(/(?:[;·]\s*){2,}/g, ' · ');
   s = s.replace(/\s*→\s*(?:→\s*)+/g, ' → ');
   s = s.replace(/^[\s,;·–—-]+|[\s,;·–—-]+$/g, '');
   s = s.replace(/\s+—\s*$/g, '');
-  return s.trim();
+  s = s.trim();
+  s = s.replace(/^\((.*)\)$/, '$1').trim();
+  return s;
+}
+
+// Drop reservation logistics. Keep published hours and kitchen-close times.
+function stripBookingDetails(s) {
+  s = s.replace(/\breservations?\s+held\s+for\s+\d+\s+guests?\b[^()]*/gi, '');
+  s = s.replace(/\bheld\s+for\s+\d+\s+guests?\b[^()]*/gi, '');
+  s = s.replace(/\b(?:party|table)\s+(?:of|for)\s+\d+\b/gi, '');
+  s = s.replace(/\bfor\s+\d+\s*(?:people|persons|guests?)\b/gi, '');
+  s = s.replace(/\b\d+\s+guests?\b/gi, '');
+  s = s.replace(/\s*[;,]?\s*latest seating\b[^.;)]*?\bif flight delayed\b/gi, '');
+  s = s.replace(/\s*[;,]?\s*if (?:the )?flight (?:is |was )?delayed\b[^.;)]*/gi, '');
+  s = s.replace(/\bflight delays?\b/gi, '');
+  s = s.replace(/\s*[–—-]\s*not booked\b/gi, '');
+  s = s.replace(/\bnot booked yet\b/gi, '');
+  s = s.replace(/\b(?:hotel|flight)\s+not booked\b/gi, '');
+  s = s.replace(/\bnot booked\b/gi, '');
+  s = s.replace(/\bunbooked\b/gi, '');
+  s = s.replace(/\bno reservations?\b/gi, '');
+  s = s.replace(/\breservations?\s+(?:needed|held|required)\b/gi, '');
+  s = s.replace(/\breservations?\b/gi, '');
+  s = s.replace(/\bconfirm when booking\b/gi, '');
+  s = s.replace(/\bbook once\b[^.;)]*/gi, '');
+  s = s.replace(/\bofficial booking page:\s*/gi, '');
+  return s;
 }
 
 function polishActivity(original, sanitized) {
@@ -577,7 +608,12 @@ function assertPublic(files) {
     { re: /\b(?:AA|OS|UA|VL|DE|LH|SN)\s?-?\d{2,4}\b/i, why: 'flight number' },
     { re: /\bREX\s?-?\d+\b/i, why: 'train number' },
     { re: /reserve now/i, why: 'booking note' },
-    { re: /confirmation code|record locator|\bPNR\b|seat\s?\d/i, why: 'booking secret' }
+    { re: /confirmation code|record locator|\bPNR\b|seat\s?\d/i, why: 'booking secret' },
+    { re: /guest/i, why: 'guest count' },
+    { re: /reservation/i, why: 'reservation' },
+    { re: /booked/i, why: 'booked' },
+    { re: /held for/i, why: 'held for' },
+    { re: /预订|预约/, why: 'reservation wording' }
   ];
   const problems = [];
   files.forEach(function (file) {

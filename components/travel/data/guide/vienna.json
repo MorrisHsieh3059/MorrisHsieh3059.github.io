@@ -134,8 +134,8 @@
             {
               "name": "Borchardt",
               "note": {
-                "en": "S-Bahn 15 min, back at hotel by 1:45",
-                "zh": "S-Bahn 15 分钟，13:45 前回到酒店"
+                "en": "sit-down, from 11:30 · S-Bahn 15 min, back at hotel by 1:45",
+                "zh": "可以坐下，11:30 起。S-Bahn 15 分钟，13:45 前回到酒店"
               }
             },
             {
@@ -313,7 +313,7 @@
           "type": "hotel",
           "status": "needs-decision",
           "name": {
-            "en": "Vienna hotel – not booked",
+            "en": "Vienna hotel",
             "zh": "维也纳酒店（未定）"
           },
           "lat": null,
@@ -451,8 +451,8 @@
             "zh": "官网：每天 12:00–23:30，厨房到 22:00。2025 年圣诞期间开过"
           },
           "notes": {
-            "en": "Dinner (kitchen closes 10 PM; latest seating 9:30 PM if flight delayed)",
-            "zh": "晚饭（厨房 22:00 关；飞机延误的话最晚 21:30 入座）"
+            "en": "Dinner (kitchen closes 10 PM)",
+            "zh": "晚饭（厨房 22:00 关）"
           },
           "mustOrder": [
             {
@@ -517,7 +517,7 @@
           "type": "hotel",
           "status": "needs-decision",
           "name": {
-            "en": "Vienna hotel – not booked",
+            "en": "Vienna hotel",
             "zh": "维也纳酒店（未定）"
           },
           "lat": null,
@@ -719,8 +719,8 @@
           "leave": "12:45 PM",
           "website": "https://www.plachutta.at/en/restaurant/hietzing/",
           "hours": {
-            "en": "Official booking page: Mon 11:30–15:00",
-            "zh": "官方订位页：周一 11:30–15:00"
+            "en": "Mon 11:30–15:00",
+            "zh": "周一 11:30–15:00"
           },
           "notes": {
             "en": "Lunch: Tafelspitz",
@@ -1212,7 +1212,7 @@
           "type": "hotel",
           "status": "needs-decision",
           "name": {
-            "en": "Vienna hotel – not booked",
+            "en": "Vienna hotel",
             "zh": "维也纳酒店（未定）"
           },
           "lat": null,
@@ -1303,8 +1303,8 @@
           "website": "https://www.steirereck.at/",
           "nativeName": "Steirereck im Stadtpark",
           "hours": {
-            "en": "Reservation held for 1 guest, Dec 30 11:30 (lunch 11:30 AM–2:30 PM, last seating 12:45)",
-            "zh": "12月30日 11:30 留了一个位子（午饭 11:30–14:30，最晚 12:45 入座）"
+            "en": "lunch 11:30 AM–2:30 PM, last seating 12:45",
+            "zh": "午饭 11:30–14:30，最晚 12:45 入座"
           },
           "notes": {
             "en": "Steirereck lunch (Michelin 3★, World's 50 Best #30) – the trip's one 3-star",

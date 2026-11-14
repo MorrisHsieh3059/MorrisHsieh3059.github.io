@@ -368,8 +368,8 @@
           "leave": "1:15 PM",
           "website": "https://www.auxarmesdebruxelles.com/",
           "hours": {
-            "en": "Official site Tue–Sun 12:00–22:30; NYE not published – confirm when booking",
-            "zh": "官网：周二到周日 12:00–22:30。跨年夜还没公布，订的时候再确认"
+            "en": "Official site Tue–Sun 12:00–22:30; NYE not published",
+            "zh": "官网：周二到周日 12:00–22:30。跨年夜还没公布"
           },
           "notes": {
             "en": "Lunch",
@@ -395,7 +395,11 @@
               "name": "In 't Spinnekopke"
             },
             {
-              "name": "Fin de Siècle"
+              "name": "Fin de Siècle",
+              "note": {
+                "en": "daily 12–24",
+                "zh": "每天 12:00–24:00"
+              }
             },
             {
               "name": "Noordzee – Mer du Nord",
@@ -686,8 +690,8 @@
           "leave": null,
           "website": "https://spinnekopke.be/fr/",
           "hours": {
-            "en": "Official site Thu evening 18:00–21:30; NYE not published – confirm when booking",
-            "zh": "官网：周四晚 18:00–21:30。跨年夜还没公布，订的时候再确认"
+            "en": "Official site Thu evening 18:00–21:30; NYE not published",
+            "zh": "官网：周四晚 18:00–21:30。跨年夜还没公布"
           },
           "notes": {
             "en": "NYE dinner",
