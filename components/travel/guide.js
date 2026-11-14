@@ -35,6 +35,7 @@
 		other: { en: 'Stop', zh: '停留' },
 		directions: { en: 'Directions to {name}', zh: '去{name}的路线' },
 		website: { en: '{name} official website', zh: '{name}官网' },
+		offscreen: { en: 'Stop {n}, off the map', zh: '第 {n} 站在地图外面' },
 		langGroup: { en: 'Language', zh: '语言' }
 	};
 
@@ -256,54 +257,223 @@
 		state.markers = [];
 	}
 
-	function markerIcon(n, status, active) {
+	var STREET_ZOOM = 17;
+
+	function markerIcon(n, status, active, dx, dy) {
+		dx = dx || 0;
+		dy = dy || 0;
 		return L.divIcon({
 			className: 'guide-marker ' + statusClass(status) + (active ? ' is-active' : ''),
 			html: '<span>' + n + '</span>',
 			iconSize: [30, 30],
-			iconAnchor: [15, 15]
+			iconAnchor: [15 - dx, 15 - dy]
 		});
+	}
+
+	function distanceMeters(a, b) {
+		var R = 6371000;
+		var p1 = a[0] * Math.PI / 180;
+		var p2 = b[0] * Math.PI / 180;
+		var dphi = (b[0] - a[0]) * Math.PI / 180;
+		var dl = (b[1] - a[1]) * Math.PI / 180;
+		var h = Math.sin(dphi / 2) * Math.sin(dphi / 2) +
+			Math.cos(p1) * Math.cos(p2) * Math.sin(dl / 2) * Math.sin(dl / 2);
+		return 2 * R * Math.asin(Math.min(1, Math.sqrt(h)));
+	}
+
+	function median(values) {
+		var xs = values.slice().sort(function (a, b) { return a - b; });
+		var n = xs.length;
+		if (!n) return 0;
+		var mid = Math.floor(n / 2);
+		return n % 2 ? xs[mid] : (xs[mid - 1] + xs[mid]) / 2;
+	}
+
+	function locatedStops(stops) {
+		var out = [];
+		(stops || []).forEach(function (s, i) {
+			if (typeof s.lat === 'number' && typeof s.lng === 'number') {
+				out.push({ index: i, lat: s.lat, lng: s.lng });
+			}
+		});
+		return out;
+	}
+
+	// Fit the dense group. A stop is an outlier when it sits far beyond the
+	// median distance of the nearer half, so one airport or the Atomium
+	// does not shrink the walking cluster.
+	function coreAndOutliers(located) {
+		if (located.length <= 2) return { core: located.slice(), outliers: [] };
+		var center = [
+			median(located.map(function (p) { return p.lat; })),
+			median(located.map(function (p) { return p.lng; }))
+		];
+		var ranked = located.map(function (p) {
+			return { p: p, d: distanceMeters(center, [p.lat, p.lng]) };
+		}).sort(function (a, b) { return a.d - b.d; });
+		var nearer = ranked.slice(0, Math.ceil(ranked.length / 2));
+		var scale = median(nearer.map(function (r) { return r.d; }));
+		var threshold = Math.max(scale * 4, 1800);
+		var core = [];
+		var outliers = [];
+		ranked.forEach(function (r) {
+			if (r.d > threshold) outliers.push(r.p);
+			else core.push(r.p);
+		});
+		if (!core.length) core = [ranked[0].p];
+		return { core: core, outliers: outliers };
 	}
 
 	function fitStops(stops) {
 		if (!state.map) return;
-		var pts = [];
-		(stops || []).forEach(function (s) {
-			if (typeof s.lat === 'number' && typeof s.lng === 'number') pts.push([s.lat, s.lng]);
-		});
-		if (!pts.length) return;
-		if (pts.length === 1) state.map.setView(pts[0], 15);
-		else state.map.fitBounds(pts, { padding: [32, 32], maxZoom: 16 });
+		var located = locatedStops(stops);
+		if (!located.length) return;
+		var split = coreAndOutliers(located);
+		state.outliers = split.outliers;
+		var pts = split.core.map(function (p) { return [p.lat, p.lng]; });
+		if (pts.length === 1) state.map.setView(pts[0], 16, { animate: false });
+		else state.map.fitBounds(pts, { padding: [36, 36], maxZoom: 16, animate: false });
+		updateMapDecor();
 	}
 
-	function setActive(index, pan) {
+	function scrollStopIntoView(el) {
+		var scroller = document.getElementById('guide-timeline');
+		if (!el || !scroller) return;
+		var elRect = el.getBoundingClientRect();
+		var box = scroller.getBoundingClientRect();
+		if (elRect.top < box.top + 4 || elRect.bottom > box.bottom - 4) {
+			scroller.scrollTop += elRect.top - box.top - 12;
+		}
+	}
+
+	function refreshMarkerIcon(m) {
+		var on = state.active === m.index;
+		m.marker.setIcon(markerIcon(m.number, m.status, on, m.dx || 0, m.dy || 0));
+		m.marker.setZIndexOffset(on ? 900 : ((m.dx || m.dy) ? 200 : 0));
+	}
+
+	function setActive(index, fly) {
 		state.active = index;
-		var city = state.city;
-		var day = city && city.days[state.day];
-		var stops = (day && day.stops) || [];
 		$('#guide-timeline .guide-stop').removeClass('is-active');
 		var el = document.querySelector('#guide-timeline .guide-stop[data-stop="' + index + '"]');
 		if (el) {
 			el.classList.add('is-active');
-			if (el.scrollIntoView) el.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+			scrollStopIntoView(el);
 		}
+		state.markers.forEach(refreshMarkerIcon);
+		if (fly) flyToStop(index);
+	}
+
+	function flyToStop(index) {
+		var found = null;
 		state.markers.forEach(function (m) {
-			var on = m.index === index;
-			m.marker.setIcon(markerIcon(m.number, m.status, on));
-			m.marker.setZIndexOffset(on ? 800 : 0);
-			if (on && pan && state.map && !state.map.getBounds().contains(m.marker.getLatLng())) {
-				state.map.panTo(m.marker.getLatLng());
-			}
+			if (m.index === index) found = m;
 		});
-		if (index != null && stops[index] && typeof stops[index].lat !== 'number') {
-			/* timeline-only stop */
+		if (!found || !state.map) return;
+		state.map.flyTo(found.marker.getLatLng(), STREET_ZOOM, { duration: 0.55 });
+	}
+
+	function spreadMarkers() {
+		if (!state.map || !state.markers.length) return;
+		var items = state.markers.map(function (m) {
+			var p = state.map.latLngToContainerPoint(m.marker.getLatLng());
+			return { m: m, x: p.x, y: p.y, dx: 0, dy: 0 };
+		});
+		var minDist = 34;
+		var i;
+		var j;
+		var iter;
+		var a;
+		var b;
+		var vx;
+		var vy;
+		var dist;
+		var push;
+		for (iter = 0; iter < 14; iter++) {
+			for (i = 0; i < items.length; i++) {
+				for (j = i + 1; j < items.length; j++) {
+					a = items[i];
+					b = items[j];
+					vx = (b.x + b.dx) - (a.x + a.dx);
+					vy = (b.y + b.dy) - (a.y + a.dy);
+					dist = Math.sqrt(vx * vx + vy * vy);
+					if (dist >= minDist) continue;
+					if (dist < 0.01) {
+						vx = Math.cos(i * 2.4 + j);
+						vy = Math.sin(i * 2.4 + j);
+						dist = 1;
+					}
+					push = (minDist - Math.min(dist, minDist)) / 2;
+					vx = vx / dist * push;
+					vy = vy / dist * push;
+					a.dx -= vx;
+					a.dy -= vy;
+					b.dx += vx;
+					b.dy += vy;
+				}
+			}
 		}
+		var cap = 26;
+		items.forEach(function (it) {
+			var mag = Math.sqrt(it.dx * it.dx + it.dy * it.dy);
+			if (mag > cap) {
+				it.dx = it.dx / mag * cap;
+				it.dy = it.dy / mag * cap;
+			}
+			it.dx = Math.round(it.dx);
+			it.dy = Math.round(it.dy);
+			if (it.m.dx === it.dx && it.m.dy === it.dy) return;
+			it.m.dx = it.dx;
+			it.m.dy = it.dy;
+			refreshMarkerIcon(it.m);
+		});
+	}
+
+	function placeOffscreenHints() {
+		var box = document.getElementById('guide-offscreen');
+		if (!box || !state.map) return;
+		var size = state.map.getSize();
+		if (!size || !size.x || !size.y) {
+			box.innerHTML = '';
+			return;
+		}
+		var padX = 22;
+		var padY = 22;
+		var html = [];
+		(state.outliers || []).forEach(function (p) {
+			var pt = state.map.latLngToContainerPoint([p.lat, p.lng]);
+			if (pt.x >= 8 && pt.y >= 8 && pt.x <= size.x - 8 && pt.y <= size.y - 8) return;
+			var cx = size.x / 2;
+			var cy = size.y / 2;
+			var ang = Math.atan2(pt.y - cy, pt.x - cx);
+			var maxX = size.x / 2 - padX;
+			var maxY = size.y / 2 - padY;
+			var cos = Math.cos(ang);
+			var sin = Math.sin(ang);
+			var scale = Math.min(
+				Math.abs(cos) < 0.001 ? Infinity : maxX / Math.abs(cos),
+				Math.abs(sin) < 0.001 ? Infinity : maxY / Math.abs(sin)
+			);
+			var x = cx + cos * scale;
+			var y = cy + sin * scale;
+			if (x < 54 && y < 92) y = 96;
+			html.push(
+				'<button type="button" class="guide-edge" data-stop="' + p.index + '" style="left:' + Math.round(x) + 'px;top:' + Math.round(y) + 'px" aria-label="' + esc(ui('offscreen').replace('{n}', String(p.index + 1))) + '"><span>' + (p.index + 1) + '</span></button>'
+			);
+		});
+		box.innerHTML = html.join('');
+	}
+
+	function updateMapDecor() {
+		spreadMarkers();
+		placeOffscreenHints();
 	}
 
 	function drawMap(stops) {
 		destroyMap();
 		var node = document.getElementById('guide-map');
 		if (!node || typeof L === 'undefined') return;
+		state.outliers = [];
 		state.map = L.map(node, {
 			scrollWheelZoom: true,
 			zoomControl: true,
@@ -313,6 +483,7 @@
 			attribution: '&copy; OpenStreetMap',
 			maxZoom: 19
 		}).addTo(state.map);
+		state.map.on('zoomend moveend', updateMapDecor);
 
 		var line = [];
 		stops.forEach(function (stop, i) {
@@ -320,13 +491,21 @@
 			var ll = [stop.lat, stop.lng];
 			line.push(ll);
 			var marker = L.marker(ll, {
-				icon: markerIcon(i + 1, stop.status, state.active === i),
+				icon: markerIcon(i + 1, stop.status, state.active === i, 0, 0),
 				keyboard: true,
-				title: placeName(stop)
+				title: placeName(stop),
+				zIndexOffset: state.active === i ? 900 : 0
 			});
 			marker.on('click', function () { setActive(i, false); });
 			marker.addTo(state.map);
-			state.markers.push({ index: i, number: i + 1, status: stop.status, marker: marker });
+			state.markers.push({
+				index: i,
+				number: i + 1,
+				status: stop.status,
+				marker: marker,
+				dx: 0,
+				dy: 0
+			});
 		});
 		if (line.length > 1) {
 			L.polyline(line, {
@@ -488,7 +667,7 @@
 			'<div class="guide-days" role="tablist">' + tabs + '</div>' +
 			'<p class="guide-day-title">' + esc(tx(day.title)) + '</p>' +
 			'<div class="guide-split">' +
-				'<div class="guide-map-panel"><div id="guide-map" class="guide-map" role="application" aria-label="' + esc(tx(city.name)) + '"></div></div>' +
+				'<div class="guide-map-panel"><div id="guide-map" class="guide-map" role="application" aria-label="' + esc(tx(city.name)) + '"></div><div class="guide-offscreen" id="guide-offscreen"></div></div>' +
 				'<div class="guide-timeline" id="guide-timeline">' + stops + noteBlock + '</div>' +
 			'</div>';
 		$('#guide-root').attr('lang', state.lang === 'zh' ? 'zh-Hans' : 'en').html(html);
@@ -612,6 +791,11 @@
 					guideCity: city || undefined
 				});
 			}
+		});
+		$(document).on('click', '.guide-edge', function (e) {
+			e.preventDefault();
+			e.stopPropagation();
+			setActive(parseInt($(this).attr('data-stop'), 10), true);
 		});
 		$(document).on('click', '.guide-stop', function (e) {
 			if ($(e.target).closest('a').length) return;

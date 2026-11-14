@@ -262,11 +262,44 @@
 }
 
 .guide-map-panel {
+	position: relative;
 	flex: 0 0 auto;
 	height: 38vh;
 	height: 38dvh;
 	min-height: 200px;
 	max-height: 320px;
+}
+
+.guide-offscreen {
+	position: absolute;
+	inset: 0;
+	z-index: 450;
+	pointer-events: none;
+}
+
+.guide-edge {
+	pointer-events: auto;
+	position: absolute;
+	transform: translate(-50%, -50%);
+	width: 28px;
+	height: 28px;
+	padding: 0;
+	border: 2px solid var(--accent, #303F9F);
+	border-radius: 50%;
+	background: #fff;
+	color: var(--accent, #303F9F);
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.28);
+	font-family: "Roboto Mono", sans-serif;
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 24px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.guide-edge:focus-visible {
+	outline: 2px solid var(--accent, #303F9F);
+	outline-offset: 2px;
 }
 
 .guide-map {
