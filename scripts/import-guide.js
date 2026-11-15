@@ -431,12 +431,39 @@ function hotelAlts(city) {
   });
 }
 
+function cleanMark(value) {
+  if (!value) return '';
+  return String(value).replace(/[✅☑️⚠️❌]/g, '').replace(/\s{2,}/g, ' ').trim();
+}
+
 function backupOf(raw) {
   if (!raw) return null;
   const name = sanitize(typeof raw === 'string' ? raw : (raw.name || ''));
   if (!name || /^breakfast on the plane$/i.test(name)) return null;
-  const noteEn = polishNote(raw.note || '');
   const item = { name: name };
+  const nameEn = raw && raw.name_en ? (sanitize(raw.name_en) || String(raw.name_en).trim()) : '';
+  if (nameEn) item.nameEn = nameEn;
+  const area = raw && raw.area ? publicText(raw.area) : '';
+  const areaZh = raw && raw.area_zh ? cleanMark(raw.area_zh) : '';
+  if (area) item.area = area;
+  if (areaZh) item.areaZh = areaZh;
+  if (raw && Array.isArray(raw.must_order) && raw.must_order.length) {
+    item.mustOrder = raw.must_order.map(function (dish) {
+      return sanitize(dish) || String(dish).trim();
+    }).filter(Boolean);
+  }
+  const hoursZh = raw && raw.hours_check_zh ? cleanMark(raw.hours_check_zh) : '';
+  const distanceZh = raw && raw.distance_from_top_zh ? cleanMark(raw.distance_from_top_zh) : '';
+  if (hoursZh) item.hoursZh = hoursZh;
+  if (distanceZh) item.distanceZh = distanceZh;
+  if (raw && typeof raw.lat === 'number') item.lat = raw.lat;
+  if (raw && typeof raw.lng === 'number') item.lng = raw.lng;
+  const site = raw && safeUrl(raw.website);
+  const maps = raw && safeUrl(raw.google_maps_url);
+  if (site) item.website = site;
+  if (maps) item.googleMaps = maps;
+  if (raw && raw.place_id) item.placeId = String(raw.place_id);
+  const noteEn = polishNote((raw && raw.note) || '');
   if (noteEn) item.note = bilingual(noteEn, 'note');
   return item;
 }
@@ -757,6 +784,8 @@ function buildStop(item, transit, alts) {
   };
   if (named.nativeName) stop.nativeName = named.nativeName;
   if (item.optional) stop.optional = true;
+  if (item.type === 'daytrip' && item.daytrip_city) stop.daytripCity = String(item.daytrip_city);
+  if (item.place_id) stop.placeId = String(item.place_id);
   if (item.hours) {
     const hours = sanitize(item.hours);
     if (hours) stop.hours = bilingual(hours, 'hours');
@@ -871,6 +900,8 @@ function buildCity(city, version) {
       return bilingual(polishNote(n), 'note');
     }).filter(function (n) { return n && n.en; });
     if (notes.length) built.notes = notes;
+    const returns = (day.return_options || []).map(returnOption).filter(Boolean);
+    if (returns.length) built.returnOptions = returns;
 
     const timeline = day.timeline || [];
     if (timeline[0] && timeline[0].item_type === 'leg') {
@@ -882,6 +913,7 @@ function buildCity(city, version) {
       if (item.item_type !== 'stop') return;
       let transit = null;
       const next = timeline[index + 1];
+      // A day can place two stops in a row. Only the next item, when it is a leg, is the ride to the following stop.
       const after = timeline[index + 2];
       if (next && next.item_type === 'leg') {
         transit = buildTransit(next, item, after && after.item_type === 'stop' ? after : null);
@@ -897,6 +929,27 @@ function buildCity(city, version) {
     out.days.push(built);
   });
   return out;
+}
+
+function returnOption(raw) {
+  if (!raw) return null;
+  const noteEn = raw.note ? polishNote(raw.note) : '';
+  let ticket = shortTicket(raw.ticket) || null;
+  if (!ticket && /slovak lines/i.test(raw.ticket || '')) {
+    ticket = { en: 'Separate Slovak Lines ticket.', zh: '另买 Slovak Lines 车票。' };
+  }
+  const option = {
+    rank: raw.rank,
+    mode: modeDef(raw.mode).mode,
+    line: publicText(raw.line),
+    from: publicText(raw.from_stop),
+    to: publicText(raw.to_stop),
+    depart: publicText(raw.depart),
+    arrive: publicText(raw.arrive)
+  };
+  if (ticket) option.ticket = ticket;
+  if (noteEn) option.note = bilingual(noteEn, 'note');
+  return option;
 }
 
 function flightAlts(data, cities) {
@@ -973,6 +1026,7 @@ function main() {
     process.exit(1);
   }
 
+  // between_cities (NYC→Berlin and Brussels→Newark) is not a city day. It stays out of the city pages.
   const cities = data.cities.map(function (city) { return buildCity(city, data.version); });
   flightAlts(data, cities);
   const index = {

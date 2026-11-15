@@ -1,6 +1,6 @@
 {
   "id": "berlin",
-  "version": "v2",
+  "version": "v3.2",
   "draft": true,
   "country": {
     "en": "Germany",
@@ -14,197 +14,18 @@
     "zh": "柏林"
   },
   "dates": {
-    "start": "2026-12-23",
+    "start": "2026-12-24",
     "end": "2026-12-27"
   },
   "days": [
     {
-      "date": "2026-12-23",
-      "weekday": "Wed",
-      "title": {
-        "en": "NYC → Charlotte → Munich (overnight flight)",
-        "zh": "纽约 → 夏洛特 → 慕尼黑（红眼航班）"
-      },
-      "stops": [
-        {
-          "type": "airport",
-          "status": "confirmed",
-          "name": {
-            "en": "JFK",
-            "zh": "肯尼迪机场"
-          },
-          "lat": 40.642948,
-          "lng": -73.779373,
-          "arrive": null,
-          "leave": "11:55 AM",
-          "website": "https://www.jfkairport.com/",
-          "nativeName": "John F. Kennedy International Airport",
-          "notes": {
-            "en": "Fly to Charlotte",
-            "zh": "飞去夏洛特"
-          },
-          "transit": {
-            "segments": [
-              {
-                "mode": "flight",
-                "label": {
-                  "en": "Flight",
-                  "zh": "飞机"
-                },
-                "duration": "2h 10m"
-              }
-            ]
-          }
-        },
-        {
-          "type": "airport",
-          "status": "confirmed",
-          "name": {
-            "en": "CLT",
-            "zh": "夏洛特机场"
-          },
-          "lat": 35.212978,
-          "lng": -80.945656,
-          "arrive": "2:05 PM",
-          "leave": "4:55 PM",
-          "website": "https://www.cltairport.com/",
-          "nativeName": "Charlotte Douglas International Airport",
-          "notes": {
-            "en": "Connect to the overnight flight",
-            "zh": "转乘过夜航班"
-          },
-          "transit": {
-            "segments": [
-              {
-                "mode": "flight",
-                "label": {
-                  "en": "Flight",
-                  "zh": "飞机"
-                },
-                "duration": "overnight; arrives 7:30 AM Dec 24",
-                "durationZh": "过夜，12 月 24 日早上 7:30 到"
-              }
-            ]
-          }
-        }
-      ],
-      "inbound": {
-        "segments": [
-          {
-            "mode": "taxi",
-            "label": {
-              "en": "Taxi",
-              "zh": "出租车"
-            },
-            "duration": "45–75 min",
-            "note": "Yellow cab uses the Manhattan–JFK flat fare"
-          }
-        ],
-        "ticket": {
-          "en": "Taxi. Pay in the app or by card.",
-          "zh": "出租车，用 App 或刷卡。"
-        },
-        "alternative": [
-          {
-            "mode": "metro",
-            "label": {
-              "en": "Metro",
-              "zh": "地铁"
-            },
-            "duration": "18 min",
-            "line": "6",
-            "direction": "Brooklyn Bridge–City Hall",
-            "from": "125 St",
-            "to": "51 St",
-            "stops": 9,
-            "frequency": "every 4–8 min",
-            "note": "or 4/5 express to 59 St + 6 one stop"
-          },
-          {
-            "mode": "metro",
-            "label": {
-              "en": "Metro",
-              "zh": "地铁"
-            },
-            "duration": "25 min",
-            "line": "E",
-            "direction": "Jamaica Center–Parsons/Archer",
-            "from": "Lexington Av/53 St",
-            "to": "Sutphin Blvd–Archer Av–JFK Airport",
-            "stops": 7,
-            "frequency": "every 4–8 min"
-          },
-          {
-            "mode": "train",
-            "label": {
-              "en": "Train",
-              "zh": "火车"
-            },
-            "duration": "10 min",
-            "line": "AirTrain JFK",
-            "direction": "Terminal loop (all terminals)",
-            "from": "Jamaica (Sutphin Blvd)",
-            "to": "Terminal 8",
-            "stops": 3,
-            "frequency": "every ~7 min"
-          }
-        ]
-      }
-    },
-    {
       "date": "2026-12-24",
       "weekday": "Thu",
       "title": {
-        "en": "Christmas Eve · Munich → Berlin",
-        "zh": "平安夜 · 慕尼黑到柏林"
+        "en": "Christmas Eve · arrive BER 1:25 PM → Berlin",
+        "zh": "平安夜 · 13:25 到柏林机场，然后进城"
       },
       "stops": [
-        {
-          "type": "airport",
-          "status": "confirmed",
-          "name": {
-            "en": "Munich Airport T2",
-            "zh": "慕尼黑机场 T2"
-          },
-          "lat": 48.354238,
-          "lng": 11.791024,
-          "arrive": "7:30 AM",
-          "leave": "12:15 PM",
-          "website": "https://www.munich-airport.com/",
-          "nativeName": "Flughafen München Terminal 2",
-          "notes": {
-            "en": "Land, collect bags and re-check (separate ticket); airport breakfast",
-            "zh": "落地，取行李再托运（另一张票），在机场吃早餐"
-          },
-          "mustOrder": [
-            {
-              "name": "Brezel",
-              "gloss": {
-                "en": "pretzel",
-                "zh": "碱水面包"
-              }
-            },
-            {
-              "name": "Weißwurst",
-              "gloss": {
-                "en": "white sausage",
-                "zh": "白香肠"
-              }
-            }
-          ],
-          "transit": {
-            "segments": [
-              {
-                "mode": "flight",
-                "label": {
-                  "en": "Flight",
-                  "zh": "飞机"
-                },
-                "duration": "1h 10m"
-              }
-            ]
-          }
-        },
         {
           "type": "airport",
           "status": "confirmed",
@@ -218,6 +39,7 @@
           "leave": "2:00 PM",
           "website": "https://ber.berlin-airport.de/",
           "nativeName": "Flughafen Berlin Brandenburg Terminal 1",
+          "placeId": "BER",
           "notes": {
             "en": "Arrive Berlin, exit terminal (~10 min)",
             "zh": "到柏林，出航站楼（大约 10 分钟）"
@@ -308,38 +130,68 @@
           "lat": 52.506552,
           "lng": 13.332461,
           "arrive": "2:40 PM",
-          "leave": "2:55 PM",
+          "leave": "2:50 PM",
           "website": "https://curry36.de/",
           "nativeName": "Curry 36 Bahnhof Zoo",
+          "placeId": "CURRY36_ZOO",
           "hours": {
             "en": "Daily 8 AM–5 AM",
             "zh": "每天 8:00 到次日 5:00"
           },
           "notes": {
-            "en": "Late lunch: currywurst (15 min)",
-            "zh": "晚点的午饭：currywurst（15 分钟）"
+            "en": "Late lunch: currywurst (10 min, quick)",
+            "zh": "晚点的午饭：currywurst（10 分钟，很快）"
           },
           "mustOrder": [
             {
               "name": "Currywurst ohne Darm"
             },
             {
-              "name": "Pommes mit Mayo"
+              "name": "Pommes rot-weiß"
             }
           ],
           "backups": [
             {
-              "name": "Gendarmenmarkt Christmas market stalls (4:50 PM)",
+              "name": "Bier's Ku'damm 195",
+              "nameEn": "Bier's Ku'damm 195",
+              "area": "City West · Zoo",
+              "areaZh": "City West · Zoo",
+              "mustOrder": [
+                "Currywurst mit Darm",
+                "Pommes"
+              ],
+              "hoursZh": "周一至周六 11:00–次日 5:00（Dec 24 未公布）",
+              "distanceZh": "🚇/🚶 Ku’damm 西段 15 分钟",
+              "lat": 52.501196,
+              "lng": 13.318602,
+              "website": "https://biers-currywurst.de/",
+              "googleMaps": "https://www.google.com/maps/search/?api=1&query=Bier%27s+Ku%27damm+195+Kurf%C3%BCrstendamm+195%2C+10707+Berlin",
+              "placeId": "BIERS",
               "note": {
-                "en": "Dec 24 11 AM–6 PM (2026 official)",
-                "zh": "12 月 24 日 11:00–18:00（2026 年官网）"
+                "en": "Backup for lunch 2026-12-24 · ~15 min walk",
+                "zh": "12月24日午餐的备选 · 步行 15 分钟"
               }
             },
             {
-              "name": "Lutter & Wegner",
+              "name": "Romanisches Café",
+              "nameEn": "Romanisches Café (Waldorf Astoria)",
+              "area": "City West · Zoo",
+              "areaZh": "City West · Zoo",
+              "mustOrder": [
+                "Wiener Melange",
+                "Apfelstrudel",
+                "Bienenstich"
+              ],
+              "hoursZh": "每天 8–22",
+              "distanceZh": "🚶 3 分钟（酒店内）",
+              "lat": 52.505617,
+              "lng": 13.332621,
+              "website": "https://www.romanischescafe.de/",
+              "googleMaps": "https://www.google.com/maps/search/?api=1&query=Romanisches+Caf%C3%A9+Hardenbergstra%C3%9Fe+28%2C+10623+Berlin",
+              "placeId": "ROMANISCHES",
               "note": {
-                "en": "daily from 12",
-                "zh": "每天 12 点起"
+                "en": "Backup for lunch 2026-12-24 · ~3 min walk",
+                "zh": "12月24日午餐的备选 · 步行 3 分钟"
               }
             }
           ],
@@ -366,12 +218,13 @@
           },
           "lat": 52.505584,
           "lng": 13.332911,
-          "arrive": "3:00 PM",
-          "leave": "3:15 PM",
+          "arrive": "2:52 PM",
+          "leave": "3:00 PM",
           "website": "https://www.hilton.com/en/hotels/berwawa-waldorf-astoria-berlin/",
+          "placeId": "WALDORF",
           "notes": {
-            "en": "Check in / drop bags (check-in 3:00 PM)",
-            "zh": "入住，把行李放下（下午 3 点可以进房）"
+            "en": "Drop bags (check-in 3:00 PM; ask for early check-in, otherwise leave bags with the concierge)",
+            "zh": "放行李（15:00 可以入住；如果房间还没好，行李寄在礼宾部）"
           },
           "transit": {
             "segments": [
@@ -381,25 +234,24 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "3 min",
+                "duration": "4 min",
                 "from": "Waldorf",
-                "to": "Zoologischer Garten bus stops (Hardenbergplatz)",
-                "distanceM": 250
+                "to": "S+U Zoologischer Garten",
+                "distanceM": 255
               },
               {
-                "mode": "bus",
+                "mode": "metro",
                 "label": {
-                  "en": "Bus",
-                  "zh": "公交"
+                  "en": "Metro",
+                  "zh": "地铁"
                 },
-                "duration": "18 min",
-                "line": "100",
-                "direction": "Memhardstraße (Alexanderplatz)",
+                "duration": "13 min",
+                "line": "U2",
+                "direction": "Pankow",
                 "from": "S+U Zoologischer Garten",
-                "to": "Reichstag/Bundestag",
-                "stops": 10,
-                "frequency": "every 10–20 min (Saturday timetable on Dec 24)",
-                "note": "double-decker sightseeing route: Gedächtniskirche, Tiergarten, Siegessäule, Schloss Bellevue"
+                "to": "U Stadtmitte",
+                "stops": 8,
+                "frequency": "every 5 min"
               },
               {
                 "mode": "walk",
@@ -407,10 +259,10 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "3 min",
-                "from": "Reichstag/Bundestag",
-                "to": "Brandenburger Tor",
-                "distanceM": 230
+                "duration": "7 min",
+                "from": "U Stadtmitte",
+                "to": "City Church Berlin, Zimmerstraße 23",
+                "distanceM": 500
               }
             ],
             "ticket": {
@@ -419,135 +271,78 @@
             },
             "alternative": [
               {
-                "mode": "metro",
+                "mode": "taxi",
                 "label": {
-                  "en": "Metro",
-                  "zh": "地铁"
+                  "en": "Taxi",
+                  "zh": "出租车"
+                },
+                "duration": "15–20 min"
+              }
+            ]
+          }
+        },
+        {
+          "type": "church",
+          "status": "needs-decision",
+          "name": {
+            "en": "City Church Berlin (formerly Saddleback Church Berlin)",
+            "zh": "柏林城市教会（英语福音派）"
+          },
+          "lat": 52.5076127,
+          "lng": 13.3914234,
+          "arrive": "3:30 PM",
+          "leave": "4:40 PM",
+          "website": "https://www.citychurchberlin.org/",
+          "nativeName": "City Church Berlin",
+          "placeId": "CITYCHURCH",
+          "hours": {
+            "en": "Official event page: 2025 service was Dec 24, 3:30–4:40 PM; 2026 time not posted yet – confirm",
+            "zh": "官网：2025 年平安夜是 15:30–16:40。2026 年的时间还没公布"
+          },
+          "notes": {
+            "en": "Christmas Eve service (English; arrive ~3:20 PM)",
+            "zh": "平安夜礼拜（英语，大约 15:20 到）"
+          },
+          "mustSee": [
+            {
+              "text": {
+                "en": "Evangelical, English-language church (Saddleback Church network); carols and a Christmas message",
+                "zh": "英语福音派教会；有圣诞颂歌和圣诞信息"
+              }
+            }
+          ],
+          "transit": {
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
                 },
                 "duration": "10 min",
-                "line": "U2",
-                "direction": "Pankow",
-                "from": "Zoologischer Garten",
-                "to": "Potsdamer Platz",
-                "stops": 6,
-                "frequency": "every 5–10 min"
+                "from": "City Church Berlin",
+                "to": "Gendarmenmarkt",
+                "distanceM": 800,
+                "note": "via Friedrichstraße / Charlottenstraße"
+              }
+            ]
+          },
+          "alternatives": [
+            {
+              "name": {
+                "en": "Berlin Cathedral",
+                "zh": "柏林大教堂"
               },
-              {
-                "mode": "train",
-                "label": {
-                  "en": "Train",
-                  "zh": "火车"
-                },
-                "duration": "1 min",
-                "line": "S1 / S2 / S25",
-                "direction": "Oranienburg / Bernau / Hennigsdorf",
-                "from": "Potsdamer Platz",
-                "to": "Brandenburger Tor",
-                "stops": 1,
-                "frequency": "every 3–5 min"
-              }
-            ]
-          }
-        },
-        {
-          "type": "sight",
-          "status": "confirmed",
-          "name": {
-            "en": "Brandenburg Gate",
-            "zh": "勃兰登堡门"
-          },
-          "lat": 52.51627,
-          "lng": 13.377703,
-          "arrive": "3:40 PM",
-          "leave": "4:10 PM",
-          "website": "https://www.berlin.de/sehenswuerdigkeiten/3560266-3558930-brandenburger-tor.html",
-          "nativeName": "Brandenburger Tor",
-          "hours": {
-            "en": "Outdoor",
-            "zh": "户外"
-          },
-          "notes": {
-            "en": "Reichstag exterior + Brandenburg Gate as the lights come on (sunset ~3:55 PM), 30 min",
-            "zh": "国会大厦外观和勃兰登堡门，等灯亮起来（日落大约 15:55），30 分钟"
-          },
-          "mustSee": [
-            {
-              "text": {
-                "en": "Brandenburger Tor lit after sunset (~3:55 PM)",
-                "zh": "日落后勃兰登堡门会亮灯（大约 15:55）"
-              }
-            },
-            {
-              "text": {
-                "en": "Reichstag exterior (dome closed all day Dec 24)",
-                "zh": "国会大厦外观（12 月 24 日穹顶全天关闭）"
-              }
-            },
-            {
-              "name": "Reichstagsgebäude (Kuppel)",
-              "gloss": {
-                "en": "Reichstag Building & dome",
-                "zh": "国会大厦和穹顶"
+              "lat": 52.519082,
+              "lng": 13.401094,
+              "website": "https://www.berlinerdom.de/",
+              "nativeName": "Berliner Dom",
+              "note": {
+                "en": "Fallback service: Christvesper (German; Protestant state church, mainstream rather than conservative)",
+                "zh": "备选礼拜：Christvesper（德语，主流新教）"
               }
             }
-          ],
-          "transit": {
-            "segments": [
-              {
-                "mode": "walk",
-                "label": {
-                  "en": "Walk",
-                  "zh": "步行"
-                },
-                "duration": "5 min",
-                "distanceM": 370
-              }
-            ]
-          }
-        },
-        {
-          "type": "sight",
-          "status": "confirmed",
-          "name": {
-            "en": "Memorial to the Murdered Jews of Europe",
-            "zh": "欧洲被害犹太人纪念碑"
-          },
-          "lat": 52.513873,
-          "lng": 13.378735,
-          "arrive": "4:15 PM",
-          "leave": "4:35 PM",
-          "website": "https://www.stiftung-denkmal.de/en/",
-          "nativeName": "Denkmal für die ermordeten Juden Europas",
-          "hours": {
-            "en": "24h",
-            "zh": "全天"
-          },
-          "notes": {
-            "en": "Open-air memorial (20 min)",
-            "zh": "露天纪念碑（20 分钟）"
-          },
-          "mustSee": [
-            {
-              "text": {
-                "en": "Field of 2,711 concrete stelae (open-air)",
-                "zh": "露天，2711 根混凝土柱"
-              }
-            }
-          ],
-          "transit": {
-            "segments": [
-              {
-                "mode": "walk",
-                "label": {
-                  "en": "Walk",
-                  "zh": "步行"
-                },
-                "duration": "14 min",
-                "distanceM": 1120,
-                "note": "via Behrenstraße / Französische Straße"
-              }
-            ]
-          }
+          ]
         },
         {
           "type": "sight",
@@ -562,6 +357,7 @@
           "leave": "5:55 PM",
           "website": "https://www.weihnachtsmarkt-berlin.de/en/",
           "nativeName": "WeihnachtsZauber Gendarmenmarkt",
+          "placeId": "GENDARMENMARKT_XMAS",
           "hours": {
             "en": "Official 2026 hours: Dec 24 11 AM–6 PM",
             "zh": "2026 年官方时间：12月24日 11:00–18:00"
@@ -578,11 +374,7 @@
               }
             },
             {
-              "name": "Glühwein",
-              "gloss": {
-                "en": "hot spiced wine",
-                "zh": "热红酒"
-              }
+              "name": "Glühwein"
             }
           ],
           "transit": {
@@ -593,98 +385,24 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "2 min",
-                "distanceM": 170
-              }
-            ]
-          }
-        },
-        {
-          "type": "restaurant",
-          "status": "tentative",
-          "name": {
-            "en": "Lutter & Wegner",
-            "zh": "Lutter & Wegner"
-          },
-          "lat": 52.513212,
-          "lng": 13.391178,
-          "arrive": "6:30 PM",
-          "leave": "~9:00 PM",
-          "website": "https://l-w-berlin.de/",
-          "nativeName": "Lutter & Wegner am Gendarmenmarkt",
-          "hours": {
-            "en": "Official site: open 365 days; Christmas menu Dec 24–26",
-            "zh": "官网：全年开。12月24–26日有圣诞菜单"
-          },
-          "notes": {
-            "en": "Christmas Eve dinner (if early, ask for 6:00 PM)",
-            "zh": "平安夜的晚饭（如果能早一点，问 6:00）"
-          },
-          "mustOrder": [
-            {
-              "name": "Weihnachtsmenü",
-              "gloss": {
-                "en": "Christmas menu",
-                "zh": "圣诞套餐"
-              }
-            },
-            {
-              "name": "Wiener Schnitzel",
-              "gloss": {
-                "en": "breaded veal cutlet",
-                "zh": "维也纳炸小牛排"
-              }
-            },
-            {
-              "name": "Gänsebraten",
-              "gloss": {
-                "en": "roast goose",
-                "zh": "烤鹅"
-              }
-            }
-          ],
-          "backups": [
-            {
-              "name": "Borchardt",
-              "note": {
-                "en": "3 min walk",
-                "zh": "走 3 分钟"
-              }
-            },
-            {
-              "name": "Zur letzten Instanz",
-              "note": {
-                "en": "Christmas Eve opening",
-                "zh": "平安夜开门情况"
-              }
-            }
-          ],
-          "transit": {
-            "segments": [
-              {
-                "mode": "walk",
-                "label": {
-                  "en": "Walk",
-                  "zh": "步行"
-                },
-                "duration": "4 min",
-                "from": "Lutter & Wegner",
-                "to": "U Stadtmitte",
-                "distanceM": 300
+                "duration": "8 min",
+                "from": "Gendarmenmarkt",
+                "to": "U Stadtmitte (bus stop)",
+                "distanceM": 595
               },
               {
-                "mode": "metro",
+                "mode": "bus",
                 "label": {
-                  "en": "Metro",
-                  "zh": "地铁"
+                  "en": "Bus",
+                  "zh": "公交"
                 },
-                "duration": "13 min",
-                "line": "U2",
-                "direction": "Ruhleben (or Theodor-Heuss-Platz)",
+                "duration": "14 min",
+                "line": "200",
+                "direction": "S+U Zoologischer Garten",
                 "from": "U Stadtmitte",
-                "to": "Zoologischer Garten",
+                "to": "Budapester Str.",
                 "stops": 8,
-                "frequency": "every 5 min (BVG U-Bahn runs all night Dec 23/24–27/28 except U4)"
+                "frequency": "about every 10 min (6:09 PM departure on the Dec 24 timetable)"
               },
               {
                 "mode": "walk",
@@ -692,10 +410,10 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "3 min",
-                "from": "Zoologischer Garten",
-                "to": "Waldorf",
-                "distanceM": 180
+                "duration": "1 min",
+                "from": "Budapester Str.",
+                "to": "Hugos (InterContinental)",
+                "distanceM": 67
               }
             ],
             "ticket": {
@@ -704,12 +422,172 @@
             },
             "alternative": [
               {
-                "mode": "taxi",
+                "mode": "walk",
                 "label": {
-                  "en": "Taxi",
-                  "zh": "出租车"
+                  "en": "Walk",
+                  "zh": "步行"
                 },
-                "duration": "12–15 min"
+                "duration": "3 min",
+                "from": "Gendarmenmarkt",
+                "to": "U Hausvogteiplatz",
+                "distanceM": 194
+              },
+              {
+                "mode": "metro",
+                "label": {
+                  "en": "Metro",
+                  "zh": "地铁"
+                },
+                "duration": "12 min",
+                "line": "U2",
+                "direction": "Ruhleben",
+                "from": "U Hausvogteiplatz",
+                "to": "U Wittenbergplatz",
+                "stops": 8,
+                "frequency": "every 5 min"
+              },
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "10 min",
+                "from": "U Wittenbergplatz",
+                "to": "Hugos (InterContinental)",
+                "distanceM": 740
+              }
+            ]
+          }
+        },
+        {
+          "type": "restaurant",
+          "status": "tentative",
+          "name": {
+            "en": "Hugos (InterContinental Berlin, 14th floor)",
+            "zh": "Hugos (InterContinental Berlin, 14th floor)"
+          },
+          "lat": 52.5072768,
+          "lng": 13.3454003,
+          "arrive": "6:30 PM",
+          "leave": "~9:30 PM",
+          "website": "https://www.berlin.intercontinental.com/dine/hugos-restaurant/",
+          "nativeName": "Hugos",
+          "placeId": "HUGOS",
+          "hours": {
+            "en": "Official 2026 festive brochure: Dec 24, 6:30 PM Christmas Eve dinner (5 courses) · Michelin star every year since 1999",
+            "zh": "2026 年节日手册：12 月 24 日 18:30 平安夜晚饭（五道菜）。1999 年起每年都有米其林星"
+          },
+          "notes": {
+            "en": "Christmas Eve dinner: 5-course menu (one seating, 6:30 PM)",
+            "zh": "平安夜晚饭：五道菜（一场，18:30）"
+          },
+          "mustOrder": [
+            {
+              "name": "Brook & Imperial caviar"
+            },
+            {
+              "name": "Canadian lobster, saffron risotto"
+            },
+            {
+              "name": "Saddle of venison from Schorfheide"
+            }
+          ],
+          "backups": [
+            {
+              "name": "Brasserie Colette Tim Raue",
+              "nameEn": "Brasserie Colette Tim Raue",
+              "area": "City West · Wittenbergplatz",
+              "areaZh": "City West · Wittenbergplatz",
+              "mustOrder": [
+                "Ente – am Tisch tranchiert",
+                "Rotkrautsalat",
+                "Croissant-Knödel"
+              ],
+              "hoursZh": "官网：Advent 鸭子 4 道菜每晚供应到 Dec 26（每天 18–23；要订）",
+              "distanceZh": "🚶 9 分钟",
+              "lat": 52.5011715,
+              "lng": 13.3393324,
+              "website": "https://brasseriecolette.de/",
+              "googleMaps": "https://www.google.com/maps/search/?api=1&query=Brasserie+Colette+Tim+Raue+Passauer+Stra%C3%9Fe+5-7%2C+10789+Berlin",
+              "placeId": "COLETTE",
+              "note": {
+                "en": "Backup for dinner (Christmas Eve) 2026-12-24 · ~9 min walk",
+                "zh": "12月24日平安夜晚餐的备选 · 步行 9 分钟"
+              }
+            },
+            {
+              "name": "Marlene (InterContinental Berlin)",
+              "nameEn": "Marlene (InterContinental Berlin)",
+              "area": "City West · Tiergarten",
+              "areaZh": "City West · Tiergarten",
+              "mustOrder": [
+                "Festive Goose Menu (Gänsebraten)"
+              ],
+              "hoursZh": "官方 2026 节日手册：Dec 24 17:00 起烤鹅 / 节日 3 道菜（要订）",
+              "distanceZh": "🏨 同一栋酒店（1 楼）",
+              "lat": 52.5072768,
+              "lng": 13.3454003,
+              "website": "https://www.berlin.intercontinental.com/dine/marlene-restaurant-bar/",
+              "googleMaps": "https://www.google.com/maps/search/?api=1&query=Marlene+InterContinental+Berlin+Budapester+Stra%C3%9Fe+2%2C+10787+Berlin",
+              "placeId": "MARLENE",
+              "note": {
+                "en": "Backup for dinner (Christmas Eve) 2026-12-24 · same building",
+                "zh": "12月24日平安夜晚餐的备选 · 同一栋楼"
+              }
+            }
+          ],
+          "transit": {
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "13 min",
+                "from": "Hugos (InterContinental)",
+                "to": "Waldorf",
+                "distanceM": 1000,
+                "note": "west along Budapester Straße"
+              }
+            ],
+            "alternative": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "1 min",
+                "from": "Hugos",
+                "to": "Budapester Str.",
+                "distanceM": 67
+              },
+              {
+                "mode": "bus",
+                "label": {
+                  "en": "Bus",
+                  "zh": "公交"
+                },
+                "duration": "1 min",
+                "line": "200",
+                "direction": "S+U Zoologischer Garten",
+                "from": "Budapester Str.",
+                "to": "Breitscheidplatz",
+                "stops": 1,
+                "frequency": "about every 10–20 min late evening"
+              },
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "5 min",
+                "from": "Breitscheidplatz",
+                "to": "Waldorf",
+                "distanceM": 321
               }
             ]
           }
@@ -723,9 +601,10 @@
           },
           "lat": 52.505584,
           "lng": 13.332911,
-          "arrive": "~9:00 PM",
+          "arrive": "~9:45 PM",
           "leave": null,
           "website": "https://www.hilton.com/en/hotels/berwawa-waldorf-astoria-berlin/",
+          "placeId": "WALDORF",
           "notes": {
             "en": "Back to hotel",
             "zh": "回酒店"
@@ -734,14 +613,26 @@
       ],
       "notes": [
         {
-          "en": "Optional: Berliner Dom vespers, public services at 2, 4, 6 PM.",
-          "zh": "可选：柏林大教堂晚祷，公开礼拜在 14:00、16:00、18:00。"
+          "en": "Brandenburg Gate and the Holocaust Memorial moved to Dec 25 (the Reichstag walk passes Brandenburger Tor · Ebertstraße passes the memorial).",
+          "zh": "勃兰登堡门和犹太人纪念碑改到 12 月 25 日。去国会大厦会经过城门，Ebertstraße 经过纪念碑。"
         },
         {
-          "en": "Closed Dec 24: state museums, Reichstag dome, Charlottenburg Palace · shops close ~2 PM.",
-          "zh": "12 月 24 日关门：国立博物馆、国会大厦穹顶、夏洛滕堡宫。商店大约下午 2 点打烊。"
+          "en": "Closed Dec 24: state museums, Reichstag dome, Charlottenburg Palace · shops close ~2 PM. U-Bahn runs all night Dec 23/24–27/28.",
+          "zh": "12 月 24 日关闭：国立博物馆、国会大厦穹顶、夏洛滕堡宫。商店大约 14:00 打烊。地铁从 23/24 日通宵到 27/28 日。"
         }
-      ]
+      ],
+      "inbound": {
+        "segments": [
+          {
+            "mode": "flight",
+            "label": {
+              "en": "Flight",
+              "zh": "飞机"
+            },
+            "duration": "1h 10m"
+          }
+        ]
+      }
     },
     {
       "date": "2026-12-25",
@@ -763,6 +654,7 @@
           "arrive": null,
           "leave": "9:25 AM",
           "website": "https://www.hilton.com/en/hotels/berwawa-waldorf-astoria-berlin/",
+          "placeId": "WALDORF",
           "notes": {
             "en": "Hotel breakfast 8:30 AM",
             "zh": "酒店早餐 8:30"
@@ -838,6 +730,7 @@
           "leave": "~12:00 PM",
           "website": "https://www.smb.museum/en/museums-institutions/neues-museum/home/",
           "nativeName": "Neues Museum",
+          "placeId": "NEUES_MUSEUM",
           "hours": {
             "en": "10 AM–6 PM",
             "zh": "10:00–18:00"
@@ -878,6 +771,7 @@
           "leave": "12:15 PM",
           "website": "https://www.berlinerdom.de/",
           "nativeName": "Berliner Dom",
+          "placeId": "BERLINER_DOM",
           "notes": {
             "en": "Cathedral and Lustgarten exterior",
             "zh": "大教堂和露天花园，看外观"
@@ -923,6 +817,7 @@
           "arrive": "12:30 PM",
           "leave": "1:40 PM",
           "website": "https://www.borchardt-restaurant.de/",
+          "placeId": "BORCHARDT",
           "hours": {
             "en": "Official site: daily from 11:30; open Christmas Eve 2023",
             "zh": "官网：每天 11:30 起。2023 年平安夜开过"
@@ -933,22 +828,55 @@
           },
           "mustOrder": [
             {
-              "name": "Wiener Schnitzel vom Kalb mit Kartoffel-Gurkensalat"
+              "name": "Wiener Schnitzel vom Kalb"
+            },
+            {
+              "name": "Kartoffel-Gurkensalat"
             }
           ],
           "backups": [
             {
-              "name": "Lutter & Wegner",
+              "name": "Ständige Vertretung",
+              "nameEn": "Ständige Vertretung (StäV)",
+              "area": "Mitte · Government quarter",
+              "areaZh": "Mitte · Regierungsviertel",
+              "mustOrder": [
+                "Rheinischer Sauerbraten",
+                "Himmel un Ääd",
+                "Kölsch"
+              ],
+              "hoursZh": "节假日 11–1 点，只有 Dec 24 休息",
+              "distanceZh": "🚶 15 分钟",
+              "lat": 52.52121,
+              "lng": 13.385331,
+              "website": "https://staev.de/berlin-mitte.html",
+              "googleMaps": "https://www.google.com/maps/search/?api=1&query=St%C3%A4ndige+Vertretung+Schiffbauerdamm+8%2C+10117+Berlin",
+              "placeId": "STAEV",
               "note": {
-                "en": "2 min walk",
-                "zh": "走 2 分钟"
+                "en": "Backup for lunch 2026-12-25 · ~15 min walk",
+                "zh": "12月25日午餐的备选 · 步行 15 分钟"
               }
             },
             {
-              "name": "Zur letzten Instanz",
+              "name": "Einstein Unter den Linden",
+              "nameEn": "Einstein Unter den Linden",
+              "area": "Mitte · Unter den Linden",
+              "areaZh": "Mitte · Unter den Linden",
+              "mustOrder": [
+                "Wiener Schnitzel",
+                "Apfelstrudel",
+                "Wiener Melange"
+              ],
+              "hoursZh": "2023 年 Dec 25 10–18；2026 未公布",
+              "distanceZh": "🚶 8 分钟",
+              "lat": 52.517102,
+              "lng": 13.385946,
+              "website": "https://www.einstein-udl.com/",
+              "googleMaps": "https://www.google.com/maps/search/?api=1&query=Einstein+Unter+den+Linden+Unter+den+Linden+42%2C+10117+Berlin",
+              "placeId": "EINSTEIN_UDL",
               "note": {
-                "en": "Fri lunch 12–15, holiday",
-                "zh": "周五午饭 12:00–15:00，假日另说"
+                "en": "Backup for lunch 2026-12-25 · ~8 min walk",
+                "zh": "12月25日午餐的备选 · 步行 8 分钟"
               }
             }
           ],
@@ -983,6 +911,7 @@
           "leave": "~3:00 PM",
           "website": "https://www.bundestag.de/en/visittheBundestag",
           "nativeName": "Reichstagsgebäude (Kuppel)",
+          "placeId": "REICHSTAG",
           "hours": {
             "en": "Open Dec 25",
             "zh": "12月25日开"
@@ -1027,6 +956,7 @@
           "leave": "5:05 PM",
           "website": "https://www.topographie.de/en/",
           "nativeName": "Topographie des Terrors",
+          "placeId": "TOPOGRAPHIE",
           "hours": {
             "en": "10 AM–8 PM",
             "zh": "10:00–20:00"
@@ -1069,6 +999,7 @@
           "arrive": "5:12 PM",
           "leave": "5:30 PM",
           "website": null,
+          "placeId": "CHECKPOINT_CHARLIE",
           "hours": {
             "en": "Outdoor",
             "zh": "户外"
@@ -1137,6 +1068,7 @@
           },
           "leave": "~8:00 PM",
           "website": "https://maxundmoritzberlin.de/",
+          "placeId": "MAXMORITZ",
           "hours": {
             "en": "Official site: daily from 18:00; closed only Dec 24 & 31",
             "zh": "官网：每天 18:00 起。只有 12月24日和 31日关"
@@ -1155,23 +1087,54 @@
             {
               "name": "Molle",
               "gloss": {
-                "en": "house-brewed beer",
-                "zh": "店里自酿的啤酒"
+                "en": "Hausbier",
+                "zh": "Molle（店里的啤酒）"
               }
             }
           ],
           "backups": [
             {
-              "name": "Lutter & Wegner"
-            },
-            {
-              "name": "Borchardt"
-            },
-            {
-              "name": "Henne",
+              "name": "Jolesch",
+              "nameEn": "Jolesch",
+              "area": "Kreuzberg · Oranienstraße",
+              "areaZh": "Kreuzberg · Oranienstraße",
+              "mustOrder": [
+                "Wiener Schnitzel",
+                "Tafelspitz",
+                "Kaiserschmarrn"
+              ],
+              "hoursZh": "BZ 2026 圣诞名单：Dec 25 12 点起",
+              "distanceZh": "🚶 12 分钟",
+              "lat": 52.50062,
+              "lng": 13.433891,
+              "website": "https://www.jolesch.de/",
+              "googleMaps": "https://www.google.com/maps/search/?api=1&query=Jolesch+Muskauer+Stra%C3%9Fe+1%2C+10997+Berlin",
+              "placeId": "JOLESCH",
               "note": {
-                "en": "reportedly closed Dec 24–25",
-                "zh": "据说 12 月 24–25 日关门"
+                "en": "Backup for dinner 2026-12-25 · ~12 min walk",
+                "zh": "12月25日晚餐的备选 · 步行 12 分钟"
+              }
+            },
+            {
+              "name": "Hasır Kreuzberg",
+              "nameEn": "Hasır Kreuzberg",
+              "area": "Kreuzberg · Kottbusser Tor",
+              "areaZh": "Kreuzberg · Kottbusser Tor",
+              "mustOrder": [
+                "Döner Kebap Teller",
+                "İskender Kebap",
+                "Adana Kebap"
+              ],
+              "hoursZh": "每天 12–24",
+              "distanceZh": "🚶 10 分钟",
+              "lat": 52.50079,
+              "lng": 13.419474,
+              "website": "http://www.hasir.de/",
+              "googleMaps": "https://www.google.com/maps/search/?api=1&query=Has%C4%B1r+Kreuzberg+Adalbertstra%C3%9Fe+10%2C+10999+Berlin",
+              "placeId": "HASIR",
+              "note": {
+                "en": "Backup for dinner 2026-12-25 · ~10 min walk",
+                "zh": "12月25日晚餐的备选 · 步行 10 分钟"
               }
             }
           ],
@@ -1256,6 +1219,7 @@
           "arrive": "~8:30 PM",
           "leave": null,
           "website": "https://www.hilton.com/en/hotels/berwawa-waldorf-astoria-berlin/",
+          "placeId": "WALDORF",
           "notes": {
             "en": "Back to hotel",
             "zh": "回酒店"
@@ -1277,8 +1241,8 @@
       "date": "2026-12-26",
       "weekday": "Sat",
       "title": {
-        "en": "Boxing Day · Wall Memorial, East Side Gallery, TV Tower",
-        "zh": "节礼日 · 柏林墙纪念地、东边画廊、电视塔"
+        "en": "Boxing Day · Wall Memorial, Berlin's oldest restaurant, East Side Gallery, TV Tower, Prenzlauer Berg dinner",
+        "zh": "节礼日 · 柏林墙纪念地、柏林最老的餐厅、东边画廊、电视塔、Prenzlauer Berg 晚饭"
       },
       "stops": [
         {
@@ -1293,6 +1257,7 @@
           "arrive": null,
           "leave": "9:25 AM",
           "website": "https://www.hilton.com/en/hotels/berwawa-waldorf-astoria-berlin/",
+          "placeId": "WALDORF",
           "notes": {
             "en": "Hotel breakfast 8:30 AM",
             "zh": "酒店早餐 8:30"
@@ -1379,6 +1344,7 @@
           "leave": "11:30 AM",
           "website": "https://www.berliner-mauer-gedenkstaette.de/en/",
           "nativeName": "Gedenkstätte Berliner Mauer",
+          "placeId": "MAUER_GEDENK",
           "hours": {
             "en": "Open-air 8 AM–10 PM, Documentation Center 10 AM–6 PM",
             "zh": "露天 8:00–22:00，文献中心 10:00–18:00"
@@ -1409,24 +1375,24 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "11 min",
-                "from": "Documentation Center",
-                "to": "S Nordbahnhof",
-                "distanceM": 850
+                "duration": "3 min",
+                "from": "Gedenkstätte Berliner Mauer (Documentation Center)",
+                "to": "Tram stop Gedenkstätte Berliner Mauer",
+                "distanceM": 200
               },
               {
-                "mode": "train",
+                "mode": "tram",
                 "label": {
-                  "en": "Train",
-                  "zh": "火车"
+                  "en": "Tram",
+                  "zh": "电车"
                 },
-                "duration": "4 min",
-                "line": "S2 / S1 / S25",
-                "direction": "Lichtenrade / Wannsee / Teltow Stadt",
-                "from": "Nordbahnhof",
-                "to": "Friedrichstraße",
-                "stops": 2,
-                "frequency": "every 3–5 min combined"
+                "duration": "7 min",
+                "line": "M10",
+                "direction": "S+U Warschauer Str.",
+                "from": "Gedenkstätte Berliner Mauer",
+                "to": "U Eberswalder Str.",
+                "stops": 4,
+                "frequency": "every 5–10 min"
               },
               {
                 "mode": "metro",
@@ -1434,12 +1400,12 @@
                   "en": "Metro",
                   "zh": "地铁"
                 },
-                "duration": "6 min",
-                "line": "U6",
-                "direction": "Alt-Mariendorf",
-                "from": "Friedrichstraße",
-                "to": "Mehringdamm",
-                "stops": 5,
+                "duration": "8 min",
+                "line": "U2",
+                "direction": "Ruhleben",
+                "from": "Eberswalder Str.",
+                "to": "Klosterstr.",
+                "stops": 4,
                 "frequency": "every 5–10 min"
               },
               {
@@ -1449,87 +1415,40 @@
                   "zh": "步行"
                 },
                 "duration": "1 min",
-                "from": "U Mehringdamm",
-                "to": "Curry 36",
+                "from": "U Klosterstr.",
+                "to": "Zur letzten Instanz",
                 "distanceM": 100
               }
             ],
             "ticket": {
               "en": "Berlin AB ticket. BVG app, DB Navigator, or a station machine. Stamp a paper ticket.",
               "zh": "柏林 AB 票。BVG、DB Navigator 或站内机器。纸票要盖章。"
-            }
-          }
-        },
-        {
-          "type": "restaurant",
-          "status": "tentative",
-          "name": {
-            "en": "Curry 36 (Mehringdamm)",
-            "zh": "Curry 36 (Mehringdamm)"
-          },
-          "lat": 52.493492,
-          "lng": 13.387687,
-          "arrive": "12:00 PM",
-          "leave": "12:50 PM",
-          "website": "https://curry36.de/mehringdamm/",
-          "nativeName": "Curry 36 Mehringdamm",
-          "hours": {
-            "en": "Daily 9 AM–5 AM",
-            "zh": "每天 9:00 到次日 5:00"
-          },
-          "notes": {
-            "en": "Lunch: currywurst",
-            "zh": "午饭：currywurst"
-          },
-          "mustOrder": [
-            {
-              "name": "Currywurst ohne Darm"
             },
-            {
-              "name": "Pommes"
-            }
-          ],
-          "backups": [
-            {
-              "name": "Curry 36 Bahnhof Zoo",
-              "note": {
-                "en": "daily 8–5",
-                "zh": "每天 8:00–17:00"
-              }
-            },
-            {
-              "name": "Borchardt"
-            }
-          ],
-          "transit": {
-            "segments": [
+            "alternative": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "8 min",
+                "from": "Gedenkstätte Berliner Mauer",
+                "to": "U Bernauer Str.",
+                "distanceM": 600
+              },
               {
                 "mode": "metro",
                 "label": {
                   "en": "Metro",
                   "zh": "地铁"
                 },
-                "duration": "7 min",
-                "line": "U6",
-                "direction": "Kurt-Schumacher-Platz",
-                "from": "Mehringdamm",
-                "to": "Friedrichstraße",
-                "stops": 5,
+                "duration": "6 min",
+                "line": "U8",
+                "direction": "Hermannstraße",
+                "from": "Bernauer Str.",
+                "to": "Jannowitzbrücke",
+                "stops": 4,
                 "frequency": "every 5–10 min"
-              },
-              {
-                "mode": "train",
-                "label": {
-                  "en": "Train",
-                  "zh": "火车"
-                },
-                "duration": "10 min",
-                "line": "S5 / S7 / S9",
-                "direction": "Strausberg / Ahrensfelde / Flughafen BER",
-                "from": "Friedrichstraße",
-                "to": "Warschauer Straße",
-                "stops": 5,
-                "frequency": "S3/S5/S7/S9 combined every ~3–5 min (each line every 10–20 min)"
               },
               {
                 "mode": "walk",
@@ -1537,16 +1456,173 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "5 min",
-                "from": "S Warschauer Straße",
-                "to": "East Side Gallery south end (Oberbaumbrücke)",
-                "distanceM": 400
+                "duration": "6 min",
+                "from": "U Jannowitzbrücke",
+                "to": "Zur letzten Instanz",
+                "distanceM": 450
+              }
+            ]
+          }
+        },
+        {
+          "type": "restaurant",
+          "status": "tentative",
+          "name": {
+            "en": "Zur letzten Instanz",
+            "zh": "Zur letzten Instanz"
+          },
+          "lat": 52.517453,
+          "lng": 13.413776,
+          "arrive": "12:00 PM",
+          "leave": "1:00 PM",
+          "website": "https://zurletzteninstanz.com/",
+          "placeId": "LETZTE_INSTANZ",
+          "hours": {
+            "en": "Official winter hours: Fri–Sat 12:00–15:00 and from 17:30 (Dec 26 is a Saturday; holiday hours not posted – call to confirm)",
+            "zh": "冬季官网：周五周六 12:00–15:00，以及 17:30 起（12 月 26 日是周六）。节日时间还没公布"
+          },
+          "notes": {
+            "en": "Lunch: Berlin's oldest restaurant (1621)",
+            "zh": "午饭：柏林最老的餐厅（1621）"
+          },
+          "mustOrder": [
+            {
+              "name": "Eisbein"
+            },
+            {
+              "name": "Bouletten"
+            },
+            {
+              "name": "Gänsebraten"
+            }
+          ],
+          "backups": [
+            {
+              "name": "Zur Gerichtslaube",
+              "nameEn": "Zur Gerichtslaube",
+              "area": "Mitte · Nikolaiviertel",
+              "areaZh": "Mitte · Nikolaiviertel",
+              "mustOrder": [
+                "Berliner Eisbein",
+                "Kohlroulade",
+                "Berliner Weisse"
+              ],
+              "hoursZh": "官网：每天 12 点起",
+              "distanceZh": "🚶 8 分钟",
+              "lat": 52.517052,
+              "lng": 13.4063,
+              "website": "https://www.gerichtslaube.de/",
+              "googleMaps": "https://www.google.com/maps/search/?api=1&query=Zur+Gerichtslaube+Poststra%C3%9Fe+28%2C+10178+Berlin",
+              "placeId": "GERICHTSLAUBE",
+              "note": {
+                "en": "Backup for lunch 2026-12-26 · ~8 min walk",
+                "zh": "12月26日午餐的备选 · 步行 8 分钟"
+              }
+            },
+            {
+              "name": "Brauhaus Georgbräu",
+              "nameEn": "Brauhaus Georgbräu",
+              "area": "Mitte · Nikolaiviertel",
+              "areaZh": "Mitte · Nikolaiviertel",
+              "mustOrder": [
+                "Eisbein",
+                "Georgbräu Pils (hausgebraut)",
+                "Kassler mit Sauerkraut"
+              ],
+              "hoursZh": "每天 12–22",
+              "distanceZh": "🚶 9 分钟",
+              "lat": 52.516539,
+              "lng": 13.40515,
+              "website": "https://www.georgbraeu.de/",
+              "googleMaps": "https://www.google.com/maps/search/?api=1&query=Brauhaus+Georgbr%C3%A4u+Spreeufer+4%2C+10178+Berlin",
+              "placeId": "GEORGBRAEU",
+              "note": {
+                "en": "Backup for lunch 2026-12-26 · ~9 min walk",
+                "zh": "12月26日午餐的备选 · 步行 9 分钟"
+              }
+            }
+          ],
+          "transit": {
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "6 min",
+                "from": "Zur letzten Instanz",
+                "to": "S+U Jannowitzbrücke",
+                "distanceM": 450
+              },
+              {
+                "mode": "bus",
+                "label": {
+                  "en": "Bus",
+                  "zh": "公交"
+                },
+                "duration": "8 min",
+                "line": "300",
+                "direction": "S+U Warschauer Str.",
+                "from": "S+U Jannowitzbrücke",
+                "to": "East Side Gallery",
+                "stops": 5,
+                "frequency": "every 10–20 min"
+              },
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "2 min",
+                "from": "Bus stop East Side Gallery",
+                "to": "East Side Gallery",
+                "distanceM": 150
               }
             ],
             "ticket": {
               "en": "Berlin AB ticket. BVG app, DB Navigator, or a station machine. Stamp a paper ticket.",
               "zh": "柏林 AB 票。BVG、DB Navigator 或站内机器。纸票要盖章。"
-            }
+            },
+            "alternative": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "6 min",
+                "from": "Zur letzten Instanz",
+                "to": "S+U Jannowitzbrücke",
+                "distanceM": 450
+              },
+              {
+                "mode": "train",
+                "label": {
+                  "en": "Train",
+                  "zh": "火车"
+                },
+                "duration": "2 min",
+                "line": "S5 / S7 / S9",
+                "direction": "east (Strausberg Nord / Ahrensfelde / Flughafen BER)",
+                "from": "Jannowitzbrücke",
+                "to": "Ostbahnhof",
+                "stops": 1,
+                "frequency": "every 3–5 min combined"
+              },
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "12 min",
+                "from": "S Ostbahnhof",
+                "to": "East Side Gallery",
+                "distanceM": 900
+              }
+            ]
           }
         },
         {
@@ -1561,6 +1637,7 @@
           "arrive": "1:30 PM",
           "leave": "2:40 PM",
           "website": "https://www.stiftung-berliner-mauer.de/en/east-side-gallery",
+          "placeId": "EAST_SIDE_GALLERY",
           "hours": {
             "en": "Open-air 24h",
             "zh": "露天，全天"
@@ -1635,6 +1712,7 @@
           "leave": "4:15 PM",
           "website": "https://tv-turm.de/en/",
           "nativeName": "Berliner Fernsehturm",
+          "placeId": "TV_TURM",
           "hours": {
             "en": "10 AM–11 PM on Dec 25–26",
             "zh": "12月25–26日 10:00–23:00"
@@ -1675,9 +1753,10 @@
           "lat": 52.51944,
           "lng": 13.402238,
           "arrive": "4:25 PM",
-          "leave": "5:25 PM",
+          "leave": "5:30 PM",
           "website": "https://www.ddr-museum.de/en",
           "optional": true,
+          "placeId": "DDR_MUSEUM",
           "hours": {
             "en": "Dec 26 9 AM–9 PM",
             "zh": "12 月 26 日 9:00–21:00"
@@ -1694,9 +1773,50 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
+                "duration": "3 min",
+                "from": "DDR Museum",
+                "to": "Spandauer Str./Marienkirche",
+                "distanceM": 250
+              },
+              {
+                "mode": "tram",
+                "label": {
+                  "en": "Tram",
+                  "zh": "电车"
+                },
+                "duration": "3 min",
+                "line": "M5",
+                "direction": "S+U Hauptbahnhof",
+                "from": "Spandauer Str./Marienkirche",
+                "to": "Monbijouplatz",
+                "stops": 2,
+                "frequency": "every ~10 min"
+              },
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "7 min",
+                "from": "Monbijouplatz",
+                "to": "Luna D'Oro (Auguststraße 24)",
+                "distanceM": 520
+              }
+            ],
+            "ticket": {
+              "en": "Berlin AB ticket. BVG app, DB Navigator, or a station machine. Stamp a paper ticket.",
+              "zh": "柏林 AB 票。BVG、DB Navigator 或站内机器。纸票要盖章。"
+            },
+            "alternative": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
                 "duration": "17 min",
-                "distanceM": 1330,
-                "note": "Schlossbrücke → Unter den Linden → Bebelplatz; free time for the lit boulevard before dinner"
+                "distanceM": 1300
               }
             ]
           }
@@ -1705,59 +1825,78 @@
           "type": "restaurant",
           "status": "tentative",
           "name": {
-            "en": "Lutter & Wegner",
-            "zh": "Lutter & Wegner"
+            "en": "Luna D'Oro at Clärchens Ballhaus",
+            "zh": "Luna D'Oro at Clärchens Ballhaus"
           },
-          "lat": 52.513212,
-          "lng": 13.391178,
-          "arrive": "6:45 PM",
-          "leave": "~8:45 PM",
-          "website": "https://l-w-berlin.de/",
-          "nativeName": "Lutter & Wegner am Gendarmenmarkt",
+          "lat": 52.526474,
+          "lng": 13.39691,
+          "arrive": "5:45 PM",
+          "leave": "~7:45 PM",
+          "website": "https://claerchensball.haus/restaurant/",
+          "nativeName": "Luna D'Oro im Clärchens Ballhaus",
+          "placeId": "LUNA",
           "hours": {
-            "en": "open 365 days",
-            "zh": "全年无休"
+            "en": "Official site: daily from 17:00 (holiday hours not posted –)",
+            "zh": "官网：每天 17:00 起。节日时间还没公布"
           },
           "notes": {
-            "en": "Dinner (swap to Zur letzten Instanz if it confirms it is open)",
-            "zh": "晚饭（Zur letzten Instanz 如果确认开门，就改去那里）"
+            "en": "Dinner in the 1913 ballroom Clärchens Ballhaus (Luna D'Oro restaurant)",
+            "zh": "晚饭在 1913 年的 Clärchens Ballhaus 舞厅（Luna D'Oro）"
           },
           "mustOrder": [
             {
-              "name": "Wiener Schnitzel",
-              "gloss": {
-                "en": "breaded veal cutlet",
-                "zh": "维也纳炸小牛排"
-              }
+              "name": "Königsberger Klopse"
             },
             {
-              "name": "Gänsebraten",
-              "gloss": {
-                "en": "roast goose",
-                "zh": "烤鹅"
-              }
+              "name": "Wiener Schnitzel"
+            },
+            {
+              "name": "Rinderroulade"
             }
           ],
           "backups": [
             {
-              "name": "Zur letzten Instanz",
+              "name": "Zum Nußbaum",
+              "nameEn": "Zum Nußbaum",
+              "area": "Mitte · Nikolaiviertel",
+              "areaZh": "Mitte · Nikolaiviertel",
+              "mustOrder": [
+                "Berliner Eisbein",
+                "Kohlroulade",
+                "Berliner Weisse"
+              ],
+              "hoursZh": "每天 12 点起",
+              "distanceZh": "🚋 M1/M5 或 🚶 15 分钟（Nikolaiviertel）",
+              "lat": 52.517154,
+              "lng": 13.4071,
+              "website": "https://berlin-nikolaiviertel.com/restaurants-berlin-nikolaiviertel/zum-nussbaum/",
+              "googleMaps": "https://www.google.com/maps/search/?api=1&query=Zum+Nu%C3%9Fbaum+Am+Nu%C3%9Fbaum+3%2C+10178+Berlin",
+              "placeId": "NUSSBAUM",
               "note": {
-                "en": "Berlin's oldest restaurant (1621) · Sat 12–15, 17:30–23 · holiday hours not published – switch here if they confirm",
-                "zh": "柏林最老的餐厅之一（1621）。周六 12:00–15:00、17:30–23:00。假日时间还没公布，确认开门再改过来"
+                "en": "Backup for dinner 2026-12-26 · ~15 min tram/walk",
+                "zh": "12月26日晚餐的备选 · 电车或步行 15 分钟"
               }
             },
             {
-              "name": "Max und Moritz",
+              "name": "Zum Schusterjungen",
+              "nameEn": "Zum Schusterjungen",
+              "area": "Prenzlauer Berg · Eberswalder Str.",
+              "areaZh": "Prenzlauer Berg · Eberswalder Str.",
+              "mustOrder": [
+                "Eisbein mit Sauerkraut",
+                "Schusterjungen-Schnitzel",
+                "Sülze mit Bratkartoffeln"
+              ],
+              "hoursZh": "每天 12–24",
+              "distanceZh": "🚋 M1 + 🚶 约 18 分钟（Prenzlauer Berg）",
+              "lat": 52.540892,
+              "lng": 13.414042,
+              "website": "https://zumschusterjungen.eatbu.com/",
+              "googleMaps": "https://www.google.com/maps/search/?api=1&query=Zum+Schusterjungen+Danziger+Stra%C3%9Fe+9%2C+10435+Berlin",
+              "placeId": "SCHUSTERJUNGE",
               "note": {
-                "en": "from 18:00 Dec 26",
-                "zh": "12 月 26 日起 18:00"
-              }
-            },
-            {
-              "name": "Henne",
-              "note": {
-                "en": "fried chicken · Dec 26",
-                "zh": "炸鸡 · 12 月 26 日"
+                "en": "Backup for dinner 2026-12-26 · ~18 min tram/walk",
+                "zh": "12月26日晚餐的备选 · 电车或步行 18 分钟"
               }
             }
           ],
@@ -1769,24 +1908,24 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "4 min",
-                "from": "Lutter & Wegner",
-                "to": "U Stadtmitte",
-                "distanceM": 300
+                "duration": "12 min",
+                "from": "Luna D'Oro",
+                "to": "S Hackescher Markt",
+                "distanceM": 835
               },
               {
-                "mode": "metro",
+                "mode": "train",
                 "label": {
-                  "en": "Metro",
-                  "zh": "地铁"
+                  "en": "Train",
+                  "zh": "火车"
                 },
-                "duration": "14 min",
-                "line": "U2",
-                "direction": "Ruhleben",
-                "from": "U Stadtmitte",
-                "to": "Zoologischer Garten",
-                "stops": 8,
-                "frequency": "every 5–10 min"
+                "duration": "11 min",
+                "line": "S3 / S5 / S7 / S9",
+                "direction": "Spandau / Potsdam / Westkreuz",
+                "from": "S Hackescher Markt",
+                "to": "S+U Zoologischer Garten",
+                "stops": 5,
+                "frequency": "every ~5 min"
               },
               {
                 "mode": "walk",
@@ -1794,8 +1933,10 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "3 min",
-                "distanceM": 180
+                "duration": "4 min",
+                "from": "S+U Zoologischer Garten",
+                "to": "Waldorf Astoria Berlin",
+                "distanceM": 255
               }
             ],
             "ticket": {
@@ -1809,7 +1950,7 @@
                   "en": "Taxi",
                   "zh": "出租车"
                 },
-                "duration": "10–15 min"
+                "duration": "20 min"
               }
             ]
           }
@@ -1823,13 +1964,470 @@
           },
           "lat": 52.505584,
           "lng": 13.332911,
-          "arrive": "~8:45 PM",
+          "arrive": "~8:15 PM",
           "leave": null,
           "website": "https://www.hilton.com/en/hotels/berwawa-waldorf-astoria-berlin/",
+          "placeId": "WALDORF",
           "notes": {
             "en": "Back to hotel",
             "zh": "回酒店"
           }
+        }
+      ]
+    },
+    {
+      "date": "2026-12-27",
+      "weekday": "Sunday",
+      "title": {
+        "en": "Sunday · IREC church, Savignyplatz lunch, Memorial Church → BER ( 5:05 PM)",
+        "zh": "周日 · 教会、Savignyplatz 午饭、纪念教堂，17:05 到机场"
+      },
+      "stops": [
+        {
+          "type": "hotel",
+          "status": "confirmed",
+          "name": {
+            "en": "Waldorf Astoria Berlin",
+            "zh": "Waldorf Astoria Berlin"
+          },
+          "lat": 52.505584,
+          "lng": 13.332911,
+          "arrive": null,
+          "leave": "9:05 AM",
+          "website": "https://www.hilton.com/en/hotels/berwawa-waldorf-astoria-berlin/",
+          "placeId": "WALDORF",
+          "notes": {
+            "en": "Breakfast 8:00 AM; check out 8:50 AM and leave bags with concierge",
+            "zh": "8:00 早餐；8:50 退房，行李寄在礼宾部"
+          },
+          "transit": {
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "3 min",
+                "from": "Waldorf",
+                "to": "Zoologischer Garten",
+                "distanceM": 250
+              },
+              {
+                "mode": "train",
+                "label": {
+                  "en": "Train",
+                  "zh": "火车"
+                },
+                "duration": "1–2 min",
+                "line": "S9 / S7 / S5 / S3",
+                "direction": "Flughafen BER / Ahrensfelde / Strausberg / Erkner",
+                "from": "Zoologischer Garten",
+                "to": "Tiergarten",
+                "stops": 1,
+                "frequency": "every 2–5 min combined (Sunday)",
+                "note": "buy the 24-hour ABC ticket now – it also covers the trip to BER"
+              },
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "7 min",
+                "from": "S Tiergarten",
+                "to": "IREC, Händelallee 20",
+                "distanceM": 540
+              }
+            ],
+            "ticket": {
+              "en": "Berlin ABC ticket. The airport is zone C. BVG app, DB Navigator, or a station machine.",
+              "zh": "柏林 ABC 票，机场在 C 区。BVG、DB Navigator 或站内机器。"
+            },
+            "alternative": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "21 min",
+                "distanceM": 1700,
+                "note": "walk through the Tiergarten"
+              }
+            ]
+          }
+        },
+        {
+          "type": "church",
+          "status": "needs-decision",
+          "name": {
+            "en": "IREC Berlin",
+            "zh": "柏林归正福音教会（GRII）"
+          },
+          "lat": 52.515179,
+          "lng": 13.342404,
+          "arrive": "9:30 AM",
+          "leave": "~11:30 AM",
+          "website": "https://irec-berlin.org/",
+          "nativeName": "IREC Berlin (Indonesian Reformed Evangelical Church), Kaiser-Friedrich-Gedächtniskirche",
+          "placeId": "IREC",
+          "hours": {
+            "en": "Site says every Sunday 9:30 AM Dec 27 service not yet confirmed",
+            "zh": "网站写每周日 9:30。12月27日这场还没确认"
+          },
+          "notes": {
+            "en": "Sunday service (English); end time is an estimate",
+            "zh": "主日崇拜（英语）；结束时间是估的"
+          },
+          "mustSee": [
+            {
+              "text": {
+                "en": "Confessional Reformed (GRII); confesses Westminster, Heidelberg, Dordt",
+                "zh": "归正福音教会（GRII），认信威斯敏斯特、海德堡、多特"
+              }
+            }
+          ],
+          "transit": {
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "8 min",
+                "from": "IREC Berlin",
+                "to": "S Tiergarten",
+                "distanceM": 555
+              },
+              {
+                "mode": "train",
+                "label": {
+                  "en": "Train",
+                  "zh": "火车"
+                },
+                "duration": "3 min",
+                "line": "S3 / S5 / S7 / S9",
+                "direction": "Spandau / Potsdam / Westkreuz",
+                "from": "S Tiergarten",
+                "to": "S Savignyplatz",
+                "stops": 2,
+                "frequency": "every ~5 min"
+              },
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "5 min",
+                "from": "S Savignyplatz",
+                "to": "Dicke Wirtin (Carmerstraße 9)",
+                "distanceM": 350
+              }
+            ],
+            "ticket": {
+              "en": "Berlin AB ticket. BVG app, DB Navigator, or a station machine. Stamp a paper ticket.",
+              "zh": "柏林 AB 票。BVG、DB Navigator 或站内机器。纸票要盖章。"
+            }
+          }
+        },
+        {
+          "type": "restaurant",
+          "status": "tentative",
+          "name": {
+            "en": "Dicke Wirtin",
+            "zh": "Dicke Wirtin"
+          },
+          "lat": 52.506467,
+          "lng": 13.323587,
+          "arrive": "12:00 PM",
+          "leave": "12:50 PM",
+          "website": "https://dicke-wirtin.de/",
+          "placeId": "DICKEWIRTIN",
+          "hours": {
+            "en": "Official site: open on public holidays except Dec 24; Sunday 11:00–24:00",
+            "zh": "官网：除 12 月 24 日外公共假期开。周日 11:00–24:00"
+          },
+          "notes": {
+            "en": "Lunch (2:50 PM departure to BER): old Berlin Kneipe on Savignyplatz",
+            "zh": "午饭（14:50 出发去机场）：Savignyplatz 上的老酒馆"
+          },
+          "mustOrder": [
+            {
+              "name": "Eisbein mit Sauerkraut"
+            },
+            {
+              "name": "Berliner Kartoffelsuppe"
+            },
+            {
+              "name": "Kohlroulade"
+            }
+          ],
+          "backups": [
+            {
+              "name": "Paris Bar",
+              "nameEn": "Paris Bar",
+              "area": "City West · Savignyplatz",
+              "areaZh": "City West · Savignyplatz",
+              "mustOrder": [
+                "Boudin noir",
+                "Wiener Schnitzel",
+                "Crème brûlée"
+              ],
+              "hoursZh": "官网：每天 12 点起",
+              "distanceZh": "🚶 3 分钟",
+              "lat": 52.50538,
+              "lng": 13.326315,
+              "website": "https://www.parisbar.net/",
+              "googleMaps": "https://www.google.com/maps/search/?api=1&query=Paris+Bar+Kantstra%C3%9Fe+152%2C+10623+Berlin",
+              "placeId": "PARISBAR",
+              "note": {
+                "en": "Backup for lunch 2026-12-27 · ~3 min walk",
+                "zh": "12月27日午餐的备选 · 步行 3 分钟"
+              }
+            },
+            {
+              "name": "Schwarzes Café",
+              "nameEn": "Schwarzes Café",
+              "area": "City West · Savignyplatz",
+              "areaZh": "City West · Savignyplatz",
+              "mustOrder": [
+                "Frühstück (ganztags)",
+                "Wiener Schnitzel"
+              ],
+              "hoursZh": "周日照常营业（24h 店）",
+              "distanceZh": "🚶 2 分钟",
+              "lat": 52.505492,
+              "lng": 13.324232,
+              "website": "https://schwarzescafe-berlin.de/",
+              "googleMaps": "https://www.google.com/maps/search/?api=1&query=Schwarzes+Caf%C3%A9+Kantstra%C3%9Fe+148%2C+10623+Berlin",
+              "placeId": "SCHWARZES",
+              "note": {
+                "en": "Backup for lunch 2026-12-27 · ~2 min walk",
+                "zh": "12月27日午餐的备选 · 步行 2 分钟"
+              }
+            }
+          ],
+          "transit": {
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "14 min",
+                "from": "Dicke Wirtin",
+                "to": "Kaiser Wilhelm Memorial Church",
+                "distanceM": 1100,
+                "note": "east along Kantstraße"
+              }
+            ]
+          }
+        },
+        {
+          "type": "sight",
+          "status": "tentative",
+          "name": {
+            "en": "Kaiser Wilhelm Memorial Church",
+            "zh": "威廉皇帝纪念教堂"
+          },
+          "lat": 52.504787,
+          "lng": 13.335194,
+          "arrive": "1:05 PM",
+          "leave": "2:30 PM",
+          "website": "https://www.gedaechtniskirche-berlin.de/",
+          "nativeName": "Kaiser-Wilhelm-Gedächtniskirche",
+          "optional": true,
+          "placeId": "KWG_KIRCHE",
+          "hours": {
+            "en": "Church daily 10 AM–6 PM (no visits during the 10 AM/6 PM services) · market Dec 27 12–9 PM · KaDeWe CLOSED (Sunday)",
+            "zh": "教堂每天 10:00–18:00（10:00 和 18:00 礼拜时不参观）· 市集 12 月 27 日 12:00–21:00 · KaDeWe 周日关门"
+          },
+          "notes": {
+            "en": "Kaiser-Wilhelm-Gedächtniskirche + Breitscheidplatz Christmas market (free time)",
+            "zh": "威廉皇帝纪念教堂，加上 Breitscheidplatz 圣诞市集（自由活动）"
+          },
+          "mustSee": [
+            {
+              "name": "Kaiser-Wilhelm-Gedächtniskirche (ruined tower + blue-glass church)"
+            },
+            {
+              "name": "Weihnachtsmarkt an der Gedächtniskirche (open Dec 27 12–9 PM)"
+            }
+          ],
+          "transit": {
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "3 min",
+                "distanceM": 270
+              }
+            ]
+          }
+        },
+        {
+          "type": "hotel",
+          "status": "confirmed",
+          "name": {
+            "en": "Waldorf Astoria Berlin",
+            "zh": "Waldorf Astoria Berlin"
+          },
+          "lat": 52.505584,
+          "lng": 13.332911,
+          "arrive": "2:35 PM",
+          "leave": "2:50 PM",
+          "website": "https://www.hilton.com/en/hotels/berwawa-waldorf-astoria-berlin/",
+          "placeId": "WALDORF",
+          "notes": {
+            "en": "Collect bags",
+            "zh": "取行李"
+          },
+          "transit": {
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "3 min",
+                "from": "Waldorf",
+                "to": "Zoologischer Garten (U2 platform)",
+                "distanceM": 250
+              },
+              {
+                "mode": "metro",
+                "label": {
+                  "en": "Metro",
+                  "zh": "地铁"
+                },
+                "duration": "10 min",
+                "line": "U2",
+                "direction": "Pankow",
+                "from": "Zoologischer Garten",
+                "to": "Potsdamer Platz",
+                "stops": 6,
+                "frequency": "every 5–10 min"
+              },
+              {
+                "mode": "train",
+                "label": {
+                  "en": "Train",
+                  "zh": "火车"
+                },
+                "duration": "19–20 min",
+                "line": "FEX",
+                "direction": "Flughafen BER",
+                "from": "Potsdamer Platz (deep-level regional platforms)",
+                "to": "Flughafen BER",
+                "stops": 2,
+                "frequency": "every 15–30 min"
+              },
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "3 min",
+                "from": "BER station",
+                "to": "Terminal 1 check-in",
+                "distanceM": 200
+              }
+            ],
+            "ticket": {
+              "en": "Berlin ABC ticket. The airport is zone C. BVG app, DB Navigator, or a station machine.",
+              "zh": "柏林 ABC 票，机场在 C 区。BVG、DB Navigator 或站内机器。"
+            },
+            "alternative": [
+              {
+                "mode": "taxi",
+                "label": {
+                  "en": "Taxi",
+                  "zh": "出租车"
+                },
+                "duration": "40–50 min"
+              },
+              {
+                "mode": "train",
+                "label": {
+                  "en": "Train",
+                  "zh": "火车"
+                },
+                "duration": "55 min",
+                "line": "S9",
+                "direction": "Flughafen BER",
+                "from": "Zoologischer Garten",
+                "to": "Flughafen BER",
+                "stops": 20,
+                "frequency": "every 20 min",
+                "note": "no change, slower"
+              }
+            ]
+          }
+        },
+        {
+          "type": "airport",
+          "status": "needs-decision",
+          "name": {
+            "en": "Berlin Brandenburg Airport T1",
+            "zh": "柏林机场 T1"
+          },
+          "lat": 52.3657974,
+          "lng": 13.4888906,
+          "arrive": "3:35 PM",
+          "leave": "5:05 PM",
+          "website": "https://ber.berlin-airport.de/",
+          "nativeName": "Flughafen Berlin Brandenburg Terminal 1",
+          "placeId": "BER",
+          "notes": {
+            "en": "Bag drop / security (1 h 20 min before departure)",
+            "zh": "托运、安检（起飞前 1 小时 20 分）"
+          },
+          "alternatives": [
+            {
+              "name": {
+                "en": "7:40 → 8:55 PM (misses dinner)",
+                "zh": "19:40 起飞，20:55 到（赶不上晚饭）"
+              },
+              "note": null
+            },
+            {
+              "name": {
+                "en": "3:10 PM (earliest after church)",
+                "zh": "15:10（做完礼拜最早的一班）"
+              },
+              "note": null
+            },
+            {
+              "name": {
+                "en": "4:35 PM via Frankfurt → 9:30 PM",
+                "zh": "16:35 经法兰克福，21:30 到"
+              },
+              "note": null
+            }
+          ]
+        }
+      ],
+      "notes": [
+        {
+          "en": "Budget alternative: 7:40 PM (lands 8:55 PM) – misses dinner.",
+          "zh": "省一点的话可以坐 19:40 那班（20:55 到），但赶不上晚饭。"
+        },
+        {
+          "en": "KaDeWe is closed on Sundays – replaced by the Breitscheidplatz Christmas market next to the church.",
+          "zh": "KaDeWe 周日关门，改去教堂旁边的 Breitscheidplatz 圣诞市集。"
+        },
+        {
+          "en": "Day ends at the Austrian departure from BER 5:05 PM · the evening continues in Vienna (Dec 27).",
+          "zh": "这一天到柏林机场 17:05 的航班为止。晚上在维也纳（12 月 27 日）。"
         }
       ]
     }

@@ -456,8 +456,15 @@
 	border-radius: 4px;
 }
 
-.guide-tl-stop:last-child .guide-tl-body {
+.guide-tl-stop:last-child .guide-tl-body,
+.guide-tl-stop.is-gap .guide-tl-body {
 	padding-bottom: 0.85rem;
+}
+
+.guide-daytrip h3,
+a.guide-daytrip {
+	color: var(--accent, #303F9F);
+	text-decoration: none;
 }
 
 .guide-tl-head {
@@ -670,6 +677,62 @@
 	color: #9a9a9a;
 	font-size: 0.6rem;
 	line-height: 1.35;
+}
+
+.guide-backup + .guide-backup {
+	margin-top: 0.4rem;
+	padding-top: 0.35rem;
+	border-top: 1px solid #eee;
+}
+
+.guide-backup-head {
+	display: flex;
+	align-items: flex-start;
+	gap: 0.2rem;
+}
+
+.guide-backup-name {
+	flex: 1 1 auto;
+	min-width: 0;
+	font-weight: 700;
+	color: #555;
+}
+
+.guide-backup-meta {
+	margin: 0.05rem 0 0;
+}
+
+.guide-return {
+	margin: 0.35rem 0 0.8rem;
+	color: #777;
+	font-size: 0.72rem;
+	line-height: 1.45;
+}
+
+.guide-return summary {
+	cursor: pointer;
+	color: #666;
+	font-family: "Roboto Mono", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+	font-size: 0.66rem;
+	font-weight: 700;
+	list-style: none;
+}
+
+.guide-return summary::-webkit-details-marker {
+	display: none;
+}
+
+.guide-return summary::before {
+	content: "▸ ";
+	color: var(--accent, #303F9F);
+}
+
+.guide-return[open] summary::before {
+	content: "▾ ";
+}
+
+.guide-return p {
+	margin: 0.35rem 0 0;
 }
 
 .guide-around {
