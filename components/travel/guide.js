@@ -28,6 +28,7 @@
 		confirmed: { en: 'Confirmed', zh: '已确认' },
 		tentative: { en: 'Tentative', zh: '暂定' },
 		'needs-decision': { en: 'TBD', zh: '待定' },
+		dayAlt: { en: 'Alternative', zh: '备选方案' },
 		sight: { en: 'Sight', zh: '景点' },
 		restaurant: { en: 'Restaurant', zh: '餐厅' },
 		hotel: { en: 'Hotel', zh: '酒店' },
@@ -292,6 +293,12 @@
 		return '<div class="guide-must"><span class="guide-kicker">' + esc(ui(labelKey)) + '</span><ul>' + lis + '</ul></div>';
 	}
 
+	function displayStatus(stop) {
+		var status = stop && stop.status;
+		if (stop && stop.type === 'church' && status === 'needs-decision') return 'tentative';
+		return status;
+	}
+
 	function statusClass(status) {
 		if (status === 'needs-decision') return 'is-decision';
 		if (status === 'tentative') return 'is-tentative';
@@ -504,8 +511,9 @@
 			if (typeof stop.lat !== 'number' || typeof stop.lng !== 'number') return;
 			var ll = [stop.lat, stop.lng];
 			line.push(ll);
+			var shownStatus = displayStatus(stop);
 			var marker = L.marker(ll, {
-				icon: markerIcon(i + 1, stop.status, state.active === i, 0, 0),
+				icon: markerIcon(i + 1, shownStatus, state.active === i, 0, 0),
 				keyboard: true,
 				title: placeName(stop),
 				zIndexOffset: state.active === i ? 900 : 0
@@ -515,7 +523,7 @@
 			state.markers.push({
 				index: i,
 				number: i + 1,
-				status: stop.status,
+				status: shownStatus,
 				marker: marker,
 				dx: 0,
 				dy: 0
@@ -713,7 +721,8 @@
 		var active = state.active === index ? ' is-active' : '';
 		var native = stop.nativeName && stop.nativeName !== placeName(stop)
 			? '<p class="guide-native">' + esc(stop.nativeName) + '</p>' : '';
-		var chips = '<span class="guide-status ' + statusClass(stop.status) + '">' + esc(ui(stop.status) || stop.status) + '</span>';
+		var shown = displayStatus(stop);
+		var chips = '<span class="guide-status ' + statusClass(shown) + '">' + esc(ui(shown) || shown) + '</span>';
 		if (stop.optional) chips += '<span class="guide-status is-optional">' + esc(ui('optional')) + '</span>';
 		var notes = stop.notes && tx(stop.notes) ? '<p class="guide-notes">' + esc(tx(stop.notes)) + '</p>' : '';
 		var hours = stop.hours ? '<p class="guide-hours">' + esc(tx(stop.hours)) + '</p>' : '';
@@ -723,18 +732,17 @@
 		}
 		var alts = '';
 		if (stop.alternatives && stop.alternatives.length) {
-			var label = stop.alternatives.length > 1 ? ui('options') : ui('option');
-			alts = '<div class="guide-alts"><span class="guide-kicker">' + esc(label) + '</span><ul>' +
-				stop.alternatives.map(function (alt) {
-					var note = alt.note && tx(alt.note) ? '<span class="guide-alt-note">' + esc(tx(alt.note)) + '</span>' : '';
-					return '<li><span class="guide-alt-name">' + esc(placeName(alt)) + '</span>' + note +
-						'<span class="guide-stop-actions">' + iconButtons(alt, false) + '</span></li>';
-				}).join('') + '</ul></div>';
+			var altBody = stop.alternatives.map(function (alt) {
+				var note = alt.note && tx(alt.note) ? ' · ' + tx(alt.note) : '';
+				return placeName(alt) + note;
+			}).join('\n');
+			alts = '<details class="guide-tl-fold"><summary>' + esc(ui('dayAlt')) + '</summary><p>' +
+				esc(altBody).replace(/\n/g, '<br>') + '</p></details>';
 		}
 		var backups = backupsHtml(stop);
 		var gap = stop.transit ? '' : ' is-gap';
 		var inner = timeCol(stop) +
-			'<div class="guide-tl-axis"><span class="guide-tl-dot ' + statusClass(stop.status) + '">' + (index + 1) + '</span></div>' +
+			'<div class="guide-tl-axis"><span class="guide-tl-dot ' + statusClass(shown) + '">' + (index + 1) + '</span></div>' +
 			'<div class="guide-tl-body">' +
 				'<div class="guide-tl-head">' +
 					'<div class="guide-stop-titles"><h3>' + esc(placeName(stop)) + '</h3>' + native +
