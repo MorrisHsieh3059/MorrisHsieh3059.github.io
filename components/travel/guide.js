@@ -7,7 +7,7 @@
 
 	var UI = {
 		tab: { en: 'Guide', zh: '指南' },
-		draft: { en: 'Draft itinerary', zh: '行程草稿' },
+		draft: { en: 'Draft', zh: '草稿' },
 		back: { en: 'All cities', zh: '全部城市' },
 		loading: { en: 'Loading guide…', zh: '指南加载中…' },
 		error: { en: 'Could not load this guide.', zh: '这份指南没加载出来。' },
@@ -126,7 +126,7 @@
 		if (state.lang === 'zh') {
 			return p.m + '月' + p.d + '日' + (WEEK_ZH[weekday] ? ' ' + WEEK_ZH[weekday] : '');
 		}
-		return (weekday ? weekday + ' ' : '') + MONTHS[p.m - 1] + ' ' + p.d;
+		return (weekday ? weekday + ', ' : '') + MONTHS[p.m - 1] + ' ' + p.d;
 	}
 
 	function dayLabel(i) {
@@ -563,12 +563,10 @@
 		destroyMap();
 		var cards = state.cities.map(function (city) {
 			var fit = city.coverFit === 'contain' ? ' fit-contain' : ' fit-cover';
-			var sub = city.subtitle ? '<span class="guide-card-sub">' + esc(tx(city.subtitle)) + '</span>' : '';
 			return '<a class="guide-card" href="/travel/guide/' + esc(city.id) + '/" data-city="' + esc(city.id) + '">' +
 				'<span class="guide-card-cover' + fit + '"><img src="' + esc(city.cover || city.flag || '') + '" alt="' + esc(tx(city.name)) + '"></span>' +
 				'<span class="guide-card-body">' +
 					'<span class="guide-card-name">' + esc(tx(city.name)) + '</span>' +
-					sub +
 					'<span class="guide-card-dates">' + esc(formatRange(city.dates && city.dates.start, city.dates && city.dates.end)) + '</span>' +
 				'</span></a>';
 		}).join('');
@@ -578,23 +576,36 @@
 		syncTabs();
 	}
 
+	function timeCol(stop) {
+		var html = '<div class="guide-tl-times">';
+		if (stop && stop.arrive) html += '<span>' + esc(stop.arrive) + '</span>';
+		if (stop && stop.leave) html += '<span class="is-leave">' + esc(stop.leave) + '</span>';
+		html += '</div>';
+		return html;
+	}
+
+	function legHtml(stop) {
+		if (!stop.transit) return '';
+		var walk = stop.transit.mode === 'walk' ? ' is-walk' : '';
+		var icon = ICONS[stop.transit.mode] || 'fa-arrow-down';
+		var bits = [modeLabel(stop.transit)];
+		if (stop.transit.detail) bits.push(tx(stop.transit.detail));
+		bits.push(legTime(stop.transit));
+		return '<div class="guide-tl-leg' + walk + '" aria-hidden="true">' +
+			'<div class="guide-tl-times"></div>' +
+			'<div class="guide-tl-axis"></div>' +
+			'<p class="guide-tl-leg-label"><i class="fas ' + icon + '"></i><span>' + esc(bits.filter(Boolean).join(' · ')) + '</span></p>' +
+			'</div>';
+	}
+
 	function stopHtml(stop, index) {
 		var active = state.active === index ? ' is-active' : '';
 		var native = stop.nativeName && stop.nativeName !== placeName(stop)
 			? '<p class="guide-native">' + esc(stop.nativeName) + '</p>' : '';
 		var chips = '<span class="guide-status ' + statusClass(stop.status) + '">' + esc(ui(stop.status) || stop.status) + '</span>';
 		if (stop.optional) chips += '<span class="guide-status is-optional">' + esc(ui('optional')) + '</span>';
-		var typeLabel = ui(stop.type);
-		if (typeLabel) chips += '<span class="guide-type">' + esc(typeLabel) + '</span>';
-		var times = [];
-		if (stop.arrive) times.push(ui('arrive') + ' ' + stop.arrive);
-		if (stop.leave) times.push(ui('leave') + ' ' + stop.leave);
-		var stay = formatMinutes(visitLength(stop.arrive, stop.leave));
-		var timeRow = times.length
-			? '<p class="guide-time">' + esc(times.join(' · ')) + (stay ? ' · ' + esc(stay) : '') + '</p>'
-			: '';
-		var hours = stop.hours ? '<p class="guide-hours"><span class="guide-kicker">' + esc(ui('hours')) + '</span> ' + esc(tx(stop.hours)) + '</p>' : '';
 		var notes = stop.notes && tx(stop.notes) ? '<p class="guide-notes">' + esc(tx(stop.notes)) + '</p>' : '';
+		var hours = stop.hours ? '<p class="guide-hours">' + esc(tx(stop.hours)) + '</p>' : '';
 		var alts = '';
 		if (stop.alternatives && stop.alternatives.length) {
 			var label = stop.alternatives.length > 1 ? ui('options') : ui('option');
@@ -605,36 +616,20 @@
 						'<span class="guide-stop-actions">' + iconButtons(alt, false) + '</span></li>';
 				}).join('') + '</ul></div>';
 		}
-		var backups = '';
-		if (stop.backups && stop.backups.length) {
-			backups = '<p class="guide-backup"><span class="guide-kicker">' + esc(ui('backup')) + '</span> ' +
-				stop.backups.map(function (b) {
-					var note = b.note && tx(b.note) ? ' (' + esc(tx(b.note)) + ')' : '';
-					return esc(b.name) + note;
-				}).join(' · ') + '</p>';
-		}
-		var leg = '';
-		if (stop.transit) {
-			var icon = ICONS[stop.transit.mode] || 'fa-arrow-down';
-			var bits = [modeLabel(stop.transit)];
-			if (stop.transit.detail) bits.push(tx(stop.transit.detail));
-			bits.push(legTime(stop.transit));
-			var extra = stop.transit.note && tx(stop.transit.note)
-				? '<span class="guide-leg-note">' + esc(tx(stop.transit.note)) + '</span>' : '';
-			leg = '<div class="guide-leg"><i class="fas ' + icon + '" aria-hidden="true"></i><span>' + esc(bits.filter(Boolean).join(' · ')) + '</span>' + extra + '</div>';
-		}
-		return '<article class="guide-stop' + active + '" data-stop="' + index + '" role="button" tabindex="0">' +
-			'<div class="guide-stop-top">' +
-				'<span class="guide-stop-num ' + statusClass(stop.status) + '">' + (index + 1) + '</span>' +
-				'<div class="guide-stop-titles"><h3>' + esc(placeName(stop)) + '</h3>' + native +
-					'<p class="guide-chips">' + chips + '</p></div>' +
-				'<div class="guide-stop-actions">' + iconButtons(stop, true) + '</div>' +
-			'</div>' +
-			timeRow + hours + notes +
-			mustBlock('mustSee', stop.mustSee) +
-			mustBlock('mustOrder', stop.mustOrder) +
-			alts + backups +
-			'</article>' + leg;
+		return '<div class="guide-stop guide-tl-stop' + active + '" data-stop="' + index + '" role="button" tabindex="0">' +
+			timeCol(stop) +
+			'<div class="guide-tl-axis"><span class="guide-tl-dot ' + statusClass(stop.status) + '">' + (index + 1) + '</span></div>' +
+			'<div class="guide-tl-body">' +
+				'<div class="guide-tl-head">' +
+					'<div class="guide-stop-titles"><h3>' + esc(placeName(stop)) + '</h3>' + native +
+						'<p class="guide-chips">' + chips + '</p></div>' +
+					'<div class="guide-stop-actions">' + iconButtons(stop, true) + '</div>' +
+				'</div>' +
+				notes + hours +
+				mustBlock('mustSee', stop.mustSee) +
+				mustBlock('mustOrder', stop.mustOrder) +
+				alts +
+			'</div></div>' + legHtml(stop);
 	}
 
 	function renderCity() {
@@ -649,26 +644,23 @@
 		var tabs = city.days.map(function (d, i) {
 			var on = i === state.day;
 			return '<button type="button" class="guide-day' + (on ? ' is-active' : '') + '" role="tab" data-day="' + i + '" aria-selected="' + on + '">' +
-				'<span>' + esc(dayLabel(i)) + '</span><span class="guide-day-date">' + esc(formatDay(d.date, d.weekday)) + '</span></button>';
+				'<span class="guide-day-kicker">' + esc(dayLabel(i)) + '</span>' +
+				'<span class="guide-day-date">' + esc(formatDay(d.date, d.weekday)) + '</span></button>';
 		}).join('');
-		var sub = city.subtitle ? '<span class="guide-city-sub">' + esc(tx(city.subtitle)) + '</span>' : '';
 		var stops = day.stops.map(stopHtml).join('');
 		var notes = (day.notes || []).map(function (n) {
 			return '<li>' + esc(tx(n)) + '</li>';
 		}).join('');
 		var noteBlock = notes ? '<ul class="guide-day-notes">' + notes + '</ul>' : '';
 		var html = '<div class="guide-toolbar">' +
-				'<a class="guide-back" href="/travel/guide/"><i class="fas fa-arrow-left" aria-hidden="true"></i> ' + esc(ui('back')) + '</a>' +
-				'<div class="guide-heading"><p class="guide-city-name">' + esc(tx(city.name)) + '</p>' + sub +
-					'<p class="guide-city-dates">' + esc(formatRange(city.dates.start, city.dates.end)) + '</p>' +
-					draftBadge() + '</div>' +
+				'<div class="guide-heading"><p class="guide-city-name">' + esc(tx(city.name)) + ' ' + draftBadge() + '</p>' +
+					'<p class="guide-city-dates">' + esc(formatRange(city.dates.start, city.dates.end)) + '</p></div>' +
 				langSwitch() +
 			'</div>' +
 			'<div class="guide-days" role="tablist">' + tabs + '</div>' +
-			'<p class="guide-day-title">' + esc(tx(day.title)) + '</p>' +
 			'<div class="guide-split">' +
 				'<div class="guide-map-panel"><div id="guide-map" class="guide-map" role="application" aria-label="' + esc(tx(city.name)) + '"></div><div class="guide-offscreen" id="guide-offscreen"></div></div>' +
-				'<div class="guide-timeline" id="guide-timeline">' + stops + noteBlock + '</div>' +
+				'<div class="guide-timeline" id="guide-timeline"><div class="guide-tl">' + stops + '</div>' + noteBlock + '</div>' +
 			'</div>';
 		$('#guide-root').attr('lang', state.lang === 'zh' ? 'zh-Hans' : 'en').html(html);
 		syncTabs();
