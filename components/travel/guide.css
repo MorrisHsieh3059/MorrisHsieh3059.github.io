@@ -456,8 +456,15 @@
 	border-radius: 4px;
 }
 
-.guide-tl-stop:last-child .guide-tl-body {
+.guide-tl-stop:last-child .guide-tl-body,
+.guide-tl-stop.is-gap .guide-tl-body {
 	padding-bottom: 0.85rem;
+}
+
+.guide-daytrip h3,
+a.guide-daytrip {
+	color: var(--accent, #303F9F);
+	text-decoration: none;
 }
 
 .guide-tl-head {

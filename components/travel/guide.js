@@ -18,7 +18,9 @@
 		mustSee: { en: 'Must-see', zh: '必看' },
 		mustOrder: { en: 'Must-order', zh: '必点' },
 		hours: { en: 'Hours', zh: '时间' },
-		backup: { en: 'Backup', zh: '备选' },
+		backup: { en: 'Backups', zh: '备选' },
+		daytrip: { en: 'Day trip', zh: '一日游' },
+		openDay: { en: 'Open this day', zh: '打开这一天' },
 		option: { en: 'Other option', zh: '另一个选择' },
 		options: { en: 'Options', zh: '可选项' },
 		optional: { en: 'Optional', zh: '可选' },
@@ -715,6 +717,10 @@
 		if (stop.optional) chips += '<span class="guide-status is-optional">' + esc(ui('optional')) + '</span>';
 		var notes = stop.notes && tx(stop.notes) ? '<p class="guide-notes">' + esc(tx(stop.notes)) + '</p>' : '';
 		var hours = stop.hours ? '<p class="guide-hours">' + esc(tx(stop.hours)) + '</p>' : '';
+		if (stop.daytripCity) {
+			notes = '<p class="guide-notes"><a class="guide-daytrip" data-city="' + esc(stop.daytripCity) + '" href="/travel/guide/' + esc(stop.daytripCity) + '/">' + esc(ui('openDay')) + '</a></p>';
+			hours = '';
+		}
 		var alts = '';
 		if (stop.alternatives && stop.alternatives.length) {
 			var label = stop.alternatives.length > 1 ? ui('options') : ui('option');
@@ -725,8 +731,9 @@
 						'<span class="guide-stop-actions">' + iconButtons(alt, false) + '</span></li>';
 				}).join('') + '</ul></div>';
 		}
-		return '<div class="guide-stop guide-tl-stop' + active + '" data-stop="' + index + '" role="button" tabindex="0">' +
-			timeCol(stop) +
+		var backups = backupsHtml(stop);
+		var gap = stop.transit ? '' : ' is-gap';
+		var inner = timeCol(stop) +
 			'<div class="guide-tl-axis"><span class="guide-tl-dot ' + statusClass(stop.status) + '">' + (index + 1) + '</span></div>' +
 			'<div class="guide-tl-body">' +
 				'<div class="guide-tl-head">' +
@@ -737,8 +744,31 @@
 				notes + hours +
 				mustBlock('mustSee', stop.mustSee) +
 				mustBlock('mustOrder', stop.mustOrder) +
+				backups +
 				alts +
-			'</div></div>' + legHtml(stop);
+			'</div>';
+		var attrs = ' data-stop="' + index + '" role="button" tabindex="0"';
+		if (stop.daytripCity) attrs += ' data-city="' + esc(stop.daytripCity) + '"';
+		return '<div class="guide-stop guide-tl-stop' + active + gap + (stop.daytripCity ? ' guide-daytrip' : '') + '"' + attrs + '>' +
+			inner + '</div>' + legHtml(stop);
+	}
+
+	function backupsHtml(stop) {
+		if (!stop.backups || !stop.backups.length) return '';
+		var body = stop.backups.map(function (item) {
+			var name = state.lang === 'zh' ? (item.name || item.nameEn || '') : (item.nameEn || item.name || '');
+			var area = state.lang === 'zh' ? (item.areaZh || item.area || '') : (item.area || '');
+			var dishes = (item.mustOrder || []).join(', ');
+			var bits = [name];
+			if (area) bits.push(area);
+			if (dishes) bits.push(dishes);
+			if (state.lang === 'zh' && item.distanceZh) bits.push(item.distanceZh);
+			if (item.hoursZh) bits.push(item.hoursZh);
+			return bits.filter(Boolean).join(' · ');
+		}).join('\n');
+		if (!body) return '';
+		return '<details class="guide-tl-fold guide-backups"><summary>' + esc(ui('backup')) + '</summary><p>' +
+			esc(body).replace(/\n/g, '<br>') + '</p></details>';
 	}
 
 	function renderCity() {
@@ -901,7 +931,7 @@
 			state.active = null;
 			renderCity();
 		});
-		$(document).on('click', 'a.guide-card, a.guide-back', function (e) {
+		$(document).on('click', 'a.guide-card, a.guide-back, a.guide-daytrip', function (e) {
 			if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.which === 2) return;
 			e.preventDefault();
 			var city = $(this).attr('data-city') || '';
@@ -914,12 +944,17 @@
 			}
 		});
 		$(document).on('click', '.guide-stop', function (e) {
-			if ($(e.target).closest('a').length) return;
+			if ($(e.target).closest('a, details').length) return;
+			var city = $(this).attr('data-city');
+			if (city && window.SiteRouter) {
+				window.SiteRouter.go({ section: 'travel', travelTab: 'guide', guideCity: city });
+				return;
+			}
 			setActive(parseInt($(this).attr('data-stop'), 10), true);
 		});
 		$(document).on('keydown', '.guide-stop', function (e) {
 			if (e.key !== 'Enter' && e.key !== ' ') return;
-			if ($(e.target).closest('a').length) return;
+			if ($(e.target).closest('a, details').length) return;
 			e.preventDefault();
 			setActive(parseInt($(this).attr('data-stop'), 10), true);
 		});
