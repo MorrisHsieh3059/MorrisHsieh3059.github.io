@@ -1,6 +1,6 @@
 {
   "id": "brussels",
-  "version": "v3.2",
+  "version": "v3.3",
   "draft": true,
   "country": {
     "en": "Belgium",
@@ -1035,7 +1035,7 @@
           "lat": 50.85073,
           "lng": 4.347695,
           "arrive": "5:10 PM",
-          "leave": "5:45 PM",
+          "leave": "6:00 PM",
           "website": "https://www.plaisirsdhiver.be/en",
           "nativeName": "Plaisirs d'Hiver – Place Sainte-Catherine",
           "placeId": "STE_CATHERINE",
@@ -1044,8 +1044,8 @@
             "zh": "市集 18:00 收"
           },
           "notes": {
-            "en": "Last Winter Wonders mulled wine",
-            "zh": "圣诞市集最后一杯热红酒"
+            "en": "Last Winter Wonders mulled wine until the market closes (6 PM)",
+            "zh": "冬日奇境的最后一杯热红酒，市集 18:00 关门"
           },
           "mustSee": [
             {
@@ -1063,42 +1063,11 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "11 min",
-                "distanceM": 900
-              }
-            ]
-          }
-        },
-        {
-          "type": "hotel",
-          "status": "confirmed",
-          "name": {
-            "en": "Hilton Brussels Grand Place",
-            "zh": "Hilton Brussels Grand Place"
-          },
-          "lat": 50.845819,
-          "lng": 4.355727,
-          "arrive": "6:00 PM",
-          "leave": "6:45 PM",
-          "website": "https://www.hilton.com/en/hotels/brugrhi-hilton-brussels-grand-place/",
-          "placeId": "HILTON_BXL",
-          "notes": {
-            "en": "Rest, change (smart)",
-            "zh": "回酒店歇一下，换衣服（要正式一点）"
-          },
-          "transit": {
-            "segments": [
-              {
-                "mode": "walk",
-                "label": {
-                  "en": "Walk",
-                  "zh": "步行"
-                },
-                "duration": "4 min",
-                "from": "Hilton Brussels Grand Place",
+                "duration": "15 min",
+                "from": "Place Sainte-Catherine",
                 "to": "La Taverne du Passage (Galerie de la Reine 30)",
-                "distanceM": 300,
-                "note": "Rue de la Montagne → Galerie de la Reine"
+                "distanceM": 1200,
+                "note": "slow evening stroll: Bourse → Rue au Beurre → Grand-Place by night → Galerie de la Reine"
               }
             ]
           }

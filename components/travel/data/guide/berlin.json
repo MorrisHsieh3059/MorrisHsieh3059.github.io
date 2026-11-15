@@ -1,6 +1,6 @@
 {
   "id": "berlin",
-  "version": "v3.2",
+  "version": "v3.3",
   "draft": true,
   "country": {
     "en": "Germany",
@@ -22,8 +22,8 @@
       "date": "2026-12-24",
       "weekday": "Thu",
       "title": {
-        "en": "Christmas Eve · arrive BER 1:25 PM → Berlin",
-        "zh": "平安夜 · 13:25 到柏林机场，然后进城"
+        "en": "Christmas Eve · arrive BER 1:25 PM → Reichstag, Holocaust Memorial, Brandenburg Gate, Unter den Linden, Gendarmenmarkt → Hugos → St George's Midnight Mass",
+        "zh": "平安夜 · 13:25 到柏林机场 → 国会大厦、犹太人纪念碑、勃兰登堡门、菩提树下大街、御林广场 → Hugos → 圣乔治子夜弥撒"
       },
       "stops": [
         {
@@ -234,24 +234,24 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "4 min",
-                "from": "Waldorf",
-                "to": "S+U Zoologischer Garten",
-                "distanceM": 255
+                "duration": "5 min",
+                "from": "Waldorf Astoria Berlin",
+                "to": "Breitscheidplatz",
+                "distanceM": 320
               },
               {
-                "mode": "metro",
+                "mode": "bus",
                 "label": {
-                  "en": "Metro",
-                  "zh": "地铁"
+                  "en": "Bus",
+                  "zh": "公交"
                 },
-                "duration": "13 min",
-                "line": "U2",
-                "direction": "Pankow",
-                "from": "S+U Zoologischer Garten",
-                "to": "U Stadtmitte",
-                "stops": 8,
-                "frequency": "every 5 min"
+                "duration": "15 min",
+                "line": "100",
+                "direction": "Memhardstr. (Alexanderplatz)",
+                "from": "Breitscheidplatz",
+                "to": "Reichstag/Bundestag",
+                "stops": 9,
+                "frequency": "about every 10 min on the Dec 24 timetable (3:06 PM departure)"
               },
               {
                 "mode": "walk",
@@ -259,10 +259,10 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "7 min",
-                "from": "U Stadtmitte",
-                "to": "City Church Berlin, Zimmerstraße 23",
-                "distanceM": 500
+                "duration": "2 min",
+                "from": "Reichstag/Bundestag",
+                "to": "Platz der Republik",
+                "distanceM": 130
               }
             ],
             "ticket": {
@@ -271,43 +271,118 @@
             },
             "alternative": [
               {
-                "mode": "taxi",
+                "mode": "walk",
                 "label": {
-                  "en": "Taxi",
-                  "zh": "出租车"
+                  "en": "Walk",
+                  "zh": "步行"
                 },
-                "duration": "15–20 min"
+                "duration": "4 min",
+                "from": "Waldorf",
+                "to": "S+U Zoologischer Garten",
+                "distanceM": 255
+              },
+              {
+                "mode": "train",
+                "label": {
+                  "en": "Train",
+                  "zh": "火车"
+                },
+                "duration": "9 min",
+                "line": "S3 / S5 / S7 / S9",
+                "direction": "Ahrensfelde / Strausberg / Erkner",
+                "from": "S+U Zoologischer Garten",
+                "to": "S+U Friedrichstraße",
+                "stops": 4,
+                "frequency": "every ~5 min"
+              },
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "12 min",
+                "from": "S+U Friedrichstraße",
+                "to": "Reichstag",
+                "distanceM": 876
               }
             ]
           }
         },
         {
-          "type": "church",
-          "status": "needs-decision",
+          "type": "sight",
+          "status": "confirmed",
           "name": {
-            "en": "City Church Berlin (formerly Saddleback Church Berlin)",
-            "zh": "柏林城市教会（英语福音派）"
+            "en": "Reichstag Building (exterior)",
+            "zh": "国会大厦（外观）"
           },
-          "lat": 52.5076127,
-          "lng": 13.3914234,
-          "arrive": "3:30 PM",
-          "leave": "4:40 PM",
-          "website": "https://www.citychurchberlin.org/",
-          "nativeName": "City Church Berlin",
-          "placeId": "CITYCHURCH",
+          "lat": 52.518654,
+          "lng": 13.376102,
+          "arrive": "3:22 PM",
+          "leave": "3:35 PM",
+          "website": "https://www.bundestag.de/en/visittheBundestag",
+          "nativeName": "Reichstagsgebäude (Außen) · Platz der Republik",
+          "placeId": "REICHSTAG_EXT",
           "hours": {
-            "en": "Official event page: 2025 service was Dec 24, 3:30–4:40 PM; 2026 time not posted yet – confirm",
-            "zh": "官网：2025 年平安夜是 15:30–16:40。2026 年的时间还没公布"
+            "en": "Outdoor · dome closed all day Dec 24 (dome visit stays Dec 25 2:15 PM)",
+            "zh": "户外 · 穹顶 12 月 24 日全天关闭（穹顶仍在 12 月 25 日 14:15）"
           },
           "notes": {
-            "en": "Christmas Eve service (English; arrive ~3:20 PM)",
-            "zh": "平安夜礼拜（英语，大约 15:20 到）"
+            "en": "Reichstag facade and Platz der Republik (15 min)",
+            "zh": "国会大厦外立面和共和国广场（15 分钟）"
+          },
+          "mustSee": [
+            {
+              "name": "\"Dem Deutschen Volke\" facade"
+            },
+            {
+              "name": "Platz der Republik"
+            }
+          ],
+          "transit": {
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "11 min",
+                "from": "Reichstag",
+                "to": "Holocaust Memorial",
+                "distanceM": 900,
+                "note": "south on Ebertstraße past the Brandenburg Gate (see it properly on the way back)"
+              }
+            ]
+          }
+        },
+        {
+          "type": "sight",
+          "status": "confirmed",
+          "name": {
+            "en": "Memorial to the Murdered Jews of Europe (Holocaust Memorial)",
+            "zh": "欧洲被害犹太人纪念碑"
+          },
+          "lat": 52.5138731,
+          "lng": 13.3787346,
+          "arrive": "3:47 PM",
+          "leave": "4:05 PM",
+          "website": "https://www.stiftung-denkmal.de/en/",
+          "nativeName": "Denkmal für die ermordeten Juden Europas",
+          "placeId": "HOLOCAUST_MEMORIAL",
+          "hours": {
+            "en": "Field open 24 h · underground information centre closed Dec 24",
+            "zh": "石柱场地全天开放 · 地下信息中心 12 月 24 日关闭"
+          },
+          "notes": {
+            "en": "Walk through the 2,711-stelae field in the last daylight (20 min)",
+            "zh": "在最后的天光里走进 2711 根石柱的场地（20 分钟）"
           },
           "mustSee": [
             {
               "text": {
-                "en": "Evangelical, English-language church (Saddleback Church network); carols and a Christmas message",
-                "zh": "英语福音派教会；有圣诞颂歌和圣诞信息"
+                "en": "Stelae field (walk into the middle)",
+                "zh": "石柱阵（走到中间）"
               }
             }
           ],
@@ -319,30 +394,110 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "10 min",
-                "from": "City Church Berlin",
-                "to": "Gendarmenmarkt",
-                "distanceM": 800,
-                "note": "via Friedrichstraße / Charlottenstraße"
+                "duration": "5 min",
+                "from": "Holocaust Memorial",
+                "to": "Pariser Platz",
+                "distanceM": 400,
+                "note": "north on Ebertstraße"
               }
             ]
+          }
+        },
+        {
+          "type": "sight",
+          "status": "confirmed",
+          "name": {
+            "en": "Brandenburg Gate",
+            "zh": "勃兰登堡门"
           },
-          "alternatives": [
+          "lat": 52.51627,
+          "lng": 13.377703,
+          "arrive": "4:10 PM",
+          "leave": "4:25 PM",
+          "website": "https://www.berlin.de/sehenswuerdigkeiten/3560266-3558930-brandenburger-tor.html",
+          "nativeName": "Brandenburger Tor",
+          "placeId": "BRANDENBURGER_TOR",
+          "hours": {
+            "en": "Outdoor (open 24 h)",
+            "zh": "户外，全天开放"
+          },
+          "notes": {
+            "en": "Brandenburg Gate and Pariser Platz lit at blue hour (sunset ~3:55 PM), 15 min",
+            "zh": "勃兰登堡门和巴黎广场在暮色里亮灯（日落大约 15:55），15 分钟"
+          },
+          "mustSee": [
             {
-              "name": {
-                "en": "Berlin Cathedral",
-                "zh": "柏林大教堂"
-              },
-              "lat": 52.519082,
-              "lng": 13.401094,
-              "website": "https://www.berlinerdom.de/",
-              "nativeName": "Berliner Dom",
-              "note": {
-                "en": "Fallback service: Christvesper (German; Protestant state church, mainstream rather than conservative)",
-                "zh": "备选礼拜：Christvesper（德语，主流新教）"
+              "text": {
+                "en": "Gate from the Pariser Platz side, lit after sunset",
+                "zh": "从巴黎广场一侧看城门，日落后亮灯"
               }
             }
-          ]
+          ],
+          "transit": {
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "0 min",
+                "from": "Pariser Platz",
+                "to": "Unter den Linden",
+                "note": "start walking east through the gate area"
+              }
+            ]
+          }
+        },
+        {
+          "type": "sight",
+          "status": "confirmed",
+          "name": {
+            "en": "Unter den Linden boulevard",
+            "zh": "菩提树下大街"
+          },
+          "lat": 52.517,
+          "lng": 13.3889,
+          "arrive": "4:25 PM",
+          "leave": "4:45 PM",
+          "website": "https://www.berlin.de/en/attractions-and-sights/3560249-3104052-unter-den-linden.html",
+          "nativeName": "Unter den Linden",
+          "placeId": "UNTER_DEN_LINDEN",
+          "hours": {
+            "en": "Outdoor (shops already closed after 2 PM)",
+            "zh": "户外（商店 14:00 后已关门）"
+          },
+          "notes": {
+            "en": "Walk Unter den Linden east (Russian Embassy, Komische Oper, Friedrichstraße corner), then south on Friedrichstr./Charlottenstr. to Gendarmenmarkt",
+            "zh": "沿菩提树下大街往东走（俄罗斯大使馆、喜歌剧院、Friedrichstraße 路口），再沿 Friedrichstr. / Charlottenstr. 往南到御林广场"
+          },
+          "mustSee": [
+            {
+              "text": {
+                "en": "Christmas lights on the lime trees",
+                "zh": "菩提树上的圣诞灯"
+              }
+            },
+            {
+              "name": "Friedrichstraße corner"
+            }
+          ],
+          "transit": {
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "8 min",
+                "from": "Unter den Linden / Friedrichstraße",
+                "to": "Gendarmenmarkt",
+                "distanceM": 600,
+                "note": "south on Friedrichstraße then Charlottenstraße"
+              }
+            ]
+          }
         },
         {
           "type": "sight",
@@ -353,8 +508,8 @@
           },
           "lat": 52.51357,
           "lng": 13.392297,
-          "arrive": "4:50 PM",
-          "leave": "5:55 PM",
+          "arrive": "4:45 PM",
+          "leave": "5:50 PM",
           "website": "https://www.weihnachtsmarkt-berlin.de/en/",
           "nativeName": "WeihnachtsZauber Gendarmenmarkt",
           "placeId": "GENDARMENMARKT_XMAS",
@@ -363,8 +518,8 @@
             "zh": "2026 年官方时间：12月24日 11:00–18:00"
           },
           "notes": {
-            "en": "Christmas market stroll (closes 6 PM on Dec 24), Glühwein optional",
-            "zh": "逛圣诞市集（12 月 24 日 18:00 关门，热红酒可喝可不喝）"
+            "en": "WeihnachtsZauber Christmas market (closes 6 PM on Dec 24) between Konzerthaus and the French & German Cathedrals; Glühwein optional",
+            "zh": "御林广场圣诞市集（12 月 24 日 18:00 关门），在音乐厅和法德两座教堂之间。热红酒可喝可不喝"
           },
           "mustSee": [
             {
@@ -385,10 +540,52 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "8 min",
+                "duration": "3 min",
+                "from": "Gendarmenmarkt",
+                "to": "U Hausvogteiplatz",
+                "distanceM": 248
+              },
+              {
+                "mode": "metro",
+                "label": {
+                  "en": "Metro",
+                  "zh": "地铁"
+                },
+                "duration": "12 min",
+                "line": "U2",
+                "direction": "Ruhleben",
+                "from": "U Hausvogteiplatz",
+                "to": "U Wittenbergplatz",
+                "stops": 8,
+                "frequency": "every ~10 min on the Dec 24 timetable (5:57 PM departure)"
+              },
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "10 min",
+                "from": "U Wittenbergplatz",
+                "to": "Hugos (InterContinental, Budapester Str. 2)",
+                "distanceM": 740
+              }
+            ],
+            "ticket": {
+              "en": "Berlin AB ticket. BVG app, DB Navigator, or a station machine. Stamp a paper ticket.",
+              "zh": "柏林 AB 票。BVG、DB Navigator 或站内机器。纸票要盖章。"
+            },
+            "alternative": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "9 min",
                 "from": "Gendarmenmarkt",
                 "to": "U Stadtmitte (bus stop)",
-                "distanceM": 595
+                "distanceM": 630
               },
               {
                 "mode": "bus",
@@ -412,50 +609,8 @@
                 },
                 "duration": "1 min",
                 "from": "Budapester Str.",
-                "to": "Hugos (InterContinental)",
+                "to": "Hugos",
                 "distanceM": 67
-              }
-            ],
-            "ticket": {
-              "en": "Berlin AB ticket. BVG app, DB Navigator, or a station machine. Stamp a paper ticket.",
-              "zh": "柏林 AB 票。BVG、DB Navigator 或站内机器。纸票要盖章。"
-            },
-            "alternative": [
-              {
-                "mode": "walk",
-                "label": {
-                  "en": "Walk",
-                  "zh": "步行"
-                },
-                "duration": "3 min",
-                "from": "Gendarmenmarkt",
-                "to": "U Hausvogteiplatz",
-                "distanceM": 194
-              },
-              {
-                "mode": "metro",
-                "label": {
-                  "en": "Metro",
-                  "zh": "地铁"
-                },
-                "duration": "12 min",
-                "line": "U2",
-                "direction": "Ruhleben",
-                "from": "U Hausvogteiplatz",
-                "to": "U Wittenbergplatz",
-                "stops": 8,
-                "frequency": "every 5 min"
-              },
-              {
-                "mode": "walk",
-                "label": {
-                  "en": "Walk",
-                  "zh": "步行"
-                },
-                "duration": "10 min",
-                "from": "U Wittenbergplatz",
-                "to": "Hugos (InterContinental)",
-                "distanceM": 740
               }
             ]
           }
@@ -470,7 +625,7 @@
           "lat": 52.5072768,
           "lng": 13.3454003,
           "arrive": "6:30 PM",
-          "leave": "~9:30 PM",
+          "leave": "~9:45 PM",
           "website": "https://www.berlin.intercontinental.com/dine/hugos-restaurant/",
           "nativeName": "Hugos",
           "placeId": "HUGOS",
@@ -545,13 +700,41 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "13 min",
-                "from": "Hugos (InterContinental)",
-                "to": "Waldorf",
-                "distanceM": 1000,
-                "note": "west along Budapester Straße"
+                "duration": "12 min",
+                "from": "Hugos",
+                "to": "S+U Zoologischer Garten (via Breitscheidplatz – Kaiser Wilhelm Memorial Church lit up)",
+                "distanceM": 900
+              },
+              {
+                "mode": "metro",
+                "label": {
+                  "en": "Metro",
+                  "zh": "地铁"
+                },
+                "duration": "11 min",
+                "line": "U2",
+                "direction": "Ruhleben",
+                "from": "S+U Zoologischer Garten",
+                "to": "U Neu-Westend",
+                "stops": 7,
+                "frequency": "about every 10 min on Christmas Eve night (e.g. 10:02 / ~10:12 PM)"
+              },
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "4 min",
+                "from": "U Neu-Westend",
+                "to": "St George's (Preußenallee 17–19)",
+                "distanceM": 350
               }
             ],
+            "ticket": {
+              "en": "Berlin AB ticket. BVG app, DB Navigator, or a station machine. Stamp a paper ticket.",
+              "zh": "柏林 AB 票。BVG、DB Navigator 或站内机器。纸票要盖章。"
+            },
             "alternative": [
               {
                 "mode": "walk",
@@ -570,13 +753,13 @@
                   "en": "Bus",
                   "zh": "公交"
                 },
-                "duration": "1 min",
+                "duration": "3 min",
                 "line": "200",
-                "direction": "S+U Zoologischer Garten",
+                "direction": "S+U Zoologischer Garten/Jebensstr.",
                 "from": "Budapester Str.",
-                "to": "Breitscheidplatz",
-                "stops": 1,
-                "frequency": "about every 10–20 min late evening"
+                "to": "S+U Zoologischer Garten/Jebensstr.",
+                "stops": 2,
+                "frequency": "about every 10–20 min"
               },
               {
                 "mode": "walk",
@@ -584,12 +767,90 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "5 min",
-                "from": "Breitscheidplatz",
-                "to": "Waldorf",
-                "distanceM": 321
+                "duration": "4 min",
+                "from": "Jebensstr.",
+                "to": "U Zoologischer Garten",
+                "distanceM": 300
               }
             ]
+          }
+        },
+        {
+          "type": "church",
+          "status": "confirmed",
+          "name": {
+            "en": "St George's Anglican Church Berlin (Church of England)",
+            "zh": "圣乔治圣公会教堂（英语）"
+          },
+          "lat": 52.5132,
+          "lng": 13.2597,
+          "arrive": {
+            "en": "~10:20 PM (service 11:00 PM)",
+            "zh": "约22:20（礼拜 23:00）"
+          },
+          "leave": "~12:15 AM",
+          "website": "https://www.stgeorgesberlin.de/",
+          "nativeName": "St George's Anglican Church",
+          "placeId": "ST_GEORGES_BERLIN",
+          "hours": {
+            "en": "Official 2026: Dec 24 23:00 Midnight Mass (/stg-news)",
+            "zh": "2026 年官网：12 月 24 日 23:00 子夜弥撒"
+          },
+          "notes": {
+            "en": "Christmas Eve Midnight Mass (English, Anglican; candlelit sung Eucharist with carols)",
+            "zh": "平安夜子夜弥撒（英语，圣公会；烛光唱诗和圣诞颂歌）"
+          },
+          "mustSee": [
+            {
+              "text": {
+                "en": "Midnight Mass – sung Holy Eucharist with carols",
+                "zh": "子夜弥撒：烛光唱诗，圣诞颂歌"
+              }
+            }
+          ],
+          "transit": {
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "4 min",
+                "from": "St George's",
+                "to": "U Neu-Westend",
+                "distanceM": 350
+              },
+              {
+                "mode": "metro",
+                "label": {
+                  "en": "Metro",
+                  "zh": "地铁"
+                },
+                "duration": "12 min",
+                "line": "U2",
+                "direction": "Pankow",
+                "from": "U Neu-Westend",
+                "to": "S+U Zoologischer Garten",
+                "stops": 7,
+                "frequency": "U-Bahn runs all night Dec 24/25; about every 10–15 min after midnight (12:26 AM departure)"
+              },
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "4 min",
+                "from": "S+U Zoologischer Garten",
+                "to": "Waldorf Astoria Berlin",
+                "distanceM": 255
+              }
+            ],
+            "ticket": {
+              "en": "Berlin AB ticket. BVG app, DB Navigator, or a station machine. Stamp a paper ticket.",
+              "zh": "柏林 AB 票。BVG、DB Navigator 或站内机器。纸票要盖章。"
+            }
           }
         },
         {
@@ -601,24 +862,35 @@
           },
           "lat": 52.505584,
           "lng": 13.332911,
-          "arrive": "~9:45 PM",
+          "arrive": {
+            "en": "~12:45 AM (Dec 25)",
+            "zh": "约0:45（12月25日）"
+          },
           "leave": null,
           "website": "https://www.hilton.com/en/hotels/berwawa-waldorf-astoria-berlin/",
           "placeId": "WALDORF",
           "notes": {
-            "en": "Back to hotel",
-            "zh": "回酒店"
+            "en": "Back to hotel to sleep",
+            "zh": "回酒店睡觉"
           }
         }
       ],
       "notes": [
         {
-          "en": "Brandenburg Gate and the Holocaust Memorial moved to Dec 25 (the Reichstag walk passes Brandenburger Tor · Ebertstraße passes the memorial).",
-          "zh": "勃兰登堡门和犹太人纪念碑改到 12 月 25 日。去国会大厦会经过城门，Ebertstraße 经过纪念碑。"
+          "en": "Classic highlights on Dec 24: Reichstag (exterior), Holocaust Memorial, Brandenburg Gate, Unter den Linden, Gendarmenmarkt – all outdoor and open on Christmas Eve. Reichstag dome (closed Dec 24) stays on Dec 25 · Museum Island interiors (closed Dec 24) stay on Dec 25.",
+          "zh": "12 月 24 日的经典：国会大厦外观、犹太人纪念碑、勃兰登堡门、菩提树下大街、御林广场，都在户外，平安夜开着。国会大厦穹顶 24 日关，留到 25 日。博物馆岛室内 24 日关，也留到 25 日。"
         },
         {
-          "en": "Closed Dec 24: state museums, Reichstag dome, Charlottenburg Palace · shops close ~2 PM. U-Bahn runs all night Dec 23/24–27/28.",
-          "zh": "12 月 24 日关闭：国立博物馆、国会大厦穹顶、夏洛滕堡宫。商店大约 14:00 打烊。地铁从 23/24 日通宵到 27/28 日。"
+          "en": "Closed Dec 24: state museums (Museum Island), Reichstag dome, Holocaust Memorial information centre, Berliner Dom for sightseeing (services only), KaDeWe and shops after 2 PM. U-Bahn runs all night Dec 23/24–27/28.",
+          "zh": "12 月 24 日关闭：国立博物馆（博物馆岛）、国会大厦穹顶、纪念碑信息中心、柏林大教堂的参观（只有礼拜）、KaDeWe 和 14:00 后的商店。地铁从 23/24 日通宵到 27/28 日。"
+        },
+        {
+          "en": "No hotel rest stops: after the 3:00 PM bag drop the traveler is out until he returns to sleep after Midnight Mass (~12:45 AM).",
+          "zh": "中途不回酒店休息。15:00 放完行李就出门，子夜弥撒后大约 0:45 才回去睡。"
+        },
+        {
+          "en": "Between dinner and church: Hugos' 5-course menu (plus amuse-bouche and petit fours) runs to ~9:45 PM · the walk to Zoo passes the illuminated Kaiser Wilhelm Memorial Church, and arriving ~40 min early at St George's is the buffer. The Breitscheidplatz market and cafés are closed on Christmas Eve night (not verified as open), so no extra stop is planned.",
+          "zh": "晚饭和教堂之间：Hugos 的五道菜大约到 21:45。走到 Zoo 会经过亮灯的威廉皇帝纪念教堂。圣乔治教堂提前大约 40 分钟到，是缓冲。Breitscheidplatz 市集和咖啡馆平安夜晚上关门，所以不再加一站。"
         }
       ],
       "inbound": {
@@ -1234,6 +1506,10 @@
         {
           "en": "Topography of Terror and Reichstag dome are open Dec 25 (dome closed only Dec 24 and from 4 PM Dec 31).",
           "zh": "恐怖地形图和国会大厦穹顶 12 月 25 日开。穹顶只在 12 月 24 日全天关，以及 12 月 31 日 16:00 起关。"
+        },
+        {
+          "en": "Brandenburg Gate and the Holocaust Memorial were seen on Dec 24 · today's walk only passes them on the way to and from the Reichstag dome.",
+          "zh": "勃兰登堡门和犹太人纪念碑 12 月 24 日已经看过。今天去国会大厦穹顶只是路过。"
         }
       ]
     },

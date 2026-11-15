@@ -85,7 +85,17 @@
     "Dinner in Sablon's 1968 brasserie (home of filet américain)": "晚饭在萨布隆 1968 年的小馆（美式生牛肉的老家）",
     "Dinner in the 1913 ballroom Clärchens Ballhaus (Luna D'Oro restaurant)": "晚饭在 1913 年的 Clärchens Ballhaus 舞厅（Luna D'Oro）",
     "Lunch (2:50 PM departure to BER): old Berlin Kneipe on Savignyplatz": "午饭（14:50 出发去机场）：Savignyplatz 上的老酒馆",
-    "New Year's Eve dinner – official 2026 New Year's menu, first seating": "跨年晚饭：2026 年官方跨年菜单，第一场"
+    "New Year's Eve dinner – official 2026 New Year's menu, first seating": "跨年晚饭：2026 年官方跨年菜单，第一场",
+    "Back to hotel to sleep": "回酒店睡觉",
+    "Brandenburg Gate and Pariser Platz lit at blue hour (sunset ~3:55 PM), 15 min": "勃兰登堡门和巴黎广场在暮色里亮灯（日落大约 15:55），15 分钟",
+    "Check out (~7:30 AM) and leave bags with the concierge (collected after lunch on the way to the CAT)": "大约 7:30 退房，行李寄在礼宾部（午饭后去 CAT 时再取）",
+    "Christmas Eve Midnight Mass (English, Anglican; candlelit sung Eucharist with carols)": "平安夜子夜弥撒（英语，圣公会；烛光唱诗和圣诞颂歌）",
+    "Last Winter Wonders mulled wine until the market closes (6 PM)": "冬日奇境的最后一杯热红酒，市集 18:00 关门",
+    "Reichstag facade and Platz der Republik (15 min)": "国会大厦外立面和共和国广场（15 分钟）",
+    "Sisi Museum / Imperial Apartments (~1 h)": "茜茜博物馆和皇室套房（大约 1 小时）",
+    "Walk Unter den Linden east (Russian Embassy, Komische Oper, Friedrichstraße corner), then south on Friedrichstr./Charlottenstr. to Gendarmenmarkt": "沿菩提树下大街往东走（俄罗斯大使馆、喜歌剧院、Friedrichstraße 路口），再沿 Friedrichstr. / Charlottenstr. 往南到御林广场",
+    "Walk through the 2,711-stelae field in the last daylight (20 min)": "在最后的天光里走进 2711 根石柱的场地（20 分钟）",
+    "WeihnachtsZauber Christmas market (closes 6 PM on Dec 24) between Konzerthaus and the French & German Cathedrals; Glühwein optional": "御林广场圣诞市集（12 月 24 日 18:00 关门），在音乐厅和法德两座教堂之间。热红酒可喝可不喝"
   },
   "title": {
     "New Year's Eve · Grand-Place, Comics Museum, Fine Arts, Sablon · NYE dinner + fireworks": "跨年夜 · 大广场、漫画博物馆、美术馆、萨布隆 · 晚饭和烟火",
@@ -100,7 +110,8 @@
     "Sunday · arrive VIE 6:20 PM → hotel, Stephansdom, Schnitzel dinner": "周日 · 18:20 到维也纳机场，然后酒店、圣斯德望、炸肉排晚饭",
     "Train to Bratislava": "火车去布拉迪斯拉发",
     "Vienna morning (Belvedere) · day trip to Bratislava · Heuriger dinner": "维也纳上午（美景宫）· 布拉迪斯拉发一日游 · 酒馆晚饭",
-    "Vienna · Café Sacher, State Hall, Sisi Museum, Steirereck lunch → VIE (flight to Brussels TBD)": "维也纳 · Café Sacher、国家厅、茜茜博物馆、Steirereck 午饭，然后去机场（飞布鲁塞尔的机票还没订）"
+    "Vienna · Café Sacher, State Hall, Sisi Museum, Steirereck lunch → VIE (flight to Brussels TBD)": "维也纳 · Café Sacher、国家厅、茜茜博物馆、Steirereck 午饭，然后去机场（飞布鲁塞尔的机票还没订）",
+    "Christmas Eve · arrive BER 1:25 PM → Reichstag, Holocaust Memorial, Brandenburg Gate, Unter den Linden, Gendarmenmarkt → Hugos → St George's Midnight Mass": "平安夜 · 13:25 到柏林机场 → 国会大厦、犹太人纪念碑、勃兰登堡门、菩提树下大街、御林广场 → Hugos → 圣乔治子夜弥撒"
   },
   "duration": {},
   "leg": {},
@@ -159,7 +170,11 @@
     "Brötchen (Eiaufstrich, Lachs)": "小面包（鸡蛋酱、三文鱼）",
     "Molle (Hausbier)": "Molle（店里的啤酒）",
     "Pralines (classic assortment)": "夹心巧克力（经典礼盒）",
-    "Wiener Schnitzel vom Kalb (in Butterschmalz)": "小牛肉维也纳炸肉排（用黄油油炸）"
+    "Wiener Schnitzel vom Kalb (in Butterschmalz)": "小牛肉维也纳炸肉排（用黄油油炸）",
+    "Christmas lights on the lime trees": "菩提树上的圣诞灯",
+  "Midnight Mass – sung Holy Eucharist with carols": "子夜弥撒：烛光唱诗，圣诞颂歌",
+    "Gate from the Pariser Platz side, lit after sunset": "从巴黎广场一侧看城门，日落后亮灯",
+    "Stelae field (walk into the middle)": "石柱阵（走到中间）"
   },
   "note": {
     "3 min to Steirereck": "到 Steirereck 走 3 分钟",
@@ -234,7 +249,13 @@
     "NYE alternative: The Iris package (open decision · not a meal backup since v3.2).": "跨年的另一个选择是 The Iris 套餐，还没定。",
     "Planned · not the last train": "计划坐这班，不是末班",
     "Runs Dec 29 · also 9:00 PM → 10:25 PM": "12 月 29 日有。还有 21:00 到 22:25 的一班",
-    "Safety: Mirror Bar is early evening (5:10–6:05 PM) · the walk to the tram stop is along the lit, busy Old Town square · ~25 min buffer at the station · at least two later trains plus a bus remain as backup.": "Mirror Bar 在傍晚早些时候（17:10–18:05）。走到电车站是老城灯火亮的广场。车站留大约 25 分钟。后面至少还有两班火车和一班大巴。"
+    "Safety: Mirror Bar is early evening (5:10–6:05 PM) · the walk to the tram stop is along the lit, busy Old Town square · ~25 min buffer at the station · at least two later trains plus a bus remain as backup.": "Mirror Bar 在傍晚早些时候（17:10–18:05）。走到电车站是老城灯火亮的广场。车站留大约 25 分钟。后面至少还有两班火车和一班大巴。",
+    "Between dinner and church: Hugos' 5-course menu (plus amuse-bouche and petit fours) runs to ~9:45 PM · the walk to Zoo passes the illuminated Kaiser Wilhelm Memorial Church, and arriving ~40 min early at St George's is the buffer. The Breitscheidplatz market and cafés are closed on Christmas Eve night (not verified as open), so no extra stop is planned.": "晚饭和教堂之间：Hugos 的五道菜大约到 21:45。走到 Zoo 会经过亮灯的威廉皇帝纪念教堂。圣乔治教堂提前大约 40 分钟到，是缓冲。Breitscheidplatz 市集和咖啡馆平安夜晚上关门，所以不再加一站。",
+    "Brandenburg Gate and the Holocaust Memorial were seen on Dec 24 · today's walk only passes them on the way to and from the Reichstag dome.": "勃兰登堡门和犹太人纪念碑 12 月 24 日已经看过。今天去国会大厦穹顶只是路过。",
+    "Classic highlights on Dec 24: Reichstag (exterior), Holocaust Memorial, Brandenburg Gate, Unter den Linden, Gendarmenmarkt – all outdoor and open on Christmas Eve. Reichstag dome (closed Dec 24) stays on Dec 25 · Museum Island interiors (closed Dec 24) stay on Dec 25.": "12 月 24 日的经典：国会大厦外观、犹太人纪念碑、勃兰登堡门、菩提树下大街、御林广场，都在户外，平安夜开着。国会大厦穹顶 24 日关，留到 25 日。博物馆岛室内 24 日关，也留到 25 日。",
+    "Closed Dec 24: state museums (Museum Island), Reichstag dome, Holocaust Memorial information centre, Berliner Dom for sightseeing (services only), KaDeWe and shops after 2 PM. U-Bahn runs all night Dec 23/24–27/28.": "12 月 24 日关闭：国立博物馆（博物馆岛）、国会大厦穹顶、纪念碑信息中心、柏林大教堂的参观（只有礼拜）、KaDeWe 和 14:00 后的商店。地铁从 23/24 日通宵到 27/28 日。",
+    "No hotel rest stops: after the 3:00 PM bag drop the traveler is out until he returns to sleep after Midnight Mass (~12:45 AM).": "中途不回酒店休息。15:00 放完行李就出门，子夜弥撒后大约 0:45 才回去睡。",
+    "No mid-day hotel return: check out when leaving for breakfast · bags are picked up only on the way to the airport bus.": "中午不回酒店。去吃早餐时就退房。行李只在去机场大巴的路上取。"
   },
   "hours": {
     "10 AM–11 PM on Dec 25–26": "12月25–26日 10:00–23:00",
@@ -296,7 +317,12 @@
     "Official site: daily 12:00–24:00": "官网：每天 12:00–24:00",
     "Official site: daily from 17:00 (holiday hours not posted –)": "官网：每天 17:00 起。节日时间还没公布",
     "Official site: open on public holidays except Dec 24; Sunday 11:00–24:00": "官网：除 12 月 24 日外公共假期开。周日 11:00–24:00",
-    "Official winter hours: Fri–Sat 12:00–15:00 and from 17:30 (Dec 26 is a Saturday; holiday hours not posted – call to confirm)": "冬季官网：周五周六 12:00–15:00，以及 17:30 起（12 月 26 日是周六）。节日时间还没公布"
+    "Official winter hours: Fri–Sat 12:00–15:00 and from 17:30 (Dec 26 is a Saturday; holiday hours not posted – call to confirm)": "冬季官网：周五周六 12:00–15:00，以及 17:30 起（12 月 26 日是周六）。节日时间还没公布",
+    "Field open 24 h · underground information centre closed Dec 24": "石柱场地全天开放 · 地下信息中心 12 月 24 日关闭",
+    "Official 2026: Dec 24 23:00 Midnight Mass (/stg-news)": "2026 年官网：12 月 24 日 23:00 子夜弥撒",
+    "Outdoor (open 24 h)": "户外，全天开放",
+    "Outdoor (shops already closed after 2 PM)": "户外（商店 14:00 后已关门）",
+    "Outdoor · dome closed all day Dec 24 (dome visit stays Dec 25 2:15 PM)": "户外 · 穹顶 12 月 24 日全天关闭（穹顶仍在 12 月 25 日 14:15）"
   },
   "gloss": {}
 }
