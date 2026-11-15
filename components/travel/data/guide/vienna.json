@@ -345,7 +345,6 @@
           "arrive": "7:15 PM",
           "leave": null,
           "website": null,
-          "nativeName": "Vienna hotel (TBD)",
           "notes": {
             "en": "Check in (hotel TBD – closer to Wien Mitte is better)",
             "zh": "入住（酒店还没定，离 Wien Mitte 近一点更好）"
@@ -557,7 +556,6 @@
           "arrive": null,
           "leave": "7:55 AM",
           "website": null,
-          "nativeName": "Vienna hotel (TBD)",
           "notes": {
             "en": "Hotel breakfast 7:30 AM",
             "zh": "酒店早餐 7:30"
@@ -1320,7 +1318,6 @@
           "arrive": "10:45 AM",
           "leave": "11:05 AM",
           "website": null,
-          "nativeName": "Vienna hotel (TBD)",
           "notes": {
             "en": "Check out, leave bags",
             "zh": "退房，行李先寄存"
@@ -1581,7 +1578,10 @@
           },
           "lat": 50.845836,
           "lng": 4.349827,
-          "arrive": "~8:30 PM (depends on flight)",
+          "arrive": {
+            "en": "~8:30 PM (depends on flight)",
+            "zh": "约20:30（视航班而定）"
+          },
           "leave": null,
           "website": "https://www.nuetnigenough.be/",
           "hours": {

@@ -203,8 +203,71 @@ function namesOf(item) {
   if (!zh) zh = en;
   const local = (item.name_local || '').trim();
   let nativeName = '';
-  if (local && local !== en && local !== zh) nativeName = local;
+  if (local && local !== en && local !== zh) {
+    const bare = local.replace(/\s*[(（]\s*(?:TBD|flexible|to be decided|待定)\s*[)）]\s*/gi, '').trim();
+    if (bare && bare !== en && bare !== zh) nativeName = local;
+  }
   return { name: { en, zh }, nativeName };
+}
+
+const TIME_PHRASES = [
+  [/after midnight/gi, '午夜后'],
+  [/before midnight/gi, '午夜前'],
+  [/early morning/gi, '清晨'],
+  [/late morning/gi, '临近中午'],
+  [/late night/gi, '深夜'],
+  [/midnight/gi, '午夜'],
+  [/morning/gi, '上午'],
+  [/afternoon/gi, '下午'],
+  [/evening/gi, '晚上'],
+  [/night/gi, '晚上'],
+  [/noon|midday/gi, '中午'],
+  [/^flexible$/i, '时间灵活'],
+  [/\bflexible\b/gi, '灵活'],
+  [/\bTBD\b/gi, '待定']
+];
+const TIME_MONTHS = { jan: 1, feb: 2, mar: 3, apr: 4, may: 5, jun: 6, jul: 7, aug: 8, sep: 9, oct: 10, nov: 11, dec: 12 };
+
+function applyTimePhrases(text) {
+  let s = String(text);
+  TIME_PHRASES.forEach(function (pair) { s = s.replace(pair[0], pair[1]); });
+  return s;
+}
+
+function zhTimeParen(inner) {
+  let t = String(inner).trim();
+  const mon = t.match(/^(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+(\d{1,2})$/i);
+  if (mon) return TIME_MONTHS[mon[1].toLowerCase()] + '月' + mon[2] + '日';
+  t = t.replace(/depends on (?:the )?flight/gi, '视航班而定');
+  return applyTimePhrases(t);
+}
+
+function zhTimeLabel(raw) {
+  let s = String(raw || '').trim();
+  if (!s) return '';
+  s = s.replace(/\(([^)]+)\)/g, function (_m, inner) { return '（' + zhTimeParen(inner) + '）'; });
+  s = s.replace(/~?\s*(\d{1,2})(?::(\d{2}))?\s*(AM|PM)\b/gi, function (all, h, min, ap) {
+    let hour = parseInt(h, 10);
+    const mm = min || '00';
+    const mer = String(ap).toUpperCase();
+    if (mer === 'PM' && hour < 12) hour += 12;
+    if (mer === 'AM' && hour === 12) hour = 0;
+    return (/^~/.test(all.trim()) ? '约' : '') + hour + ':' + mm;
+  });
+  s = applyTimePhrases(s);
+  s = s.replace(/^\s*~\s*/, '约');
+  s = s.replace(/\s+（/g, '（');
+  return s.replace(/\s{2,}/g, ' ').trim();
+}
+
+function timeField(value) {
+  if (!value) return null;
+  const en = String(value).trim();
+  if (!en) return null;
+  if (/^~?\s*\d{1,2}(?::\d{2})?\s*(AM|PM)$/i.test(en)) return en;
+  const zh = zhTimeLabel(en);
+  if (!zh || zh === en) return en;
+  return { en: en, zh: zh };
 }
 
 function cityDisplay(city) {
@@ -529,8 +592,8 @@ function buildStop(item, transit, alts) {
     name: named.name,
     lat: num(item.lat),
     lng: num(item.lng),
-    arrive: item.arrive || null,
-    leave: item.depart || null,
+    arrive: timeField(item.arrive),
+    leave: timeField(item.depart),
     website: safeUrl(item.website)
   };
   if (named.nativeName) stop.nativeName = named.nativeName;

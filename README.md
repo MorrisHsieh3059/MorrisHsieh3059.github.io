@@ -210,7 +210,7 @@ Adding or editing a stop in a city file is enough for the page. A new city also 
 }
 ```
 
-`subtitle`, `nativeName`, `hours`, `notes`, `mustSee`, `mustOrder`, `backups`, `alternatives`, and `transit` can be omitted. `transit` on a stop is the leg **to the next stop**; the last stop has none. `transit.segments` is one entry per mode, in order. `duration` is `null` when that part has no time — the page shows an em dash, not the word null. `mode` picks the icon: `walk`, `flight`, `train`, `metro`, `tram`, `bus`, `taxi`, `lift`.
+`arrive` and `leave` are a clock (`5:05 PM`, `~9:00 PM`) or, when the label is a phrase, `{ "en", "zh" }` (`after midnight` / `午夜后`, and the same for morning, evening, flexible, TBD). The Chinese page shows a clock in 24-hour time (`17:05`, `约21:00`). `subtitle`, `nativeName`, `hours`, `notes`, `mustSee`, `mustOrder`, `backups`, `alternatives`, and `transit` can be omitted. `transit` on a stop is the leg **to the next stop**; the last stop has none. `transit.segments` is one entry per mode, in order. `duration` is `null` when that part has no time — the page shows an em dash, not the word null. `mode` picks the icon: `walk`, `flight`, `train`, `metro`, `tram`, `bus`, `taxi`, `lift`.
 
 `type` is `sight`, `restaurant`, `hotel`, `airport`, `station`, `church`, or anything else (shown as a generic stop). Sights and churches list `mustSee`. Restaurants list `mustOrder`. Either list is shown when present.
 

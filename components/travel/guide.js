@@ -135,7 +135,71 @@
 		return state.lang === 'zh' ? '第 ' + n + ' 天' : 'Day ' + n;
 	}
 
+	var TIME_PHRASES = [
+		[/after midnight/gi, '午夜后'],
+		[/before midnight/gi, '午夜前'],
+		[/early morning/gi, '清晨'],
+		[/late morning/gi, '临近中午'],
+		[/late night/gi, '深夜'],
+		[/midnight/gi, '午夜'],
+		[/morning/gi, '上午'],
+		[/afternoon/gi, '下午'],
+		[/evening/gi, '晚上'],
+		[/night/gi, '晚上'],
+		[/noon|midday/gi, '中午'],
+		[/^flexible$/i, '时间灵活'],
+		[/\bflexible\b/gi, '灵活'],
+		[/\bTBD\b/gi, '待定']
+	];
+	var TIME_MONTHS = { jan: 1, feb: 2, mar: 3, apr: 4, may: 5, jun: 6, jul: 7, aug: 8, sep: 9, oct: 10, nov: 11, dec: 12 };
+
+	function timeSource(value) {
+		if (value == null || value === '') return '';
+		if (typeof value === 'object') return value.en || value.zh || '';
+		return String(value);
+	}
+
+	function applyTimePhrases(text) {
+		var s = String(text);
+		TIME_PHRASES.forEach(function (pair) { s = s.replace(pair[0], pair[1]); });
+		return s;
+	}
+
+	function zhTimeParen(inner) {
+		var t = String(inner).trim();
+		var mon = t.match(/^(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+(\d{1,2})$/i);
+		if (mon) return TIME_MONTHS[mon[1].toLowerCase()] + '月' + mon[2] + '日';
+		t = t.replace(/depends on (?:the )?flight/gi, '视航班而定');
+		return applyTimePhrases(t);
+	}
+
+	function zhTimeLabel(raw) {
+		var s = String(raw).trim();
+		if (!s) return '';
+		s = s.replace(/\(([^)]+)\)/g, function (_m, inner) { return '（' + zhTimeParen(inner) + '）'; });
+		s = s.replace(/~?\s*(\d{1,2})(?::(\d{2}))?\s*(AM|PM)\b/gi, function (all, h, min, ap) {
+			var hour = parseInt(h, 10);
+			var mm = min || '00';
+			var mer = String(ap).toUpperCase();
+			if (mer === 'PM' && hour < 12) hour += 12;
+			if (mer === 'AM' && hour === 12) hour = 0;
+			return (/^~/.test(all.trim()) ? '约' : '') + hour + ':' + mm;
+		});
+		s = applyTimePhrases(s);
+		s = s.replace(/^\s*~\s*/, '约');
+		s = s.replace(/\s+（/g, '（');
+		return s.replace(/\s{2,}/g, ' ').trim();
+	}
+
+	function formatTimeLabel(value) {
+		if (value == null || value === '') return '';
+		var raw = typeof value === 'object' ? tx(value) : String(value);
+		if (state.lang !== 'zh') return raw;
+		return zhTimeLabel(raw);
+	}
+
 	function parseClock(value) {
+		value = timeSource(value);
 		if (!value || value === '—' || value === '-') return null;
 		var m = String(value).replace(/^~\s*/, '').match(/(\d{1,2})(?::(\d{2}))?\s*(AM|PM)?/i);
 		if (!m) return null;
@@ -579,8 +643,8 @@
 
 	function timeCol(stop) {
 		var html = '<div class="guide-tl-times">';
-		if (stop && stop.arrive) html += '<span>' + esc(stop.arrive) + '</span>';
-		if (stop && stop.leave) html += '<span class="is-leave">' + esc(stop.leave) + '</span>';
+		if (stop && stop.arrive) html += '<span>' + esc(formatTimeLabel(stop.arrive)) + '</span>';
+		if (stop && stop.leave) html += '<span class="is-leave">' + esc(formatTimeLabel(stop.leave)) + '</span>';
 		html += '</div>';
 		return html;
 	}

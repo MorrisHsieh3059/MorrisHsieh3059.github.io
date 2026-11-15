@@ -838,7 +838,10 @@
           "lat": 50.894921,
           "lng": 4.341377,
           "arrive": null,
-          "leave": "after midnight",
+          "leave": {
+            "en": "after midnight",
+            "zh": "午夜后"
+          },
           "website": "https://atomium.be/",
           "nativeName": "Atomium",
           "hours": {
