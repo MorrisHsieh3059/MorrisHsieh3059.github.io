@@ -1,6 +1,6 @@
 {
   "id": "bratislava",
-  "version": "v3.1",
+  "version": "v3.2",
   "draft": true,
   "country": {
     "en": "Slovakia",
@@ -39,6 +39,7 @@
           "leave": null,
           "website": null,
           "nativeName": "Bratislava hlavná stanica",
+          "placeId": "BA_HLST",
           "notes": {
             "en": "Arrive Bratislava",
             "zh": "到布拉迪斯拉发"
@@ -111,6 +112,7 @@
           "arrive": "11:25 AM",
           "leave": null,
           "website": "https://www.slovakpub.sk/",
+          "placeId": "SLOVAKPUB",
           "hours": {
             "en": "Official site Mon–Fri 11:00–22:00",
             "zh": "官网：周一到周五 11:00–22:00"
@@ -147,6 +149,7 @@
               "lng": 17.108179,
               "website": "https://drevena.mestianskypivovar.sk/",
               "googleMaps": "https://www.google.com/maps/search/?api=1&query=Bratislavsk%C3%BD+me%C5%A1tiansky+pivovar+%28Dreven%C3%A1%29+Dreven%C3%A1+8%2C+811+06+Bratislava",
+              "placeId": "DREVENA",
               "note": {
                 "en": "Backup for lunch 2026-12-29 · ~4 min walk",
                 "zh": "12月29日午餐的备选 · 步行 4 分钟"
@@ -168,6 +171,7 @@
               "lng": 17.110263,
               "website": "https://www.bratislavskarestauracia.sk/",
               "googleMaps": "https://www.google.com/maps/search/?api=1&query=Bratislava+Flagship+N%C3%A1mestie+SNP+8%2C+811+06+Bratislava",
+              "placeId": "FLAGSHIP",
               "note": {
                 "en": "Backup for lunch 2026-12-29 · ~5 min walk",
                 "zh": "12月29日午餐的备选 · 步行 5 分钟"
@@ -214,6 +218,7 @@
           "leave": null,
           "website": "https://bratislavskevianoce.sk/",
           "nativeName": "Hlavné námestie (Vianočné trhy)",
+          "placeId": "HLAVNE_NAM",
           "hours": {
             "en": "Market Nov 26 – Jan 3",
             "zh": "市集 11月26日到 1月3日"
@@ -260,6 +265,7 @@
           "leave": null,
           "website": "https://mmb.sk/en/locations/old-town-hall",
           "nativeName": "Stará radnica (Múzeum mesta Bratislavy)",
+          "placeId": "STARA_RADNICA",
           "hours": {
             "en": "Tue 10 AM–6 PM",
             "zh": "周二 10:00–18:00"
@@ -303,6 +309,7 @@
           "leave": null,
           "website": null,
           "nativeName": "Dóm svätého Martina",
+          "placeId": "DOM_MARTINA",
           "hours": {
             "en": "Tue 9–11:30 AM & 1–6 PM",
             "zh": "周二 9:00–11:30、13:00–18:00"
@@ -347,6 +354,7 @@
           "leave": null,
           "website": "https://visitbratislava.sk/bratislavsky-hrad-navsteva/",
           "nativeName": "Bratislavský hrad",
+          "placeId": "BRATISLAVA_HRAD",
           "hours": {
             "en": "Grounds winter 9 AM–4 PM · museum closed Tuesdays",
             "zh": "冬天院子 9:00–16:00。博物馆周二关"
@@ -391,6 +399,7 @@
           "leave": null,
           "website": "https://www.u-f-o.sk/",
           "nativeName": "UFO vyhliadková veža (Most SNP)",
+          "placeId": "UFO",
           "hours": {
             "en": "Dec daily 10 AM–11 PM",
             "zh": "12月每天 10:00–23:00"
@@ -432,8 +441,9 @@
           "lat": 48.143524,
           "lng": 17.107275,
           "arrive": "4:35 PM",
-          "leave": null,
+          "leave": "5:05 PM",
           "website": "https://konditoreikormuth.sk/",
+          "placeId": "KORMUTH",
           "hours": {
             "en": "Official site Mon–Tue 9:00–21:00; minimum spend per person",
             "zh": "官网：周一、周二 9:00–21:00，每人有最低消费"
@@ -467,30 +477,32 @@
               "lng": 17.108533,
               "website": "https://kaffeemayer.eu/",
               "googleMaps": "https://www.google.com/maps/search/?api=1&query=Kaffee+Mayer+Hlavn%C3%A9+n%C3%A1mestie+4%2C+811+01+Bratislava",
+              "placeId": "KAFFEEMAYER",
               "note": {
                 "en": "Backup for coffee 2026-12-29 · ~1 min walk",
                 "zh": "12月29日咖啡的备选 · 步行 1 分钟"
               }
             },
             {
-              "name": "Roland Slovak Restaurant",
-              "nameEn": "Roland Slovak Restaurant",
-              "area": "Old Town · Main Square",
-              "areaZh": "Staré Mesto · Hlavné námestie",
+              "name": "Zylinder Café",
+              "nameEn": "Zylinder Café",
+              "area": "Old Town · Hviezdoslav Square",
+              "areaZh": "Staré Mesto · Hviezdoslavovo námestie",
               "mustOrder": [
-                "Kapustnica",
-                "Bryndzové halušky",
-                "Káva"
+                "Bratislavský rožok",
+                "Prešporský guláš",
+                "Viedenská káva"
               ],
-              "hoursZh": "每天 11–23",
-              "distanceZh": "🚶 1 分钟",
-              "lat": 48.14306,
-              "lng": 17.107894,
-              "website": "https://www.rolandrestaurant.sk/en/",
-              "googleMaps": "https://www.google.com/maps/search/?api=1&query=Roland+Slovak+Restaurant+Hlavn%C3%A9+n%C3%A1mestie+5%2C+811+01+Bratislava",
+              "hoursZh": "官网：周一至周六 11–23",
+              "distanceZh": "🚶 4 分钟",
+              "lat": 48.141931,
+              "lng": 17.107733,
+              "website": "https://www.zylinder.sk/",
+              "googleMaps": "https://www.google.com/maps/search/?api=1&query=Zylinder+Caf%C3%A9+Hviezdoslavovo+n%C3%A1mestie+19%2C+811+02+Bratislava",
+              "placeId": "ZYLINDER",
               "note": {
-                "en": "Backup for coffee 2026-12-29 · ~1 min walk",
-                "zh": "12月29日咖啡的备选 · 步行 1 分钟"
+                "en": "Backup for coffee 2026-12-29 · ~4 min walk",
+                "zh": "12月29日咖啡的备选 · 步行 4 分钟"
               }
             }
           ],
@@ -502,40 +514,83 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "12 min",
-                "distanceM": 940
+                "duration": "5 min",
+                "from": "Konditorei Kormuth",
+                "to": "Mirror Bar (Hviezdoslavovo námestie 3)",
+                "distanceM": 350,
+                "note": "Sedlárska → Hviezdoslavovo námestie"
               }
             ]
           }
         },
         {
-          "type": "sight",
+          "type": "bar",
           "status": "tentative",
           "name": {
-            "en": "Blue Church",
-            "zh": "蓝教堂"
+            "en": "Mirror Bar (Radisson Blu Carlton)",
+            "zh": "Mirror Bar（镜子酒吧）"
           },
-          "lat": 48.14336,
-          "lng": 17.116741,
+          "lat": 48.141212,
+          "lng": 17.108581,
           "arrive": "5:10 PM",
-          "leave": null,
-          "website": null,
-          "nativeName": "Kostol svätej Alžbety (Modrý kostolík)",
-          "optional": true,
+          "leave": "6:05 PM",
+          "website": "https://www.mirrorbarcarlton.com/",
+          "nativeName": "Mirror Bar",
+          "placeId": "MIRROR_BAR",
+          "hours": {
+            "en": "Official site: Mon–Fri 9:00–24:00, Sat 14:00–24:00, Sun 14:00–22:00 (holiday-week hours not posted; hotel page lists hours differently – confirm)",
+            "zh": "官网：周一到周五 9:00–24:00，周六 14:00–24:00，周日 14:00–22:00。节日那周还没公布"
+          },
           "notes": {
-            "en": "Blue Church exterior (10 min, optional – skip if behind)",
-            "zh": "蓝色教堂看外观（10 分钟，可选，赶时间就跳过）"
+            "en": "Cocktails at Mirror Bar (World's 50 Best Bars Europe 2026 #8) – one or two drinks, early evening",
+            "zh": "在 Mirror Bar 喝一两杯（2026 欧洲 50 佳酒吧第 8）。傍晚早些时候"
           },
           "mustSee": [
             {
               "text": {
-                "en": "Art Nouveau blue exterior",
-                "zh": "新艺术风格的蓝色外观"
+                "en": "World's 50 Best Bars Europe 2026 #8 (World #34)",
+                "zh": "2026 欧洲 50 佳酒吧第 8（世界第 34）"
               }
+            }
+          ],
+          "mustOrder": [
+            {
+              "name": "Signature cocktail from the current menu"
             }
           ],
           "transit": {
             "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "5 min",
+                "from": "Mirror Bar",
+                "to": "Nám. Ľ. Štúra tram stop",
+                "distanceM": 350
+              },
+              {
+                "mode": "tram",
+                "label": {
+                  "en": "Tram",
+                  "zh": "电车"
+                },
+                "duration": "14 min",
+                "line": "1",
+                "direction": "Hlavná stanica",
+                "from": "Nám. Ľ. Štúra",
+                "to": "Hlavná stanica",
+                "stops": 8,
+                "frequency": "every ~10 min (6:11 PM → 6:25 PM; next 6:21 PM → 6:35 PM)"
+              }
+            ],
+            "ticket": {
+              "en": "ÖBB Bratislava-Ticket: the return train, plus city trams and buses that day.",
+              "zh": "ÖBB Bratislava-Ticket：当天往返火车，以及市内电车和公交。"
+            },
+            "alternative": [
               {
                 "mode": "taxi",
                 "label": {
@@ -543,37 +598,6 @@
                   "zh": "出租车"
                 },
                 "duration": "8–10 min"
-              }
-            ],
-            "ticket": {
-              "en": "Taxi. Pay in the app or by card.",
-              "zh": "出租车，用 App 或刷卡。"
-            },
-            "alternative": [
-              {
-                "mode": "walk",
-                "label": {
-                  "en": "Walk",
-                  "zh": "步行"
-                },
-                "duration": "6 min",
-                "from": "Kormuth",
-                "to": "Hodžovo námestie (Štefánikova)",
-                "distanceM": 450
-              },
-              {
-                "mode": "bus",
-                "label": {
-                  "en": "Bus",
-                  "zh": "公交"
-                },
-                "duration": "4 min",
-                "line": "93",
-                "direction": "Hlavná stanica",
-                "from": "Hodžovo námestie",
-                "to": "Hlavná stanica",
-                "stops": 2,
-                "frequency": "every ~7 min"
               }
             ]
           }
@@ -588,9 +612,10 @@
           "lat": 48.158799,
           "lng": 17.106022,
           "arrive": null,
-          "leave": "5:50 PM",
+          "leave": "6:50 PM",
           "website": null,
           "nativeName": "Bratislava hlavná stanica",
+          "placeId": "BA_HLST",
           "notes": {
             "en": "Train back to Vienna",
             "zh": "坐火车回维也纳"
@@ -605,6 +630,93 @@
         {
           "en": "Prater Giant Ferris Wheel is an optional Dec 29 evening extra (Dec daily 10 AM–10:15 PM).",
           "zh": "普拉特摩天轮是 12 月 29 日晚上的可选项（12 月每天 10:00–22:15）。"
+        },
+        {
+          "en": "Safety: Mirror Bar is early evening (5:10–6:05 PM) · the walk to the tram stop is along the lit, busy Old Town square · ~25 min buffer at the station · at least two later trains plus a bus remain as backup.",
+          "zh": "Mirror Bar 在傍晚早些时候（17:10–18:05）。走到电车站是老城灯火亮的广场。车站留大约 25 分钟。后面至少还有两班火车和一班大巴。"
+        }
+      ],
+      "returnOptions": [
+        {
+          "rank": 1,
+          "mode": "train",
+          "line": "REX 8",
+          "from": "Bratislava hlavná stanica",
+          "to": "Wien Hauptbahnhof",
+          "depart": "6:50 PM",
+          "arrive": "7:46 PM",
+          "ticket": {
+            "en": "ÖBB Bratislava-Ticket: the return train, plus city trams and buses that day.",
+            "zh": "ÖBB Bratislava-Ticket：当天往返火车，以及市内电车和公交。"
+          },
+          "note": {
+            "en": "Planned · not the last train",
+            "zh": "计划坐这班，不是末班"
+          }
+        },
+        {
+          "rank": 2,
+          "mode": "train",
+          "line": "REX 6",
+          "from": "Bratislava-Petržalka",
+          "to": "Wien Hauptbahnhof",
+          "depart": "7:16 PM",
+          "arrive": "8:15 PM",
+          "ticket": {
+            "en": "ÖBB Bratislava-Ticket: the return train, plus city trams and buses that day.",
+            "zh": "ÖBB Bratislava-Ticket：当天往返火车，以及市内电车和公交。"
+          },
+          "note": {
+            "en": "Bus 93 from hlavná stanica to Petržalka (~15 min) · check in the ÖBB app that the ticket covers this route",
+            "zh": "从总站坐 93 路到 Petržalka（大约 15 分钟）。在 ÖBB App 里确认这张票含这段。"
+          }
+        },
+        {
+          "rank": 3,
+          "mode": "train",
+          "line": "REX 8",
+          "from": "Bratislava hlavná stanica",
+          "to": "Wien Hauptbahnhof",
+          "depart": "7:50 PM",
+          "arrive": "8:46 PM",
+          "ticket": {
+            "en": "ÖBB Bratislava-Ticket: the return train, plus city trams and buses that day.",
+            "zh": "ÖBB Bratislava-Ticket：当天往返火车，以及市内电车和公交。"
+          }
+        },
+        {
+          "rank": 4,
+          "mode": "bus",
+          "line": "Slovak Lines",
+          "from": "Bratislava AS Nivy",
+          "to": "Wien Hauptbahnhof",
+          "depart": "8:00 PM",
+          "arrive": "9:25 PM",
+          "ticket": {
+            "en": "Separate Slovak Lines ticket.",
+            "zh": "另买 Slovak Lines 车票。"
+          },
+          "note": {
+            "en": "Runs Dec 29 · also 9:00 PM → 10:25 PM",
+            "zh": "12 月 29 日有。还有 21:00 到 22:25 的一班"
+          }
+        },
+        {
+          "rank": 5,
+          "mode": "train",
+          "line": "REX 8",
+          "from": "Bratislava hlavná stanica",
+          "to": "Wien Hauptbahnhof",
+          "depart": "8:50 PM",
+          "arrive": "9:46 PM",
+          "ticket": {
+            "en": "ÖBB Bratislava-Ticket: the return train, plus city trams and buses that day.",
+            "zh": "ÖBB Bratislava-Ticket：当天往返火车，以及市内电车和公交。"
+          },
+          "note": {
+            "en": "Hourly after this · last 10:50 PM → 11:46 PM (do not plan on the last one)",
+            "zh": "之后每小时一班。末班 22:50 到 23:46，别把计划放在末班上。"
+          }
         }
       ],
       "inbound": {

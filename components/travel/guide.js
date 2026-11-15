@@ -35,6 +35,8 @@
 		airport: { en: 'Airport', zh: '机场' },
 		station: { en: 'Station', zh: '车站' },
 		church: { en: 'Church', zh: '教会' },
+		bar: { en: 'Bar', zh: '酒吧' },
+		returnOpts: { en: 'Return options', zh: '返程选项' },
 		other: { en: 'Stop', zh: '停留' },
 		directions: { en: 'Directions to {name}', zh: '去{name}的路线' },
 		website: { en: '{name} official website', zh: '{name}官网' },
@@ -786,6 +788,21 @@
 		return '<details class="guide-tl-fold guide-backups"><summary>' + esc(ui('backup')) + '</summary>' + rows + '</details>';
 	}
 
+	function returnOptionsHtml(day) {
+		if (!day.returnOptions || !day.returnOptions.length) return '';
+		var lines = day.returnOptions.map(function (opt) {
+			var depart = formatTimeLabel(opt.depart);
+			var arrive = formatTimeLabel(opt.arrive);
+			var bits = [String(opt.rank), opt.line, (opt.from || '') + ' → ' + (opt.to || '')];
+			if (depart || arrive) bits.push((depart || '—') + '–' + (arrive || '—'));
+			if (opt.note && tx(opt.note)) bits.push(tx(opt.note));
+			if (opt.ticket && tx(opt.ticket)) bits.push(tx(opt.ticket));
+			return bits.filter(Boolean).join(' · ');
+		}).join('\n');
+		return '<details class="guide-return"><summary>' + esc(ui('returnOpts')) + '</summary><p>' +
+			esc(lines).replace(/\n/g, '<br>') + '</p></details>';
+	}
+
 	function renderCity() {
 		destroyMap();
 		var city = state.city;
@@ -821,6 +838,7 @@
 			return '<li>' + esc(tx(n)) + '</li>';
 		}).join('');
 		var noteBlock = notes ? '<ul class="guide-day-notes">' + notes + '</ul>' : '';
+		var returns = returnOptionsHtml(day);
 		var around = '';
 		if (city.gettingAround && tx(city.gettingAround)) {
 			var aroundLabel = state.lang === 'zh' ? '市内交通' : 'Getting around';
@@ -834,7 +852,7 @@
 			'<div class="guide-days" role="tablist">' + tabs + '</div>' +
 			'<div class="guide-split">' +
 				'<div class="guide-map-panel"><div id="guide-map" class="guide-map" role="application" aria-label="' + esc(tx(city.name)) + '"></div></div>' +
-				'<div class="guide-timeline" id="guide-timeline"><div class="guide-tl">' + stops + '</div>' + noteBlock + around + '</div>' +
+				'<div class="guide-timeline" id="guide-timeline"><div class="guide-tl">' + stops + '</div>' + noteBlock + returns + around + '</div>' +
 			'</div>';
 		$('#guide-root').attr('lang', state.lang === 'zh' ? 'zh-Hans' : 'en').html(html);
 		syncTabs();

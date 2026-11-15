@@ -702,6 +702,39 @@ a.guide-daytrip {
 	margin: 0.05rem 0 0;
 }
 
+.guide-return {
+	margin: 0.35rem 0 0.8rem;
+	color: #777;
+	font-size: 0.72rem;
+	line-height: 1.45;
+}
+
+.guide-return summary {
+	cursor: pointer;
+	color: #666;
+	font-family: "Roboto Mono", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+	font-size: 0.66rem;
+	font-weight: 700;
+	list-style: none;
+}
+
+.guide-return summary::-webkit-details-marker {
+	display: none;
+}
+
+.guide-return summary::before {
+	content: "▸ ";
+	color: var(--accent, #303F9F);
+}
+
+.guide-return[open] summary::before {
+	content: "▾ ";
+}
+
+.guide-return p {
+	margin: 0.35rem 0 0;
+}
+
 .guide-around {
 	margin: 0.35rem 0 0.8rem;
 	color: #777;

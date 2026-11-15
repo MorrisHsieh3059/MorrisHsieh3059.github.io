@@ -462,6 +462,7 @@ function backupOf(raw) {
   const maps = raw && safeUrl(raw.google_maps_url);
   if (site) item.website = site;
   if (maps) item.googleMaps = maps;
+  if (raw && raw.place_id) item.placeId = String(raw.place_id);
   const noteEn = polishNote((raw && raw.note) || '');
   if (noteEn) item.note = bilingual(noteEn, 'note');
   return item;
@@ -784,6 +785,7 @@ function buildStop(item, transit, alts) {
   if (named.nativeName) stop.nativeName = named.nativeName;
   if (item.optional) stop.optional = true;
   if (item.type === 'daytrip' && item.daytrip_city) stop.daytripCity = String(item.daytrip_city);
+  if (item.place_id) stop.placeId = String(item.place_id);
   if (item.hours) {
     const hours = sanitize(item.hours);
     if (hours) stop.hours = bilingual(hours, 'hours');
@@ -898,6 +900,8 @@ function buildCity(city, version) {
       return bilingual(polishNote(n), 'note');
     }).filter(function (n) { return n && n.en; });
     if (notes.length) built.notes = notes;
+    const returns = (day.return_options || []).map(returnOption).filter(Boolean);
+    if (returns.length) built.returnOptions = returns;
 
     const timeline = day.timeline || [];
     if (timeline[0] && timeline[0].item_type === 'leg') {
@@ -925,6 +929,27 @@ function buildCity(city, version) {
     out.days.push(built);
   });
   return out;
+}
+
+function returnOption(raw) {
+  if (!raw) return null;
+  const noteEn = raw.note ? polishNote(raw.note) : '';
+  let ticket = shortTicket(raw.ticket) || null;
+  if (!ticket && /slovak lines/i.test(raw.ticket || '')) {
+    ticket = { en: 'Separate Slovak Lines ticket.', zh: '另买 Slovak Lines 车票。' };
+  }
+  const option = {
+    rank: raw.rank,
+    mode: modeDef(raw.mode).mode,
+    line: publicText(raw.line),
+    from: publicText(raw.from_stop),
+    to: publicText(raw.to_stop),
+    depart: publicText(raw.depart),
+    arrive: publicText(raw.arrive)
+  };
+  if (ticket) option.ticket = ticket;
+  if (noteEn) option.note = bilingual(noteEn, 'note');
+  return option;
 }
 
 function flightAlts(data, cities) {
