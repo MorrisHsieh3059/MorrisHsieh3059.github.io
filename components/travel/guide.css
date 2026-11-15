@@ -720,6 +720,13 @@
 }
 
 @media (max-width: 767px) {
+	.guide-map-panel {
+		height: calc(38vh * 0.7);
+		height: calc(38dvh * 0.7);
+		min-height: calc(200px * 0.7);
+		max-height: calc(320px * 0.7);
+	}
+
 	.guide-day-kicker,
 	.guide-day-weekday {
 		display: none;

@@ -582,7 +582,7 @@
 					'<span class="guide-card-dates">' + esc(formatRange(city.dates && city.dates.start, city.dates && city.dates.end)) + '</span>' +
 				'</span></a>';
 		}).join('');
-		var html = '<div class="guide-toolbar"><div class="guide-heading">' + draftBadge() + '</div>' + langSwitch() + '</div>' +
+		var html = '<div class="guide-toolbar">' + langSwitch() + '</div>' +
 			'<div class="guide-scroll"><div class="guide-cards">' + cards + '</div></div>';
 		$('#guide-root').attr('lang', state.lang === 'zh' ? 'zh-Hans' : 'en').html(html);
 		syncTabs();

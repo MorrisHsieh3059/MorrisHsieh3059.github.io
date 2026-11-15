@@ -216,7 +216,7 @@ Adding or editing a stop in a city file is enough for the page. A new city also 
 
 `status` is `confirmed` (quiet), `tentative` (light marker), or `needs-decision` (a TBD chip). `alternatives` are the other options when the export has them, without prices.
 
-`draft: true` shows the “Draft itinerary” / “行程草稿” badge. `website`, when it is an `http` or `https` URL, is a globe icon only — the address is not printed. The other icon opens Google Maps directions to `lat,lng`, or to the place name when there is no coordinate.
+`draft: true` shows a small Draft / 草稿 tag in the city header. `website`, when it is an `http` or `https` URL, is a globe icon only — the address is not printed. The other icon opens Google Maps directions to `lat,lng`, or to the place name when there is no coordinate.
 
 ## Updating content
 
