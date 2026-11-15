@@ -89,7 +89,16 @@
     "UFO Observation Deck at sunset (~4:05 PM), 40 min": "UFO 观景台看日落（大约 16:05），40 分钟",
     "Upper Belvedere – highlights only (45 min); moved from Dec 27, awaiting a decision": "上美景宫，只看重点（45 分钟）。从 12 月 27 日挪过来的，还等拍板",
     "Waffle (tea room opens 10:00)": "华夫饼（茶室 10:00 开）",
-    "Walk Unter den Linden to Brandenburg Gate + Reichstag exterior (30 min)": "沿菩提树下大街走到勃兰登堡门，再看一眼国会大厦外观（30 分钟）"
+    "Walk Unter den Linden to Brandenburg Gate + Reichstag exterior (30 min)": "沿菩提树下大街走到勃兰登堡门，再看一眼国会大厦外观（30 分钟）",
+    "Christmas Eve dinner (if early, ask for 6:00 PM)": "平安夜的晚饭（如果能早一点，问 6:00）",
+    "Christmas market stroll (closes 6 PM on Dec 24), Glühwein optional": "逛圣诞市集（12 月 24 日 18:00 关门，热红酒可喝可不喝）",
+    "Coffee + Bratislavský rožok (30 min); Main Square market lights are 1 min away after dark": "咖啡配 Bratislavský rožok（30 分钟）。天黑后，主广场的灯走 1 分钟就到",
+    "East Side Gallery – walk the 1.3 km wall north-west from Oberbaumbrücke to Ostbahnhof (1 h)": "东边画廊：从 Oberbaumbrücke 沿墙往西北走到 Ostbahnhof，1.3 公里（1 小时）",
+    "Grand-Place, then Manneken Pis (4 min) and back up Rue Charles Buls": "大广场，再去尿尿小童（4 分钟），从 Rue Charles Buls 走回来",
+    "Kaiser-Wilhelm-Gedächtniskirche + Breitscheidplatz Christmas market (free time)": "威廉皇帝纪念教堂，加上 Breitscheidplatz 圣诞市集（自由活动）",
+    "Lunch (Jeanneke Pis is 1 min away, see it on the way out)": "午饭（尿尿小妹走 1 分钟，出来顺路看一眼）",
+    "Reichstag exterior + Brandenburg Gate as the lights come on (sunset ~3:55 PM), 30 min": "国会大厦外观和勃兰登堡门，等灯亮起来（日落大约 15:55），30 分钟",
+    "Royal Museums of Fine Arts (+ Magritte), 1 h 20 – closes 3 PM today": "皇家美术馆（含马格利特），1 小时 20 分。今天 15:00 关门"
   },
   "title": {
     "Boxing Day · Wall Memorial, East Side Gallery, TV Tower": "节礼日 · 柏林墙纪念地、东边画廊、电视塔",
@@ -102,7 +111,8 @@
     "Schönbrunn, KHM, Imperial Treasury, Staatsoper ballet": "美泉宫、艺术史博物馆、珍宝馆、国家歌剧院芭蕾",
     "Sunday · Berlin church (morning) → Vienna evening": "周日 · 柏林上午的教会，晚上到维也纳",
     "Vienna → Brussels · State Hall, Sisi Museum, Steirereck lunch, evening flight": "维也纳飞布鲁塞尔 · 国家厅、茜茜博物馆、Steirereck 午饭、晚上的飞机",
-    "day trip from Vienna": "从维也纳出发的一日游"
+    "day trip from Vienna": "从维也纳出发的一日游",
+    "Christmas Day · Museum Island, Reichstag dome, Topography of Terror, Kreuzberg dinner": "圣诞节 · 博物馆岛、国会大厦穹顶、恐怖地形图、克罗伊茨贝格晚饭"
   },
   "duration": {
     "overnight; arrives 7:30 AM Dec 24": "过夜，12 月 24 日早上 7:30 到"
@@ -257,7 +267,13 @@
     "same 10–18": "同样 10:00–18:00",
     "to 22:30": "开到 22:30",
     "to 23:30": "开到 23:30",
-    "to 24:00": "开到 24:00"
+    "to 24:00": "开到 24:00",
+    "Dec 24 11 AM–6 PM (2026 official)": "12 月 24 日 11:00–18:00（2026 年官网）",
+    "KaDeWe is closed on Sundays – replaced by the Breitscheidplatz Christmas market next to the church.": "KaDeWe 周日关门，改去教堂旁边的 Breitscheidplatz 圣诞市集。",
+    "Karlskirche ↔ Staatsoper is 11 min on foot each way (v1 said 5 min).": "Karlskirche 和国立歌剧院步行各 11 分钟。",
+    "Order changed in v2: Reichstag dome moved from 5 PM to 2:15 PM so the day runs Museum Island → Reichstag → Topography → Checkpoint Charlie → Kreuzberg without backtracking.": "顺序改了：国会大厦穹顶从下午 5 点改到 2:15。这一天是博物馆岛、国会大厦、恐怖地形图、查理检查哨，再到克罗伊茨贝格。",
+    "Package incl. dinner + fireworks view (see NYE plan)": "套餐含晚饭和看烟火（见跨年安排）",
+    "Topography of Terror and Reichstag dome are open Dec 25 (dome closed only Dec 24 and from 4 PM Dec 31).": "恐怖地形图和国会大厦穹顶 12 月 25 日开。穹顶只在 12 月 24 日全天关，以及 12 月 31 日 16:00 起关。"
   },
   "hours": {
     "10 AM–11 PM on Dec 25–26": "12月25–26日 10:00–23:00",
@@ -315,7 +331,10 @@
     "Weekday hours 7–10 AM; holiday hours": "平日 7:00–10:00，假日时间另说",
     "Weekdays 7–10 AM": "平日 7:00–10:00",
     "Wiener Wein official listing: Mon–Thu from 16:00, closed only Dec 24 & 31": "Wiener Wein 官方：周一到周四 16:00 起，只有 12月24日和 31日关",
-    "open 365 days": "全年无休"
+    "open 365 days": "全年无休",
+    "Church daily 10 AM–6 PM (no visits during the 10 AM/6 PM services) · market Dec 27 12–9 PM · KaDeWe CLOSED (Sunday)": "教堂每天 10:00–18:00（10:00 和 18:00 礼拜时不参观）· 市集 12 月 27 日 12:00–21:00 · KaDeWe 周日关门",
+    "Dec 26 9 AM–9 PM": "12 月 26 日 9:00–21:00",
+    "Mon–Fri 8 AM–6 PM (no visits during 12:30 Mass); free; treasury paid": "周一到周五 8:00–18:00（12:30 弥撒时不参观）。教堂免费，珍宝馆要门票"
   },
   "gloss": {
     "Belgian waffles": {

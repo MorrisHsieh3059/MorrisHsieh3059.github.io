@@ -1,6 +1,6 @@
 {
   "id": "berlin",
-  "version": "v1",
+  "version": "v2",
   "draft": true,
   "country": {
     "en": "Germany",
@@ -87,7 +87,69 @@
             ]
           }
         }
-      ]
+      ],
+      "inbound": {
+        "segments": [
+          {
+            "mode": "taxi",
+            "label": {
+              "en": "Taxi",
+              "zh": "出租车"
+            },
+            "duration": "45–75 min",
+            "note": "Yellow cab uses the Manhattan–JFK flat fare"
+          }
+        ],
+        "ticket": {
+          "en": "Taxi. Pay in the app or by card.",
+          "zh": "出租车，用 App 或刷卡。"
+        },
+        "alternative": [
+          {
+            "mode": "metro",
+            "label": {
+              "en": "Metro",
+              "zh": "地铁"
+            },
+            "duration": "18 min",
+            "line": "6",
+            "direction": "Brooklyn Bridge–City Hall",
+            "from": "125 St",
+            "to": "51 St",
+            "stops": 9,
+            "frequency": "every 4–8 min",
+            "note": "or 4/5 express to 59 St + 6 one stop"
+          },
+          {
+            "mode": "metro",
+            "label": {
+              "en": "Metro",
+              "zh": "地铁"
+            },
+            "duration": "25 min",
+            "line": "E",
+            "direction": "Jamaica Center–Parsons/Archer",
+            "from": "Lexington Av/53 St",
+            "to": "Sutphin Blvd–Archer Av–JFK Airport",
+            "stops": 7,
+            "frequency": "every 4–8 min"
+          },
+          {
+            "mode": "train",
+            "label": {
+              "en": "Train",
+              "zh": "火车"
+            },
+            "duration": "10 min",
+            "line": "AirTrain JFK",
+            "direction": "Terminal loop (all terminals)",
+            "from": "Jamaica (Sutphin Blvd)",
+            "to": "Terminal 8",
+            "stops": 3,
+            "frequency": "every ~7 min"
+          }
+        ]
+      }
     },
     {
       "date": "2026-12-24",
@@ -168,7 +230,13 @@
                   "en": "Train",
                   "zh": "火车"
                 },
-                "duration": "35 min"
+                "duration": "22 min",
+                "line": "FEX",
+                "direction": "Berlin Hauptbahnhof",
+                "from": "Flughafen BER (Terminal 1-2 station, below the terminal)",
+                "to": "Berlin Hauptbahnhof (deep level, platforms 1–8)",
+                "stops": 3,
+                "frequency": "every 15–30 min"
               },
               {
                 "mode": "walk",
@@ -176,7 +244,56 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "2 min"
+                "duration": "6 min",
+                "from": "Hbf platforms 1–8",
+                "to": "Hbf S-Bahn (upper level, westbound)",
+                "distanceM": 70
+              },
+              {
+                "mode": "train",
+                "label": {
+                  "en": "Train",
+                  "zh": "火车"
+                },
+                "duration": "6 min",
+                "line": "S5 / S9 (or S3, S7)",
+                "direction": "Westkreuz / Spandau / Potsdam",
+                "from": "Berlin Hauptbahnhof",
+                "to": "Zoologischer Garten",
+                "stops": 3,
+                "frequency": "S3/S5/S7/S9 combined every ~3–5 min (each line every 10–20 min)",
+                "note": "same ABC ticket"
+              },
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "2 min",
+                "from": "Zoologischer Garten (Hardenbergplatz exit)",
+                "to": "Curry 36",
+                "distanceM": 150
+              }
+            ],
+            "ticket": {
+              "en": "Berlin ABC ticket. The airport is zone C. BVG app, DB Navigator, or a station machine.",
+              "zh": "柏林 ABC 票，机场在 C 区。BVG、DB Navigator 或站内机器。"
+            },
+            "alternative": [
+              {
+                "mode": "train",
+                "label": {
+                  "en": "Train",
+                  "zh": "火车"
+                },
+                "duration": "56 min",
+                "line": "S9",
+                "direction": "Spandau",
+                "from": "Flughafen BER",
+                "to": "Zoologischer Garten",
+                "stops": 20,
+                "frequency": "every 20 min"
               }
             ]
           }
@@ -212,10 +329,10 @@
           ],
           "backups": [
             {
-              "name": "Gendarmenmarkt Christmas market stalls (3:45 PM)",
+              "name": "Gendarmenmarkt Christmas market stalls (4:50 PM)",
               "note": {
-                "en": "Dec 24 12–6 PM, 2025 schedule",
-                "zh": "12 月 24 日 12:00–18:00，这是 2025 年的时间"
+                "en": "Dec 24 11 AM–6 PM (2026 official)",
+                "zh": "12 月 24 日 11:00–18:00（2026 年官网）"
               }
             },
             {
@@ -234,7 +351,8 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "4 min"
+                "duration": "2 min",
+                "distanceM": 170
               }
             ]
           }
@@ -263,7 +381,56 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "4 min"
+                "duration": "3 min",
+                "from": "Waldorf",
+                "to": "Zoologischer Garten bus stops (Hardenbergplatz)",
+                "distanceM": 250
+              },
+              {
+                "mode": "bus",
+                "label": {
+                  "en": "Bus",
+                  "zh": "公交"
+                },
+                "duration": "18 min",
+                "line": "100",
+                "direction": "Memhardstraße (Alexanderplatz)",
+                "from": "S+U Zoologischer Garten",
+                "to": "Reichstag/Bundestag",
+                "stops": 10,
+                "frequency": "every 10–20 min (Saturday timetable on Dec 24)",
+                "note": "double-decker sightseeing route: Gedächtniskirche, Tiergarten, Siegessäule, Schloss Bellevue"
+              },
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "3 min",
+                "from": "Reichstag/Bundestag",
+                "to": "Brandenburger Tor",
+                "distanceM": 230
+              }
+            ],
+            "ticket": {
+              "en": "Berlin AB ticket. BVG app, DB Navigator, or a station machine. Stamp a paper ticket.",
+              "zh": "柏林 AB 票。BVG、DB Navigator 或站内机器。纸票要盖章。"
+            },
+            "alternative": [
+              {
+                "mode": "metro",
+                "label": {
+                  "en": "Metro",
+                  "zh": "地铁"
+                },
+                "duration": "10 min",
+                "line": "U2",
+                "direction": "Pankow",
+                "from": "Zoologischer Garten",
+                "to": "Potsdamer Platz",
+                "stops": 6,
+                "frequency": "every 5–10 min"
               },
               {
                 "mode": "train",
@@ -271,64 +438,13 @@
                   "en": "Train",
                   "zh": "火车"
                 },
-                "duration": "10 min"
-              },
-              {
-                "mode": "walk",
-                "label": {
-                  "en": "Walk",
-                  "zh": "步行"
-                },
-                "duration": "15 min"
-              }
-            ]
-          }
-        },
-        {
-          "type": "sight",
-          "status": "tentative",
-          "name": {
-            "en": "Gendarmenmarkt Christmas market",
-            "zh": "御林广场圣诞市集"
-          },
-          "lat": 52.51357,
-          "lng": 13.392297,
-          "arrive": "3:45 PM",
-          "leave": "4:45 PM",
-          "website": "https://www.weihnachtsmarkt-berlin.de/en/",
-          "nativeName": "WeihnachtsZauber Gendarmenmarkt",
-          "hours": {
-            "en": "Official 2026 hours: Dec 24 11 AM–6 PM",
-            "zh": "2026 年官方时间：12月24日 11:00–18:00"
-          },
-          "notes": {
-            "en": "Christmas market stroll (Glühwein optional)",
-            "zh": "逛圣诞市集（热红酒可喝可不喝）"
-          },
-          "mustSee": [
-            {
-              "text": {
-                "en": "WeihnachtsZauber market stalls",
-                "zh": "圣诞市集的摊位"
-              }
-            },
-            {
-              "name": "Glühwein",
-              "gloss": {
-                "en": "hot spiced wine",
-                "zh": "热红酒"
-              }
-            }
-          ],
-          "transit": {
-            "segments": [
-              {
-                "mode": "walk",
-                "label": {
-                  "en": "Walk",
-                  "zh": "步行"
-                },
-                "duration": "18 min"
+                "duration": "1 min",
+                "line": "S1 / S2 / S25",
+                "direction": "Oranienburg / Bernau / Hennigsdorf",
+                "from": "Potsdamer Platz",
+                "to": "Brandenburger Tor",
+                "stops": 1,
+                "frequency": "every 3–5 min"
               }
             ]
           }
@@ -342,8 +458,8 @@
           },
           "lat": 52.51627,
           "lng": 13.377703,
-          "arrive": "5:05 PM",
-          "leave": null,
+          "arrive": "3:40 PM",
+          "leave": "4:10 PM",
           "website": "https://www.berlin.de/sehenswuerdigkeiten/3560266-3558930-brandenburger-tor.html",
           "nativeName": "Brandenburger Tor",
           "hours": {
@@ -351,8 +467,8 @@
             "zh": "户外"
           },
           "notes": {
-            "en": "Walk Unter den Linden to Brandenburg Gate + Reichstag exterior (30 min)",
-            "zh": "沿菩提树下大街走到勃兰登堡门，再看一眼国会大厦外观（30 分钟）"
+            "en": "Reichstag exterior + Brandenburg Gate as the lights come on (sunset ~3:55 PM), 30 min",
+            "zh": "国会大厦外观和勃兰登堡门，等灯亮起来（日落大约 15:55），30 分钟"
           },
           "mustSee": [
             {
@@ -383,7 +499,8 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "5 min"
+                "duration": "5 min",
+                "distanceM": 370
               }
             ]
           }
@@ -397,8 +514,8 @@
           },
           "lat": 52.513873,
           "lng": 13.378735,
-          "arrive": "5:40 PM",
-          "leave": null,
+          "arrive": "4:15 PM",
+          "leave": "4:35 PM",
           "website": "https://www.stiftung-denkmal.de/en/",
           "nativeName": "Denkmal für die ermordeten Juden Europas",
           "hours": {
@@ -425,7 +542,59 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "15 min"
+                "duration": "14 min",
+                "distanceM": 1120,
+                "note": "via Behrenstraße / Französische Straße"
+              }
+            ]
+          }
+        },
+        {
+          "type": "sight",
+          "status": "tentative",
+          "name": {
+            "en": "Gendarmenmarkt Christmas market",
+            "zh": "御林广场圣诞市集"
+          },
+          "lat": 52.51357,
+          "lng": 13.392297,
+          "arrive": "4:50 PM",
+          "leave": "5:55 PM",
+          "website": "https://www.weihnachtsmarkt-berlin.de/en/",
+          "nativeName": "WeihnachtsZauber Gendarmenmarkt",
+          "hours": {
+            "en": "Official 2026 hours: Dec 24 11 AM–6 PM",
+            "zh": "2026 年官方时间：12月24日 11:00–18:00"
+          },
+          "notes": {
+            "en": "Christmas market stroll (closes 6 PM on Dec 24), Glühwein optional",
+            "zh": "逛圣诞市集（12 月 24 日 18:00 关门，热红酒可喝可不喝）"
+          },
+          "mustSee": [
+            {
+              "text": {
+                "en": "WeihnachtsZauber market stalls",
+                "zh": "圣诞市集的摊位"
+              }
+            },
+            {
+              "name": "Glühwein",
+              "gloss": {
+                "en": "hot spiced wine",
+                "zh": "热红酒"
+              }
+            }
+          ],
+          "transit": {
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "2 min",
+                "distanceM": 170
               }
             ]
           }
@@ -448,8 +617,8 @@
             "zh": "官网：全年开。12月24–26日有圣诞菜单"
           },
           "notes": {
-            "en": "Christmas Eve dinner",
-            "zh": "平安夜的晚饭"
+            "en": "Christmas Eve dinner (if early, ask for 6:00 PM)",
+            "zh": "平安夜的晚饭（如果能早一点，问 6:00）"
           },
           "mustOrder": [
             {
@@ -492,6 +661,48 @@
           ],
           "transit": {
             "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "4 min",
+                "from": "Lutter & Wegner",
+                "to": "U Stadtmitte",
+                "distanceM": 300
+              },
+              {
+                "mode": "metro",
+                "label": {
+                  "en": "Metro",
+                  "zh": "地铁"
+                },
+                "duration": "13 min",
+                "line": "U2",
+                "direction": "Ruhleben (or Theodor-Heuss-Platz)",
+                "from": "U Stadtmitte",
+                "to": "Zoologischer Garten",
+                "stops": 8,
+                "frequency": "every 5 min (BVG U-Bahn runs all night Dec 23/24–27/28 except U4)"
+              },
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "3 min",
+                "from": "Zoologischer Garten",
+                "to": "Waldorf",
+                "distanceM": 180
+              }
+            ],
+            "ticket": {
+              "en": "Berlin AB ticket. BVG app, DB Navigator, or a station machine. Stamp a paper ticket.",
+              "zh": "柏林 AB 票。BVG、DB Navigator 或站内机器。纸票要盖章。"
+            },
+            "alternative": [
               {
                 "mode": "taxi",
                 "label": {
@@ -536,8 +747,8 @@
       "date": "2026-12-25",
       "weekday": "Fri",
       "title": {
-        "en": "Christmas Day · Museum Island, Topography of Terror, Reichstag dome",
-        "zh": "圣诞节 · 博物馆岛、恐怖地形图、国会大厦穹顶"
+        "en": "Christmas Day · Museum Island, Reichstag dome, Topography of Terror, Kreuzberg dinner",
+        "zh": "圣诞节 · 博物馆岛、国会大厦穹顶、恐怖地形图、克罗伊茨贝格晚饭"
       },
       "stops": [
         {
@@ -550,7 +761,7 @@
           "lat": 52.505584,
           "lng": 13.332911,
           "arrive": null,
-          "leave": "9:20 AM",
+          "leave": "9:25 AM",
           "website": "https://www.hilton.com/en/hotels/berwawa-waldorf-astoria-berlin/",
           "notes": {
             "en": "Hotel breakfast 8:30 AM",
@@ -559,12 +770,29 @@
           "transit": {
             "segments": [
               {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "3 min",
+                "from": "Waldorf",
+                "to": "Zoologischer Garten",
+                "distanceM": 250
+              },
+              {
                 "mode": "train",
                 "label": {
                   "en": "Train",
                   "zh": "火车"
                 },
-                "duration": "15 min"
+                "duration": "11 min",
+                "line": "S5 / S7 / S3",
+                "direction": "Strausberg / Ahrensfelde / Erkner",
+                "from": "Zoologischer Garten",
+                "to": "Hackescher Markt",
+                "stops": 5,
+                "frequency": "S3/S5/S7/S9 combined every ~3–5 min (each line every 10–20 min); Sunday timetable on Dec 25"
               },
               {
                 "mode": "walk",
@@ -572,7 +800,24 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "10 min"
+                "duration": "8 min",
+                "from": "Hackescher Markt",
+                "to": "Neues Museum (Bodestraße entrance)",
+                "distanceM": 650
+              }
+            ],
+            "ticket": {
+              "en": "Berlin AB ticket. BVG app, DB Navigator, or a station machine. Stamp a paper ticket.",
+              "zh": "柏林 AB 票。BVG、DB Navigator 或站内机器。纸票要盖章。"
+            },
+            "alternative": [
+              {
+                "mode": "taxi",
+                "label": {
+                  "en": "Taxi",
+                  "zh": "出租车"
+                },
+                "duration": "15 min"
               }
             ]
           }
@@ -586,7 +831,10 @@
           },
           "lat": 52.520155,
           "lng": 13.397738,
-          "arrive": "10:00 AM",
+          "arrive": {
+            "en": "9:55 AM (opens 10)",
+            "zh": "9:55（opens 10）"
+          },
           "leave": "~12:00 PM",
           "website": "https://www.smb.museum/en/museums-institutions/neues-museum/home/",
           "nativeName": "Neues Museum",
@@ -611,7 +859,8 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "4 min"
+                "duration": "4 min",
+                "distanceM": 330
               }
             ]
           }
@@ -625,8 +874,8 @@
           },
           "lat": 52.519082,
           "lng": 13.401094,
-          "arrive": "12:15 PM",
-          "leave": "12:30 PM",
+          "arrive": "12:05 PM",
+          "leave": "12:15 PM",
           "website": "https://www.berlinerdom.de/",
           "nativeName": "Berliner Dom",
           "notes": {
@@ -655,7 +904,9 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "14 min"
+                "duration": "14 min",
+                "distanceM": 1080,
+                "note": "Unter den Linden → Französische Straße"
               }
             ]
           }
@@ -669,8 +920,8 @@
           },
           "lat": 52.515003,
           "lng": 13.390388,
-          "arrive": "12:45 PM",
-          "leave": "2:05 PM",
+          "arrive": "12:30 PM",
+          "leave": "1:40 PM",
           "website": "https://www.borchardt-restaurant.de/",
           "hours": {
             "en": "Official site: daily from 11:30; open Christmas Eve 2023",
@@ -709,7 +960,56 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "19 min"
+                "duration": "17 min",
+                "distanceM": 1330,
+                "note": "Behrenstraße → Brandenburger Tor → Reichstag visitor entrance (west side)"
+              }
+            ]
+          }
+        },
+        {
+          "type": "sight",
+          "status": "tentative",
+          "name": {
+            "en": "Reichstag Building & dome",
+            "zh": "国会大厦穹顶"
+          },
+          "lat": 52.518654,
+          "lng": 13.376102,
+          "arrive": {
+            "en": "2:00 PM (security) · slot 2:15 PM",
+            "zh": "14:00（security） · slot14:15"
+          },
+          "leave": "~3:00 PM",
+          "website": "https://www.bundestag.de/en/visittheBundestag",
+          "nativeName": "Reichstagsgebäude (Kuppel)",
+          "hours": {
+            "en": "Open Dec 25",
+            "zh": "12月25日开"
+          },
+          "notes": {
+            "en": "Reichstag dome (45 min)",
+            "zh": "国会大厦穹顶（45 分钟）"
+          },
+          "mustSee": [
+            {
+              "text": {
+                "en": "Glass dome and rooftop terrace",
+                "zh": "玻璃穹顶和屋顶平台"
+              }
+            }
+          ],
+          "transit": {
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "22 min",
+                "distanceM": 1790,
+                "note": "Ebertstraße past the Holocaust Memorial and Potsdamer Platz"
               }
             ]
           }
@@ -723,8 +1023,8 @@
           },
           "lat": 52.506214,
           "lng": 13.384155,
-          "arrive": "2:30 PM",
-          "leave": null,
+          "arrive": "3:25 PM",
+          "leave": "5:05 PM",
           "website": "https://www.topographie.de/en/",
           "nativeName": "Topographie des Terrors",
           "hours": {
@@ -751,7 +1051,8 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "5 min"
+                "duration": "7 min",
+                "distanceM": 580
               }
             ]
           }
@@ -765,8 +1066,8 @@
           },
           "lat": 52.507432,
           "lng": 13.390381,
-          "arrive": null,
-          "leave": "4:15 PM",
+          "arrive": "5:12 PM",
+          "leave": "5:30 PM",
           "website": null,
           "hours": {
             "en": "Outdoor",
@@ -784,51 +1085,41 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "25–30 min"
-              }
-            ]
-          }
-        },
-        {
-          "type": "sight",
-          "status": "tentative",
-          "name": {
-            "en": "Reichstag Building & dome",
-            "zh": "国会大厦穹顶"
-          },
-          "lat": 52.518654,
-          "lng": 13.376102,
-          "arrive": "5:00 PM",
-          "leave": "~5:45 PM",
-          "website": "https://www.bundestag.de/en/visittheBundestag",
-          "nativeName": "Reichstagsgebäude (Kuppel)",
-          "hours": {
-            "en": "Open Dec 25",
-            "zh": "12月25日开"
-          },
-          "notes": {
-            "en": "Reichstag dome (45 min)",
-            "zh": "国会大厦穹顶（45 分钟）"
-          },
-          "mustSee": [
-            {
-              "text": {
-                "en": "Glass dome and rooftop terrace",
-                "zh": "玻璃穹顶和屋顶平台"
-              }
-            }
-          ],
-          "transit": {
-            "segments": [
+                "duration": "2 min",
+                "from": "Checkpoint Charlie",
+                "to": "U Kochstraße bus stop",
+                "distanceM": 110
+              },
               {
-                "mode": "taxi",
+                "mode": "bus",
                 "label": {
-                  "en": "Taxi",
-                  "zh": "出租车"
+                  "en": "Bus",
+                  "zh": "公交"
                 },
-                "duration": "12–15 min"
+                "duration": "6 min",
+                "line": "M29",
+                "direction": "U Hermannplatz",
+                "from": "U Kochstr. (Checkpoint Charlie)",
+                "to": "U Moritzplatz",
+                "stops": 5,
+                "frequency": "every 10 min (holiday timetable)"
+              },
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "3 min",
+                "from": "U Moritzplatz",
+                "to": "Max und Moritz (Oranienstraße 162)",
+                "distanceM": 250
               }
-            ]
+            ],
+            "ticket": {
+              "en": "Berlin AB ticket. BVG app, DB Navigator, or a station machine. Stamp a paper ticket.",
+              "zh": "柏林 AB 票。BVG、DB Navigator 或站内机器。纸票要盖章。"
+            }
           }
         },
         {
@@ -840,8 +1131,11 @@
           },
           "lat": 52.502619,
           "lng": 13.414004,
-          "arrive": "7:00 PM",
-          "leave": "~9:00 PM",
+          "arrive": {
+            "en": "6:00 PM (doors open 6)",
+            "zh": "18:00（doors open 6）"
+          },
+          "leave": "~8:00 PM",
           "website": "https://maxundmoritzberlin.de/",
           "hours": {
             "en": "Official site: daily from 18:00; closed only Dec 24 & 31",
@@ -884,12 +1178,68 @@
           "transit": {
             "segments": [
               {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "3 min",
+                "from": "Max und Moritz",
+                "to": "U Moritzplatz",
+                "distanceM": 250
+              },
+              {
+                "mode": "metro",
+                "label": {
+                  "en": "Metro",
+                  "zh": "地铁"
+                },
+                "duration": "2 min",
+                "line": "U8",
+                "direction": "Wittenau",
+                "from": "U Moritzplatz",
+                "to": "Jannowitzbrücke",
+                "stops": 2,
+                "frequency": "every 10 min"
+              },
+              {
+                "mode": "train",
+                "label": {
+                  "en": "Train",
+                  "zh": "火车"
+                },
+                "duration": "15 min",
+                "line": "S9 / S3 / S5",
+                "direction": "Spandau / Westkreuz",
+                "from": "Jannowitzbrücke",
+                "to": "Zoologischer Garten",
+                "stops": 7,
+                "frequency": "every 5–10 min"
+              },
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "3 min",
+                "from": "Zoologischer Garten",
+                "to": "Waldorf",
+                "distanceM": 180
+              }
+            ],
+            "ticket": {
+              "en": "Berlin AB ticket. BVG app, DB Navigator, or a station machine. Stamp a paper ticket.",
+              "zh": "柏林 AB 票。BVG、DB Navigator 或站内机器。纸票要盖章。"
+            },
+            "alternative": [
+              {
                 "mode": "taxi",
                 "label": {
                   "en": "Taxi",
                   "zh": "出租车"
                 },
-                "duration": "15 min"
+                "duration": "15–20 min"
               }
             ]
           }
@@ -903,13 +1253,23 @@
           },
           "lat": 52.505584,
           "lng": 13.332911,
-          "arrive": "~9:00 PM",
+          "arrive": "~8:30 PM",
           "leave": null,
           "website": "https://www.hilton.com/en/hotels/berwawa-waldorf-astoria-berlin/",
           "notes": {
             "en": "Back to hotel",
             "zh": "回酒店"
           }
+        }
+      ],
+      "notes": [
+        {
+          "en": "Order changed in v2: Reichstag dome moved from 5 PM to 2:15 PM so the day runs Museum Island → Reichstag → Topography → Checkpoint Charlie → Kreuzberg without backtracking.",
+          "zh": "顺序改了：国会大厦穹顶从下午 5 点改到 2:15。这一天是博物馆岛、国会大厦、恐怖地形图、查理检查哨，再到克罗伊茨贝格。"
+        },
+        {
+          "en": "Topography of Terror and Reichstag dome are open Dec 25 (dome closed only Dec 24 and from 4 PM Dec 31).",
+          "zh": "恐怖地形图和国会大厦穹顶 12 月 25 日开。穹顶只在 12 月 24 日全天关，以及 12 月 31 日 16:00 起关。"
         }
       ]
     },
@@ -940,12 +1300,43 @@
           "transit": {
             "segments": [
               {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "3 min",
+                "from": "Waldorf",
+                "to": "Zoologischer Garten",
+                "distanceM": 250
+              },
+              {
                 "mode": "train",
                 "label": {
                   "en": "Train",
                   "zh": "火车"
                 },
-                "duration": "30–35 min"
+                "duration": "9 min",
+                "line": "S5 / S3 / S7",
+                "direction": "Strausberg / Erkner / Ahrensfelde",
+                "from": "Zoologischer Garten",
+                "to": "Friedrichstraße",
+                "stops": 4,
+                "frequency": "S3/S5/S7/S9 combined every ~3–5 min (each line every 10–20 min); Sunday timetable on Dec 26"
+              },
+              {
+                "mode": "train",
+                "label": {
+                  "en": "Train",
+                  "zh": "火车"
+                },
+                "duration": "3 min",
+                "line": "S1 / S2 / S25",
+                "direction": "Oranienburg / Bernau / Hennigsdorf",
+                "from": "Friedrichstraße",
+                "to": "Nordbahnhof",
+                "stops": 2,
+                "frequency": "every 3–5 min combined"
               },
               {
                 "mode": "walk",
@@ -953,7 +1344,24 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "3 min"
+                "duration": "11 min",
+                "from": "S Nordbahnhof",
+                "to": "Documentation Center, Bernauer Str. 111 (walks along the open-air memorial)",
+                "distanceM": 850
+              }
+            ],
+            "ticket": {
+              "en": "Berlin AB ticket. BVG app, DB Navigator, or a station machine. Stamp a paper ticket.",
+              "zh": "柏林 AB 票。BVG、DB Navigator 或站内机器。纸票要盖章。"
+            },
+            "alternative": [
+              {
+                "mode": "taxi",
+                "label": {
+                  "en": "Taxi",
+                  "zh": "出租车"
+                },
+                "duration": "15 min"
               }
             ]
           }
@@ -967,7 +1375,7 @@
           },
           "lat": 52.537513,
           "lng": 13.394675,
-          "arrive": "10:00 AM",
+          "arrive": "~9:55 AM",
           "leave": "11:30 AM",
           "website": "https://www.berliner-mauer-gedenkstaette.de/en/",
           "nativeName": "Gedenkstätte Berliner Mauer",
@@ -996,12 +1404,29 @@
           "transit": {
             "segments": [
               {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "11 min",
+                "from": "Documentation Center",
+                "to": "S Nordbahnhof",
+                "distanceM": 850
+              },
+              {
                 "mode": "train",
                 "label": {
                   "en": "Train",
                   "zh": "火车"
                 },
-                "duration": null
+                "duration": "4 min",
+                "line": "S2 / S1 / S25",
+                "direction": "Lichtenrade / Wannsee / Teltow Stadt",
+                "from": "Nordbahnhof",
+                "to": "Friedrichstraße",
+                "stops": 2,
+                "frequency": "every 3–5 min combined"
               },
               {
                 "mode": "metro",
@@ -1009,9 +1434,30 @@
                   "en": "Metro",
                   "zh": "地铁"
                 },
-                "duration": null
+                "duration": "6 min",
+                "line": "U6",
+                "direction": "Alt-Mariendorf",
+                "from": "Friedrichstraße",
+                "to": "Mehringdamm",
+                "stops": 5,
+                "frequency": "every 5–10 min"
+              },
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "1 min",
+                "from": "U Mehringdamm",
+                "to": "Curry 36",
+                "distanceM": 100
               }
-            ]
+            ],
+            "ticket": {
+              "en": "Berlin AB ticket. BVG app, DB Navigator, or a station machine. Stamp a paper ticket.",
+              "zh": "柏林 AB 票。BVG、DB Navigator 或站内机器。纸票要盖章。"
+            }
           }
         },
         {
@@ -1024,7 +1470,7 @@
           "lat": 52.493492,
           "lng": 13.387687,
           "arrive": "12:00 PM",
-          "leave": "12:55 PM",
+          "leave": "12:50 PM",
           "website": "https://curry36.de/mehringdamm/",
           "nativeName": "Curry 36 Mehringdamm",
           "hours": {
@@ -1063,7 +1509,27 @@
                   "en": "Metro",
                   "zh": "地铁"
                 },
-                "duration": "20 min"
+                "duration": "7 min",
+                "line": "U6",
+                "direction": "Kurt-Schumacher-Platz",
+                "from": "Mehringdamm",
+                "to": "Friedrichstraße",
+                "stops": 5,
+                "frequency": "every 5–10 min"
+              },
+              {
+                "mode": "train",
+                "label": {
+                  "en": "Train",
+                  "zh": "火车"
+                },
+                "duration": "10 min",
+                "line": "S5 / S7 / S9",
+                "direction": "Strausberg / Ahrensfelde / Flughafen BER",
+                "from": "Friedrichstraße",
+                "to": "Warschauer Straße",
+                "stops": 5,
+                "frequency": "S3/S5/S7/S9 combined every ~3–5 min (each line every 10–20 min)"
               },
               {
                 "mode": "walk",
@@ -1071,9 +1537,16 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "10 min"
+                "duration": "5 min",
+                "from": "S Warschauer Straße",
+                "to": "East Side Gallery south end (Oberbaumbrücke)",
+                "distanceM": 400
               }
-            ]
+            ],
+            "ticket": {
+              "en": "Berlin AB ticket. BVG app, DB Navigator, or a station machine. Stamp a paper ticket.",
+              "zh": "柏林 AB 票。BVG、DB Navigator 或站内机器。纸票要盖章。"
+            }
           }
         },
         {
@@ -1086,15 +1559,15 @@
           "lat": 52.504454,
           "lng": 13.440839,
           "arrive": "1:30 PM",
-          "leave": null,
+          "leave": "2:40 PM",
           "website": "https://www.stiftung-berliner-mauer.de/en/east-side-gallery",
           "hours": {
             "en": "Open-air 24h",
             "zh": "露天，全天"
           },
           "notes": {
-            "en": "East Side Gallery (1 h)",
-            "zh": "东边画廊（1 小时）"
+            "en": "East Side Gallery – walk the 1.3 km wall north-west from Oberbaumbrücke to Ostbahnhof (1 h)",
+            "zh": "东边画廊：从 Oberbaumbrücke 沿墙往西北走到 Ostbahnhof，1.3 公里（1 小时）"
           },
           "mustSee": [
             {
@@ -1112,7 +1585,10 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": null
+                "duration": "4 min",
+                "from": "East Side Gallery north end",
+                "to": "S Ostbahnhof",
+                "distanceM": 300
               },
               {
                 "mode": "train",
@@ -1120,9 +1596,30 @@
                   "en": "Train",
                   "zh": "火车"
                 },
-                "duration": null
+                "duration": "4 min",
+                "line": "S7 / S3 / S5",
+                "direction": "Potsdam / Spandau / Westkreuz",
+                "from": "Ostbahnhof",
+                "to": "Alexanderplatz",
+                "stops": 2,
+                "frequency": "S3/S5/S7/S9 combined every ~3–5 min (each line every 10–20 min)"
+              },
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "5 min",
+                "from": "S+U Alexanderplatz",
+                "to": "TV Tower entrance",
+                "distanceM": 400
               }
-            ]
+            ],
+            "ticket": {
+              "en": "Berlin AB ticket. BVG app, DB Navigator, or a station machine. Stamp a paper ticket.",
+              "zh": "柏林 AB 票。BVG、DB Navigator 或站内机器。纸票要盖章。"
+            }
           }
         },
         {
@@ -1135,7 +1632,7 @@
           "lat": 52.520828,
           "lng": 13.409421,
           "arrive": "3:15 PM",
-          "leave": null,
+          "leave": "4:15 PM",
           "website": "https://tv-turm.de/en/",
           "nativeName": "Berliner Fernsehturm",
           "hours": {
@@ -1162,7 +1659,8 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "9 min"
+                "duration": "8 min",
+                "distanceM": 660
               }
             ]
           }
@@ -1176,10 +1674,14 @@
           },
           "lat": 52.51944,
           "lng": 13.402238,
-          "arrive": "4:30 PM",
-          "leave": null,
+          "arrive": "4:25 PM",
+          "leave": "5:25 PM",
           "website": "https://www.ddr-museum.de/en",
           "optional": true,
+          "hours": {
+            "en": "Dec 26 9 AM–9 PM",
+            "zh": "12 月 26 日 9:00–21:00"
+          },
           "notes": {
             "en": "DDR Museum (optional, 1 h)",
             "zh": "东德博物馆（可选，1 小时）"
@@ -1192,7 +1694,9 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "16 min"
+                "duration": "17 min",
+                "distanceM": 1330,
+                "note": "Schlossbrücke → Unter den Linden → Bebelplatz; free time for the lit boulevard before dinner"
               }
             ]
           }
@@ -1260,6 +1764,46 @@
           "transit": {
             "segments": [
               {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "4 min",
+                "from": "Lutter & Wegner",
+                "to": "U Stadtmitte",
+                "distanceM": 300
+              },
+              {
+                "mode": "metro",
+                "label": {
+                  "en": "Metro",
+                  "zh": "地铁"
+                },
+                "duration": "14 min",
+                "line": "U2",
+                "direction": "Ruhleben",
+                "from": "U Stadtmitte",
+                "to": "Zoologischer Garten",
+                "stops": 8,
+                "frequency": "every 5–10 min"
+              },
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "3 min",
+                "distanceM": 180
+              }
+            ],
+            "ticket": {
+              "en": "Berlin AB ticket. BVG app, DB Navigator, or a station machine. Stamp a paper ticket.",
+              "zh": "柏林 AB 票。BVG、DB Navigator 或站内机器。纸票要盖章。"
+            },
+            "alternative": [
+              {
                 "mode": "taxi",
                 "label": {
                   "en": "Taxi",
@@ -1289,5 +1833,9 @@
         }
       ]
     }
-  ]
+  ],
+  "gettingAround": {
+    "en": "Berlin AB covers the city. BER airport is zone C, so Dec 24 and Dec 27 need an ABC ticket. A single ticket lasts 2 hours in one direction. Buy it in the BVG app, DB Navigator, or a station machine, and stamp a paper ticket. Dec 24 follows the Saturday timetable; Dec 25–26 follow Sunday. The U-Bahn, except U4, runs all night from Dec 23/24 through Dec 27/28.",
+    "zh": "柏林市区用 AB 票。机场在 C 区，12 月 24 日和 27 日要买 ABC。单程票 2 小时内、一个方向有效。在 BVG、DB Navigator 或站内机器买，纸票要盖章。24 日按周六时刻表，25 日至 26 日按周日。除 U4 外，地铁从 23/24 日通宵到 27/28 日。"
+  }
 }

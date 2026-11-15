@@ -1,6 +1,6 @@
 {
   "id": "brussels",
-  "version": "v1",
+  "version": "v2",
   "draft": true,
   "country": {
     "en": "Belgium",
@@ -36,7 +36,7 @@
           "lat": 50.845819,
           "lng": 4.355727,
           "arrive": null,
-          "leave": null,
+          "leave": "8:55 AM",
           "website": "https://www.hilton.com/en/hotels/brugrhi-hilton-brussels-grand-place/",
           "hours": {
             "en": "Weekdays 7–10 AM",
@@ -70,7 +70,8 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "5 min"
+                "duration": "4 min",
+                "distanceM": 340
               }
             ]
           }
@@ -93,8 +94,8 @@
             "zh": "户外"
           },
           "notes": {
-            "en": "Grand-Place, Manneken Pis, Jeanneke Pis",
-            "zh": "大广场、尿尿小童、Jeanneke Pis"
+            "en": "Grand-Place, then Manneken Pis (4 min) and back up Rue Charles Buls",
+            "zh": "大广场，再去尿尿小童（4 分钟），从 Rue Charles Buls 走回来"
           },
           "mustSee": [
             {
@@ -110,7 +111,7 @@
               }
             },
             {
-              "name": "Jeanneke Pis"
+              "name": "Jeanneke Pis (after lunch – 1 min from Aux Armes)"
             }
           ],
           "transit": {
@@ -121,7 +122,8 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "3 min"
+                "duration": "3 min",
+                "distanceM": 210
               }
             ]
           }
@@ -179,7 +181,8 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "5 min"
+                "duration": "5 min",
+                "distanceM": 360
               }
             ]
           }
@@ -230,7 +233,8 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "0–2 min"
+                "duration": "1 min",
+                "distanceM": 50
               }
             ]
           }
@@ -282,7 +286,8 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "6 min"
+                "duration": "6 min",
+                "distanceM": 460
               }
             ]
           }
@@ -301,8 +306,8 @@
           "website": "https://cathedralisbruxellensis.be/",
           "nativeName": "Cathédrale des Saints-Michel-et-Gudule",
           "hours": {
-            "en": "Mon–Fri 8 AM–6 PM (no visits during 12:30 Mass); free, treasury",
-            "zh": "周一到周五 8:00–18:00（12:30 弥撒期间不参观）。免费，珍宝馆另说"
+            "en": "Mon–Fri 8 AM–6 PM (no visits during 12:30 Mass); free; treasury paid",
+            "zh": "周一到周五 8:00–18:00（12:30 弥撒时不参观）。教堂免费，珍宝馆要门票"
           },
           "notes": {
             "en": "Cathedral (20 min)",
@@ -316,10 +321,7 @@
               }
             },
             {
-              "text": {
-                "en": "Treasury",
-                "zh": "珍宝馆"
-              }
+              "name": "Treasury (paid)"
             }
           ],
           "transit": {
@@ -330,7 +332,8 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "7 min"
+                "duration": "7 min",
+                "distanceM": 540
               }
             ]
           }
@@ -378,7 +381,8 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "9 min"
+                "duration": "9 min",
+                "distanceM": 720
               }
             ]
           }
@@ -400,8 +404,8 @@
             "zh": "官网：周二到周日 12:00–22:30。跨年夜还没公布"
           },
           "notes": {
-            "en": "Lunch",
-            "zh": "午饭"
+            "en": "Lunch (Jeanneke Pis is 1 min away, see it on the way out)",
+            "zh": "午饭（尿尿小妹走 1 分钟，出来顺路看一眼）"
           },
           "mustOrder": [
             {
@@ -445,55 +449,9 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "13 min"
-              }
-            ]
-          }
-        },
-        {
-          "type": "sight",
-          "status": "tentative",
-          "name": {
-            "en": "Royal Museums of Fine Arts of Belgium (+ Magritte)",
-            "zh": "比利时皇家美术馆"
-          },
-          "lat": 50.84168,
-          "lng": 4.358238,
-          "arrive": "1:30 PM",
-          "leave": "3:00 PM",
-          "website": "https://fine-arts-museum.be/en",
-          "nativeName": "Musées royaux des Beaux-Arts de Belgique (+ Musée Magritte)",
-          "hours": {
-            "en": "Dec 31 closes 3 PM",
-            "zh": "12月31日 15:00 关门"
-          },
-          "notes": {
-            "en": "Royal Museums of Fine Arts (+ Magritte), 1.5 h",
-            "zh": "皇家美术馆（含马格利特），1.5 小时"
-          },
-          "mustSee": [
-            {
-              "name": "Bruegel"
-            },
-            {
-              "name": "Rubens"
-            },
-            {
-              "text": {
-                "en": "Magritte Museum",
-                "zh": "马格利特美术馆"
-              }
-            }
-          ],
-          "transit": {
-            "segments": [
-              {
-                "mode": "walk",
-                "label": {
-                  "en": "Walk",
-                  "zh": "步行"
-                },
-                "duration": "6 min"
+                "duration": "8 min",
+                "distanceM": 630,
+                "note": "via Gare Centrale and the Mont des Arts garden steps"
               }
             ]
           }
@@ -507,8 +465,8 @@
           },
           "lat": 50.843863,
           "lng": 4.356766,
-          "arrive": "3:00 PM",
-          "leave": null,
+          "arrive": "1:25 PM",
+          "leave": "1:35 PM",
           "website": null,
           "nativeName": "Mont des Arts / Kunstberg",
           "hours": {
@@ -541,7 +499,57 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "8 min"
+                "duration": "5 min",
+                "distanceM": 390
+              }
+            ]
+          }
+        },
+        {
+          "type": "sight",
+          "status": "tentative",
+          "name": {
+            "en": "Royal Museums of Fine Arts of Belgium (+ Magritte)",
+            "zh": "比利时皇家美术馆"
+          },
+          "lat": 50.84168,
+          "lng": 4.358238,
+          "arrive": "1:40 PM",
+          "leave": "3:00 PM",
+          "website": "https://fine-arts-museum.be/en",
+          "nativeName": "Musées royaux des Beaux-Arts de Belgique (+ Musée Magritte)",
+          "hours": {
+            "en": "Dec 31 closes 3 PM",
+            "zh": "12月31日 15:00 关门"
+          },
+          "notes": {
+            "en": "Royal Museums of Fine Arts (+ Magritte), 1 h 20 – closes 3 PM today",
+            "zh": "皇家美术馆（含马格利特），1 小时 20 分。今天 15:00 关门"
+          },
+          "mustSee": [
+            {
+              "name": "Bruegel"
+            },
+            {
+              "name": "Rubens"
+            },
+            {
+              "text": {
+                "en": "Magritte Museum",
+                "zh": "马格利特美术馆"
+              }
+            }
+          ],
+          "transit": {
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "3 min",
+                "distanceM": 230
               }
             ]
           }
@@ -555,8 +563,8 @@
           },
           "lat": 50.840333,
           "lng": 4.356199,
-          "arrive": "3:25 PM",
-          "leave": null,
+          "arrive": "3:05 PM",
+          "leave": "3:45 PM",
           "website": null,
           "nativeName": "Église Notre-Dame du Sablon & Place du Grand Sablon",
           "hours": {
@@ -599,7 +607,8 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "9 min"
+                "duration": "9 min",
+                "distanceM": 700
               }
             ]
           }
@@ -613,8 +622,8 @@
           },
           "lat": 50.836658,
           "lng": 4.351605,
-          "arrive": "4:05 PM",
-          "leave": null,
+          "arrive": "3:55 PM",
+          "leave": "4:45 PM",
           "website": null,
           "nativeName": "Palais de Justice + ascenseur des Marolles",
           "hours": {
@@ -653,7 +662,12 @@
                   "en": "Lift",
                   "zh": "电梯"
                 },
-                "duration": null
+                "duration": "1 min",
+                "line": "Ascenseur des Marolles (free)",
+                "direction": "down",
+                "from": "Place Poelaert",
+                "to": "Place Breughel (Marolles)",
+                "frequency": "continuous"
               },
               {
                 "mode": "walk",
@@ -661,7 +675,21 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": null
+                "duration": "24 min",
+                "from": "Marolles",
+                "to": "Place Sainte-Catherine",
+                "distanceM": 2000,
+                "note": "Rue Haute / Rue Blaes → Boulevard Anspach → Sainte-Catherine"
+              }
+            ],
+            "alternative": [
+              {
+                "mode": "taxi",
+                "label": {
+                  "en": "Taxi",
+                  "zh": "出租车"
+                },
+                "duration": "10 min"
               }
             ]
           }
@@ -676,7 +704,7 @@
           "lat": 50.85073,
           "lng": 4.347695,
           "arrive": "5:10 PM",
-          "leave": null,
+          "leave": "5:45 PM",
           "website": "https://www.plaisirsdhiver.be/en",
           "nativeName": "Plaisirs d'Hiver – Place Sainte-Catherine",
           "hours": {
@@ -703,7 +731,8 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "13 min"
+                "duration": "11 min",
+                "distanceM": 900
               }
             ]
           }
@@ -717,7 +746,7 @@
           },
           "lat": 50.845819,
           "lng": 4.355727,
-          "arrive": "5:50 PM",
+          "arrive": "6:00 PM",
           "leave": "6:45 PM",
           "website": "https://www.hilton.com/en/hotels/brugrhi-hilton-brussels-grand-place/",
           "notes": {
@@ -732,7 +761,8 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "15 min"
+                "duration": "14 min",
+                "distanceM": 1090
               }
             ]
           }
@@ -747,7 +777,7 @@
           "lat": 50.848382,
           "lng": 4.343549,
           "arrive": "7:00 PM",
-          "leave": null,
+          "leave": "~9:30 PM",
           "website": "https://spinnekopke.be/fr/",
           "hours": {
             "en": "Official site Thu evening 18:00–21:30; NYE not published",
@@ -786,20 +816,51 @@
             {
               "name": "The Iris NYE package",
               "note": {
-                "en": "incl. dinner + fireworks view (see NYE plan)",
-                "zh": "含晚饭和看烟火（见跨年安排）"
+                "en": "Package incl. dinner + fireworks view (see NYE plan)",
+                "zh": "套餐含晚饭和看烟火（见跨年安排）"
               }
             }
           ],
           "transit": {
             "segments": [
               {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "8 min",
+                "from": "In 't Spinnekopke",
+                "to": "Sainte-Catherine metro",
+                "distanceM": 600
+              },
+              {
                 "mode": "metro",
                 "label": {
                   "en": "Metro",
                   "zh": "地铁"
                 },
-                "duration": "20–25 min"
+                "duration": "6 min",
+                "line": "1 / 5",
+                "direction": "Gare de l'Ouest / Erasme",
+                "from": "Sainte-Catherine",
+                "to": "Beekkant",
+                "stops": 3,
+                "frequency": "every 5–10 min (reinforced on NYE)"
+              },
+              {
+                "mode": "metro",
+                "label": {
+                  "en": "Metro",
+                  "zh": "地铁"
+                },
+                "duration": "15 min",
+                "line": "6",
+                "direction": "Roi Baudouin",
+                "from": "Beekkant",
+                "to": "Heysel (or Houba-Brugmann)",
+                "stops": 8,
+                "frequency": "reinforced to Heysel/Houba-Brugmann from 8 PM on NYE"
               },
               {
                 "mode": "walk",
@@ -807,9 +868,16 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "5 min"
+                "duration": "8 min",
+                "from": "Heysel",
+                "to": "Place de l'Atomium",
+                "distanceM": 600
               }
-            ]
+            ],
+            "ticket": {
+              "en": "Tap a contactless card. Transfers are free for 60 minutes.",
+              "zh": "刷银行卡。60 分钟内换乘不再扣费。"
+            }
           },
           "alternatives": [
             {
@@ -863,14 +931,60 @@
           "transit": {
             "segments": [
               {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "8 min",
+                "from": "Place de l'Atomium",
+                "to": "Houba-Brugmann (often less crowded) or Heysel",
+                "distanceM": 600
+              },
+              {
                 "mode": "metro",
                 "label": {
                   "en": "Metro",
                   "zh": "地铁"
                 },
-                "duration": null
+                "duration": "15 min",
+                "line": "6",
+                "direction": "Elisabeth (southbound)",
+                "from": "Heysel",
+                "to": "Beekkant",
+                "stops": 8,
+                "frequency": "every few min after midnight; last line-6 metro from Roi Baudouin ~2 AM (2025/26 pattern)"
+              },
+              {
+                "mode": "metro",
+                "label": {
+                  "en": "Metro",
+                  "zh": "地铁"
+                },
+                "duration": "9 min",
+                "line": "1 / 5",
+                "direction": "Stockel / Herrmann-Debroux",
+                "from": "Beekkant",
+                "to": "Gare Centrale",
+                "stops": 5,
+                "frequency": "connections held at Beekkant for the last metros"
+              },
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "2 min",
+                "from": "Gare Centrale",
+                "to": "Hilton Brussels Grand Place",
+                "distanceM": 200
               }
-            ]
+            ],
+            "ticket": {
+              "en": "Tap a contactless card. Transfers are free for 60 minutes.",
+              "zh": "刷银行卡。60 分钟内换乘不再扣费。"
+            }
           }
         },
         {
@@ -939,7 +1053,10 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "3 min"
+                "duration": "2 min",
+                "from": "Hilton",
+                "to": "Bruxelles-Central",
+                "distanceM": 180
               },
               {
                 "mode": "train",
@@ -947,9 +1064,19 @@
                   "en": "Train",
                   "zh": "火车"
                 },
-                "duration": "17–20 min"
+                "duration": "17–19 min",
+                "line": "SNCB IC (any train to Brussels Airport)",
+                "direction": "Brussels Airport-Zaventem / Liège-Guillemins",
+                "from": "Bruxelles-Central",
+                "to": "Brussels Airport-Zaventem",
+                "stops": 2,
+                "frequency": "Jan 1 = Sunday/holiday timetable; HAFAS shows 8:14, 8:18, 8:28"
               }
-            ]
+            ],
+            "ticket": {
+              "en": "SNCB train ticket. It does not cover the metro.",
+              "zh": "比利时国铁车票，不含地铁。"
+            }
           }
         },
         {
@@ -1008,5 +1135,9 @@
         }
       ]
     }
-  ]
+  ],
+  "gettingAround": {
+    "en": "On STIB metro, tram, and bus, tap a contactless card. Transfers are free for 60 minutes. On New Year's Eve the network is free from midnight, and metro 6 toward Heysel is reinforced from 8 PM. The airport train is a separate SNCB ticket and does not cover STIB. Bus 12 has its own airport fare.",
+    "zh": "布鲁塞尔地铁、电车、公交刷银行卡，60 分钟内换乘不再扣费。跨年夜从午夜起免费，6 号线从晚上 8 点加密开往 Heysel。机场火车是国铁的票，不含市内。12 路公交是单独的机场票。"
+  }
 }

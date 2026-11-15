@@ -1,6 +1,6 @@
 {
   "id": "bratislava",
-  "version": "v1",
+  "version": "v2",
   "draft": true,
   "country": {
     "en": "Slovakia",
@@ -54,14 +54,46 @@
           "transit": {
             "segments": [
               {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "3 min",
+                "from": "hotel (Wien Mitte)",
+                "to": "Wien Mitte-Landstraße (Invalidenstraße) tram stop",
+                "distanceM": 170
+              },
+              {
                 "mode": "tram",
                 "label": {
                   "en": "Tram",
                   "zh": "电车"
                 },
-                "duration": "15–20 min"
+                "duration": "10 min",
+                "line": "O",
+                "direction": "Raxstraße",
+                "from": "Wien Mitte-Landstraße",
+                "to": "Quartier Belvedere",
+                "stops": 6,
+                "frequency": "every 4–6 min"
+              },
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "8 min",
+                "from": "Quartier Belvedere",
+                "to": "Upper Belvedere (south garden entrance)",
+                "distanceM": 490
               }
-            ]
+            ],
+            "ticket": {
+              "en": "Vienna core-zone ticket: single ride (80 min) or 24 Stunden WIEN, in the WienMobil app.",
+              "zh": "维也纳市区票：单程 80 分钟，或 24 小时票。用 WienMobil。"
+            }
           }
         },
         {
@@ -101,7 +133,26 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "14 min"
+                "duration": "13 min",
+                "from": "Upper Belvedere",
+                "to": "Wien Hauptbahnhof (ÖBB ticket machines in the hall)",
+                "distanceM": 1030
+              }
+            ],
+            "alternative": [
+              {
+                "mode": "tram",
+                "label": {
+                  "en": "Tram",
+                  "zh": "电车"
+                },
+                "duration": "5 min",
+                "line": "D",
+                "direction": "Absberggasse",
+                "from": "Schloss Belvedere",
+                "to": "Hauptbahnhof Ost",
+                "stops": 2,
+                "frequency": "every 5–8 min"
               }
             ]
           }
@@ -131,9 +182,19 @@
                   "en": "Train",
                   "zh": "火车"
                 },
-                "duration": "56 min"
+                "duration": "56 min",
+                "line": "REX 8",
+                "direction": "Bratislava hl.st.",
+                "from": "Wien Hauptbahnhof",
+                "to": "Bratislava hlavná stanica",
+                "stops": 8,
+                "frequency": "hourly at :14 (other hourly REX runs to Bratislava-Petržalka)"
               }
-            ]
+            ],
+            "ticket": {
+              "en": "ÖBB Bratislava-Ticket: the return train, plus city trams and buses that day.",
+              "zh": "ÖBB Bratislava-Ticket：当天往返火车，以及市内电车和公交。"
+            }
           }
         },
         {
@@ -161,7 +222,50 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "21 min"
+                "duration": "2 min",
+                "from": "station hall",
+                "to": "Hlavná stanica tram loop (platform A/B)",
+                "distanceM": 150
+              },
+              {
+                "mode": "tram",
+                "label": {
+                  "en": "Tram",
+                  "zh": "电车"
+                },
+                "duration": "8 min",
+                "line": "1",
+                "direction": "Námestie Ľudovíta Štúra",
+                "from": "Hlavná stanica",
+                "to": "Poštová",
+                "stops": 5,
+                "frequency": "every ~10 min"
+              },
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "2 min",
+                "from": "Poštová",
+                "to": "Slovak Pub (Obchodná 62)",
+                "distanceM": 150
+              }
+            ],
+            "ticket": {
+              "en": "ÖBB Bratislava-Ticket: the return train, plus city trams and buses that day.",
+              "zh": "ÖBB Bratislava-Ticket：当天往返火车，以及市内电车和公交。"
+            },
+            "alternative": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "19 min",
+                "distanceM": 1540
               }
             ]
           }
@@ -175,7 +279,7 @@
           },
           "lat": 48.148335,
           "lng": 17.11241,
-          "arrive": "11:40 AM",
+          "arrive": "11:25 AM",
           "leave": null,
           "website": "https://www.slovakpub.sk/",
           "hours": {
@@ -224,7 +328,21 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "8 min"
+                "duration": "7 min",
+                "from": "Slovak Pub",
+                "to": "Michalská brána",
+                "distanceM": 580
+              },
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "4 min",
+                "from": "Michalská brána",
+                "to": "Hlavné námestie",
+                "distanceM": 310
               }
             ]
           }
@@ -269,7 +387,8 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "4 min"
+                "duration": "1 min",
+                "distanceM": 80
               }
             ]
           }
@@ -311,7 +430,8 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "7 min"
+                "duration": "6 min",
+                "distanceM": 450
               }
             ]
           }
@@ -353,7 +473,9 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "12 min"
+                "duration": "9 min",
+                "distanceM": 670,
+                "note": "steps up Zámocké schody"
               }
             ]
           }
@@ -395,7 +517,9 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "12–15 min"
+                "duration": "16 min",
+                "distanceM": 1240,
+                "note": "down to the Danube, across Most SNP footway"
               }
             ]
           }
@@ -437,7 +561,9 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "7 min"
+                "duration": "13 min",
+                "distanceM": 1040,
+                "note": "back across Most SNP into the Old Town"
               }
             ]
           }
@@ -459,8 +585,8 @@
             "zh": "官网：周一、周二 9:00–21:00，每人有最低消费"
           },
           "notes": {
-            "en": "Coffee + Bratislavský rožok (30 min)",
-            "zh": "咖啡配 Bratislavský rožok（30 分钟）"
+            "en": "Coffee + Bratislavský rožok (30 min); Main Square market lights are 1 min away after dark",
+            "zh": "咖啡配 Bratislavský rožok（30 分钟）。天黑后，主广场的灯走 1 分钟就到"
           },
           "mustOrder": [
             {
@@ -478,7 +604,8 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "13 min"
+                "duration": "12 min",
+                "distanceM": 940
               }
             ]
           }
@@ -517,7 +644,38 @@
                   "en": "Taxi",
                   "zh": "出租车"
                 },
-                "duration": "10 min"
+                "duration": "8–10 min"
+              }
+            ],
+            "ticket": {
+              "en": "Taxi. Pay in the app or by card.",
+              "zh": "出租车，用 App 或刷卡。"
+            },
+            "alternative": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "6 min",
+                "from": "Kormuth",
+                "to": "Hodžovo námestie (Štefánikova)",
+                "distanceM": 450
+              },
+              {
+                "mode": "bus",
+                "label": {
+                  "en": "Bus",
+                  "zh": "公交"
+                },
+                "duration": "4 min",
+                "line": "93",
+                "direction": "Hlavná stanica",
+                "from": "Hodžovo námestie",
+                "to": "Hlavná stanica",
+                "stops": 2,
+                "frequency": "every ~7 min"
               }
             ]
           }
@@ -547,9 +705,19 @@
                   "en": "Train",
                   "zh": "火车"
                 },
-                "duration": "56 min"
+                "duration": "56 min",
+                "line": "REX 8",
+                "direction": "Wien Hbf",
+                "from": "Bratislava hlavná stanica",
+                "to": "Wien Hauptbahnhof",
+                "stops": 8,
+                "frequency": "hourly at :50"
               }
-            ]
+            ],
+            "ticket": {
+              "en": "ÖBB Bratislava-Ticket: the return train, plus city trams and buses that day.",
+              "zh": "ÖBB Bratislava-Ticket：当天往返火车，以及市内电车和公交。"
+            }
           }
         },
         {
@@ -571,6 +739,76 @@
           },
           "transit": {
             "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "8 min",
+                "from": "ÖBB platforms",
+                "to": "U1 Wien Hbf",
+                "distanceM": 500
+              },
+              {
+                "mode": "metro",
+                "label": {
+                  "en": "Metro",
+                  "zh": "地铁"
+                },
+                "duration": "6 min",
+                "line": "U1",
+                "direction": "Leopoldau",
+                "from": "Wien Hauptbahnhof",
+                "to": "Schwedenplatz",
+                "stops": 4,
+                "frequency": "every 4–5 min"
+              },
+              {
+                "mode": "metro",
+                "label": {
+                  "en": "Metro",
+                  "zh": "地铁"
+                },
+                "duration": "8 min",
+                "line": "U4",
+                "direction": "Heiligenstadt",
+                "from": "Schwedenplatz",
+                "to": "Heiligenstadt",
+                "stops": 5,
+                "frequency": "every 5 min"
+              },
+              {
+                "mode": "bus",
+                "label": {
+                  "en": "Bus",
+                  "zh": "公交"
+                },
+                "duration": "4 min",
+                "line": "38A",
+                "direction": "Wagenwiese / Kahlenberg",
+                "from": "Heiligenstadt Bahnhof (Boschstraße, Vorplatz Mitte)",
+                "to": "Fernsprechamt Heiligenstadt",
+                "stops": 4,
+                "frequency": "every 10 min"
+              },
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "4 min",
+                "from": "Fernsprechamt Heiligenstadt",
+                "to": "Mayer am Pfarrplatz",
+                "distanceM": 240
+              }
+            ],
+            "ticket": {
+              "en": "Vienna core-zone ticket: single ride (80 min) or 24 Stunden WIEN, in the WienMobil app.",
+              "zh": "维也纳市区票：单程 80 分钟，或 24 小时票。用 WienMobil。"
+            },
+            "alternative": [
               {
                 "mode": "taxi",
                 "label": {
@@ -629,7 +867,71 @@
             {
               "name": "Meissl & Schadn"
             }
-          ]
+          ],
+          "transit": {
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "4 min",
+                "distanceM": 240
+              },
+              {
+                "mode": "bus",
+                "label": {
+                  "en": "Bus",
+                  "zh": "公交"
+                },
+                "duration": "4 min",
+                "line": "38A",
+                "direction": "Heiligenstadt Bf",
+                "from": "Fernsprechamt Heiligenstadt",
+                "to": "Heiligenstadt Bahnhof",
+                "stops": 2,
+                "frequency": "every 10–15 min late evening"
+              },
+              {
+                "mode": "metro",
+                "label": {
+                  "en": "Metro",
+                  "zh": "地铁"
+                },
+                "duration": "10 min",
+                "line": "U4",
+                "direction": "Hütteldorf",
+                "from": "Heiligenstadt",
+                "to": "Wien Mitte-Landstraße",
+                "stops": 6,
+                "frequency": "every 5–8 min"
+              },
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "4 min",
+                "distanceM": 190
+              }
+            ],
+            "ticket": {
+              "en": "Vienna core-zone ticket: single ride (80 min) or 24 Stunden WIEN, in the WienMobil app.",
+              "zh": "维也纳市区票：单程 80 分钟，或 24 小时票。用 WienMobil。"
+            },
+            "alternative": [
+              {
+                "mode": "taxi",
+                "label": {
+                  "en": "Taxi",
+                  "zh": "出租车"
+                },
+                "duration": "20 min"
+              }
+            ]
+          }
         }
       ],
       "notes": [
@@ -647,5 +949,9 @@
   "subtitle": {
     "en": "day trip from Vienna",
     "zh": "从维也纳出发的一日游"
+  },
+  "gettingAround": {
+    "en": "The ÖBB Bratislava-Ticket covers the return train between Wien Hbf and Bratislava and, on the first day, DPB trams and buses. Buy it at a Wien Hbf machine or in the ÖBB app. Without it, tap a contactless card on the DPB validators.",
+    "zh": "ÖBB Bratislava-Ticket 含 Wien Hbf 和布拉迪斯拉发之间的往返火车，以及第一天的市内电车和公交。在 Wien Hbf 的机器或 ÖBB App 买。没有这张票，就在 DPB 的刷卡机上贴银行卡。"
   }
 }

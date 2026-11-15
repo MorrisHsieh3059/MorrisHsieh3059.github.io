@@ -1,6 +1,6 @@
 {
   "id": "vienna",
-  "version": "v1",
+  "version": "v2",
   "draft": true,
   "country": {
     "en": "Austria",
@@ -45,12 +45,30 @@
           "transit": {
             "segments": [
               {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "3 min",
+                "from": "Waldorf",
+                "to": "Zoologischer Garten",
+                "distanceM": 250
+              },
+              {
                 "mode": "train",
                 "label": {
                   "en": "Train",
                   "zh": "火车"
                 },
-                "duration": null
+                "duration": "1–2 min",
+                "line": "S9 / S7 / S5 / S3",
+                "direction": "Flughafen BER / Ahrensfelde / Strausberg / Erkner",
+                "from": "Zoologischer Garten",
+                "to": "Tiergarten",
+                "stops": 1,
+                "frequency": "every 2–5 min combined (Sunday)",
+                "note": "buy the 24-hour ABC ticket now – it also covers the trip to BER"
               },
               {
                 "mode": "walk",
@@ -58,7 +76,26 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "4 min"
+                "duration": "7 min",
+                "from": "S Tiergarten",
+                "to": "IREC, Händelallee 20",
+                "distanceM": 540
+              }
+            ],
+            "ticket": {
+              "en": "Berlin ABC ticket. The airport is zone C. BVG app, DB Navigator, or a station machine.",
+              "zh": "柏林 ABC 票，机场在 C 区。BVG、DB Navigator 或站内机器。"
+            },
+            "alternative": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "21 min",
+                "distanceM": 1700,
+                "note": "walk through the Tiergarten"
               }
             ]
           }
@@ -95,12 +132,53 @@
           "transit": {
             "segments": [
               {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "7 min",
+                "from": "IREC",
+                "to": "S Tiergarten",
+                "distanceM": 540
+              },
+              {
                 "mode": "train",
                 "label": {
                   "en": "Train",
                   "zh": "火车"
                 },
-                "duration": "10 min"
+                "duration": "1–2 min",
+                "line": "S5 / S7 / S3",
+                "direction": "Westkreuz / Potsdam / Spandau",
+                "from": "Tiergarten",
+                "to": "Zoologischer Garten",
+                "stops": 1,
+                "frequency": "every 2–5 min combined"
+              },
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "2 min",
+                "distanceM": 150
+              }
+            ],
+            "ticket": {
+              "en": "Berlin ABC ticket. The airport is zone C. BVG app, DB Navigator, or a station machine.",
+              "zh": "柏林 ABC 票，机场在 C 区。BVG、DB Navigator 或站内机器。"
+            },
+            "alternative": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "18 min",
+                "distanceM": 1500
               }
             ]
           }
@@ -115,7 +193,7 @@
           "lat": 52.506552,
           "lng": 13.332461,
           "arrive": "12:00 PM",
-          "leave": null,
+          "leave": "12:30 PM",
           "website": "https://curry36.de/",
           "nativeName": "Curry 36 Bahnhof Zoo",
           "hours": {
@@ -169,7 +247,8 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "5 min"
+                "duration": "5 min",
+                "distanceM": 410
               }
             ]
           }
@@ -183,21 +262,25 @@
           },
           "lat": 52.504787,
           "lng": 13.335194,
-          "arrive": "1:00 PM",
+          "arrive": "12:40 PM",
           "leave": "2:30 PM",
           "website": "https://www.gedaechtniskirche-berlin.de/",
           "nativeName": "Kaiser-Wilhelm-Gedächtniskirche",
           "optional": true,
+          "hours": {
+            "en": "Church daily 10 AM–6 PM (no visits during the 10 AM/6 PM services) · market Dec 27 12–9 PM · KaDeWe CLOSED (Sunday)",
+            "zh": "教堂每天 10:00–18:00（10:00 和 18:00 礼拜时不参观）· 市集 12 月 27 日 12:00–21:00 · KaDeWe 周日关门"
+          },
           "notes": {
-            "en": "Free time near the hotel (optional)",
-            "zh": "酒店附近自己转转（可选）"
+            "en": "Kaiser-Wilhelm-Gedächtniskirche + Breitscheidplatz Christmas market (free time)",
+            "zh": "威廉皇帝纪念教堂，加上 Breitscheidplatz 圣诞市集（自由活动）"
           },
           "mustSee": [
             {
-              "name": "Kaiser-Wilhelm-Gedächtniskirche"
+              "name": "Kaiser-Wilhelm-Gedächtniskirche (ruined tower + blue-glass church)"
             },
             {
-              "name": "KaDeWe"
+              "name": "Weihnachtsmarkt an der Gedächtniskirche (open Dec 27 12–9 PM)"
             }
           ],
           "transit": {
@@ -208,7 +291,8 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": null
+                "duration": "3 min",
+                "distanceM": 270
               }
             ]
           }
@@ -222,8 +306,8 @@
           },
           "lat": 52.505584,
           "lng": 13.332911,
-          "arrive": null,
-          "leave": "2:45 PM",
+          "arrive": "2:35 PM",
+          "leave": "2:50 PM",
           "website": "https://www.hilton.com/en/hotels/berwawa-waldorf-astoria-berlin/",
           "notes": {
             "en": "Collect bags",
@@ -232,12 +316,83 @@
           "transit": {
             "segments": [
               {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "3 min",
+                "from": "Waldorf",
+                "to": "Zoologischer Garten (U2 platform)",
+                "distanceM": 250
+              },
+              {
+                "mode": "metro",
+                "label": {
+                  "en": "Metro",
+                  "zh": "地铁"
+                },
+                "duration": "10 min",
+                "line": "U2",
+                "direction": "Pankow",
+                "from": "Zoologischer Garten",
+                "to": "Potsdamer Platz",
+                "stops": 6,
+                "frequency": "every 5–10 min"
+              },
+              {
+                "mode": "train",
+                "label": {
+                  "en": "Train",
+                  "zh": "火车"
+                },
+                "duration": "19–20 min",
+                "line": "FEX",
+                "direction": "Flughafen BER",
+                "from": "Potsdamer Platz (deep-level regional platforms)",
+                "to": "Flughafen BER",
+                "stops": 2,
+                "frequency": "every 15–30 min"
+              },
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "3 min",
+                "from": "BER station",
+                "to": "Terminal 1 check-in",
+                "distanceM": 200
+              }
+            ],
+            "ticket": {
+              "en": "Berlin ABC ticket. The airport is zone C. BVG app, DB Navigator, or a station machine.",
+              "zh": "柏林 ABC 票，机场在 C 区。BVG、DB Navigator 或站内机器。"
+            },
+            "alternative": [
+              {
                 "mode": "taxi",
                 "label": {
                   "en": "Taxi",
                   "zh": "出租车"
                 },
                 "duration": "40–50 min"
+              },
+              {
+                "mode": "train",
+                "label": {
+                  "en": "Train",
+                  "zh": "火车"
+                },
+                "duration": "55 min",
+                "line": "S9",
+                "direction": "Flughafen BER",
+                "from": "Zoologischer Garten",
+                "to": "Flughafen BER",
+                "stops": 20,
+                "frequency": "every 20 min",
+                "note": "no change, slower"
               }
             ]
           }
@@ -251,7 +406,7 @@
           },
           "lat": 52.3657974,
           "lng": 13.4888906,
-          "arrive": "3:45 PM",
+          "arrive": "3:35 PM",
           "leave": "5:05 PM",
           "website": "https://ber.berlin-airport.de/",
           "nativeName": "Flughafen Berlin Brandenburg Terminal 1",
@@ -320,15 +475,59 @@
                   "en": "Bus",
                   "zh": "公交"
                 },
-                "duration": "21 min"
+                "duration": "21–23 min",
+                "line": "CAT by bus",
+                "direction": "Wien Mitte",
+                "from": "Flughafen Wien bus terminal (Terminal 3, arrivals level)",
+                "to": "Wien Marxergasse (stop 1B, next to Wien Mitte)",
+                "stops": 1,
+                "frequency": "every 12 min 7 AM–7 PM, every 15 min otherwise",
+                "note": "the CAT train is replaced by buses until Oct 2027 (S-Bahn trunk-line closure)"
               },
               {
                 "mode": "walk",
                 "label": {
-                  "en": "Walk / Taxi",
-                  "zh": "步行 / 出租车"
+                  "en": "Walk",
+                  "zh": "步行"
                 },
-                "duration": "5–15 min"
+                "duration": "5 min",
+                "from": "Marxergasse 1B",
+                "to": "hotel near Wien Mitte (if Hilton Vienna Park: across the street)",
+                "distanceM": 300
+              }
+            ],
+            "ticket": {
+              "en": "CAT airport bus ticket.",
+              "zh": "CAT 机场大巴票。"
+            },
+            "alternative": [
+              {
+                "mode": "train",
+                "label": {
+                  "en": "Train",
+                  "zh": "火车"
+                },
+                "duration": "20 min",
+                "line": "REX 7",
+                "direction": "Mödling",
+                "from": "Flughafen Wien",
+                "to": "Wien Hbf",
+                "stops": 3,
+                "frequency": "~every 30 min"
+              },
+              {
+                "mode": "metro",
+                "label": {
+                  "en": "Metro",
+                  "zh": "地铁"
+                },
+                "duration": "10 min",
+                "line": "U1 → U4",
+                "direction": "Leopoldau → Heiligenstadt",
+                "from": "Wien Hbf",
+                "to": "Wien Mitte-Landstraße",
+                "stops": 4,
+                "frequency": "every 3–5 min"
               }
             ]
           }
@@ -412,7 +611,25 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "10–15 min"
+                "duration": "12 min",
+                "distanceM": 980,
+                "note": "Landstraßer Hauptstraße → Wollzeile → Stephansplatz"
+              }
+            ],
+            "alternative": [
+              {
+                "mode": "metro",
+                "label": {
+                  "en": "Metro",
+                  "zh": "地铁"
+                },
+                "duration": "2 min",
+                "line": "U3",
+                "direction": "Ottakring",
+                "from": "Wien Mitte-Landstraße",
+                "to": "Stephansplatz",
+                "stops": 2,
+                "frequency": "every 4–5 min"
               }
             ]
           }
@@ -460,7 +677,9 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "14 min"
+                "duration": "13 min",
+                "distanceM": 1040,
+                "note": "Graben → Kohlmarkt lights → Kärntner Straße → Schubertring"
               }
             ]
           }
@@ -522,7 +741,21 @@
                 "zh": "22:00 以后，每天 8:00–16:00"
               }
             }
-          ]
+          ],
+          "transit": {
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "12 min",
+                "distanceM": 950,
+                "note": "Schubertring → Johannesgasse → Wien Mitte"
+              }
+            ]
+          }
         }
       ],
       "notes": [
@@ -533,6 +766,10 @@
         {
           "en": "Upper Belvedere and Karlskirche were moved off Dec 27 (awaiting a decision).",
           "zh": "上美景宫和卡尔教堂已经从 12 月 27 日挪走（还等拍板）。"
+        },
+        {
+          "en": "KaDeWe is closed on Sundays – replaced by the Breitscheidplatz Christmas market next to the church.",
+          "zh": "KaDeWe 周日关门，改去教堂旁边的 Breitscheidplatz 圣诞市集。"
         }
       ]
     },
@@ -648,12 +885,29 @@
           "transit": {
             "segments": [
               {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "4 min",
+                "from": "hotel (Wien Mitte)",
+                "to": "U Wien Mitte-Landstraße (U4)",
+                "distanceM": 200
+              },
+              {
                 "mode": "metro",
                 "label": {
                   "en": "Metro",
                   "zh": "地铁"
                 },
-                "duration": null
+                "duration": "13 min",
+                "line": "U4",
+                "direction": "Hütteldorf",
+                "from": "Wien Mitte-Landstraße",
+                "to": "Schönbrunn",
+                "stops": 8,
+                "frequency": "every 4–5 min"
               },
               {
                 "mode": "walk",
@@ -661,9 +915,16 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "10 min"
+                "duration": "8 min",
+                "from": "U Schönbrunn",
+                "to": "palace main gate / ticket office",
+                "distanceM": 650
               }
-            ]
+            ],
+            "ticket": {
+              "en": "Vienna core-zone ticket: single ride (80 min) or 24 Stunden WIEN, in the WienMobil app.",
+              "zh": "维也纳市区票：单程 80 分钟，或 24 小时票。用 WienMobil。"
+            }
           }
         },
         {
@@ -675,7 +936,10 @@
           },
           "lat": 48.184989,
           "lng": 16.311568,
-          "arrive": "8:30 AM",
+          "arrive": {
+            "en": "8:25 AM (opens 8:30)",
+            "zh": "8:25（opens 8:30）"
+          },
           "leave": null,
           "website": "https://www.schoenbrunn.at/en/",
           "nativeName": "Schloss Schönbrunn",
@@ -703,7 +967,9 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "15 min"
+                "duration": "12 min",
+                "distanceM": 920,
+                "note": "Christmas market in the front courtyard, then up through the garden"
               }
             ]
           }
@@ -751,7 +1017,9 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "23 min"
+                "duration": "25 min",
+                "distanceM": 2000,
+                "note": "Gloriette → Hietzinger Tor → Maxingstraße"
               }
             ]
           }
@@ -818,7 +1086,10 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "3 min"
+                "duration": "6 min",
+                "from": "Plachutta Hietzing",
+                "to": "U Hietzing",
+                "distanceM": 500
               },
               {
                 "mode": "metro",
@@ -826,7 +1097,13 @@
                   "en": "Metro",
                   "zh": "地铁"
                 },
-                "duration": "12 min"
+                "duration": "12 min",
+                "line": "U4",
+                "direction": "Heiligenstadt",
+                "from": "Hietzing",
+                "to": "Karlsplatz",
+                "stops": 7,
+                "frequency": "every 4–5 min"
               },
               {
                 "mode": "walk",
@@ -834,7 +1111,30 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "10 min"
+                "duration": "13 min",
+                "from": "U Karlsplatz (exit Oper/Burgring)",
+                "to": "KHM (Maria-Theresien-Platz)",
+                "distanceM": 880
+              }
+            ],
+            "ticket": {
+              "en": "Vienna core-zone ticket: single ride (80 min) or 24 Stunden WIEN, in the WienMobil app.",
+              "zh": "维也纳市区票：单程 80 分钟，或 24 小时票。用 WienMobil。"
+            },
+            "alternative": [
+              {
+                "mode": "tram",
+                "label": {
+                  "en": "Tram",
+                  "zh": "电车"
+                },
+                "duration": "1 min",
+                "line": "D",
+                "direction": "Nußdorf, Beethovengang",
+                "from": "Oper",
+                "to": "Burgring",
+                "stops": 1,
+                "frequency": "every 5–8 min"
               }
             ]
           }
@@ -882,7 +1182,9 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "8 min"
+                "duration": "7 min",
+                "distanceM": 600,
+                "note": "Heldenplatz → Schweizerhof"
               }
             ]
           }
@@ -932,7 +1234,8 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "5 min"
+                "duration": "5 min",
+                "distanceM": 380
               }
             ]
           }
@@ -993,7 +1296,8 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "3 min"
+                "duration": "3 min",
+                "distanceM": 230
               }
             ]
           }
@@ -1050,7 +1354,9 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "12 min"
+                "duration": "11 min",
+                "distanceM": 890,
+                "note": "Graben → Kärntner Straße"
               }
             ]
           }
@@ -1092,7 +1398,8 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "1 min"
+                "duration": "2 min",
+                "distanceM": 190
               }
             ]
           }
@@ -1144,7 +1451,71 @@
                 "zh": "开到 23:30"
               }
             }
-          ]
+          ],
+          "transit": {
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "8 min",
+                "from": "Bitzinger",
+                "to": "U Stephansplatz",
+                "distanceM": 530
+              },
+              {
+                "mode": "metro",
+                "label": {
+                  "en": "Metro",
+                  "zh": "地铁"
+                },
+                "duration": "2 min",
+                "line": "U3",
+                "direction": "Simmering",
+                "from": "Stephansplatz",
+                "to": "Wien Mitte-Landstraße",
+                "stops": 2,
+                "frequency": "every 7–8 min late evening"
+              },
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "4 min",
+                "distanceM": 190
+              }
+            ],
+            "ticket": {
+              "en": "Vienna core-zone ticket: single ride (80 min) or 24 Stunden WIEN, in the WienMobil app.",
+              "zh": "维也纳市区票：单程 80 分钟，或 24 小时票。用 WienMobil。"
+            },
+            "alternative": [
+              {
+                "mode": "tram",
+                "label": {
+                  "en": "Tram",
+                  "zh": "电车"
+                },
+                "duration": "5 min",
+                "line": "2",
+                "direction": "Friedrich-Engels-Platz",
+                "from": "Oper",
+                "to": "Stubentor",
+                "stops": 3,
+                "frequency": "every 8–10 min"
+              }
+            ]
+          }
+        }
+      ],
+      "notes": [
+        {
+          "en": "Karlskirche ↔ Staatsoper is 11 min on foot each way (v1 said 5 min).",
+          "zh": "Karlskirche 和国立歌剧院步行各 11 分钟。"
         }
       ]
     },
@@ -1211,7 +1582,9 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "6 min"
+                "duration": "6 min",
+                "distanceM": 450,
+                "note": "Albertinaplatz → Augustinerstraße → Josefsplatz"
               }
             ]
           }
@@ -1253,7 +1626,8 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "4 min"
+                "duration": "5 min",
+                "distanceM": 400
               }
             ]
           }
@@ -1301,7 +1675,48 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "10–15 min"
+                "duration": "4 min",
+                "from": "Sisi Museum (Michaelerkuppel)",
+                "to": "U Herrengasse",
+                "distanceM": 250
+              },
+              {
+                "mode": "metro",
+                "label": {
+                  "en": "Metro",
+                  "zh": "地铁"
+                },
+                "duration": "5 min",
+                "line": "U3",
+                "direction": "Simmering",
+                "from": "Herrengasse",
+                "to": "Wien Mitte-Landstraße",
+                "stops": 3,
+                "frequency": "every 4–5 min"
+              },
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "4 min",
+                "distanceM": 190
+              }
+            ],
+            "ticket": {
+              "en": "Vienna core-zone ticket: single ride (80 min) or 24 Stunden WIEN, in the WienMobil app.",
+              "zh": "维也纳市区票：单程 80 分钟，或 24 小时票。用 WienMobil。"
+            },
+            "alternative": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "23 min",
+                "distanceM": 1850
               }
             ]
           }
@@ -1385,15 +1800,10 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "15–20 min"
-              },
-              {
-                "mode": "taxi",
-                "label": {
-                  "en": "Taxi",
-                  "zh": "出租车"
-                },
-                "duration": "8 min"
+                "duration": "5 min",
+                "from": "hotel near Wien Mitte",
+                "to": "Steirereck im Stadtpark",
+                "distanceM": 340
               }
             ]
           }
@@ -1459,7 +1869,10 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "6 min"
+                "duration": "5 min",
+                "from": "Steirereck",
+                "to": "hotel (bags) / Wien Marxergasse 1B",
+                "distanceM": 420
               },
               {
                 "mode": "bus",
@@ -1467,7 +1880,47 @@
                   "en": "Bus",
                   "zh": "公交"
                 },
-                "duration": "21 min"
+                "duration": "25 min",
+                "line": "CAT by bus",
+                "direction": "Flughafen Wien",
+                "from": "Wien Marxergasse (stop 1B, next to Wien Mitte)",
+                "to": "Flughafen Wien bus terminal",
+                "stops": 1,
+                "frequency": "every 12 min 7 AM–7 PM"
+              }
+            ],
+            "ticket": {
+              "en": "CAT airport bus ticket.",
+              "zh": "CAT 机场大巴票。"
+            },
+            "alternative": [
+              {
+                "mode": "metro",
+                "label": {
+                  "en": "Metro",
+                  "zh": "地铁"
+                },
+                "duration": "11 min",
+                "line": "U3 → U1",
+                "direction": "Ottakring → Oberlaa",
+                "from": "Wien Mitte-Landstraße",
+                "to": "Wien Hbf",
+                "stops": 5,
+                "frequency": "every 4–5 min"
+              },
+              {
+                "mode": "train",
+                "label": {
+                  "en": "Train",
+                  "zh": "火车"
+                },
+                "duration": "14 min",
+                "line": "IC / Railjet",
+                "direction": "Flughafen Wien",
+                "from": "Wien Hbf",
+                "to": "Flughafen Wien",
+                "stops": 1,
+                "frequency": "~4 per hour"
               }
             ]
           }
@@ -1527,7 +1980,13 @@
                   "en": "Train",
                   "zh": "火车"
                 },
-                "duration": "17–20 min"
+                "duration": "17–18 min",
+                "line": "SNCB IC (any train to Bruxelles-Central)",
+                "direction": "Oostende / Knokke / Mons etc.",
+                "from": "Brussels Airport-Zaventem (station under the terminal)",
+                "to": "Bruxelles-Central",
+                "stops": 2,
+                "frequency": "every 10–15 min in the evening"
               },
               {
                 "mode": "walk",
@@ -1535,7 +1994,29 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "3 min"
+                "duration": "2 min",
+                "from": "Bruxelles-Central (Carrefour de l'Europe exit)",
+                "to": "Hilton Brussels Grand Place",
+                "distanceM": 180
+              }
+            ],
+            "ticket": {
+              "en": "SNCB train ticket. It does not cover the metro.",
+              "zh": "比利时国铁车票，不含地铁。"
+            },
+            "alternative": [
+              {
+                "mode": "bus",
+                "label": {
+                  "en": "Bus",
+                  "zh": "公交"
+                },
+                "duration": "35 min",
+                "line": "12 (Airport Line)",
+                "direction": "Brussels City (Trône)",
+                "from": "Brussels Airport",
+                "to": "Trône",
+                "frequency": "every 20–30 min"
               }
             ]
           }
@@ -1564,7 +2045,8 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": null
+                "duration": "7 min",
+                "distanceM": 560
               }
             ]
           }
@@ -1638,7 +2120,8 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": null
+                "duration": "3 min",
+                "distanceM": 270
               }
             ]
           }
@@ -1678,9 +2161,26 @@
                 "zh": "冬季奇境圣诞市集"
               }
             }
-          ]
+          ],
+          "transit": {
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "4 min",
+                "distanceM": 340
+              }
+            ]
+          }
         }
       ]
     }
-  ]
+  ],
+  "gettingAround": {
+    "en": "One core-zone fare: a single ticket (80 minutes, one direction) or 24 Stunden WIEN. The 48-hour and 72-hour tickets ended on Jan 1 2026. Buy it in the WienMobil app. The airport rail line through Wien Mitte is closed until Oct 2027. Use the CAT bus at Marxergasse 1B, or a regional train via Wien Hbf.",
+    "zh": "维也纳市区一种票价：单程 80 分钟，或 24 小时票。48 小时和 72 小时票已在 2026 年 1 月 1 日停售。用 WienMobil 买。经 Wien Mitte 的机场铁路关闭到 2027 年 10 月。改乘 CAT 大巴（Marxergasse 1B），或经 Wien Hbf 的区间车。"
+  }
 }

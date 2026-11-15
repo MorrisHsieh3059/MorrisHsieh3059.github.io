@@ -576,12 +576,171 @@ function splitSegments(mode, rawDuration) {
   });
 }
 
+function modeDef(mode) {
+  const m = String(mode || '').toLowerCase();
+  if (/walk/.test(m)) return { mode: 'walk', en: 'Walk', zh: '步行' };
+  if (/flight|plane/.test(m)) return { mode: 'flight', en: 'Flight', zh: '飞机' };
+  if (/taxi|uber|bolt/.test(m)) return { mode: 'taxi', en: 'Taxi', zh: '出租车' };
+  if (/tram/.test(m)) return { mode: 'tram', en: 'Tram', zh: '电车' };
+  if (/subway|u-bahn|metro/.test(m)) return { mode: 'metro', en: 'Metro', zh: '地铁' };
+  if (/bus|\bcat\b/.test(m)) return { mode: 'bus', en: 'Bus', zh: '公交' };
+  if (/lift|elevator/.test(m)) return { mode: 'lift', en: 'Lift', zh: '电梯' };
+  return { mode: 'train', en: 'Train', zh: '火车' };
+}
+
+function publicText(value) {
+  if (value == null) return null;
+  let s = String(value);
+  s = s.replace(/https?:\/\/\S+/gi, '');
+  s = s.replace(/\b[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}\b/g, '');
+  s = s.replace(/\+\d[\d\s()./-]{6,}\d/g, '');
+  s = s.replace(/[€$]\s?\d[\d.,]*/g, '');
+  s = s.replace(/\b\d[\d.,]*\s?(?:USD|EUR)\b/gi, '');
+  s = s.replace(/\b(?:AA|OS|UA|VL|DE|LH|SN|LX)\s?-?\d{2,4}\b/gi, '');
+  s = s.replace(/\bTony\b|\bMorris\b|Secretary|Stephen Tong|唐崇荣/g, '');
+  s = s.replace(/\bBolt\b/g, 'taxi');
+  s = s.replace(/\bbooked\b|\breservations?\b|\breserve now\b/gi, '');
+  s = s.replace(/\s{2,}/g, ' ').trim();
+  return s || null;
+}
+
+function cleanDuration(raw) {
+  const s = publicText(raw);
+  if (!s) return null;
+  const ranged = s.match(/~?\s*\d+\s*[–—-]\s*\d+\s*min/i);
+  if (ranged) return ranged[0].replace(/\s+/g, ' ').replace(/^~\s*/, '');
+  const hm = s.match(/\d+\s*h(?:\s*\d+\s*m\b)?/i);
+  if (hm) return hm[0].replace(/\s+/g, ' ');
+  const one = s.match(/\d+\s*min/i);
+  if (one) return one[0].replace(/\s+/g, ' ');
+  if (/overnight/i.test(s)) return s;
+  return s;
+}
+
+function segmentPublic(raw) {
+  if (!raw || typeof raw !== 'object') return null;
+  const def = modeDef(raw.mode);
+  const seg = {
+    mode: def.mode,
+    label: { en: def.en, zh: def.zh },
+    duration: cleanDuration(raw.duration)
+  };
+  const line = publicText(raw.line);
+  const direction = publicText(raw.direction);
+  const from = publicText(raw.from_stop);
+  const to = publicText(raw.to_stop);
+  const frequency = publicText(raw.frequency);
+  const note = publicText(raw.note);
+  if (line) seg.line = line;
+  if (direction) seg.direction = direction;
+  if (from) seg.from = from;
+  if (to) seg.to = to;
+  if (typeof raw.stops === 'number' && raw.stops > 0) seg.stops = raw.stops;
+  if (typeof raw.distance_m === 'number' && raw.distance_m > 0) seg.distanceM = raw.distance_m;
+  if (frequency) seg.frequency = frequency;
+  if (note) seg.note = note;
+  if (seg.duration && /overnight/i.test(seg.duration)) {
+    const zh = remember('duration', seg.duration);
+    if (zh) seg.durationZh = zh;
+  }
+  return seg;
+}
+
+function shortTicket(text) {
+  const s = publicText(text) || '';
+  if (!s) return null;
+  if (/ABC/i.test(s)) {
+    return {
+      en: 'Berlin ABC ticket. The airport is zone C. BVG app, DB Navigator, or a station machine.',
+      zh: '柏林 ABC 票，机场在 C 区。BVG、DB Navigator 或站内机器。'
+    };
+  }
+  if (/Berlin AB|\bAB\b/i.test(s)) {
+    return {
+      en: 'Berlin AB ticket. BVG app, DB Navigator, or a station machine. Stamp a paper ticket.',
+      zh: '柏林 AB 票。BVG、DB Navigator 或站内机器。纸票要盖章。'
+    };
+  }
+  if (/WienMobil|24 Stunden|Wiener Linien/i.test(s)) {
+    return {
+      en: 'Vienna core-zone ticket: single ride (80 min) or 24 Stunden WIEN, in the WienMobil app.',
+      zh: '维也纳市区票：单程 80 分钟，或 24 小时票。用 WienMobil。'
+    };
+  }
+  if (/Bratislava-Ticket|ÖBB/i.test(s)) {
+    return {
+      en: 'ÖBB Bratislava-Ticket: the return train, plus city trams and buses that day.',
+      zh: 'ÖBB Bratislava-Ticket：当天往返火车，以及市内电车和公交。'
+    };
+  }
+  if (/SNCB/i.test(s)) {
+    return {
+      en: 'SNCB train ticket. It does not cover the metro.',
+      zh: '比利时国铁车票，不含地铁。'
+    };
+  }
+  if (/STIB|contactless/i.test(s)) {
+    return {
+      en: 'Tap a contactless card. Transfers are free for 60 minutes.',
+      zh: '刷银行卡。60 分钟内换乘不再扣费。'
+    };
+  }
+  if (/\bCAT\b/i.test(s)) {
+    return { en: 'CAT airport bus ticket.', zh: 'CAT 机场大巴票。' };
+  }
+  if (/taxi|uber/i.test(s)) {
+    return { en: 'Taxi. Pay in the app or by card.', zh: '出租车，用 App 或刷卡。' };
+  }
+  if (/OMNY|AirTrain/i.test(s)) {
+    return { en: 'Subway tap, then AirTrain from Jamaica.', zh: '地铁刷卡，到 Jamaica 换乘 AirTrain。' };
+  }
+  return null;
+}
+
+function legTicket(parts) {
+  let found = null;
+  (parts || []).some(function (raw) {
+    found = shortTicket(raw && raw.ticket);
+    return !!found;
+  });
+  return found;
+}
+
 function buildTransit(leg) {
   if (!leg) return null;
-  const segments = splitSegments(leg.mode || 'walk', leg.duration);
+  const detailed = Array.isArray(leg.segments) && leg.segments.length;
+  const segments = detailed
+    ? leg.segments.map(segmentPublic).filter(Boolean)
+    : splitSegments(leg.mode || 'walk', leg.duration);
   if (!segments.length) return null;
-  return { segments: segments };
+  const transit = { segments: segments };
+  if (detailed) {
+    const ticket = legTicket(leg.segments);
+    if (ticket) transit.ticket = ticket;
+    const alts = (leg.alternative_route || []).map(segmentPublic).filter(Boolean);
+    if (alts.length) transit.alternative = alts;
+  }
+  return transit;
 }
+
+const GETTING_AROUND = {
+  berlin: {
+    en: 'Berlin AB covers the city. BER airport is zone C, so Dec 24 and Dec 27 need an ABC ticket. A single ticket lasts 2 hours in one direction. Buy it in the BVG app, DB Navigator, or a station machine, and stamp a paper ticket. Dec 24 follows the Saturday timetable; Dec 25–26 follow Sunday. The U-Bahn, except U4, runs all night from Dec 23/24 through Dec 27/28.',
+    zh: '柏林市区用 AB 票。机场在 C 区，12 月 24 日和 27 日要买 ABC。单程票 2 小时内、一个方向有效。在 BVG、DB Navigator 或站内机器买，纸票要盖章。24 日按周六时刻表，25 日至 26 日按周日。除 U4 外，地铁从 23/24 日通宵到 27/28 日。'
+  },
+  vienna: {
+    en: 'One core-zone fare: a single ticket (80 minutes, one direction) or 24 Stunden WIEN. The 48-hour and 72-hour tickets ended on Jan 1 2026. Buy it in the WienMobil app. The airport rail line through Wien Mitte is closed until Oct 2027. Use the CAT bus at Marxergasse 1B, or a regional train via Wien Hbf.',
+    zh: '维也纳市区一种票价：单程 80 分钟，或 24 小时票。48 小时和 72 小时票已在 2026 年 1 月 1 日停售。用 WienMobil 买。经 Wien Mitte 的机场铁路关闭到 2027 年 10 月。改乘 CAT 大巴（Marxergasse 1B），或经 Wien Hbf 的区间车。'
+  },
+  bratislava: {
+    en: 'The ÖBB Bratislava-Ticket covers the return train between Wien Hbf and Bratislava and, on the first day, DPB trams and buses. Buy it at a Wien Hbf machine or in the ÖBB app. Without it, tap a contactless card on the DPB validators.',
+    zh: 'ÖBB Bratislava-Ticket 含 Wien Hbf 和布拉迪斯拉发之间的往返火车，以及第一天的市内电车和公交。在 Wien Hbf 的机器或 ÖBB App 买。没有这张票，就在 DPB 的刷卡机上贴银行卡。'
+  },
+  brussels: {
+    en: 'On STIB metro, tram, and bus, tap a contactless card. Transfers are free for 60 minutes. On New Year\'s Eve the network is free from midnight, and metro 6 toward Heysel is reinforced from 8 PM. The airport train is a separate SNCB ticket and does not cover STIB. Bus 12 has its own airport fare.',
+    zh: '布鲁塞尔地铁、电车、公交刷银行卡，60 分钟内换乘不再扣费。跨年夜从午夜起免费，6 号线从晚上 8 点加密开往 Heysel。机场火车是国铁的票，不含市内。12 路公交是单独的机场票。'
+  }
+};
 
 function buildStop(item, transit, alts) {
   const named = namesOf(item);
@@ -698,6 +857,7 @@ function buildCity(city, version) {
     days: []
   };
   if (display.subtitle && display.subtitle.en) out.subtitle = display.subtitle;
+  if (GETTING_AROUND[city.id]) out.gettingAround = GETTING_AROUND[city.id];
 
   (city.days || []).forEach(function (day) {
     const titleEn = polishActivity(day.title || '', sanitize(day.title || ''));
@@ -713,6 +873,10 @@ function buildCity(city, version) {
     if (notes.length) built.notes = notes;
 
     const timeline = day.timeline || [];
+    if (timeline[0] && timeline[0].item_type === 'leg') {
+      const inbound = buildTransit(timeline[0]);
+      if (inbound) built.inbound = inbound;
+    }
     const stopItems = [];
     timeline.forEach(function (item, index) {
       if (item.item_type !== 'stop') return;
@@ -776,7 +940,7 @@ function assertPublic(files) {
     { re: /\+\d[\d\s()./-]{6,}\d/, why: 'phone' },
     { re: /€|\$\s?\d/, why: 'price' },
     { re: /\b(?:AA|OS|UA|VL|DE|LH|SN)\s?-?\d{2,4}\b/i, why: 'flight number' },
-    { re: /\bREX\s?-?\d+\b/i, why: 'train number' },
+    { re: /\bREX\d{2,}\b/i, why: 'train number' },
     { re: /reserve now/i, why: 'booking note' },
     { re: /confirmation code|record locator|\bPNR\b|seat\s?\d/i, why: 'booking secret' },
     { re: /guest/i, why: 'guest count' },
@@ -834,11 +998,39 @@ function main() {
 
   let stops = 0;
   let days = 0;
+  let legs = 0;
+  let segments = 0;
   cities.forEach(function (c) {
     days += c.days.length;
-    c.days.forEach(function (d) { stops += d.stops.length; });
+    c.days.forEach(function (d) {
+      stops += d.stops.length;
+      if (d.inbound && d.inbound.segments) {
+        legs += 1;
+        segments += d.inbound.segments.length;
+      }
+      d.stops.forEach(function (s) {
+        if (!s.transit || !s.transit.segments) return;
+        legs += 1;
+        segments += s.transit.segments.length;
+      });
+    });
   });
-  console.log('Imported ' + cities.length + ' cities, ' + days + ' days, ' + stops + ' stops → ' + path.relative(root, outDir));
+  let sourceLegs = 0;
+  let sourceSegments = 0;
+  let sourceDetailed = 0;
+  data.cities.forEach(function (city) {
+    (city.days || []).forEach(function (day) {
+      (day.timeline || []).forEach(function (item) {
+        if (item.item_type !== 'leg') return;
+        sourceLegs += 1;
+        const n = Array.isArray(item.segments) ? item.segments.length : 0;
+        sourceSegments += n;
+        if (n) sourceDetailed += 1;
+      });
+    });
+  });
+  console.log('Imported ' + cities.length + ' cities, ' + days + ' days, ' + stops + ' stops, ' + legs + ' legs, ' + segments + ' segments → ' + path.relative(root, outDir));
+  console.log('Source legs ' + sourceLegs + ' (' + sourceDetailed + ' with segments), source segments ' + sourceSegments);
 
   if (missing.size) {
     const lines = Array.from(missing).sort();
