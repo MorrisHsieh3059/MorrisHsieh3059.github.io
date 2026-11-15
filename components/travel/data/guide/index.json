@@ -1,0 +1,10 @@
+{
+  "version": "v2",
+  "draft": true,
+  "cities": [
+    "berlin",
+    "vienna",
+    "bratislava",
+    "brussels"
+  ]
+}

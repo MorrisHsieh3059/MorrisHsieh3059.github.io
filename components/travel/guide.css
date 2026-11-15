@@ -1,0 +1,829 @@
+/* Travel Guide — phone-first walking notes. Map left on desktop, above the timeline on a phone. */
+
+.travel-panel[data-travel-panel="guide"].active {
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 auto;
+	min-height: 0;
+	overflow: hidden;
+}
+
+.guide-root {
+	flex: 1 1 auto;
+	min-height: 0;
+	min-width: 0;
+	display: flex;
+	flex-direction: column;
+	color: #333;
+	font-family: Lora, "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+
+.guide-root[lang="zh-Hans"] .guide-kicker,
+.guide-root[lang="zh-Hans"] .guide-draft,
+.guide-root[lang="zh-Hans"] .guide-status,
+.guide-root[lang="zh-Hans"] .guide-day,
+.guide-root[lang="zh-Hans"] .guide-lang-btn,
+.guide-root[lang="zh-Hans"] .guide-time,
+.guide-root[lang="zh-Hans"] .guide-leg {
+	letter-spacing: 0;
+	text-transform: none;
+}
+
+.guide-toolbar {
+	display: flex;
+	align-items: flex-start;
+	gap: 0.65rem;
+	flex-shrink: 0;
+	margin: 0 0 0.65rem;
+}
+
+.guide-heading {
+	flex: 1 1 auto;
+	min-width: 0;
+}
+
+.guide-back {
+	flex: 0 0 auto;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.35rem;
+	min-height: 44px;
+	padding: 0.2rem 0;
+	color: var(--accent, #303F9F);
+	font-family: "Roboto Mono", "PingFang SC", "Microsoft YaHei", sans-serif;
+	font-size: 0.72rem;
+	font-weight: 700;
+	letter-spacing: 0.04em;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.guide-root[lang="zh-Hans"] .guide-back {
+	letter-spacing: 0;
+	text-transform: none;
+	font-size: 0.85rem;
+}
+
+.guide-city-name {
+	margin: 0;
+	font-family: "Roboto Mono", "PingFang SC", "Microsoft YaHei", sans-serif;
+	font-size: 1.05rem;
+	font-weight: 700;
+	color: #222;
+	line-height: 1.2;
+}
+
+.guide-city-sub,
+.guide-city-dates,
+.guide-card-dates,
+.guide-card-sub {
+	display: block;
+	margin: 0.1rem 0 0;
+	color: #777;
+	font-size: 0.82rem;
+}
+
+.guide-draft {
+	display: inline-block;
+	margin-left: 0.35rem;
+	padding: 0.05rem 0.32rem;
+	border-radius: 4px;
+	background: #f3f0e8;
+	color: #8a6a2f;
+	font-family: "Roboto Mono", "PingFang SC", "Microsoft YaHei", sans-serif;
+	font-size: 0.62rem;
+	font-weight: 700;
+	letter-spacing: 0.02em;
+	line-height: 1.4;
+	vertical-align: 0.15em;
+}
+
+.guide-lang {
+	display: inline-flex;
+	flex: 0 0 auto;
+	margin-left: auto;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	overflow: hidden;
+	background: #fff;
+}
+
+.guide-lang-btn {
+	appearance: none;
+	border: 0;
+	background: transparent;
+	min-width: 2.1rem;
+	min-height: 1.7rem;
+	padding: 0.15rem 0.4rem;
+	color: #777;
+	font-family: "Roboto Mono", "PingFang SC", "Microsoft YaHei", sans-serif;
+	font-size: 0.68rem;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.guide-lang-btn.is-active {
+	background: var(--accent, #303F9F);
+	color: #fff;
+}
+
+.guide-lang-btn:focus-visible,
+.guide-day:focus-visible,
+.guide-back:focus-visible,
+.guide-card:focus-visible,
+.guide-icon-btn:focus-visible,
+.guide-stop:focus-visible {
+	outline: 2px solid var(--accent, #303F9F);
+	outline-offset: 2px;
+}
+
+.guide-scroll {
+	flex: 1 1 auto;
+	min-height: 0;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+	overscroll-behavior: contain;
+}
+
+.guide-cards {
+	display: flex;
+	flex-direction: column;
+	gap: 0.65rem;
+	padding-bottom: 0.5rem;
+}
+
+.guide-card {
+	display: flex;
+	align-items: center;
+	gap: 0.85rem;
+	min-height: 84px;
+	padding: 0.55rem;
+	background: #fff;
+	border-radius: 2px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+	color: inherit;
+	text-decoration: none;
+}
+
+.guide-card-cover {
+	flex: 0 0 84px;
+	width: 84px;
+	height: 56px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #f3f3f3;
+	overflow: hidden;
+}
+
+.guide-card-cover img {
+	width: 100%;
+	height: 100%;
+}
+
+.guide-card-cover.fit-contain img {
+	object-fit: contain;
+	padding: 4px;
+}
+
+.guide-card-cover.fit-cover img {
+	object-fit: cover;
+}
+
+.guide-card-name {
+	display: block;
+	font-family: "Roboto Mono", "PingFang SC", "Microsoft YaHei", sans-serif;
+	font-size: 1rem;
+	font-weight: 700;
+	color: #222;
+}
+
+.guide-days {
+	display: flex;
+	gap: 0.35rem;
+	flex-shrink: 0;
+	margin: 0 0 0.55rem;
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+	scrollbar-width: none;
+}
+
+.guide-days::-webkit-scrollbar {
+	display: none;
+}
+
+.guide-day {
+	flex: 0 0 auto;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 0;
+	padding: 0.22rem 0.5rem 0.26rem;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	background: #fff;
+	color: #666;
+	font-family: "Roboto Mono", "PingFang SC", "Microsoft YaHei", sans-serif;
+	cursor: pointer;
+}
+
+.guide-day-kicker {
+	font-size: 0.58rem;
+	font-weight: 700;
+	letter-spacing: 0;
+	text-transform: none;
+	color: #999;
+	line-height: 1.2;
+}
+
+.guide-day-date {
+	font-size: 0.72rem;
+	font-weight: 700;
+	letter-spacing: 0;
+	text-transform: none;
+	color: #333;
+	line-height: 1.25;
+	white-space: nowrap;
+}
+
+.guide-day.is-active {
+	background: var(--accent, #303F9F);
+	border-color: var(--accent, #303F9F);
+	color: #fff;
+}
+
+.guide-day.is-active .guide-day-kicker {
+	color: rgba(255, 255, 255, 0.75);
+}
+
+.guide-day.is-active .guide-day-date {
+	color: #fff;
+}
+
+.guide-split {
+	flex: 1 1 auto;
+	min-height: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0.6rem;
+}
+
+.guide-map-panel {
+	position: relative;
+	flex: 0 0 auto;
+	height: 38vh;
+	height: 38dvh;
+	min-height: 200px;
+	max-height: 320px;
+}
+
+.guide-map {
+	width: 100%;
+	height: 100%;
+	background: #d5d5d5;
+	border: 1px solid #d0d0d0;
+	z-index: 1;
+}
+
+.guide-map .leaflet-control-attribution {
+	font-size: 10px;
+	max-width: 70%;
+}
+
+.leaflet-marker-icon.guide-marker {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #fff;
+	border: 2px solid var(--accent, #303F9F);
+	border-radius: 50%;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.28);
+}
+
+.guide-marker span {
+	font-family: "Roboto Mono", sans-serif;
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 1;
+	color: var(--accent, #303F9F);
+}
+
+.guide-marker.is-tentative {
+	background: #f7f8fc;
+	border-style: dashed;
+}
+
+.guide-marker.is-decision {
+	background: #fbf7ee;
+	border-color: #b0893e;
+}
+
+.guide-marker.is-decision span {
+	color: #8a6a2f;
+}
+
+.guide-marker.is-active {
+	background: var(--accent, #303F9F);
+	border-style: solid;
+	border-color: var(--accent, #303F9F);
+	z-index: 800 !important;
+}
+
+.guide-marker.is-active span,
+.guide-marker.is-active.is-decision span {
+	color: #fff;
+}
+
+.guide-marker.is-active.is-decision {
+	background: #8a6a2f;
+	border-color: #8a6a2f;
+}
+
+.guide-timeline {
+	--tl-time: 4.4rem;
+	--tl-gap: 0.45rem;
+	--tl-dot: 22px;
+	flex: 1 1 auto;
+	min-height: 0;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+	overscroll-behavior: contain;
+	background: transparent;
+	border: 0;
+}
+
+.guide-tl-stop,
+.guide-tl-leg {
+	display: grid;
+	grid-template-columns: var(--tl-time) var(--tl-dot) minmax(0, 1fr);
+	column-gap: var(--tl-gap);
+	align-items: stretch;
+}
+
+.guide-tl-stop .guide-tl-times,
+.guide-tl-stop .guide-tl-body {
+	align-self: start;
+}
+
+.guide-stop {
+	cursor: pointer;
+	border-radius: 4px;
+}
+
+.guide-stop.is-active .guide-tl-body {
+	background: rgba(48, 63, 159, 0.05);
+}
+
+.guide-tl-times {
+	padding-top: 0.28rem;
+	text-align: right;
+	font-family: "Roboto Mono", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+	font-size: 0.62rem;
+	line-height: 1.3;
+	color: #555;
+}
+
+.guide-tl-times .is-leave {
+	display: block;
+	color: #999;
+}
+
+.guide-tl-axis {
+	position: relative;
+	min-height: 22px;
+	align-self: stretch;
+}
+
+.guide-tl-axis::before {
+	content: "";
+	position: absolute;
+	left: 10px;
+	top: 0;
+	bottom: 0;
+	width: 1px;
+	background: #d0d4e4;
+}
+
+.guide-tl-stop:first-child .guide-tl-axis::before {
+	top: 13px;
+}
+
+.guide-tl-stop:last-child .guide-tl-axis::before {
+	bottom: auto;
+	height: 13px;
+}
+
+.guide-tl-dot {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 22px;
+	height: 22px;
+	margin-top: 2px;
+	border: 1.5px solid var(--accent, #303F9F);
+	border-radius: 50%;
+	background: #fff;
+	color: var(--accent, #303F9F);
+	font-family: "Roboto Mono", sans-serif;
+	font-size: 11px;
+	font-weight: 700;
+	line-height: 1;
+}
+
+.guide-tl-dot.is-tentative {
+	border-style: dashed;
+	background: #f7f8fc;
+}
+
+.guide-tl-dot.is-decision {
+	border-color: #b0893e;
+	color: #8a6a2f;
+	background: #fbf7ee;
+}
+
+.guide-stop.is-active .guide-tl-dot {
+	background: var(--accent, #303F9F);
+	border-style: solid;
+	border-color: var(--accent, #303F9F);
+	color: #fff;
+}
+
+.guide-tl-body {
+	min-width: 0;
+	padding: 0 0.15rem;
+	border-radius: 4px;
+}
+
+.guide-tl-stop:last-child .guide-tl-body {
+	padding-bottom: 0.85rem;
+}
+
+.guide-tl-head {
+	display: flex;
+	align-items: flex-start;
+	gap: 0.35rem;
+}
+
+.guide-stop-titles {
+	flex: 1 1 auto;
+	min-width: 0;
+}
+
+.guide-stop-titles h3 {
+	margin: 0;
+	font-family: Lora, "PingFang SC", "Microsoft YaHei", sans-serif;
+	font-size: 1rem;
+	font-weight: 700;
+	line-height: 1.25;
+	color: #222;
+}
+
+.guide-native {
+	margin: 0.05rem 0 0;
+	color: #8a8a8a;
+	font-size: 0.78rem;
+}
+
+.guide-chips {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.25rem;
+	margin: 0.2rem 0 0;
+}
+
+.guide-status,
+.guide-kicker {
+	font-family: "Roboto Mono", "PingFang SC", "Microsoft YaHei", sans-serif;
+	font-size: 0.6rem;
+	font-weight: 700;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+}
+
+.guide-status {
+	padding: 0.02rem 0.28rem;
+	border-radius: 4px;
+}
+
+.guide-status.is-confirmed {
+	color: #9a9a9a;
+	background: transparent;
+}
+
+.guide-status.is-tentative {
+	color: #6a769e;
+	background: transparent;
+	border: 1px dashed #c5ccea;
+}
+
+.guide-status.is-decision {
+	color: #8a6a2f;
+	background: #fbf7ee;
+	border: 1px solid #e6d7b4;
+}
+
+.guide-status.is-optional {
+	color: #999;
+}
+
+.guide-stop-actions {
+	display: flex;
+	flex: 0 0 auto;
+	gap: 0;
+}
+
+.guide-icon-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 32px;
+	height: 32px;
+	border: 0;
+	border-radius: 4px;
+	background: transparent;
+	color: var(--accent, #303F9F);
+	text-decoration: none;
+}
+
+.guide-icon-btn:hover,
+.guide-icon-btn:focus-visible {
+	background: rgba(48, 63, 159, 0.08);
+	color: var(--accent, #303F9F);
+}
+
+.guide-hours,
+.guide-notes {
+	margin: 0.28rem 0 0;
+	color: #777;
+	font-size: 0.82rem;
+	line-height: 1.4;
+}
+
+.guide-must,
+.guide-alts {
+	margin: 0.4rem 0 0;
+}
+
+.guide-kicker {
+	color: #8d93ad;
+}
+
+.guide-must ul,
+.guide-alts ul,
+.guide-day-notes {
+	list-style: none;
+	margin: 0.15rem 0 0;
+	padding: 0;
+}
+
+.guide-must li,
+.guide-alts li {
+	margin: 0.12rem 0;
+	font-size: 0.82rem;
+	line-height: 1.35;
+	color: #555;
+}
+
+.guide-must-name {
+	font-weight: 600;
+}
+
+.guide-must-gloss,
+.guide-alt-note {
+	color: #888;
+}
+
+.guide-alts li {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.1rem 0.35rem;
+}
+
+.guide-tl-leg {
+	align-items: stretch;
+}
+
+.guide-tl-leg .guide-tl-times {
+	padding: 0;
+}
+
+.guide-tl-leg.is-walk .guide-tl-axis::before {
+	background: transparent;
+	border-left: 1px dashed #b7bdd0;
+	width: 0;
+}
+
+.guide-tl-main {
+	padding: 0.7rem 0;
+	min-width: 0;
+}
+
+.guide-tl-segs {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.guide-tl-seg {
+	display: flex;
+	align-items: flex-start;
+	gap: 0.35rem;
+	color: #8a8a8a;
+	font-family: "Roboto Mono", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+	font-size: 0.66rem;
+	line-height: 1.35;
+}
+
+.guide-tl-seg-body {
+	min-width: 0;
+}
+
+.guide-tl-fold {
+	margin: 0.08rem 0 0;
+}
+
+.guide-tl-fold summary {
+	cursor: pointer;
+	color: #a3a3a3;
+	font-size: 0.58rem;
+	line-height: 1.3;
+	list-style: none;
+}
+
+.guide-tl-fold summary::-webkit-details-marker {
+	display: none;
+}
+
+.guide-tl-fold summary::before {
+	content: "▸ ";
+}
+
+.guide-tl-fold[open] summary::before {
+	content: "▾ ";
+}
+
+.guide-tl-fold p {
+	margin: 0.12rem 0 0;
+	color: #9a9a9a;
+	font-size: 0.6rem;
+	line-height: 1.35;
+}
+
+.guide-around {
+	margin: 0.35rem 0 0.8rem;
+	color: #777;
+	font-size: 0.72rem;
+	line-height: 1.45;
+}
+
+.guide-around summary {
+	cursor: pointer;
+	color: #666;
+	font-family: "Roboto Mono", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+	font-size: 0.66rem;
+	font-weight: 700;
+	list-style: none;
+}
+
+.guide-around summary::-webkit-details-marker {
+	display: none;
+}
+
+.guide-around summary::before {
+	content: "▸ ";
+	color: var(--accent, #303F9F);
+}
+
+.guide-around[open] summary::before {
+	content: "▾ ";
+}
+
+.guide-around p {
+	margin: 0.35rem 0 0;
+}
+
+.guide-tl-seg + .guide-tl-seg {
+	margin-top: 0.12rem;
+}
+
+.guide-tl-seg i {
+	margin-top: 0.12rem;
+	width: 0.9rem;
+	color: var(--accent, #303F9F);
+	font-size: 0.68rem;
+	text-align: center;
+}
+
+.guide-day-notes {
+	margin: 0.4rem 0 0.6rem;
+	padding: 0;
+	color: #888;
+	font-size: 0.78rem;
+}
+
+.guide-day-notes li {
+	margin: 0.25rem 0;
+}
+
+.guide-loading,
+.guide-message {
+	margin: 0.5rem 0;
+	color: #777;
+}
+
+@media (min-width: 768px) {
+	.guide-cards {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+		gap: 0.9rem;
+	}
+
+	.guide-card {
+		flex-direction: column;
+		align-items: stretch;
+		gap: 0;
+		padding: 0;
+		overflow: hidden;
+		min-height: 0;
+	}
+
+	.guide-card-cover {
+		width: 100%;
+		flex-basis: auto;
+		height: 120px;
+	}
+
+	.guide-card-body {
+		padding: 0.85rem 0.95rem 1rem;
+	}
+}
+
+@media (min-width: 992px) {
+	.guide-split {
+		flex-direction: row;
+		align-items: stretch;
+		gap: 0.75rem;
+	}
+
+	.guide-map-panel {
+		flex: 1.15 1 0;
+		height: auto;
+		max-height: none;
+		min-height: 0;
+	}
+
+	.guide-timeline {
+		flex: 0.9 1 0;
+		min-width: 280px;
+	}
+}
+
+@media (max-width: 991px) {
+	.travel-panel[data-travel-panel="guide"].active,
+	.guide-root,
+	.guide-split,
+	.guide-map-panel,
+	.guide-timeline,
+	.guide-scroll {
+		max-width: 100%;
+		min-width: 0;
+	}
+}
+
+@media (max-width: 767px) {
+	.guide-map-panel {
+		height: calc(38vh * 0.7);
+		height: calc(38dvh * 0.7);
+		min-height: calc(200px * 0.7);
+		max-height: calc(320px * 0.7);
+	}
+
+	.guide-day-kicker,
+	.guide-day-weekday {
+		display: none;
+	}
+
+	.guide-day {
+		flex-direction: row;
+		align-items: center;
+		padding: 0.28rem 0.48rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.guide-timeline {
+		--tl-time: 3.65rem;
+		--tl-gap: 0.32rem;
+	}
+
+	.guide-tl-times {
+		font-size: 0.58rem;
+	}
+
+	.guide-stop-titles h3 {
+		font-size: 0.95rem;
+	}
+}

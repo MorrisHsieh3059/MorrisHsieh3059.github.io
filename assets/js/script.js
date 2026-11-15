@@ -56,8 +56,12 @@ $(function(){
 		if (head === 'travel') {
 			var travelTab = sub || 'journey';
 			if (travelTab === 'journal') travelTab = 'journey';
-			if (travelTab !== 'journey' && travelTab !== 'hotels') travelTab = 'journey';
-			return { section: 'travel', travelTab: travelTab };
+			if (travelTab !== 'journey' && travelTab !== 'hotels' && travelTab !== 'guide') travelTab = 'journey';
+			var travelRoute = { section: 'travel', travelTab: travelTab };
+			if (travelTab === 'guide' && parts[2] && /^[a-z0-9-]+$/.test(parts[2])) {
+				travelRoute.guideCity = parts[2];
+			}
+			return travelRoute;
 		}
 		if (head === 'about' || head === 'resume' || head === 'contact') {
 			return { section: head };
@@ -77,7 +81,12 @@ $(function(){
 		}
 		if (route.section === 'travel') {
 			var travelTab = route.travelTab || 'journey';
-			return travelTab === 'journey' ? '/travel/' : '/travel/' + travelTab + '/';
+			if (travelTab === 'journey') return '/travel/';
+			var travelPath = '/travel/' + travelTab + '/';
+			if (travelTab === 'guide' && route.guideCity && /^[a-z0-9-]+$/.test(route.guideCity)) {
+				travelPath += route.guideCity + '/';
+			}
+			return travelPath;
 		}
 		return '/' + route.section + '/';
 	}
@@ -167,6 +176,8 @@ $(function(){
 				return loadScript('js/travel.js');
 			}).then(function () {
 				return loadScript('js/hotels.js');
+			}).then(function () {
+				return loadScript('js/guide.js');
 			});
 		}
 		if (route.section === 'dining') {

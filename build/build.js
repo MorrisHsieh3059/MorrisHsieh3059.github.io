@@ -176,9 +176,26 @@ function assembleIndex() {
   fs.writeFileSync(path.join(dist, 'index.html'), html);
 }
 
+function guideRoutes() {
+  const indexPath = path.join(root, 'components', 'travel', 'data', 'guide', 'index.json');
+  const routes = ['travel/guide'];
+  if (!fs.existsSync(indexPath)) return routes;
+  let index;
+  try {
+    index = JSON.parse(fs.readFileSync(indexPath, 'utf8'));
+  } catch (err) {
+    console.warn('build.js: could not read guide index');
+    return routes;
+  }
+  for (const id of index.cities || []) {
+    if (/^[a-z0-9-]+$/.test(id)) routes.push('travel/guide/' + id);
+  }
+  return routes;
+}
+
 function writeRoutePages() {
   const html = fs.readFileSync(path.join(dist, 'index.html'), 'utf8');
-  for (const route of ROUTES) {
+  for (const route of ROUTES.concat(guideRoutes())) {
     const dir = path.join(dist, route);
     fs.mkdirSync(dir, { recursive: true });
     fs.writeFileSync(path.join(dir, 'index.html'), html);

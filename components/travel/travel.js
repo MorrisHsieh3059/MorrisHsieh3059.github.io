@@ -775,9 +775,9 @@
 		});
 	}
 
-	function showTravelTab(tab) {
+	function showTravelTab(tab, guideCity) {
 		if (tab === 'journal') tab = 'journey';
-		if (tab !== 'journey' && tab !== 'hotels') return;
+		if (tab !== 'journey' && tab !== 'hotels' && tab !== 'guide') return;
 
 		$('.travel-tab-toggle').removeClass('active');
 		$('.travel-tab-toggle[data-travel-tab="' + tab + '"]').addClass('active');
@@ -790,8 +790,10 @@
 			} else if (map) {
 				map.invalidateSize();
 			}
-		} else if (window.HotelCollection) {
-			window.HotelCollection.show();
+		} else if (tab === 'hotels') {
+			if (window.HotelCollection) window.HotelCollection.show();
+		} else if (window.TravelGuide) {
+			window.TravelGuide.show(guideCity || '');
 		}
 	}
 
@@ -799,7 +801,7 @@
 		if (!route || route.section !== 'travel') return;
 		var tab = route.travelTab || 'journey';
 		var delay = meta && meta.animated ? 1300 : 0;
-		setTimeout(function () { showTravelTab(tab); }, delay);
+		setTimeout(function () { showTravelTab(tab, route.guideCity || ''); }, delay);
 	}
 
 	bindStatsTips();

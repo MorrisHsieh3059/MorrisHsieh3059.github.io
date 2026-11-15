@@ -1521,6 +1521,23 @@
 		letter-spacing: 1px;
 	}
 
+	.travel-tabs {
+		flex-wrap: nowrap;
+		gap: 0.32rem;
+	}
+
+	.travel-tabs > li > a {
+		padding: 0.32rem 0.48rem;
+		font-size: 0.68rem;
+		letter-spacing: 0.04em;
+		gap: 0.22em;
+		white-space: nowrap;
+	}
+
+	.travel-tab-with-info {
+		gap: 0.12rem;
+	}
+
 	/* Match dining visit popup mobile packing */
 	.hotel-visit-popup-header {
 		padding: 1.1rem 1.2rem 1rem;

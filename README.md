@@ -12,7 +12,7 @@ Sections use path URLs (`/about/`, `/dining/michelin/`, `/faith/`) — no `#` in
 - **About** — Bio, interests, skills
 - **Resume** — Work experience & education (GPA only, no semester grades)
 - **NYC** — City life, history, walking routes
-- **Travel** — Travel journal and hotel collection (Waldorf Astoria, The Ritz-Carlton, Four Seasons, Fairmont)
+- **Travel** — Journey, hotel collection, and a walking guide
 - **Dining** — Restaurant picks in NYC & abroad
 - **Gallery** — Photo gallery with filters
 - **Contact** — Email & social links
@@ -133,6 +133,90 @@ Requires `reverse_geocoder` (`pip install reverse_geocoder`), the same offline g
 ```
 
 Photos use the dining convention: `components/travel/img/visits/<id>/`, cover `0.jpeg`, then `1.jpeg`, `2.jpeg`, … plus matching `*.thumb.jpeg` files.
+
+### Guide
+
+`/travel/guide/` is a phone-first walking guide. One JSON file per city lives in `components/travel/data/guide/`, in the order listed by `index.json`. The page copy is English by default, with an EN / 中文 toggle (Simplified Chinese, stored in `localStorage` as `travel-guide-lang`).
+
+City cards use `cover`. It defaults to a flag in `components/travel/img/flags/` (`coverFit: "contain"`). To use a photo later, set `cover` to a path under `img/travel/` and `coverFit` to `"cover"`.
+
+**Bring in a new export** (same shape as itinerary v1; v2, v3, …):
+
+```bash
+npm run import-guide -- path/to/itinerary_v2.json
+npm run build
+```
+
+That rewrites `index.json` and each `<id>.json`. The script drops personal names, flight and train numbers, emails, phone numbers, prices, confirmation codes, and “reserve now” notes. Place and dish names stay in the original language. Simplified Chinese for the prose lives in `scripts/guide-zh.json`, keyed by the sanitized English. A string with no entry is left in English and printed as a warning.
+
+Adding or editing a stop in a city file is enough for the page. A new city also needs its id in `index.json` (the importer does this). `npm run build` then adds `/travel/guide/<id>/` so a refresh stays a 200.
+
+#### City file
+
+```json
+{
+  "id": "berlin",
+  "version": "v1",
+  "draft": true,
+  "country": { "en": "Germany", "zh": "德国" },
+  "flag": "img/travel/flags/de.svg",
+  "cover": "img/travel/flags/de.svg",
+  "coverFit": "contain",
+  "name": { "en": "Berlin", "zh": "柏林" },
+  "subtitle": { "en": "Day trip from Vienna", "zh": "从维也纳出发的一日游" },
+  "dates": { "start": "2026-12-23", "end": "2026-12-27" },
+  "days": [
+    {
+      "date": "2026-12-24",
+      "weekday": "Thu",
+      "title": { "en": "Christmas Eve", "zh": "平安夜" },
+      "notes": [{ "en": "Shops close early.", "zh": "商店打烊早。" }],
+      "stops": [
+        {
+          "type": "sight",
+          "status": "confirmed",
+          "optional": false,
+          "name": { "en": "Brandenburg Gate", "zh": "勃兰登堡门" },
+          "nativeName": "Brandenburger Tor",
+          "lat": 52.51627,
+          "lng": 13.3777,
+          "arrive": "5:05 PM",
+          "leave": null,
+          "website": "https://www.berlin.de/",
+          "hours": "Outdoor",
+          "notes": { "en": "Walk through at dusk.", "zh": "傍晚穿过去。" },
+          "mustSee": [{ "text": { "en": "The gate lit after sunset", "zh": "日落后亮灯的城门" } }],
+          "mustOrder": [{ "name": "Currywurst", "gloss": { "en": "curry sausage", "zh": "咖喱香肠" } }],
+          "backups": [{ "name": "Borchardt" }],
+          "alternatives": [
+            {
+              "name": { "en": "Karlskirche", "zh": "卡尔教堂" },
+              "lat": 48.198279,
+              "lng": 16.371895,
+              "website": "https://www.karlskirche.at/",
+              "note": { "en": "Before the opera", "zh": "歌剧前" }
+            }
+          ],
+          "transit": {
+            "segments": [
+              { "mode": "train", "label": { "en": "Train", "zh": "火车" }, "duration": "35 min" },
+              { "mode": "walk", "label": { "en": "Walk", "zh": "步行" }, "duration": "2 min" }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+`arrive` and `leave` are a clock (`5:05 PM`, `~9:00 PM`) or, when the label is a phrase, `{ "en", "zh" }` (`after midnight` / `午夜后`, and the same for morning, evening, flexible, TBD). The Chinese page shows a clock in 24-hour time (`17:05`, `约21:00`). `subtitle`, `nativeName`, `hours`, `notes`, `mustSee`, `mustOrder`, `backups`, `alternatives`, and `transit` can be omitted. `transit` on a stop is the leg **to the next stop**; the last stop has none. `transit.segments` is one entry per mode, in order. A v2 segment can also carry `line`, `direction`, `from`, `to`, `stops`, `distanceM`, and `frequency`. The timeline shows `line → direction · duration` (or `Walk · 5 min`). Boarding stop, alighting stop, stop count, and frequency sit behind Details. `ticket` and `alternative` are the same kind of short note. `duration` is `null` when that part has no time — the page shows an em dash, not the word null. `mode` picks the icon: `walk`, `flight`, `train`, `metro`, `tram`, `bus`, `taxi`, `lift`. `gettingAround` is the city’s compact ticket note.
+
+`type` is `sight`, `restaurant`, `hotel`, `airport`, `station`, `church`, or anything else (shown as a generic stop). Sights and churches list `mustSee`. Restaurants list `mustOrder`. Either list is shown when present.
+
+`status` is `confirmed` (quiet), `tentative` (light marker), or `needs-decision` (a TBD chip). `alternatives` are the other options when the export has them, without prices.
+
+`draft: true` shows a small Draft / 草稿 tag in the city header. `website`, when it is an `http` or `https` URL, is a globe icon only — the address is not printed. The other icon opens Google Maps directions to `lat,lng`, or to the place name when there is no coordinate.
 
 ## Updating content
 
