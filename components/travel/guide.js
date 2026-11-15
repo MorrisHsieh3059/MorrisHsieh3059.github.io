@@ -617,19 +617,94 @@
 		return [transit];
 	}
 
+	function shortLine(line) {
+		return String(line || '').replace(/\s*\([^)]*\)/g, '').replace(/\s+/g, ' ').trim();
+	}
+
+	function shortDirection(dir) {
+		var s = shortLine(dir);
+		if (s.indexOf('/') !== -1) s = s.split('/')[0].trim();
+		return s;
+	}
+
+	function segHeadline(seg) {
+		var dur = segDuration(seg);
+		var line = shortLine(seg && seg.line);
+		var dir = shortDirection(seg && seg.direction);
+		var head = line
+			? line + (dir ? (state.lang === 'zh' ? ' 往 ' : ' → ') + dir : '')
+			: modeLabel(seg);
+		return head + ' · ' + dur;
+	}
+
+	function freqText(freq) {
+		if (!freq) return '';
+		if (state.lang !== 'zh') return freq;
+		return String(freq)
+			.replace(/every\s*~\s*/gi, '约每 ')
+			.replace(/\bevery\b/gi, '每')
+			.replace(/(\d)\s*min\b/gi, '$1 分钟')
+			.replace(/\bmin\b/gi, '分钟')
+			.replace(/Saturday timetable/gi, '周六时刻表')
+			.replace(/Sunday timetable/gi, '周日时刻表')
+			.replace(/holiday timetable/gi, '假日时刻表');
+	}
+
+	function segDetail(seg) {
+		if (!seg) return '';
+		var bits = [];
+		if (seg.from && seg.to) bits.push(seg.from + ' → ' + seg.to);
+		else if (seg.from) bits.push(seg.from);
+		else if (seg.to) bits.push(seg.to);
+		if (seg.stops) bits.push(state.lang === 'zh' ? seg.stops + ' 站' : seg.stops + (seg.stops === 1 ? ' stop' : ' stops'));
+		if (seg.distanceM) {
+			bits.push(seg.distanceM >= 1000
+				? (seg.distanceM / 1000).toFixed(1).replace(/\.0$/, '') + (state.lang === 'zh' ? ' 公里' : ' km')
+				: seg.distanceM + (state.lang === 'zh' ? ' 米' : ' m'));
+		}
+		if (seg.frequency) bits.push(freqText(seg.frequency));
+		if (seg.note) bits.push(seg.note);
+		return bits.join(' · ');
+	}
+
+	function fold(label, body) {
+		if (!body) return '';
+		return '<details class="guide-tl-fold"><summary>' + esc(label) + '</summary><p>' + esc(body) + '</p></details>';
+	}
+
+	function segItem(seg) {
+		var icon = ICONS[seg.mode] || 'fa-arrow-down';
+		var detail = segDetail(seg);
+		var more = detail
+			? fold(state.lang === 'zh' ? '详情' : 'Details', detail)
+			: '';
+		return '<li class="guide-tl-seg"><i class="fas ' + icon + '" aria-hidden="true"></i><div class="guide-tl-seg-body"><span class="guide-tl-seg-main">' +
+			esc(segHeadline(seg)) + '</span>' + more + '</div></li>';
+	}
+
 	function legHtml(stop) {
-		var segments = legSegments(stop.transit);
+		var transit = stop.transit;
+		var segments = legSegments(transit);
 		if (!segments.length) return '';
 		var allWalk = segments.every(function (seg) { return seg.mode === 'walk'; });
-		var items = segments.map(function (seg) {
-			var icon = ICONS[seg.mode] || 'fa-arrow-down';
-			return '<li class="guide-tl-seg"><i class="fas ' + icon + '" aria-hidden="true"></i><span>' +
-				esc(modeLabel(seg)) + ' · ' + esc(segDuration(seg)) + '</span></li>';
-		}).join('');
+		var items = segments.map(segItem).join('');
+		var notes = '';
+		if (transit && transit.ticket && tx(transit.ticket)) {
+			notes += fold(state.lang === 'zh' ? '车票' : 'Tickets', tx(transit.ticket));
+		}
+		if (transit && transit.alternative && transit.alternative.length) {
+			var alt = transit.alternative.map(function (seg) {
+				var line = segHeadline(seg);
+				var detail = segDetail(seg);
+				return detail ? line + ' — ' + detail : line;
+			}).join('\n');
+			notes += '<details class="guide-tl-fold"><summary>' + esc(state.lang === 'zh' ? '另一条路线' : 'Alternative') + '</summary><p>' +
+				esc(alt).replace(/\n/g, '<br>') + '</p></details>';
+		}
 		return '<div class="guide-tl-leg' + (allWalk ? ' is-walk' : '') + '">' +
 			'<div class="guide-tl-times"></div>' +
 			'<div class="guide-tl-axis"></div>' +
-			'<ul class="guide-tl-segs">' + items + '</ul></div>';
+			'<div class="guide-tl-main"><ul class="guide-tl-segs">' + items + '</ul>' + notes + '</div></div>';
 	}
 
 	function stopHtml(stop, index) {
@@ -695,11 +770,17 @@
 				'<span class="guide-day-kicker">' + esc(dayLabel(i)) + '</span>' +
 				'<span class="guide-day-date">' + dateHtml + '</span></button>';
 		}).join('');
-		var stops = day.stops.map(stopHtml).join('');
+		var inbound = day.inbound ? legHtml({ transit: day.inbound }) : '';
+		var stops = inbound + day.stops.map(stopHtml).join('');
 		var notes = (day.notes || []).map(function (n) {
 			return '<li>' + esc(tx(n)) + '</li>';
 		}).join('');
 		var noteBlock = notes ? '<ul class="guide-day-notes">' + notes + '</ul>' : '';
+		var around = '';
+		if (city.gettingAround && tx(city.gettingAround)) {
+			var aroundLabel = state.lang === 'zh' ? '市内交通' : 'Getting around';
+			around = '<details class="guide-around"><summary>' + esc(aroundLabel) + '</summary><p>' + esc(tx(city.gettingAround)) + '</p></details>';
+		}
 		var html = '<div class="guide-toolbar">' +
 				'<div class="guide-heading"><p class="guide-city-name">' + esc(tx(city.name)) + ' ' + draftBadge() + '</p>' +
 					'<p class="guide-city-dates">' + esc(formatRange(city.dates.start, city.dates.end)) + '</p></div>' +
@@ -708,7 +789,7 @@
 			'<div class="guide-days" role="tablist">' + tabs + '</div>' +
 			'<div class="guide-split">' +
 				'<div class="guide-map-panel"><div id="guide-map" class="guide-map" role="application" aria-label="' + esc(tx(city.name)) + '"></div></div>' +
-				'<div class="guide-timeline" id="guide-timeline"><div class="guide-tl">' + stops + '</div>' + noteBlock + '</div>' +
+				'<div class="guide-timeline" id="guide-timeline"><div class="guide-tl">' + stops + '</div>' + noteBlock + around + '</div>' +
 			'</div>';
 		$('#guide-root').attr('lang', state.lang === 'zh' ? 'zh-Hans' : 'en').html(html);
 		syncTabs();
