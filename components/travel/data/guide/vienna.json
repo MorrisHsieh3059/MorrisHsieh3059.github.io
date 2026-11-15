@@ -1,6 +1,6 @@
 {
   "id": "vienna",
-  "version": "v3.2",
+  "version": "v3.3",
   "draft": true,
   "country": {
     "en": "Austria",
@@ -1743,8 +1743,8 @@
           "website": null,
           "placeId": "VIENNA_HOTEL",
           "notes": {
-            "en": "Check out, leave bags",
-            "zh": "退房，行李先寄存"
+            "en": "Check out (~7:30 AM) and leave bags with the concierge (collected after lunch on the way to the CAT)",
+            "zh": "大约 7:30 退房，行李寄在礼宾部（午饭后去 CAT 时再取）"
           },
           "alternatives": [
             {
@@ -2007,7 +2007,7 @@
           "lat": 48.2076988,
           "lng": 16.3656104,
           "arrive": "9:50 AM",
-          "leave": null,
+          "leave": "10:55 AM",
           "website": "https://www.sisimuseum-hofburg.at/en/",
           "nativeName": "Sisi Museum / Kaiserappartements (Hofburg)",
           "placeId": "SISI",
@@ -2016,8 +2016,8 @@
             "zh": "翻新后的博物馆 11月19日重开，新时间还没贴出来（2025 年假日是 9:00–16:15）"
           },
           "notes": {
-            "en": "Sisi Museum / Imperial Apartments (50 min)",
-            "zh": "茜茜博物馆 / 皇宫内殿（50 分钟）"
+            "en": "Sisi Museum / Imperial Apartments (~1 h)",
+            "zh": "茜茜博物馆和皇室套房（大约 1 小时）"
           },
           "mustSee": [
             {
@@ -2041,39 +2041,13 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "4 min",
-                "from": "Sisi Museum (Michaelerkuppel)",
-                "to": "U Herrengasse",
-                "distanceM": 250
-              },
-              {
-                "mode": "metro",
-                "label": {
-                  "en": "Metro",
-                  "zh": "地铁"
-                },
-                "duration": "5 min",
-                "line": "U3",
-                "direction": "Simmering",
-                "from": "Herrengasse",
-                "to": "Wien Mitte-Landstraße",
-                "stops": 3,
-                "frequency": "every 4–5 min"
-              },
-              {
-                "mode": "walk",
-                "label": {
-                  "en": "Walk",
-                  "zh": "步行"
-                },
-                "duration": "4 min",
-                "distanceM": 190
+                "duration": "25 min",
+                "from": "Michaelerplatz",
+                "to": "Steirereck (Stadtpark)",
+                "distanceM": 1900,
+                "note": "Kohlmarkt → Graben → Stephansplatz → Weihburggasse → Stadtpark"
               }
             ],
-            "ticket": {
-              "en": "Vienna core-zone ticket: single ride (80 min) or 24 Stunden WIEN, in the WienMobil app.",
-              "zh": "维也纳市区票：单程 80 分钟，或 24 小时票。用 WienMobil。"
-            },
             "alternative": [
               {
                 "mode": "walk",
@@ -2081,96 +2055,35 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "23 min",
-                "distanceM": 1850
-              }
-            ]
-          }
-        },
-        {
-          "type": "hotel",
-          "status": "needs-decision",
-          "name": {
-            "en": "Vienna hotel",
-            "zh": "维也纳酒店（未定）"
-          },
-          "lat": null,
-          "lng": null,
-          "arrive": "10:45 AM",
-          "leave": "11:05 AM",
-          "website": null,
-          "placeId": "VIENNA_HOTEL",
-          "notes": {
-            "en": "Check out, leave bags",
-            "zh": "退房，行李先寄存"
-          },
-          "alternatives": [
-            {
-              "name": {
-                "en": "Hilton Vienna Park",
-                "zh": "Hilton Vienna Park"
+                "duration": "4 min",
+                "from": "Michaelerplatz",
+                "to": "U Herrengasse",
+                "distanceM": 300
               },
-              "lat": 48.205987,
-              "lng": 16.383315,
-              "website": "https://www.hilton.com/en/hotels/viehitw-hilton-vienna-park/",
-              "note": {
-                "en": "above Wien Mitte/CAT, 5 min to Steirereck",
-                "zh": "在 Wien Mitte / 机场大巴上方，到 Steirereck 走 5 分钟"
-              }
-            },
-            {
-              "name": {
-                "en": "Hotel Am Konzerthaus (MGallery)",
-                "zh": "Hotel Am Konzerthaus (MGallery)"
+              {
+                "mode": "metro",
+                "label": {
+                  "en": "Metro",
+                  "zh": "地铁"
+                },
+                "duration": "3 min",
+                "line": "U3",
+                "direction": "Simmering",
+                "from": "U Herrengasse",
+                "to": "U Stubentor",
+                "stops": 2,
+                "frequency": "every ~4–5 min"
               },
-              "lat": 48.199677,
-              "lng": 16.377387,
-              "website": "https://all.accor.com/hotel/1276/index.en.shtml",
-              "nativeName": "Hotel Am Konzerthaus Vienna – MGallery",
-              "note": {
-                "en": "3 min to Steirereck",
-                "zh": "到 Steirereck 走 3 分钟"
-              }
-            },
-            {
-              "name": {
-                "en": "magdas Hotel Vienna City",
-                "zh": "magdas Hotel Vienna City"
-              },
-              "lat": 48.200572,
-              "lng": 16.387216,
-              "website": "https://www.magdas-hotel.at/",
-              "note": {
-                "en": "U4 Stadtpark ~8 min",
-                "zh": "U4 到 Stadtpark，大约 8 分钟"
-              }
-            },
-            {
-              "name": {
-                "en": "Rioca Vienna Posto 2",
-                "zh": "Rioca Vienna Posto 2"
-              },
-              "lat": 48.189156,
-              "lng": 16.403416,
-              "website": "https://www.rioca.eu/",
-              "note": {
-                "en": "further out (tram 18/71)",
-                "zh": "远一点（有轨电车 18 或 71）"
-              }
-            }
-          ],
-          "transit": {
-            "segments": [
               {
                 "mode": "walk",
                 "label": {
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "5 min",
-                "from": "hotel near Wien Mitte",
-                "to": "Steirereck im Stadtpark",
-                "distanceM": 340
+                "duration": "8 min",
+                "from": "U Stubentor",
+                "to": "Steirereck",
+                "distanceM": 600
               }
             ]
           }
@@ -2345,6 +2258,12 @@
             "en": "Fly VIE → BRU (flight TBD)",
             "zh": "维也纳飞布鲁塞尔（机票还没订）"
           }
+        }
+      ],
+      "notes": [
+        {
+          "en": "No mid-day hotel return: check out when leaving for breakfast · bags are picked up only on the way to the airport bus.",
+          "zh": "中午不回酒店。去吃早餐时就退房。行李只在去机场大巴的路上取。"
         }
       ]
     }

@@ -257,6 +257,7 @@ function zhTimeLabel(raw) {
   s = applyTimePhrases(s);
   s = s.replace(/^\s*~\s*/, '约');
   s = s.replace(/\s+（/g, '（');
+  s = s.replace(/service/gi, '礼拜 ');
   return s.replace(/\s{2,}/g, ' ').trim();
 }
 
