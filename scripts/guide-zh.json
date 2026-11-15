@@ -98,7 +98,11 @@
     "Kaiser-Wilhelm-Gedächtniskirche + Breitscheidplatz Christmas market (free time)": "威廉皇帝纪念教堂，加上 Breitscheidplatz 圣诞市集（自由活动）",
     "Lunch (Jeanneke Pis is 1 min away, see it on the way out)": "午饭（尿尿小妹走 1 分钟，出来顺路看一眼）",
     "Reichstag exterior + Brandenburg Gate as the lights come on (sunset ~3:55 PM), 30 min": "国会大厦外观和勃兰登堡门，等灯亮起来（日落大约 15:55），30 分钟",
-    "Royal Museums of Fine Arts (+ Magritte), 1 h 20 – closes 3 PM today": "皇家美术馆（含马格利特），1 小时 20 分。今天 15:00 关门"
+    "Royal Museums of Fine Arts (+ Magritte), 1 h 20 – closes 3 PM today": "皇家美术馆（含马格利特），1 小时 20 分。今天 15:00 关门",
+    "Check in, security (no US preclearance) · departs on United BRU 11:15 AM → Newark EWR 1:25 PM": "值机、安检（这里没有美国出境预检）· 布鲁塞尔 11:15 起飞，纽瓦克 13:25 到",
+    "Dinner in Berlin's oldest beer garden (1837), winter restaurant": "晚饭在柏林最老的啤酒花园（1837），冬天在室内",
+    "Lunch (2:50 PM departure to BER)": "午饭（14:50 出发去机场）",
+    "Lunch: Berlin's oldest restaurant (1621)": "午饭：柏林最老的餐厅（1621）"
   },
   "title": {
     "Boxing Day · Wall Memorial, East Side Gallery, TV Tower": "节礼日 · 柏林墙纪念地、东边画廊、电视塔",
@@ -112,7 +116,16 @@
     "Sunday · Berlin church (morning) → Vienna evening": "周日 · 柏林上午的教会，晚上到维也纳",
     "Vienna → Brussels · State Hall, Sisi Museum, Steirereck lunch, evening flight": "维也纳飞布鲁塞尔 · 国家厅、茜茜博物馆、Steirereck 午饭、晚上的飞机",
     "day trip from Vienna": "从维也纳出发的一日游",
-    "Christmas Day · Museum Island, Reichstag dome, Topography of Terror, Kreuzberg dinner": "圣诞节 · 博物馆岛、国会大厦穹顶、恐怖地形图、克罗伊茨贝格晚饭"
+    "Christmas Day · Museum Island, Reichstag dome, Topography of Terror, Kreuzberg dinner": "圣诞节 · 博物馆岛、国会大厦穹顶、恐怖地形图、克罗伊茨贝格晚饭",
+    "Arrive BRU (flight TBD) → Hilton, beer-cuisine dinner, Grand-Place light show": "到布鲁塞尔（机票还没订）→ 希尔顿、啤酒菜晚饭、大广场灯光",
+    "Boxing Day · Wall Memorial, Berlin's oldest restaurant, East Side Gallery, TV Tower, Prenzlauer Berg dinner": "节礼日 · 柏林墙纪念地、柏林最老的餐厅、东边画廊、电视塔、Prenzlauer Berg 晚饭",
+    "Christmas Eve · arrive BER 1:25 PM → Berlin": "平安夜 · 13:25 到柏林机场，然后进城",
+    "New Year's Day · Hilton → BRU ( 11:15 AM)": "元旦 · 希尔顿出发，11:15 到布鲁塞尔机场",
+    "Sunday · IREC church, Savignyplatz lunch, Memorial Church → BER ( 5:05 PM)": "周日 · 教会、Savignyplatz 午饭、纪念教堂，17:05 到机场",
+    "Sunday · arrive VIE 6:20 PM → hotel, Stephansdom, Schnitzel dinner": "周日 · 18:20 到维也纳机场，然后酒店、圣斯德望、炸肉排晚饭",
+    "Train to Bratislava": "火车去布拉迪斯拉发",
+    "Vienna morning (Belvedere) · day trip to Bratislava · Heuriger dinner": "维也纳上午（美景宫）· 布拉迪斯拉发一日游 · 酒馆晚饭",
+    "Vienna · Café Sacher, State Hall, Sisi Museum, Steirereck lunch → VIE (flight to Brussels TBD)": "维也纳 · Café Sacher、国家厅、茜茜博物馆、Steirereck 午饭，然后去机场（飞布鲁塞尔的机票还没订）"
   },
   "duration": {
     "overnight; arrives 7:30 AM Dec 24": "过夜，12 月 24 日早上 7:30 到"
@@ -210,7 +223,10 @@
     "Lustgarten": "露天花园",
     "KaDeWe department store": "KaDeWe 百货",
     "Michael's Gate": "Michael's Gate",
-    "Pierre Marcolini": "Pierre Marcolini"
+    "Pierre Marcolini": "Pierre Marcolini",
+    "Brötchen (Eiaufstrich, Lachs)": "小面包（鸡蛋酱、三文鱼）",
+    "Molle (Hausbier)": "Molle（店里的啤酒）",
+    "Wiener Schnitzel vom Kalb (in Butterschmalz)": "小牛肉维也纳炸肉排（用黄油油炸）"
   },
   "note": {
     "daily 12–24": "每天 12:00–24:00",
@@ -273,7 +289,52 @@
     "Karlskirche ↔ Staatsoper is 11 min on foot each way (v1 said 5 min).": "Karlskirche 和国立歌剧院步行各 11 分钟。",
     "Order changed in v2: Reichstag dome moved from 5 PM to 2:15 PM so the day runs Museum Island → Reichstag → Topography → Checkpoint Charlie → Kreuzberg without backtracking.": "顺序改了：国会大厦穹顶从下午 5 点改到 2:15。这一天是博物馆岛、国会大厦、恐怖地形图、查理检查哨，再到克罗伊茨贝格。",
     "Package incl. dinner + fireworks view (see NYE plan)": "套餐含晚饭和看烟火（见跨年安排）",
-    "Topography of Terror and Reichstag dome are open Dec 25 (dome closed only Dec 24 and from 4 PM Dec 31).": "恐怖地形图和国会大厦穹顶 12 月 25 日开。穹顶只在 12 月 24 日全天关，以及 12 月 31 日 16:00 起关。"
+    "Topography of Terror and Reichstag dome are open Dec 25 (dome closed only Dec 24 and from 4 PM Dec 31).": "恐怖地形图和国会大厦穹顶 12 月 25 日开。穹顶只在 12 月 24 日全天关，以及 12 月 31 日 16:00 起关。",
+    "Backup for NYE dinner 2026-12-31 · ~10 min taxi": "12月31日跨年晚饭的备选 · 出租车 10 分钟",
+    "Backup for NYE dinner 2026-12-31 · ~7 min walk": "12月31日跨年晚饭的备选 · 步行 7 分钟",
+    "Backup for breakfast 2026-12-30 · ~12 min walk": "12月30日早餐的备选 · 步行 12 分钟",
+    "Backup for breakfast 2026-12-30 · ~15 min walk": "12月30日早餐的备选 · 步行 15 分钟",
+    "Backup for coffee 2026-12-28 · ~15 min walk": "12月28日咖啡的备选 · 步行 15 分钟",
+    "Backup for coffee 2026-12-28 · ~4 min walk": "12月28日咖啡的备选 · 步行 4 分钟",
+    "Backup for coffee 2026-12-29 · ~1 min walk": "12月29日咖啡的备选 · 步行 1 分钟",
+    "Backup for dinner (Christmas Eve) 2026-12-24 · ~1 min walk": "12月24日平安夜晚餐的备选 · 步行 1 分钟",
+    "Backup for dinner (Christmas Eve) 2026-12-24 · ~12 min walk": "12月24日平安夜晚餐的备选 · 步行 12 分钟",
+    "Backup for dinner 2026-12-25 · ~10 min walk": "12月25日晚餐的备选 · 步行 10 分钟",
+    "Backup for dinner 2026-12-25 · ~12 min walk": "12月25日晚餐的备选 · 步行 12 分钟",
+    "Backup for dinner 2026-12-26 · ~10 min walk": "12月26日晚餐的备选 · 步行 10 分钟",
+    "Backup for dinner 2026-12-26 · ~6 min walk": "12月26日晚餐的备选 · 步行 6 分钟",
+    "Backup for dinner 2026-12-27 · ~10 min walk": "12月27日晚餐的备选 · 步行 10 分钟",
+    "Backup for dinner 2026-12-27 · ~12 min walk": "12月27日晚餐的备选 · 步行 12 分钟",
+    "Backup for dinner 2026-12-29 · ~12 min taxi": "12月29日晚餐的备选 · 出租车 12 分钟",
+    "Backup for dinner 2026-12-29 · ~8 min taxi": "12月29日晚餐的备选 · 出租车 8 分钟",
+    "Backup for dinner 2026-12-30 · ~8 min walk": "12月30日晚餐的备选 · 步行 8 分钟",
+    "Backup for late-night snack 2026-12-28 · ~12 min walk": "12月28日宵夜的备选 · 步行 12 分钟",
+    "Backup for late-night snack 2026-12-28 · ~4 min walk": "12月28日宵夜的备选 · 步行 4 分钟",
+    "Backup for lunch (the one splurge) 2026-12-30 · same building": "12月30日午餐（这趟唯一的大餐）的备选 · 同一栋楼",
+    "Backup for lunch (the one splurge) 2026-12-30 · ~6 min walk": "12月30日午餐（这趟唯一的大餐）的备选 · 步行 6 分钟",
+    "Backup for lunch 2026-12-24 · ~15 min walk": "12月24日午餐的备选 · 步行 15 分钟",
+    "Backup for lunch 2026-12-24 · ~3 min walk": "12月24日午餐的备选 · 步行 3 分钟",
+    "Backup for lunch 2026-12-25 · ~15 min walk": "12月25日午餐的备选 · 步行 15 分钟",
+    "Backup for lunch 2026-12-25 · ~8 min walk": "12月25日午餐的备选 · 步行 8 分钟",
+    "Backup for lunch 2026-12-26 · ~7 min walk": "12月26日午餐的备选 · 步行 7 分钟",
+    "Backup for lunch 2026-12-26 · ~9 min walk": "12月26日午餐的备选 · 步行 9 分钟",
+    "Backup for lunch 2026-12-27 · ~2 min walk": "12月27日午餐的备选 · 步行 2 分钟",
+    "Backup for lunch 2026-12-27 · ~7 min walk": "12月27日午餐的备选 · 步行 7 分钟",
+    "Backup for lunch 2026-12-28 · ~2 min walk": "12月28日午餐的备选 · 步行 2 分钟",
+    "Backup for lunch 2026-12-28 · ~4 min walk": "12月28日午餐的备选 · 步行 4 分钟",
+    "Backup for lunch 2026-12-29 · ~4 min walk": "12月29日午餐的备选 · 步行 4 分钟",
+    "Backup for lunch 2026-12-29 · ~5 min walk": "12月29日午餐的备选 · 步行 5 分钟",
+    "Backup for lunch 2026-12-31 · ~2 min walk": "12月31日午餐的备选 · 步行 2 分钟",
+    "Backup for lunch 2026-12-31 · ~6 min walk": "12月31日午餐的备选 · 步行 6 分钟",
+    "Backup for pre-opera snack 2026-12-28 · ~2 min walk": "12月28日歌剧前的小吃的备选 · 步行 2 分钟",
+    "Backup for pre-opera snack 2026-12-28 · ~4 min walk": "12月28日歌剧前的小吃的备选 · 步行 4 分钟",
+    "Backup for waffle 2026-12-31 · ~10 min walk": "12月31日华夫饼的备选 · 步行 10 分钟",
+    "Backup for waffle 2026-12-31 · ~5 min walk": "12月31日华夫饼的备选 · 步行 5 分钟",
+    "Day ends at the Austrian departure from BER 5:05 PM · the evening continues in Vienna (Dec 27).": "这一天到柏林机场 17:05 的航班为止。晚上在维也纳（12 月 27 日）。",
+    "Morning in Berlin – see Berlin Dec 27.": "早上还在柏林，看柏林 12 月 27 日。",
+    "NYE alternative: The Iris package (see meals slot Y4, backup 2).": "跨年的另一个选择是 The Iris 套餐。",
+    "The day trip itself is in city 'bratislava'. The daytrip stop is not joined to Vienna Central Station by a leg on the way out · the outbound leg opens the Bratislava day, and the return leg sits here between the daytrip stop and Vienna Central Station.": "布拉迪斯拉发的行程在那一页。去程火车从布拉迪斯拉发那天开始，回程在一日游和维也纳中央车站之间。",
+    "Vienna part of the day – see Vienna Dec 30.": "这一天在维也纳的部分，看维也纳 12 月 30 日。"
   },
   "hours": {
     "10 AM–11 PM on Dec 25–26": "12月25–26日 10:00–23:00",
@@ -334,7 +395,10 @@
     "open 365 days": "全年无休",
     "Church daily 10 AM–6 PM (no visits during the 10 AM/6 PM services) · market Dec 27 12–9 PM · KaDeWe CLOSED (Sunday)": "教堂每天 10:00–18:00（10:00 和 18:00 礼拜时不参观）· 市集 12 月 27 日 12:00–21:00 · KaDeWe 周日关门",
     "Dec 26 9 AM–9 PM": "12 月 26 日 9:00–21:00",
-    "Mon–Fri 8 AM–6 PM (no visits during 12:30 Mass); free; treasury paid": "周一到周五 8:00–18:00（12:30 弥撒时不参观）。教堂免费，珍宝馆要门票"
+    "Mon–Fri 8 AM–6 PM (no visits during 12:30 Mass); free; treasury paid": "周一到周五 8:00–18:00（12:30 弥撒时不参观）。教堂免费，珍宝馆要门票",
+    "Daily from 12:00 (official site)": "每天 12:00 起（官网）",
+    "Sat 12:00–15:00 (Dec 26 is a Saturday)": "周六 12:00–15:00（12 月 26 日是周六）",
+    "Sat from 17:00": "周六 17:00 起"
   },
   "gloss": {
     "Belgian waffles": {

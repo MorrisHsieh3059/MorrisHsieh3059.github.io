@@ -1,6 +1,6 @@
 {
   "id": "vienna",
-  "version": "v2",
+  "version": "v3",
   "draft": true,
   "country": {
     "en": "Austria",
@@ -22,434 +22,10 @@
       "date": "2026-12-27",
       "weekday": "Sun",
       "title": {
-        "en": "Sunday · Berlin church (morning) → Vienna evening",
-        "zh": "周日 · 柏林上午的教会，晚上到维也纳"
+        "en": "Sunday · arrive VIE 6:20 PM → hotel, Stephansdom, Schnitzel dinner",
+        "zh": "周日 · 18:20 到维也纳机场，然后酒店、圣斯德望、炸肉排晚饭"
       },
       "stops": [
-        {
-          "type": "hotel",
-          "status": "confirmed",
-          "name": {
-            "en": "Waldorf Astoria Berlin",
-            "zh": "Waldorf Astoria Berlin"
-          },
-          "lat": 52.505584,
-          "lng": 13.332911,
-          "arrive": null,
-          "leave": "9:05 AM",
-          "website": "https://www.hilton.com/en/hotels/berwawa-waldorf-astoria-berlin/",
-          "notes": {
-            "en": "Breakfast 8:00 AM; check out 8:50 AM and leave bags with concierge",
-            "zh": "8:00 早餐；8:50 退房，行李寄在礼宾部"
-          },
-          "transit": {
-            "segments": [
-              {
-                "mode": "walk",
-                "label": {
-                  "en": "Walk",
-                  "zh": "步行"
-                },
-                "duration": "3 min",
-                "from": "Waldorf",
-                "to": "Zoologischer Garten",
-                "distanceM": 250
-              },
-              {
-                "mode": "train",
-                "label": {
-                  "en": "Train",
-                  "zh": "火车"
-                },
-                "duration": "1–2 min",
-                "line": "S9 / S7 / S5 / S3",
-                "direction": "Flughafen BER / Ahrensfelde / Strausberg / Erkner",
-                "from": "Zoologischer Garten",
-                "to": "Tiergarten",
-                "stops": 1,
-                "frequency": "every 2–5 min combined (Sunday)",
-                "note": "buy the 24-hour ABC ticket now – it also covers the trip to BER"
-              },
-              {
-                "mode": "walk",
-                "label": {
-                  "en": "Walk",
-                  "zh": "步行"
-                },
-                "duration": "7 min",
-                "from": "S Tiergarten",
-                "to": "IREC, Händelallee 20",
-                "distanceM": 540
-              }
-            ],
-            "ticket": {
-              "en": "Berlin ABC ticket. The airport is zone C. BVG app, DB Navigator, or a station machine.",
-              "zh": "柏林 ABC 票，机场在 C 区。BVG、DB Navigator 或站内机器。"
-            },
-            "alternative": [
-              {
-                "mode": "walk",
-                "label": {
-                  "en": "Walk",
-                  "zh": "步行"
-                },
-                "duration": "21 min",
-                "distanceM": 1700,
-                "note": "walk through the Tiergarten"
-              }
-            ]
-          }
-        },
-        {
-          "type": "church",
-          "status": "needs-decision",
-          "name": {
-            "en": "IREC Berlin",
-            "zh": "柏林归正福音教会（GRII）"
-          },
-          "lat": 52.515179,
-          "lng": 13.342404,
-          "arrive": "9:30 AM",
-          "leave": "~11:30 AM",
-          "website": "https://irec-berlin.org/",
-          "nativeName": "IREC Berlin (Indonesian Reformed Evangelical Church), Kaiser-Friedrich-Gedächtniskirche",
-          "hours": {
-            "en": "Site says every Sunday 9:30 AM Dec 27 service not yet confirmed",
-            "zh": "网站写每周日 9:30。12月27日这场还没确认"
-          },
-          "notes": {
-            "en": "Sunday service (English); end time is an estimate",
-            "zh": "主日崇拜（英语）；结束时间是估的"
-          },
-          "mustSee": [
-            {
-              "text": {
-                "en": "Confessional Reformed (GRII); confesses Westminster, Heidelberg, Dordt",
-                "zh": "归正福音教会（GRII），认信威斯敏斯特、海德堡、多特"
-              }
-            }
-          ],
-          "transit": {
-            "segments": [
-              {
-                "mode": "walk",
-                "label": {
-                  "en": "Walk",
-                  "zh": "步行"
-                },
-                "duration": "7 min",
-                "from": "IREC",
-                "to": "S Tiergarten",
-                "distanceM": 540
-              },
-              {
-                "mode": "train",
-                "label": {
-                  "en": "Train",
-                  "zh": "火车"
-                },
-                "duration": "1–2 min",
-                "line": "S5 / S7 / S3",
-                "direction": "Westkreuz / Potsdam / Spandau",
-                "from": "Tiergarten",
-                "to": "Zoologischer Garten",
-                "stops": 1,
-                "frequency": "every 2–5 min combined"
-              },
-              {
-                "mode": "walk",
-                "label": {
-                  "en": "Walk",
-                  "zh": "步行"
-                },
-                "duration": "2 min",
-                "distanceM": 150
-              }
-            ],
-            "ticket": {
-              "en": "Berlin ABC ticket. The airport is zone C. BVG app, DB Navigator, or a station machine.",
-              "zh": "柏林 ABC 票，机场在 C 区。BVG、DB Navigator 或站内机器。"
-            },
-            "alternative": [
-              {
-                "mode": "walk",
-                "label": {
-                  "en": "Walk",
-                  "zh": "步行"
-                },
-                "duration": "18 min",
-                "distanceM": 1500
-              }
-            ]
-          }
-        },
-        {
-          "type": "restaurant",
-          "status": "tentative",
-          "name": {
-            "en": "Curry 36 (Zoo station)",
-            "zh": "Curry 36 (Zoo station)"
-          },
-          "lat": 52.506552,
-          "lng": 13.332461,
-          "arrive": "12:00 PM",
-          "leave": "12:30 PM",
-          "website": "https://curry36.de/",
-          "nativeName": "Curry 36 Bahnhof Zoo",
-          "hours": {
-            "en": "Daily 8 AM–5 AM",
-            "zh": "每天 8:00 到次日 5:00"
-          },
-          "notes": {
-            "en": "Quick lunch (2:45 PM departure to BER)",
-            "zh": "简单吃个午饭（14:45 出发去机场）"
-          },
-          "mustOrder": [
-            {
-              "name": "Currywurst",
-              "gloss": {
-                "en": "curry sausage",
-                "zh": "咖喱香肠"
-              }
-            },
-            {
-              "name": "Pommes"
-            }
-          ],
-          "backups": [
-            {
-              "name": "Borchardt",
-              "note": {
-                "en": "sit-down, from 11:30 · S-Bahn 15 min, back at hotel by 1:45",
-                "zh": "可以坐下，11:30 起。S-Bahn 15 分钟，13:45 前回到酒店"
-              }
-            },
-            {
-              "name": "Lutter & Wegner",
-              "note": {
-                "en": "daily from 12",
-                "zh": "每天 12 点起"
-              }
-            },
-            {
-              "name": "Simple meal at BER airport",
-              "note": {
-                "en": "arrive 3:45 PM",
-                "zh": "15:45 到"
-              }
-            }
-          ],
-          "transit": {
-            "segments": [
-              {
-                "mode": "walk",
-                "label": {
-                  "en": "Walk",
-                  "zh": "步行"
-                },
-                "duration": "5 min",
-                "distanceM": 410
-              }
-            ]
-          }
-        },
-        {
-          "type": "sight",
-          "status": "tentative",
-          "name": {
-            "en": "Kaiser Wilhelm Memorial Church",
-            "zh": "威廉皇帝纪念教堂"
-          },
-          "lat": 52.504787,
-          "lng": 13.335194,
-          "arrive": "12:40 PM",
-          "leave": "2:30 PM",
-          "website": "https://www.gedaechtniskirche-berlin.de/",
-          "nativeName": "Kaiser-Wilhelm-Gedächtniskirche",
-          "optional": true,
-          "hours": {
-            "en": "Church daily 10 AM–6 PM (no visits during the 10 AM/6 PM services) · market Dec 27 12–9 PM · KaDeWe CLOSED (Sunday)",
-            "zh": "教堂每天 10:00–18:00（10:00 和 18:00 礼拜时不参观）· 市集 12 月 27 日 12:00–21:00 · KaDeWe 周日关门"
-          },
-          "notes": {
-            "en": "Kaiser-Wilhelm-Gedächtniskirche + Breitscheidplatz Christmas market (free time)",
-            "zh": "威廉皇帝纪念教堂，加上 Breitscheidplatz 圣诞市集（自由活动）"
-          },
-          "mustSee": [
-            {
-              "name": "Kaiser-Wilhelm-Gedächtniskirche (ruined tower + blue-glass church)"
-            },
-            {
-              "name": "Weihnachtsmarkt an der Gedächtniskirche (open Dec 27 12–9 PM)"
-            }
-          ],
-          "transit": {
-            "segments": [
-              {
-                "mode": "walk",
-                "label": {
-                  "en": "Walk",
-                  "zh": "步行"
-                },
-                "duration": "3 min",
-                "distanceM": 270
-              }
-            ]
-          }
-        },
-        {
-          "type": "hotel",
-          "status": "confirmed",
-          "name": {
-            "en": "Waldorf Astoria Berlin",
-            "zh": "Waldorf Astoria Berlin"
-          },
-          "lat": 52.505584,
-          "lng": 13.332911,
-          "arrive": "2:35 PM",
-          "leave": "2:50 PM",
-          "website": "https://www.hilton.com/en/hotels/berwawa-waldorf-astoria-berlin/",
-          "notes": {
-            "en": "Collect bags",
-            "zh": "取行李"
-          },
-          "transit": {
-            "segments": [
-              {
-                "mode": "walk",
-                "label": {
-                  "en": "Walk",
-                  "zh": "步行"
-                },
-                "duration": "3 min",
-                "from": "Waldorf",
-                "to": "Zoologischer Garten (U2 platform)",
-                "distanceM": 250
-              },
-              {
-                "mode": "metro",
-                "label": {
-                  "en": "Metro",
-                  "zh": "地铁"
-                },
-                "duration": "10 min",
-                "line": "U2",
-                "direction": "Pankow",
-                "from": "Zoologischer Garten",
-                "to": "Potsdamer Platz",
-                "stops": 6,
-                "frequency": "every 5–10 min"
-              },
-              {
-                "mode": "train",
-                "label": {
-                  "en": "Train",
-                  "zh": "火车"
-                },
-                "duration": "19–20 min",
-                "line": "FEX",
-                "direction": "Flughafen BER",
-                "from": "Potsdamer Platz (deep-level regional platforms)",
-                "to": "Flughafen BER",
-                "stops": 2,
-                "frequency": "every 15–30 min"
-              },
-              {
-                "mode": "walk",
-                "label": {
-                  "en": "Walk",
-                  "zh": "步行"
-                },
-                "duration": "3 min",
-                "from": "BER station",
-                "to": "Terminal 1 check-in",
-                "distanceM": 200
-              }
-            ],
-            "ticket": {
-              "en": "Berlin ABC ticket. The airport is zone C. BVG app, DB Navigator, or a station machine.",
-              "zh": "柏林 ABC 票，机场在 C 区。BVG、DB Navigator 或站内机器。"
-            },
-            "alternative": [
-              {
-                "mode": "taxi",
-                "label": {
-                  "en": "Taxi",
-                  "zh": "出租车"
-                },
-                "duration": "40–50 min"
-              },
-              {
-                "mode": "train",
-                "label": {
-                  "en": "Train",
-                  "zh": "火车"
-                },
-                "duration": "55 min",
-                "line": "S9",
-                "direction": "Flughafen BER",
-                "from": "Zoologischer Garten",
-                "to": "Flughafen BER",
-                "stops": 20,
-                "frequency": "every 20 min",
-                "note": "no change, slower"
-              }
-            ]
-          }
-        },
-        {
-          "type": "airport",
-          "status": "needs-decision",
-          "name": {
-            "en": "Berlin Brandenburg Airport T1",
-            "zh": "柏林机场 T1"
-          },
-          "lat": 52.3657974,
-          "lng": 13.4888906,
-          "arrive": "3:35 PM",
-          "leave": "5:05 PM",
-          "website": "https://ber.berlin-airport.de/",
-          "nativeName": "Flughafen Berlin Brandenburg Terminal 1",
-          "notes": {
-            "en": "Bag drop / security (1 h 20 min before departure)",
-            "zh": "托运、安检（起飞前 1 小时 20 分）"
-          },
-          "transit": {
-            "segments": [
-              {
-                "mode": "flight",
-                "label": {
-                  "en": "Flight",
-                  "zh": "飞机"
-                },
-                "duration": "1h 15m"
-              }
-            ]
-          },
-          "alternatives": [
-            {
-              "name": {
-                "en": "7:40 → 8:55 PM (misses dinner)",
-                "zh": "19:40 起飞，20:55 到（赶不上晚饭）"
-              },
-              "note": null
-            },
-            {
-              "name": {
-                "en": "3:10 PM (earliest after church)",
-                "zh": "15:10（做完礼拜最早的一班）"
-              },
-              "note": null
-            },
-            {
-              "name": {
-                "en": "4:35 PM via Frankfurt → 9:30 PM",
-                "zh": "16:35 经法兰克福，21:30 到"
-              },
-              "note": null
-            }
-          ]
-        },
         {
           "type": "airport",
           "status": "needs-decision",
@@ -708,12 +284,12 @@
             {
               "name": "Wiener Schnitzel vom Kalb",
               "gloss": {
-                "en": "in Butter herausgebacken",
-                "zh": "黄油煎的小牛肉炸排"
+                "en": "in Butterschmalz",
+                "zh": "小牛肉维也纳炸肉排（用黄油油炸）"
               }
             },
             {
-              "name": "Erdäpfelsalat"
+              "name": "Erdäpfel-Vogerlsalat"
             },
             {
               "name": "Preiselbeeren"
@@ -721,24 +297,36 @@
           ],
           "backups": [
             {
-              "name": "Plachutta Wollzeile",
-              "note": {
-                "en": "daily 11:30–23:30",
-                "zh": "每天 11:30–23:30"
-              }
-            },
-            {
               "name": "Figlmüller Wollzeile",
+              "nameEn": "Figlmüller (Wollzeile)",
+              "area": "Innere Stadt · Stephansdom",
+              "areaZh": "Innere Stadt · Stephansdom",
+              "mustOrder": [
+                "Figlmüller-Schnitzel (Schwein)",
+                "Erdäpfelsalat"
+              ],
+              "hoursZh": "官网：每天 11–22:30，厨房到 21:30",
+              "distanceZh": "🚶 10 分钟",
               "note": {
-                "en": "daily 11–22:30, kitchen to 21:30 (pork schnitzel)",
-                "zh": "每天 11:00–22:30，厨房到 21:30（猪肉炸排）"
+                "en": "Backup for dinner 2026-12-27 · ~10 min walk",
+                "zh": "12月27日晚餐的备选 · 步行 10 分钟"
               }
             },
             {
-              "name": "Bitzinger Würstelstand Albertina",
+              "name": "Reinthaler's Beisl",
+              "nameEn": "Reinthaler's Beisl",
+              "area": "Innere Stadt · Graben",
+              "areaZh": "Innere Stadt · Graben",
+              "mustOrder": [
+                "Schweinsbraten mit Knödel",
+                "Rindsgulasch",
+                "Kaiserschmarrn"
+              ],
+              "hoursZh": "周日 11–23，厨房到 22:30",
+              "distanceZh": "🚶 12 分钟",
               "note": {
-                "en": "after 10 PM, daily 8–4",
-                "zh": "22:00 以后，每天 8:00–16:00"
+                "en": "Backup for dinner 2026-12-27 · ~12 min walk",
+                "zh": "12月27日晚餐的备选 · 步行 12 分钟"
               }
             }
           ],
@@ -760,18 +348,26 @@
       ],
       "notes": [
         {
-          "en": "Budget alternative: 7:40 PM (lands 8:55 PM) – misses dinner.",
-          "zh": "省一点的话可以坐 19:40 那班（20:55 到），但赶不上晚饭。"
-        },
-        {
           "en": "Upper Belvedere and Karlskirche were moved off Dec 27 (awaiting a decision).",
           "zh": "上美景宫和卡尔教堂已经从 12 月 27 日挪走（还等拍板）。"
         },
         {
-          "en": "KaDeWe is closed on Sundays – replaced by the Breitscheidplatz Christmas market next to the church.",
-          "zh": "KaDeWe 周日关门，改去教堂旁边的 Breitscheidplatz 圣诞市集。"
+          "en": "Morning in Berlin – see Berlin Dec 27.",
+          "zh": "早上还在柏林，看柏林 12 月 27 日。"
         }
-      ]
+      ],
+      "inbound": {
+        "segments": [
+          {
+            "mode": "flight",
+            "label": {
+              "en": "Flight",
+              "zh": "飞机"
+            },
+            "duration": "1h 15m"
+          }
+        ]
+      }
     },
     {
       "date": "2026-12-28",
@@ -797,22 +393,6 @@
             "en": "Hotel breakfast 7:30 AM",
             "zh": "酒店早餐 7:30"
           },
-          "backups": [
-            {
-              "name": "Café Sacher",
-              "note": {
-                "en": "breakfast daily 7–11",
-                "zh": "早餐每天 7:00–11:00"
-              }
-            },
-            {
-              "name": "Café Sperl",
-              "note": {
-                "en": "Mon from 7",
-                "zh": "周一起 7:00"
-              }
-            }
-          ],
           "alternatives": [
             {
               "name": {
@@ -1046,11 +626,7 @@
           },
           "mustOrder": [
             {
-              "name": "Tafelspitz",
-              "gloss": {
-                "en": "Suppe zuerst, dann Fleisch",
-                "zh": "先喝汤，再吃肉"
-              }
+              "name": "Tafelspitz"
             },
             {
               "name": "Markknochen mit Schwarzbrot"
@@ -1061,20 +637,37 @@
           ],
           "backups": [
             {
-              "name": "Plachutta Wollzeile",
+              "name": "Café Dommayer",
+              "nameEn": "Café Dommayer",
+              "area": "Hietzing · Schönbrunn",
+              "areaZh": "Hietzing · Schönbrunn",
+              "mustOrder": [
+                "Kaiserschmarrn",
+                "Wiener Schnitzel",
+                "Melange"
+              ],
+              "hoursZh": "每天 7:30–20:30",
+              "distanceZh": "🚶 2 分钟",
               "note": {
-                "en": "daily 11:30–23:30",
-                "zh": "每天 11:30–23:30"
+                "en": "Backup for lunch 2026-12-28 · ~2 min walk",
+                "zh": "12月28日午餐的备选 · 步行 2 分钟"
               }
             },
             {
-              "name": "KHM Cupola café (in museum)"
-            },
-            {
-              "name": "Meissl & Schadn",
+              "name": "Brandauer's Schlossbräu",
+              "nameEn": "Brandauer's Schlossbräu",
+              "area": "Hietzing · Schönbrunn",
+              "areaZh": "Hietzing · Schönbrunn",
+              "mustOrder": [
+                "Schweinsbraten",
+                "Rindsgulasch",
+                "Hausbier vom Fass"
+              ],
+              "hoursZh": "周一 10–24，厨房 11:30–22",
+              "distanceZh": "🚶 4 分钟",
               "note": {
-                "en": "from 12",
-                "zh": "12 点起"
+                "en": "Backup for lunch 2026-12-28 · ~4 min walk",
+                "zh": "12月28日午餐的备选 · 步行 4 分钟"
               }
             }
           ],
@@ -1263,28 +856,48 @@
           },
           "mustOrder": [
             {
-              "name": "Annatorte oder Sachertorte"
+              "name": "Annatorte"
             },
             {
               "name": "Kaiserschmarrn"
             },
             {
-              "name": "Wiener Melange"
+              "name": "Demel-Sachertorte"
             }
           ],
           "backups": [
             {
-              "name": "Café Sacher",
+              "name": "Café Bräunerhof",
+              "nameEn": "Café Bräunerhof",
+              "area": "Innere Stadt · Hofburg",
+              "areaZh": "Innere Stadt · Hofburg",
+              "mustOrder": [
+                "Melange",
+                "Apfelstrudel",
+                "Topfenstrudel"
+              ],
+              "hoursZh": "周一 8–22:30",
+              "distanceZh": "🚶 4 分钟",
               "note": {
-                "en": "original Sachertorte",
-                "zh": "正宗萨赫蛋糕"
+                "en": "Backup for coffee 2026-12-28 · ~4 min walk",
+                "zh": "12月28日咖啡的备选 · 步行 4 分钟"
               }
             },
             {
-              "name": "Café Sperl",
+              "name": "Café Prückel",
+              "nameEn": "Café Prückel",
+              "area": "Innere Stadt · Stubenring",
+              "areaZh": "Innere Stadt · Stubenring",
+              "mustOrder": [
+                "Melange",
+                "Apfelstrudel",
+                "Gugelhupf"
+              ],
+              "hoursZh": "周一 8:30–22",
+              "distanceZh": "🚇/🚶 15 分钟",
               "note": {
-                "en": "Mon 7–22",
-                "zh": "周一 7:00–22:00"
+                "en": "Backup for coffee 2026-12-28 · ~15 min walk",
+                "zh": "12月28日咖啡的备选 · 步行 15 分钟"
               }
             }
           ],
@@ -1324,25 +937,52 @@
           },
           "mustOrder": [
             {
-              "name": "Brötchen mit Beinschinken oder Ei"
+              "name": "Beinschinken mit Kren"
             },
             {
-              "name": "Ein Glas Grüner Veltliner"
+              "name": "Brötchen",
+              "gloss": {
+                "en": "Eiaufstrich, Lachs",
+                "zh": "小面包（鸡蛋酱、三文鱼）"
+              }
+            },
+            {
+              "name": "Grüner Veltliner"
             }
           ],
           "backups": [
             {
-              "name": "Bitzinger Würstelstand Albertina",
+              "name": "Trześniewski Dorotheergasse",
+              "nameEn": "Trześniewski (Dorotheergasse)",
+              "area": "Innere Stadt · Graben",
+              "areaZh": "Innere Stadt · Graben",
+              "mustOrder": [
+                "Eiaufstrich-Brötchen",
+                "Heringsbrötchen",
+                "ein Pfiff Bier"
+              ],
+              "hoursZh": "官网：周一 8:30–19:30",
+              "distanceZh": "🚶 4 分钟",
               "note": {
-                "en": "next to the opera",
-                "zh": "就在歌剧院旁边"
+                "en": "Backup for pre-opera snack 2026-12-28 · ~4 min walk",
+                "zh": "12月28日歌剧前的小吃的备选 · 步行 4 分钟"
               }
             },
             {
-              "name": "Café Sacher",
+              "name": "Gerstner K.u.K. Hofzuckerbäcker",
+              "nameEn": "Gerstner (Palais Todesco)",
+              "area": "Innere Stadt · Opera",
+              "areaZh": "Innere Stadt · Oper",
+              "mustOrder": [
+                "Esterházy-Torte",
+                "Wiener Melange",
+                "Brötchen"
+              ],
+              "hoursZh": "每天 8–22",
+              "distanceZh": "🚶 2 分钟到歌剧院对面",
               "note": {
-                "en": "behind the opera",
-                "zh": "在歌剧院后面"
+                "en": "Backup for pre-opera snack 2026-12-28 · ~2 min walk",
+                "zh": "12月28日歌剧前的小吃的备选 · 步行 2 分钟"
               }
             }
           ],
@@ -1430,25 +1070,43 @@
               "name": "Käsekrainer"
             },
             {
-              "name": "Süßer Senf"
+              "name": "Burenwurst mit süßem Senf"
             },
             {
-              "name": "Ottakringer Bier"
+              "name": "Ottakringer"
             }
           ],
           "backups": [
             {
-              "name": "Zum Schwarzen Kameel",
+              "name": "Café Hawelka",
+              "nameEn": "Café Hawelka",
+              "area": "Innere Stadt · Graben",
+              "areaZh": "Innere Stadt · Graben",
+              "mustOrder": [
+                "Buchteln (ab 22 Uhr)",
+                "Melange"
+              ],
+              "hoursZh": "周一 9–24（22 点后有 Buchteln）",
+              "distanceZh": "🚶 4 分钟",
               "note": {
-                "en": "to 24:00",
-                "zh": "开到 24:00"
+                "en": "Backup for late-night snack 2026-12-28 · ~4 min walk",
+                "zh": "12月28日宵夜的备选 · 步行 4 分钟"
               }
             },
             {
-              "name": "Plachutta Wollzeile",
+              "name": "Würstelstand am Hohen Markt",
+              "nameEn": "Würstelstand am Hohen Markt",
+              "area": "Innere Stadt · Hoher Markt",
+              "areaZh": "Innere Stadt · Hoher Markt",
+              "mustOrder": [
+                "Käsekrainer",
+                "Bosna"
+              ],
+              "hoursZh": "开到凌晨 4 点",
+              "distanceZh": "🚶 12 分钟",
               "note": {
-                "en": "to 23:30",
-                "zh": "开到 23:30"
+                "en": "Backup for late-night snack 2026-12-28 · ~12 min walk",
+                "zh": "12月28日宵夜的备选 · 步行 12 分钟"
               }
             }
           ],
@@ -1520,11 +1178,496 @@
       ]
     },
     {
+      "date": "2026-12-29",
+      "weekday": "Tuesday",
+      "title": {
+        "en": "Vienna morning (Belvedere) · day trip to Bratislava · Heuriger dinner",
+        "zh": "维也纳上午（美景宫）· 布拉迪斯拉发一日游 · 酒馆晚饭"
+      },
+      "stops": [
+        {
+          "type": "hotel",
+          "status": "needs-decision",
+          "name": {
+            "en": "Vienna hotel",
+            "zh": "维也纳酒店（未定）"
+          },
+          "lat": null,
+          "lng": null,
+          "arrive": null,
+          "leave": "8:40 AM",
+          "website": null,
+          "notes": {
+            "en": "Hotel breakfast 8:00 AM",
+            "zh": "酒店早餐 8:00"
+          },
+          "alternatives": [
+            {
+              "name": {
+                "en": "Hilton Vienna Park",
+                "zh": "Hilton Vienna Park"
+              },
+              "lat": 48.205987,
+              "lng": 16.383315,
+              "website": "https://www.hilton.com/en/hotels/viehitw-hilton-vienna-park/",
+              "note": {
+                "en": "above Wien Mitte/CAT, 5 min to Steirereck",
+                "zh": "在 Wien Mitte / 机场大巴上方，到 Steirereck 走 5 分钟"
+              }
+            },
+            {
+              "name": {
+                "en": "Hotel Am Konzerthaus (MGallery)",
+                "zh": "Hotel Am Konzerthaus (MGallery)"
+              },
+              "lat": 48.199677,
+              "lng": 16.377387,
+              "website": "https://all.accor.com/hotel/1276/index.en.shtml",
+              "nativeName": "Hotel Am Konzerthaus Vienna – MGallery",
+              "note": {
+                "en": "3 min to Steirereck",
+                "zh": "到 Steirereck 走 3 分钟"
+              }
+            },
+            {
+              "name": {
+                "en": "magdas Hotel Vienna City",
+                "zh": "magdas Hotel Vienna City"
+              },
+              "lat": 48.200572,
+              "lng": 16.387216,
+              "website": "https://www.magdas-hotel.at/",
+              "note": {
+                "en": "U4 Stadtpark ~8 min",
+                "zh": "U4 到 Stadtpark，大约 8 分钟"
+              }
+            },
+            {
+              "name": {
+                "en": "Rioca Vienna Posto 2",
+                "zh": "Rioca Vienna Posto 2"
+              },
+              "lat": 48.189156,
+              "lng": 16.403416,
+              "website": "https://www.rioca.eu/",
+              "note": {
+                "en": "further out (tram 18/71)",
+                "zh": "远一点（有轨电车 18 或 71）"
+              }
+            }
+          ],
+          "transit": {
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "3 min",
+                "from": "hotel (Wien Mitte)",
+                "to": "Wien Mitte-Landstraße (Invalidenstraße) tram stop",
+                "distanceM": 170
+              },
+              {
+                "mode": "tram",
+                "label": {
+                  "en": "Tram",
+                  "zh": "电车"
+                },
+                "duration": "10 min",
+                "line": "O",
+                "direction": "Raxstraße",
+                "from": "Wien Mitte-Landstraße",
+                "to": "Quartier Belvedere",
+                "stops": 6,
+                "frequency": "every 4–6 min"
+              },
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "8 min",
+                "from": "Quartier Belvedere",
+                "to": "Upper Belvedere (south garden entrance)",
+                "distanceM": 490
+              }
+            ],
+            "ticket": {
+              "en": "Vienna core-zone ticket: single ride (80 min) or 24 Stunden WIEN, in the WienMobil app.",
+              "zh": "维也纳市区票：单程 80 分钟，或 24 小时票。用 WienMobil。"
+            }
+          }
+        },
+        {
+          "type": "sight",
+          "status": "needs-decision",
+          "name": {
+            "en": "Upper Belvedere (The Kiss)",
+            "zh": "上美景宫"
+          },
+          "lat": 48.191541,
+          "lng": 16.380888,
+          "arrive": "9:00 AM",
+          "leave": "9:45 AM",
+          "website": "https://www.belvedere.at/en",
+          "nativeName": "Oberes Belvedere",
+          "hours": {
+            "en": "Daily 9 AM–6 PM",
+            "zh": "每天 9:00–18:00"
+          },
+          "notes": {
+            "en": "Upper Belvedere – highlights only (45 min); moved from Dec 27, awaiting a decision",
+            "zh": "上美景宫，只看重点（45 分钟）。从 12 月 27 日挪过来的，还等拍板"
+          },
+          "mustSee": [
+            {
+              "text": {
+                "en": "Gustav Klimt – Der Kuss (The Kiss)",
+                "zh": "克林姆的 Der Kuss（《吻》）"
+              }
+            }
+          ],
+          "transit": {
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "13 min",
+                "from": "Upper Belvedere",
+                "to": "Wien Hauptbahnhof (ÖBB ticket machines in the hall)",
+                "distanceM": 1030
+              }
+            ],
+            "alternative": [
+              {
+                "mode": "tram",
+                "label": {
+                  "en": "Tram",
+                  "zh": "电车"
+                },
+                "duration": "5 min",
+                "line": "D",
+                "direction": "Absberggasse",
+                "from": "Schloss Belvedere",
+                "to": "Hauptbahnhof Ost",
+                "stops": 2,
+                "frequency": "every 5–8 min"
+              }
+            ]
+          }
+        },
+        {
+          "type": "station",
+          "status": "tentative",
+          "name": {
+            "en": "Vienna Central Station",
+            "zh": "维也纳中央车站"
+          },
+          "lat": 48.184988,
+          "lng": 16.377939,
+          "arrive": null,
+          "leave": "10:14 AM",
+          "website": null,
+          "nativeName": "Wien Hauptbahnhof",
+          "notes": {
+            "en": "Train to Bratislava",
+            "zh": "坐火车去布拉迪斯拉发"
+          }
+        },
+        {
+          "type": "daytrip",
+          "status": "tentative",
+          "name": {
+            "en": "Bratislava (day trip)",
+            "zh": "布拉迪斯拉发一日游"
+          },
+          "lat": 48.148598,
+          "lng": 17.107748,
+          "arrive": "10:14 AM",
+          "leave": "6:46 PM",
+          "website": "https://www.visitbratislava.com/",
+          "nativeName": "Bratislava",
+          "daytripCity": "bratislava",
+          "notes": {
+            "en": "Train to Bratislava",
+            "zh": "坐火车去布拉迪斯拉发"
+          },
+          "transit": {
+            "segments": [
+              {
+                "mode": "train",
+                "label": {
+                  "en": "Train",
+                  "zh": "火车"
+                },
+                "duration": "56 min",
+                "line": "REX 8",
+                "direction": "Wien Hbf",
+                "from": "Bratislava hlavná stanica",
+                "to": "Wien Hauptbahnhof",
+                "stops": 8,
+                "frequency": "hourly at :50"
+              }
+            ],
+            "ticket": {
+              "en": "ÖBB Bratislava-Ticket: the return train, plus city trams and buses that day.",
+              "zh": "ÖBB Bratislava-Ticket：当天往返火车，以及市内电车和公交。"
+            }
+          }
+        },
+        {
+          "type": "station",
+          "status": "tentative",
+          "name": {
+            "en": "Vienna Central Station",
+            "zh": "维也纳中央车站"
+          },
+          "lat": 48.184988,
+          "lng": 16.377939,
+          "arrive": "6:46 PM",
+          "leave": null,
+          "website": null,
+          "nativeName": "Wien Hauptbahnhof",
+          "notes": {
+            "en": "Back in Vienna",
+            "zh": "回到维也纳"
+          },
+          "transit": {
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "8 min",
+                "from": "ÖBB platforms",
+                "to": "U1 Wien Hbf",
+                "distanceM": 500
+              },
+              {
+                "mode": "metro",
+                "label": {
+                  "en": "Metro",
+                  "zh": "地铁"
+                },
+                "duration": "6 min",
+                "line": "U1",
+                "direction": "Leopoldau",
+                "from": "Wien Hauptbahnhof",
+                "to": "Schwedenplatz",
+                "stops": 4,
+                "frequency": "every 4–5 min"
+              },
+              {
+                "mode": "metro",
+                "label": {
+                  "en": "Metro",
+                  "zh": "地铁"
+                },
+                "duration": "8 min",
+                "line": "U4",
+                "direction": "Heiligenstadt",
+                "from": "Schwedenplatz",
+                "to": "Heiligenstadt",
+                "stops": 5,
+                "frequency": "every 5 min"
+              },
+              {
+                "mode": "bus",
+                "label": {
+                  "en": "Bus",
+                  "zh": "公交"
+                },
+                "duration": "4 min",
+                "line": "38A",
+                "direction": "Wagenwiese / Kahlenberg",
+                "from": "Heiligenstadt Bahnhof (Boschstraße, Vorplatz Mitte)",
+                "to": "Fernsprechamt Heiligenstadt",
+                "stops": 4,
+                "frequency": "every 10 min"
+              },
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "4 min",
+                "from": "Fernsprechamt Heiligenstadt",
+                "to": "Mayer am Pfarrplatz",
+                "distanceM": 240
+              }
+            ],
+            "ticket": {
+              "en": "Vienna core-zone ticket: single ride (80 min) or 24 Stunden WIEN, in the WienMobil app.",
+              "zh": "维也纳市区票：单程 80 分钟，或 24 小时票。用 WienMobil。"
+            },
+            "alternative": [
+              {
+                "mode": "taxi",
+                "label": {
+                  "en": "Taxi",
+                  "zh": "出租车"
+                },
+                "duration": "20–25 min"
+              }
+            ]
+          }
+        },
+        {
+          "type": "restaurant",
+          "status": "tentative",
+          "name": {
+            "en": "Mayer am Pfarrplatz (Heuriger)",
+            "zh": "Mayer am Pfarrplatz (Heuriger)"
+          },
+          "lat": 48.255131,
+          "lng": 16.358983,
+          "arrive": "7:45 PM",
+          "leave": null,
+          "website": "https://www.pfarrplatz.at/",
+          "nativeName": "Mayer am Pfarrplatz",
+          "hours": {
+            "en": "Wiener Wein official listing: Mon–Thu from 16:00, closed only Dec 24 & 31",
+            "zh": "Wiener Wein 官方：周一到周四 16:00 起，只有 12月24日和 31日关"
+          },
+          "notes": {
+            "en": "Dinner at a Heuriger",
+            "zh": "在 Heuriger 吃晚饭"
+          },
+          "mustOrder": [
+            {
+              "name": "Wiener Gemischter Satz"
+            },
+            {
+              "name": "Schweinsbraten vom Buffet"
+            },
+            {
+              "name": "Liptauer"
+            }
+          ],
+          "backups": [
+            {
+              "name": "Zum Martin Sepp",
+              "nameEn": "Zum Martin Sepp",
+              "area": "Döbling · Grinzing",
+              "areaZh": "Döbling · Grinzing",
+              "mustOrder": [
+                "Heurigenbuffet",
+                "Backhendl",
+                "Gemischter Satz"
+              ],
+              "hoursZh": "每天 12 点起（建议打电话）",
+              "distanceZh": "🚕 8 分钟（Grinzing）",
+              "note": {
+                "en": "Backup for dinner 2026-12-29 · ~8 min taxi",
+                "zh": "12月29日晚餐的备选 · 出租车 8 分钟"
+              }
+            },
+            {
+              "name": "Fuhrgassl-Huber",
+              "nameEn": "Fuhrgassl-Huber",
+              "area": "Döbling · Neustift am Walde",
+              "areaZh": "Döbling · Neustift am Walde",
+              "mustOrder": [
+                "Heurigenbuffet",
+                "Schweinsbraten",
+                "Grüner Veltliner"
+              ],
+              "hoursZh": "官网：全年营业，周二 14–23",
+              "distanceZh": "🚕 12 分钟（Neustift）",
+              "note": {
+                "en": "Backup for dinner 2026-12-29 · ~12 min taxi",
+                "zh": "12月29日晚餐的备选 · 出租车 12 分钟"
+              }
+            }
+          ],
+          "transit": {
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "4 min",
+                "distanceM": 240
+              },
+              {
+                "mode": "bus",
+                "label": {
+                  "en": "Bus",
+                  "zh": "公交"
+                },
+                "duration": "4 min",
+                "line": "38A",
+                "direction": "Heiligenstadt Bf",
+                "from": "Fernsprechamt Heiligenstadt",
+                "to": "Heiligenstadt Bahnhof",
+                "stops": 2,
+                "frequency": "every 10–15 min late evening"
+              },
+              {
+                "mode": "metro",
+                "label": {
+                  "en": "Metro",
+                  "zh": "地铁"
+                },
+                "duration": "10 min",
+                "line": "U4",
+                "direction": "Hütteldorf",
+                "from": "Heiligenstadt",
+                "to": "Wien Mitte-Landstraße",
+                "stops": 6,
+                "frequency": "every 5–8 min"
+              },
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "4 min",
+                "distanceM": 190
+              }
+            ],
+            "ticket": {
+              "en": "Vienna core-zone ticket: single ride (80 min) or 24 Stunden WIEN, in the WienMobil app.",
+              "zh": "维也纳市区票：单程 80 分钟，或 24 小时票。用 WienMobil。"
+            },
+            "alternative": [
+              {
+                "mode": "taxi",
+                "label": {
+                  "en": "Taxi",
+                  "zh": "出租车"
+                },
+                "duration": "20 min"
+              }
+            ]
+          }
+        }
+      ],
+      "notes": [
+        {
+          "en": "The day trip itself is in city 'bratislava'. The daytrip stop is not joined to Vienna Central Station by a leg on the way out · the outbound leg opens the Bratislava day, and the return leg sits here between the daytrip stop and Vienna Central Station.",
+          "zh": "布拉迪斯拉发的行程在那一页。去程火车从布拉迪斯拉发那天开始，回程在一日游和维也纳中央车站之间。"
+        }
+      ]
+    },
+    {
       "date": "2026-12-30",
       "weekday": "Wed",
       "title": {
-        "en": "Vienna → Brussels · State Hall, Sisi Museum, Steirereck lunch, evening flight",
-        "zh": "维也纳飞布鲁塞尔 · 国家厅、茜茜博物馆、Steirereck 午饭、晚上的飞机"
+        "en": "Vienna · Café Sacher, State Hall, Sisi Museum, Steirereck lunch → VIE (flight to Brussels TBD)",
+        "zh": "维也纳 · Café Sacher、国家厅、茜茜博物馆、Steirereck 午饭，然后去机场（飞布鲁塞尔的机票还没订）"
       },
       "stops": [
         {
@@ -1556,22 +1699,43 @@
               "name": "Wiener Frühstück"
             },
             {
-              "name": "Sacher Melange"
+              "name": "Melange"
             }
           ],
           "backups": [
             {
-              "name": "Café Sperl",
+              "name": "Café Landtmann",
+              "nameEn": "Café Landtmann",
+              "area": "Innere Stadt · Ring (Burgtheater)",
+              "areaZh": "Innere Stadt · Ring (Burgtheater)",
+              "mustOrder": [
+                "Wiener Frühstück",
+                "Melange",
+                "Apfelstrudel"
+              ],
+              "hoursZh": "官网：7:30 起",
+              "distanceZh": "🚶 15 分钟 / 🚋 1 号线",
               "note": {
-                "en": "Wed from 7",
-                "zh": "周三起 7:00"
+                "en": "Backup for breakfast 2026-12-30 · ~15 min walk",
+                "zh": "12月30日早餐的备选 · 步行 15 分钟"
               }
             },
             {
-              "name": "Café Landtmann"
-            },
-            {
-              "name": "Hotel breakfast"
+              "name": "Café Sperl",
+              "nameEn": "Café Sperl",
+              "area": "Mariahilf · Naschmarkt",
+              "areaZh": "Mariahilf · Naschmarkt",
+              "mustOrder": [
+                "Sperl-Torte",
+                "Melange",
+                "Frühstück"
+              ],
+              "hoursZh": "官网：周三 7 点起",
+              "distanceZh": "🚶 12 分钟",
+              "note": {
+                "en": "Backup for breakfast 2026-12-30 · ~12 min walk",
+                "zh": "12月30日早餐的备选 · 步行 12 分钟"
+              }
             }
           ],
           "transit": {
@@ -1831,25 +1995,13 @@
           },
           "mustOrder": [
             {
-              "name": "Char cooked in beeswax",
-              "gloss": {
-                "en": "signature",
-                "zh": "蜂蜡煮红点鲑（招牌）"
-              }
+              "name": "Saibling im Bienenwachs"
             },
             {
-              "name": "Caviar & lentils with banana & bacon",
-              "gloss": {
-                "en": "signature",
-                "zh": "鱼子酱扁豆配香蕉和培根（招牌）"
-              }
+              "name": "Kaviar mit Linsen"
             },
             {
-              "name": "Cheese trolley",
-              "gloss": {
-                "en": "Epoisses at 3 ripeness stages",
-                "zh": "芝士车（埃普瓦斯三种成熟度）"
-              }
+              "name": "Käsewagen"
             },
             {
               "name": "Bread trolley: Blunzenbrot, Laugenbrezel, Lavendel-Weißbrot"
@@ -1859,6 +2011,42 @@
             },
             {
               "name": "Strudel at Meierei downstairs afterwards"
+            }
+          ],
+          "backups": [
+            {
+              "name": "Meierei im Stadtpark",
+              "nameEn": "Meierei im Stadtpark",
+              "area": "Landstraße · Stadtpark",
+              "areaZh": "Landstraße · Stadtpark",
+              "mustOrder": [
+                "Wiener Frühstück",
+                "Käseauswahl",
+                "Apfelstrudel"
+              ],
+              "hoursZh": "官网：周三 8–23",
+              "distanceZh": "同一栋楼",
+              "note": {
+                "en": "Backup for lunch (the one splurge) 2026-12-30 · same building",
+                "zh": "12月30日午餐（这趟唯一的大餐）的备选 · 同一栋楼"
+              }
+            },
+            {
+              "name": "Gmoakeller",
+              "nameEn": "Gmoakeller",
+              "area": "Landstraße · Stadtpark",
+              "areaZh": "Landstraße · Stadtpark",
+              "mustOrder": [
+                "Wiener Schnitzel",
+                "Rindsgulasch",
+                "Marillenpalatschinken"
+              ],
+              "hoursZh": "官网：周三 11–24",
+              "distanceZh": "🚶 6 分钟",
+              "note": {
+                "en": "Backup for lunch (the one splurge) 2026-12-30 · ~6 min walk",
+                "zh": "12月30日午餐（这趟唯一的大餐）的备选 · 步行 6 分钟"
+              }
             }
           ],
           "transit": {
@@ -1941,239 +2129,6 @@
           "notes": {
             "en": "Fly VIE → BRU (flight TBD)",
             "zh": "维也纳飞布鲁塞尔（机票还没订）"
-          },
-          "transit": {
-            "segments": [
-              {
-                "mode": "flight",
-                "label": {
-                  "en": "Flight",
-                  "zh": "飞机"
-                },
-                "duration": null
-              }
-            ]
-          }
-        },
-        {
-          "type": "airport",
-          "status": "needs-decision",
-          "name": {
-            "en": "Brussels Airport",
-            "zh": "布鲁塞尔机场"
-          },
-          "lat": 50.898374,
-          "lng": 4.48249,
-          "arrive": null,
-          "leave": null,
-          "website": "https://www.brusselsairport.be/",
-          "nativeName": "Brussels Airport (Zaventem)",
-          "notes": {
-            "en": "Arrive Brussels",
-            "zh": "到布鲁塞尔"
-          },
-          "transit": {
-            "segments": [
-              {
-                "mode": "train",
-                "label": {
-                  "en": "Train",
-                  "zh": "火车"
-                },
-                "duration": "17–18 min",
-                "line": "SNCB IC (any train to Bruxelles-Central)",
-                "direction": "Oostende / Knokke / Mons etc.",
-                "from": "Brussels Airport-Zaventem (station under the terminal)",
-                "to": "Bruxelles-Central",
-                "stops": 2,
-                "frequency": "every 10–15 min in the evening"
-              },
-              {
-                "mode": "walk",
-                "label": {
-                  "en": "Walk",
-                  "zh": "步行"
-                },
-                "duration": "2 min",
-                "from": "Bruxelles-Central (Carrefour de l'Europe exit)",
-                "to": "Hilton Brussels Grand Place",
-                "distanceM": 180
-              }
-            ],
-            "ticket": {
-              "en": "SNCB train ticket. It does not cover the metro.",
-              "zh": "比利时国铁车票，不含地铁。"
-            },
-            "alternative": [
-              {
-                "mode": "bus",
-                "label": {
-                  "en": "Bus",
-                  "zh": "公交"
-                },
-                "duration": "35 min",
-                "line": "12 (Airport Line)",
-                "direction": "Brussels City (Trône)",
-                "from": "Brussels Airport",
-                "to": "Trône",
-                "frequency": "every 20–30 min"
-              }
-            ]
-          }
-        },
-        {
-          "type": "hotel",
-          "status": "confirmed",
-          "name": {
-            "en": "Hilton Brussels Grand Place",
-            "zh": "Hilton Brussels Grand Place"
-          },
-          "lat": 50.845819,
-          "lng": 4.355727,
-          "arrive": null,
-          "leave": null,
-          "website": "https://www.hilton.com/en/hotels/brugrhi-hilton-brussels-grand-place/",
-          "notes": {
-            "en": "Check in (from 3 PM)",
-            "zh": "入住（下午 3 点起）"
-          },
-          "transit": {
-            "segments": [
-              {
-                "mode": "walk",
-                "label": {
-                  "en": "Walk",
-                  "zh": "步行"
-                },
-                "duration": "7 min",
-                "distanceM": 560
-              }
-            ]
-          }
-        },
-        {
-          "type": "restaurant",
-          "status": "tentative",
-          "name": {
-            "en": "Nüetnigenough",
-            "zh": "Nüetnigenough"
-          },
-          "lat": 50.845836,
-          "lng": 4.349827,
-          "arrive": {
-            "en": "~8:30 PM (depends on flight)",
-            "zh": "约20:30（视航班而定）"
-          },
-          "leave": null,
-          "website": "https://www.nuetnigenough.be/",
-          "hours": {
-            "en": "Mon–Fri 17:00–22:30",
-            "zh": "周一到周五 17:00–22:30"
-          },
-          "notes": {
-            "en": "Dinner after arrival",
-            "zh": "到了再吃晚饭"
-          },
-          "mustOrder": [
-            {
-              "name": "Stoofvlees"
-            },
-            {
-              "name": "Stoemp"
-            },
-            {
-              "name": "Rare Belgian beers",
-              "gloss": {
-                "en": "",
-                "zh": "少见的比利时啤酒"
-              }
-            }
-          ],
-          "backups": [
-            {
-              "name": "In 't Spinnekopke",
-              "note": {
-                "en": "if before 7 PM · Wed 18:00–21:30",
-                "zh": "如果 19:00 前到 · 周三 18:00–21:30"
-              }
-            },
-            {
-              "name": "Aux Armes de Bruxelles",
-              "note": {
-                "en": "to 22:30",
-                "zh": "开到 22:30"
-              }
-            },
-            {
-              "name": "Maison Antoine (fries)",
-              "note": {
-                "en": "if after 9:30 PM · daily 11:30–1:00",
-                "zh": "如果过了 21:30 · 每天 11:30–凌晨 1:00"
-              }
-            }
-          ],
-          "transit": {
-            "segments": [
-              {
-                "mode": "walk",
-                "label": {
-                  "en": "Walk",
-                  "zh": "步行"
-                },
-                "duration": "3 min",
-                "distanceM": 270
-              }
-            ]
-          }
-        },
-        {
-          "type": "sight",
-          "status": "tentative",
-          "name": {
-            "en": "Grand-Place",
-            "zh": "布鲁塞尔大广场"
-          },
-          "lat": 50.8467139,
-          "lng": 4.3525151,
-          "arrive": null,
-          "leave": null,
-          "website": "https://www.plaisirsdhiver.be/en",
-          "nativeName": "Grand-Place / Grote Markt",
-          "optional": true,
-          "hours": {
-            "en": "Open 12–10 PM Dec 30 · show times not yet published",
-            "zh": "12月30日 12:00–22:00 开。灯光秀时间还没公布"
-          },
-          "notes": {
-            "en": "Grand-Place light show + Winter Wonders (only if before 10 PM)",
-            "zh": "大广场灯光秀和圣诞市集（赶在 22:00 前才去）"
-          },
-          "mustSee": [
-            {
-              "text": {
-                "en": "Grand-Place light show",
-                "zh": "大广场灯光秀"
-              }
-            },
-            {
-              "text": {
-                "en": "Plaisirs d'Hiver / Winter Wonders",
-                "zh": "冬季奇境圣诞市集"
-              }
-            }
-          ],
-          "transit": {
-            "segments": [
-              {
-                "mode": "walk",
-                "label": {
-                  "en": "Walk",
-                  "zh": "步行"
-                },
-                "duration": "4 min",
-                "distanceM": 340
-              }
-            ]
           }
         }
       ]

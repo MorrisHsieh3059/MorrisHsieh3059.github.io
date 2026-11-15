@@ -1,6 +1,6 @@
 {
   "id": "brussels",
-  "version": "v2",
+  "version": "v3",
   "draft": true,
   "country": {
     "en": "Belgium",
@@ -18,6 +18,263 @@
     "end": "2027-01-01"
   },
   "days": [
+    {
+      "date": "2026-12-30",
+      "weekday": "Wednesday",
+      "title": {
+        "en": "Arrive BRU (flight TBD) → Hilton, beer-cuisine dinner, Grand-Place light show",
+        "zh": "到布鲁塞尔（机票还没订）→ 希尔顿、啤酒菜晚饭、大广场灯光"
+      },
+      "stops": [
+        {
+          "type": "airport",
+          "status": "needs-decision",
+          "name": {
+            "en": "Brussels Airport",
+            "zh": "布鲁塞尔机场"
+          },
+          "lat": 50.898374,
+          "lng": 4.48249,
+          "arrive": null,
+          "leave": null,
+          "website": "https://www.brusselsairport.be/",
+          "nativeName": "Brussels Airport (Zaventem)",
+          "notes": {
+            "en": "Arrive Brussels",
+            "zh": "到布鲁塞尔"
+          },
+          "transit": {
+            "segments": [
+              {
+                "mode": "train",
+                "label": {
+                  "en": "Train",
+                  "zh": "火车"
+                },
+                "duration": "17–18 min",
+                "line": "SNCB IC (any train to Bruxelles-Central)",
+                "direction": "Oostende / Knokke / Mons etc.",
+                "from": "Brussels Airport-Zaventem (station under the terminal)",
+                "to": "Bruxelles-Central",
+                "stops": 2,
+                "frequency": "every 10–15 min in the evening"
+              },
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "2 min",
+                "from": "Bruxelles-Central (Carrefour de l'Europe exit)",
+                "to": "Hilton Brussels Grand Place",
+                "distanceM": 180
+              }
+            ],
+            "ticket": {
+              "en": "SNCB train ticket. It does not cover the metro.",
+              "zh": "比利时国铁车票，不含地铁。"
+            },
+            "alternative": [
+              {
+                "mode": "bus",
+                "label": {
+                  "en": "Bus",
+                  "zh": "公交"
+                },
+                "duration": "35 min",
+                "line": "12 (Airport Line)",
+                "direction": "Brussels City (Trône)",
+                "from": "Brussels Airport",
+                "to": "Trône",
+                "frequency": "every 20–30 min"
+              }
+            ]
+          }
+        },
+        {
+          "type": "hotel",
+          "status": "confirmed",
+          "name": {
+            "en": "Hilton Brussels Grand Place",
+            "zh": "Hilton Brussels Grand Place"
+          },
+          "lat": 50.845819,
+          "lng": 4.355727,
+          "arrive": null,
+          "leave": null,
+          "website": "https://www.hilton.com/en/hotels/brugrhi-hilton-brussels-grand-place/",
+          "notes": {
+            "en": "Check in (from 3 PM)",
+            "zh": "入住（下午 3 点起）"
+          },
+          "transit": {
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "7 min",
+                "distanceM": 560
+              }
+            ]
+          }
+        },
+        {
+          "type": "restaurant",
+          "status": "tentative",
+          "name": {
+            "en": "Nüetnigenough",
+            "zh": "Nüetnigenough"
+          },
+          "lat": 50.845836,
+          "lng": 4.349827,
+          "arrive": {
+            "en": "~8:30 PM (depends on flight)",
+            "zh": "约20:30（视航班而定）"
+          },
+          "leave": null,
+          "website": "https://www.nuetnigenough.be/",
+          "hours": {
+            "en": "Mon–Fri 17:00–22:30",
+            "zh": "周一到周五 17:00–22:30"
+          },
+          "notes": {
+            "en": "Dinner after arrival",
+            "zh": "到了再吃晚饭"
+          },
+          "mustOrder": [
+            {
+              "name": "Stoofvlees à la bière"
+            },
+            {
+              "name": "Stoemp"
+            },
+            {
+              "name": "Croquettes aux crevettes grises"
+            }
+          ],
+          "backups": [
+            {
+              "name": "Fin de Siècle",
+              "nameEn": "Fin de Siècle",
+              "area": "Centre · Bourse / Dansaert",
+              "areaZh": "Centre · Bourse / Dansaert",
+              "mustOrder": [
+                "Stoemp saucisse",
+                "Chicons au gratin"
+              ],
+              "hoursZh": "每天 12–24（walk-in）",
+              "distanceZh": "🚶 8 分钟",
+              "note": {
+                "en": "Backup for dinner 2026-12-30 · ~8 min walk",
+                "zh": "12月30日晚餐的备选 · 步行 8 分钟"
+              }
+            },
+            {
+              "name": "À la Mort Subite",
+              "nameEn": "À la Mort Subite",
+              "area": "Centre · Galeries",
+              "areaZh": "Centre · Galeries",
+              "mustOrder": [
+                "Omelette",
+                "Tartine au fromage blanc",
+                "Kriek Mort Subite"
+              ],
+              "hoursZh": "Dec 30 11–1 点",
+              "distanceZh": "🚶 8 分钟",
+              "note": {
+                "en": "Backup for dinner 2026-12-30 · ~8 min walk",
+                "zh": "12月30日晚餐的备选 · 步行 8 分钟"
+              }
+            }
+          ],
+          "transit": {
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "3 min",
+                "distanceM": 270
+              }
+            ]
+          }
+        },
+        {
+          "type": "sight",
+          "status": "tentative",
+          "name": {
+            "en": "Grand-Place",
+            "zh": "布鲁塞尔大广场"
+          },
+          "lat": 50.8467139,
+          "lng": 4.3525151,
+          "arrive": null,
+          "leave": null,
+          "website": "https://www.plaisirsdhiver.be/en",
+          "nativeName": "Grand-Place / Grote Markt",
+          "optional": true,
+          "hours": {
+            "en": "Open 12–10 PM Dec 30 · show times not yet published",
+            "zh": "12月30日 12:00–22:00 开。灯光秀时间还没公布"
+          },
+          "notes": {
+            "en": "Grand-Place light show + Winter Wonders (only if before 10 PM)",
+            "zh": "大广场灯光秀和圣诞市集（赶在 22:00 前才去）"
+          },
+          "mustSee": [
+            {
+              "text": {
+                "en": "Grand-Place light show",
+                "zh": "大广场灯光秀"
+              }
+            },
+            {
+              "text": {
+                "en": "Plaisirs d'Hiver / Winter Wonders",
+                "zh": "冬季奇境圣诞市集"
+              }
+            }
+          ],
+          "transit": {
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "4 min",
+                "distanceM": 340
+              }
+            ]
+          }
+        }
+      ],
+      "notes": [
+        {
+          "en": "Vienna part of the day – see Vienna Dec 30.",
+          "zh": "这一天在维也纳的部分，看维也纳 12 月 30 日。"
+        }
+      ],
+      "inbound": {
+        "segments": [
+          {
+            "mode": "flight",
+            "label": {
+              "en": "Flight",
+              "zh": "飞机"
+            },
+            "duration": null
+          }
+        ]
+      }
+    },
     {
       "date": "2026-12-31",
       "weekday": "Thu",
@@ -151,11 +408,7 @@
           },
           "mustOrder": [
             {
-              "name": "Gaufre de Bruxelles",
-              "gloss": {
-                "en": "sucre glace",
-                "zh": "糖粉布鲁塞尔华夫饼"
-              }
+              "name": "Gaufre de Bruxelles"
             },
             {
               "name": "Gaufre de Liège"
@@ -166,10 +419,36 @@
           ],
           "backups": [
             {
-              "name": "Maison Dandoy, Galerie du Roi tea room",
+              "name": "Mokafé",
+              "nameEn": "Mokafé",
+              "area": "Centre · Galeries",
+              "areaZh": "Centre · Galeries",
+              "mustOrder": [
+                "Gaufre de Bruxelles",
+                "Café crème"
+              ],
+              "hoursZh": "周一至周六 7–23",
+              "distanceZh": "🚶 5 分钟",
               "note": {
-                "en": "same 10–18",
-                "zh": "同样 10:00–18:00"
+                "en": "Backup for waffle 2026-12-31 · ~5 min walk",
+                "zh": "12月31日华夫饼的备选 · 步行 5 分钟"
+              }
+            },
+            {
+              "name": "Wittamer",
+              "nameEn": "Wittamer",
+              "area": "Sablon",
+              "areaZh": "Sablon",
+              "mustOrder": [
+                "Gâteaux de saison",
+                "Macarons",
+                "Pralines"
+              ],
+              "hoursZh": "7:30–18:30",
+              "distanceZh": "🚶 10 分钟（Sablon）",
+              "note": {
+                "en": "Backup for waffle 2026-12-31 · ~10 min walk",
+                "zh": "12月31日华夫饼的备选 · 步行 10 分钟"
               }
             }
           ],
@@ -266,15 +545,6 @@
               "gloss": {
                 "en": "classic assortment",
                 "zh": "夹心巧克力（经典礼盒）"
-              }
-            }
-          ],
-          "backups": [
-            {
-              "name": "Wittamer (Sablon)",
-              "note": {
-                "en": "listed Dec 31 7:00–18:30",
-                "zh": "名单上 12 月 31 日 7:00–18:30"
               }
             }
           ],
@@ -409,35 +679,48 @@
           },
           "mustOrder": [
             {
-              "name": "Moules marinières et frites"
+              "name": "Moules marinières"
             },
             {
               "name": "Carbonnade flamande"
             },
             {
-              "name": "Crêpes flambées",
-              "gloss": {
-                "en": "tableside",
-                "zh": "桌边火焰薄饼"
-              }
+              "name": "Crêpes flambées"
             }
           ],
           "backups": [
             {
-              "name": "In 't Spinnekopke"
-            },
-            {
-              "name": "Fin de Siècle",
+              "name": "La Taverne du Passage",
+              "nameEn": "La Taverne du Passage",
+              "area": "Centre · Galeries",
+              "areaZh": "Centre · Galeries",
+              "mustOrder": [
+                "Croquettes aux crevettes grises",
+                "Waterzooi",
+                "Américain préparé"
+              ],
+              "hoursZh": "官网：Dec 31 12–23",
+              "distanceZh": "🚶 2 分钟",
               "note": {
-                "en": "daily 12–24",
-                "zh": "每天 12:00–24:00"
+                "en": "Backup for lunch 2026-12-31 · ~2 min walk",
+                "zh": "12月31日午餐的备选 · 步行 2 分钟"
               }
             },
             {
-              "name": "Noordzee – Mer du Nord",
+              "name": "Le Cirio",
+              "nameEn": "Le Cirio",
+              "area": "Centre · Bourse",
+              "areaZh": "Centre · Bourse",
+              "mustOrder": [
+                "Half-en-half",
+                "Croquettes aux crevettes",
+                "Carbonnade flamande"
+              ],
+              "hoursZh": "Dec 31 10–24",
+              "distanceZh": "🚶 6 分钟",
               "note": {
-                "en": "official Thu 11–18:30 but one holiday list says closed Dec 31",
-                "zh": "官方周四 11:00–18:30，但有一份假日名单写 12 月 31 日关门"
+                "en": "Backup for lunch 2026-12-31 · ~6 min walk",
+                "zh": "12月31日午餐的备选 · 步行 6 分钟"
               }
             }
           ],
@@ -804,20 +1087,36 @@
           ],
           "backups": [
             {
-              "name": "Aux Armes de Bruxelles"
-            },
-            {
-              "name": "Nüetnigenough",
+              "name": "Le Pré Salé",
+              "nameEn": "Le Pré Salé",
+              "area": "Centre · Sainte-Catherine / Dansaert",
+              "areaZh": "Centre · Sainte-Catherine / Dansaert",
+              "mustOrder": [
+                "Moules marinières",
+                "Carbonnade flamande",
+                "Vol-au-vent"
+              ],
+              "hoursZh": "官网：Dec 31 18–22:30",
+              "distanceZh": "🚶 7 分钟",
               "note": {
-                "en": "Thu 17–22:30",
-                "zh": "周四 17:00–22:30"
+                "en": "Backup for NYE dinner 2026-12-31 · ~7 min walk",
+                "zh": "12月31日跨年晚饭的备选 · 步行 7 分钟"
               }
             },
             {
-              "name": "The Iris NYE package",
+              "name": "The Iris (The Hotel Brussels)",
+              "nameEn": "The Iris (The Hotel Brussels)",
+              "area": "Upper Town · Louise",
+              "areaZh": "Haut de la ville · Louise",
+              "mustOrder": [
+                "Menu du Réveillon (6 services)",
+                "Champagne à minuit"
+              ],
+              "hoursZh": "官网：跨年晚餐派对（要预付）",
+              "distanceZh": "🚕 10 分钟（Louise）",
               "note": {
-                "en": "Package incl. dinner + fireworks view (see NYE plan)",
-                "zh": "套餐含晚饭和看烟火（见跨年安排）"
+                "en": "Backup for NYE dinner 2026-12-31 · ~10 min taxi",
+                "zh": "12月31日跨年晚饭的备选 · 出租车 10 分钟"
               }
             }
           ],
@@ -878,23 +1177,7 @@
               "en": "Tap a contactless card. Transfers are free for 60 minutes.",
               "zh": "刷银行卡。60 分钟内换乘不再扣费。"
             }
-          },
-          "alternatives": [
-            {
-              "name": {
-                "en": "The Iris",
-                "zh": "The Iris"
-              },
-              "lat": 50.8372475,
-              "lng": 4.357612,
-              "website": "https://theiris.be/festive",
-              "nativeName": "The Iris (The Hotel Brussels, 26th floor)",
-              "note": {
-                "en": "The Iris – 6-course dinner with wines, champagne at midnight, fireworks view from the 26th floor, DJ to 2 AM",
-                "zh": "The Iris：六道菜配酒，午夜香槟，26 楼看烟火，DJ 放到凌晨 2 点"
-              }
-            }
-          ]
+          }
         },
         {
           "type": "sight",
@@ -1009,6 +1292,10 @@
         {
           "en": "Safety: stay in the centre/Upper Town · avoid Molenbeek, Anderlecht and Schaerbeek after dark on NYE.",
           "zh": "跨年夜天黑后留在市中心和上城。Molenbeek、Anderlecht、Schaerbeek 别去。"
+        },
+        {
+          "en": "NYE alternative: The Iris package (see meals slot Y4, backup 2).",
+          "zh": "跨年的另一个选择是 The Iris 套餐。"
         }
       ]
     },
@@ -1016,8 +1303,8 @@
       "date": "2027-01-01",
       "weekday": "Fri",
       "title": {
-        "en": "New Year's Day · Brussels → Newark",
-        "zh": "元旦 · 布鲁塞尔回纽瓦克"
+        "en": "New Year's Day · Hilton → BRU ( 11:15 AM)",
+        "zh": "元旦 · 希尔顿出发，11:15 到布鲁塞尔机场"
       },
       "stops": [
         {
@@ -1040,11 +1327,6 @@
             "en": "Breakfast 7:00 AM; check out",
             "zh": "7:00 早餐，然后退房"
           },
-          "backups": [
-            {
-              "name": "Eat at BRU after security"
-            }
-          ],
           "transit": {
             "segments": [
               {
@@ -1093,38 +1375,8 @@
           "website": "https://www.brusselsairport.be/",
           "nativeName": "Brussels Airport (Zaventem)",
           "notes": {
-            "en": "Check in, security (no US preclearance)",
-            "zh": "值机、安检（这里没有美国出境预检）"
-          },
-          "transit": {
-            "segments": [
-              {
-                "mode": "flight",
-                "label": {
-                  "en": "Flight",
-                  "zh": "飞机"
-                },
-                "duration": "8h 10m"
-              }
-            ]
-          }
-        },
-        {
-          "type": "airport",
-          "status": "confirmed",
-          "name": {
-            "en": "EWR",
-            "zh": "纽瓦克机场"
-          },
-          "lat": 40.689064,
-          "lng": -74.177255,
-          "arrive": "1:25 PM",
-          "leave": null,
-          "website": "https://www.newarkairport.com/",
-          "nativeName": "Newark Liberty International Airport",
-          "notes": {
-            "en": "Arrive Newark; immigration at EWR",
-            "zh": "到纽瓦克，在机场过关"
+            "en": "Check in, security (no US preclearance) · departs on United BRU 11:15 AM → Newark EWR 1:25 PM",
+            "zh": "值机、安检（这里没有美国出境预检）· 布鲁塞尔 11:15 起飞，纽瓦克 13:25 到"
           }
         }
       ],
