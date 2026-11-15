@@ -143,6 +143,10 @@
               ],
               "hoursZh": "官网：周二 11–23",
               "distanceZh": "🚶 4 分钟",
+              "lat": 48.146919,
+              "lng": 17.108179,
+              "website": "https://drevena.mestianskypivovar.sk/",
+              "googleMaps": "https://www.google.com/maps/search/?api=1&query=Bratislavsk%C3%BD+me%C5%A1tiansky+pivovar+%28Dreven%C3%A1%29+Dreven%C3%A1+8%2C+811+06+Bratislava",
               "note": {
                 "en": "Backup for lunch 2026-12-29 · ~4 min walk",
                 "zh": "12月29日午餐的备选 · 步行 4 分钟"
@@ -160,6 +164,10 @@
               ],
               "hoursZh": "周一至周四 11–22",
               "distanceZh": "🚶 5 分钟",
+              "lat": 48.14605,
+              "lng": 17.110263,
+              "website": "https://www.bratislavskarestauracia.sk/",
+              "googleMaps": "https://www.google.com/maps/search/?api=1&query=Bratislava+Flagship+N%C3%A1mestie+SNP+8%2C+811+06+Bratislava",
               "note": {
                 "en": "Backup for lunch 2026-12-29 · ~5 min walk",
                 "zh": "12月29日午餐的备选 · 步行 5 分钟"
@@ -455,6 +463,10 @@
               ],
               "hoursZh": "每天 9:30–22",
               "distanceZh": "🚶 1 分钟",
+              "lat": 48.143168,
+              "lng": 17.108533,
+              "website": "https://kaffeemayer.eu/",
+              "googleMaps": "https://www.google.com/maps/search/?api=1&query=Kaffee+Mayer+Hlavn%C3%A9+n%C3%A1mestie+4%2C+811+01+Bratislava",
               "note": {
                 "en": "Backup for coffee 2026-12-29 · ~1 min walk",
                 "zh": "12月29日咖啡的备选 · 步行 1 分钟"
@@ -472,6 +484,10 @@
               ],
               "hoursZh": "每天 11–23",
               "distanceZh": "🚶 1 分钟",
+              "lat": 48.14306,
+              "lng": 17.107894,
+              "website": "https://www.rolandrestaurant.sk/en/",
+              "googleMaps": "https://www.google.com/maps/search/?api=1&query=Roland+Slovak+Restaurant+Hlavn%C3%A9+n%C3%A1mestie+5%2C+811+01+Bratislava",
               "note": {
                 "en": "Backup for coffee 2026-12-29 · ~1 min walk",
                 "zh": "12月29日咖啡的备选 · 步行 1 分钟"

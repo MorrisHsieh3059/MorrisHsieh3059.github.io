@@ -168,6 +168,10 @@
               ],
               "hoursZh": "每天 12–24（walk-in）",
               "distanceZh": "🚶 8 分钟",
+              "lat": 50.848928,
+              "lng": 4.347105,
+              "website": "https://findesiecle.be/en",
+              "googleMaps": "https://www.google.com/maps/search/?api=1&query=Fin+de+Si%C3%A8cle+Rue+des+Chartreux+9%2C+1000+Bruxelles",
               "note": {
                 "en": "Backup for dinner 2026-12-30 · ~8 min walk",
                 "zh": "12月30日晚餐的备选 · 步行 8 分钟"
@@ -185,6 +189,10 @@
               ],
               "hoursZh": "Dec 30 11–1 点",
               "distanceZh": "🚶 8 分钟",
+              "lat": 50.848643,
+              "lng": 4.356246,
+              "website": "https://alamortsubite.com/",
+              "googleMaps": "https://www.google.com/maps/search/?api=1&query=%C3%80+la+Mort+Subite+Rue+Montagne-aux-Herbes-Potag%C3%A8res+7%2C+1000+Bruxelles",
               "note": {
                 "en": "Backup for dinner 2026-12-30 · ~8 min walk",
                 "zh": "12月30日晚餐的备选 · 步行 8 分钟"
@@ -429,6 +437,10 @@
               ],
               "hoursZh": "周一至周六 7–23",
               "distanceZh": "🚶 5 分钟",
+              "lat": 50.848049,
+              "lng": 4.355282,
+              "website": "https://www.grsh.be/en/store/mokafe-taverne/",
+              "googleMaps": "https://www.google.com/maps/search/?api=1&query=Mokaf%C3%A9+Galerie+du+Roi+9%2C+1000+Bruxelles",
               "note": {
                 "en": "Backup for waffle 2026-12-31 · ~5 min walk",
                 "zh": "12月31日华夫饼的备选 · 步行 5 分钟"
@@ -446,6 +458,10 @@
               ],
               "hoursZh": "7:30–18:30",
               "distanceZh": "🚶 10 分钟（Sablon）",
+              "lat": 50.841231,
+              "lng": 4.355031,
+              "website": "https://www.wittamer.com/",
+              "googleMaps": "https://www.google.com/maps/search/?api=1&query=Wittamer+Place+du+Grand+Sablon+12%2C+1000+Bruxelles",
               "note": {
                 "en": "Backup for waffle 2026-12-31 · ~10 min walk",
                 "zh": "12月31日华夫饼的备选 · 步行 10 分钟"
@@ -701,6 +717,10 @@
               ],
               "hoursZh": "官网：Dec 31 12–23",
               "distanceZh": "🚶 2 分钟",
+              "lat": 50.847554,
+              "lng": 4.354734,
+              "website": "https://latavernedupassage.be/en",
+              "googleMaps": "https://www.google.com/maps/search/?api=1&query=La+Taverne+du+Passage+Galerie+de+la+Reine+30%2C+1000+Bruxelles",
               "note": {
                 "en": "Backup for lunch 2026-12-31 · ~2 min walk",
                 "zh": "12月31日午餐的备选 · 步行 2 分钟"
@@ -718,6 +738,10 @@
               ],
               "hoursZh": "Dec 31 10–24",
               "distanceZh": "🚶 6 分钟",
+              "lat": 50.848265,
+              "lng": 4.350694,
+              "website": "https://lecirio.be/",
+              "googleMaps": "https://www.google.com/maps/search/?api=1&query=Le+Cirio+Rue+de+la+Bourse+18%2C+1000+Bruxelles",
               "note": {
                 "en": "Backup for lunch 2026-12-31 · ~6 min walk",
                 "zh": "12月31日午餐的备选 · 步行 6 分钟"
@@ -1098,6 +1122,10 @@
               ],
               "hoursZh": "官网：Dec 31 18–22:30",
               "distanceZh": "🚶 7 分钟",
+              "lat": 50.850866,
+              "lng": 4.346833,
+              "website": "https://restaurantlepresale.com/",
+              "googleMaps": "https://www.google.com/maps/search/?api=1&query=Le+Pr%C3%A9+Sal%C3%A9+Rue+de+Flandre+20%2C+1000+Bruxelles",
               "note": {
                 "en": "Backup for NYE dinner 2026-12-31 · ~7 min walk",
                 "zh": "12月31日跨年晚饭的备选 · 步行 7 分钟"
@@ -1114,6 +1142,10 @@
               ],
               "hoursZh": "官网：跨年晚餐派对（要预付）",
               "distanceZh": "🚕 10 分钟（Louise）",
+              "lat": 50.837247,
+              "lng": 4.357612,
+              "website": "https://theiris.be/festive",
+              "googleMaps": "https://www.google.com/maps/search/?api=1&query=The+Iris+%28The+Hotel+Brussels%29+Boulevard+de+Waterloo+38%2C+1000+Bruxelles",
               "note": {
                 "en": "Backup for NYE dinner 2026-12-31 · ~10 min taxi",
                 "zh": "12月31日跨年晚饭的备选 · 出租车 10 分钟"

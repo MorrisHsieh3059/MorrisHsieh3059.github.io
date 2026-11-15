@@ -307,6 +307,10 @@
               ],
               "hoursZh": "官网：每天 11–22:30，厨房到 21:30",
               "distanceZh": "🚶 10 分钟",
+              "lat": 48.209421,
+              "lng": 16.374843,
+              "website": "https://www.figlmueller.at/en/wollzeile/",
+              "googleMaps": "https://www.google.com/maps/search/?api=1&query=Figlm%C3%BCller+Wollzeile+Wollzeile+5%2C+1010+Wien",
               "note": {
                 "en": "Backup for dinner 2026-12-27 · ~10 min walk",
                 "zh": "12月27日晚餐的备选 · 步行 10 分钟"
@@ -324,6 +328,10 @@
               ],
               "hoursZh": "周日 11–23，厨房到 22:30",
               "distanceZh": "🚶 12 分钟",
+              "lat": 48.208115,
+              "lng": 16.370059,
+              "website": "https://www.reinthalersbeisl.com/",
+              "googleMaps": "https://www.google.com/maps/search/?api=1&query=Reinthaler%27s+Beisl+Dorotheergasse+2%E2%80%934%2C+1010+Wien",
               "note": {
                 "en": "Backup for dinner 2026-12-27 · ~12 min walk",
                 "zh": "12月27日晚餐的备选 · 步行 12 分钟"
@@ -648,6 +656,10 @@
               ],
               "hoursZh": "每天 7:30–20:30",
               "distanceZh": "🚶 2 分钟",
+              "lat": 48.187102,
+              "lng": 16.298959,
+              "website": "https://oberlaa-wien.at/standorte/standort-dommayer/",
+              "googleMaps": "https://www.google.com/maps/search/?api=1&query=Caf%C3%A9+Dommayer+Dommayergasse+1%2C+1130+Wien",
               "note": {
                 "en": "Backup for lunch 2026-12-28 · ~2 min walk",
                 "zh": "12月28日午餐的备选 · 步行 2 分钟"
@@ -665,6 +677,10 @@
               ],
               "hoursZh": "周一 10–24，厨房 11:30–22",
               "distanceZh": "🚶 4 分钟",
+              "lat": 48.185842,
+              "lng": 16.300965,
+              "website": "https://www.bierig.at/schlossbrau/",
+              "googleMaps": "https://www.google.com/maps/search/?api=1&query=Brandauer%27s+Schlossbr%C3%A4u+Am+Platz+5%2C+1130+Wien",
               "note": {
                 "en": "Backup for lunch 2026-12-28 · ~4 min walk",
                 "zh": "12月28日午餐的备选 · 步行 4 分钟"
@@ -878,6 +894,10 @@
               ],
               "hoursZh": "周一 8–22:30",
               "distanceZh": "🚶 4 分钟",
+              "lat": 48.207204,
+              "lng": 16.36865,
+              "website": "https://cafebraeunerhof.at/",
+              "googleMaps": "https://www.google.com/maps/search/?api=1&query=Caf%C3%A9+Br%C3%A4unerhof+Stallburggasse+2%2C+1010+Wien",
               "note": {
                 "en": "Backup for coffee 2026-12-28 · ~4 min walk",
                 "zh": "12月28日咖啡的备选 · 步行 4 分钟"
@@ -895,6 +915,10 @@
               ],
               "hoursZh": "周一 8:30–22",
               "distanceZh": "🚇/🚶 15 分钟",
+              "lat": 48.207608,
+              "lng": 16.380417,
+              "website": "https://www.prueckel.at/",
+              "googleMaps": "https://www.google.com/maps/search/?api=1&query=Caf%C3%A9+Pr%C3%BCckel+Stubenring+24%2C+1010+Wien",
               "note": {
                 "en": "Backup for coffee 2026-12-28 · ~15 min walk",
                 "zh": "12月28日咖啡的备选 · 步行 15 分钟"
@@ -963,6 +987,10 @@
               ],
               "hoursZh": "官网：周一 8:30–19:30",
               "distanceZh": "🚶 4 分钟",
+              "lat": 48.208028,
+              "lng": 16.370189,
+              "website": "https://www.trzesniewski.at/",
+              "googleMaps": "https://www.google.com/maps/search/?api=1&query=Trze%C5%9Bniewski+Dorotheergasse+Dorotheergasse+1%2C+1010+Wien",
               "note": {
                 "en": "Backup for pre-opera snack 2026-12-28 · ~4 min walk",
                 "zh": "12月28日歌剧前的小吃的备选 · 步行 4 分钟"
@@ -980,6 +1008,10 @@
               ],
               "hoursZh": "每天 8–22",
               "distanceZh": "🚶 2 分钟到歌剧院对面",
+              "lat": 48.203195,
+              "lng": 16.370315,
+              "website": "https://www.gerstner.at/",
+              "googleMaps": "https://www.google.com/maps/search/?api=1&query=Gerstner+K.u.K.+Hofzuckerb%C3%A4cker+K%C3%A4rntner+Stra%C3%9Fe+51%2C+1010+Wien",
               "note": {
                 "en": "Backup for pre-opera snack 2026-12-28 · ~2 min walk",
                 "zh": "12月28日歌剧前的小吃的备选 · 步行 2 分钟"
@@ -1088,6 +1120,10 @@
               ],
               "hoursZh": "周一 9–24（22 点后有 Buchteln）",
               "distanceZh": "🚶 4 分钟",
+              "lat": 48.207956,
+              "lng": 16.369805,
+              "website": "https://hawelka.at/",
+              "googleMaps": "https://www.google.com/maps/search/?api=1&query=Caf%C3%A9+Hawelka+Dorotheergasse+6%2C+1010+Wien",
               "note": {
                 "en": "Backup for late-night snack 2026-12-28 · ~4 min walk",
                 "zh": "12月28日宵夜的备选 · 步行 4 分钟"
@@ -1104,6 +1140,10 @@
               ],
               "hoursZh": "开到凌晨 4 点",
               "distanceZh": "🚶 12 分钟",
+              "lat": 48.210616,
+              "lng": 16.373221,
+              "website": "https://www.falstaff.com/at/streetfood/wuerstelstand-am-hohen-markt-1",
+              "googleMaps": "https://www.google.com/maps/search/?api=1&query=W%C3%BCrstelstand+am+Hohen+Markt+Hoher+Markt%2C+1010+Wien",
               "note": {
                 "en": "Backup for late-night snack 2026-12-28 · ~12 min walk",
                 "zh": "12月28日宵夜的备选 · 步行 12 分钟"
@@ -1566,6 +1606,10 @@
               ],
               "hoursZh": "每天 12 点起（建议打电话）",
               "distanceZh": "🚕 8 分钟（Grinzing）",
+              "lat": 48.257471,
+              "lng": 16.3389,
+              "website": "https://zummartinsepp.at/",
+              "googleMaps": "https://www.google.com/maps/search/?api=1&query=Zum+Martin+Sepp+Cobenzlgasse+34%2C+1190+Wien",
               "note": {
                 "en": "Backup for dinner 2026-12-29 · ~8 min taxi",
                 "zh": "12月29日晚餐的备选 · 出租车 8 分钟"
@@ -1583,6 +1627,10 @@
               ],
               "hoursZh": "官网：全年营业，周二 14–23",
               "distanceZh": "🚕 12 分钟（Neustift）",
+              "lat": 48.251313,
+              "lng": 16.301409,
+              "website": "https://www.fuhrgassl-huber.at/",
+              "googleMaps": "https://www.google.com/maps/search/?api=1&query=Fuhrgassl-Huber+Neustift+am+Walde+68%2C+1190+Wien",
               "note": {
                 "en": "Backup for dinner 2026-12-29 · ~12 min taxi",
                 "zh": "12月29日晚餐的备选 · 出租车 12 分钟"
@@ -1715,6 +1763,10 @@
               ],
               "hoursZh": "官网：7:30 起",
               "distanceZh": "🚶 15 分钟 / 🚋 1 号线",
+              "lat": 48.211562,
+              "lng": 16.36145,
+              "website": "https://www.landtmann.at/",
+              "googleMaps": "https://www.google.com/maps/search/?api=1&query=Caf%C3%A9+Landtmann+Universit%C3%A4tsring+4%2C+1010+Wien",
               "note": {
                 "en": "Backup for breakfast 2026-12-30 · ~15 min walk",
                 "zh": "12月30日早餐的备选 · 步行 15 分钟"
@@ -1732,6 +1784,10 @@
               ],
               "hoursZh": "官网：周三 7 点起",
               "distanceZh": "🚶 12 分钟",
+              "lat": 48.199838,
+              "lng": 16.36117,
+              "website": "https://www.cafesperl.at/",
+              "googleMaps": "https://www.google.com/maps/search/?api=1&query=Caf%C3%A9+Sperl+Gumpendorfer+Stra%C3%9Fe+11%2C+1060+Wien",
               "note": {
                 "en": "Backup for breakfast 2026-12-30 · ~12 min walk",
                 "zh": "12月30日早餐的备选 · 步行 12 分钟"
@@ -2026,6 +2082,10 @@
               ],
               "hoursZh": "官网：周三 8–23",
               "distanceZh": "同一栋楼",
+              "lat": 48.204433,
+              "lng": 16.381373,
+              "website": "https://www.steirereck.at/meierei.html",
+              "googleMaps": "https://www.google.com/maps/search/?api=1&query=Meierei+im+Stadtpark+Am+Heumarkt+2A%2C+1030+Wien",
               "note": {
                 "en": "Backup for lunch (the one splurge) 2026-12-30 · same building",
                 "zh": "12月30日午餐（这趟唯一的大餐）的备选 · 同一栋楼"
@@ -2043,6 +2103,10 @@
               ],
               "hoursZh": "官网：周三 11–24",
               "distanceZh": "🚶 6 分钟",
+              "lat": 48.200431,
+              "lng": 16.378623,
+              "website": "https://www.gmoakeller.at/",
+              "googleMaps": "https://www.google.com/maps/search/?api=1&query=Gmoakeller+Am+Heumarkt+25%2C+1030+Wien",
               "note": {
                 "en": "Backup for lunch (the one splurge) 2026-12-30 · ~6 min walk",
                 "zh": "12月30日午餐（这趟唯一的大餐）的备选 · 步行 6 分钟"

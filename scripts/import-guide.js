@@ -456,6 +456,12 @@ function backupOf(raw) {
   const distanceZh = raw && raw.distance_from_top_zh ? cleanMark(raw.distance_from_top_zh) : '';
   if (hoursZh) item.hoursZh = hoursZh;
   if (distanceZh) item.distanceZh = distanceZh;
+  if (raw && typeof raw.lat === 'number') item.lat = raw.lat;
+  if (raw && typeof raw.lng === 'number') item.lng = raw.lng;
+  const site = raw && safeUrl(raw.website);
+  const maps = raw && safeUrl(raw.google_maps_url);
+  if (site) item.website = site;
+  if (maps) item.googleMaps = maps;
   const noteEn = polishNote((raw && raw.note) || '');
   if (noteEn) item.note = bilingual(noteEn, 'note');
   return item;

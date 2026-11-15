@@ -679,6 +679,29 @@ a.guide-daytrip {
 	line-height: 1.35;
 }
 
+.guide-backup + .guide-backup {
+	margin-top: 0.4rem;
+	padding-top: 0.35rem;
+	border-top: 1px solid #eee;
+}
+
+.guide-backup-head {
+	display: flex;
+	align-items: flex-start;
+	gap: 0.2rem;
+}
+
+.guide-backup-name {
+	flex: 1 1 auto;
+	min-width: 0;
+	font-weight: 700;
+	color: #555;
+}
+
+.guide-backup-meta {
+	margin: 0.05rem 0 0;
+}
+
 .guide-around {
 	margin: 0.35rem 0 0.8rem;
 	color: #777;

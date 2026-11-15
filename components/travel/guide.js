@@ -755,20 +755,27 @@
 
 	function backupsHtml(stop) {
 		if (!stop.backups || !stop.backups.length) return '';
-		var body = stop.backups.map(function (item) {
+		var rows = stop.backups.map(function (item) {
 			var name = state.lang === 'zh' ? (item.name || item.nameEn || '') : (item.nameEn || item.name || '');
 			var area = state.lang === 'zh' ? (item.areaZh || item.area || '') : (item.area || '');
 			var dishes = (item.mustOrder || []).join(', ');
-			var bits = [name];
+			var bits = [];
 			if (area) bits.push(area);
 			if (dishes) bits.push(dishes);
 			if (state.lang === 'zh' && item.distanceZh) bits.push(item.distanceZh);
 			if (item.hoursZh) bits.push(item.hoursZh);
-			return bits.filter(Boolean).join(' · ');
-		}).join('\n');
-		if (!body) return '';
-		return '<details class="guide-tl-fold guide-backups"><summary>' + esc(ui('backup')) + '</summary><p>' +
-			esc(body).replace(/\n/g, '<br>') + '</p></details>';
+			var linkItem = {
+				name: { en: item.nameEn || item.name || '', zh: item.name || item.nameEn || '' },
+				lat: item.lat,
+				lng: item.lng,
+				website: item.website
+			};
+			var buttons = iconButtons(linkItem, true);
+			var meta = bits.length ? '<p class="guide-backup-meta">' + esc(bits.join(' · ')) + '</p>' : '';
+			return '<div class="guide-backup"><div class="guide-backup-head"><span class="guide-backup-name">' + esc(name) + '</span><span class="guide-stop-actions">' + buttons + '</span></div>' + meta + '</div>';
+		}).join('');
+		if (!rows) return '';
+		return '<details class="guide-tl-fold guide-backups"><summary>' + esc(ui('backup')) + '</summary>' + rows + '</details>';
 	}
 
 	function renderCity() {
