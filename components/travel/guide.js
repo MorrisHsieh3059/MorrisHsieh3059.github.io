@@ -35,7 +35,6 @@
 		other: { en: 'Stop', zh: '停留' },
 		directions: { en: 'Directions to {name}', zh: '去{name}的路线' },
 		website: { en: '{name} official website', zh: '{name}官网' },
-		offscreen: { en: 'Stop {n}, off the map', zh: '第 {n} 站在地图外面' },
 		langGroup: { en: 'Language', zh: '语言' }
 	};
 
@@ -119,15 +118,6 @@
 		if (s.y === e.y && s.m === e.m) return sm + ' ' + s.d + ' – ' + e.d;
 		if (s.y === e.y) return sm + ' ' + s.d + ' – ' + em + ' ' + e.d;
 		return sm + ' ' + s.d + ', ' + s.y + ' – ' + em + ' ' + e.d + ', ' + e.y;
-	}
-
-	function formatDay(date, weekday) {
-		var p = parseISO(date);
-		if (!p) return '';
-		if (state.lang === 'zh') {
-			return p.m + '月' + p.d + '日' + (WEEK_ZH[weekday] ? ' ' + WEEK_ZH[weekday] : '');
-		}
-		return (weekday ? weekday + ', ' : '') + MONTHS[p.m - 1] + ' ' + p.d;
 	}
 
 	function dayLabel(i) {
@@ -393,12 +383,10 @@
 		if (!state.map) return;
 		var located = locatedStops(stops);
 		if (!located.length) return;
-		var split = coreAndOutliers(located);
-		state.outliers = split.outliers;
-		var pts = split.core.map(function (p) { return [p.lat, p.lng]; });
+		var pts = coreAndOutliers(located).core.map(function (p) { return [p.lat, p.lng]; });
 		if (pts.length === 1) state.map.setView(pts[0], 16, { animate: false });
 		else state.map.fitBounds(pts, { padding: [36, 36], maxZoom: 16, animate: false });
-		updateMapDecor();
+		spreadMarkers();
 	}
 
 	function scrollStopIntoView(el) {
@@ -494,51 +482,10 @@
 		});
 	}
 
-	function placeOffscreenHints() {
-		var box = document.getElementById('guide-offscreen');
-		if (!box || !state.map) return;
-		var size = state.map.getSize();
-		if (!size || !size.x || !size.y) {
-			box.innerHTML = '';
-			return;
-		}
-		var padX = 22;
-		var padY = 22;
-		var html = [];
-		(state.outliers || []).forEach(function (p) {
-			var pt = state.map.latLngToContainerPoint([p.lat, p.lng]);
-			if (pt.x >= 8 && pt.y >= 8 && pt.x <= size.x - 8 && pt.y <= size.y - 8) return;
-			var cx = size.x / 2;
-			var cy = size.y / 2;
-			var ang = Math.atan2(pt.y - cy, pt.x - cx);
-			var maxX = size.x / 2 - padX;
-			var maxY = size.y / 2 - padY;
-			var cos = Math.cos(ang);
-			var sin = Math.sin(ang);
-			var scale = Math.min(
-				Math.abs(cos) < 0.001 ? Infinity : maxX / Math.abs(cos),
-				Math.abs(sin) < 0.001 ? Infinity : maxY / Math.abs(sin)
-			);
-			var x = cx + cos * scale;
-			var y = cy + sin * scale;
-			if (x < 54 && y < 92) y = 96;
-			html.push(
-				'<button type="button" class="guide-edge" data-stop="' + p.index + '" style="left:' + Math.round(x) + 'px;top:' + Math.round(y) + 'px" aria-label="' + esc(ui('offscreen').replace('{n}', String(p.index + 1))) + '"><span>' + (p.index + 1) + '</span></button>'
-			);
-		});
-		box.innerHTML = html.join('');
-	}
-
-	function updateMapDecor() {
-		spreadMarkers();
-		placeOffscreenHints();
-	}
-
 	function drawMap(stops) {
 		destroyMap();
 		var node = document.getElementById('guide-map');
 		if (!node || typeof L === 'undefined') return;
-		state.outliers = [];
 		state.map = L.map(node, {
 			scrollWheelZoom: true,
 			zoomControl: true,
@@ -548,7 +495,7 @@
 			attribution: '&copy; OpenStreetMap',
 			maxZoom: 19
 		}).addTo(state.map);
-		state.map.on('zoomend moveend', updateMapDecor);
+		state.map.on('zoomend moveend', spreadMarkers);
 
 		var line = [];
 		stops.forEach(function (stop, i) {
@@ -730,9 +677,23 @@
 		var day = city.days[state.day];
 		var tabs = city.days.map(function (d, i) {
 			var on = i === state.day;
+			var p = parseISO(d.date);
+			var dateText = '';
+			var weekText = '';
+			if (p) {
+				if (state.lang === 'zh') {
+					dateText = p.m + '月' + p.d + '日';
+					weekText = WEEK_ZH[d.weekday] ? ' ' + WEEK_ZH[d.weekday] : '';
+				} else {
+					dateText = MONTHS[p.m - 1] + ' ' + p.d;
+					weekText = d.weekday ? d.weekday + ', ' : '';
+				}
+			}
+			var week = weekText ? '<span class="guide-day-weekday">' + esc(weekText) + '</span>' : '';
+			var dateHtml = state.lang === 'zh' ? esc(dateText) + week : week + esc(dateText);
 			return '<button type="button" class="guide-day' + (on ? ' is-active' : '') + '" role="tab" data-day="' + i + '" aria-selected="' + on + '">' +
 				'<span class="guide-day-kicker">' + esc(dayLabel(i)) + '</span>' +
-				'<span class="guide-day-date">' + esc(formatDay(d.date, d.weekday)) + '</span></button>';
+				'<span class="guide-day-date">' + dateHtml + '</span></button>';
 		}).join('');
 		var stops = day.stops.map(stopHtml).join('');
 		var notes = (day.notes || []).map(function (n) {
@@ -746,7 +707,7 @@
 			'</div>' +
 			'<div class="guide-days" role="tablist">' + tabs + '</div>' +
 			'<div class="guide-split">' +
-				'<div class="guide-map-panel"><div id="guide-map" class="guide-map" role="application" aria-label="' + esc(tx(city.name)) + '"></div><div class="guide-offscreen" id="guide-offscreen"></div></div>' +
+				'<div class="guide-map-panel"><div id="guide-map" class="guide-map" role="application" aria-label="' + esc(tx(city.name)) + '"></div></div>' +
 				'<div class="guide-timeline" id="guide-timeline"><div class="guide-tl">' + stops + '</div>' + noteBlock + '</div>' +
 			'</div>';
 		$('#guide-root').attr('lang', state.lang === 'zh' ? 'zh-Hans' : 'en').html(html);
@@ -870,11 +831,6 @@
 					guideCity: city || undefined
 				});
 			}
-		});
-		$(document).on('click', '.guide-edge', function (e) {
-			e.preventDefault();
-			e.stopPropagation();
-			setActive(parseInt($(this).attr('data-stop'), 10), true);
 		});
 		$(document).on('click', '.guide-stop', function (e) {
 			if ($(e.target).closest('a').length) return;
