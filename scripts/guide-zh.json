@@ -102,7 +102,12 @@
     "Check in, security (no US preclearance) · departs on United BRU 11:15 AM → Newark EWR 1:25 PM": "值机、安检（这里没有美国出境预检）· 布鲁塞尔 11:15 起飞，纽瓦克 13:25 到",
     "Dinner in Berlin's oldest beer garden (1837), winter restaurant": "晚饭在柏林最老的啤酒花园（1837），冬天在室内",
     "Lunch (2:50 PM departure to BER)": "午饭（14:50 出发去机场）",
-    "Lunch: Berlin's oldest restaurant (1621)": "午饭：柏林最老的餐厅（1621）"
+    "Lunch: Berlin's oldest restaurant (1621)": "午饭：柏林最老的餐厅（1621）",
+    "Christmas Eve dinner: 5-course menu (one seating, 6:30 PM)": "平安夜晚饭：五道菜（一场，18:30）",
+    "Christmas Eve service (English; arrive ~3:20 PM)": "平安夜礼拜（英语，大约 15:20 到）",
+    "Drop bags (check-in 3:00 PM; ask for early check-in, otherwise leave bags with the concierge)": "放行李（15:00 可以入住；如果房间还没好，行李寄在礼宾部）",
+    "Fallback service: Christvesper (German; Protestant state church, mainstream rather than conservative)": "备选礼拜：Christvesper（德语，主流新教）",
+    "Late lunch: currywurst (10 min, quick)": "晚点的午饭：currywurst（10 分钟，很快）"
   },
   "title": {
     "Boxing Day · Wall Memorial, East Side Gallery, TV Tower": "节礼日 · 柏林墙纪念地、东边画廊、电视塔",
@@ -226,7 +231,8 @@
     "Pierre Marcolini": "Pierre Marcolini",
     "Brötchen (Eiaufstrich, Lachs)": "小面包（鸡蛋酱、三文鱼）",
     "Molle (Hausbier)": "Molle（店里的啤酒）",
-    "Wiener Schnitzel vom Kalb (in Butterschmalz)": "小牛肉维也纳炸肉排（用黄油油炸）"
+    "Wiener Schnitzel vom Kalb (in Butterschmalz)": "小牛肉维也纳炸肉排（用黄油油炸）",
+    "Evangelical, English-language church (Saddleback Church network); carols and a Christmas message": "英语福音派教会；有圣诞颂歌和圣诞信息"
   },
   "note": {
     "daily 12–24": "每天 12:00–24:00",
@@ -334,7 +340,11 @@
     "Morning in Berlin – see Berlin Dec 27.": "早上还在柏林，看柏林 12 月 27 日。",
     "NYE alternative: The Iris package (see meals slot Y4, backup 2).": "跨年的另一个选择是 The Iris 套餐。",
     "The day trip itself is in city 'bratislava'. The daytrip stop is not joined to Vienna Central Station by a leg on the way out · the outbound leg opens the Bratislava day, and the return leg sits here between the daytrip stop and Vienna Central Station.": "布拉迪斯拉发的行程在那一页。去程火车从布拉迪斯拉发那天开始，回程在一日游和维也纳中央车站之间。",
-    "Vienna part of the day – see Vienna Dec 30.": "这一天在维也纳的部分，看维也纳 12 月 30 日。"
+    "Vienna part of the day – see Vienna Dec 30.": "这一天在维也纳的部分，看维也纳 12 月 30 日。",
+    "Backup for dinner (Christmas Eve) 2026-12-24 · same building": "12月24日平安夜晚餐的备选 · 同一栋楼",
+    "Backup for dinner (Christmas Eve) 2026-12-24 · ~9 min walk": "12月24日平安夜晚餐的备选 · 步行 9 分钟",
+    "Brandenburg Gate and the Holocaust Memorial moved to Dec 25 (the Reichstag walk passes Brandenburger Tor · Ebertstraße passes the memorial).": "勃兰登堡门和犹太人纪念碑改到 12 月 25 日。去国会大厦会经过城门，Ebertstraße 经过纪念碑。",
+    "Closed Dec 24: state museums, Reichstag dome, Charlottenburg Palace · shops close ~2 PM. U-Bahn runs all night Dec 23/24–27/28.": "12 月 24 日关闭：国立博物馆、国会大厦穹顶、夏洛滕堡宫。商店大约 14:00 打烊。地铁从 23/24 日通宵到 27/28 日。"
   },
   "hours": {
     "10 AM–11 PM on Dec 25–26": "12月25–26日 10:00–23:00",
@@ -398,7 +408,10 @@
     "Mon–Fri 8 AM–6 PM (no visits during 12:30 Mass); free; treasury paid": "周一到周五 8:00–18:00（12:30 弥撒时不参观）。教堂免费，珍宝馆要门票",
     "Daily from 12:00 (official site)": "每天 12:00 起（官网）",
     "Sat 12:00–15:00 (Dec 26 is a Saturday)": "周六 12:00–15:00（12 月 26 日是周六）",
-    "Sat from 17:00": "周六 17:00 起"
+    "Sat from 17:00": "周六 17:00 起",
+    "Official 2026 festive brochure: Dec 24, 6:30 PM Christmas Eve dinner (5 courses) · Michelin star every year since 1999": "2026 年节日手册：12 月 24 日 18:30 平安夜晚饭（五道菜）。1999 年起每年都有米其林星",
+    "Official event page: 2025 service was Dec 24, 3:30–4:40 PM; 2026 time not posted yet – confirm": "官网：2025 年平安夜是 15:30–16:40。2026 年的时间还没公布",
+    "Official hours: lunch 11:30 AM–2:30 PM, last seating 12:45 (open Dec 30)": "官网：午饭 11:30–14:30，最后入座 12:45（12 月 30 日开）"
   },
   "gloss": {
     "Belgian waffles": {
