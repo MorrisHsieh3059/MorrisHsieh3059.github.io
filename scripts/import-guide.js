@@ -378,39 +378,146 @@ function backupOf(raw) {
   return item;
 }
 
-function buildTransit(leg, fromStop, toStop) {
-  if (!leg) return null;
-  const mode = leg.mode || 'walk';
-  const label = modeLabel(mode);
-  const transit = {
-    mode: iconMode(mode),
-    label: label,
-    duration: durationOf(leg.duration)
-  };
-  if (mode === 'flight' || mode === 'train') {
-    const detail = hopDetail(
-      (fromStop && (fromStop.name_en || fromStop.name_local)) || leg.from,
-      (toStop && (toStop.name_en || toStop.name_local)) || leg.to
-    );
-    if (detail) transit.detail = detail;
-  }
-  const noteEn = [leg.note, leg.buffer]
-    .map(polishNote)
-    .filter(Boolean)
-    .filter(function (s) { return !/not booked|details unknown|time not on page/i.test(s); })
-    .join(' · ');
-  if (noteEn && mode !== 'flight') {
-    const note = bilingual(noteEn, 'leg');
-    if (note) transit.note = note;
-  }
-  if (mode === 'flight' && leg.duration && /overnight/i.test(String(leg.duration))) {
-    const prose = durationOf(leg.duration);
-    if (prose) {
-      const zh = remember('duration', prose);
-      if (zh) transit.durationZh = zh;
+const MODE_WORDS = [
+  ['s-bahn', 'train', 'Train', '火车'],
+  ['u-bahn', 'metro', 'Metro', '地铁'],
+  ['metro', 'metro', 'Metro', '地铁'],
+  ['tram', 'tram', 'Tram', '电车'],
+  ['taxi', 'taxi', 'Taxi', '出租车'],
+  ['cat bus', 'bus', 'Bus', '公交'],
+  ['bus', 'bus', 'Bus', '公交'],
+  ['flight', 'flight', 'Flight', '飞机'],
+  ['lift', 'lift', 'Lift', '电梯'],
+  ['train', 'train', 'Train', '火车'],
+  ['walk', 'walk', 'Walk', '步行']
+];
+
+function matchMode(text) {
+  const lower = String(text || '').toLowerCase();
+  for (let i = 0; i < MODE_WORDS.length; i++) {
+    if (lower.indexOf(MODE_WORDS[i][0]) !== -1) {
+      return { mode: MODE_WORDS[i][1], en: MODE_WORDS[i][2], zh: MODE_WORDS[i][3] };
     }
   }
-  return transit;
+  return null;
+}
+
+function timePhrase(text) {
+  const src = String(text || '');
+  const range = src.match(/~?\s*(\d+)\s*[–—-]\s*(\d+)\s*(?:min|minutes)\b/i);
+  if (range) return range[1] + '–' + range[2] + ' min';
+  const one = src.match(/~?\s*(\d+)\s*(?:min|minutes)\b/i);
+  if (one) return one[1] + ' min';
+  const hm = src.match(/(\d+)\s*h(?:\s*(\d+)\s*m\b)?/i);
+  if (hm) return hm[2] ? hm[1] + 'h ' + hm[2] + 'm' : hm[1] + 'h';
+  if (/overnight/i.test(src)) return src.trim();
+  return null;
+}
+
+function segmentFrom(def, duration) {
+  const seg = {
+    mode: def.mode,
+    label: { en: def.en, zh: def.zh },
+    duration: duration || null
+  };
+  if (duration && /overnight/i.test(duration)) {
+    const zh = remember('duration', duration);
+    if (zh) seg.durationZh = zh;
+  }
+  return seg;
+}
+
+function orderedModes(mode) {
+  return String(mode || 'walk').split(/\s*\+\s*/).map(function (chunk) {
+    const bits = chunk.split(/\s*\/\s*|\s+or\s+/i).map(function (s) { return s.trim(); }).filter(Boolean);
+    const defs = bits.map(matchMode).filter(Boolean);
+    if (!defs.length) return { mode: 'walk', en: 'Walk', zh: '步行' };
+    if (defs.length === 1) return defs[0];
+    return {
+      mode: defs[0].mode,
+      en: defs.map(function (d) { return d.en; }).join(' / '),
+      zh: defs.map(function (d) { return d.zh; }).join(' / ')
+    };
+  });
+}
+
+// A combined export leg ("train + walk", "~35 min ... + 2 min walk") becomes
+// one segment per mode. A part with no time of its own gets a null duration.
+function splitSegments(mode, rawDuration) {
+  const text = sanitize(rawDuration || '');
+  const modes = orderedModes(mode);
+  const orSplit = text.match(/(\d+\s*[–—-]\s*\d+|\d+)\s*min\s+([a-z][a-z -]*?)\s+or\s+(\d+\s*[–—-]\s*\d+|\d+)\s*min\s+([a-z][a-z -]*)/i);
+  if (orSplit) {
+    const a = matchMode(orSplit[2]);
+    const b = matchMode(orSplit[4]);
+    if (a && b) {
+      return [
+        segmentFrom(a, timePhrase(orSplit[1] + ' min')),
+        segmentFrom(b, timePhrase(orSplit[3] + ' min'))
+      ];
+    }
+  }
+
+  const clauses = [];
+  function pushClause(chunk) {
+    const piece = String(chunk || '').trim();
+    if (!piece) return;
+    const def = matchMode(piece);
+    const time = timePhrase(piece);
+    if (!def && !time) return;
+    clauses.push({ def: def, time: time });
+  }
+
+  const paren = text.match(/\(([^)]*)\)/);
+  const inner = paren ? paren[1] : '';
+  const innerHasMode = /walk|bahn|metro|train|bus|taxi|tram|lift|flight/i.test(inner);
+  const innerHasTime = /\d+\s*min/i.test(inner);
+  if (innerHasMode) {
+    inner.split(/\s*(?:,|\+|·|;)\s*/).forEach(pushClause);
+    text.replace(/\([^)]*\)/g, ' ').split(/\s*\+\s*/).forEach(function (part) {
+      if (/walk|bahn|metro|train|bus|taxi|tram|lift|flight/i.test(part)) pushClause(part);
+    });
+    if (!innerHasTime) {
+      const mentions = inner.match(/walk|s-bahn|u-bahn|metro|train|bus|taxi|tram|lift|flight/ig) || [];
+      const lead = text.match(/^~?\s*((?:\d+\s*[–—-]\s*\d+|\d+)\s*min)\s*\(/);
+      if (lead && mentions.length === 1) {
+        const hit = clauses.find(function (c) { return c.def; });
+        if (hit && !hit.time) hit.time = timePhrase(lead[1]);
+      }
+    }
+  } else {
+    text.split(/\s*\+\s*/).forEach(pushClause);
+  }
+
+  const timed = clauses.filter(function (c) { return c.def; });
+  if (!timed.length) {
+    const only = timePhrase(text);
+    if (modes.length === 1) return [segmentFrom(modes[0], only)];
+    return modes.map(function (m) { return segmentFrom(m, null); });
+  }
+
+  let cursor = 0;
+  return modes.map(function (m) {
+    while (cursor < clauses.length && !clauses[cursor].def && !clauses[cursor].time) cursor += 1;
+    if (cursor < clauses.length && clauses[cursor].def && clauses[cursor].def.mode === m.mode) {
+      const time = clauses[cursor].time;
+      cursor += 1;
+      return segmentFrom(m, time);
+    }
+    if (cursor < clauses.length && !clauses[cursor].def && clauses[cursor].time) {
+      const time = clauses[cursor].time;
+      cursor += 1;
+      return segmentFrom(m, time);
+    }
+    return segmentFrom(m, null);
+  });
+}
+
+function buildTransit(leg) {
+  if (!leg) return null;
+  const segments = splitSegments(leg.mode || 'walk', leg.duration);
+  if (!segments.length) return null;
+  return { segments: segments };
 }
 
 function buildStop(item, transit, alts) {

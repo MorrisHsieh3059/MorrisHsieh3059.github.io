@@ -46,7 +46,8 @@
 		metro: 'fa-subway',
 		tram: 'fa-tram',
 		bus: 'fa-bus',
-		taxi: 'fa-taxi'
+		taxi: 'fa-taxi',
+		lift: 'fa-arrow-down'
 	};
 
 	var state = {
@@ -584,18 +585,40 @@
 		return html;
 	}
 
+	function segDuration(seg) {
+		var raw = seg && seg.duration;
+		if (raw == null || raw === '') return '—';
+		if (state.lang === 'zh') {
+			if (seg.durationZh) return seg.durationZh;
+			return String(raw)
+				.replace(/(\d+)\s*h(?:\s*(\d+)\s*m\b)?/gi, function (_m, h, min) {
+					return h + ' 小时' + (min ? ' ' + min + ' 分钟' : '');
+				})
+				.replace(/(\d+)\s*[–—-]\s*(\d+)\s*min\b/gi, '$1–$2 分钟')
+				.replace(/(\d+)\s*min\b/gi, '$1 分钟');
+		}
+		return String(raw);
+	}
+
+	function legSegments(transit) {
+		if (!transit) return [];
+		if (transit.segments && transit.segments.length) return transit.segments;
+		return [transit];
+	}
+
 	function legHtml(stop) {
-		if (!stop.transit) return '';
-		var walk = stop.transit.mode === 'walk' ? ' is-walk' : '';
-		var icon = ICONS[stop.transit.mode] || 'fa-arrow-down';
-		var bits = [modeLabel(stop.transit)];
-		if (stop.transit.detail) bits.push(tx(stop.transit.detail));
-		bits.push(legTime(stop.transit));
-		return '<div class="guide-tl-leg' + walk + '" aria-hidden="true">' +
+		var segments = legSegments(stop.transit);
+		if (!segments.length) return '';
+		var allWalk = segments.every(function (seg) { return seg.mode === 'walk'; });
+		var items = segments.map(function (seg) {
+			var icon = ICONS[seg.mode] || 'fa-arrow-down';
+			return '<li class="guide-tl-seg"><i class="fas ' + icon + '" aria-hidden="true"></i><span>' +
+				esc(modeLabel(seg)) + ' · ' + esc(segDuration(seg)) + '</span></li>';
+		}).join('');
+		return '<div class="guide-tl-leg' + (allWalk ? ' is-walk' : '') + '">' +
 			'<div class="guide-tl-times"></div>' +
 			'<div class="guide-tl-axis"></div>' +
-			'<p class="guide-tl-leg-label"><i class="fas ' + icon + '"></i><span>' + esc(bits.filter(Boolean).join(' · ')) + '</span></p>' +
-			'</div>';
+			'<ul class="guide-tl-segs">' + items + '</ul></div>';
 	}
 
 	function stopHtml(stop, index) {

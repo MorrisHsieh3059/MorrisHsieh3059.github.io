@@ -53,12 +53,16 @@
             }
           ],
           "transit": {
-            "mode": "tram",
-            "label": {
-              "en": "tram",
-              "zh": "有轨电车"
-            },
-            "duration": "15–20 min (tram D)"
+            "segments": [
+              {
+                "mode": "tram",
+                "label": {
+                  "en": "Tram",
+                  "zh": "电车"
+                },
+                "duration": "15–20 min"
+              }
+            ]
           }
         },
         {
@@ -91,16 +95,16 @@
             }
           ],
           "transit": {
-            "mode": "walk",
-            "label": {
-              "en": "walk",
-              "zh": "步行"
-            },
-            "duration": "14 min",
-            "note": {
-              "en": "Leave Belvedere by 9:50 · allow 5 min to buy the Bratislava-Ticket in the station",
-              "zh": "9:50 前离开美景宫。车站里留 5 分钟买一日票"
-            }
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "14 min"
+              }
+            ]
           }
         },
         {
@@ -121,20 +125,16 @@
             "zh": "坐火车去布拉迪斯拉发"
           },
           "transit": {
-            "mode": "train",
-            "label": {
-              "en": "train",
-              "zh": "火车"
-            },
-            "duration": "~56 min",
-            "detail": {
-              "en": "Vienna to Bratislava",
-              "zh": "维也纳到布拉迪斯拉发"
-            },
-            "note": {
-              "en": "Wien Hbf 10:14 → Bratislava hl. st. ~11:10 (hourly at :14). No boat: Twin City Liner has no sailings after Dec 20 · Tight: if missed, take the 11:14 and shift the day by 1 h",
-              "zh": "维也纳火车总站 10:14 出发，大约 11:10 到布拉迪斯拉发总站（每小时 :14）。12 月 20 日之后没有船。赶不上就坐 11:14，整天顺延 1 小时"
-            }
+            "segments": [
+              {
+                "mode": "train",
+                "label": {
+                  "en": "Train",
+                  "zh": "火车"
+                },
+                "duration": "56 min"
+              }
+            ]
           }
         },
         {
@@ -155,16 +155,16 @@
             "zh": "到布拉迪斯拉发"
           },
           "transit": {
-            "mode": "walk",
-            "label": {
-              "en": "walk",
-              "zh": "步行"
-            },
-            "duration": "21 min",
-            "note": {
-              "en": "or taxi 5–8 min",
-              "zh": "或出租车 5–8 分钟"
-            }
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "21 min"
+              }
+            ]
           }
         },
         {
@@ -218,12 +218,16 @@
             }
           ],
           "transit": {
-            "mode": "walk",
-            "label": {
-              "en": "walk",
-              "zh": "步行"
-            },
-            "duration": "8 min"
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "8 min"
+              }
+            ]
           }
         },
         {
@@ -259,12 +263,16 @@
             }
           ],
           "transit": {
-            "mode": "walk",
-            "label": {
-              "en": "walk",
-              "zh": "步行"
-            },
-            "duration": "4 min"
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "4 min"
+              }
+            ]
           }
         },
         {
@@ -297,12 +305,16 @@
             }
           ],
           "transit": {
-            "mode": "walk",
-            "label": {
-              "en": "walk",
-              "zh": "步行"
-            },
-            "duration": "7 min"
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "7 min"
+              }
+            ]
           }
         },
         {
@@ -335,12 +347,16 @@
             }
           ],
           "transit": {
-            "mode": "walk",
-            "label": {
-              "en": "walk",
-              "zh": "步行"
-            },
-            "duration": "12 min (uphill)"
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "12 min"
+              }
+            ]
           }
         },
         {
@@ -373,12 +389,16 @@
             }
           ],
           "transit": {
-            "mode": "walk",
-            "label": {
-              "en": "walk",
-              "zh": "步行"
-            },
-            "duration": "12–15 min (downhill, across the bridge)"
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "12–15 min"
+              }
+            ]
           }
         },
         {
@@ -411,12 +431,16 @@
             }
           ],
           "transit": {
-            "mode": "walk",
-            "label": {
-              "en": "walk",
-              "zh": "步行"
-            },
-            "duration": "7 min"
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "7 min"
+              }
+            ]
           }
         },
         {
@@ -448,12 +472,16 @@
             }
           ],
           "transit": {
-            "mode": "walk",
-            "label": {
-              "en": "walk",
-              "zh": "步行"
-            },
-            "duration": "13 min"
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "13 min"
+              }
+            ]
           }
         },
         {
@@ -483,16 +511,16 @@
             }
           ],
           "transit": {
-            "mode": "taxi",
-            "label": {
-              "en": "taxi",
-              "zh": "出租车"
-            },
-            "duration": "10 min",
-            "note": {
-              "en": "Don't walk to the station – not enough time",
-              "zh": "别走路去车站，来不及"
-            }
+            "segments": [
+              {
+                "mode": "taxi",
+                "label": {
+                  "en": "Taxi",
+                  "zh": "出租车"
+                },
+                "duration": "10 min"
+              }
+            ]
           }
         },
         {
@@ -513,20 +541,16 @@
             "zh": "坐火车回维也纳"
           },
           "transit": {
-            "mode": "train",
-            "label": {
-              "en": "train",
-              "zh": "火车"
-            },
-            "duration": "~56 min",
-            "detail": {
-              "en": "Bratislava to Vienna",
-              "zh": "布拉迪斯拉发到维也纳"
-            },
-            "note": {
-              "en": "Bratislava hl. st. 5:50 PM → Wien Hbf 6:46 PM",
-              "zh": "布拉迪斯拉发总站 17:50 → 维也纳火车总站 18:46"
-            }
+            "segments": [
+              {
+                "mode": "train",
+                "label": {
+                  "en": "Train",
+                  "zh": "火车"
+                },
+                "duration": "56 min"
+              }
+            ]
           }
         },
         {
@@ -547,12 +571,16 @@
             "zh": "回到维也纳"
           },
           "transit": {
-            "mode": "taxi",
-            "label": {
-              "en": "taxi",
-              "zh": "出租车"
-            },
-            "duration": "20–25 min (rush hour)"
+            "segments": [
+              {
+                "mode": "taxi",
+                "label": {
+                  "en": "Taxi",
+                  "zh": "出租车"
+                },
+                "duration": "20–25 min"
+              }
+            ]
           }
         },
         {

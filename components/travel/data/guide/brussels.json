@@ -63,12 +63,16 @@
             }
           ],
           "transit": {
-            "mode": "walk",
-            "label": {
-              "en": "walk",
-              "zh": "步行"
-            },
-            "duration": "5 min"
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "5 min"
+              }
+            ]
           }
         },
         {
@@ -110,12 +114,16 @@
             }
           ],
           "transit": {
-            "mode": "walk",
-            "label": {
-              "en": "walk",
-              "zh": "步行"
-            },
-            "duration": "3 min"
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "3 min"
+              }
+            ]
           }
         },
         {
@@ -164,12 +172,16 @@
             }
           ],
           "transit": {
-            "mode": "walk",
-            "label": {
-              "en": "walk",
-              "zh": "步行"
-            },
-            "duration": "5 min"
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "5 min"
+              }
+            ]
           }
         },
         {
@@ -211,12 +223,16 @@
             }
           ],
           "transit": {
-            "mode": "walk",
-            "label": {
-              "en": "walk",
-              "zh": "步行"
-            },
-            "duration": "0–2 min (inside the gallery)"
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "0–2 min"
+              }
+            ]
           }
         },
         {
@@ -259,12 +275,16 @@
             }
           ],
           "transit": {
-            "mode": "walk",
-            "label": {
-              "en": "walk",
-              "zh": "步行"
-            },
-            "duration": "6 min"
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "6 min"
+              }
+            ]
           }
         },
         {
@@ -303,12 +323,16 @@
             }
           ],
           "transit": {
-            "mode": "walk",
-            "label": {
-              "en": "walk",
-              "zh": "步行"
-            },
-            "duration": "7 min"
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "7 min"
+              }
+            ]
           }
         },
         {
@@ -347,12 +371,16 @@
             }
           ],
           "transit": {
-            "mode": "walk",
-            "label": {
-              "en": "walk",
-              "zh": "步行"
-            },
-            "duration": "9 min"
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "9 min"
+              }
+            ]
           }
         },
         {
@@ -410,12 +438,16 @@
             }
           ],
           "transit": {
-            "mode": "walk",
-            "label": {
-              "en": "walk",
-              "zh": "步行"
-            },
-            "duration": "13 min (uphill via Parc de Bruxelles and the Royal Palace)"
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "13 min"
+              }
+            ]
           }
         },
         {
@@ -454,12 +486,16 @@
             }
           ],
           "transit": {
-            "mode": "walk",
-            "label": {
-              "en": "walk",
-              "zh": "步行"
-            },
-            "duration": "6 min"
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "6 min"
+              }
+            ]
           }
         },
         {
@@ -498,12 +534,16 @@
             }
           ],
           "transit": {
-            "mode": "walk",
-            "label": {
-              "en": "walk",
-              "zh": "步行"
-            },
-            "duration": "8 min"
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "8 min"
+              }
+            ]
           }
         },
         {
@@ -552,12 +592,16 @@
             }
           ],
           "transit": {
-            "mode": "walk",
-            "label": {
-              "en": "walk",
-              "zh": "步行"
-            },
-            "duration": "9 min"
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "9 min"
+              }
+            ]
           }
         },
         {
@@ -602,16 +646,24 @@
             }
           ],
           "transit": {
-            "mode": "walk",
-            "label": {
-              "en": "lift + walk",
-              "zh": "电梯 + 步行"
-            },
-            "duration": "25 min (Poelaert lift down to the Marolles, then walk)",
-            "note": {
-              "en": "or taxi 10 min",
-              "zh": "或出租车 10 分钟"
-            }
+            "segments": [
+              {
+                "mode": "lift",
+                "label": {
+                  "en": "Lift",
+                  "zh": "电梯"
+                },
+                "duration": null
+              },
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": null
+              }
+            ]
           }
         },
         {
@@ -644,12 +696,16 @@
             }
           ],
           "transit": {
-            "mode": "walk",
-            "label": {
-              "en": "walk",
-              "zh": "步行"
-            },
-            "duration": "13 min"
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "13 min"
+              }
+            ]
           }
         },
         {
@@ -669,12 +725,16 @@
             "zh": "回酒店歇一下，换衣服（要正式一点）"
           },
           "transit": {
-            "mode": "walk",
-            "label": {
-              "en": "walk",
-              "zh": "步行"
-            },
-            "duration": "15 min"
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "15 min"
+              }
+            ]
           }
         },
         {
@@ -732,12 +792,24 @@
             }
           ],
           "transit": {
-            "mode": "metro",
-            "label": {
-              "en": "metro + walk",
-              "zh": "地铁 + 步行"
-            },
-            "duration": "~20–25 min (metro line 6 De Brouckère → Heysel) + 5 min walk"
+            "segments": [
+              {
+                "mode": "metro",
+                "label": {
+                  "en": "Metro",
+                  "zh": "地铁"
+                },
+                "duration": "20–25 min"
+              },
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "5 min"
+              }
+            ]
           },
           "alternatives": [
             {
@@ -786,16 +858,16 @@
             }
           ],
           "transit": {
-            "mode": "metro",
-            "label": {
-              "en": "metro",
-              "zh": "地铁"
-            },
-            "duration": null,
-            "note": {
-              "en": "STIB 2026 NYE night service not yet published (last year free 12–5:30 AM, metro to 2:30 AM)",
-              "zh": "布鲁塞尔 2026 跨年夜班车还没公布（去年午夜到凌晨 5:30 免费，地铁开到 2:30）"
-            }
+            "segments": [
+              {
+                "mode": "metro",
+                "label": {
+                  "en": "Metro",
+                  "zh": "地铁"
+                },
+                "duration": null
+              }
+            ]
           }
         },
         {
@@ -857,16 +929,24 @@
             }
           ],
           "transit": {
-            "mode": "train",
-            "label": {
-              "en": "walk + train",
-              "zh": "步行 + 火车"
-            },
-            "duration": "3 min walk to Bruxelles-Central + 17–20 min train",
-            "note": {
-              "en": "Holiday timetable · 2:45–3 h before",
-              "zh": "假日时刻表。提前 2 小时 45 分到 3 小时出门"
-            }
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "3 min"
+              },
+              {
+                "mode": "train",
+                "label": {
+                  "en": "Train",
+                  "zh": "火车"
+                },
+                "duration": "17–20 min"
+              }
+            ]
           }
         },
         {
@@ -887,16 +967,16 @@
             "zh": "值机、安检（这里没有美国出境预检）"
           },
           "transit": {
-            "mode": "flight",
-            "label": {
-              "en": "flight",
-              "zh": "飞机"
-            },
-            "duration": "8h 10m",
-            "detail": {
-              "en": "Brussels to Newark",
-              "zh": "布鲁塞尔到纽瓦克"
-            }
+            "segments": [
+              {
+                "mode": "flight",
+                "label": {
+                  "en": "Flight",
+                  "zh": "飞机"
+                },
+                "duration": "8h 10m"
+              }
+            ]
           }
         },
         {

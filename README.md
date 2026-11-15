@@ -198,12 +198,10 @@ Adding or editing a stop in a city file is enough for the page. A new city also 
             }
           ],
           "transit": {
-            "mode": "walk",
-            "label": { "en": "walk", "zh": "步行" },
-            "detail": { "en": "Munich to Berlin", "zh": "慕尼黑到柏林" },
-            "duration": "18 min",
-            "durationZh": null,
-            "note": { "en": "Along Unter den Linden", "zh": "沿菩提树下大街" }
+            "segments": [
+              { "mode": "train", "label": { "en": "Train", "zh": "火车" }, "duration": "35 min" },
+              { "mode": "walk", "label": { "en": "Walk", "zh": "步行" }, "duration": "2 min" }
+            ]
           }
         }
       ]
@@ -212,7 +210,7 @@ Adding or editing a stop in a city file is enough for the page. A new city also 
 }
 ```
 
-`subtitle`, `nativeName`, `hours`, `notes`, `mustSee`, `mustOrder`, `backups`, `alternatives`, and `transit` can be omitted. `transit` on a stop is the leg **to the next stop**; the last stop has none. `transit.duration` is `null` when the export had no time — the page shows an em dash, not the word null. `transit.mode` picks the icon: `walk`, `flight`, `train`, `metro`, `tram`, `bus`, `taxi`.
+`subtitle`, `nativeName`, `hours`, `notes`, `mustSee`, `mustOrder`, `backups`, `alternatives`, and `transit` can be omitted. `transit` on a stop is the leg **to the next stop**; the last stop has none. `transit.segments` is one entry per mode, in order. `duration` is `null` when that part has no time — the page shows an em dash, not the word null. `mode` picks the icon: `walk`, `flight`, `train`, `metro`, `tram`, `bus`, `taxi`, `lift`.
 
 `type` is `sight`, `restaurant`, `hotel`, `airport`, `station`, `church`, or anything else (shown as a generic stop). Sights and churches list `mustSee`. Restaurants list `mustOrder`. Either list is shown when present.
 

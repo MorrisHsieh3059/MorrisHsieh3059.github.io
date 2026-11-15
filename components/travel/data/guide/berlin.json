@@ -44,16 +44,16 @@
             "zh": "飞去夏洛特"
           },
           "transit": {
-            "mode": "flight",
-            "label": {
-              "en": "flight",
-              "zh": "飞机"
-            },
-            "duration": "2h 10m",
-            "detail": {
-              "en": "New York to Charlotte",
-              "zh": "纽约到夏洛特"
-            }
+            "segments": [
+              {
+                "mode": "flight",
+                "label": {
+                  "en": "Flight",
+                  "zh": "飞机"
+                },
+                "duration": "2h 10m"
+              }
+            ]
           }
         },
         {
@@ -74,13 +74,17 @@
             "zh": "转乘过夜航班"
           },
           "transit": {
-            "mode": "flight",
-            "label": {
-              "en": "flight",
-              "zh": "飞机"
-            },
-            "duration": "overnight; arrives 7:30 AM Dec 24",
-            "durationZh": "过夜，12 月 24 日早上 7:30 到"
+            "segments": [
+              {
+                "mode": "flight",
+                "label": {
+                  "en": "Flight",
+                  "zh": "飞机"
+                },
+                "duration": "overnight; arrives 7:30 AM Dec 24",
+                "durationZh": "过夜，12 月 24 日早上 7:30 到"
+              }
+            ]
           }
         }
       ]
@@ -127,16 +131,16 @@
             }
           ],
           "transit": {
-            "mode": "flight",
-            "label": {
-              "en": "flight",
-              "zh": "飞机"
-            },
-            "duration": "1h 10m",
-            "detail": {
-              "en": "Munich to Berlin",
-              "zh": "慕尼黑到柏林"
-            }
+            "segments": [
+              {
+                "mode": "flight",
+                "label": {
+                  "en": "Flight",
+                  "zh": "飞机"
+                },
+                "duration": "1h 10m"
+              }
+            ]
           }
         },
         {
@@ -157,16 +161,24 @@
             "zh": "到柏林，出航站楼（大约 10 分钟）"
           },
           "transit": {
-            "mode": "train",
-            "label": {
-              "en": "train + walk",
-              "zh": "火车 + 步行"
-            },
-            "duration": "~35 min (train to Zoo) + 2 min walk in station",
-            "note": {
-              "en": "Holiday timetable · if flight late or bags slow, taxi ~45 min",
-              "zh": "假日时刻表。飞机晚了或行李慢，出租车大约 45 分钟"
-            }
+            "segments": [
+              {
+                "mode": "train",
+                "label": {
+                  "en": "Train",
+                  "zh": "火车"
+                },
+                "duration": "35 min"
+              },
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "2 min"
+              }
+            ]
           }
         },
         {
@@ -215,12 +227,16 @@
             }
           ],
           "transit": {
-            "mode": "walk",
-            "label": {
-              "en": "walk",
-              "zh": "步行"
-            },
-            "duration": "4 min"
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "4 min"
+              }
+            ]
           }
         },
         {
@@ -240,16 +256,32 @@
             "zh": "入住，把行李放下（下午 3 点可以进房）"
           },
           "transit": {
-            "mode": "train",
-            "label": {
-              "en": "walk + S-Bahn + walk",
-              "zh": "步行 + S-Bahn + 步行"
-            },
-            "duration": "~25 min (4 min walk to Zoo, S-Bahn ~10 min to Friedrichstraße, walk 15 min)",
-            "note": {
-              "en": "Holiday service every 10 min",
-              "zh": "假日大约 10 分钟一班"
-            }
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "4 min"
+              },
+              {
+                "mode": "train",
+                "label": {
+                  "en": "Train",
+                  "zh": "火车"
+                },
+                "duration": "10 min"
+              },
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "15 min"
+              }
+            ]
           }
         },
         {
@@ -289,16 +321,16 @@
             }
           ],
           "transit": {
-            "mode": "walk",
-            "label": {
-              "en": "walk",
-              "zh": "步行"
-            },
-            "duration": "18 min",
-            "note": {
-              "en": "Along Unter den Linden",
-              "zh": "沿菩提树下大街"
-            }
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "18 min"
+              }
+            ]
           }
         },
         {
@@ -344,12 +376,16 @@
             }
           ],
           "transit": {
-            "mode": "walk",
-            "label": {
-              "en": "walk",
-              "zh": "步行"
-            },
-            "duration": "5 min"
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "5 min"
+              }
+            ]
           }
         },
         {
@@ -382,12 +418,16 @@
             }
           ],
           "transit": {
-            "mode": "walk",
-            "label": {
-              "en": "walk",
-              "zh": "步行"
-            },
-            "duration": "15 min"
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "15 min"
+              }
+            ]
           }
         },
         {
@@ -451,16 +491,16 @@
             }
           ],
           "transit": {
-            "mode": "taxi",
-            "label": {
-              "en": "taxi",
-              "zh": "出租车"
-            },
-            "duration": "12–15 min",
-            "note": {
-              "en": "Christmas Eve public transport reduced · take a taxi",
-              "zh": "平安夜公交少，坐出租车"
-            }
+            "segments": [
+              {
+                "mode": "taxi",
+                "label": {
+                  "en": "Taxi",
+                  "zh": "出租车"
+                },
+                "duration": "12–15 min"
+              }
+            ]
           }
         },
         {
@@ -517,16 +557,24 @@
             "zh": "酒店早餐 8:30"
           },
           "transit": {
-            "mode": "train",
-            "label": {
-              "en": "S-Bahn + walk",
-              "zh": "S-Bahn + 步行"
-            },
-            "duration": "30–35 min (S-Bahn Zoo → Hackescher Markt 15 min + walk 10 min)",
-            "note": {
-              "en": "or taxi 15 min · +10 min holiday buffer included",
-              "zh": "或出租车 15 分钟（已经含 10 分钟假日富余）"
-            }
+            "segments": [
+              {
+                "mode": "train",
+                "label": {
+                  "en": "Train",
+                  "zh": "火车"
+                },
+                "duration": "15 min"
+              },
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "10 min"
+              }
+            ]
           }
         },
         {
@@ -556,12 +604,16 @@
             }
           ],
           "transit": {
-            "mode": "walk",
-            "label": {
-              "en": "walk",
-              "zh": "步行"
-            },
-            "duration": "4 min"
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "4 min"
+              }
+            ]
           }
         },
         {
@@ -596,12 +648,16 @@
             }
           ],
           "transit": {
-            "mode": "walk",
-            "label": {
-              "en": "walk",
-              "zh": "步行"
-            },
-            "duration": "14 min"
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "14 min"
+              }
+            ]
           }
         },
         {
@@ -646,12 +702,16 @@
             }
           ],
           "transit": {
-            "mode": "walk",
-            "label": {
-              "en": "walk",
-              "zh": "步行"
-            },
-            "duration": "19 min"
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "19 min"
+              }
+            ]
           }
         },
         {
@@ -684,12 +744,16 @@
             }
           ],
           "transit": {
-            "mode": "walk",
-            "label": {
-              "en": "walk",
-              "zh": "步行"
-            },
-            "duration": "5 min"
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "5 min"
+              }
+            ]
           }
         },
         {
@@ -713,16 +777,16 @@
             "zh": "查理检查哨"
           },
           "transit": {
-            "mode": "walk",
-            "label": {
-              "en": "walk",
-              "zh": "步行"
-            },
-            "duration": "25–30 min",
-            "note": {
-              "en": "Arrive 15 min early for security",
-              "zh": "提前 15 分钟到，要安检"
-            }
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "25–30 min"
+              }
+            ]
           }
         },
         {
@@ -755,16 +819,16 @@
             }
           ],
           "transit": {
-            "mode": "taxi",
-            "label": {
-              "en": "taxi",
-              "zh": "出租车"
-            },
-            "duration": "12–15 min",
-            "note": {
-              "en": "or U5 + U8 ~35 min",
-              "zh": "或 U5 转 U8，大约 35 分钟"
-            }
+            "segments": [
+              {
+                "mode": "taxi",
+                "label": {
+                  "en": "Taxi",
+                  "zh": "出租车"
+                },
+                "duration": "12–15 min"
+              }
+            ]
           }
         },
         {
@@ -818,16 +882,16 @@
             }
           ],
           "transit": {
-            "mode": "taxi",
-            "label": {
-              "en": "taxi",
-              "zh": "出租车"
-            },
-            "duration": "15 min",
-            "note": {
-              "en": "or U8 + S-Bahn ~40 min · few trains on Christmas night",
-              "zh": "或 U8 转 S-Bahn，大约 40 分钟。圣诞夜车很少"
-            }
+            "segments": [
+              {
+                "mode": "taxi",
+                "label": {
+                  "en": "Taxi",
+                  "zh": "出租车"
+                },
+                "duration": "15 min"
+              }
+            ]
           }
         },
         {
@@ -874,16 +938,24 @@
             "zh": "酒店早餐 8:30"
           },
           "transit": {
-            "mode": "train",
-            "label": {
-              "en": "S-Bahn + walk",
-              "zh": "S-Bahn + 步行"
-            },
-            "duration": "30–35 min (S-Bahn Zoo → Friedrichstraße → S1/S2 Nordbahnhof) + 3 min walk",
-            "note": {
-              "en": "or taxi 15 min · +10 min holiday buffer included",
-              "zh": "或出租车 15 分钟（已经含 10 分钟假日富余）"
-            }
+            "segments": [
+              {
+                "mode": "train",
+                "label": {
+                  "en": "Train",
+                  "zh": "火车"
+                },
+                "duration": "30–35 min"
+              },
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "3 min"
+              }
+            ]
           }
         },
         {
@@ -922,12 +994,24 @@
             }
           ],
           "transit": {
-            "mode": "metro",
-            "label": {
-              "en": "S-Bahn + U-Bahn",
-              "zh": "S-Bahn + U-Bahn"
-            },
-            "duration": "30 min (S1/S2 → Friedrichstraße → U6 Mehringdamm)"
+            "segments": [
+              {
+                "mode": "train",
+                "label": {
+                  "en": "Train",
+                  "zh": "火车"
+                },
+                "duration": null
+              },
+              {
+                "mode": "metro",
+                "label": {
+                  "en": "Metro",
+                  "zh": "地铁"
+                },
+                "duration": null
+              }
+            ]
           }
         },
         {
@@ -972,12 +1056,24 @@
             }
           ],
           "transit": {
-            "mode": "metro",
-            "label": {
-              "en": "U-Bahn + walk",
-              "zh": "U-Bahn + 步行"
-            },
-            "duration": "30 min (U6 → U1/U3 Warschauer Str. 20 min + walk 10 min)"
+            "segments": [
+              {
+                "mode": "metro",
+                "label": {
+                  "en": "Metro",
+                  "zh": "地铁"
+                },
+                "duration": "20 min"
+              },
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "10 min"
+              }
+            ]
           }
         },
         {
@@ -1009,12 +1105,24 @@
             }
           ],
           "transit": {
-            "mode": "train",
-            "label": {
-              "en": "walk + S-Bahn",
-              "zh": "步行 + S-Bahn"
-            },
-            "duration": "20 min (walk along the wall to Ostbahnhof, S-Bahn to Alexanderplatz)"
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": null
+              },
+              {
+                "mode": "train",
+                "label": {
+                  "en": "Train",
+                  "zh": "火车"
+                },
+                "duration": null
+              }
+            ]
           }
         },
         {
@@ -1047,12 +1155,16 @@
             }
           ],
           "transit": {
-            "mode": "walk",
-            "label": {
-              "en": "walk",
-              "zh": "步行"
-            },
-            "duration": "9 min"
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "9 min"
+              }
+            ]
           }
         },
         {
@@ -1073,12 +1185,16 @@
             "zh": "东德博物馆（可选，1 小时）"
           },
           "transit": {
-            "mode": "walk",
-            "label": {
-              "en": "walk",
-              "zh": "步行"
-            },
-            "duration": "16 min"
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "16 min"
+              }
+            ]
           }
         },
         {
@@ -1142,16 +1258,16 @@
             }
           ],
           "transit": {
-            "mode": "taxi",
-            "label": {
-              "en": "taxi",
-              "zh": "出租车"
-            },
-            "duration": "10–15 min",
-            "note": {
-              "en": "or S-Bahn ~25 min",
-              "zh": "或 S-Bahn，大约 25 分钟"
-            }
+            "segments": [
+              {
+                "mode": "taxi",
+                "label": {
+                  "en": "Taxi",
+                  "zh": "出租车"
+                },
+                "duration": "10–15 min"
+              }
+            ]
           }
         },
         {
