@@ -1,6 +1,6 @@
 {
   "id": "bratislava",
-  "version": "v4.0.4",
+  "version": "v4.0.5",
   "draft": true,
   "country": {
     "en": "Slovakia",
@@ -440,43 +440,47 @@
             "zh": "Official : Tuesday 9:00–24:00"
           },
           "notes": {
-            "en": "🍸 Mirror Bar – World's 50 Best Bars 2026 No. 34 (No. 25 in 2025): one drink, ~30 min, in the Carlton's emerald 'secret garden' room. Low/no-alcohol signatures on the menu: Bubbles Without Troubles #3 (sparkling tea, alcohol-free), Nogroni, Non Alco Lux (alcohol-free twist on the house Lux).",
-            "zh": "🍸 Mirror Bar – World's 50 Best Bars 2026 No. 34 (No. 25 in 2025): one drink, ~30 min, in the Carlton's emerald 'secret garden' room. Low/no-alcohol signatures on the menu: Bubbles Without Troubles #3 (sparkling tea, alcohol-free), Nogroni, Non Alco Lux (alcohol-free twist on the house Lux)."
+            "en": "🍸 Mirror Bar – World's 50 Best Bars 2026 No. 34 (No. 25 in 2025): one drink, ~30 min, in the Carlton's emerald 'secret garden' room. Order the signature Lux (gin, passion fruit, rue berry liqueur, sherry, prosecco – served under a bonsai); alternative showpiece: Lantern of Infinity.",
+            "zh": "🍸 Mirror Bar – World's 50 Best Bars 2026 No. 34 (No. 25 in 2025): one drink, ~30 min, in the Carlton's emerald 'secret garden' room. Order the signature Lux (gin, passion fruit, rue berry liqueur, sherry, prosecco – served under a bonsai); alternative showpiece: Lantern of Infinity."
           },
           "mustSee": [
             {
               "text": {
-                "en": "World's 50 Best Bars Europe 2026 #8 (World #34)",
-                "zh": "2026 欧洲 50 佳酒吧第 8（全球第 34）"
+                "en": "Lux served beneath a bonsai under a halo lamp",
+                "zh": "盆景加光环灯下上桌的 Lux"
               }
             },
             {
               "text": {
-                "en": "House signature in a low/no-alcohol version",
-                "zh": "招牌酒的低/无酒精版"
+                "en": "Emerald 'secret garden' room with the full-size tree by Róbert Bartolen",
+                "zh": "祖母绿「秘密花园」厅与 Róbert Bartolen 制作的整棵树"
+              }
+            },
+            {
+              "text": {
+                "en": "Slovak artisan glassware – World's 50 Best Bars 2026 #34 (Europe #8)",
+                "zh": "斯洛伐克手工玻璃杯——2026 全球 50 佳酒吧第 34（欧洲第 8）"
               }
             }
           ],
           "mustOrder": [
             {
               "text": {
-                "en": "Bubbles Without Troubles #3 (alcohol-free)",
-                "zh": "Bubbles Without Troubles #3 (alcohol-free)"
+                "en": "Lux (Tanqueray No. 10 gin, passion fruit, rue berry liqueur, Tío Pepe sherry, prosecco) – the house signature",
+                "zh": "Lux（Tanqueray No. 10 金酒、百香果、芸香莓利口酒、Tío Pepe 雪莉、普罗塞克）——招牌"
               }
             },
             {
               "text": {
-                "en": "Non Alco Lux (alcohol-free)",
-                "zh": "Non Alco Lux (alcohol-free)"
-              }
-            },
-            {
-              "text": {
-                "en": "Nogroni (alcohol-free)",
-                "zh": "Nogroni (alcohol-free)"
+                "en": "Lantern of Infinity (rum, clarified goji & rosehip, red miso butter caramel, rice milk)",
+                "zh": "无限之灯 Lantern of Infinity（朗姆酒、澄清枸杞玫瑰果汁、红味噌黄油焦糖、米浆）"
               }
             }
           ],
+          "mustOrderNote": {
+            "en": "Lux is the bar's signature – a gin take on the Pornstar Martini served under a bonsai and halo lamp; Lantern of Infinity arrives in a glowing lantern inside a mirrored tesseract. Both are named in the 50 Best write-up (The Essence of Design menu). One drink fits the ~30 min visit – Lux first. Sources: the50.com (World's 50 Best Bars 2026 #34, Europe #8), Drinks International 'Menu of the month'.",
+            "zh": "Lux 是招牌——金酒版的 Pornstar Martini，盆景加光环灯上桌；无限之灯装在发光灯笼里、放在镜面四维立方体中。两款都在 50 Best 介绍里点名（The Essence of Design 酒单）。约 30 分钟只够一杯——先点 Lux。来源：the50.com（2026 全球 50 佳第 34、欧洲第 8）、Drinks International「本月酒单」。"
+          },
           "ticket": {
             "en": "4:30 PM table",
             "zh": "已订好——4:30 的位子"

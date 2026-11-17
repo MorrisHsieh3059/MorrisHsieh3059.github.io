@@ -559,7 +559,7 @@ function placeFacts(target, raw) {
     if (order.length) target.mustOrder = order;
   }
   if (!target.mustOrderNote && (raw.must_order_note || raw.must_order_note_zh)) {
-    const note = pairedNote(raw.must_order_note, raw.must_order_note_zh);
+    const note = pairedNote(raw.must_order_note, raw.must_order_note_zh, true);
     if (note) target.mustOrderNote = note;
   }
   if (!target.foundedNote && raw.founded_note) {
