@@ -1,6 +1,6 @@
 {
   "id": "brussels",
-  "version": "v3.3",
+  "version": "v4.0.3",
   "draft": true,
   "country": {
     "en": "Belgium",
@@ -22,43 +22,55 @@
       "date": "2026-12-30",
       "weekday": "Wednesday",
       "title": {
-        "en": "Arrive BRU (flight TBD) → Hilton, beer-cuisine dinner, Grand-Place light show",
-        "zh": "到布鲁塞尔（机票还没订）→ 希尔顿、啤酒菜晚饭、大广场灯光"
+        "en": "Arrive BRU 7:10 PM → train to Bruxelles-Central → Hilton → Grand-Place lit up + light show, Galeries Saint-Hubert, dinner at Maison Vincent (1905), Manneken Pis",
+        "zh": "Arrive BRU 7:10 PM → train to Bruxelles-Central → Hilton → Grand-Place lit up + light show, Galeries Saint-Hubert, dinner at Maison Vincent (1905), Manneken Pis"
       },
       "stops": [
         {
           "type": "airport",
-          "status": "needs-decision",
+          "status": "confirmed",
           "name": {
             "en": "Brussels Airport",
             "zh": "布鲁塞尔机场"
           },
           "lat": 50.898374,
           "lng": 4.48249,
-          "arrive": null,
-          "leave": null,
+          "arrive": "7:10 PM",
+          "leave": "~7:35 PM",
           "website": "https://www.brusselsairport.be/",
           "nativeName": "Brussels Airport (Zaventem)",
           "placeId": "BRU",
           "notes": {
-            "en": "Arrive Brussels",
-            "zh": "到布鲁塞尔"
+            "en": "Land, deplane; personal item only so no baggage claim – follow 'Train' signs down to the station (level -1)",
+            "zh": "Land, deplane; personal item only so no baggage claim – follow 'Train' signs down to the station (level -1)"
           },
+          "booked": true,
           "transit": {
             "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "8 min",
+                "from": "Brussels Airport arrivals",
+                "to": "Brussels Airport-Zaventem station (level -1)",
+                "distanceM": 500
+              },
               {
                 "mode": "train",
                 "label": {
                   "en": "Train",
                   "zh": "火车"
                 },
-                "duration": "17–18 min",
-                "line": "SNCB IC (any train to Bruxelles-Central)",
-                "direction": "Oostende / Knokke / Mons etc.",
-                "from": "Brussels Airport-Zaventem (station under the terminal)",
+                "duration": "18–23 min",
+                "line": "SNCB IC 7:42 PM (or EC 7:54 / IC 7:57)",
+                "direction": "Tournai (7:42) / Bruxelles-Midi / Gent",
+                "from": "Brussels Airport-Zaventem",
                 "to": "Bruxelles-Central",
-                "stops": 2,
-                "frequency": "every 10–15 min in the evening"
+                "stops": 4,
+                "frequency": "about 4 trains an hour (7:42 / 7:54 / 7:57 PM)"
               },
               {
                 "mode": "walk",
@@ -102,14 +114,15 @@
           },
           "lat": 50.845819,
           "lng": 4.355727,
-          "arrive": null,
-          "leave": null,
+          "arrive": "~8:10 PM",
+          "leave": "8:20 PM",
           "website": "https://www.hilton.com/en/hotels/brugrhi-hilton-brussels-grand-place/",
           "placeId": "HILTON_BXL",
           "notes": {
-            "en": "Check in (from 3 PM)",
-            "zh": "入住（下午 3 点起）"
+            "en": "Check in, drop the bag (2 nights)",
+            "zh": "Check in, drop the bag (2 nights)"
           },
+          "booked": true,
           "transit": {
             "segments": [
               {
@@ -118,108 +131,11 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "9 min",
+                "duration": "4 min",
                 "from": "Hilton Brussels Grand Place",
-                "to": "Au Vieux Saint Martin (Grand Sablon 38)",
-                "distanceM": 700,
-                "note": "Rue de l'Empereur → Rue Lebeau → Grand Sablon"
-              }
-            ]
-          }
-        },
-        {
-          "type": "restaurant",
-          "status": "tentative",
-          "name": {
-            "en": "Au Vieux Saint Martin",
-            "zh": "Au Vieux Saint Martin"
-          },
-          "lat": 50.840896,
-          "lng": 4.354521,
-          "arrive": {
-            "en": "~8:30 PM (depends on flight)",
-            "zh": "约20:30（视航班而定）"
-          },
-          "leave": null,
-          "website": "https://auvieuxsaintmartin.be/fr/",
-          "placeId": "AVSM",
-          "hours": {
-            "en": "Official site: daily 10:00–23:30, kitchen 12:00–23:00",
-            "zh": "官网：每天 10:00–23:30，厨房 12:00–23:00"
-          },
-          "notes": {
-            "en": "Dinner in Sablon's 1968 brasserie (home of filet américain)",
-            "zh": "晚饭在萨布隆 1968 年的小馆（美式生牛肉的老家）"
-          },
-          "mustOrder": [
-            {
-              "name": "Filet américain préparé"
-            },
-            {
-              "name": "Stoemp saucisse"
-            },
-            {
-              "name": "Croquettes aux crevettes grises"
-            }
-          ],
-          "backups": [
-            {
-              "name": "Les Petits Oignons",
-              "nameEn": "Les Petits Oignons",
-              "area": "Sablon · Rue de la Régence",
-              "areaZh": "Sablon · Rue de la Régence",
-              "mustOrder": [
-                "Carbonnade flamande",
-                "Waterzooi",
-                "Croquettes aux crevettes grises"
-              ],
-              "hoursZh": "每天营业，晚餐 18:30–22:30",
-              "distanceZh": "🚶 3 分钟",
-              "lat": 50.83932,
-              "lng": 4.355105,
-              "website": "https://www.lespetitsoignons.be/",
-              "googleMaps": "https://www.google.com/maps/search/?api=1&query=Les+Petits+Oignons+Rue+de+la+R%C3%A9gence+25%2C+1000+Bruxelles",
-              "placeId": "PETITSOIGNONS",
-              "note": {
-                "en": "Backup for dinner 2026-12-30 · ~3 min walk",
-                "zh": "12月30日晚餐的备选 · 步行 3 分钟"
-              }
-            },
-            {
-              "name": "Les Brigittines Aux Marches de la Chapelle",
-              "nameEn": "Les Brigittines",
-              "area": "Sablon · Place de la Chapelle",
-              "areaZh": "Sablon · Place de la Chapelle",
-              "mustOrder": [
-                "Joue de bœuf à la bière",
-                "Tête de veau",
-                "Croquettes aux crevettes grises"
-              ],
-              "hoursZh": "官网：周一至周五 19–22（Dec 30 周三，不是假日）",
-              "distanceZh": "🚶 6 分钟",
-              "lat": 50.841266,
-              "lng": 4.350359,
-              "website": "https://www.lesbrigittines.com/",
-              "googleMaps": "https://www.google.com/maps/search/?api=1&query=Les+Brigittines+Aux+Marches+de+la+Chapelle+Place+de+la+Chapelle+5%2C+1000+Bruxelles",
-              "placeId": "BRIGITTINES",
-              "note": {
-                "en": "Backup for dinner 2026-12-30 · ~6 min walk",
-                "zh": "12月30日晚餐的备选 · 步行 6 分钟"
-              }
-            }
-          ],
-          "transit": {
-            "segments": [
-              {
-                "mode": "walk",
-                "label": {
-                  "en": "Walk",
-                  "zh": "步行"
-                },
-                "duration": "10 min",
-                "from": "Au Vieux Saint Martin",
                 "to": "Grand-Place",
-                "distanceM": 800
+                "distanceM": 300,
+                "note": "Rue de la Colline"
               }
             ]
           }
@@ -233,19 +149,18 @@
           },
           "lat": 50.8467139,
           "lng": 4.3525151,
-          "arrive": null,
-          "leave": null,
+          "arrive": "8:25 PM",
+          "leave": "8:45 PM",
           "website": "https://www.plaisirsdhiver.be/en",
           "nativeName": "Grand-Place / Grote Markt",
-          "optional": true,
           "placeId": "GRAND_PLACE",
           "hours": {
-            "en": "Open 12–10 PM Dec 30 · show times not yet published",
-            "zh": "12月30日 12:00–22:00 开。灯光秀时间还没公布"
+            "en": "Winter Wonders Dec 30: 12–22 (official); light show runs every evening except Dec 24/31 – 2026 show times not yet published (2025: every 30 min 17:00–22:00)",
+            "zh": "Winter Wonders Dec 30: 12–22 (official); light show runs every evening except Dec 24/31 – 2026 show times not yet published (2025: every 30 min 17:00–22:00)"
           },
           "notes": {
-            "en": "Grand-Place light show + Winter Wonders (only if before 10 PM)",
-            "zh": "大广场灯光秀和圣诞市集（赶在 22:00 前才去）"
+            "en": "Grand-Place lit up: Christmas tree, gilded guild houses and the son-et-lumière on the façades (catch the ~8:30 show; Winter Wonders chalets open to 10 PM)",
+            "zh": "Grand-Place lit up: Christmas tree, gilded guild houses and the son-et-lumière on the façades (catch the ~8:30 show; Winter Wonders chalets open to 10 PM)"
           },
           "mustSee": [
             {
@@ -269,11 +184,301 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "4 min",
-                "distanceM": 340
+                "duration": "3 min",
+                "from": "Grand-Place",
+                "to": "Galerie de la Reine",
+                "distanceM": 200,
+                "note": "Rue de la Colline / Rue des Bouchers"
               }
             ]
           }
+        },
+        {
+          "type": "sight",
+          "status": "confirmed",
+          "name": {
+            "en": "Royal Saint-Hubert Galleries",
+            "zh": "圣于贝尔长廊"
+          },
+          "lat": 50.848192,
+          "lng": 4.355129,
+          "arrive": "8:48 PM",
+          "leave": "8:58 PM",
+          "website": "https://www.galeries.be/",
+          "nativeName": "Galeries Royales Saint-Hubert",
+          "placeId": "GALERIES",
+          "hours": {
+            "en": "Arcade open; shop hours",
+            "zh": "拱廊开着，店铺各自营业"
+          },
+          "notes": {
+            "en": "Walk the Galeries Royales Saint-Hubert at night (Galerie de la Reine → Galerie du Roi) under the lit glass roof (10 min)",
+            "zh": "Walk the Galeries Royales Saint-Hubert at night (Galerie de la Reine → Galerie du Roi) under the lit glass roof (10 min)"
+          },
+          "mustSee": [
+            {
+              "text": {
+                "en": "Glass-roofed arcade",
+                "zh": "玻璃顶拱廊"
+              }
+            },
+            {
+              "text": {
+                "en": "La Monnaie (exterior)",
+                "zh": "La Monnaie 外观"
+              }
+            },
+            {
+              "text": {
+                "en": "Place des Martyrs",
+                "zh": "烈士广场"
+              }
+            }
+          ],
+          "transit": {
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "2 min",
+                "from": "Galerie du Roi",
+                "to": "Maison Vincent (Rue des Dominicains 8)",
+                "distanceM": 120
+              }
+            ]
+          }
+        },
+        {
+          "type": "restaurant",
+          "status": "confirmed",
+          "name": {
+            "en": "Maison Vincent",
+            "zh": "Maison Vincent"
+          },
+          "lat": 50.8482464,
+          "lng": 4.3543757,
+          "arrive": "9:00 PM",
+          "leave": "10:30 PM",
+          "website": "https://restaurantvincent.be/fr",
+          "nativeName": "Maison Vincent (Restaurant Vincent)",
+          "placeId": "VINCENT",
+          "hours": {
+            "en": "Official: Wed 12–15 & 18:30–23:30 (Dec 30 not a holiday)",
+            "zh": "Official: Wed 12–15 & 18:30–23:30 (Dec 30 not a holiday)"
+          },
+          "notes": {
+            "en": "Dinner in the 1905 tiled hall: steak or fish flambéed at the table, Brussels classics",
+            "zh": "Dinner in the 1905 tiled hall: steak or fish flambéed at the table, Brussels classics"
+          },
+          "mustOrder": [
+            {
+              "name": "Steak flambé en salle"
+            },
+            {
+              "name": "Moules-frites"
+            },
+            {
+              "name": "Croquettes aux crevettes grises"
+            },
+            {
+              "name": "Crêpe flambée"
+            }
+          ],
+          "founded": "1905",
+          "cuisine": {
+            "en": "Historic local",
+            "zh": "老字号本地菜"
+          },
+          "booked": true,
+          "backups": [
+            {
+              "name": "Le Marmiton",
+              "nameEn": "Le Marmiton",
+              "area": "Centre · Galeries Royales Saint-Hubert",
+              "areaZh": "Centre · Galeries Royales Saint-Hubert",
+              "hoursZh": "官网：周一至周五 18–22:30",
+              "distanceZh": "🚶 2 分钟",
+              "lat": 50.8477305,
+              "lng": 4.3548668,
+              "website": "https://lemarmiton.be/fr",
+              "googleMaps": "https://www.google.com/maps/search/?api=1&query=Le+Marmiton+Galerie+de+la+Reine+38%2C+1000+Bruxelles",
+              "placeId": "MARMITON",
+              "note": {
+                "en": "Backup for dinner 2026-12-30 · ~2 min walk",
+                "zh": "Backup for dinner 2026-12-30 · ~2 min walk"
+              },
+              "founded": "1979",
+              "cuisine": {
+                "en": "Historic local",
+                "zh": "老字号本地菜"
+              },
+              "mustOrder": [
+                {
+                  "name": "Moules marmiton"
+                },
+                {
+                  "name": "Carbonnade flamande"
+                },
+                {
+                  "name": "Waterzooi"
+                }
+              ]
+            },
+            {
+              "name": "Au Vieux Saint Martin",
+              "nameEn": "Au Vieux Saint Martin",
+              "area": "Sablon · Grand Sablon",
+              "areaZh": "Sablon · Grand Sablon",
+              "hoursZh": "官网：每天 10–23:30，厨房 12–23",
+              "distanceZh": "🚶 12 分钟（航班晚点时的最晚选择）",
+              "lat": 50.840896,
+              "lng": 4.354521,
+              "website": "https://auvieuxsaintmartin.be/fr/",
+              "googleMaps": "https://www.google.com/maps/search/?api=1&query=Au+Vieux+Saint+Martin+Place+du+Grand+Sablon+38%2C+1000+Bruxelles",
+              "placeId": "AVSM",
+              "note": {
+                "en": "Backup for dinner 2026-12-30 · ~12 min walk",
+                "zh": "Backup for dinner 2026-12-30 · ~12 min walk"
+              },
+              "founded": "1968",
+              "cuisine": {
+                "en": "Historic local",
+                "zh": "老字号本地菜"
+              },
+              "mustOrder": [
+                {
+                  "name": "Filet américain préparé"
+                },
+                {
+                  "name": "Stoemp saucisse"
+                },
+                {
+                  "name": "Croquettes aux crevettes grises"
+                }
+              ]
+            },
+            {
+              "name": "À la Mort Subite",
+              "nameEn": "À la Mort Subite",
+              "area": "Centre · Galeries",
+              "areaZh": "Centre · Galeries",
+              "hoursZh": "官网：周一至周六 11–24（周日休），简餐（tartine/omelette），厨房比打烊早收",
+              "distanceZh": "🚶 3 分钟（Galeries 对面）",
+              "lat": 50.848643,
+              "lng": 4.356246,
+              "website": "https://alamortsubite.com/",
+              "googleMaps": "https://www.google.com/maps/search/?api=1&query=%C3%80+la+Mort+Subite+Rue+Montagne-aux-Herbes-Potag%C3%A8res+7%2C+1000+Bruxelles",
+              "placeId": "MORTSUBITE",
+              "note": {
+                "en": "Backup for dinner 2026-12-30 · ~3 min walk",
+                "zh": "12月30日晚餐的备选 · 步行 3 分钟"
+              },
+              "founded": "1928",
+              "cuisine": {
+                "en": "Historic local",
+                "zh": "老字号本地菜"
+              },
+              "mustOrder": [
+                {
+                  "name": "Omelette",
+                  "gloss": {
+                    "en": "",
+                    "zh": "煎蛋卷"
+                  }
+                },
+                {
+                  "name": "Tartine au fromage blanc"
+                },
+                {
+                  "name": "Kriek Mort Subite"
+                }
+              ]
+            }
+          ],
+          "transit": {
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "7 min",
+                "from": "Maison Vincent",
+                "to": "Manneken Pis",
+                "distanceM": 550,
+                "note": "Rue des Bouchers → Grand-Place → Rue Charles Buls → Rue de l'Étuve"
+              }
+            ]
+          }
+        },
+        {
+          "type": "sight",
+          "status": "tentative",
+          "name": {
+            "en": "Manneken Pis",
+            "zh": "撒尿小童"
+          },
+          "lat": 50.8449861,
+          "lng": 4.3499932,
+          "arrive": "10:37 PM",
+          "leave": "10:43 PM",
+          "website": "https://www.mannekenpis.brussels/",
+          "placeId": "MANNEKENPIS",
+          "hours": {
+            "en": "Outdoor, 24 h",
+            "zh": "Outdoor, 24 h"
+          },
+          "notes": {
+            "en": "Night photo stop at the 1619 bronze (often in a holiday costume) – 5 min",
+            "zh": "Night photo stop at the 1619 bronze (often in a holiday costume) – 5 min"
+          },
+          "mustSee": [
+            {
+              "text": {
+                "en": "Manneken Pis (1619 bronze)",
+                "zh": "尿尿小童（1619 年铜像）"
+              }
+            }
+          ],
+          "transit": {
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "8 min",
+                "from": "Manneken Pis",
+                "to": "Hilton Brussels Grand Place",
+                "distanceM": 600,
+                "note": "Rue de l'Étuve → Rue du Lombard → Rue de la Madeleine"
+              }
+            ]
+          }
+        },
+        {
+          "type": "hotel",
+          "status": "confirmed",
+          "name": {
+            "en": "Hilton Brussels Grand Place",
+            "zh": "Hilton Brussels Grand Place"
+          },
+          "lat": 50.845819,
+          "lng": 4.355727,
+          "arrive": "~10:51 PM",
+          "leave": null,
+          "website": "https://www.hilton.com/en/hotels/brugrhi-hilton-brussels-grand-place/",
+          "placeId": "HILTON_BXL",
+          "notes": {
+            "en": "Back to the hotel",
+            "zh": "Back to the hotel"
+          },
+          "booked": true
         }
       ],
       "notes": [
@@ -282,8 +487,8 @@
           "zh": "这一天在维也纳的部分，看维也纳 12 月 30 日。"
         },
         {
-          "en": "Backups in Sablon (3–6 min walk): Les Petits Oignons, Les Brigittines. Au Vieux Saint Martin's kitchen is open to 23:00 for a late landing.",
-          "zh": "萨布隆的备选，走 3 到 6 分钟：Les Petits Oignons、Les Brigittines。Au Vieux Saint Martin 的厨房开到 23:00，飞机晚了也来得及。"
+          "en": "Dinner backups: Le Marmiton (Galerie de la Reine, 2 min · Mon–Fri 18–22:30) · Au Vieux Saint Martin (Sablon, 12 min · kitchen to 23:00 – use if the flight is late).",
+          "zh": "Dinner backups: Le Marmiton (Galerie de la Reine, 2 min · Mon–Fri 18–22:30) · Au Vieux Saint Martin (Sablon, 12 min · kitchen to 23:00 – use if the flight is late)."
         }
       ],
       "inbound": {
@@ -294,7 +499,11 @@
               "en": "Flight",
               "zh": "飞机"
             },
-            "duration": null
+            "duration": "1 h",
+            "direction": "Brussels",
+            "from": "Vienna International Airport T3",
+            "to": "Brussels Airport",
+            "frequency": "—"
           }
         ]
       }
@@ -330,12 +539,21 @@
           },
           "mustOrder": [
             {
-              "name": "Belgian waffles"
+              "name": "Belgian waffles",
+              "gloss": {
+                "en": "",
+                "zh": "比利时华夫"
+              }
             },
             {
-              "name": "Croissant"
+              "name": "Croissant",
+              "gloss": {
+                "en": "",
+                "zh": "可颂"
+              }
             }
           ],
+          "booked": true,
           "transit": {
             "segments": [
               {
@@ -369,8 +587,8 @@
             "zh": "户外"
           },
           "notes": {
-            "en": "Grand-Place, then Manneken Pis (4 min) and back up Rue Charles Buls",
-            "zh": "大广场，再去尿尿小童（4 分钟），从 Rue Charles Buls 走回来"
+            "en": "Grand-Place by daylight (Hôtel de Ville, guild houses, Maison du Roi, Everard 't Serclaes statue); Manneken Pis already seen Dec 30 night – revisit by day only if wanted (4 min)",
+            "zh": "Grand-Place by daylight (Hôtel de Ville, guild houses, Maison du Roi, Everard 't Serclaes statue); Manneken Pis already seen Dec 30 night – revisit by day only if wanted (4 min)"
           },
           "mustSee": [
             {
@@ -433,19 +651,24 @@
               "name": "Gaufre de Liège"
             },
             {
-              "name": "Speculoos"
+              "name": "Speculoos",
+              "gloss": {
+                "en": "",
+                "zh": "焦糖饼干"
+              }
             }
           ],
+          "founded": "1829",
+          "cuisine": {
+            "en": "Historic local",
+            "zh": "老字号本地菜"
+          },
           "backups": [
             {
               "name": "Mokafé",
               "nameEn": "Mokafé",
               "area": "Centre · Galeries",
               "areaZh": "Centre · Galeries",
-              "mustOrder": [
-                "Gaufre de Bruxelles",
-                "Café crème"
-              ],
               "hoursZh": "周一至周六 7–23",
               "distanceZh": "🚶 5 分钟",
               "lat": 50.848049,
@@ -456,18 +679,25 @@
               "note": {
                 "en": "Backup for waffle 2026-12-31 · ~5 min walk",
                 "zh": "12月31日华夫饼的备选 · 步行 5 分钟"
-              }
+              },
+              "cuisine": {
+                "en": "Historic local",
+                "zh": "老字号本地菜"
+              },
+              "mustOrder": [
+                {
+                  "name": "Gaufre de Bruxelles"
+                },
+                {
+                  "name": "Café crème"
+                }
+              ]
             },
             {
               "name": "Wittamer",
               "nameEn": "Wittamer",
               "area": "Sablon",
               "areaZh": "Sablon",
-              "mustOrder": [
-                "Gâteaux de saison",
-                "Macarons",
-                "Pralines"
-              ],
               "hoursZh": "7:30–18:30",
               "distanceZh": "🚶 10 分钟（Sablon）",
               "lat": 50.841231,
@@ -478,7 +708,31 @@
               "note": {
                 "en": "Backup for waffle 2026-12-31 · ~10 min walk",
                 "zh": "12月31日华夫饼的备选 · 步行 10 分钟"
-              }
+              },
+              "founded": "1910",
+              "cuisine": {
+                "en": "Historic local",
+                "zh": "老字号本地菜"
+              },
+              "mustOrder": [
+                {
+                  "name": "Gâteaux de saison"
+                },
+                {
+                  "name": "Macarons",
+                  "gloss": {
+                    "en": "",
+                    "zh": "马卡龙"
+                  }
+                },
+                {
+                  "name": "Pralines",
+                  "gloss": {
+                    "en": "",
+                    "zh": "夹心巧克力"
+                  }
+                }
+              ]
             }
           ],
           "transit": {
@@ -531,7 +785,10 @@
               }
             },
             {
-              "name": "Place des Martyrs"
+              "text": {
+                "en": "Place des Martyrs",
+                "zh": "烈士广场"
+              }
             }
           ],
           "transit": {
@@ -575,7 +832,7 @@
               "name": "Pralines",
               "gloss": {
                 "en": "classic assortment",
-                "zh": "夹心巧克力（经典礼盒）"
+                "zh": "夹心巧克力 · 经典礼盒"
               }
             }
           ],
@@ -623,7 +880,10 @@
               }
             },
             {
-              "name": "Treasury (paid)"
+              "text": {
+                "en": "Treasury (paid)",
+                "zh": "珍宝馆（要门票）"
+              }
             }
           ],
           "transit": {
@@ -700,7 +960,7 @@
           "lat": 50.848086,
           "lng": 4.353896,
           "arrive": "12:15 PM",
-          "leave": "1:15 PM",
+          "leave": "1:10 PM",
           "website": "https://www.auxarmesdebruxelles.com/",
           "placeId": "AUXARMES",
           "hours": {
@@ -722,17 +982,17 @@
               "name": "Crêpes flambées"
             }
           ],
+          "founded": "1921",
+          "cuisine": {
+            "en": "Historic local",
+            "zh": "老字号本地菜"
+          },
           "backups": [
             {
               "name": "Chez Léon",
               "nameEn": "Chez Léon",
               "area": "Centre · Îlot Sacré",
               "areaZh": "Centre · Îlot Sacré",
-              "mustOrder": [
-                "Moules marinières",
-                "Frites",
-                "Croquettes aux crevettes grises"
-              ],
               "hoursZh": "官网：每天 11:30–23",
               "distanceZh": "🚶 1 分钟",
               "lat": 50.848206,
@@ -743,18 +1003,33 @@
               "note": {
                 "en": "Backup for lunch 2026-12-31 · ~1 min walk",
                 "zh": "12月31日午餐的备选 · 步行 1 分钟"
-              }
+              },
+              "founded": "1893",
+              "cuisine": {
+                "en": "Historic local",
+                "zh": "老字号本地菜"
+              },
+              "mustOrder": [
+                {
+                  "name": "Moules marinières"
+                },
+                {
+                  "name": "Frites",
+                  "gloss": {
+                    "en": "",
+                    "zh": "薯条"
+                  }
+                },
+                {
+                  "name": "Croquettes aux crevettes grises"
+                }
+              ]
             },
             {
               "name": "Le Cirio",
               "nameEn": "Le Cirio",
               "area": "Centre · Bourse",
               "areaZh": "Centre · Bourse",
-              "mustOrder": [
-                "Half-en-half",
-                "Croquettes aux crevettes",
-                "Carbonnade flamande"
-              ],
               "hoursZh": "Dec 31 10–24",
               "distanceZh": "🚶 6 分钟",
               "lat": 50.848265,
@@ -765,6 +1040,153 @@
               "note": {
                 "en": "Backup for lunch 2026-12-31 · ~6 min walk",
                 "zh": "12月31日午餐的备选 · 步行 6 分钟"
+              },
+              "founded": "1886",
+              "cuisine": {
+                "en": "Historic local",
+                "zh": "老字号本地菜"
+              },
+              "mustOrder": [
+                {
+                  "name": "Half-en-half",
+                  "gloss": {
+                    "en": "",
+                    "zh": "一半一半"
+                  }
+                },
+                {
+                  "name": "Croquettes aux crevettes"
+                },
+                {
+                  "name": "Carbonnade flamande"
+                }
+              ]
+            }
+          ],
+          "transit": {
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "11 min",
+                "from": "Aux Armes de Bruxelles",
+                "to": "Magritte Museum entrance (Place Royale 2)",
+                "distanceM": 857,
+                "note": "foot routing (OSRM foot profile, routing.openstreetmap.de) + OSM street names"
+              }
+            ]
+          }
+        },
+        {
+          "type": "sight",
+          "status": "confirmed",
+          "name": {
+            "en": "Magritte Museum + Old Masters Museum (Royal Museums of Fine Arts)",
+            "zh": "比利时皇家美术馆"
+          },
+          "lat": 50.84238,
+          "lng": 4.3588,
+          "arrive": {
+            "en": "1:20 PM (entry 1:30 PM)",
+            "zh": "13:20（entry13:30）"
+          },
+          "leave": "3:00 PM",
+          "website": "https://fine-arts-museum.be/en",
+          "nativeName": "Musée Magritte Museum + Musée Old Masters Museum",
+          "placeId": "FINE_ARTS",
+          "hours": {
+            "en": "checked Nov 16): 'On 24 and 31 December, the Museums close at 3 pm' (regular Tue–Fri 10:00–17:00",
+            "zh": "checked Nov 16): 'On 24 and 31 December, the Museums close at 3 pm' (regular Tue–Fri 10:00–17:00"
+          },
+          "notes": {
+            "en": "Combo ticket, 1:30–3:00 PM: Magritte Museum first (~50 min, 1:30–2:20: The Empire of Light, The Treachery of Images series, Le Retour, the bowler-hat rooms), then the internal passage to the Old Masters Museum for highlights (~40 min, 2:20–3:00): Bruegel's Landscape with the Fall of Icarus and The Census at Bethlehem, Bosch's Temptation of St Anthony triptych, Rogier van der Weyden portraits, the Rubens room, David's Death of Marat.",
+            "zh": "Combo ticket, 1:30–3:00 PM: Magritte Museum first (~50 min, 1:30–2:20: The Empire of Light, The Treachery of Images series, Le Retour, the bowler-hat rooms), then the internal passage to the Old Masters Museum for highlights (~40 min, 2:20–3:00): Bruegel's Landscape with the Fall of Icarus and The Census at Bethlehem, Bosch's Temptation of St Anthony triptych, Rogier van der Weyden portraits, the Rubens room, David's Death of Marat."
+          },
+          "mustSee": [
+            {
+              "text": {
+                "en": "Magritte: The Empire of Light",
+                "zh": "马格利特：《光之帝国》"
+              }
+            },
+            {
+              "text": {
+                "en": "Bruegel: Landscape with the Fall of Icarus",
+                "zh": "勃鲁盖尔：《伊卡洛斯的坠落》"
+              }
+            },
+            {
+              "text": {
+                "en": "Bruegel: The Census at Bethlehem",
+                "zh": "勃鲁盖尔：《伯利恒的户口登记》"
+              }
+            },
+            {
+              "text": {
+                "en": "Rubens room",
+                "zh": "鲁本斯展厅"
+              }
+            },
+            {
+              "text": {
+                "en": "David: The Death of Marat",
+                "zh": "大卫：《马拉之死》"
+              }
+            }
+          ],
+          "booked": true,
+          "transit": {
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "1 min",
+                "from": "Magritte Museum (Place Royale 2)",
+                "to": "Place Royale",
+                "distanceM": 80
+              }
+            ]
+          }
+        },
+        {
+          "type": "sight",
+          "status": "confirmed",
+          "name": {
+            "en": "Place Royale, Royal Palace and Parc de Bruxelles (exterior)",
+            "zh": "王宫广场 + 王宫（外观）"
+          },
+          "lat": 50.841928,
+          "lng": 4.362272,
+          "arrive": "3:00 PM",
+          "leave": "3:08 PM",
+          "website": "https://www.monarchie.be/en/heritage/royal-palace-brussels",
+          "nativeName": "Place Royale · Palais Royal · Parc de Bruxelles",
+          "placeId": "PLACE_ROYALE",
+          "hours": {
+            "en": "Outdoor (palace interior summer only)",
+            "zh": "Outdoor (palace interior summer only)"
+          },
+          "notes": {
+            "en": "Out of the Magritte entrance straight onto Place Royale: Godfrey of Bouillon statue, Saint-Jacques-sur-Coudenberg, Royal Palace front across Rue Royale (8 min)",
+            "zh": "Out of the Magritte entrance straight onto Place Royale: Godfrey of Bouillon statue, Saint-Jacques-sur-Coudenberg, Royal Palace front across Rue Royale (8 min)"
+          },
+          "mustSee": [
+            {
+              "text": {
+                "en": "Place Royale",
+                "zh": "皇家广场"
+              }
+            },
+            {
+              "text": {
+                "en": "Royal Palace facade",
+                "zh": "王宫外立面"
               }
             }
           ],
@@ -777,108 +1199,10 @@
                   "zh": "步行"
                 },
                 "duration": "8 min",
-                "distanceM": 630,
-                "note": "via Gare Centrale and the Mont des Arts garden steps"
-              }
-            ]
-          }
-        },
-        {
-          "type": "sight",
-          "status": "confirmed",
-          "name": {
-            "en": "Mont des Arts",
-            "zh": "艺术山"
-          },
-          "lat": 50.843863,
-          "lng": 4.356766,
-          "arrive": "1:25 PM",
-          "leave": "1:35 PM",
-          "website": null,
-          "nativeName": "Mont des Arts / Kunstberg",
-          "placeId": "MONT_DES_ARTS",
-          "hours": {
-            "en": "Outdoor",
-            "zh": "户外"
-          },
-          "notes": {
-            "en": "Mont des Arts view, MIM facade (15 min)",
-            "zh": "艺术山的视野，看一眼 MIM 外立面（15 分钟）"
-          },
-          "mustSee": [
-            {
-              "text": {
-                "en": "City view from Mont des Arts",
-                "zh": "从艺术山看城区"
-              }
-            },
-            {
-              "text": {
-                "en": "Old England building (MIM) Art Nouveau facade",
-                "zh": "Old England 大楼（乐器博物馆）的新艺术外立面"
-              }
-            }
-          ],
-          "transit": {
-            "segments": [
-              {
-                "mode": "walk",
-                "label": {
-                  "en": "Walk",
-                  "zh": "步行"
-                },
-                "duration": "5 min",
-                "distanceM": 390
-              }
-            ]
-          }
-        },
-        {
-          "type": "sight",
-          "status": "tentative",
-          "name": {
-            "en": "Royal Museums of Fine Arts of Belgium (+ Magritte)",
-            "zh": "比利时皇家美术馆"
-          },
-          "lat": 50.84168,
-          "lng": 4.358238,
-          "arrive": "1:40 PM",
-          "leave": "3:00 PM",
-          "website": "https://fine-arts-museum.be/en",
-          "nativeName": "Musées royaux des Beaux-Arts de Belgique (+ Musée Magritte)",
-          "placeId": "FINE_ARTS",
-          "hours": {
-            "en": "Dec 31 closes 3 PM",
-            "zh": "12月31日 15:00 关门"
-          },
-          "notes": {
-            "en": "Royal Museums of Fine Arts (+ Magritte), 1 h 20 – closes 3 PM today",
-            "zh": "皇家美术馆（含马格利特），1 小时 20 分。今天 15:00 关门"
-          },
-          "mustSee": [
-            {
-              "name": "Bruegel"
-            },
-            {
-              "name": "Rubens"
-            },
-            {
-              "text": {
-                "en": "Magritte Museum",
-                "zh": "马格利特美术馆"
-              }
-            }
-          ],
-          "transit": {
-            "segments": [
-              {
-                "mode": "walk",
-                "label": {
-                  "en": "Walk",
-                  "zh": "步行"
-                },
-                "duration": "3 min",
-                "distanceM": 230
+                "from": "Place Royale",
+                "to": "Petit Sablon / Notre-Dame du Sablon",
+                "distanceM": 582,
+                "note": "foot routing (OSRM foot profile, routing.openstreetmap.de) + OSM street names"
               }
             ]
           }
@@ -892,8 +1216,8 @@
           },
           "lat": 50.840333,
           "lng": 4.356199,
-          "arrive": "3:05 PM",
-          "leave": "3:45 PM",
+          "arrive": "3:16 PM",
+          "leave": "3:36 PM",
           "website": null,
           "nativeName": "Église Notre-Dame du Sablon & Place du Grand Sablon",
           "placeId": "SABLON",
@@ -902,23 +1226,26 @@
             "zh": "教堂按开放时间，广场是露天的"
           },
           "notes": {
-            "en": "Sablon church + squares, chocolate (40 min)",
-            "zh": "萨布隆教堂和两个广场，巧克力（40 分钟）"
+            "en": "Petit Sablon garden (48 bronze guild statuettes) → Notre-Dame du Sablon (late-Gothic stained glass) → Grand Sablon chocolate windows – Pierre Marcolini / Wittamer for a take-away bite (20 min)",
+            "zh": "Petit Sablon garden (48 bronze guild statuettes) → Notre-Dame du Sablon (late-Gothic stained glass) → Grand Sablon chocolate windows – Pierre Marcolini / Wittamer for a take-away bite (20 min)"
           },
           "mustSee": [
             {
-              "name": "Notre-Dame du Sablon"
-            },
-            {
               "text": {
-                "en": "Grand Sablon & Petit Sablon squares",
-                "zh": "大萨布隆广场和小萨布隆广场"
+                "en": "Petit Sablon garden",
+                "zh": "小萨布隆花园"
               }
             },
             {
               "text": {
-                "en": "Pierre Marcolini chocolate",
-                "zh": "Pierre Marcolini 的巧克力"
+                "en": "Notre-Dame du Sablon",
+                "zh": "萨布隆圣母教堂"
+              }
+            },
+            {
+              "text": {
+                "en": "Grand Sablon chocolatiers",
+                "zh": "大萨布隆的巧克力店"
               }
             },
             {
@@ -937,8 +1264,76 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "9 min",
-                "distanceM": 700
+                "duration": "6 min",
+                "from": "Grand Sablon",
+                "to": "Notre-Dame de la Chapelle",
+                "distanceM": 420
+              }
+            ]
+          }
+        },
+        {
+          "type": "sight",
+          "status": "tentative",
+          "name": {
+            "en": "Notre-Dame de la Chapelle (Bruegel's grave)",
+            "zh": "小教堂圣母院（布鲁盖尔墓）"
+          },
+          "lat": 50.84106,
+          "lng": 4.35098,
+          "arrive": "3:42 PM",
+          "leave": "3:55 PM",
+          "website": "https://www.visit.brussels/fr/visiteurs/venue-details.Eglise-Notre-Dame-de-la-Chapelle.479",
+          "nativeName": "Église Notre-Dame de la Chapelle",
+          "placeId": "CHAPELLE",
+          "hours": {
+            "en": "Tue–Sat 10:00–16:00 (Flemish Masters in Situ / Google); Dec 31 hours not published – if closed, see the Bruegel statue on the square outside",
+            "zh": "Tue–Sat 10:00–16:00 (Flemish Masters in Situ / Google); Dec 31 hours not published – if closed, see the Bruegel statue on the square outside"
+          },
+          "notes": {
+            "en": "Pieter Bruegel the Elder's memorial (4th side chapel on the right; Rubens copy above it) – closes the Bruegel theme from the museum; Bruegel married and was buried here (13 min)",
+            "zh": "Pieter Bruegel the Elder's memorial (4th side chapel on the right; Rubens copy above it) – closes the Bruegel theme from the museum; Bruegel married and was buried here (13 min)"
+          },
+          "mustSee": [
+            {
+              "text": {
+                "en": "Bruegel memorial",
+                "zh": "勃鲁盖尔纪念"
+              }
+            },
+            {
+              "text": {
+                "en": "Baroque pulpit (1721)",
+                "zh": "巴洛克讲坛（1721）"
+              }
+            }
+          ],
+          "transit": {
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "10 min",
+                "from": "Notre-Dame de la Chapelle",
+                "to": "Place Breughel (Marolles lift, bottom)",
+                "distanceM": 626,
+                "note": "foot routing (OSRM foot profile, routing.openstreetmap.de) + OSM street names – Rue des Brigittines → Rue des Visitandines → Rue du Miroir → Rue Haute (Maison Bruegel at no. 132 is a short detour)"
+              },
+              {
+                "mode": "lift",
+                "label": {
+                  "en": "Lift",
+                  "zh": "电梯"
+                },
+                "duration": "1 min",
+                "line": "Ascenseur des Marolles (free)",
+                "direction": "up",
+                "from": "Place Breughel (Marolles)",
+                "to": "Place Poelaert",
+                "frequency": "continuous"
               }
             ]
           }
@@ -952,8 +1347,8 @@
           },
           "lat": 50.836658,
           "lng": 4.351605,
-          "arrive": "3:55 PM",
-          "leave": "4:45 PM",
+          "arrive": "~4:07 PM",
+          "leave": "4:50 PM",
           "website": null,
           "nativeName": "Palais de Justice + ascenseur des Marolles",
           "placeId": "PALAIS_JUSTICE",
@@ -962,8 +1357,8 @@
             "zh": "看外观（外面长期有脚手架）"
           },
           "notes": {
-            "en": "Palais de Justice + Poelaert lift view at sunset (~4:45 PM)",
-            "zh": "司法宫，Poelaert 电梯看日落（大约 16:45）"
+            "en": "Up the free Marolles lift to Place Poelaert: Palais de Justice exterior and the balustrade view over the Marolles and Brussels roofs at sunset (sunset ~4:47 PM)",
+            "zh": "Up the free Marolles lift to Place Poelaert: Palais de Justice exterior and the balustrade view over the Marolles and Brussels roofs at sunset (sunset ~4:47 PM)"
           },
           "mustSee": [
             {
@@ -974,14 +1369,14 @@
             },
             {
               "text": {
-                "en": "Free lift down to the Marolles",
-                "zh": "免费电梯下到马罗勒区"
+                "en": "Free Marolles lift",
+                "zh": "免费的马罗勒电梯"
               }
             },
             {
               "text": {
-                "en": "Église de la Chapelle on the way back",
-                "zh": "回来路上的 Église de la Chapelle"
+                "en": "Palais de Justice facade",
+                "zh": "司法宫外立面"
               }
             }
           ],
@@ -1006,11 +1401,11 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "24 min",
-                "from": "Marolles",
+                "duration": "25 min",
+                "from": "Place Breughel",
                 "to": "Place Sainte-Catherine",
-                "distanceM": 2000,
-                "note": "Rue Haute / Rue Blaes → Boulevard Anspach → Sainte-Catherine"
+                "distanceM": 1850,
+                "note": "foot routing (OSRM foot profile, routing.openstreetmap.de) + OSM street names – Rue Haute → Place de la Chapelle → Rue de l'Étuve (Manneken Pis by daylight, 1 min) → Rue des Grands Carmes → Place de la Bourse → Rue Sainte-Catherine"
               }
             ],
             "alternative": [
@@ -1020,7 +1415,8 @@
                   "en": "Taxi",
                   "zh": "出租车"
                 },
-                "duration": "10 min"
+                "duration": "10 min",
+                "note": "only if it's raining hard"
               }
             ]
           }
@@ -1034,8 +1430,8 @@
           },
           "lat": 50.85073,
           "lng": 4.347695,
-          "arrive": "5:10 PM",
-          "leave": "6:00 PM",
+          "arrive": "5:17 PM",
+          "leave": "5:55 PM",
           "website": "https://www.plaisirsdhiver.be/en",
           "nativeName": "Plaisirs d'Hiver – Place Sainte-Catherine",
           "placeId": "STE_CATHERINE",
@@ -1044,8 +1440,8 @@
             "zh": "市集 18:00 收"
           },
           "notes": {
-            "en": "Last Winter Wonders mulled wine until the market closes (6 PM)",
-            "zh": "冬日奇境的最后一杯热红酒，市集 18:00 关门"
+            "en": "Last Winter Wonders stroll (a hot non-alcoholic punch or chocolate is fine) until the market closes at 6 PM",
+            "zh": "Last Winter Wonders stroll (a hot non-alcoholic punch or chocolate is fine) until the market closes at 6 PM"
           },
           "mustSee": [
             {
@@ -1063,90 +1459,199 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "15 min",
-                "from": "Place Sainte-Catherine",
+                "duration": "10 min",
+                "from": "Winter Wonders, Sainte-Catherine",
                 "to": "La Taverne du Passage (Galerie de la Reine 30)",
-                "distanceM": 1200,
-                "note": "slow evening stroll: Bourse → Rue au Beurre → Grand-Place by night → Galerie de la Reine"
+                "distanceM": 700,
+                "note": "foot routing (OSRM foot profile) + OSM street names"
               }
             ]
           }
         },
         {
           "type": "restaurant",
-          "status": "tentative",
+          "status": "confirmed",
           "name": {
             "en": "La Taverne du Passage",
             "zh": "La Taverne du Passage"
           },
           "lat": 50.847554,
           "lng": 4.354734,
-          "arrive": "7:00 PM",
-          "leave": "~9:30 PM",
+          "arrive": {
+            "en": "6:05 PM (table 6:15 PM)",
+            "zh": "18:05（入座 18:15）"
+          },
+          "leave": "~8:30 PM",
           "website": "https://latavernedupassage.be/en",
           "placeId": "TAVERNEPASSAGE",
           "hours": {
-            "en": "Official site: 2026 New Year's Eve menu published (two seatings); open daily 12:00–23:00 – seating time to",
-            "zh": "官网：2026 跨年菜单已公布（两场）。每天 12:00–23:00"
+            "en": "Official site: 2026 New Year's Eve menu, two sittings – first sitting 6:15 PM",
+            "zh": "官网：2026 跨年菜单，两场。第一场 18:15。"
           },
           "notes": {
-            "en": "New Year's Eve dinner – official 2026 New Year's menu, first seating",
-            "zh": "跨年晚饭：2026 年官方跨年菜单，第一场"
+            "en": "New Year's Eve dinner – first sitting 6:15 PM, New Year's set menu",
+            "zh": "跨年晚饭，第一场 18:15，跨年套餐"
           },
           "mustOrder": [
             {
-              "name": "Carpaccio de Saint-Jacques, condiment d'agrumes"
-            },
-            {
-              "name": "Poularde, sauce Albufera"
-            },
-            {
-              "name": "Turbot rôti, mousseline d'artichauts"
-            }
-          ],
-          "backups": [
-            {
-              "name": "Bouillon Bruxelles",
-              "nameEn": "Bouillon Bruxelles",
-              "area": "Centre · Galeries",
-              "areaZh": "Centre · Galeries",
-              "mustOrder": [
-                "Vol-au-vent",
-                "Carbonnade flamande",
-                "Croquettes aux crevettes grises"
-              ],
-              "hoursZh": "官网：周四 18–22:30（跨年夜没另外公布）",
-              "distanceZh": "🚶 4 分钟",
-              "lat": 50.848162,
-              "lng": 4.354396,
-              "website": "https://bouillonbruxelles.com/",
-              "googleMaps": "https://www.google.com/maps/search/?api=1&query=Bouillon+Bruxelles+Rue+des+Dominicains+7%2C+1000+Bruxelles",
-              "placeId": "BOUILLON",
-              "note": {
-                "en": "Backup for NYE dinner 2026-12-31 · ~4 min walk",
-                "zh": "12月31日跨年晚饭的备选 · 步行 4 分钟"
+              "name": "Creamy morel risotto with morel foam",
+              "gloss": {
+                "en": "starter",
+                "zh": "奶油羊肚菌烩饭，上面是羊肚菌泡沫 · 前菜"
               }
             },
             {
-              "name": "Brasserie Ommegang",
-              "nameEn": "Brasserie Ommegang",
+              "name": "Roasted turbot with artichoke mousseline",
+              "gloss": {
+                "en": "main",
+                "zh": "烤多宝鱼，洋蓟慕斯 · 主菜"
+              }
+            },
+            {
+              "name": "Chestnut & clementine mille-feuille",
+              "gloss": {
+                "en": "dessert",
+                "zh": "栗子和橘子千层酥 · 甜点"
+              }
+            }
+          ],
+          "founded": "1928",
+          "cuisine": {
+            "en": "Historic local",
+            "zh": "老字号本地菜"
+          },
+          "booked": true,
+          "backups": [
+            {
+              "name": "'t Kelderke",
+              "nameEn": "'t Kelderke",
               "area": "Centre · Grand-Place",
               "areaZh": "Centre · Grand-Place",
-              "mustOrder": [
-                "Waterzooi",
-                "Carbonnade flamande",
-                "Moules marinières"
-              ],
-              "hoursZh": "官网：每天 11–22:30（跨年夜没另外公布）",
-              "distanceZh": "🚶 3 分钟",
-              "lat": 50.846825,
-              "lng": 4.354548,
-              "website": "https://www.ommegang-brussels.com/",
-              "googleMaps": "https://www.google.com/maps/search/?api=1&query=Brasserie+Ommegang+Rue+de+la+Montagne+4%2C+1000+Bruxelles",
-              "placeId": "OMMEGANG",
+              "hoursZh": "官网：每天 12–22（周五至周日到 22:15），跨年夜没另外公布",
+              "distanceZh": "🚶 4 分钟（Grand-Place 15 地窖）",
+              "lat": 50.846289,
+              "lng": 4.3529689,
+              "website": "https://restaurant-het-kelderke.be/en",
+              "googleMaps": "https://www.google.com/maps/search/?api=1&query=%27t+Kelderke+Grand-Place+15%2C+1000+Bruxelles",
+              "placeId": "KELDERKE",
               "note": {
-                "en": "Backup for NYE dinner 2026-12-31 · ~3 min walk",
-                "zh": "12月31日跨年晚饭的备选 · 步行 3 分钟"
+                "en": "Backup for NYE dinner 2026-12-31 · ~4 min walk",
+                "zh": "12月31日跨年晚饭的备选 · 步行 4 分钟"
+              },
+              "founded": "1978",
+              "cuisine": {
+                "en": "Historic local",
+                "zh": "老字号本地菜"
+              },
+              "mustOrder": [
+                {
+                  "name": "Moules-frites"
+                },
+                {
+                  "name": "Stoemp saucisse"
+                },
+                {
+                  "name": "Carbonnade flamande"
+                }
+              ]
+            },
+            {
+              "name": "In 't Spinnekopke",
+              "nameEn": "In 't Spinnekopke",
+              "area": "Centre · Sainte-Catherine / Dansaert",
+              "areaZh": "Centre · Sainte-Catherine / Dansaert",
+              "hoursZh": "官网：周四 12–14:30 + 18–21:30（跨年夜没另外公布）",
+              "distanceZh": "🚶 10 分钟（Sainte-Catherine / Dansaert）",
+              "lat": 50.848382,
+              "lng": 4.343549,
+              "website": "https://spinnekopke.be/fr/",
+              "googleMaps": "https://www.google.com/maps/search/?api=1&query=In+%27t+Spinnekopke+Place+du+Jardin+aux+Fleurs+1%2C+1000+Bruxelles",
+              "placeId": "SPINNEKOPKE",
+              "note": {
+                "en": "Backup for NYE dinner 2026-12-31 · ~10 min walk",
+                "zh": "Backup for NYE dinner 2026-12-31 · ~10 min walk"
+              },
+              "founded": "1762",
+              "cuisine": {
+                "en": "Historic local",
+                "zh": "老字号本地菜"
+              },
+              "mustOrder": [
+                {
+                  "name": "Moules-frites"
+                },
+                {
+                  "name": "Waterzooi"
+                },
+                {
+                  "name": "Croquettes aux crevettes grises"
+                }
+              ]
+            }
+          ],
+          "transit": {
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "3 min",
+                "from": "La Taverne du Passage",
+                "to": "Grand-Place",
+                "distanceM": 250
+              }
+            ]
+          }
+        },
+        {
+          "type": "sight",
+          "status": "confirmed",
+          "name": {
+            "en": "Grand-Place by night (NYE)",
+            "zh": "大广场夜景（跨年夜）"
+          },
+          "lat": 50.8467139,
+          "lng": 4.3525151,
+          "arrive": "8:35 PM",
+          "leave": "9:00 PM",
+          "website": "https://www.plaisirsdhiver.be/en",
+          "nativeName": "Grand-Place / Grote Markt",
+          "placeId": "GRAND_PLACE_NYE",
+          "hours": {
+            "en": "Public square, always open; no light show on Dec 31 (Winter Wonders closes 6 PM Dec 31)",
+            "zh": "Public square, always open; no light show on Dec 31 (Winter Wonders closes 6 PM Dec 31)"
+          },
+          "notes": {
+            "en": "Lit Grand-Place and the big Christmas tree on New Year's Eve. Note: no sound-and-light show on Dec 31 (the show runs on other Winter Wonders nights – see it on Dec 30); the market stalls closed at 6 PM.",
+            "zh": "Lit Grand-Place and the big Christmas tree on New Year's Eve. Note: no sound-and-light show on Dec 31 (the show runs on other Winter Wonders nights – see it on Dec 30); the market stalls closed at 6 PM."
+          },
+          "mustSee": [
+            {
+              "text": {
+                "en": "Floodlit Town Hall and guild houses",
+                "zh": "灯光下的市政厅和公会大楼"
+              }
+            },
+            {
+              "text": {
+                "en": "Grand-Place Christmas tree",
+                "zh": "大广场的圣诞树"
+              }
+            },
+            {
+              "name": "Manneken-Pis",
+              "gloss": {
+                "en": "Manneken Pis",
+                "zh": ""
+              }
+            },
+            {
+              "name": "Jeanneke-Pis",
+              "gloss": {
+                "en": "Jeanneke Pis",
+                "zh": ""
               }
             }
           ],
@@ -1158,10 +1663,56 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "6 min",
-                "from": "La Taverne du Passage",
-                "to": "De Brouckère metro",
-                "distanceM": 450
+                "duration": "8 min",
+                "from": "Grand-Place",
+                "to": "Mont des Arts terrace",
+                "distanceM": 550
+              }
+            ]
+          }
+        },
+        {
+          "type": "sight",
+          "status": "confirmed",
+          "name": {
+            "en": "Mont des Arts terrace by night",
+            "zh": "艺术山夜景"
+          },
+          "lat": 50.843863,
+          "lng": 4.356766,
+          "arrive": "9:08 PM",
+          "leave": "9:20 PM",
+          "website": null,
+          "nativeName": "Mont des Arts / Kunstberg",
+          "placeId": "MONT_DES_ARTS_NIGHT",
+          "hours": {
+            "en": "Public garden/terrace, open",
+            "zh": "Public garden/terrace, open"
+          },
+          "notes": {
+            "en": "Night skyline from the Mont des Arts terrace: lit Town Hall spire over the Lower Town (10 min), then down to Gare Centrale for the metro",
+            "zh": "Night skyline from the Mont des Arts terrace: lit Town Hall spire over the Lower Town (10 min), then down to Gare Centrale for the metro"
+          },
+          "mustSee": [
+            {
+              "text": {
+                "en": "Night view of the Town Hall spire",
+                "zh": "夜里的市政厅尖塔"
+              }
+            }
+          ],
+          "transit": {
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "4 min",
+                "from": "Mont des Arts",
+                "to": "Gare Centrale metro",
+                "distanceM": 300
               },
               {
                 "mode": "metro",
@@ -1169,12 +1720,12 @@
                   "en": "Metro",
                   "zh": "地铁"
                 },
-                "duration": "8 min",
+                "duration": "9 min",
                 "line": "1 / 5",
                 "direction": "Gare de l'Ouest / Erasme",
-                "from": "De Brouckère",
+                "from": "Gare Centrale",
                 "to": "Beekkant",
-                "stops": 4,
+                "stops": 5,
                 "frequency": "every 5–10 min (reinforced on NYE)"
               },
               {
@@ -1211,28 +1762,25 @@
         },
         {
           "type": "sight",
-          "status": "needs-decision",
+          "status": "confirmed",
           "name": {
             "en": "Atomium (NYE fireworks)",
             "zh": "原子塔"
           },
           "lat": 50.894921,
           "lng": 4.341377,
-          "arrive": null,
-          "leave": {
-            "en": "after midnight",
-            "zh": "午夜后"
-          },
+          "arrive": "~10:00 PM",
+          "leave": "~12:20 AM",
           "website": "https://atomium.be/",
           "nativeName": "Atomium",
           "placeId": "ATOMIUM",
           "hours": {
             "en": "Free public show; site opens 9 PM",
-            "zh": "免费公开演出，场地 21:00 开"
+            "zh": "免费的公开演出，场地 21:00 开"
           },
           "notes": {
-            "en": "Official NYE fireworks at the Atomium (DJ from 9 PM, fireworks at midnight)",
-            "zh": "原子球官方跨年烟火（21:00 起有 DJ，午夜放烟花）"
+            "en": "Official NYE fireworks at the Atomium esplanade (Place de l'Atomium, Laeken): DJ from 9 PM, fireworks at midnight. Stand back from the front barriers so leaving is easier.",
+            "zh": "原子球广场的官方跨年烟火（拉肯）。晚上 9 点起有 DJ，午夜放烟火。别挤到最前排的栏杆，离开会更容易。"
           },
           "mustSee": [
             {
@@ -1252,7 +1800,7 @@
                 },
                 "duration": "8 min",
                 "from": "Place de l'Atomium",
-                "to": "Houba-Brugmann (often less crowded) or Heysel",
+                "to": "Houba-Brugmann (less crowded than Heysel)",
                 "distanceM": 600
               },
               {
@@ -1264,9 +1812,9 @@
                 "duration": "15 min",
                 "line": "6",
                 "direction": "Elisabeth (southbound)",
-                "from": "Heysel",
+                "from": "Houba-Brugmann",
                 "to": "Beekkant",
-                "stops": 8,
+                "stops": 7,
                 "frequency": "every few min after midnight; last line-6 metro from Roi Baudouin ~2 AM (2025/26 pattern)"
               },
               {
@@ -1310,14 +1858,18 @@
           },
           "lat": 50.845819,
           "lng": 4.355727,
-          "arrive": null,
+          "arrive": {
+            "en": "~1:15–1:30 AM",
+            "zh": "约 1:15– 1:30"
+          },
           "leave": null,
           "website": "https://www.hilton.com/en/hotels/brugrhi-hilton-brussels-grand-place/",
           "placeId": "HILTON_BXL",
           "notes": {
             "en": "Back to hotel (wake 6:45 AM for the flight)",
             "zh": "回酒店（明天 6:45 起去赶飞机）"
-          }
+          },
+          "booked": true
         }
       ],
       "notes": [
@@ -1326,8 +1878,12 @@
           "zh": "跨年夜天黑后留在市中心和上城。Molenbeek、Anderlecht、Schaerbeek 别去。"
         },
         {
-          "en": "NYE alternative: The Iris package (open decision · not a meal backup since v3.2).",
-          "zh": "跨年的另一个选择是 The Iris 套餐，还没定。"
+          "en": "v4.0.2: NYE evening = Sainte-Catherine market to 5:55 PM → La Taverne du Passage first sitting 6:15–~8:30 PM → Grand-Place by night (no light show on Dec 31) → Mont des Arts night view → metro to the Atomium (~10 PM) → midnight fireworks → metro back ~12:35–1:00 AM, at the hotel ~1:15–1:30 AM.",
+          "zh": "v4.0.2: NYE evening = Sainte-Catherine market to 5:55 PM → La Taverne du Passage first sitting 6:15–~8:30 PM → Grand-Place by night (no light show on Dec 31) → Mont des Arts night view → metro to the Atomium (~10 PM) → midnight fireworks → metro back ~12:35–1:00 AM, at the hotel ~1:15–1:30 AM."
+        },
+        {
+          "en": "v4.0.3: Magritte + Old Masters combo 1:30 PM (museums close 3 PM on Dec 31 – verified on). Lunch shortened to 12:15–1:10 · afternoon Place Royale → Sablon → Notre-Dame de la Chapelle (Bruegel's grave, before its 4 PM closing) → Marolles lift → Palace of Justice sunset → walk to Sainte-Catherine 5:17. The daytime Mont des Arts stop is now walked through on the way to the museum (night visit 9:08 PM stays).",
+          "zh": "v4.0.3: Magritte + Old Masters combo 1:30 PM (museums close 3 PM on Dec 31 – verified on). Lunch shortened to 12:15–1:10 · afternoon Place Royale → Sablon → Notre-Dame de la Chapelle (Bruegel's grave, before its 4 PM closing) → Marolles lift → Palace of Justice sunset → walk to Sainte-Catherine 5:17. The daytime Mont des Arts stop is now walked through on the way to the museum (night visit 9:08 PM stays)."
         }
       ]
     },
@@ -1360,6 +1916,7 @@
             "en": "Breakfast 7:00 AM; check out",
             "zh": "7:00 早餐，然后退房"
           },
+          "booked": true,
           "transit": {
             "segments": [
               {
@@ -1411,7 +1968,8 @@
           "notes": {
             "en": "Check in, security (no US preclearance) · departs on United BRU 11:15 AM → Newark EWR 1:25 PM",
             "zh": "值机、安检（这里没有美国出境预检）· 布鲁塞尔 11:15 起飞，纽瓦克 13:25 到"
-          }
+          },
+          "booked": true
         }
       ],
       "notes": [

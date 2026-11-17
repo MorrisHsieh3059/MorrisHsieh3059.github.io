@@ -15,8 +15,10 @@
 		day: { en: 'Day', zh: '第' },
 		arrive: { en: 'Arrive', zh: '到达' },
 		leave: { en: 'Leave', zh: '离开' },
-		mustSee: { en: 'Must-see', zh: '必看' },
-		mustOrder: { en: 'Must-order', zh: '必点' },
+		mustSee: { en: 'Must see', zh: '必看' },
+		mustEat: { en: 'Must eat', zh: '必吃' },
+		mustOrder: { en: 'Must eat', zh: '必吃' },
+		booked: { en: 'Booked', zh: '已预订' },
 		hours: { en: 'Hours', zh: '时间' },
 		backup: { en: 'Backups', zh: '备选' },
 		daytrip: { en: 'Day trip', zh: '一日游' },
@@ -171,6 +173,7 @@
 	function zhTimeLabel(raw) {
 		var s = String(raw).trim();
 		if (!s) return '';
+		s = s.replace(/\btable\b/gi, '入座');
 		s = s.replace(/\(([^)]+)\)/g, function (_m, inner) { return '（' + zhTimeParen(inner) + '）'; });
 		s = s.replace(/~?\s*(\d{1,2})(?::(\d{2}))?\s*(AM|PM)\b/gi, function (all, h, min, ap) {
 			var hour = parseInt(h, 10);
@@ -184,6 +187,7 @@
 		s = s.replace(/^\s*~\s*/, '约');
 		s = s.replace(/\s+（/g, '（');
 		s = s.replace(/service/gi, '礼拜 ');
+		s = s.replace(/([^\u0000-\u007F])(\d{1,2}:\d{2})/g, '$1 $2');
 		return s.replace(/\s{2,}/g, ' ').trim();
 	}
 
@@ -288,12 +292,22 @@
 		return '<span class="guide-must-name">' + name + '</span> <span class="guide-must-gloss">' + esc(gloss) + '</span>';
 	}
 
-	function mustBlock(labelKey, items) {
+	function mustBlock(labelKey, items, note) {
 		if (!items || !items.length) return '';
 		var lis = items.map(function (item) {
 			return '<li>' + mustHtml(item) + '</li>';
 		}).join('');
-		return '<div class="guide-must"><span class="guide-kicker">' + esc(ui(labelKey)) + '</span><ul>' + lis + '</ul></div>';
+		var noteHtml = note && tx(note) ? '<p class="guide-must-note">' + esc(tx(note)) + '</p>' : '';
+		return '<div class="guide-must"><span class="guide-kicker">' + esc(ui(labelKey)) + '</span><ul>' + lis + '</ul>' + noteHtml + '</div>';
+	}
+
+	function mealMeta(item) {
+		if (!item) return '';
+		var bits = [];
+		if (item.founded) bits.push((state.lang === 'zh' ? '创立于 ' : 'Founded ') + item.founded);
+		if (item.cuisine && tx(item.cuisine)) bits.push(tx(item.cuisine));
+		if (!bits.length) return '';
+		return '<p class="guide-meal-meta">' + esc(bits.join(' · ')) + '</p>';
 	}
 
 	function displayStatus(stop) {
@@ -726,6 +740,7 @@
 			? '<p class="guide-native">' + esc(stop.nativeName) + '</p>' : '';
 		var shown = displayStatus(stop);
 		var chips = '<span class="guide-status ' + statusClass(shown) + '">' + esc(ui(shown) || shown) + '</span>';
+		if (stop.booked) chips += '<span class="guide-status is-booked">' + esc(ui('booked')) + '</span>';
 		if (stop.optional) chips += '<span class="guide-status is-optional">' + esc(ui('optional')) + '</span>';
 		var notes = stop.notes && tx(stop.notes) ? '<p class="guide-notes">' + esc(tx(stop.notes)) + '</p>' : '';
 		var hours = stop.hours ? '<p class="guide-hours">' + esc(tx(stop.hours)) + '</p>' : '';
@@ -753,8 +768,9 @@
 					'<div class="guide-stop-actions">' + iconButtons(stop, true) + '</div>' +
 				'</div>' +
 				notes + hours +
+				mealMeta(stop) +
 				mustBlock('mustSee', stop.mustSee) +
-				mustBlock('mustOrder', stop.mustOrder) +
+				mustBlock('mustEat', stop.mustOrder, stop.mustOrderNote) +
 				backups +
 				alts +
 			'</div>';
@@ -769,10 +785,8 @@
 		var rows = stop.backups.map(function (item) {
 			var name = state.lang === 'zh' ? (item.name || item.nameEn || '') : (item.nameEn || item.name || '');
 			var area = state.lang === 'zh' ? (item.areaZh || item.area || '') : (item.area || '');
-			var dishes = (item.mustOrder || []).join(', ');
 			var bits = [];
 			if (area) bits.push(area);
-			if (dishes) bits.push(dishes);
 			if (state.lang === 'zh' && item.distanceZh) bits.push(item.distanceZh);
 			if (item.hoursZh) bits.push(item.hoursZh);
 			var linkItem = {
@@ -783,7 +797,7 @@
 			};
 			var buttons = iconButtons(linkItem, true);
 			var meta = bits.length ? '<p class="guide-backup-meta">' + esc(bits.join(' · ')) + '</p>' : '';
-			return '<div class="guide-backup"><div class="guide-backup-head"><span class="guide-backup-name">' + esc(name) + '</span><span class="guide-stop-actions">' + buttons + '</span></div>' + meta + '</div>';
+			return '<div class="guide-backup"><div class="guide-backup-head"><span class="guide-backup-name">' + esc(name) + '</span><span class="guide-stop-actions">' + buttons + '</span></div>' + meta + mealMeta(item) + mustBlock('mustEat', item.mustOrder, item.mustOrderNote) + '</div>';
 		}).join('');
 		if (!rows) return '';
 		return '<details class="guide-tl-fold guide-backups"><summary>' + esc(ui('backup')) + '</summary>' + rows + '</details>';
