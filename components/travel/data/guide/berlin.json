@@ -1,6 +1,6 @@
 {
   "id": "berlin",
-  "version": "v4.0.4",
+  "version": "v4.0.5",
   "draft": true,
   "country": {
     "en": "Germany",
@@ -888,20 +888,20 @@
             "zh": "Regular Thu 19:00–01:00 (Falstaff Bar Guide; same on Google/50bestbar listings; closed Mon). No Christmas Eve 2026 notice found on the web (Nov 16) – Instagram is not indexed; check it ~Dec 20."
           },
           "notes": {
-            "en": "World-ranked cocktail bar, ~60 min from the 7 PM opening (walk-in only – arriving at opening is the only reliable way to skip a queue; listings and reviews say it fills up later in the evening and late arrivals wait outside). Europe's 50 Best Bars 2026 No. 17, Best Bar in Germany 2026, World's 50 Best Bars 2025 No. 57 (51–100). Low/no-alcohol: ask for the current zero-proof tall mocktail; Go Apes (clarified banana, coffee distillate, soda) contains rum.",
-            "zh": "World-ranked cocktail bar, ~60 min from the 7 PM opening (walk-in only – arriving at opening is the only reliable way to skip a queue; listings and reviews say it fills up later in the evening and late arrivals wait outside). Europe's 50 Best Bars 2026 No. 17, Best Bar in Germany 2026, World's 50 Best Bars 2025 No. 57 (51–100). Low/no-alcohol: ask for the current zero-proof tall mocktail; Go Apes (clarified banana, coffee distillate, soda) contains rum."
+            "en": "World-ranked cocktail bar, ~60 min from the 7 PM opening (walk-in only – arriving at opening is the only reliable way to skip a queue; listings and reviews say it fills up later in the evening and late arrivals wait outside). Europe's 50 Best Bars 2026 No. 17, Best Bar in Germany 2026, World's 50 Best Bars 2025 No. 57 (51–100). Order the signature Go Apes (rum, clarified banana, coffee distillate, soda); second round if time: the cherry Paloma or the peanut butter & strawberry Old Fashioned.",
+            "zh": "World-ranked cocktail bar, ~60 min from the 7 PM opening (walk-in only – arriving at opening is the only reliable way to skip a queue; listings and reviews say it fills up later in the evening and late arrivals wait outside). Europe's 50 Best Bars 2026 No. 17, Best Bar in Germany 2026, World's 50 Best Bars 2025 No. 57 (51–100). Order the signature Go Apes (rum, clarified banana, coffee distillate, soda); second round if time: the cherry Paloma or the peanut butter & strawberry Old Fashioned."
           },
           "mustSee": [
             {
               "text": {
-                "en": "Go Apes – house signature (clarified banana, coffee distillate, soda; contains rum)",
-                "zh": "招牌 Go Apes（澄清香蕉、咖啡蒸馏液、苏打；含朗姆酒）"
+                "en": "Go Apes – the house signature, served clear from the lab",
+                "zh": "招牌 Go Apes——实验室澄清后的透明鸡尾酒"
               }
             },
             {
               "text": {
-                "en": "Zero-proof tall mocktail (ask the bartender for the current one)",
-                "zh": "无酒精长饮（问调酒师当季款）"
+                "en": "Lab-clarified cocktails on tap (rotovap, fermentation)",
+                "zh": "实验室澄清、预调上酒头的鸡尾酒（旋转蒸发、发酵）"
               }
             },
             {
@@ -914,17 +914,27 @@
           "mustOrder": [
             {
               "text": {
-                "en": "zero-proof tall mocktail (ask for the current one)",
-                "zh": "zero-proof tall mocktail (ask for the current one)"
+                "en": "Go Apes (rum, clarified banana, coffee distillate, soda) – the house signature",
+                "zh": "Go Apes（朗姆酒、澄清香蕉、咖啡蒸馏液、苏打）——招牌"
               }
             },
             {
               "text": {
-                "en": "or one signature: Go Apes / clarified Paloma",
-                "zh": "或者一杯招牌：Go Apes，或澄清帕洛玛"
+                "en": "Cherry Paloma (tequila, cherry, grapefruit, black cardamom, soda)",
+                "zh": "樱桃 Paloma（龙舌兰、樱桃、西柚、黑豆蔻、苏打）"
+              }
+            },
+            {
+              "text": {
+                "en": "Peanut butter & strawberry Old Fashioned (whisky, PX sherry) – if on the current list",
+                "zh": "花生酱草莓 Old Fashioned（威士忌、PX 雪莉）——如果当期酒单上有"
               }
             }
           ],
+          "mustOrderNote": {
+            "en": "Go Apes is the drink Wax On is known for (named in the World's/Europe's 50 Best write-up; one regular has it tattooed). The menu rotates – if the Paloma or Old Fashioned twist is off the list, ask for the current classic twist. Sources: the50.com (Europe's 50 Best Bars 2026 #17), Time Out Berlin, The Hindu, Eat This.",
+            "zh": "Go Apes 是 Wax On 最出名的酒（50 Best 介绍点名；有常客把它纹在脚上）。酒单会换——Paloma 或 Old Fashioned 不在的话，问当期的经典改编款。来源：the50.com（2026 欧洲 50 佳第 17）、Time Out Berlin、The Hindu、Eat This。"
+          },
           "ticket": {
             "en": "Walk-in only – arrive at opening (7 PM)",
             "zh": "不接受预订——开门（19 点）就到"
@@ -4027,8 +4037,8 @@
             "zh": "老字号本地菜"
           },
           "mustOrderNote": {
-            "en": "Fassbrause vom Hahn (draught, non-alcoholic) to drink",
-            "zh": "饮料点生啤式无酒精 Fassbrause"
+            "en": "Draught Berliner Pilsner or a Berliner Weisse to drink",
+            "zh": "饮料点生啤柏林皮尔森或柏林白啤"
           },
           "ticket": {
             "en": "Reserve ahead on the official site (or walk in early)",

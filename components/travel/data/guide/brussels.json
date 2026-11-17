@@ -1,6 +1,6 @@
 {
   "id": "brussels",
-  "version": "v4.0.4",
+  "version": "v4.0.5",
   "draft": true,
   "country": {
     "en": "Belgium",
@@ -1614,8 +1614,8 @@
             "zh": "市集 18:00 收"
           },
           "notes": {
-            "en": "Last Winter Wonders stroll (a hot non-alcoholic punch or chocolate is fine) until the market closes at 6 PM",
-            "zh": "Last Winter Wonders stroll (a hot non-alcoholic punch or chocolate is fine) until the market closes at 6 PM"
+            "en": "Last Winter Wonders stroll (a Glühwein (vin chaud) or hot chocolate) until the market closes at 6 PM",
+            "zh": "Last Winter Wonders stroll (a Glühwein (vin chaud) or hot chocolate) until the market closes at 6 PM"
           },
           "mustSee": [
             {
