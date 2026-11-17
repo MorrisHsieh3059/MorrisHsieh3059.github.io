@@ -81,7 +81,7 @@ function bilingual(en, bucket) {
   return { en: clean, zh: zh || clean };
 }
 
-function sanitize(input) {
+function sanitize(input, keepDomains) {
   if (input == null) return '';
   let s = String(input);
   s = s.replace(/https?:\/\/\S+/gi, '');
@@ -97,7 +97,7 @@ function sanitize(input) {
   s = s.replace(/\b(?:cheapest|best value)\b,?\s*/gi, '');
   s = s.replace(/\bABC ticket\b/gi, '');
   s = s.replace(/\bBolt\b/g, 'taxi');
-  s = s.replace(/\b[\w.-]+\.(?:at|de|com|be|sk|eu|cz)\b/gi, '');
+  if (!keepDomains) s = s.replace(/\b[\w.-]+\.(?:at|de|com|be|sk|eu|cz)\b/gi, '');
   s = s.replace(/\bNotion(?: page)?\b/gi, '');
   s = s.replace(/\bvisitbratislava\b/gi, '');
   s = s.replace(/\(\s*;[^)]*\)/g, '');
@@ -264,6 +264,10 @@ function zhTimeLabel(raw) {
   let s = String(raw || '').trim();
   if (!s) return '';
   s = s.replace(/\btable\b/gi, '入座');
+  s = s.replace(/\bslot\b/gi, '时段');
+  s = s.replace(/\bentry\b/gi, '入场');
+  s = s.replace(/\bdoors\b/gi, '开门');
+  s = s.replace(/\bcurtain\b/gi, '开演');
   s = s.replace(/\(([^)]+)\)/g, function (_m, inner) { return '（' + zhTimeParen(inner) + '）'; });
   s = s.replace(/~?\s*(\d{1,2})(?::(\d{2}))?\s*(AM|PM)\b/gi, function (all, h, min, ap) {
     let hour = parseInt(h, 10);
@@ -365,6 +369,46 @@ function durationOf(raw) {
   const clean = sanitize(raw);
   if (!clean) return null;
   return clean;
+}
+
+// Official zh lists line up with the English lists. A missing line falls back to English.
+function pairedText(enList, zhList) {
+  const out = [];
+  (enList || []).forEach(function (raw, i) {
+    if (raw == null) return;
+    const original = typeof raw === 'string' ? raw : (raw.name_en || raw.name || '');
+    const en = polishActivity(original, sanitize(original));
+    if (!en) return;
+    const zhRaw = zhList && zhList[i] != null ? zhList[i] : '';
+    let zh = zhRaw ? sanitize(zhRaw) : '';
+    if (!zh) zh = (ZH.must || {})[en] || en;
+    out.push({ text: { en: en, zh: zh } });
+  });
+  return out;
+}
+
+function pairedNote(enRaw, zhRaw, keepDomains) {
+  const en = sanitize(enRaw || '', keepDomains);
+  let zh = zhRaw ? sanitize(zhRaw, keepDomains) : '';
+  if (!en && !zh) return null;
+  if (!zh) zh = (ZH.note || {})[en] || en;
+  if (!en) return { en: zh, zh: zh };
+  return { en: en, zh: zh };
+}
+
+function tidyTip(raw) {
+  let s = sanitize(raw || '', true);
+  s = s.replace(/^[\s,;·–—-]+/, '').replace(/[\s,;·–—-]+$/, '');
+  s = s.replace(/\s{2,}/g, ' ').trim();
+  if (/^walk in$/i.test(s)) s = 'Walk in';
+  return s;
+}
+
+function ticketField(enRaw, zhRaw) {
+  const en = tidyTip(enRaw);
+  const zh = tidyTip(zhRaw);
+  if (!en && !zh) return null;
+  return { en: en || zh, zh: zh || en };
 }
 
 function mustList(items, kind) {
@@ -511,12 +555,16 @@ function placeFacts(target, raw) {
     if (label) target.cuisine = label;
   }
   if ((!target.mustOrder || !target.mustOrder.length) && Array.isArray(raw.must_order) && raw.must_order.length) {
-    const order = mustList(raw.must_order, 'order');
+    const order = pairedText(raw.must_order, raw.must_order_zh);
     if (order.length) target.mustOrder = order;
   }
-  if (!target.mustOrderNote && raw.must_order_note) {
-    const note = polishNote(raw.must_order_note);
-    if (note) target.mustOrderNote = bilingual(note, 'note');
+  if (!target.mustOrderNote && (raw.must_order_note || raw.must_order_note_zh)) {
+    const note = pairedNote(raw.must_order_note, raw.must_order_note_zh);
+    if (note) target.mustOrderNote = note;
+  }
+  if (!target.foundedNote && raw.founded_note) {
+    const note = pairedNote(raw.founded_note, raw.founded_note_zh, true);
+    if (note) target.foundedNote = note;
   }
 }
 
@@ -871,7 +919,9 @@ function buildStop(item, transit, alts) {
     if (hours) stop.hours = bilingual(hours, 'hours');
   }
   if (activityEn) stop.notes = bilingual(activityEn, 'activity');
-  const see = mustList(item.must_see, 'see');
+  const see = Array.isArray(item.must_see)
+    ? pairedText(item.must_see, item.must_see_zh)
+    : mustList(item.must_see, 'see');
   function itemKey(entry) {
     const raw = entry.name || (entry.text && entry.text.en) || '';
     return String(raw).toLowerCase().replace(/[^a-z0-9]+/g, '');
@@ -901,13 +951,17 @@ function buildStop(item, transit, alts) {
     if (entry.gloss && !entry.gloss.en && !entry.gloss.zh) delete entry.gloss;
   });
   if (see.length) stop.mustSee = see;
-  const order = mustList(item.must_order, 'order');
+  const order = Array.isArray(item.must_order)
+    ? pairedText(item.must_order, item.must_order_zh)
+    : mustList(item.must_order, 'order');
   (item.extras || []).forEach(function (extra) {
     const en = sanitize(extra);
     if (en) order.push({ name: en });
   });
   if (order.length) stop.mustOrder = order;
   placeFacts(stop, item);
+  const ticket = ticketField(item.ticket_tip, item.ticket_tip_zh);
+  if (ticket) stop.ticket = ticket;
   if (isBooked(item.booking)) stop.booked = true;
   const backups = (item.backups || []).map(backupOf).filter(Boolean);
   if (backups.length) stop.backups = backups;
@@ -1082,7 +1136,7 @@ function assertPublic(files) {
     { re: /reservation/i, why: 'reservation' },
     { re: /booked/i, why: 'booked' },
     { re: /held for/i, why: 'held for' },
-    { re: /预订|预约/, why: 'reservation wording' },
+    { re: /预订号|预约号/, why: 'reservation wording' },
     { re: /\bPIN\b/, why: 'pin' },
     { re: /email[_\s-]?verified/i, why: 'email flag' },
     { re: /party of \d|party_size/i, why: 'party size' }
@@ -1096,6 +1150,28 @@ function assertPublic(files) {
     });
   });
   return problems;
+}
+
+// The to-book list stays off the page. An official https link is the stop's booking link.
+function attachBookingLinks(data, cities) {
+  const byId = new Map();
+  (data.bookings_v3_4 || []).forEach(function (row) {
+    if (!row) return;
+    const url = safeUrl(row.link);
+    if (!url) return;
+    if (row.place_id && !byId.has(String(row.place_id))) byId.set(String(row.place_id), url);
+    if (!row.place_id && /staatsoper|standing room/i.test(row.item || '')) {
+      if (!byId.has('STEHPLATZ_BUY')) byId.set('STEHPLATZ_BUY', url);
+      if (!byId.has('STAATSOPER')) byId.set('STAATSOPER', url);
+    }
+  });
+  cities.forEach(function (city) {
+    (city.days || []).forEach(function (day) {
+      (day.stops || []).forEach(function (stop) {
+        if (stop.placeId && byId.has(stop.placeId)) stop.bookingUrl = byId.get(stop.placeId);
+      });
+    });
+  });
 }
 
 function enrichFromMeals(data, cities) {
@@ -1134,11 +1210,12 @@ function main() {
 
   // between_cities (NYC→Berlin and Brussels→Newark) is not a city day. It stays out of the city pages.
   // changes_*, field_additions_*, archive_*, lists_consulted_*, walk_audit_*, walk_in_*,
-  // google_lists_*, bookings_*, and the advance-booking checklist are not rendered.
-  // A later file (v4.0.4 and after) re-syncs with this same command.
+  // google_lists_*, and the advance-booking checklist are not rendered.
+  // A to-book row's official link is attached to that stop. A later file re-syncs with this same command.
   const cities = data.cities.map(function (city) { return buildCity(city, data.version); });
   flightAlts(data, cities);
   enrichFromMeals(data, cities);
+  attachBookingLinks(data, cities);
   const index = {
     version: data.version || 'v1',
     draft: true,

@@ -1,6 +1,6 @@
 {
   "id": "vienna",
-  "version": "v4.0.3",
+  "version": "v4.0.4",
   "draft": true,
   "country": {
     "en": "Austria",
@@ -296,7 +296,7 @@
             {
               "text": {
                 "en": "Facade and onion domes",
-                "zh": "外立面和洋葱圆顶"
+                "zh": "外立面与洋葱顶"
               }
             },
             {
@@ -306,6 +306,10 @@
               }
             }
           ],
+          "ticket": {
+            "en": "Free – no ticket needed",
+            "zh": "免费，无需门票"
+          },
           "transit": {
             "segments": [
               {
@@ -349,22 +353,26 @@
             {
               "text": {
                 "en": "Riesentor (Giant's Door)",
-                "zh": "巨门（Riesentor）"
+                "zh": "巨人门"
               }
             },
             {
               "text": {
                 "en": "Patterned tile roof",
-                "zh": "图案瓦屋顶"
+                "zh": "彩色图案瓦顶"
               }
             },
             {
               "text": {
                 "en": "Haas-Haus reflection",
-                "zh": "映在 Haas-Haus 的玻璃上"
+                "zh": "哈斯大楼玻璃倒影"
               }
             }
           ],
+          "ticket": {
+            "en": "Free – no ticket needed",
+            "zh": "免费，无需门票"
+          },
           "transit": {
             "segments": [
               {
@@ -405,15 +413,22 @@
           },
           "mustSee": [
             {
-              "name": "Pestsäule (1693)"
+              "text": {
+                "en": "Pestsäule (1693)",
+                "zh": "黑死病纪念柱（1693）"
+              }
             },
             {
               "text": {
                 "en": "Graben Christmas lights",
-                "zh": "Graben 的圣诞灯"
+                "zh": "格拉本大街圣诞灯"
               }
             }
           ],
+          "ticket": {
+            "en": "Free – no ticket needed",
+            "zh": "免费，无需门票"
+          },
           "transit": {
             "segments": [
               {
@@ -466,6 +481,10 @@
               }
             }
           ],
+          "ticket": {
+            "en": "Free – no ticket needed",
+            "zh": "免费，无需门票"
+          },
           "transit": {
             "segments": [
               {
@@ -509,22 +528,26 @@
             {
               "text": {
                 "en": "Kohlmarkt",
-                "zh": "Kohlmarkt"
+                "zh": "科尔市场街"
               }
             },
             {
               "text": {
                 "en": "Michaelerkirche",
-                "zh": "米夏埃尔教堂"
+                "zh": "圣米歇尔教堂"
               }
             },
             {
               "text": {
                 "en": "Michaelertor dome",
-                "zh": "米夏埃尔门的穹顶"
+                "zh": "米歇尔门圆顶"
               }
             }
           ],
+          "ticket": {
+            "en": "Free – no ticket needed",
+            "zh": "免费，无需门票"
+          },
           "transit": {
             "segments": [
               {
@@ -551,17 +574,17 @@
           "lat": 48.2076988,
           "lng": 16.3656104,
           "arrive": "9:00 AM",
-          "leave": "10:05 AM",
+          "leave": "9:50 AM",
           "website": "https://www.sisimuseum-hofburg.at/en/",
           "nativeName": "Sisi Museum / Kaiserappartements (Hofburg)",
           "placeId": "SISI",
           "hours": {
-            "en": "Redesigned museum reopens Nov 19 – new hours not posted yet (2025: daily 9:00–17:30; holidays from 9:00)",
-            "zh": "Redesigned museum reopens Nov 19 – new hours not posted yet (2025: daily 9:00–17:30; holidays from 9:00)"
+            "en": "Redesigned Sisi Museum reopens Nov 19; open daily incl. holidays; last admission 1 h before closing",
+            "zh": "Redesigned Sisi Museum reopens Nov 19; open daily incl. holidays; last admission 1 h before closing"
           },
           "notes": {
-            "en": "Sisi Museum + Imperial Apartments + Silver Collection (~1 h; first entry 9:00) – moved here from Dec 30",
-            "zh": "Sisi Museum + Imperial Apartments + Silver Collection (~1 h; first entry 9:00) – moved here from Dec 30"
+            "en": "Sisi Museum + Imperial Apartments + Silver Collection (50 min; first entry 9:00, no slot needed)",
+            "zh": "Sisi Museum + Imperial Apartments + Silver Collection (50 min; first entry 9:00, no slot needed)"
           },
           "mustSee": [
             {
@@ -573,10 +596,14 @@
             {
               "text": {
                 "en": "Imperial Apartments",
-                "zh": "皇宫内殿"
+                "zh": "皇家寓所"
               }
             }
           ],
+          "ticket": {
+            "en": "Single ticket from imperialtickets.com – no entry-time booking needed; be at Michaelerkuppel for 9:00 opening",
+            "zh": "在 imperialtickets.com 买单票，不需预约入场时间；9 点开门时到米歇尔圆顶入口"
+          },
           "transit": {
             "segments": [
               {
@@ -585,14 +612,71 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "10 min",
-                "from": "Sisi Museum (Michaelertor)",
-                "to": "Schatzkammer entrance (Schweizerhof)",
-                "distanceM": 500,
-                "note": "In der Burg courtyard → Swiss Gate → Schweizerhof; step out to Heldenplatz for the Neue Burg photo"
+                "duration": "8 min",
+                "from": "Sisi Museum (Michaelerkuppel)",
+                "to": "Schweizerhof (Treasury entrance)",
+                "distanceM": 550
               }
             ]
-          }
+          },
+          "bookingUrl": "https://www.imperialtickets.com/en/sisi-museum-hofburg-vienna"
+        },
+        {
+          "type": "sight",
+          "status": "tentative",
+          "name": {
+            "en": "Schweizerhof – buy Swan Lake standing tickets at the 10:00 online release",
+            "zh": "瑞士庭院——10 点网上抢《天鹅湖》站票"
+          },
+          "lat": 48.20674,
+          "lng": 16.3658462,
+          "arrive": "9:55 AM",
+          "leave": "10:10 AM",
+          "website": "https://www.wiener-staatsoper.at/en/ticket-info/",
+          "nativeName": "Schweizerhof (Hofburg)",
+          "placeId": "STEHPLATZ_BUY",
+          "hours": {
+            "en": "Online standing-room sale opens 10:00 on the day of the performance ( Ticket Info)",
+            "zh": "Online standing-room sale opens 10:00 on the day of the performance ( Ticket Info)"
+          },
+          "notes": {
+            "en": "Sit by the Treasury entrance in the Schweizerhof, logged in to the Wiener Staatsoper ticket shop before 10:00; at 10:00 Vienna time (4:00 AM ET) standing room for tonight's Schwanensee goes on sale – choose Stehparterre (ground-floor standing, best view), pay, save the digital ticket. Then straight into the Treasury for the 10:15 slot.",
+            "zh": "坐在瑞士庭院珍宝馆入口，10 点前登录维也纳国立歌剧院购票页；维也纳时间 10 点（美东凌晨 4 点）今晚《天鹅湖》站票开售。选一楼站票区，付款，存好电子票。然后直接进珍宝馆赶 10:15 的时段。"
+          },
+          "mustSee": [
+            {
+              "text": {
+                "en": "Swiss Gate (Schweizertor, 1552)",
+                "zh": "瑞士门（1552）"
+              }
+            },
+            {
+              "text": {
+                "en": "Schweizerhof – oldest courtyard of the Hofburg",
+                "zh": "瑞士庭院——霍夫堡最古老的庭院"
+              }
+            }
+          ],
+          "ticket": {
+            "en": "Standing tickets go on sale online at 10:00 Vienna time on the day – log in before 10:00 and pick Stehparterre",
+            "zh": "站票演出当天维也纳时间 10 点网上开卖——10 点前登录，选一楼站票区"
+          },
+          "transit": {
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "2 min",
+                "from": "Schweizerhof",
+                "to": "Imperial Treasury entrance",
+                "distanceM": 80
+              }
+            ]
+          },
+          "bookingUrl": "https://www.wiener-staatsoper.at/en/ticket-info/"
         },
         {
           "type": "sight",
@@ -626,28 +710,26 @@
             {
               "text": {
                 "en": "Holy Lance",
-                "zh": "圣枪"
+                "zh": "圣矛"
               }
             },
             {
               "text": {
                 "en": "Crown of Rudolf II",
-                "zh": "鲁道夫二世的皇冠"
+                "zh": "鲁道夫二世皇冠"
               }
             },
             {
               "text": {
                 "en": "Order of the Golden Fleece treasure",
-                "zh": "金羊毛骑士团的珍宝"
-              }
-            },
-            {
-              "text": {
-                "en": "Ecclesiastical Treasury",
-                "zh": "教会珍宝"
+                "zh": "金羊毛骑士团宝藏"
               }
             }
           ],
+          "ticket": {
+            "en": "Buy the 'Treasures of the Habsburgs' combined ticket (also covers the KHM) and book the 10:15 AM Treasury time slot – slots are mandatory",
+            "zh": "买「哈布斯堡珍宝」联票（同时包含艺术史博物馆），并预约珍宝馆 10:15 时段——必须有时段"
+          },
           "transit": {
             "segments": [
               {
@@ -663,7 +745,8 @@
                 "note": "Michaelerplatz → Kohlmarkt → Graben → Tuchlauben → Hoher Markt"
               }
             ]
-          }
+          },
+          "bookingUrl": "https://www.kaiserliche-schatzkammer.at/en/explore/angebote/combined-tickets/"
         },
         {
           "type": "sight",
@@ -691,10 +774,20 @@
             {
               "text": {
                 "en": "12:00 full figure parade",
-                "zh": "12:00 整点的人物游行"
+                "zh": "中午 12 点全部人偶巡游"
+              }
+            },
+            {
+              "text": {
+                "en": "Art Nouveau bridge clock (Franz von Matsch, 1914)",
+                "zh": "新艺术风格桥钟（Franz von Matsch，1914）"
               }
             }
           ],
+          "ticket": {
+            "en": "Free – no ticket needed",
+            "zh": "免费，无需门票"
+          },
           "transit": {
             "segments": [
               {
@@ -735,19 +828,36 @@
           },
           "mustOrder": [
             {
-              "name": "Tafelspitz"
+              "text": {
+                "en": "Tafelspitz",
+                "zh": "维也纳清炖牛肉"
+              }
             },
             {
-              "name": "Markknochen mit Schwarzbrot"
+              "text": {
+                "en": "Markknochen mit Schwarzbrot",
+                "zh": "烤牛骨髓配黑面包"
+              }
             },
             {
-              "name": "Apfelkren & Schnittlauchsauce"
+              "text": {
+                "en": "Apfelkren & Schnittlauchsauce",
+                "zh": "苹果辣根酱与细香葱酱"
+              }
             }
           ],
           "founded": "1993",
           "cuisine": {
             "en": "Local, newer house",
             "zh": "本地菜，开业较晚"
+          },
+          "mustOrderNote": {
+            "en": "Signature dish first; the others are the house classics",
+            "zh": "第一道是招牌，其余是店里经典"
+          },
+          "ticket": {
+            "en": "Reserve ahead on the official site (or walk in early)",
+            "zh": "建议在官网提前订位（或早点直接去）"
           },
           "backups": [
             {
@@ -773,15 +883,28 @@
               },
               "mustOrder": [
                 {
-                  "name": "Wiener Schnitzel"
+                  "text": {
+                    "en": "Wiener Schnitzel",
+                    "zh": "维也纳炸肉排"
+                  }
                 },
                 {
-                  "name": "Tafelspitz"
+                  "text": {
+                    "en": "Tafelspitz",
+                    "zh": "维也纳清炖牛肉"
+                  }
                 },
                 {
-                  "name": "Gulasch"
+                  "text": {
+                    "en": "Gulasch",
+                    "zh": "匈牙利炖牛肉"
+                  }
                 }
-              ]
+              ],
+              "mustOrderNote": {
+                "en": "Signature dish first; the others are the house classics",
+                "zh": "第一道是招牌，其余是店里经典"
+              }
             },
             {
               "name": "Café Diglas Wollzeile",
@@ -806,15 +929,28 @@
               },
               "mustOrder": [
                 {
-                  "name": "Gulasch"
+                  "text": {
+                    "en": "Gulasch",
+                    "zh": "匈牙利炖牛肉"
+                  }
                 },
                 {
-                  "name": "Wiener Schnitzel"
+                  "text": {
+                    "en": "Wiener Schnitzel",
+                    "zh": "维也纳炸肉排"
+                  }
                 },
                 {
-                  "name": "Apfelstrudel"
+                  "text": {
+                    "en": "Apfelstrudel",
+                    "zh": "苹果卷"
+                  }
                 }
-              ]
+              ],
+              "mustOrderNote": {
+                "en": "Signature dish first; the others are the house classics",
+                "zh": "第一道是招牌，其余是店里经典"
+              }
             }
           ],
           "transit": {
@@ -860,22 +996,26 @@
             {
               "text": {
                 "en": "Nave and Gothic pulpit",
-                "zh": "中殿和哥特式讲坛"
+                "zh": "中殿与哥特讲坛"
               }
             },
             {
               "text": {
                 "en": "North Tower lift to the Pummerin bell (optional)",
-                "zh": "北塔电梯上到 Pummerin 大钟（可选）"
+                "zh": "北塔电梯看普默林大钟（可选）"
               }
             },
             {
               "text": {
                 "en": "South Tower 343 steps (optional, ~30 min extra)",
-                "zh": "南塔 343 级台阶（可选，大约多 30 分钟）"
+                "zh": "南塔 343 级台阶（可选，多约 30 分钟）"
               }
             }
           ],
+          "ticket": {
+            "en": "Nave ticket at the cathedral desk; North Tower lift is a separate ticket; the All-Inclusive pass is not worth it in 40 min",
+            "zh": "中殿门票现场买；北塔电梯另买；40 分钟内全包票不值"
+          },
           "transit": {
             "segments": [
               {
@@ -891,7 +1031,8 @@
                 "note": "Kärntner Str. → Neuer Markt"
               }
             ]
-          }
+          },
+          "bookingUrl": "https://stephansdom-wien.at/"
         },
         {
           "type": "sight",
@@ -919,16 +1060,20 @@
             {
               "text": {
                 "en": "Maria Theresa & Franz I double sarcophagus",
-                "zh": "玛丽亚·特蕾莎和弗朗茨一世的双人石棺"
+                "zh": "玛丽亚·特蕾莎与弗朗茨一世双人石棺"
               }
             },
             {
               "text": {
                 "en": "Franz Joseph, Sisi and Crown Prince Rudolf",
-                "zh": "弗朗茨·约瑟夫、茜茜和皇储鲁道夫"
+                "zh": "弗朗茨·约瑟夫、茜茜与鲁道夫皇储"
               }
             }
           ],
+          "ticket": {
+            "en": "Pay at the door – no booking",
+            "zh": "现场买票，无需预订"
+          },
           "transit": {
             "segments": [
               {
@@ -944,7 +1089,8 @@
                 "note": "via Albertina → Burggarten edge → across the Ring to Maria-Theresien-Platz"
               }
             ]
-          }
+          },
+          "bookingUrl": "https://www.kaisergruft.com/"
         },
         {
           "type": "sight",
@@ -956,7 +1102,7 @@
           "lat": 48.203739,
           "lng": 16.361782,
           "arrive": "2:30 PM",
-          "leave": "4:20 PM",
+          "leave": "4:15 PM",
           "website": "https://www.khm.at/en/",
           "nativeName": "Kunsthistorisches Museum Wien",
           "placeId": "KHM",
@@ -965,20 +1111,33 @@
             "zh": "Dec 28 10:00–18:00 (open Mondays in December)"
           },
           "notes": {
-            "en": "Kunsthistorisches Museum (1 h 50): Picture Gallery – Bruegel room (Tower of Babel, Hunters in the Snow), Vermeer, Raphael, Caravaggio; Kunstkammer (Saliera)",
-            "zh": "Kunsthistorisches Museum (1 h 50): Picture Gallery – Bruegel room (Tower of Babel, Hunters in the Snow), Vermeer, Raphael, Caravaggio; Kunstkammer (Saliera)"
+            "en": "Kunsthistorisches Museum (1 h 45): Picture Gallery – Bruegel room (Tower of Babel, Hunters in the Snow), Vermeer, Raphael, Caravaggio; Kunstkammer (Saliera)",
+            "zh": "Kunsthistorisches Museum (1 h 45): Picture Gallery – Bruegel room (Tower of Babel, Hunters in the Snow), Vermeer, Raphael, Caravaggio; Kunstkammer (Saliera)"
           },
           "mustSee": [
             {
-              "name": "Bruegel room – Tower of Babel"
+              "text": {
+                "en": "Bruegel room – Tower of Babel",
+                "zh": "布鲁盖尔厅——《巴别塔》"
+              }
             },
             {
-              "name": "Vermeer – The Art of Painting"
+              "text": {
+                "en": "Vermeer – The Art of Painting",
+                "zh": "维米尔《绘画艺术》"
+              }
             },
             {
-              "name": "Kunstkammer – Saliera"
+              "text": {
+                "en": "Kunstkammer – Saliera",
+                "zh": "珍宝馆——切利尼盐盒"
+              }
             }
           ],
+          "ticket": {
+            "en": "Covered by the 'Treasures of the Habsburgs' combined ticket – no slot needed; the café needs a museum ticket",
+            "zh": "「哈布斯堡珍宝」联票已包含，无需时段；馆内咖啡厅需凭门票"
+          },
           "transit": {
             "segments": [
               {
@@ -1003,8 +1162,8 @@
           },
           "lat": 48.2037395,
           "lng": 16.3617819,
-          "arrive": "4:20 PM",
-          "leave": "4:45 PM",
+          "arrive": "4:15 PM",
+          "leave": "4:35 PM",
           "website": "https://www.khm.at/besuch/cafe-restaurant",
           "nativeName": "Café-Restaurant im Kunsthistorischen Museum (Kuppelhalle)",
           "placeId": "KHMCAFE",
@@ -1013,24 +1172,41 @@
             "zh": "Official: café 10:00–17:30, kitchen to 16:30 (museum ticket needed)"
           },
           "notes": {
-            "en": "Coffee + cake under the KHM cupola (inside the museum)",
-            "zh": "Coffee + cake under the KHM cupola (inside the museum)"
+            "en": "Coffee + cake under the KHM cupola (20 min, inside the museum)",
+            "zh": "Coffee + cake under the KHM cupola (20 min, inside the museum)"
           },
           "mustOrder": [
             {
-              "name": "Melange"
+              "text": {
+                "en": "Melange",
+                "zh": "维也纳米朗琪咖啡"
+              }
             },
             {
-              "name": "Sachertorte / Apfelstrudel"
+              "text": {
+                "en": "Sachertorte / Apfelstrudel",
+                "zh": "萨赫蛋糕／苹果卷"
+              }
             },
             {
-              "name": "Kaiserschmarrn"
+              "text": {
+                "en": "Kaiserschmarrn",
+                "zh": "皇帝煎饼"
+              }
             }
           ],
           "founded": "1891",
           "cuisine": {
             "en": "Historic local",
             "zh": "老字号本地菜"
+          },
+          "mustOrderNote": {
+            "en": "Signature dish first; the others are the house classics",
+            "zh": "第一道是招牌，其余是店里经典"
+          },
+          "ticket": {
+            "en": "Walk in",
+            "zh": "无需订位——直接去"
           },
           "backups": [
             {
@@ -1056,15 +1232,28 @@
               },
               "mustOrder": [
                 {
-                  "name": "Annatorte"
+                  "text": {
+                    "en": "Annatorte",
+                    "zh": "安娜蛋糕"
+                  }
                 },
                 {
-                  "name": "Kaiserschmarrn"
+                  "text": {
+                    "en": "Kaiserschmarrn",
+                    "zh": "皇帝煎饼"
+                  }
                 },
                 {
-                  "name": "Demel-Sachertorte"
+                  "text": {
+                    "en": "Demel-Sachertorte",
+                    "zh": "Demel 萨赫蛋糕"
+                  }
                 }
-              ]
+              ],
+              "mustOrderNote": {
+                "en": "Signature dish first; the others are the house classics",
+                "zh": "第一道是招牌，其余是店里经典"
+              }
             },
             {
               "name": "Café Bräunerhof",
@@ -1088,15 +1277,28 @@
               },
               "mustOrder": [
                 {
-                  "name": "Melange"
+                  "text": {
+                    "en": "Melange",
+                    "zh": "维也纳米朗琪咖啡"
+                  }
                 },
                 {
-                  "name": "Apfelstrudel"
+                  "text": {
+                    "en": "Apfelstrudel",
+                    "zh": "苹果卷"
+                  }
                 },
                 {
-                  "name": "Topfenstrudel"
+                  "text": {
+                    "en": "Topfenstrudel",
+                    "zh": "凝乳奶酪卷"
+                  }
                 }
-              ]
+              ],
+              "mustOrderNote": {
+                "en": "Signature dish first; the others are the house classics",
+                "zh": "第一道是招牌，其余是店里经典"
+              }
             }
           ],
           "transit": {
@@ -1125,8 +1327,8 @@
           },
           "lat": 48.209995,
           "lng": 16.368317,
-          "arrive": "5:00 PM",
-          "leave": "5:40 PM",
+          "arrive": "4:48 PM",
+          "leave": "5:25 PM",
           "website": "https://schwarzeskameel.at/",
           "placeId": "KAMEEL",
           "hours": {
@@ -1134,28 +1336,41 @@
             "zh": "每天 8:00–24:00（12月24日到 14:00，12月25日关；12月28日不受影响）"
           },
           "notes": {
-            "en": "Light pre-opera bite at the bar (40 min)",
-            "zh": "Light pre-opera bite at the bar (40 min)"
+            "en": "Pre-opera supper at the bar (37 min) – the evening's main meal before the 7:00 PM ballet; Bitzinger sausage after",
+            "zh": "Pre-opera supper at the bar (37 min) – the evening's main meal before the 7:00 PM ballet; Bitzinger sausage after"
           },
           "mustOrder": [
             {
-              "name": "Beinschinken mit Kren"
-            },
-            {
-              "name": "Brötchen",
-              "gloss": {
-                "en": "Eiaufstrich, Lachs",
-                "zh": "鸡蛋酱、三文鱼"
+              "text": {
+                "en": "Beinschinken mit Kren",
+                "zh": "带骨火腿配辣根"
               }
             },
             {
-              "name": "Grüner Veltliner"
+              "text": {
+                "en": "Brötchen (Eiaufstrich, Lachs)",
+                "zh": "小面包（蛋酱、三文鱼）"
+              }
+            },
+            {
+              "text": {
+                "en": "Grüner Veltliner",
+                "zh": "绿维特利纳白葡萄酒"
+              }
             }
           ],
           "founded": "1618",
           "cuisine": {
             "en": "Historic local",
             "zh": "老字号本地菜"
+          },
+          "mustOrderNote": {
+            "en": "Signature dish first; the others are the house classics",
+            "zh": "第一道是招牌，其余是店里经典"
+          },
+          "ticket": {
+            "en": "Walk in",
+            "zh": "无需订位——直接去"
           },
           "backups": [
             {
@@ -1181,15 +1396,28 @@
               },
               "mustOrder": [
                 {
-                  "name": "Eiaufstrich-Brötchen"
+                  "text": {
+                    "en": "Eiaufstrich-Brötchen",
+                    "zh": "蛋酱小面包"
+                  }
                 },
                 {
-                  "name": "Heringsbrötchen"
+                  "text": {
+                    "en": "Heringsbrötchen",
+                    "zh": "鲱鱼小面包"
+                  }
                 },
                 {
-                  "name": "ein Pfiff Bier"
+                  "text": {
+                    "en": "ein Pfiff Bier",
+                    "zh": "一小杯啤酒（Pfiff）"
+                  }
                 }
-              ]
+              ],
+              "mustOrderNote": {
+                "en": "Signature dish first; the others are the house classics",
+                "zh": "第一道是招牌，其余是店里经典"
+              }
             },
             {
               "name": "Gerstner K.u.K. Hofzuckerbäcker",
@@ -1214,15 +1442,28 @@
               },
               "mustOrder": [
                 {
-                  "name": "Esterházy-Torte"
+                  "text": {
+                    "en": "Esterházy-Torte",
+                    "zh": "埃斯特哈齐蛋糕"
+                  }
                 },
                 {
-                  "name": "Wiener Melange"
+                  "text": {
+                    "en": "Wiener Melange",
+                    "zh": "维也纳米朗琪咖啡"
+                  }
                 },
                 {
-                  "name": "Brötchen"
+                  "text": {
+                    "en": "Brötchen",
+                    "zh": "小面包"
+                  }
                 }
-              ]
+              ],
+              "mustOrderNote": {
+                "en": "Signature dish first; the others are the house classics",
+                "zh": "第一道是招牌，其余是店里经典"
+              }
             }
           ],
           "transit": {
@@ -1267,8 +1508,8 @@
           },
           "lat": 48.203792,
           "lng": 16.3731547,
-          "arrive": "5:52 PM",
-          "leave": "6:45 PM",
+          "arrive": "5:37 PM",
+          "leave": "6:20 PM",
           "website": "https://www.hdm.at/",
           "nativeName": "Haus der Musik",
           "placeId": "HAUSDERMUSIK",
@@ -1277,8 +1518,8 @@
             "zh": "Official: daily 10:00–22:00, last entry 21:00 (only Dec 24 shorter)"
           },
           "notes": {
-            "en": "Interactive sound museum (50 min): Vienna Philharmonic floor (conduct the orchestra virtually), Mozart/Beethoven/Strauss rooms – right before the opera",
-            "zh": "Interactive sound museum (50 min): Vienna Philharmonic floor (conduct the orchestra virtually), Mozart/Beethoven/Strauss rooms – right before the opera"
+            "en": "Interactive sound museum (43 min): Vienna Philharmonic floor (conduct the orchestra virtually), Mozart/Beethoven/Strauss rooms – skip if queuing for standing room",
+            "zh": "Interactive sound museum (43 min): Vienna Philharmonic floor (conduct the orchestra virtually), Mozart/Beethoven/Strauss rooms – skip if queuing for standing room"
           },
           "mustSee": [
             {
@@ -1290,16 +1531,20 @@
             {
               "text": {
                 "en": "Vienna Philharmonic museum",
-                "zh": "维也纳爱乐的展厅"
+                "zh": "维也纳爱乐乐团展厅"
               }
             },
             {
               "text": {
                 "en": "Sonosphere floor",
-                "zh": "声景层"
+                "zh": "声音空间楼层"
               }
             }
           ],
+          "ticket": {
+            "en": "Pay at the door – no slot; skip it if you need to queue for standing room",
+            "zh": "现场买票，无时段；如果要去排站票就跳过"
+          },
           "transit": {
             "segments": [
               {
@@ -1315,7 +1560,8 @@
                 "note": "Annagasse → Kärntner Str."
               }
             ]
-          }
+          },
+          "bookingUrl": "https://www.hdm.at/en/"
         },
         {
           "type": "sight",
@@ -1326,27 +1572,40 @@
           },
           "lat": 48.203286,
           "lng": 16.369194,
-          "arrive": "7:00 PM",
+          "arrive": {
+            "en": "6:29 PM (doors 6:00; curtain 7:00)",
+            "zh": "18:29（开门 6:00; 开演 7:00）"
+          },
           "leave": "10:15 PM",
           "website": "https://www.wiener-staatsoper.at/en/",
           "nativeName": "Wiener Staatsoper",
           "placeId": "STAATSOPER",
           "hours": {
-            "en": "Official calendar 7:00–10:15 PM",
-            "zh": "官方日程 19:00–22:15"
+            "en": "Official calendar 7:00–10:15 PM · building opens 1 h before · standing-room box office opens 80 min before (5:40 PM)",
+            "zh": "Official calendar 7:00–10:15 PM · building opens 1 h before · standing-room box office opens 80 min before (5:40 PM)"
           },
           "notes": {
-            "en": "Ballet \"Schwanensee\"",
-            "zh": "芭蕾《天鹅湖》"
+            "en": "Ballet \"Schwanensee\" (Nureyev production) on a standing-room ticket: doors open 6:00 PM; be in by ~6:30, leave coats at the free cloakroom, go to the Stehparterre and find your numbered place; subtitles screen at every place; no late entry",
+            "zh": "站票看芭蕾《天鹅湖》（纽瑞耶夫版）：18:00 开门；大约 18:30 进场，大衣放免费衣帽间，到一楼站票区找自己的号；每个位置有字幕；迟到不能进"
           },
           "mustSee": [
             {
               "text": {
-                "en": "Schwanensee (Swan Lake) ballet",
-                "zh": "芭蕾《天鹅湖》（Schwanensee）"
+                "en": "Schwanensee (Swan Lake) ballet – Nureyev production",
+                "zh": "芭蕾《天鹅湖》——纽瑞耶夫版"
+              }
+            },
+            {
+              "text": {
+                "en": "Grand Staircase and Schwind Foyer",
+                "zh": "大楼梯与施温德门厅"
               }
             }
           ],
+          "ticket": {
+            "en": "Doors open 6:00 PM; arrive ~6:30 PM; free cloakroom; no late entry. If online sells out, the standing-room box office (Operngasse arcades) opens 5:40 PM with a fixed contingent – queue from ~4:45 PM",
+            "zh": "6 点开门，约 6:30 到；免费寄存衣物；迟到不能进。网上卖完的话，站票窗口（Operngasse 拱廊下）5:40 开，有固定配额——约 4:45 开始排队"
+          },
           "transit": {
             "segments": [
               {
@@ -1359,7 +1618,8 @@
                 "distanceM": 190
               }
             ]
-          }
+          },
+          "bookingUrl": "https://www.wiener-staatsoper.at/en/ticket-info/"
         },
         {
           "type": "restaurant",
@@ -1385,18 +1645,40 @@
           },
           "mustOrder": [
             {
-              "name": "Käsekrainer"
+              "text": {
+                "en": "Käsekrainer",
+                "zh": "芝士爆浆香肠"
+              }
             },
             {
-              "name": "Burenwurst mit süßem Senf"
+              "text": {
+                "en": "Burenwurst mit süßem Senf",
+                "zh": "布伦香肠配甜芥末"
+              }
             },
             {
-              "name": "Ottakringer"
+              "text": {
+                "en": "Ottakringer",
+                "zh": "Ottakringer 啤酒"
+              }
             }
           ],
+          "founded": "1999",
           "cuisine": {
             "en": "Local, newer house",
             "zh": "本地菜，开业较晚"
+          },
+          "mustOrderNote": {
+            "en": "Signature dish first; the others are the house classics",
+            "zh": "第一道是招牌，其余是店里经典"
+          },
+          "foundedNote": {
+            "en": "Run by the Bitzinger family since 1999 (bitzinger.wien); stand redesigned 2008; original stand date not published",
+            "zh": "1999 年起由 Bitzinger 家经营（bitzinger.wien）；2008 年翻新；更早的摊位年份没有公布"
+          },
+          "ticket": {
+            "en": "Walk in",
+            "zh": "无需订位——直接去"
           },
           "backups": [
             {
@@ -1422,16 +1704,22 @@
               },
               "mustOrder": [
                 {
-                  "name": "Buchteln",
-                  "gloss": {
-                    "en": "ab 22 Uhr",
-                    "zh": "22:00 起"
+                  "text": {
+                    "en": "Buchteln (ab 22 Uhr)",
+                    "zh": "果酱小甜面包（22 点后）"
                   }
                 },
                 {
-                  "name": "Melange"
+                  "text": {
+                    "en": "Melange",
+                    "zh": "维也纳米朗琪咖啡"
+                  }
                 }
-              ]
+              ],
+              "mustOrderNote": {
+                "en": "Signature dish first; the others are the house classics",
+                "zh": "第一道是招牌，其余是店里经典"
+              }
             },
             {
               "name": "Würstelstand am Hohen Markt",
@@ -1455,12 +1743,22 @@
               },
               "mustOrder": [
                 {
-                  "name": "Käsekrainer"
+                  "text": {
+                    "en": "Käsekrainer",
+                    "zh": "芝士爆浆香肠"
+                  }
                 },
                 {
-                  "name": "Bosna"
+                  "text": {
+                    "en": "Bosna",
+                    "zh": "Bosna 洋葱咖喱热狗"
+                  }
                 }
-              ]
+              ],
+              "mustOrderNote": {
+                "en": "Signature dish first; the others are the house classics",
+                "zh": "第一道是招牌，其余是店里经典"
+              }
             }
           ],
           "transit": {
@@ -1658,7 +1956,7 @@
             {
               "text": {
                 "en": "Gustav Klimt – Der Kuss (The Kiss)",
-                "zh": "克林姆的 Der Kuss（《吻》）"
+                "zh": "克里姆特《吻》"
               }
             },
             {
@@ -1670,10 +1968,14 @@
             {
               "text": {
                 "en": "Gardens view to the city",
-                "zh": "花园望向城区"
+                "zh": "花园远眺城市"
               }
             }
           ],
+          "ticket": {
+            "en": "Upper Belvedere single ticket with the 9:00 AM time slot – the plan does not visit the Lower Belvedere",
+            "zh": "买上美景宫单馆票，选 9:00 时段——行程不去下美景宫"
+          },
           "transit": {
             "segments": [
               {
@@ -1689,7 +1991,8 @@
                 "note": "Prinz-Eugen-Str. → Schwarzenbergplatz → Bösendorferstr."
               }
             ]
-          }
+          },
+          "bookingUrl": "https://www.belvedere.at/en/go/tickets"
         },
         {
           "type": "sight",
@@ -1716,11 +2019,21 @@
           "mustSee": [
             {
               "text": {
-                "en": "Facade",
-                "zh": "外立面"
+                "en": "Golden-hued facade on Bösendorferstraße",
+                "zh": "Bösendorfer 街金色外立面"
+              }
+            },
+            {
+              "text": {
+                "en": "Home of the New Year's Concert",
+                "zh": "新年音乐会举办地"
               }
             }
           ],
+          "ticket": {
+            "en": "Free – no ticket needed",
+            "zh": "免费，无需门票"
+          },
           "transit": {
             "segments": [
               {
@@ -1741,7 +2054,7 @@
           "type": "sight",
           "status": "confirmed",
           "name": {
-            "en": "St. Charles Church (lit at night, exterior)",
+            "en": "St. Charles Church (Karlskirche)",
             "zh": "卡尔教堂（夜景）"
           },
           "lat": 48.198279,
@@ -1762,17 +2075,27 @@
           "mustSee": [
             {
               "text": {
-                "en": "Floodlit facade",
-                "zh": "灯光下的外立面"
+                "en": "Rottmayr dome fresco (from the panoramic terrace)",
+                "zh": "罗特迈尔穹顶壁画（从观景平台看）"
               }
             },
             {
               "text": {
-                "en": "Reflecting pond",
-                "zh": "倒影池"
+                "en": "Twin triumphal columns",
+                "zh": "双凯旋柱"
+              }
+            },
+            {
+              "text": {
+                "en": "Facade over the reflecting pond",
+                "zh": "倒影池前的立面"
               }
             }
           ],
+          "ticket": {
+            "en": "Pay at the door; the ticket covers the panoramic terrace by the dome fresco (lift, when running)",
+            "zh": "现场买票；含穹顶壁画旁的观景平台（电梯运行时）"
+          },
           "transit": {
             "segments": [
               {
@@ -1787,7 +2110,8 @@
                 "distanceM": 400
               }
             ]
-          }
+          },
+          "bookingUrl": "https://www.karlskirche.at/"
         },
         {
           "type": "sight",
@@ -1814,16 +2138,20 @@
             {
               "text": {
                 "en": "Market stalls (Karlsplatz end)",
-                "zh": "市集摊位（Karlsplatz 这一头）"
+                "zh": "市场摊位（卡尔广场一端）"
               }
             },
             {
               "text": {
                 "en": "Otto Wagner's Majolikahaus (Linke Wienzeile 40) from the market",
-                "zh": "从市集看奥托·瓦格纳的马约利卡楼（Linke Wienzeile 40）"
+                "zh": "从市场看奥托·瓦格纳马约利卡楼"
               }
             }
           ],
+          "ticket": {
+            "en": "Free – no ticket needed",
+            "zh": "免费，无需门票"
+          },
           "transit": {
             "segments": [
               {
@@ -1866,7 +2194,7 @@
             {
               "text": {
                 "en": "Habsburg State Rooms",
-                "zh": "哈布斯堡国家厅"
+                "zh": "哈布斯堡国事厅"
               }
             },
             {
@@ -1876,6 +2204,10 @@
               }
             }
           ],
+          "ticket": {
+            "en": "Online or at the door – no time slot",
+            "zh": "网上或现场买，无时段"
+          },
           "transit": {
             "segments": [
               {
@@ -1891,7 +2223,8 @@
                 "note": "Augustinerstraße"
               }
             ]
-          }
+          },
+          "bookingUrl": "https://www.albertina.at/en/"
         },
         {
           "type": "sight",
@@ -1919,16 +2252,20 @@
             {
               "text": {
                 "en": "Main oval under the dome",
-                "zh": "穹顶下的椭圆大厅"
+                "zh": "穹顶下的椭圆主厅"
               }
             },
             {
               "text": {
                 "en": "Prince Eugene's library",
-                "zh": "欧根亲王的图书馆"
+                "zh": "欧根亲王藏书"
               }
             }
           ],
+          "ticket": {
+            "en": "At the door or online – no slot",
+            "zh": "现场或网上买，无时段"
+          },
           "transit": {
             "segments": [
               {
@@ -1973,7 +2310,8 @@
               "en": "Vienna core-zone ticket: single ride (80 min) or 24 Stunden WIEN, in the WienMobil app.",
               "zh": "维也纳市区票：单程 80 分钟，或 24 小时票。用 WienMobil。"
             }
-          }
+          },
+          "bookingUrl": "https://www.onb.ac.at/en/museums/state-hall"
         },
         {
           "type": "station",
@@ -2013,6 +2351,36 @@
             "en": "Train to Bratislava",
             "zh": "坐火车去布拉迪斯拉发"
           },
+          "mustSee": [
+            {
+              "text": {
+                "en": "Old Town & Hlavné námestie Christmas market",
+                "zh": "老城与主广场圣诞市集"
+              }
+            },
+            {
+              "text": {
+                "en": "Bratislava Castle grounds view",
+                "zh": "布拉迪斯拉发城堡庭院景观"
+              }
+            },
+            {
+              "text": {
+                "en": "St. Martin's Cathedral",
+                "zh": "圣马丁大教堂"
+              }
+            },
+            {
+              "text": {
+                "en": "Michael's Gate",
+                "zh": "米哈尔门"
+              }
+            }
+          ],
+          "ticket": {
+            "en": "ÖBB Bratislava-Ticket on the day (app or machine); castle grounds and St. Martin's nave are free",
+            "zh": "当天买 ÖBB 布拉迪斯拉发票（App 或售票机）；城堡庭院和圣马丁教堂中殿免费"
+          },
           "transit": {
             "segments": [
               {
@@ -2034,7 +2402,8 @@
               "en": "ÖBB Bratislava-Ticket: the return train, plus city trams and buses that day.",
               "zh": "ÖBB Bratislava-Ticket：当天往返火车，以及市内电车和公交。"
             }
-          }
+          },
+          "bookingUrl": "https://www.oebb.at/en/"
         },
         {
           "type": "station",
@@ -2126,20 +2495,30 @@
           },
           "mustOrder": [
             {
-              "name": "Figlmüller-Schnitzel",
-              "gloss": {
-                "en": "Schwein",
-                "zh": "猪肉"
+              "text": {
+                "en": "Figlmüller-Schnitzel (Schwein)",
+                "zh": "Figlmüller 猪排"
               }
             },
             {
-              "name": "Erdäpfelsalat"
+              "text": {
+                "en": "Erdäpfelsalat",
+                "zh": "维也纳土豆沙拉"
+              }
             }
           ],
           "founded": "1905",
           "cuisine": {
             "en": "Historic local",
             "zh": "老字号本地菜"
+          },
+          "mustOrderNote": {
+            "en": "Pork schnitzel the size of the plate; potato-and-lamb's-lettuce salad on the side",
+            "zh": "盘子大的猪排；配土豆野苣沙拉"
+          },
+          "ticket": {
+            "en": "arrive on time",
+            "zh": "已订好——准时到"
           },
           "booked": true,
           "backups": [
@@ -2166,19 +2545,28 @@
               },
               "mustOrder": [
                 {
-                  "name": "Wiener Schnitzel vom Kalb",
-                  "gloss": {
-                    "en": "in Butterschmalz",
-                    "zh": "用黄油油炸"
+                  "text": {
+                    "en": "Wiener Schnitzel vom Kalb (in Butterschmalz)",
+                    "zh": "黄油炸小牛肉排"
                   }
                 },
                 {
-                  "name": "Erdäpfel-Vogerlsalat"
+                  "text": {
+                    "en": "Erdäpfel-Vogerlsalat",
+                    "zh": "土豆野苣沙拉"
+                  }
                 },
                 {
-                  "name": "Preiselbeeren"
+                  "text": {
+                    "en": "Preiselbeeren",
+                    "zh": "越橘酱"
+                  }
                 }
-              ]
+              ],
+              "mustOrderNote": {
+                "en": "Signature dish first; the others are the house classics",
+                "zh": "第一道是招牌，其余是店里经典"
+              }
             },
             {
               "name": "Zum Weißen Rauchfangkehrer",
@@ -2202,15 +2590,28 @@
               },
               "mustOrder": [
                 {
-                  "name": "Tafelspitz"
+                  "text": {
+                    "en": "Tafelspitz",
+                    "zh": "维也纳清炖牛肉"
+                  }
                 },
                 {
-                  "name": "Wiener Schnitzel"
+                  "text": {
+                    "en": "Wiener Schnitzel",
+                    "zh": "维也纳炸肉排"
+                  }
                 },
                 {
-                  "name": "Kaiserschmarrn"
+                  "text": {
+                    "en": "Kaiserschmarrn",
+                    "zh": "皇帝煎饼"
+                  }
                 }
-              ]
+              ],
+              "mustOrderNote": {
+                "en": "Signature dish first; the others are the house classics",
+                "zh": "第一道是招牌，其余是店里经典"
+              }
             }
           ],
           "transit": {
@@ -2256,22 +2657,26 @@
             {
               "text": {
                 "en": "Wooden gondola ride",
-                "zh": "木车厢转一圈"
+                "zh": "木质车厢乘坐"
               }
             },
             {
               "text": {
                 "en": "Night view to Stephansdom",
-                "zh": "夜里望向圣斯德望"
+                "zh": "远眺圣斯特凡大教堂夜景"
               }
             },
             {
               "text": {
                 "en": "Wintermarkt am Riesenradplatz",
-                "zh": "摩天轮广场的冬日市集"
+                "zh": "摩天轮广场冬季市集"
               }
             }
           ],
+          "ticket": {
+            "en": "Online or at the counter – no time slot",
+            "zh": "网上或现场买，无时段"
+          },
           "transit": {
             "segments": [
               {
@@ -2315,7 +2720,8 @@
               "en": "Vienna core-zone ticket: single ride (80 min) or 24 Stunden WIEN, in the WienMobil app.",
               "zh": "维也纳市区票：单程 80 分钟，或 24 小时票。用 WienMobil。"
             }
-          }
+          },
+          "bookingUrl": "https://wienerriesenrad.com/en/"
         },
         {
           "type": "restaurant",
@@ -2341,16 +2747,30 @@
           },
           "mustOrder": [
             {
-              "name": "Original Sacher-Torte mit Schlagobers"
+              "text": {
+                "en": "Original Sacher-Torte mit Schlagobers",
+                "zh": "原版萨赫蛋糕配鲜奶油"
+              }
             },
             {
-              "name": "Wiener Melange"
+              "text": {
+                "en": "Wiener Melange",
+                "zh": "维也纳米朗琪咖啡"
+              }
             }
           ],
           "founded": "1876",
           "cuisine": {
             "en": "Historic local",
             "zh": "老字号本地菜"
+          },
+          "mustOrderNote": {
+            "en": "Signature dish first; the others are the house classics",
+            "zh": "第一道是招牌，其余是店里经典"
+          },
+          "ticket": {
+            "en": "Reserve ahead on the official site (or walk in early)",
+            "zh": "建议在官网提前订位（或早点直接去）"
           },
           "transit": {
             "segments": [
@@ -2518,7 +2938,7 @@
           "lat": 48.211562,
           "lng": 16.36145,
           "arrive": "7:30 AM",
-          "leave": "8:05 AM",
+          "leave": "8:00 AM",
           "website": "https://www.landtmann.at/",
           "placeId": "LANDTMANN",
           "hours": {
@@ -2531,19 +2951,36 @@
           },
           "mustOrder": [
             {
-              "name": "Wiener Frühstück"
+              "text": {
+                "en": "Wiener Frühstück",
+                "zh": "维也纳早餐"
+              }
             },
             {
-              "name": "Melange"
+              "text": {
+                "en": "Melange",
+                "zh": "维也纳米朗琪咖啡"
+              }
             },
             {
-              "name": "Apfelstrudel"
+              "text": {
+                "en": "Apfelstrudel",
+                "zh": "苹果卷"
+              }
             }
           ],
           "founded": "1873",
           "cuisine": {
             "en": "Historic local",
             "zh": "老字号本地菜"
+          },
+          "mustOrderNote": {
+            "en": "Signature dish first; the others are the house classics",
+            "zh": "第一道是招牌，其余是店里经典"
+          },
+          "ticket": {
+            "en": "Walk in",
+            "zh": "无需订位——直接去"
           },
           "backups": [
             {
@@ -2569,15 +3006,28 @@
               },
               "mustOrder": [
                 {
-                  "name": "Original Sacher-Torte"
+                  "text": {
+                    "en": "Original Sacher-Torte",
+                    "zh": "原版萨赫蛋糕"
+                  }
                 },
                 {
-                  "name": "Wiener Frühstück"
+                  "text": {
+                    "en": "Wiener Frühstück",
+                    "zh": "维也纳早餐"
+                  }
                 },
                 {
-                  "name": "Melange"
+                  "text": {
+                    "en": "Melange",
+                    "zh": "维也纳米朗琪咖啡"
+                  }
                 }
-              ]
+              ],
+              "mustOrderNote": {
+                "en": "Signature dish first; the others are the house classics",
+                "zh": "第一道是招牌，其余是店里经典"
+              }
             },
             {
               "name": "Café Sperl",
@@ -2602,15 +3052,28 @@
               },
               "mustOrder": [
                 {
-                  "name": "Sperl-Torte"
+                  "text": {
+                    "en": "Sperl-Torte",
+                    "zh": "Sperl 蛋糕"
+                  }
                 },
                 {
-                  "name": "Melange"
+                  "text": {
+                    "en": "Melange",
+                    "zh": "维也纳米朗琪咖啡"
+                  }
                 },
                 {
-                  "name": "Frühstück"
+                  "text": {
+                    "en": "Frühstück",
+                    "zh": "早餐"
+                  }
                 }
-              ]
+              ],
+              "mustOrderNote": {
+                "en": "Signature dish first; the others are the house classics",
+                "zh": "第一道是招牌，其余是店里经典"
+              }
             }
           ],
           "transit": {
@@ -2639,8 +3102,8 @@
           },
           "lat": 48.215415,
           "lng": 16.35914,
-          "arrive": "8:10 AM",
-          "leave": "8:15 AM",
+          "arrive": "8:05 AM",
+          "leave": "8:10 AM",
           "website": "https://www.votivkirche.at/",
           "nativeName": "Votivkirche · Universität · Rathaus (Ring)",
           "placeId": "VOTIVKIRCHE",
@@ -2656,7 +3119,7 @@
             {
               "text": {
                 "en": "Votivkirche spires",
-                "zh": "许愿教堂的尖塔"
+                "zh": "感恩教堂双尖塔"
               }
             },
             {
@@ -2672,6 +3135,10 @@
               }
             }
           ],
+          "ticket": {
+            "en": "Free – no ticket needed",
+            "zh": "免费，无需门票"
+          },
           "transit": {
             "segments": [
               {
@@ -2741,29 +3208,51 @@
           "lat": 48.184989,
           "lng": 16.311568,
           "arrive": {
-            "en": "8:50 AM (entry 9:00)",
-            "zh": "8:50（entry 9:00）"
+            "en": "8:35 AM (entry 8:45)",
+            "zh": "8:35（入场 8:45）"
           },
-          "leave": "9:50 AM",
+          "leave": "10:00 AM",
           "website": "https://www.schoenbrunn.at/en/",
           "nativeName": "Schloss Schönbrunn",
           "placeId": "SCHOENBRUNN",
           "hours": {
-            "en": "Official: daily 8:30–17:00, Dec 25–Jan 6 to 17:30; every ticket has a fixed entry time (Grand/Imperial Tour replaced by the Palace Ticket)",
-            "zh": "Official: daily 8:30–17:00, Dec 25–Jan 6 to 17:30; every ticket has a fixed entry time (Grand/Imperial Tour replaced by the Palace Ticket)"
+            "en": "Official: daily 8:30–17:30 on Dec 25–Jan 6; every ticket has a binding entry time – late arrival voids it",
+            "zh": "Official: daily 8:30–17:30 on Dec 25–Jan 6; every ticket has a binding entry time – late arrival voids it"
           },
           "notes": {
-            "en": "Schönbrunn Palace – Palace Ticket (state rooms, ~1 h; moved from Dec 28)",
-            "zh": "美泉宫宫殿票（国家厅，大约 1 小时；从 12 月 28 日挪到这天）"
+            "en": "Schönbrunn Palace – Palace Ticket (whole piano nobile incl. the Millions Room and Maria Theresa's rooms, ~75 min audio-guide route)",
+            "zh": "美泉宫宫殿票（二楼全套，含百万厅和玛丽亚·特蕾莎的房间，语音导览大约 75 分钟）"
           },
           "mustSee": [
             {
               "text": {
-                "en": "State rooms (Mirrors Room, Great Gallery, Millions Room)",
-                "zh": "国家厅（镜厅、大画廊、百万厅）"
+                "en": "Millions Room (Grand Tour only)",
+                "zh": "百万厅（只有 Grand Tour 有）"
+              }
+            },
+            {
+              "text": {
+                "en": "Great Gallery",
+                "zh": "大画廊"
+              }
+            },
+            {
+              "text": {
+                "en": "Hall of Mirrors (where the child Mozart played)",
+                "zh": "镜厅（童年莫扎特演奏处）"
+              }
+            },
+            {
+              "text": {
+                "en": "Vieux-Laque Room",
+                "zh": "古漆厅"
               }
             }
           ],
+          "ticket": {
+            "en": "Palace Ticket only from imperialtickets.com (fake resellers exist) – book the 8:45 AM slot; late arrival voids the ticket",
+            "zh": "只在 imperialtickets.com 买 Palace Ticket（有假票网站）——选 8:45 时段；迟到作废"
+          },
           "transit": {
             "segments": [
               {
@@ -2779,7 +3268,8 @@
                 "note": "Great Parterre → Neptune Fountain → zigzag path uphill"
               }
             ]
-          }
+          },
+          "bookingUrl": "https://www.imperialtickets.com/en/schoenbrunn-palace/grand-tour-schoenbrunn-palace/45"
         },
         {
           "type": "sight",
@@ -2790,7 +3280,7 @@
           },
           "lat": 48.178267,
           "lng": 16.308726,
-          "arrive": "10:05 AM",
+          "arrive": "10:15 AM",
           "leave": "10:35 AM",
           "website": null,
           "nativeName": "Gloriette (Schönbrunn)",
@@ -2800,8 +3290,8 @@
             "zh": "Park 6:30–17:30 free · Café Gloriette daily from 9:00 until dusk · Christmas market at the palace to Jan 6"
           },
           "notes": {
-            "en": "Walk up through the gardens to the Gloriette (terrace closed in winter) – coffee at Café Gloriette, view back over the palace and Vienna",
-            "zh": "Walk up through the gardens to the Gloriette (terrace closed in winter) – coffee at Café Gloriette, view back over the palace and Vienna"
+            "en": "Walk up through the gardens to the Gloriette (terrace closed in winter) – view back over the palace and Vienna; coffee only if time (20 min)",
+            "zh": "Walk up through the gardens to the Gloriette (terrace closed in winter) – view back over the palace and Vienna; coffee only if time (20 min)"
           },
           "mustSee": [
             {
@@ -2813,10 +3303,14 @@
             {
               "text": {
                 "en": "View from the Gloriette hill",
-                "zh": "从 Gloriette 坡上看下去"
+                "zh": "凯旋门山丘远景"
               }
             }
           ],
+          "ticket": {
+            "en": "Free – no ticket needed",
+            "zh": "免费，无需门票"
+          },
           "transit": {
             "segments": [
               {
@@ -2887,13 +3381,22 @@
           },
           "mustOrder": [
             {
-              "name": "Saibling im Bienenwachs"
+              "text": {
+                "en": "Saibling im Bienenwachs",
+                "zh": "蜂蜡慢烤红点鲑"
+              }
             },
             {
-              "name": "Kaviar mit Linsen"
+              "text": {
+                "en": "Kaviar mit Linsen",
+                "zh": "鱼子酱配扁豆"
+              }
             },
             {
-              "name": "Käsewagen"
+              "text": {
+                "en": "Käsewagen",
+                "zh": "奶酪推车"
+              }
             },
             {
               "name": "Bread trolley: Blunzenbrot, Laugenbrezel, Lavendel-Weißbrot"
@@ -2908,8 +3411,12 @@
             "zh": "本地菜，上过榜"
           },
           "mustOrderNote": {
-            "en": "English names as on Steirereck's English lunch menu (Nov 2026 PDF) · plan is the 7-course tasting with the 2 signature swaps requested in advance · fallback 5-course lunch",
-            "zh": "菜名按 Steirereck 的英文午餐菜单（2026 年 11 月的 PDF）。计划是 7 道尝味，事先换上 2 道招牌。不行就改 5 道午餐。"
+            "en": "Tasting menu – the dishes are the current highlights; the kitchen decides the final menu",
+            "zh": "品尝菜单——以上是当季招牌，最终以厨房当天菜单为准"
+          },
+          "ticket": {
+            "en": "arrive on time",
+            "zh": "已订好——准时到"
           },
           "booked": true,
           "backups": [
@@ -2936,15 +3443,28 @@
               },
               "mustOrder": [
                 {
-                  "name": "Wiener Schnitzel"
+                  "text": {
+                    "en": "Wiener Schnitzel",
+                    "zh": "维也纳炸肉排"
+                  }
                 },
                 {
-                  "name": "Rindsgulasch"
+                  "text": {
+                    "en": "Rindsgulasch",
+                    "zh": "红烩牛肉"
+                  }
                 },
                 {
-                  "name": "Marillenpalatschinken"
+                  "text": {
+                    "en": "Marillenpalatschinken",
+                    "zh": "杏子酱薄饼"
+                  }
                 }
-              ]
+              ],
+              "mustOrderNote": {
+                "en": "Signature dish first; the others are the house classics",
+                "zh": "第一道是招牌，其余是店里经典"
+              }
             },
             {
               "name": "Restaurant Ofenloch",
@@ -2969,15 +3489,28 @@
               },
               "mustOrder": [
                 {
-                  "name": "Wiener Schnitzel"
+                  "text": {
+                    "en": "Wiener Schnitzel",
+                    "zh": "维也纳炸肉排"
+                  }
                 },
                 {
-                  "name": "Beuschel"
+                  "text": {
+                    "en": "Beuschel",
+                    "zh": "维也纳酸汁内脏"
+                  }
                 },
                 {
-                  "name": "Kaiserschmarrn"
+                  "text": {
+                    "en": "Kaiserschmarrn",
+                    "zh": "皇帝煎饼"
+                  }
                 }
-              ]
+              ],
+              "mustOrderNote": {
+                "en": "Signature dish first; the others are the house classics",
+                "zh": "第一道是招牌，其余是店里经典"
+              }
             }
           ],
           "transit": {
