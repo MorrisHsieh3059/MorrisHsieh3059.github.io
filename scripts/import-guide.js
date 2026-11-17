@@ -8,9 +8,14 @@
  * Re-running on a later export in the same shape replaces those files.
  *
  * Public page: strips personal names, flight and train numbers, emails,
- * phone numbers, prices, confirmation codes, "reserve now" notes,
- * guest counts, reservation holds, and seating times that depend on a
+ * phone numbers, prices, confirmation codes, PINs, party size, "reserve now"
+ * notes, guest counts, reservation holds, and seating times that depend on a
  * flight delay. Published hours and kitchen-close times stay.
+ * A booking that is already made becomes a Booked chip only. The reference,
+ * code, and checklist stay off the page.
+ * Later exports can add changes_*, field_additions_*, archive_*, lists_*,
+ * walk_audit_*, walk_in_*, google_lists_*, and bookings_* keys. Those are
+ * not rendered. Re-run this script to re-sync.
  * Chinese copy comes from scripts/guide-zh.json (Simplified, keyed by the
  * sanitized English). Place and dish names stay in the original language.
  */
@@ -108,7 +113,9 @@ function sanitize(input) {
   s = s.replace(/awaiting OK/gi, 'awaiting a decision');
   s = s.replace(/Morris to book/gi, '');
   s = s.replace(/\bMorris\b/g, '');
-  s = s.replace(/founded by Rev\. Stephen Tong\s*唐崇荣;?\s*/g, '');
+  s = s.replace(/founded by Rev\.?\s*Stephen Tong\s*唐崇荣;?\s*/gi, '');
+  s = s.replace(/\bStephen Tong\b/gi, '');
+  s = s.replace(/唐崇荣/g, '');
   s = s.replace(/\bSecretary\b/g, '');
   s = s.replace(/reserve now/gi, '');
   s = s.replace(/\bcheaper\b/gi, '');
@@ -159,6 +166,17 @@ function stripBookingDetails(s) {
   s = s.replace(/\bconfirm when booking\b/gi, '');
   s = s.replace(/\bbook once\b[^.;)]*/gi, '');
   s = s.replace(/\bofficial booking page:\s*/gi, '');
+  s = s.replace(/\bconfirmation\s+(?:code|number|in the)\b[^.;)]*/gi, '');
+  s = s.replace(/\bmailbox\b/gi, '');
+  s = s.replace(/\bPIN\b/g, '');
+  s = s.replace(/\bparty of \d+\b/gi, '');
+  s = s.replace(/\bemail[_\s-]?verified\b/gi, '');
+  s = s.replace(/\s*\([^)]*\b(?:not yet booked|unbooked|booked)\b[^)]*\)/gi, '');
+  s = s.replace(/\bnot yet booked\b/gi, '');
+  s = s.replace(/\bunbooked\b/gi, '');
+  s = s.replace(/\b(?:is\s+|was\s+)?booked\b/gi, '');
+  s = s.replace(/\s*@[\w.]+/g, '');
+  s = s.replace(/\s+for \d+\b(?!\s*(?:min|minutes|h\b|hours?|AM|PM|:))/gi, '');
   return s;
 }
 
@@ -245,6 +263,7 @@ function zhTimeParen(inner) {
 function zhTimeLabel(raw) {
   let s = String(raw || '').trim();
   if (!s) return '';
+  s = s.replace(/\btable\b/gi, '入座');
   s = s.replace(/\(([^)]+)\)/g, function (_m, inner) { return '（' + zhTimeParen(inner) + '）'; });
   s = s.replace(/~?\s*(\d{1,2})(?::(\d{2}))?\s*(AM|PM)\b/gi, function (all, h, min, ap) {
     let hour = parseInt(h, 10);
@@ -258,6 +277,7 @@ function zhTimeLabel(raw) {
   s = s.replace(/^\s*~\s*/, '约');
   s = s.replace(/\s+（/g, '（');
   s = s.replace(/service/gi, '礼拜 ');
+  s = s.replace(/([^\u0000-\u007F])(\d{1,2}:\d{2})/g, '$1 $2');
   return s.replace(/\s{2,}/g, ' ').trim();
 }
 
@@ -368,11 +388,24 @@ function mustList(items, kind) {
     if (kind === 'order') {
       const split = en.match(/^(.+?)\s*\(([^)]+)\)\s*$/);
       if (split && /^[\x00-\x7F]+$/.test(split[2])) {
-        const zh = remember('must', en);
+        const paren = split[2].trim();
+        const dish = split[1].trim();
+        const parenZh = (ZH.must || {})[paren] || remember('must', paren) || paren;
+        const dishZh = (ZH.must || {})[dish];
+        const zh = dishZh ? dishZh + ' · ' + parenZh : parenZh;
         out.push({
-          name: split[1].trim(),
-          gloss: { en: split[2].trim(), zh: zh || split[2].trim() }
+          name: dish,
+          gloss: { en: paren, zh: zh }
         });
+        return;
+      }
+      const dishZh = (ZH.must || {})[en] || (ZH.must || {})[original];
+      if (dishZh && en.split(/\s+/).length > 4 && /^[\x00-\u007F]+$/.test(en)) {
+        out.push({ text: { en: en, zh: dishZh } });
+        return;
+      }
+      if (dishZh) {
+        out.push({ name: en, gloss: { en: '', zh: dishZh } });
         return;
       }
       out.push({ name: en });
@@ -437,6 +470,56 @@ function cleanMark(value) {
   return String(value).replace(/[✅☑️⚠️❌]/g, '').replace(/\s{2,}/g, ' ').trim();
 }
 
+const CUISINE_LABEL = {
+  'historic-local': { en: 'Historic local', zh: '老字号本地菜' },
+  'local cuisine, modern-founded (flagged)': { en: 'Local, newer house', zh: '本地菜，开业较晚' },
+  'local cuisine, world-ranked (flagged for decision)': { en: 'Local, on a ranking', zh: '本地菜，上过榜' },
+  'Berlin street-food icon (Döner/Gemüse Kebap) – local, iconic': { en: 'Berlin street food', zh: '柏林街头小吃' }
+};
+
+function foundedYear(raw) {
+  const match = String(raw == null ? '' : raw).match(/\b(\d{3,4})\b/);
+  return match ? match[1] : '';
+}
+
+function cuisineLabel(raw) {
+  if (!raw) return null;
+  const known = CUISINE_LABEL[String(raw).trim()];
+  if (known) return { en: known.en, zh: known.zh };
+  const short = sanitize(String(raw).replace(/\s*\([^)]*\)/g, ''));
+  if (!short) return null;
+  return bilingual(short, 'note');
+}
+
+// "booked", "booked – …", and "flight booked" are a chip. The rest of the
+// sentence (codes, party size, mailbox) is never stored.
+function isBooked(raw) {
+  if (raw == null || raw === '') return false;
+  const s = String(raw).replace(/[✅☑️⚠️❌⏳]/g, '').replace(/\s+/g, ' ').trim();
+  if (/\b(?:not booked|unbooked|no booking|not bought)\b/i.test(s)) return false;
+  return /^(?:flight\s+)?booked\b/i.test(s);
+}
+
+function placeFacts(target, raw) {
+  if (!raw || !target) return;
+  if (!target.founded) {
+    const year = foundedYear(raw.founded);
+    if (year) target.founded = year;
+  }
+  if (!target.cuisine) {
+    const label = cuisineLabel(raw.cuisine_rule || raw.cuisine);
+    if (label) target.cuisine = label;
+  }
+  if ((!target.mustOrder || !target.mustOrder.length) && Array.isArray(raw.must_order) && raw.must_order.length) {
+    const order = mustList(raw.must_order, 'order');
+    if (order.length) target.mustOrder = order;
+  }
+  if (!target.mustOrderNote && raw.must_order_note) {
+    const note = polishNote(raw.must_order_note);
+    if (note) target.mustOrderNote = bilingual(note, 'note');
+  }
+}
+
 function backupOf(raw) {
   if (!raw) return null;
   const name = sanitize(typeof raw === 'string' ? raw : (raw.name || ''));
@@ -448,11 +531,6 @@ function backupOf(raw) {
   const areaZh = raw && raw.area_zh ? cleanMark(raw.area_zh) : '';
   if (area) item.area = area;
   if (areaZh) item.areaZh = areaZh;
-  if (raw && Array.isArray(raw.must_order) && raw.must_order.length) {
-    item.mustOrder = raw.must_order.map(function (dish) {
-      return sanitize(dish) || String(dish).trim();
-    }).filter(Boolean);
-  }
   const hoursZh = raw && raw.hours_check_zh ? cleanMark(raw.hours_check_zh) : '';
   const distanceZh = raw && raw.distance_from_top_zh ? cleanMark(raw.distance_from_top_zh) : '';
   if (hoursZh) item.hoursZh = hoursZh;
@@ -466,6 +544,7 @@ function backupOf(raw) {
   if (raw && raw.place_id) item.placeId = String(raw.place_id);
   const noteEn = polishNote((raw && raw.note) || '');
   if (noteEn) item.note = bilingual(noteEn, 'note');
+  placeFacts(item, raw);
   return item;
 }
 
@@ -828,6 +907,8 @@ function buildStop(item, transit, alts) {
     if (en) order.push({ name: en });
   });
   if (order.length) stop.mustOrder = order;
+  placeFacts(stop, item);
+  if (isBooked(item.booking)) stop.booked = true;
   const backups = (item.backups || []).map(backupOf).filter(Boolean);
   if (backups.length) stop.backups = backups;
   if (item.swap_option) {
@@ -1001,7 +1082,10 @@ function assertPublic(files) {
     { re: /reservation/i, why: 'reservation' },
     { re: /booked/i, why: 'booked' },
     { re: /held for/i, why: 'held for' },
-    { re: /预订|预约/, why: 'reservation wording' }
+    { re: /预订|预约/, why: 'reservation wording' },
+    { re: /\bPIN\b/, why: 'pin' },
+    { re: /email[_\s-]?verified/i, why: 'email flag' },
+    { re: /party of \d|party_size/i, why: 'party size' }
   ];
   const problems = [];
   files.forEach(function (file) {
@@ -1012,6 +1096,27 @@ function assertPublic(files) {
     });
   });
   return problems;
+}
+
+function enrichFromMeals(data, cities) {
+  const byId = new Map();
+  (data.meals || []).forEach(function (slot) {
+    [slot.top].concat(slot.backups || []).forEach(function (place) {
+      if (place && place.place_id && !byId.has(String(place.place_id))) {
+        byId.set(String(place.place_id), place);
+      }
+    });
+  });
+  cities.forEach(function (city) {
+    (city.days || []).forEach(function (day) {
+      (day.stops || []).forEach(function (stop) {
+        if (stop.placeId) placeFacts(stop, byId.get(stop.placeId));
+        (stop.backups || []).forEach(function (backup) {
+          if (backup.placeId) placeFacts(backup, byId.get(backup.placeId));
+        });
+      });
+    });
+  });
 }
 
 function main() {
@@ -1028,8 +1133,12 @@ function main() {
   }
 
   // between_cities (NYC→Berlin and Brussels→Newark) is not a city day. It stays out of the city pages.
+  // changes_*, field_additions_*, archive_*, lists_consulted_*, walk_audit_*, walk_in_*,
+  // google_lists_*, bookings_*, and the advance-booking checklist are not rendered.
+  // A later file (v4.0.4 and after) re-syncs with this same command.
   const cities = data.cities.map(function (city) { return buildCity(city, data.version); });
   flightAlts(data, cities);
+  enrichFromMeals(data, cities);
   const index = {
     version: data.version || 'v1',
     draft: true,
