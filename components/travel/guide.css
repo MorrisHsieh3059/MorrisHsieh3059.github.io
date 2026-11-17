@@ -535,6 +535,12 @@ a.guide-daytrip {
 	color: #999;
 }
 
+.guide-status.is-booked {
+	color: #fff;
+	background: var(--accent, #303F9F);
+	border-radius: 4px;
+}
+
 .guide-stop-actions {
 	display: flex;
 	flex: 0 0 auto;
@@ -570,7 +576,29 @@ a.guide-daytrip {
 
 .guide-must,
 .guide-alts {
-	margin: 0.4rem 0 0;
+	margin: 0.45rem 0 0;
+}
+
+.guide-must {
+	padding: 0.4rem 0.55rem 0.45rem;
+	background: rgba(48, 63, 159, 0.06);
+	border-left: 3px solid var(--accent, #303F9F);
+	border-radius: 0 4px 4px 0;
+}
+
+.guide-must .guide-kicker {
+	display: block;
+	color: var(--accent, #303F9F);
+	font-size: 0.62rem;
+	letter-spacing: 0.08em;
+}
+
+.guide-must-note,
+.guide-meal-meta {
+	margin: 0.28rem 0 0;
+	color: #555;
+	font-size: 0.78rem;
+	line-height: 1.4;
 }
 
 .guide-kicker {
