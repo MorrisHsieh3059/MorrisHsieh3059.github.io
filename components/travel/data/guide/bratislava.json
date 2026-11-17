@@ -1,6 +1,6 @@
 {
   "id": "bratislava",
-  "version": "v4.0.3",
+  "version": "v4.0.4",
   "draft": true,
   "country": {
     "en": "Slovakia",
@@ -84,19 +84,36 @@
           },
           "mustOrder": [
             {
-              "name": "Bryndzové halušky"
+              "text": {
+                "en": "Bryndzové halušky",
+                "zh": "羊奶酪土豆面疙瘩"
+              }
             },
             {
-              "name": "Bryndzové pirohy"
+              "text": {
+                "en": "Bryndzové pirohy",
+                "zh": "羊奶酪饺子"
+              }
             },
             {
-              "name": "Strapačky"
+              "text": {
+                "en": "Strapačky",
+                "zh": "酸菜土豆面疙瘩"
+              }
             }
           ],
           "founded": "1998",
           "cuisine": {
             "en": "Local, newer house",
             "zh": "本地菜，开业较晚"
+          },
+          "mustOrderNote": {
+            "en": "Signature dish first; the others are the house classics",
+            "zh": "第一道是招牌，其余是店里经典"
+          },
+          "ticket": {
+            "en": "Walk in",
+            "zh": "无需订位——直接去"
           },
           "backups": [
             {
@@ -122,15 +139,28 @@
               },
               "mustOrder": [
                 {
-                  "name": "Svetlý ležiak"
+                  "text": {
+                    "en": "Svetlý ležiak",
+                    "zh": "斯洛伐克淡色拉格"
+                  }
                 },
                 {
-                  "name": "Pečené bravčové koleno"
+                  "text": {
+                    "en": "Pečené bravčové koleno",
+                    "zh": "烤猪肘"
+                  }
                 },
                 {
-                  "name": "Bryndzové halušky"
+                  "text": {
+                    "en": "Bryndzové halušky",
+                    "zh": "羊奶酪土豆面疙瘩"
+                  }
                 }
-              ]
+              ],
+              "mustOrderNote": {
+                "en": "Signature dish first; the others are the house classics",
+                "zh": "第一道是招牌，其余是店里经典"
+              }
             },
             {
               "name": "Bratislava Flagship",
@@ -155,15 +185,28 @@
               },
               "mustOrder": [
                 {
-                  "name": "Bryndzové halušky"
+                  "text": {
+                    "en": "Bryndzové halušky",
+                    "zh": "羊奶酪土豆面疙瘩"
+                  }
                 },
                 {
-                  "name": "Slovenská misa"
+                  "text": {
+                    "en": "Slovenská misa",
+                    "zh": "斯洛伐克拼盘"
+                  }
                 },
                 {
-                  "name": "Pivo"
+                  "text": {
+                    "en": "Pivo",
+                    "zh": "斯洛伐克啤酒"
+                  }
                 }
-              ]
+              ],
+              "mustOrderNote": {
+                "en": "Signature dish first; the others are the house classics",
+                "zh": "第一道是招牌，其余是店里经典"
+              }
             }
           ],
           "transit": {
@@ -209,10 +252,26 @@
             {
               "text": {
                 "en": "Castle grounds and views over the Danube",
-                "zh": "城堡院子，看多瑙河"
+                "zh": "城堡庭院与多瑙河景"
+              }
+            },
+            {
+              "text": {
+                "en": "Baroque garden",
+                "zh": "巴洛克花园"
+              }
+            },
+            {
+              "text": {
+                "en": "View of the UFO bridge",
+                "zh": "远眺 UFO 桥"
               }
             }
           ],
+          "ticket": {
+            "en": "Free – no ticket needed",
+            "zh": "免费，无需门票"
+          },
           "transit": {
             "segments": [
               {
@@ -256,10 +315,26 @@
             {
               "text": {
                 "en": "Coronation church of Hungarian kings",
-                "zh": "匈牙利国王加冕的教堂"
+                "zh": "匈牙利国王加冕教堂"
+              }
+            },
+            {
+              "text": {
+                "en": "Gilded crown on the spire",
+                "zh": "尖塔上的镀金皇冠"
+              }
+            },
+            {
+              "text": {
+                "en": "Gothic nave",
+                "zh": "哥特中殿"
               }
             }
           ],
+          "ticket": {
+            "en": "Nave free; small fee only for the crypt/treasury if open",
+            "zh": "中殿免费；地下墓室/珍宝室开放时才收少量费用"
+          },
           "transit": {
             "segments": [
               {
@@ -311,7 +386,10 @@
           },
           "mustSee": [
             {
-              "name": "Michalská brána"
+              "text": {
+                "en": "Michalská brána",
+                "zh": "米哈尔门"
+              }
             },
             {
               "text": {
@@ -320,6 +398,10 @@
               }
             }
           ],
+          "ticket": {
+            "en": "Free – no ticket needed",
+            "zh": "免费，无需门票"
+          },
           "transit": {
             "segments": [
               {
@@ -365,33 +447,40 @@
             {
               "text": {
                 "en": "World's 50 Best Bars Europe 2026 #8 (World #34)",
-                "zh": "2026 欧洲 50 佳酒吧第 8（世界第 34）"
+                "zh": "2026 欧洲 50 佳酒吧第 8（全球第 34）"
+              }
+            },
+            {
+              "text": {
+                "en": "House signature in a low/no-alcohol version",
+                "zh": "招牌酒的低/无酒精版"
               }
             }
           ],
           "mustOrder": [
             {
-              "name": "Bubbles Without Troubles #3",
-              "gloss": {
-                "en": "alcohol-free",
-                "zh": "无酒精"
+              "text": {
+                "en": "Bubbles Without Troubles #3 (alcohol-free)",
+                "zh": "Bubbles Without Troubles #3 (alcohol-free)"
               }
             },
             {
-              "name": "Non Alco Lux",
-              "gloss": {
-                "en": "alcohol-free",
-                "zh": "无酒精"
+              "text": {
+                "en": "Non Alco Lux (alcohol-free)",
+                "zh": "Non Alco Lux (alcohol-free)"
               }
             },
             {
-              "name": "Nogroni",
-              "gloss": {
-                "en": "alcohol-free",
-                "zh": "无酒精"
+              "text": {
+                "en": "Nogroni (alcohol-free)",
+                "zh": "Nogroni (alcohol-free)"
               }
             }
           ],
+          "ticket": {
+            "en": "4:30 PM table",
+            "zh": "已订好——4:30 的位子"
+          },
           "booked": true,
           "transit": {
             "segments": [

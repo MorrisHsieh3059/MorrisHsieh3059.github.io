@@ -1,6 +1,6 @@
 {
   "id": "berlin",
-  "version": "v4.0.3",
+  "version": "v4.0.4",
   "draft": true,
   "country": {
     "en": "Germany",
@@ -145,16 +145,30 @@
           },
           "mustOrder": [
             {
-              "name": "Currywurst ohne Darm"
+              "text": {
+                "en": "Currywurst ohne Darm",
+                "zh": "无肠衣咖喱香肠"
+              }
             },
             {
-              "name": "Pommes rot-weiß"
+              "text": {
+                "en": "Pommes rot-weiß",
+                "zh": "红白酱薯条"
+              }
             }
           ],
           "founded": "1981",
           "cuisine": {
             "en": "Historic local",
             "zh": "老字号本地菜"
+          },
+          "mustOrderNote": {
+            "en": "Signature dish first; the others are the house classics",
+            "zh": "第一道是招牌，其余是店里经典"
+          },
+          "ticket": {
+            "en": "Walk in",
+            "zh": "无需订位——直接去"
           },
           "backups": [
             {
@@ -180,12 +194,22 @@
               },
               "mustOrder": [
                 {
-                  "name": "Currywurst mit Darm"
+                  "text": {
+                    "en": "Currywurst mit Darm",
+                    "zh": "带肠衣咖喱香肠"
+                  }
                 },
                 {
-                  "name": "Pommes"
+                  "text": {
+                    "en": "Pommes",
+                    "zh": "薯条"
+                  }
                 }
-              ]
+              ],
+              "mustOrderNote": {
+                "en": "Signature dish first; the others are the house classics",
+                "zh": "第一道是招牌，其余是店里经典"
+              }
             },
             {
               "name": "Schleusenkrug",
@@ -209,15 +233,28 @@
               },
               "mustOrder": [
                 {
-                  "name": "Bouletten mit Kartoffelsalat"
+                  "text": {
+                    "en": "Bouletten mit Kartoffelsalat",
+                    "zh": "柏林肉饼配土豆沙拉"
+                  }
                 },
                 {
-                  "name": "Currywurst"
+                  "text": {
+                    "en": "Currywurst",
+                    "zh": "咖喱香肠"
+                  }
                 },
                 {
-                  "name": "Glühwein"
+                  "text": {
+                    "en": "Glühwein",
+                    "zh": "热红酒"
+                  }
                 }
-              ]
+              ],
+              "mustOrderNote": {
+                "en": "Signature dish first; the others are the house classics",
+                "zh": "第一道是招牌，其余是店里经典"
+              }
             }
           ],
           "transit": {
@@ -361,7 +398,7 @@
             {
               "text": {
                 "en": "\"Dem Deutschen Volke\" facade",
-                "zh": "“致德意志人民”门楣"
+                "zh": "「献给德意志人民」门楣"
               }
             },
             {
@@ -371,6 +408,10 @@
               }
             }
           ],
+          "ticket": {
+            "en": "Free – no ticket needed",
+            "zh": "免费，无需门票"
+          },
           "transit": {
             "segments": [
               {
@@ -413,10 +454,20 @@
             {
               "text": {
                 "en": "Stelae field (walk into the middle)",
-                "zh": "石柱阵（走到中间）"
+                "zh": "石碑阵（走进中央）"
+              }
+            },
+            {
+              "text": {
+                "en": "2,711 concrete stelae seen from the Ebertstraße edge",
+                "zh": "从 Ebert 街一侧看 2711 块混凝土石碑"
               }
             }
           ],
+          "ticket": {
+            "en": "Free – no ticket needed",
+            "zh": "免费，无需门票"
+          },
           "transit": {
             "segments": [
               {
@@ -459,10 +510,26 @@
             {
               "text": {
                 "en": "Gate from the Pariser Platz side, lit after sunset",
-                "zh": "从巴黎广场一侧看城门，日落后亮灯"
+                "zh": "从巴黎广场一侧看夜间亮灯的城门"
+              }
+            },
+            {
+              "text": {
+                "en": "Quadriga on top",
+                "zh": "门顶四马战车"
+              }
+            },
+            {
+              "text": {
+                "en": "Pariser Platz (Hotel Adlon, embassies)",
+                "zh": "巴黎广场（阿德隆酒店、各国使馆）"
               }
             }
           ],
+          "ticket": {
+            "en": "Free – no ticket needed",
+            "zh": "免费，无需门票"
+          },
           "transit": {
             "segments": [
               {
@@ -504,13 +571,20 @@
             {
               "text": {
                 "en": "Christmas lights on the lime trees",
-                "zh": "菩提树上的圣诞灯"
+                "zh": "椴树上的圣诞灯"
               }
             },
             {
-              "name": "Friedrichstraße corner"
+              "text": {
+                "en": "Friedrichstraße corner",
+                "zh": "腓特烈大街路口"
+              }
             }
           ],
+          "ticket": {
+            "en": "Free – no ticket needed",
+            "zh": "免费，无需门票"
+          },
           "transit": {
             "segments": [
               {
@@ -553,13 +627,20 @@
             {
               "text": {
                 "en": "WeihnachtsZauber market stalls",
-                "zh": "圣诞市集的摊位"
+                "zh": "WeihnachtsZauber 市集摊位"
               }
             },
             {
-              "name": "Glühwein"
+              "text": {
+                "en": "Glühwein",
+                "zh": "热红酒"
+              }
             }
           ],
+          "ticket": {
+            "en": "Small entry fee paid at the gate – no advance ticket",
+            "zh": "入口现场付小额门票，无需预订"
+          },
           "transit": {
             "segments": [
               {
@@ -574,7 +655,8 @@
                 "distanceM": 150
               }
             ]
-          }
+          },
+          "bookingUrl": "https://www.weihnachtsmarkt-berlin.de/en/"
         },
         {
           "type": "restaurant",
@@ -600,19 +682,21 @@
           },
           "mustOrder": [
             {
-              "name": "Berliner Kalbsleber"
+              "text": {
+                "en": "Berliner Kalbsleber",
+                "zh": "柏林式小牛肝"
+              }
             },
             {
-              "name": "Sauerbraten"
+              "text": {
+                "en": "Sauerbraten",
+                "zh": "德式醋焖牛肉"
+              }
             },
             {
-              "name": "Wiener Schnitzel"
-            },
-            {
-              "name": "Gänsebraten",
-              "gloss": {
-                "en": "if on the Christmas menu",
-                "zh": "如果圣诞菜单上有"
+              "text": {
+                "en": "Wiener Schnitzel",
+                "zh": "维也纳炸肉排"
               }
             }
           ],
@@ -620,6 +704,14 @@
           "cuisine": {
             "en": "Historic local",
             "zh": "老字号本地菜"
+          },
+          "mustOrderNote": {
+            "en": "Gänsebraten too if it is on the Christmas menu",
+            "zh": "圣诞菜单上有烤鹅也可以点"
+          },
+          "ticket": {
+            "en": "Requested – waiting for the restaurant's reply",
+            "zh": "已申请——等餐厅回复"
           },
           "backups": [
             {
@@ -645,19 +737,28 @@
               },
               "mustOrder": [
                 {
-                  "name": "Eisbein"
-                },
-                {
-                  "name": "Georgbräu Pils",
-                  "gloss": {
-                    "en": "hausgebraut",
-                    "zh": "店里自酿"
+                  "text": {
+                    "en": "Eisbein",
+                    "zh": "咸猪肘"
                   }
                 },
                 {
-                  "name": "Kassler mit Sauerkraut"
+                  "text": {
+                    "en": "Georgbräu Pils (hausgebraut)",
+                    "zh": "Georgbräu 自酿皮尔森"
+                  }
+                },
+                {
+                  "text": {
+                    "en": "Kassler mit Sauerkraut",
+                    "zh": "烟熏猪排配酸菜"
+                  }
                 }
-              ]
+              ],
+              "mustOrderNote": {
+                "en": "Signature dish first; the others are the house classics",
+                "zh": "第一道是招牌，其余是店里经典"
+              }
             },
             {
               "name": "Zwiebelfisch",
@@ -682,15 +783,28 @@
               },
               "mustOrder": [
                 {
-                  "name": "Buletten mit Kartoffelsalat"
+                  "text": {
+                    "en": "Buletten mit Kartoffelsalat",
+                    "zh": "柏林肉饼配土豆沙拉"
+                  }
                 },
                 {
-                  "name": "Sülze mit Bratkartoffeln"
+                  "text": {
+                    "en": "Sülze mit Bratkartoffeln",
+                    "zh": "肉冻配煎土豆"
+                  }
                 },
                 {
-                  "name": "Berliner Pilsner"
+                  "text": {
+                    "en": "Berliner Pilsner",
+                    "zh": "柏林皮尔森啤酒"
+                  }
                 }
-              ]
+              ],
+              "mustOrderNote": {
+                "en": "Signature dish first; the others are the house classics",
+                "zh": "第一道是招牌，其余是店里经典"
+              }
             }
           ],
           "transit": {
@@ -763,7 +877,7 @@
           "lng": 13.429861,
           "arrive": {
             "en": "6:57 PM (doors 7:00 PM)",
-            "zh": "18:57（doors19:00）"
+            "zh": "18:57（开门 19:00）"
           },
           "leave": "8:00 PM",
           "website": "http://waxonwaxoff.berlin/bar/",
@@ -777,12 +891,31 @@
             "en": "World-ranked cocktail bar, ~60 min from the 7 PM opening (walk-in only – arriving at opening is the only reliable way to skip a queue; listings and reviews say it fills up later in the evening and late arrivals wait outside). Europe's 50 Best Bars 2026 No. 17, Best Bar in Germany 2026, World's 50 Best Bars 2025 No. 57 (51–100). Low/no-alcohol: ask for the current zero-proof tall mocktail; Go Apes (clarified banana, coffee distillate, soda) contains rum.",
             "zh": "World-ranked cocktail bar, ~60 min from the 7 PM opening (walk-in only – arriving at opening is the only reliable way to skip a queue; listings and reviews say it fills up later in the evening and late arrivals wait outside). Europe's 50 Best Bars 2026 No. 17, Best Bar in Germany 2026, World's 50 Best Bars 2025 No. 57 (51–100). Low/no-alcohol: ask for the current zero-proof tall mocktail; Go Apes (clarified banana, coffee distillate, soda) contains rum."
           },
+          "mustSee": [
+            {
+              "text": {
+                "en": "Go Apes – house signature (clarified banana, coffee distillate, soda; contains rum)",
+                "zh": "招牌 Go Apes（澄清香蕉、咖啡蒸馏液、苏打；含朗姆酒）"
+              }
+            },
+            {
+              "text": {
+                "en": "Zero-proof tall mocktail (ask the bartender for the current one)",
+                "zh": "无酒精长饮（问调酒师当季款）"
+              }
+            },
+            {
+              "text": {
+                "en": "Intimate Neukölln bar – Europe's 50 Best Bars 2026 #17, Best Bar in Germany 2026",
+                "zh": "新克尔恩区的小而亲密的酒吧——2026 欧洲 50 佳酒吧第 17、2026 德国最佳酒吧"
+              }
+            }
+          ],
           "mustOrder": [
             {
-              "name": "zero-proof tall mocktail",
-              "gloss": {
-                "en": "ask for the current one",
-                "zh": "无酒精长饮 · 问当天那款"
+              "text": {
+                "en": "zero-proof tall mocktail (ask for the current one)",
+                "zh": "zero-proof tall mocktail (ask for the current one)"
               }
             },
             {
@@ -792,6 +925,10 @@
               }
             }
           ],
+          "ticket": {
+            "en": "Walk-in only – arrive at opening (7 PM)",
+            "zh": "不接受预订——开门（19 点）就到"
+          },
           "transit": {
             "segments": [
               {
@@ -894,10 +1031,14 @@
             {
               "text": {
                 "en": "Reichstag glass dome lit from outside",
-                "zh": "外面看亮着的玻璃穹顶"
+                "zh": "从外面看亮灯的国会大厦玻璃穹顶"
               }
             }
           ],
+          "ticket": {
+            "en": "Free – no ticket needed",
+            "zh": "免费，无需门票"
+          },
           "transit": {
             "segments": [
               {
@@ -941,10 +1082,26 @@
             {
               "text": {
                 "en": "Micha Ullman 'Bibliothek' memorial (lit underground room)",
-                "zh": "乌尔曼的《图书馆》纪念（地下亮着的空房间）"
+                "zh": "Micha Ullman「空图书馆」纪念（地下亮灯空间）"
+              }
+            },
+            {
+              "text": {
+                "en": "Staatsoper Unter den Linden facade",
+                "zh": "菩提树下国家歌剧院立面"
+              }
+            },
+            {
+              "text": {
+                "en": "St. Hedwig's Cathedral dome",
+                "zh": "圣黑德维希主教座堂穹顶"
               }
             }
           ],
+          "ticket": {
+            "en": "Free – no ticket needed",
+            "zh": "免费，无需门票"
+          },
           "transit": {
             "segments": [
               {
@@ -992,15 +1149,22 @@
               }
             },
             {
-              "name": "Französischer Dom"
+              "text": {
+                "en": "Französischer Dom",
+                "zh": "法兰西大教堂"
+              }
             },
             {
               "text": {
                 "en": "Deutscher Dom",
-                "zh": "德国教堂"
+                "zh": "德意志大教堂"
               }
             }
           ],
+          "ticket": {
+            "en": "Free – no ticket needed",
+            "zh": "免费，无需门票"
+          },
           "transit": {
             "segments": [
               {
@@ -1074,11 +1238,21 @@
           "mustSee": [
             {
               "text": {
-                "en": "Midnight Mass – sung Holy Eucharist with carols",
-                "zh": "子夜弥撒：烛光唱诗，圣诞颂歌"
+                "en": "Midnight Mass – sung Holy Eucharist",
+                "zh": "午夜弥撒——吟唱圣餐礼"
+              }
+            },
+            {
+              "text": {
+                "en": "Christmas carols by candlelight",
+                "zh": "烛光圣诞颂歌"
               }
             }
           ],
+          "ticket": {
+            "en": "Free – no ticket; arrive 30–40 min early for a seat",
+            "zh": "免费，无需门票；提前 30–40 分钟到占座"
+          },
           "transit": {
             "segments": [
               {
@@ -1290,9 +1464,28 @@
           },
           "mustSee": [
             {
-              "name": "Büste der Nofretete (Nefertiti bust)"
+              "text": {
+                "en": "Büste der Nofretete (Nefertiti bust)",
+                "zh": "纳芙蒂蒂半身像"
+              }
+            },
+            {
+              "text": {
+                "en": "Berlin Golden Hat (Bronze Age)",
+                "zh": "柏林金帽（青铜时代）"
+              }
+            },
+            {
+              "text": {
+                "en": "Stüler staircase hall (Chipperfield restoration)",
+                "zh": "施蒂勒楼梯大厅（奇普菲尔德修复）"
+              }
             }
           ],
+          "ticket": {
+            "en": "Buy the Neues Museum day ticket online (any time that day; on sale 4 weeks ahead) and be at the door for 10:00 opening",
+            "zh": "网上买新博物馆单馆日票（当天任意时间入场，提前 4 周开售），10 点开门时到"
+          },
           "transit": {
             "segments": [
               {
@@ -1305,7 +1498,8 @@
                 "distanceM": 330
               }
             ]
-          }
+          },
+          "bookingUrl": "https://www.smb.museum/en/museums-institutions/neues-museum/plan-your-visit/prices-tickets/"
         },
         {
           "type": "sight",
@@ -1333,7 +1527,7 @@
             {
               "text": {
                 "en": "Nave and organ",
-                "zh": "中殿和管风琴"
+                "zh": "中殿与管风琴"
               }
             },
             {
@@ -1345,10 +1539,14 @@
             {
               "text": {
                 "en": "Lustgarten view of the Altes Museum",
-                "zh": "露天花园望向老博物馆"
+                "zh": "从游乐园看老博物馆"
               }
             }
           ],
+          "ticket": {
+            "en": "Visit ticket online or at the door (valid one year); check the Christmas Day opening times first – services take priority",
+            "zh": "网上或现场买参观票（一年有效）；先确认圣诞节开放时间——礼拜时段不开放参观"
+          },
           "transit": {
             "segments": [
               {
@@ -1364,7 +1562,8 @@
                 "note": "Lustgarten → Rathausbrücke → Nikolaiviertel"
               }
             ]
-          }
+          },
+          "bookingUrl": "https://shop.berlinerdom.de/Shop/Detail/67937/54783"
         },
         {
           "type": "restaurant",
@@ -1389,19 +1588,36 @@
           },
           "mustOrder": [
             {
-              "name": "Berliner Eisbein"
+              "text": {
+                "en": "Berliner Eisbein",
+                "zh": "柏林咸猪肘"
+              }
             },
             {
-              "name": "Kohlroulade"
+              "text": {
+                "en": "Kohlroulade",
+                "zh": "卷心菜肉卷"
+              }
             },
             {
-              "name": "Berliner Weisse"
+              "text": {
+                "en": "Berliner Weisse",
+                "zh": "柏林白啤"
+              }
             }
           ],
           "founded": "1505",
           "cuisine": {
             "en": "Historic local",
             "zh": "老字号本地菜"
+          },
+          "mustOrderNote": {
+            "en": "Signature dish first; the others are the house classics",
+            "zh": "第一道是招牌，其余是店里经典"
+          },
+          "ticket": {
+            "en": "Walk in",
+            "zh": "无需订位——直接去"
           },
           "backups": [
             {
@@ -1427,15 +1643,28 @@
               },
               "mustOrder": [
                 {
-                  "name": "Berliner Eisbein"
+                  "text": {
+                    "en": "Berliner Eisbein",
+                    "zh": "柏林咸猪肘"
+                  }
                 },
                 {
-                  "name": "Kohlroulade"
+                  "text": {
+                    "en": "Kohlroulade",
+                    "zh": "卷心菜肉卷"
+                  }
                 },
                 {
-                  "name": "Berliner Weisse"
+                  "text": {
+                    "en": "Berliner Weisse",
+                    "zh": "柏林白啤"
+                  }
                 }
-              ]
+              ],
+              "mustOrderNote": {
+                "en": "Signature dish first; the others are the house classics",
+                "zh": "第一道是招牌，其余是店里经典"
+              }
             },
             {
               "name": "Nante-Eck",
@@ -1459,15 +1688,28 @@
               },
               "mustOrder": [
                 {
-                  "name": "Berliner Eisbein"
+                  "text": {
+                    "en": "Berliner Eisbein",
+                    "zh": "柏林咸猪肘"
+                  }
                 },
                 {
-                  "name": "Königsberger Klopse"
+                  "text": {
+                    "en": "Königsberger Klopse",
+                    "zh": "柯尼斯堡白酱肉丸"
+                  }
                 },
                 {
-                  "name": "Berliner Weisse"
+                  "text": {
+                    "en": "Berliner Weisse",
+                    "zh": "柏林白啤"
+                  }
                 }
-              ]
+              ],
+              "mustOrderNote": {
+                "en": "Signature dish first; the others are the house classics",
+                "zh": "第一道是招牌，其余是店里经典"
+              }
             },
             {
               "name": "Das Lemke am Hackeschen Markt",
@@ -1492,15 +1734,28 @@
               },
               "mustOrder": [
                 {
-                  "name": "Berliner Weiße"
+                  "text": {
+                    "en": "Berliner Weiße",
+                    "zh": "柏林白啤"
+                  }
                 },
                 {
-                  "name": "Eisbein / Schweinshaxe"
+                  "text": {
+                    "en": "Eisbein / Schweinshaxe",
+                    "zh": "咸猪肘／烤猪肘"
+                  }
                 },
                 {
-                  "name": "Hausgebrautes Lemke Original"
+                  "text": {
+                    "en": "Hausgebrautes Lemke Original",
+                    "zh": "Lemke 自酿原味啤酒"
+                  }
                 }
-              ]
+              ],
+              "mustOrderNote": {
+                "en": "Signature dish first; the others are the house classics",
+                "zh": "第一道是招牌，其余是店里经典"
+              }
             }
           ],
           "transit": {
@@ -1559,7 +1814,7 @@
           "lng": 13.376102,
           "arrive": {
             "en": "2:00 PM (security) · slot 2:15 PM",
-            "zh": "14:00（security） · slot14:15"
+            "zh": "14:00（security） · 时段 14:15"
           },
           "leave": "~3:00 PM",
           "website": "https://www.bundestag.de/en/visittheBundestag",
@@ -1577,10 +1832,26 @@
             {
               "text": {
                 "en": "Glass dome and rooftop terrace",
-                "zh": "玻璃穹顶和屋顶平台"
+                "zh": "玻璃穹顶与屋顶平台"
+              }
+            },
+            {
+              "text": {
+                "en": "Spiral ramp with free audio guide",
+                "zh": "螺旋坡道＋免费语音导览"
+              }
+            },
+            {
+              "text": {
+                "en": "View over the Tiergarten and Brandenburg Gate",
+                "zh": "俯瞰蒂尔加滕公园与勃兰登堡门"
               }
             }
           ],
+          "ticket": {
+            "en": "free registration done; bring your passport",
+            "zh": "已登记（免费）——带护照"
+          },
           "booked": true,
           "transit": {
             "segments": [
@@ -1625,7 +1896,7 @@
             {
               "text": {
                 "en": "Original Wall segments",
-                "zh": "原来的一段柏林墙"
+                "zh": "原始柏林墙段"
               }
             },
             {
@@ -1637,10 +1908,14 @@
             {
               "text": {
                 "en": "WinterWelt",
-                "zh": "WinterWelt 冬日市集"
+                "zh": "冬季世界"
               }
             }
           ],
+          "ticket": {
+            "en": "Free – no ticket needed",
+            "zh": "免费，无需门票"
+          },
           "transit": {
             "segments": [
               {
@@ -1684,10 +1959,20 @@
             {
               "text": {
                 "en": "Outdoor exhibition along the Berlin Wall remnant",
-                "zh": "沿残墙的户外展览"
+                "zh": "柏林墙残段旁的露天展览"
+              }
+            },
+            {
+              "text": {
+                "en": "Indoor documentation on the former SS/Gestapo headquarters",
+                "zh": "原党卫军/盖世太保总部室内展"
               }
             }
           ],
+          "ticket": {
+            "en": "Free – no ticket needed",
+            "zh": "免费，无需门票"
+          },
           "transit": {
             "segments": [
               {
@@ -1722,6 +2007,30 @@
           "notes": {
             "en": "Checkpoint Charlie + open-air Cold War panels along Friedrichstraße (30 min)",
             "zh": "Checkpoint Charlie + open-air Cold War panels along Friedrichstraße (30 min)"
+          },
+          "mustSee": [
+            {
+              "text": {
+                "en": "US Army guardhouse replica",
+                "zh": "美军岗亭复制品"
+              }
+            },
+            {
+              "text": {
+                "en": "'You are leaving the American sector' sign",
+                "zh": "「你正在离开美国占领区」告示牌"
+              }
+            },
+            {
+              "text": {
+                "en": "Soldier portrait light box",
+                "zh": "士兵肖像灯箱"
+              }
+            }
+          ],
+          "ticket": {
+            "en": "Free – no ticket needed",
+            "zh": "免费，无需门票"
           },
           "transit": {
             "segments": [
@@ -1764,16 +2073,28 @@
           },
           "mustOrder": [
             {
-              "name": "Gemüse Kebap",
-              "gloss": {
-                "en": "chicken, grilled vegetables, feta, lemon",
-                "zh": "鸡肉、烤蔬菜、羊奶酪、柠檬"
+              "text": {
+                "en": "Gemüse Kebap (chicken, grilled vegetables, feta, lemon)",
+                "zh": "蔬菜烤肉卷（鸡肉、烤蔬菜、菲达奶酪、柠檬）"
               }
             }
           ],
+          "founded": "2005",
           "cuisine": {
             "en": "Berlin street food",
             "zh": "柏林街头小吃"
+          },
+          "mustOrderNote": {
+            "en": "Queue 30–60+ min; cash",
+            "zh": "要排队 30–60 分钟以上；付现金"
+          },
+          "foundedNote": {
+            "en": "Opened 15 Nov 2005 per owner Tarik Kara (Tagesspiegel); some media say 2006",
+            "zh": "2005 年 11 月 15 日开业（店主 Tarik Kara 对《每日镜报》说的；也有媒体说 2006）"
+          },
+          "ticket": {
+            "en": "Walk in",
+            "zh": "无需订位——直接去"
           },
           "transit": {
             "segments": [
@@ -1867,16 +2188,21 @@
           },
           "mustOrder": [
             {
-              "name": "Berliner Eisbein"
+              "text": {
+                "en": "Berliner Eisbein",
+                "zh": "柏林咸猪肘"
+              }
             },
             {
-              "name": "Königsberger Klopse"
+              "text": {
+                "en": "Königsberger Klopse",
+                "zh": "柯尼斯堡白酱肉丸"
+              }
             },
             {
-              "name": "Molle",
-              "gloss": {
-                "en": "Hausbier",
-                "zh": "店里的啤酒"
+              "text": {
+                "en": "Molle (Hausbier)",
+                "zh": "Molle 自酿啤酒"
               }
             }
           ],
@@ -1884,6 +2210,14 @@
           "cuisine": {
             "en": "Historic local",
             "zh": "老字号本地菜"
+          },
+          "mustOrderNote": {
+            "en": "Cash only",
+            "zh": "只收现金"
+          },
+          "ticket": {
+            "en": "Requested – waiting for the restaurant's reply",
+            "zh": "已申请——等餐厅回复"
           },
           "backups": [
             {
@@ -1909,19 +2243,28 @@
               },
               "mustOrder": [
                 {
-                  "name": "½ Jungmasthähnchen",
-                  "gloss": {
-                    "en": "Henne",
-                    "zh": "店名就是这道菜"
+                  "text": {
+                    "en": "½ Jungmasthähnchen (Henne)",
+                    "zh": "半只烤鸡"
                   }
                 },
                 {
-                  "name": "Krautsalat"
+                  "text": {
+                    "en": "Krautsalat",
+                    "zh": "卷心菜沙拉"
+                  }
                 },
                 {
-                  "name": "Berliner Pilsner"
+                  "text": {
+                    "en": "Berliner Pilsner",
+                    "zh": "柏林皮尔森啤酒"
+                  }
                 }
-              ]
+              ],
+              "mustOrderNote": {
+                "en": "Signature dish first; the others are the house classics",
+                "zh": "第一道是招牌，其余是店里经典"
+              }
             },
             {
               "name": "Mutter Hoppe",
@@ -1945,15 +2288,28 @@
               },
               "mustOrder": [
                 {
-                  "name": "Kassler mit Sauerkraut"
+                  "text": {
+                    "en": "Kassler mit Sauerkraut",
+                    "zh": "烟熏猪排配酸菜"
+                  }
                 },
                 {
-                  "name": "Königsberger Klopse"
+                  "text": {
+                    "en": "Königsberger Klopse",
+                    "zh": "柯尼斯堡白酱肉丸"
+                  }
                 },
                 {
-                  "name": "Eisbein"
+                  "text": {
+                    "en": "Eisbein",
+                    "zh": "咸猪肘"
+                  }
                 }
-              ]
+              ],
+              "mustOrderNote": {
+                "en": "Signature dish first; the others are the house classics",
+                "zh": "第一道是招牌，其余是店里经典"
+              }
             }
           ],
           "transit": {
@@ -2096,7 +2452,7 @@
             {
               "text": {
                 "en": "Floodlit palace facade",
-                "zh": "灯光下的宫殿外立面"
+                "zh": "灯光下的宫殿立面"
               }
             },
             {
@@ -2106,6 +2462,10 @@
               }
             }
           ],
+          "ticket": {
+            "en": "Free – no ticket needed",
+            "zh": "免费，无需门票"
+          },
           "transit": {
             "segments": [
               {
@@ -2315,16 +2675,20 @@
             {
               "text": {
                 "en": "Bernauer Straße open-air memorial",
-                "zh": "Bernauer Straße 露天纪念地"
+                "zh": "Bernauer 街露天纪念区"
               }
             },
             {
               "text": {
                 "en": "Documentation Center viewing tower",
-                "zh": "文献中心的观景塔"
+                "zh": "文献中心观景塔"
               }
             }
           ],
+          "ticket": {
+            "en": "Free – no ticket needed",
+            "zh": "免费，无需门票"
+          },
           "transit": {
             "segments": [
               {
@@ -2445,19 +2809,36 @@
           },
           "mustOrder": [
             {
-              "name": "Eisbein"
+              "text": {
+                "en": "Eisbein",
+                "zh": "咸猪肘"
+              }
             },
             {
-              "name": "Bouletten"
+              "text": {
+                "en": "Bouletten",
+                "zh": "柏林肉饼"
+              }
             },
             {
-              "name": "Gänsebraten"
+              "text": {
+                "en": "Gänsebraten",
+                "zh": "烤鹅"
+              }
             }
           ],
           "founded": "1621",
           "cuisine": {
             "en": "Historic local",
             "zh": "老字号本地菜"
+          },
+          "mustOrderNote": {
+            "en": "Signature dish first; the others are the house classics",
+            "zh": "第一道是招牌，其余是店里经典"
+          },
+          "ticket": {
+            "en": "Reserve ahead on the official site (or walk in early)",
+            "zh": "建议在官网提前订位（或早点直接去）"
           },
           "backups": [
             {
@@ -2483,12 +2864,22 @@
               },
               "mustOrder": [
                 {
-                  "name": "Currywurst ohne Darm"
+                  "text": {
+                    "en": "Currywurst ohne Darm",
+                    "zh": "无肠衣咖喱香肠"
+                  }
                 },
                 {
-                  "name": "Pommes rot-weiß"
+                  "text": {
+                    "en": "Pommes rot-weiß",
+                    "zh": "红白酱薯条"
+                  }
                 }
-              ]
+              ],
+              "mustOrderNote": {
+                "en": "Signature dish first; the others are the house classics",
+                "zh": "第一道是招牌，其余是店里经典"
+              }
             },
             {
               "name": "Zum Paddenwirt",
@@ -2513,15 +2904,28 @@
               },
               "mustOrder": [
                 {
-                  "name": "Berliner Eisbein"
+                  "text": {
+                    "en": "Berliner Eisbein",
+                    "zh": "柏林咸猪肘"
+                  }
                 },
                 {
-                  "name": "Bouletten mit Kartoffelsalat"
+                  "text": {
+                    "en": "Bouletten mit Kartoffelsalat",
+                    "zh": "柏林肉饼配土豆沙拉"
+                  }
                 },
                 {
-                  "name": "Berliner Weisse"
+                  "text": {
+                    "en": "Berliner Weisse",
+                    "zh": "柏林白啤"
+                  }
                 }
-              ]
+              ],
+              "mustOrderNote": {
+                "en": "Signature dish first; the others are the house classics",
+                "zh": "第一道是招牌，其余是店里经典"
+              }
             }
           ],
           "transit": {
@@ -2633,7 +3037,7 @@
             {
               "text": {
                 "en": "Brick Gothic towers",
-                "zh": "砖砌哥特塔楼"
+                "zh": "红砖哥特塔楼"
               }
             },
             {
@@ -2645,10 +3049,14 @@
             {
               "text": {
                 "en": "Molecule Man view",
-                "zh": "看分子人雕塑"
+                "zh": "分子人雕塑远景"
               }
             }
           ],
+          "ticket": {
+            "en": "Free – no ticket needed",
+            "zh": "免费，无需门票"
+          },
           "transit": {
             "segments": [
               {
@@ -2675,7 +3083,7 @@
           "lat": 52.504454,
           "lng": 13.440839,
           "arrive": "1:37 PM",
-          "leave": "2:45 PM",
+          "leave": "2:30 PM",
           "website": "https://www.stiftung-berliner-mauer.de/en/east-side-gallery",
           "placeId": "EAST_SIDE_GALLERY",
           "hours": {
@@ -2683,17 +3091,33 @@
             "zh": "露天，全天"
           },
           "notes": {
-            "en": "East Side Gallery – walk the 1.3 km wall north-west from Oberbaumbrücke to Ostbahnhof (1 h)",
-            "zh": "东边画廊：从 Oberbaumbrücke 沿墙往西北走到 Ostbahnhof，1.3 公里（1 小时）"
+            "en": "East Side Gallery – walk the 1.3 km wall north-west from Oberbaumbrücke to Ostbahnhof (~55 min)",
+            "zh": "East Side Gallery – walk the 1.3 km wall north-west from Oberbaumbrücke to Ostbahnhof (~55 min)"
           },
           "mustSee": [
             {
               "text": {
                 "en": "Longest surviving stretch of the Berlin Wall, painted murals",
-                "zh": "留下来最长的一段柏林墙，上面有画"
+                "zh": "现存最长的柏林墙及壁画"
+              }
+            },
+            {
+              "text": {
+                "en": "Brezhnev–Honecker 'Fraternal Kiss' mural",
+                "zh": "勃列日涅夫与昂纳克「兄弟之吻」壁画"
+              }
+            },
+            {
+              "text": {
+                "en": "'Trabant breaking through the Wall' mural",
+                "zh": "「卫星牌汽车冲破柏林墙」壁画"
               }
             }
           ],
+          "ticket": {
+            "en": "Free – no ticket needed",
+            "zh": "免费，无需门票"
+          },
           "transit": {
             "segments": [
               {
@@ -2741,15 +3165,18 @@
         },
         {
           "type": "sight",
-          "status": "tentative",
+          "status": "confirmed",
           "name": {
             "en": "Berlin TV Tower",
             "zh": "柏林电视塔"
           },
           "lat": 52.520828,
           "lng": 13.409421,
-          "arrive": "3:15 PM",
-          "leave": "4:15 PM",
+          "arrive": {
+            "en": "2:45 PM (slot 3:00 PM)",
+            "zh": "14:45（时段 15:00）"
+          },
+          "leave": "4:00 PM",
           "website": "https://tv-turm.de/en/",
           "nativeName": "Berliner Fernsehturm",
           "placeId": "TV_TURM",
@@ -2758,17 +3185,28 @@
             "zh": "12月25–26日 10:00–23:00"
           },
           "notes": {
-            "en": "TV Tower for sunset (~3:55 PM), 1 h",
-            "zh": "电视塔看日落（大约 15:55），待 1 小时"
+            "en": "TV Tower, 3:00 PM slot (arrive 2:45 for security): 203 m observation deck – sunset ~3:55 PM, 1 h",
+            "zh": "电视塔 15:00 时段（14:45 到过安检）：203 米观景台，日落大约 15:55，停留 1 小时"
           },
           "mustSee": [
             {
               "text": {
                 "en": "Sunset view from the observation deck",
-                "zh": "观景台看日落"
+                "zh": "观景台日落"
+              }
+            },
+            {
+              "text": {
+                "en": "360° view from 203 m: Museum Island, Reichstag, Karl-Marx-Allee",
+                "zh": "203 米 360° 全景：博物馆岛、国会大厦、卡尔·马克思大道"
               }
             }
           ],
+          "ticket": {
+            "en": "3:00 PM slot; arrive 2:45 for security",
+            "zh": "已订 15:00 时段——14:45 到过安检"
+          },
+          "booked": true,
           "transit": {
             "segments": [
               {
@@ -2795,7 +3233,7 @@
           },
           "lat": 52.516825,
           "lng": 13.407512,
-          "arrive": "4:25 PM",
+          "arrive": "4:10 PM",
           "leave": "4:40 PM",
           "website": "https://www.visitberlin.de/en/nikolaiviertel",
           "nativeName": "Nikolaiviertel · Rotes Rathaus · Neptunbrunnen",
@@ -2805,8 +3243,8 @@
             "zh": "户外"
           },
           "notes": {
-            "en": "Walk past the Neptune Fountain and Red Town Hall into Berlin's medieval quarter (15 min, exteriors)",
-            "zh": "Walk past the Neptune Fountain and Red Town Hall into Berlin's medieval quarter (15 min, exteriors)"
+            "en": "Walk past the Neptune Fountain and Red Town Hall into Berlin's medieval quarter (30 min, exteriors)",
+            "zh": "Walk past the Neptune Fountain and Red Town Hall into Berlin's medieval quarter (30 min, exteriors)"
           },
           "mustSee": [
             {
@@ -2824,10 +3262,14 @@
             {
               "text": {
                 "en": "Nikolaikirche exterior",
-                "zh": "尼古拉教堂外观"
+                "zh": "圣尼古拉教堂外观"
               }
             }
           ],
+          "ticket": {
+            "en": "Free – no ticket needed",
+            "zh": "免费，无需门票"
+          },
           "transit": {
             "segments": [
               {
@@ -2866,6 +3308,30 @@
             "en": "DDR Museum – hands-on East German daily life (45 min)",
             "zh": "DDR Museum – hands-on East German daily life (45 min)"
           },
+          "mustSee": [
+            {
+              "text": {
+                "en": "Trabant driving simulator",
+                "zh": "卫星牌汽车驾驶模拟"
+              }
+            },
+            {
+              "text": {
+                "en": "Reconstructed Plattenbau flat",
+                "zh": "复原的东德板楼公寓"
+              }
+            },
+            {
+              "text": {
+                "en": "Stasi surveillance room",
+                "zh": "史塔西监听室"
+              }
+            }
+          ],
+          "ticket": {
+            "en": "Online ticket for the date skips the ticket queue; the door also sells tickets",
+            "zh": "网上买当天日期的票可跳过排队；现场也卖"
+          },
           "transit": {
             "segments": [
               {
@@ -2881,7 +3347,8 @@
                 "note": "Spandauer Str. → Hackescher Markt"
               }
             ]
-          }
+          },
+          "bookingUrl": "https://tickets.ddr-museum.de/"
         },
         {
           "type": "sight",
@@ -2909,16 +3376,20 @@
             {
               "text": {
                 "en": "Hof I Jugendstil facade",
-                "zh": "一号院子的新艺术外立面"
+                "zh": "一号庭院新艺术立面"
               }
             },
             {
               "text": {
                 "en": "Ampelmann courtyard",
-                "zh": "红绿灯人院子"
+                "zh": "红绿灯小人庭院"
               }
             }
           ],
+          "ticket": {
+            "en": "Free – no ticket needed",
+            "zh": "免费，无需门票"
+          },
           "transit": {
             "segments": [
               {
@@ -2960,19 +3431,36 @@
           },
           "mustOrder": [
             {
-              "name": "Gänsekeule mit Rotkohl"
+              "text": {
+                "en": "Gänsekeule mit Rotkohl",
+                "zh": "烤鹅腿配紫甘蓝"
+              }
             },
             {
-              "name": "Kassler mit Sauerkraut"
+              "text": {
+                "en": "Kassler mit Sauerkraut",
+                "zh": "烟熏猪排配酸菜"
+              }
             },
             {
-              "name": "Prater Pils"
+              "text": {
+                "en": "Prater Pils",
+                "zh": "Prater 皮尔森"
+              }
             }
           ],
           "founded": "1837",
           "cuisine": {
             "en": "Historic local",
             "zh": "老字号本地菜"
+          },
+          "mustOrderNote": {
+            "en": "Cash only; winter goose menu",
+            "zh": "只收现金；冬季烤鹅菜单"
+          },
+          "ticket": {
+            "en": "Reserve ahead on the official site (or walk in early)",
+            "zh": "建议在官网提前订位（或早点直接去）"
           },
           "backups": [
             {
@@ -2997,15 +3485,28 @@
               },
               "mustOrder": [
                 {
-                  "name": "Eisbein mit Sauerkraut"
+                  "text": {
+                    "en": "Eisbein mit Sauerkraut",
+                    "zh": "咸猪肘配酸菜"
+                  }
                 },
                 {
-                  "name": "Schusterjungen-Schnitzel"
+                  "text": {
+                    "en": "Schusterjungen-Schnitzel",
+                    "zh": "Schusterjungen 炸肉排"
+                  }
                 },
                 {
-                  "name": "Sülze mit Bratkartoffeln"
+                  "text": {
+                    "en": "Sülze mit Bratkartoffeln",
+                    "zh": "肉冻配煎土豆"
+                  }
                 }
-              ]
+              ],
+              "mustOrderNote": {
+                "en": "Signature dish first; the others are the house classics",
+                "zh": "第一道是招牌，其余是店里经典"
+              }
             },
             {
               "name": "Metzer Eck",
@@ -3030,15 +3531,28 @@
               },
               "mustOrder": [
                 {
-                  "name": "Soljanka"
+                  "text": {
+                    "en": "Soljanka",
+                    "zh": "东德酸辣汤"
+                  }
                 },
                 {
-                  "name": "Bouletten mit Bratkartoffeln"
+                  "text": {
+                    "en": "Bouletten mit Bratkartoffeln",
+                    "zh": "柏林肉饼配煎土豆"
+                  }
                 },
                 {
-                  "name": "Berliner Kindl vom Fass"
+                  "text": {
+                    "en": "Berliner Kindl vom Fass",
+                    "zh": "Berliner Kindl 生啤"
+                  }
                 }
-              ]
+              ],
+              "mustOrderNote": {
+                "en": "Signature dish first; the others are the house classics",
+                "zh": "第一道是招牌，其余是店里经典"
+              }
             }
           ],
           "transit": {
@@ -3181,11 +3695,21 @@
           "mustSee": [
             {
               "text": {
-                "en": "Confessional Reformed (GRII); confesses Westminster, Heidelberg, Dordt",
-                "zh": "归正福音教会（GRII），认信威斯敏斯特、海德堡、多特"
+                "en": "Sunday worship service 9:30 AM",
+                "zh": "主日崇拜 9:30"
+              }
+            },
+            {
+              "text": {
+                "en": "Reformed preaching (GRII)",
+                "zh": "改革宗讲道（牧师创立的 GRII）"
               }
             }
           ],
+          "ticket": {
+            "en": "Free – worship service, no ticket",
+            "zh": "免费——主日崇拜，无需门票"
+          },
           "transit": {
             "segments": [
               {
@@ -3235,10 +3759,14 @@
             {
               "text": {
                 "en": "Mosaics in the colonnade",
-                "zh": "柱廊里的马赛克"
+                "zh": "柱廊马赛克"
               }
             }
           ],
+          "ticket": {
+            "en": "Pay at the door – cash only; 285 steps, no lift",
+            "zh": "现场付费，只收现金；285 级台阶，无电梯"
+          },
           "transit": {
             "segments": [
               {
@@ -3253,7 +3781,8 @@
                 "distanceM": 450
               }
             ]
-          }
+          },
+          "bookingUrl": "https://www.berlin.de/sehenswuerdigkeiten/3560266-3558930-siegessaeule.html"
         },
         {
           "type": "sight",
@@ -3279,15 +3808,22 @@
           },
           "mustSee": [
             {
-              "name": "Neoclassical façade from the gate"
+              "text": {
+                "en": "Neoclassical façade from the gate",
+                "zh": "从门口看新古典立面"
+              }
             },
             {
               "text": {
                 "en": "Flag up = President is in Berlin",
-                "zh": "旗升起来，就是总统在柏林"
+                "zh": "升旗＝总统在柏林"
               }
             }
           ],
+          "ticket": {
+            "en": "Free – no ticket needed",
+            "zh": "免费，无需门票"
+          },
           "transit": {
             "segments": [
               {
@@ -3400,25 +3936,32 @@
             {
               "text": {
                 "en": "Porcelain Cabinet (Altes Schloss)",
-                "zh": "瓷器室（旧宫）"
+                "zh": "瓷器厅（老宫）"
               }
             },
             {
-              "name": "Golden Gallery (Neuer Flügel)"
+              "text": {
+                "en": "Golden Gallery (Neuer Flügel)",
+                "zh": "金色长廊（新翼）"
+              }
             },
             {
               "text": {
                 "en": "Frederick the Great's apartments + Watteau paintings",
-                "zh": "腓特烈大帝的房间，和华托的画"
+                "zh": "腓特烈大帝寝宫与华托画作"
               }
             },
             {
               "text": {
                 "en": "Palace forecourt with the Great Elector statue",
-                "zh": "前院和大选帝侯雕像"
+                "zh": "宫前广场与大选帝侯像"
               }
             }
           ],
+          "ticket": {
+            "en": "Buy charlottenburg+ online with the 1:00 PM Old Palace entry – it covers the New Wing too (upper floor of the Old Palace closed)",
+            "zh": "网上买 charlottenburg+，选老宫 13:00 入场——新翼也包含（老宫楼上部分关闭）"
+          },
           "transit": {
             "segments": [
               {
@@ -3434,7 +3977,8 @@
                 "note": "foot routing (OSRM foot profile, routing.openstreetmap.de) + street names via OSM Nominatim"
               }
             ]
-          }
+          },
+          "bookingUrl": "https://www.spsg.de/schloesser-gaerten/kombitickets-ermaessigungen/ticket-charlottenburg"
         },
         {
           "type": "restaurant",
@@ -3459,26 +4003,36 @@
           },
           "mustOrder": [
             {
-              "name": "Berliner Happen",
-              "gloss": {
-                "en": "Berlin-style small plates",
-                "zh": "柏林式小碟"
+              "text": {
+                "en": "Berliner Happen (Berlin-style small plates)",
+                "zh": "柏林小盘菜"
               }
             },
             {
-              "name": "Mini-Eisbein"
+              "text": {
+                "en": "Mini-Eisbein",
+                "zh": "迷你咸猪肘"
+              }
             },
             {
-              "name": "Kassler"
-            },
-            {
-              "name": "Fassbrause vom Hahn"
+              "text": {
+                "en": "Kassler",
+                "zh": "烟熏猪排"
+              }
             }
           ],
           "founded": "1892",
           "cuisine": {
             "en": "Historic local",
             "zh": "老字号本地菜"
+          },
+          "mustOrderNote": {
+            "en": "Fassbrause vom Hahn (draught, non-alcoholic) to drink",
+            "zh": "饮料点生啤式无酒精 Fassbrause"
+          },
+          "ticket": {
+            "en": "Reserve ahead on the official site (or walk in early)",
+            "zh": "建议在官网提前订位（或早点直接去）"
           },
           "backups": [
             {
@@ -3503,15 +4057,28 @@
               },
               "mustOrder": [
                 {
-                  "name": "Eisbein mit Sauerkraut"
+                  "text": {
+                    "en": "Eisbein mit Sauerkraut",
+                    "zh": "咸猪肘配酸菜"
+                  }
                 },
                 {
-                  "name": "Berliner Kartoffelsuppe"
+                  "text": {
+                    "en": "Berliner Kartoffelsuppe",
+                    "zh": "柏林土豆汤"
+                  }
                 },
                 {
-                  "name": "Kohlroulade"
+                  "text": {
+                    "en": "Kohlroulade",
+                    "zh": "卷心菜肉卷"
+                  }
                 }
-              ]
+              ],
+              "mustOrderNote": {
+                "en": "Signature dish first; the others are the house classics",
+                "zh": "第一道是招牌，其余是店里经典"
+              }
             },
             {
               "name": "Schwarzes Café",
@@ -3536,16 +4103,22 @@
               },
               "mustOrder": [
                 {
-                  "name": "Frühstück",
-                  "gloss": {
-                    "en": "ganztags",
-                    "zh": "全天供应"
+                  "text": {
+                    "en": "Frühstück (ganztags)",
+                    "zh": "全天早餐"
                   }
                 },
                 {
-                  "name": "Wiener Schnitzel"
+                  "text": {
+                    "en": "Wiener Schnitzel",
+                    "zh": "维也纳炸肉排"
+                  }
                 }
-              ]
+              ],
+              "mustOrderNote": {
+                "en": "Signature dish first; the others are the house classics",
+                "zh": "第一道是招牌，其余是店里经典"
+              }
             }
           ],
           "transit": {
@@ -3618,12 +4191,22 @@
           },
           "mustSee": [
             {
-              "name": "Kaiser-Wilhelm-Gedächtniskirche (ruined tower + blue-glass church)"
+              "text": {
+                "en": "Kaiser-Wilhelm-Gedächtniskirche (ruined tower + blue-glass church)",
+                "zh": "威廉皇帝纪念教堂（断塔＋蓝玻璃新堂）"
+              }
             },
             {
-              "name": "Weihnachtsmarkt an der Gedächtniskirche (open Dec 27 12–9 PM)"
+              "text": {
+                "en": "Weihnachtsmarkt an der Gedächtniskirche (open Dec 27 12–9 PM)",
+                "zh": "纪念教堂圣诞市集（12/27 12–21 点）"
+              }
             }
           ],
+          "ticket": {
+            "en": "Free – no ticket needed",
+            "zh": "免费，无需门票"
+          },
           "transit": {
             "segments": [
               {

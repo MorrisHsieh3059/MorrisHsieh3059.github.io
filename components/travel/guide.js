@@ -19,6 +19,8 @@
 		mustEat: { en: 'Must eat', zh: '必吃' },
 		mustOrder: { en: 'Must eat', zh: '必吃' },
 		booked: { en: 'Booked', zh: '已预订' },
+		tickets: { en: 'Tickets', zh: '票务' },
+		bookLink: { en: 'Book', zh: '购票' },
 		hours: { en: 'Hours', zh: '时间' },
 		backup: { en: 'Backups', zh: '备选' },
 		daytrip: { en: 'Day trip', zh: '一日游' },
@@ -174,6 +176,10 @@
 		var s = String(raw).trim();
 		if (!s) return '';
 		s = s.replace(/\btable\b/gi, '入座');
+		s = s.replace(/\bslot\b/gi, '时段');
+		s = s.replace(/\bentry\b/gi, '入场');
+		s = s.replace(/\bdoors\b/gi, '开门');
+		s = s.replace(/\bcurtain\b/gi, '开演');
 		s = s.replace(/\(([^)]+)\)/g, function (_m, inner) { return '（' + zhTimeParen(inner) + '）'; });
 		s = s.replace(/~?\s*(\d{1,2})(?::(\d{2}))?\s*(AM|PM)\b/gi, function (all, h, min, ap) {
 			var hour = parseInt(h, 10);
@@ -306,8 +312,19 @@
 		var bits = [];
 		if (item.founded) bits.push((state.lang === 'zh' ? '创立于 ' : 'Founded ') + item.founded);
 		if (item.cuisine && tx(item.cuisine)) bits.push(tx(item.cuisine));
-		if (!bits.length) return '';
-		return '<p class="guide-meal-meta">' + esc(bits.join(' · ')) + '</p>';
+		var note = item.foundedNote && tx(item.foundedNote) ? '<span class="guide-founded-note">' + esc(tx(item.foundedNote)) + '</span>' : '';
+		if (!bits.length && !note) return '';
+		var line = bits.length ? esc(bits.join(' · ')) : '';
+		return '<p class="guide-meal-meta">' + line + (line && note ? ' ' : '') + note + '</p>';
+	}
+
+	function ticketBlock(stop) {
+		if (!stop || (!stop.ticket && !stop.bookingUrl)) return '';
+		var text = stop.ticket && tx(stop.ticket) ? '<p class="guide-ticket-text">' + esc(tx(stop.ticket)) + '</p>' : '';
+		var link = stop.bookingUrl
+			? '<a class="guide-ticket-link" href="' + esc(stop.bookingUrl) + '" target="_blank" rel="noopener">' + esc(ui('bookLink')) + '</a>'
+			: '';
+		return '<div class="guide-ticket"><span class="guide-kicker">' + esc(ui('tickets')) + '</span>' + text + link + '</div>';
 	}
 
 	function displayStatus(stop) {
@@ -771,6 +788,7 @@
 				mealMeta(stop) +
 				mustBlock('mustSee', stop.mustSee) +
 				mustBlock('mustEat', stop.mustOrder, stop.mustOrderNote) +
+				ticketBlock(stop) +
 				backups +
 				alts +
 			'</div>';

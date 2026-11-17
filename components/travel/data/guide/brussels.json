@@ -1,6 +1,6 @@
 {
   "id": "brussels",
-  "version": "v4.0.3",
+  "version": "v4.0.4",
   "draft": true,
   "country": {
     "en": "Belgium",
@@ -172,10 +172,14 @@
             {
               "text": {
                 "en": "Plaisirs d'Hiver / Winter Wonders",
-                "zh": "冬季奇境圣诞市集"
+                "zh": "冬季奇幻节"
               }
             }
           ],
+          "ticket": {
+            "en": "Free – no ticket needed",
+            "zh": "免费，无需门票"
+          },
           "transit": {
             "segments": [
               {
@@ -225,7 +229,7 @@
             {
               "text": {
                 "en": "La Monnaie (exterior)",
-                "zh": "La Monnaie 外观"
+                "zh": "铸币局歌剧院（外观）"
               }
             },
             {
@@ -235,6 +239,10 @@
               }
             }
           ],
+          "ticket": {
+            "en": "Free – no ticket needed",
+            "zh": "免费，无需门票"
+          },
           "transit": {
             "segments": [
               {
@@ -275,22 +283,36 @@
           },
           "mustOrder": [
             {
-              "name": "Steak flambé en salle"
+              "text": {
+                "en": "Steak flambé en salle",
+                "zh": "桌边火焰牛排"
+              }
             },
             {
-              "name": "Moules-frites"
+              "text": {
+                "en": "Moules-frites",
+                "zh": "淡菜配薯条"
+              }
             },
             {
-              "name": "Croquettes aux crevettes grises"
-            },
-            {
-              "name": "Crêpe flambée"
+              "text": {
+                "en": "Croquettes aux crevettes grises",
+                "zh": "北海灰虾可乐饼"
+              }
             }
           ],
           "founded": "1905",
           "cuisine": {
             "en": "Historic local",
             "zh": "老字号本地菜"
+          },
+          "mustOrderNote": {
+            "en": "Crêpe flambée at the table for dessert",
+            "zh": "甜点点桌边火焰可丽饼"
+          },
+          "ticket": {
+            "en": "arrive on time",
+            "zh": "已订好——准时到"
           },
           "booked": true,
           "backups": [
@@ -317,15 +339,28 @@
               },
               "mustOrder": [
                 {
-                  "name": "Moules marmiton"
+                  "text": {
+                    "en": "Moules marmiton",
+                    "zh": "厨师式淡菜"
+                  }
                 },
                 {
-                  "name": "Carbonnade flamande"
+                  "text": {
+                    "en": "Carbonnade flamande",
+                    "zh": "佛兰德啤酒炖牛肉"
+                  }
                 },
                 {
-                  "name": "Waterzooi"
+                  "text": {
+                    "en": "Waterzooi",
+                    "zh": "根特奶油炖鸡"
+                  }
                 }
-              ]
+              ],
+              "mustOrderNote": {
+                "en": "Signature dish first; the others are the house classics",
+                "zh": "第一道是招牌，其余是店里经典"
+              }
             },
             {
               "name": "Au Vieux Saint Martin",
@@ -350,15 +385,28 @@
               },
               "mustOrder": [
                 {
-                  "name": "Filet américain préparé"
+                  "text": {
+                    "en": "Filet américain préparé",
+                    "zh": "比利时生牛肉塔塔"
+                  }
                 },
                 {
-                  "name": "Stoemp saucisse"
+                  "text": {
+                    "en": "Stoemp saucisse",
+                    "zh": "蔬菜土豆泥配香肠"
+                  }
                 },
                 {
-                  "name": "Croquettes aux crevettes grises"
+                  "text": {
+                    "en": "Croquettes aux crevettes grises",
+                    "zh": "北海灰虾可乐饼"
+                  }
                 }
-              ]
+              ],
+              "mustOrderNote": {
+                "en": "Signature dish first; the others are the house classics",
+                "zh": "第一道是招牌，其余是店里经典"
+              }
             },
             {
               "name": "À la Mort Subite",
@@ -383,19 +431,28 @@
               },
               "mustOrder": [
                 {
-                  "name": "Omelette",
-                  "gloss": {
-                    "en": "",
-                    "zh": "煎蛋卷"
+                  "text": {
+                    "en": "Omelette",
+                    "zh": "欧姆蛋"
                   }
                 },
                 {
-                  "name": "Tartine au fromage blanc"
+                  "text": {
+                    "en": "Tartine au fromage blanc",
+                    "zh": "白奶酪面包片"
+                  }
                 },
                 {
-                  "name": "Kriek Mort Subite"
+                  "text": {
+                    "en": "Kriek Mort Subite",
+                    "zh": "Mort Subite 樱桃啤酒"
+                  }
                 }
-              ]
+              ],
+              "mustOrderNote": {
+                "en": "Signature dish first; the others are the house classics",
+                "zh": "第一道是招牌，其余是店里经典"
+              }
             }
           ],
           "transit": {
@@ -440,10 +497,20 @@
             {
               "text": {
                 "en": "Manneken Pis (1619 bronze)",
-                "zh": "尿尿小童（1619 年铜像）"
+                "zh": "尿尿小童（1619 铜像）"
+              }
+            },
+            {
+              "text": {
+                "en": "Costume of the day",
+                "zh": "当天的服装"
               }
             }
           ],
+          "ticket": {
+            "en": "Free – no ticket needed",
+            "zh": "免费，无需门票"
+          },
           "transit": {
             "segments": [
               {
@@ -539,16 +606,14 @@
           },
           "mustOrder": [
             {
-              "name": "Belgian waffles",
-              "gloss": {
-                "en": "",
+              "text": {
+                "en": "Belgian waffles",
                 "zh": "比利时华夫"
               }
             },
             {
-              "name": "Croissant",
-              "gloss": {
-                "en": "",
+              "text": {
+                "en": "Croissant",
                 "zh": "可颂"
               }
             }
@@ -594,19 +659,26 @@
             {
               "text": {
                 "en": "Grand-Place guild houses",
-                "zh": "大广场上的公会大楼"
+                "zh": "大广场行会建筑"
               }
             },
             {
               "text": {
                 "en": "Manneken Pis (4 min walk)",
-                "zh": "尿尿小童（走 4 分钟）"
+                "zh": "尿尿小童（步行 4 分钟）"
               }
             },
             {
-              "name": "Jeanneke Pis (after lunch – 1 min from Aux Armes)"
+              "text": {
+                "en": "Jeanneke Pis (after lunch – 1 min from Aux Armes)",
+                "zh": "尿尿小女孩（午饭后，离 Aux Armes 1 分钟）"
+              }
             }
           ],
+          "ticket": {
+            "en": "Free – no ticket needed",
+            "zh": "免费，无需门票"
+          },
           "transit": {
             "segments": [
               {
@@ -645,15 +717,20 @@
           },
           "mustOrder": [
             {
-              "name": "Gaufre de Bruxelles"
+              "text": {
+                "en": "Gaufre de Bruxelles",
+                "zh": "布鲁塞尔华夫饼"
+              }
             },
             {
-              "name": "Gaufre de Liège"
+              "text": {
+                "en": "Gaufre de Liège",
+                "zh": "列日华夫饼"
+              }
             },
             {
-              "name": "Speculoos",
-              "gloss": {
-                "en": "",
+              "text": {
+                "en": "Speculoos",
                 "zh": "焦糖饼干"
               }
             }
@@ -662,6 +739,14 @@
           "cuisine": {
             "en": "Historic local",
             "zh": "老字号本地菜"
+          },
+          "mustOrderNote": {
+            "en": "Signature dish first; the others are the house classics",
+            "zh": "第一道是招牌，其余是店里经典"
+          },
+          "ticket": {
+            "en": "Walk in",
+            "zh": "无需订位——直接去"
           },
           "backups": [
             {
@@ -686,12 +771,22 @@
               },
               "mustOrder": [
                 {
-                  "name": "Gaufre de Bruxelles"
+                  "text": {
+                    "en": "Gaufre de Bruxelles",
+                    "zh": "布鲁塞尔华夫饼"
+                  }
                 },
                 {
-                  "name": "Café crème"
+                  "text": {
+                    "en": "Café crème",
+                    "zh": "奶油咖啡"
+                  }
                 }
-              ]
+              ],
+              "mustOrderNote": {
+                "en": "Signature dish first; the others are the house classics",
+                "zh": "第一道是招牌，其余是店里经典"
+              }
             },
             {
               "name": "Wittamer",
@@ -716,23 +811,28 @@
               },
               "mustOrder": [
                 {
-                  "name": "Gâteaux de saison"
+                  "text": {
+                    "en": "Gâteaux de saison",
+                    "zh": "当季蛋糕"
+                  }
                 },
                 {
-                  "name": "Macarons",
-                  "gloss": {
-                    "en": "",
+                  "text": {
+                    "en": "Macarons",
                     "zh": "马卡龙"
                   }
                 },
                 {
-                  "name": "Pralines",
-                  "gloss": {
-                    "en": "",
-                    "zh": "夹心巧克力"
+                  "text": {
+                    "en": "Pralines",
+                    "zh": "比利时夹心巧克力"
                   }
                 }
-              ]
+              ],
+              "mustOrderNote": {
+                "en": "Signature dish first; the others are the house classics",
+                "zh": "第一道是招牌，其余是店里经典"
+              }
             }
           ],
           "transit": {
@@ -781,7 +881,7 @@
             {
               "text": {
                 "en": "La Monnaie (exterior)",
-                "zh": "La Monnaie 外观"
+                "zh": "铸币局歌剧院（外观）"
               }
             },
             {
@@ -791,6 +891,10 @@
               }
             }
           ],
+          "ticket": {
+            "en": "Free – no ticket needed",
+            "zh": "免费，无需门票"
+          },
           "transit": {
             "segments": [
               {
@@ -829,13 +933,25 @@
           },
           "mustOrder": [
             {
-              "name": "Pralines",
-              "gloss": {
-                "en": "classic assortment",
-                "zh": "夹心巧克力 · 经典礼盒"
+              "text": {
+                "en": "Pralines (classic assortment)",
+                "zh": "经典夹心巧克力礼盒"
               }
             }
           ],
+          "founded": "1857",
+          "mustOrderNote": {
+            "en": "Signature dish first; the others are the house classics",
+            "zh": "第一道是招牌，其余是店里经典"
+          },
+          "foundedNote": {
+            "en": "Jean Neuhaus opened the Galerie de la Reine shop in 1857; praline invented there in 1912 (neuhauschocolates.com)",
+            "zh": "Jean Neuhaus 1857 年在王后画廊开店；夹心巧克力 1912 年在这里发明（neuhauschocolates.com）"
+          },
+          "ticket": {
+            "en": "Walk in",
+            "zh": "无需订位——直接去"
+          },
           "transit": {
             "segments": [
               {
@@ -876,16 +992,20 @@
             {
               "text": {
                 "en": "Cathedral nave",
-                "zh": "教堂中殿"
+                "zh": "大教堂中殿"
               }
             },
             {
               "text": {
                 "en": "Treasury (paid)",
-                "zh": "珍宝馆（要门票）"
+                "zh": "珍宝馆（收费）"
               }
             }
           ],
+          "ticket": {
+            "en": "Free – no ticket needed",
+            "zh": "免费，无需门票"
+          },
           "transit": {
             "segments": [
               {
@@ -932,10 +1052,14 @@
             {
               "text": {
                 "en": "Congress Column (nearby)",
-                "zh": "国会柱（就在旁边）"
+                "zh": "国会纪念柱（附近）"
               }
             }
           ],
+          "ticket": {
+            "en": "Pay at the door; open 10 AM–5 PM on Dec 31",
+            "zh": "现场买票；12/31 开放 10–17 点"
+          },
           "transit": {
             "segments": [
               {
@@ -948,7 +1072,8 @@
                 "distanceM": 720
               }
             ]
-          }
+          },
+          "bookingUrl": "https://www.comicscenter.net/en/practical-information/opening-hours-and-admission-fees"
         },
         {
           "type": "restaurant",
@@ -973,19 +1098,36 @@
           },
           "mustOrder": [
             {
-              "name": "Moules marinières"
+              "text": {
+                "en": "Moules marinières",
+                "zh": "白酒淡菜"
+              }
             },
             {
-              "name": "Carbonnade flamande"
+              "text": {
+                "en": "Carbonnade flamande",
+                "zh": "佛兰德啤酒炖牛肉"
+              }
             },
             {
-              "name": "Crêpes flambées"
+              "text": {
+                "en": "Crêpes flambées",
+                "zh": "火焰可丽饼"
+              }
             }
           ],
           "founded": "1921",
           "cuisine": {
             "en": "Historic local",
             "zh": "老字号本地菜"
+          },
+          "mustOrderNote": {
+            "en": "Signature dish first; the others are the house classics",
+            "zh": "第一道是招牌，其余是店里经典"
+          },
+          "ticket": {
+            "en": "Reserve ahead on the official site (or walk in early)",
+            "zh": "建议在官网提前订位（或早点直接去）"
           },
           "backups": [
             {
@@ -1011,19 +1153,28 @@
               },
               "mustOrder": [
                 {
-                  "name": "Moules marinières"
-                },
-                {
-                  "name": "Frites",
-                  "gloss": {
-                    "en": "",
-                    "zh": "薯条"
+                  "text": {
+                    "en": "Moules marinières",
+                    "zh": "白酒淡菜"
                   }
                 },
                 {
-                  "name": "Croquettes aux crevettes grises"
+                  "text": {
+                    "en": "Frites",
+                    "zh": "比利时薯条"
+                  }
+                },
+                {
+                  "text": {
+                    "en": "Croquettes aux crevettes grises",
+                    "zh": "北海灰虾可乐饼"
+                  }
                 }
-              ]
+              ],
+              "mustOrderNote": {
+                "en": "Signature dish first; the others are the house classics",
+                "zh": "第一道是招牌，其余是店里经典"
+              }
             },
             {
               "name": "Le Cirio",
@@ -1048,19 +1199,28 @@
               },
               "mustOrder": [
                 {
-                  "name": "Half-en-half",
-                  "gloss": {
-                    "en": "",
-                    "zh": "一半一半"
+                  "text": {
+                    "en": "Half-en-half",
+                    "zh": "半半酒（白酒＋香槟）"
                   }
                 },
                 {
-                  "name": "Croquettes aux crevettes"
+                  "text": {
+                    "en": "Croquettes aux crevettes",
+                    "zh": "灰虾可乐饼"
+                  }
                 },
                 {
-                  "name": "Carbonnade flamande"
+                  "text": {
+                    "en": "Carbonnade flamande",
+                    "zh": "佛兰德啤酒炖牛肉"
+                  }
                 }
-              ]
+              ],
+              "mustOrderNote": {
+                "en": "Signature dish first; the others are the house classics",
+                "zh": "第一道是招牌，其余是店里经典"
+              }
             }
           ],
           "transit": {
@@ -1091,7 +1251,7 @@
           "lng": 4.3588,
           "arrive": {
             "en": "1:20 PM (entry 1:30 PM)",
-            "zh": "13:20（entry13:30）"
+            "zh": "13:20（入场 13:30）"
           },
           "leave": "3:00 PM",
           "website": "https://fine-arts-museum.be/en",
@@ -1109,34 +1269,32 @@
             {
               "text": {
                 "en": "Magritte: The Empire of Light",
-                "zh": "马格利特：《光之帝国》"
+                "zh": "马格利特《光之帝国》"
               }
             },
             {
               "text": {
                 "en": "Bruegel: Landscape with the Fall of Icarus",
-                "zh": "勃鲁盖尔：《伊卡洛斯的坠落》"
+                "zh": "布鲁盖尔《伊卡洛斯坠落的风景》"
               }
             },
             {
               "text": {
                 "en": "Bruegel: The Census at Bethlehem",
-                "zh": "勃鲁盖尔：《伯利恒的户口登记》"
-              }
-            },
-            {
-              "text": {
-                "en": "Rubens room",
-                "zh": "鲁本斯展厅"
+                "zh": "布鲁盖尔《伯利恒户口调查》"
               }
             },
             {
               "text": {
                 "en": "David: The Death of Marat",
-                "zh": "大卫：《马拉之死》"
+                "zh": "大卫《马拉之死》"
               }
             }
           ],
+          "ticket": {
+            "en": "combo – use the Place Royale 2 entrance at 1:20 PM",
+            "zh": "联票已订——13:20 从 Place Royale 2 入口进"
+          },
           "booked": true,
           "transit": {
             "segments": [
@@ -1180,16 +1338,20 @@
             {
               "text": {
                 "en": "Place Royale",
-                "zh": "皇家广场"
+                "zh": "王宫广场"
               }
             },
             {
               "text": {
                 "en": "Royal Palace facade",
-                "zh": "王宫外立面"
+                "zh": "王宫立面"
               }
             }
           ],
+          "ticket": {
+            "en": "Free – no ticket needed",
+            "zh": "免费，无需门票"
+          },
           "transit": {
             "segments": [
               {
@@ -1245,7 +1407,7 @@
             {
               "text": {
                 "en": "Grand Sablon chocolatiers",
-                "zh": "大萨布隆的巧克力店"
+                "zh": "大萨布隆巧克力店"
               }
             },
             {
@@ -1256,6 +1418,10 @@
               }
             }
           ],
+          "ticket": {
+            "en": "Free – no ticket needed",
+            "zh": "免费，无需门票"
+          },
           "transit": {
             "segments": [
               {
@@ -1298,7 +1464,7 @@
             {
               "text": {
                 "en": "Bruegel memorial",
-                "zh": "勃鲁盖尔纪念"
+                "zh": "布鲁盖尔纪念碑"
               }
             },
             {
@@ -1308,6 +1474,10 @@
               }
             }
           ],
+          "ticket": {
+            "en": "Free – no ticket needed",
+            "zh": "免费，无需门票"
+          },
           "transit": {
             "segments": [
               {
@@ -1364,22 +1534,26 @@
             {
               "text": {
                 "en": "Sunset view from Place Poelaert",
-                "zh": "Poelaert 广场看日落"
+                "zh": "Poelaert 广场日落"
               }
             },
             {
               "text": {
                 "en": "Free Marolles lift",
-                "zh": "免费的马罗勒电梯"
+                "zh": "免费 Marolles 电梯"
               }
             },
             {
               "text": {
                 "en": "Palais de Justice facade",
-                "zh": "司法宫外立面"
+                "zh": "司法宫立面"
               }
             }
           ],
+          "ticket": {
+            "en": "Free – no ticket needed",
+            "zh": "免费，无需门票"
+          },
           "transit": {
             "segments": [
               {
@@ -1447,10 +1621,26 @@
             {
               "text": {
                 "en": "Winter Wonders market (closes 6 PM Dec 31)",
-                "zh": "圣诞市集（12 月 31 日 18:00 收）"
+                "zh": "冬季奇幻节市集（12/31 18 点关）"
+              }
+            },
+            {
+              "text": {
+                "en": "Sainte-Catherine church facade",
+                "zh": "圣凯瑟琳教堂立面"
+              }
+            },
+            {
+              "text": {
+                "en": "Marché aux Poissons stalls",
+                "zh": "鱼市场摊位"
               }
             }
           ],
+          "ticket": {
+            "en": "Free – no ticket needed",
+            "zh": "免费，无需门票"
+          },
           "transit": {
             "segments": [
               {
@@ -1494,24 +1684,21 @@
           },
           "mustOrder": [
             {
-              "name": "Creamy morel risotto with morel foam",
-              "gloss": {
-                "en": "starter",
-                "zh": "奶油羊肚菌烩饭，上面是羊肚菌泡沫 · 前菜"
+              "text": {
+                "en": "Creamy morel risotto with morel foam (starter)",
+                "zh": "羊肚菌奶油炖饭配羊肚菌泡沫（前菜）"
               }
             },
             {
-              "name": "Roasted turbot with artichoke mousseline",
-              "gloss": {
-                "en": "main",
-                "zh": "烤多宝鱼，洋蓟慕斯 · 主菜"
+              "text": {
+                "en": "Roasted turbot with artichoke mousseline (main)",
+                "zh": "烤多宝鱼配朝鲜蓟泥（主菜）"
               }
             },
             {
-              "name": "Chestnut & clementine mille-feuille",
-              "gloss": {
-                "en": "dessert",
-                "zh": "栗子和橘子千层酥 · 甜点"
+              "text": {
+                "en": "Chestnut & clementine mille-feuille (dessert)",
+                "zh": "栗子克莱门汀千层酥（甜点）"
               }
             }
           ],
@@ -1519,6 +1706,14 @@
           "cuisine": {
             "en": "Historic local",
             "zh": "老字号本地菜"
+          },
+          "mustOrderNote": {
+            "en": "New Year's set menu – the traveler's picks (starter, main, dessert)",
+            "zh": "跨年套餐，这是旅客选好的前菜、主菜、甜点"
+          },
+          "ticket": {
+            "en": "arrive on time",
+            "zh": "已订好——准时到"
           },
           "booked": true,
           "backups": [
@@ -1545,15 +1740,28 @@
               },
               "mustOrder": [
                 {
-                  "name": "Moules-frites"
+                  "text": {
+                    "en": "Moules-frites",
+                    "zh": "淡菜配薯条"
+                  }
                 },
                 {
-                  "name": "Stoemp saucisse"
+                  "text": {
+                    "en": "Stoemp saucisse",
+                    "zh": "蔬菜土豆泥配香肠"
+                  }
                 },
                 {
-                  "name": "Carbonnade flamande"
+                  "text": {
+                    "en": "Carbonnade flamande",
+                    "zh": "佛兰德啤酒炖牛肉"
+                  }
                 }
-              ]
+              ],
+              "mustOrderNote": {
+                "en": "Signature dish first; the others are the house classics",
+                "zh": "第一道是招牌，其余是店里经典"
+              }
             },
             {
               "name": "In 't Spinnekopke",
@@ -1578,15 +1786,28 @@
               },
               "mustOrder": [
                 {
-                  "name": "Moules-frites"
+                  "text": {
+                    "en": "Moules-frites",
+                    "zh": "淡菜配薯条"
+                  }
                 },
                 {
-                  "name": "Waterzooi"
+                  "text": {
+                    "en": "Waterzooi",
+                    "zh": "根特奶油炖鸡"
+                  }
                 },
                 {
-                  "name": "Croquettes aux crevettes grises"
+                  "text": {
+                    "en": "Croquettes aux crevettes grises",
+                    "zh": "北海灰虾可乐饼"
+                  }
                 }
-              ]
+              ],
+              "mustOrderNote": {
+                "en": "Signature dish first; the others are the house classics",
+                "zh": "第一道是招牌，其余是店里经典"
+              }
             }
           ],
           "transit": {
@@ -1631,13 +1852,13 @@
             {
               "text": {
                 "en": "Floodlit Town Hall and guild houses",
-                "zh": "灯光下的市政厅和公会大楼"
+                "zh": "灯光下的市政厅与行会建筑"
               }
             },
             {
               "text": {
                 "en": "Grand-Place Christmas tree",
-                "zh": "大广场的圣诞树"
+                "zh": "大广场圣诞树"
               }
             },
             {
@@ -1655,6 +1876,10 @@
               }
             }
           ],
+          "ticket": {
+            "en": "Free – no ticket needed",
+            "zh": "免费，无需门票"
+          },
           "transit": {
             "segments": [
               {
@@ -1697,10 +1922,20 @@
             {
               "text": {
                 "en": "Night view of the Town Hall spire",
-                "zh": "夜里的市政厅尖塔"
+                "zh": "市政厅尖塔夜景"
+              }
+            },
+            {
+              "text": {
+                "en": "Lit Mont des Arts gardens",
+                "zh": "亮灯的艺术山花园"
               }
             }
           ],
+          "ticket": {
+            "en": "Free – no ticket needed",
+            "zh": "免费，无需门票"
+          },
           "transit": {
             "segments": [
               {
@@ -1786,10 +2021,26 @@
             {
               "text": {
                 "en": "Midnight fireworks at the Atomium",
-                "zh": "原子球午夜烟火"
+                "zh": "原子塔午夜烟火"
+              }
+            },
+            {
+              "text": {
+                "en": "Lit Atomium spheres",
+                "zh": "亮灯的原子塔球体"
+              }
+            },
+            {
+              "text": {
+                "en": "DJ set from 9 PM",
+                "zh": "21 点起 DJ 表演"
               }
             }
           ],
+          "ticket": {
+            "en": "Free – no ticket needed",
+            "zh": "免费，无需门票"
+          },
           "transit": {
             "segments": [
               {

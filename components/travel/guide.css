@@ -594,11 +594,39 @@ a.guide-daytrip {
 }
 
 .guide-must-note,
-.guide-meal-meta {
+.guide-meal-meta,
+.guide-ticket-text {
 	margin: 0.28rem 0 0;
 	color: #555;
 	font-size: 0.78rem;
 	line-height: 1.4;
+}
+
+.guide-founded-note {
+	display: inline;
+}
+
+.guide-ticket {
+	margin: 0.45rem 0 0;
+	padding: 0.4rem 0.55rem 0.45rem;
+	background: #f7f5ef;
+	border-left: 3px solid #c4a35a;
+	border-radius: 0 4px 4px 0;
+}
+
+.guide-ticket .guide-kicker {
+	display: block;
+	color: #8a6a2f;
+	font-size: 0.62rem;
+	letter-spacing: 0.08em;
+}
+
+.guide-ticket-link {
+	display: inline-block;
+	margin-top: 0.28rem;
+	color: var(--accent, #303F9F);
+	font-size: 0.78rem;
+	font-weight: 700;
 }
 
 .guide-kicker {
