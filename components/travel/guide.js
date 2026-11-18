@@ -34,6 +34,15 @@
 		menuDishes: { en: 'Dishes', zh: '菜品' },
 		menuHours: { en: 'Hours', zh: '时间' },
 		menuNote: { en: 'What changed', zh: '改动' },
+		trainTable: { en: 'Trains to Vienna', zh: '返回维也纳的火车' },
+		trainLine: { en: 'Line', zh: '线路' },
+		trainDepart: { en: 'Departs', zh: '开' },
+		trainArrive: { en: 'Arrives', zh: '到' },
+		trainMark: { en: 'Note', zh: '备注' },
+		trainPlanned: { en: 'Planned', zh: '计划乘坐' },
+		trainBackup: { en: 'Backup', zh: '备用' },
+		trainLast: { en: 'Last, not planned', zh: '末班，不坐' },
+		trainGap: { en: 'No 21:50', zh: '没有 21:50' },
 		notes: { en: 'Note', zh: '备注' },
 		confirmed: { en: 'Confirmed', zh: '已确认' },
 		tentative: { en: 'Tentative', zh: '暂定' },
@@ -902,6 +911,22 @@
 		return '<details class="guide-tl-fold guide-backups" data-fold="stop-' + index + '-backups"><summary>' + esc(ui('backup')) + '</summary>' + rows + '</details>';
 	}
 
+	function trainTableHtml(day) {
+		var table = day && day.trainTable;
+		if (!table || !table.rows || !table.rows.length) return '';
+		var marks = { planned: 'trainPlanned', backup: 'trainBackup', last: 'trainLast' };
+		var head = '<tr><th>' + esc(ui('trainLine')) + '</th><th>' + esc(ui('trainDepart')) + '</th><th>' + esc(ui('trainArrive')) + '</th><th>' + esc(ui('trainMark')) + '</th></tr>';
+		var body = table.rows.map(function (row) {
+			var bits = [];
+			if (row.mark && marks[row.mark]) bits.push(ui(marks[row.mark]));
+			if (row.gap) bits.push(ui('trainGap'));
+			var cls = row.mark ? ' class="is-' + row.mark + '"' : '';
+			return '<tr' + cls + '><td>' + esc(row.line || '') + '</td><td>' + esc(row.depart || '') + '</td><td>' + esc(row.arrive || '') + '</td><td>' + esc(bits.join(' · ')) + '</td></tr>';
+		}).join('');
+		var caption = table.caption && tx(table.caption) ? '<p>' + esc(tx(table.caption)) + '</p>' : '';
+		return '<details class="guide-around guide-trains" data-fold="trains"><summary>' + esc(ui('trainTable')) + '</summary>' + caption + '<div class="guide-menu-scroll"><table class="guide-menu-table guide-train-table"><thead>' + head + '</thead><tbody>' + body + '</tbody></table></div></details>';
+	}
+
 	function returnOptionsHtml(day) {
 		if (!day.returnOptions || !day.returnOptions.length) return '';
 		var lines = day.returnOptions.map(function (opt) {
@@ -959,6 +984,7 @@
 			return '<li>' + esc(tx(n)) + '</li>';
 		}).join('');
 		var noteBlock = notes ? '<ul class="guide-day-notes">' + notes + '</ul>' : '';
+		var trains = trainTableHtml(day);
 		var returns = returnOptionsHtml(day);
 		var menuCheck = menuCheckHtml(city);
 		var around = '';
@@ -974,7 +1000,7 @@
 			'<div class="guide-days" role="tablist">' + tabs + '</div>' +
 			'<div class="guide-split">' +
 				'<div class="guide-map-panel"><div id="guide-map" class="guide-map" role="application" aria-label="' + esc(tx(city.name)) + '"></div></div>' +
-				'<div class="guide-timeline" id="guide-timeline">' + section + '<div class="guide-tl">' + stops + '</div>' + noteBlock + returns + around + menuCheck + '</div>' +
+				'<div class="guide-timeline" id="guide-timeline">' + section + '<div class="guide-tl">' + stops + '</div>' + noteBlock + trains + returns + around + menuCheck + '</div>' +
 			'</div>';
 		$('#guide-root').attr('lang', state.lang === 'zh' ? 'zh-Hans' : 'en').html(html);
 		syncTabs();
