@@ -716,39 +716,62 @@
 		return '<details class="guide-tl-fold"><summary>' + esc(label) + '</summary><p>' + esc(body) + '</p></details>';
 	}
 
-	function segItem(seg) {
-		var icon = ICONS[seg.mode] || 'fa-arrow-down';
-		var detail = segDetail(seg);
-		var more = detail
-			? fold(state.lang === 'zh' ? '详情' : 'Details', detail)
-			: '';
-		return '<li class="guide-tl-seg"><i class="fas ' + icon + '" aria-hidden="true"></i><div class="guide-tl-seg-body"><span class="guide-tl-seg-main">' +
-			esc(segHeadline(seg)) + '</span>' + more + '</div></li>';
+	function durationMinutes(seg) {
+		var raw = String(seg && seg.duration || '').trim();
+		if (!raw || /[–—-]/.test(raw)) return null;
+		var hm = raw.match(/^~?\s*(\d+)\s*h(?:\s*(\d+)\s*m)?$/i);
+		if (hm) return parseInt(hm[1], 10) * 60 + (hm[2] ? parseInt(hm[2], 10) : 0);
+		var one = raw.match(/^~?\s*(\d+)\s*min$/i);
+		if (one) return parseInt(one[1], 10);
+		return null;
 	}
 
-	function legHtml(stop) {
-		var transit = stop.transit;
+	function clockLabel(mins) {
+		if (mins == null || isNaN(mins)) return '';
+		mins = ((mins % (24 * 60)) + (24 * 60)) % (24 * 60);
+		var h24 = Math.floor(mins / 60);
+		var m = mins % 60;
+		var ap = h24 >= 12 ? 'PM' : 'AM';
+		var h12 = h24 % 12;
+		if (!h12) h12 = 12;
+		return formatTimeLabel(h12 + ':' + (m < 10 ? '0' : '') + m + ' ' + ap);
+	}
+
+	function legRows(transit, nextStop, departMins) {
 		var segments = legSegments(transit);
 		if (!segments.length) return '';
-		var allWalk = segments.every(function (seg) { return seg.mode === 'walk'; });
-		var items = segments.map(segItem).join('');
-		var notes = '';
-		if (transit && transit.ticket && tx(transit.ticket)) {
-			notes += fold(state.lang === 'zh' ? '车票' : 'Tickets', tx(transit.ticket));
-		}
-		if (transit && transit.alternative && transit.alternative.length) {
-			var alt = transit.alternative.map(function (seg) {
-				var line = segHeadline(seg);
-				var detail = segDetail(seg);
-				return detail ? line + ' — ' + detail : line;
-			}).join('\n');
-			notes += '<details class="guide-tl-fold"><summary>' + esc(state.lang === 'zh' ? '另一条路线' : 'Alternative') + '</summary><p>' +
-				esc(alt).replace(/\n/g, '<br>') + '</p></details>';
-		}
-		return '<div class="guide-tl-leg' + (allWalk ? ' is-walk' : '') + '">' +
-			'<div class="guide-tl-times"></div>' +
-			'<div class="guide-tl-axis"></div>' +
-			'<div class="guide-tl-main"><ul class="guide-tl-segs">' + items + '</ul>' + notes + '</div></div>';
+		var cursor = departMins;
+		return segments.map(function (seg, i) {
+			var time = cursor != null ? clockLabel(cursor) : '';
+			var add = durationMinutes(seg);
+			if (cursor != null && add != null) cursor += add;
+			else cursor = null;
+			var icon = ICONS[seg.mode] || 'fa-arrow-down';
+			var sub = '';
+			if (segments.length === 1 && nextStop) {
+				var dest = placeName(nextStop);
+				if (dest) sub = '<p class="guide-leg-sub">' + esc((state.lang === 'zh' ? '到 ' : 'to ') + dest) + '</p>';
+			}
+			var detail = segDetail(seg);
+			var more = detail ? fold(state.lang === 'zh' ? '详情' : 'Details', detail) : '';
+			var extra = '';
+			if (i === segments.length - 1) {
+				if (transit.ticket && tx(transit.ticket)) extra += fold(state.lang === 'zh' ? '车票' : 'Tickets', tx(transit.ticket));
+				if (transit.alternative && transit.alternative.length) {
+					var alt = transit.alternative.map(function (altSeg) {
+						var line = segHeadline(altSeg);
+						var altDetail = segDetail(altSeg);
+						return altDetail ? line + ' — ' + altDetail : line;
+					}).join('\n');
+					extra += '<details class="guide-tl-fold"><summary>' + esc(state.lang === 'zh' ? '另一条路线' : 'Alternative') + '</summary><p>' +
+						esc(alt).replace(/\n/g, '<br>') + '</p></details>';
+				}
+			}
+			return '<div class="guide-tl-leg">' +
+				'<div class="guide-tl-times">' + (time ? '<span>' + esc(time) + '</span>' : '') + '</div>' +
+				'<div class="guide-tl-axis"><span class="guide-tl-mode"><i class="fas ' + icon + '" aria-hidden="true"></i></span></div>' +
+				'<div class="guide-tl-body"><h3 class="guide-leg-title">' + esc(segHeadline(seg)) + '</h3>' + sub + more + extra + '</div></div>';
+		}).join('');
 	}
 
 	function stopHtml(stop, index) {
@@ -795,7 +818,7 @@
 		var attrs = ' data-stop="' + index + '" role="button" tabindex="0"';
 		if (stop.daytripCity) attrs += ' data-city="' + esc(stop.daytripCity) + '"';
 		return '<div class="guide-stop guide-tl-stop' + active + gap + (stop.daytripCity ? ' guide-daytrip' : '') + '"' + attrs + '>' +
-			inner + '</div>' + legHtml(stop);
+			inner + '</div>';
 	}
 
 	function backupsHtml(stop) {
@@ -865,8 +888,13 @@
 				'<span class="guide-day-kicker">' + esc(dayLabel(i)) + '</span>' +
 				'<span class="guide-day-date">' + dateHtml + '</span></button>';
 		}).join('');
-		var inbound = day.inbound ? legHtml({ transit: day.inbound }) : '';
-		var stops = inbound + day.stops.map(stopHtml).join('');
+		var pieces = [];
+		if (day.inbound) pieces.push(legRows(day.inbound, day.stops[0] || null, null));
+		day.stops.forEach(function (stop, i) {
+			pieces.push(stopHtml(stop, i));
+			if (stop.transit) pieces.push(legRows(stop.transit, day.stops[i + 1] || null, parseClock(stop.leave)));
+		});
+		var stops = pieces.join('');
 		var notes = (day.notes || []).map(function (n) {
 			return '<li>' + esc(tx(n)) + '</li>';
 		}).join('');
