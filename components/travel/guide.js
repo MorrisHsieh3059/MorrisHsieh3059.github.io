@@ -28,6 +28,12 @@
 		option: { en: 'Other option', zh: '另一个选择' },
 		options: { en: 'Options', zh: '可选项' },
 		optional: { en: 'Optional', zh: '可选' },
+		menuSource: { en: 'Menu source', zh: '菜单来源' },
+		menuCheck: { en: 'Menu check', zh: '菜单核对' },
+		menuPlace: { en: 'Place', zh: '餐厅' },
+		menuDishes: { en: 'Dishes', zh: '菜品' },
+		menuHours: { en: 'Hours', zh: '时间' },
+		menuNote: { en: 'What changed', zh: '改动' },
 		notes: { en: 'Note', zh: '备注' },
 		confirmed: { en: 'Confirmed', zh: '已确认' },
 		tentative: { en: 'Tentative', zh: '暂定' },
@@ -308,6 +314,35 @@
 		}).join('');
 		var noteHtml = note && tx(note) ? '<p class="guide-must-note">' + esc(tx(note)) + '</p>' : '';
 		return '<div class="guide-must"><span class="guide-kicker">' + esc(ui(labelKey)) + '</span><ul>' + lis + '</ul>' + noteHtml + '</div>';
+	}
+
+	function menuSourceHtml(item) {
+		var urls = item && item.menuSource;
+		if (!urls || !urls.length) return '';
+		var links = urls.map(function (url, i) {
+			var label = urls.length === 1 || i === 0
+				? ui('menuSource')
+				: url.replace(/^https?:\/\/(?:www\.)?([^/]+).*$/i, '$1');
+			return '<a href="' + esc(url) + '" target="_blank" rel="noopener">' + esc(i === 0 ? ui('menuSource') : label) + '</a>';
+		}).join(' ');
+		return '<p class="guide-menu-source">' + links + '</p>';
+	}
+
+	function menuCheckHtml(city) {
+		var rows = city && city.menuCheck;
+		if (!rows || !rows.length) return '';
+		var head = '<tr><th>' + esc(ui('menuPlace')) + '</th><th>' + esc(ui('menuDishes')) + '</th><th>' + esc(ui('menuHours')) + '</th><th>' + esc(ui('menuNote')) + '</th></tr>';
+		var body = rows.map(function (row) {
+			var dishes = (row.dishes || []).map(function (dish) {
+				return typeof dish === 'string' ? dish : tx(dish);
+			}).join(' · ');
+			var links = (row.sources || []).map(function (url) {
+				var host = url.replace(/^https?:\/\/(?:www\.)?([^/]+).*$/i, '$1');
+				return '<a href="' + esc(url) + '" target="_blank" rel="noopener">' + esc(host) + '</a>';
+			}).join(' ');
+			return '<tr><td>' + esc(row.place || '') + (links ? '<div class="guide-menu-links">' + links + '</div>' : '') + '</td><td>' + esc(dishes) + '</td><td>' + esc(tx(row.hours)) + '</td><td>' + esc(tx(row.note)) + '</td></tr>';
+		}).join('');
+		return '<details class="guide-around guide-menu-check" data-fold="menu-check"><summary>' + esc(ui('menuCheck')) + '</summary><div class="guide-menu-scroll"><table class="guide-menu-table"><thead>' + head + '</thead><tbody>' + body + '</tbody></table></div></details>';
 	}
 
 	function mealMeta(item) {
@@ -833,6 +868,7 @@
 				mealMeta(stop) +
 				mustBlock('mustSee', stop.mustSee) +
 				mustBlock('mustEat', stop.mustOrder, stop.mustOrderNote) +
+				menuSourceHtml(stop) +
 				ticketBlock(stop) +
 				backups +
 				alts +
@@ -860,7 +896,7 @@
 			};
 			var buttons = iconButtons(linkItem, true);
 			var meta = bits.length ? '<p class="guide-backup-meta">' + esc(bits.join(' · ')) + '</p>' : '';
-			return '<div class="guide-backup"><div class="guide-backup-head"><span class="guide-backup-name">' + esc(name) + '</span><span class="guide-stop-actions">' + buttons + '</span></div>' + meta + mealMeta(item) + mustBlock('mustEat', item.mustOrder, item.mustOrderNote) + '</div>';
+			return '<div class="guide-backup"><div class="guide-backup-head"><span class="guide-backup-name">' + esc(name) + '</span><span class="guide-stop-actions">' + buttons + '</span></div>' + meta + mealMeta(item) + mustBlock('mustEat', item.mustOrder, item.mustOrderNote) + menuSourceHtml(item) + '</div>';
 		}).join('');
 		if (!rows) return '';
 		return '<details class="guide-tl-fold guide-backups" data-fold="stop-' + index + '-backups"><summary>' + esc(ui('backup')) + '</summary>' + rows + '</details>';
@@ -924,6 +960,7 @@
 		}).join('');
 		var noteBlock = notes ? '<ul class="guide-day-notes">' + notes + '</ul>' : '';
 		var returns = returnOptionsHtml(day);
+		var menuCheck = menuCheckHtml(city);
 		var around = '';
 		if (city.gettingAround && tx(city.gettingAround)) {
 			var aroundLabel = state.lang === 'zh' ? '市内交通' : 'Getting around';
@@ -937,7 +974,7 @@
 			'<div class="guide-days" role="tablist">' + tabs + '</div>' +
 			'<div class="guide-split">' +
 				'<div class="guide-map-panel"><div id="guide-map" class="guide-map" role="application" aria-label="' + esc(tx(city.name)) + '"></div></div>' +
-				'<div class="guide-timeline" id="guide-timeline">' + section + '<div class="guide-tl">' + stops + '</div>' + noteBlock + returns + around + '</div>' +
+				'<div class="guide-timeline" id="guide-timeline">' + section + '<div class="guide-tl">' + stops + '</div>' + noteBlock + returns + around + menuCheck + '</div>' +
 			'</div>';
 		$('#guide-root').attr('lang', state.lang === 'zh' ? 'zh-Hans' : 'en').html(html);
 		syncTabs();
