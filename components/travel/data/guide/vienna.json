@@ -1,6 +1,6 @@
 {
   "id": "vienna",
-  "version": "v4.0.5",
+  "version": "v4.0.8",
   "draft": true,
   "country": {
     "en": "Austria",
@@ -206,8 +206,8 @@
           "zh": "Late food, honestly: on a Sunday after 10 PM the only historic-local places still serving in the Innere Stadt are the Würstelstände (Bitzinger, Hoher Markt) and Café Hawelka – all three are already in the plan for Dec 28 (no-repeat rule), and nothing historic is open near the Messe either. So: straight to the hotel · the 2:45 PM Wilhelm Hoeck lunch is the day's main meal."
         },
         {
-          "en": "Riesenrad + Prater are on Dec 29 after dinner (8:35 PM) · Dec 29 dinner is Figlmüller Wollzeile 7:00 PM, Meissl & Schadn is its backup.",
-          "zh": "Riesenrad + Prater are on Dec 29 after dinner (8:35 PM) · Dec 29 dinner is Figlmüller Wollzeile 7:00 PM, Meissl & Schadn is its backup."
+          "en": "Riesenrad + Prater are on Dec 29 after dinner (9:05 PM) · Dec 29 dinner is Figlmüller Wollzeile 7:30 PM, Meissl & Schadn is its backup.",
+          "zh": "摩天轮和普拉特在 12月29日晚饭后（21:05）。当晚晚饭是 Wollzeile 的 Figlmüller，19:30，Meissl & Schadn 是备选。"
         },
         {
           "en": "v3.4.5: hotel – Hampton by Hilton Vienna Messe (Leopoldstadt, U2 Messe-Prater). Taxi recommended at this hour (one ride vs. 3 changes).",
@@ -250,7 +250,7 @@
           "placeId": "VIENNA_HOTEL",
           "notes": {
             "en": "Hotel breakfast 6:45 AM (early start for the Hundertwasserhaus)",
-            "zh": "Hotel breakfast 6:45 AM (early start for the Hundertwasserhaus)"
+            "zh": "6:45 酒店早餐（好早去百水屋）"
           },
           "booked": true,
           "transit": {
@@ -1845,8 +1845,8 @@
       "date": "2026-12-29",
       "weekday": "Tuesday",
       "title": {
-        "en": "Tuesday · Upper Belvedere (The Kiss), Musikverein, Karlskirche, Naschmarkt, Albertina, National Library State Hall → Bratislava afternoon + Mirror Bar → Figlmüller 7 PM → Riesenrad → Sacher-Torte at the Rote Bar",
-        "zh": "Tuesday · Upper Belvedere (The Kiss), Musikverein, Karlskirche, Naschmarkt, Albertina, National Library State Hall → Bratislava afternoon + Mirror Bar → Figlmüller 7 PM → Riesenrad → Sacher-Torte at the Rote Bar"
+        "en": "Tuesday · Upper Belvedere (The Kiss), Musikverein, Karlskirche, Naschmarkt, Albertina, National Library State Hall → Bratislava afternoon + Mirror Bar → Figlmüller 7:30 PM → Riesenrad → Sacher-Torte at Café Sacher",
+        "zh": "Tuesday · Upper Belvedere (The Kiss), Musikverein, Karlskirche, Naschmarkt, Albertina, National Library State Hall → Bratislava afternoon + Mirror Bar → Figlmüller 7:30 PM → Riesenrad → Sacher-Torte at Café Sacher"
       },
       "stops": [
         {
@@ -1864,7 +1864,7 @@
           "placeId": "VIENNA_HOTEL",
           "notes": {
             "en": "Hotel breakfast 7:15 AM",
-            "zh": "Hotel breakfast 7:15 AM"
+            "zh": "7:15 酒店早餐"
           },
           "booked": true,
           "transit": {
@@ -2342,7 +2342,7 @@
           "lat": 48.148598,
           "lng": 17.107748,
           "arrive": "1:14 PM",
-          "leave": "6:15 PM",
+          "leave": "6:46 PM",
           "website": "https://www.visitbratislava.com/",
           "nativeName": "Bratislava",
           "daytripCity": "bratislava",
@@ -2389,13 +2389,14 @@
                   "en": "Train",
                   "zh": "火车"
                 },
-                "duration": "59 min",
-                "line": "REX 6",
+                "duration": "56 min",
+                "line": "REX 8",
                 "direction": "Wien Hbf",
-                "from": "Bratislava-Petržalka",
+                "from": "Bratislava hlavná stanica",
                 "to": "Wien Hbf (platforms 3–12)",
-                "stops": 11,
-                "frequency": "hourly (:16)"
+                "stops": 8,
+                "frequency": "hourly (:50; no 21:50)",
+                "note": "no seat – Bratislava-Ticket bought before boarding"
               }
             ],
             "ticket": {
@@ -2414,8 +2415,8 @@
           },
           "lat": 48.184988,
           "lng": 16.377939,
-          "arrive": "6:15 PM",
-          "leave": "6:18 PM",
+          "arrive": "6:46 PM",
+          "leave": "6:48 PM",
           "website": null,
           "nativeName": "Wien Hauptbahnhof",
           "placeId": "WIEN_HBF",
@@ -2448,7 +2449,7 @@
                 "from": "Hauptbahnhof",
                 "to": "Stephansplatz",
                 "stops": 3,
-                "frequency": "every 3–4 min"
+                "frequency": "every 3–4 min (~6:56 PM)"
               },
               {
                 "mode": "walk",
@@ -2478,16 +2479,16 @@
           "lat": 48.209421,
           "lng": 16.374843,
           "arrive": {
-            "en": "~6:35 PM (table 7:00 PM)",
-            "zh": "约 18:35（入座 19:00）"
+            "en": "~7:10 PM (table 7:30 PM)",
+            "zh": "约 19:10（入座 19:30）"
           },
-          "leave": "8:15 PM",
+          "leave": "8:35 PM",
           "website": "https://www.figlmueller.at/en/wollzeile/",
           "nativeName": "Figlmüller Wollzeile",
           "placeId": "FIGLMUELLER",
           "hours": {
-            "en": "Official: daily 11:00–22:30, kitchen to 21:30 (order by ~8:15)",
-            "zh": "Official: daily 11:00–22:30, kitchen to 21:30 (order by ~8:15)"
+            "en": "Official: daily 11:00–22:30, kitchen to 21:30",
+            "zh": "Official: daily 11:00–22:30, kitchen to 21:30"
           },
           "notes": {
             "en": "Dinner at the 1905 home of the plate-sized Wiener Schnitzel (Wollzeile original)",
@@ -2517,8 +2518,8 @@
             "zh": "盘子大的猪排；配土豆野苣沙拉"
           },
           "ticket": {
-            "en": "arrive on time",
-            "zh": "已订好——准时到"
+            "en": "7:30 PM table",
+            "zh": "已订好——19:30 的位子"
           },
           "booked": true,
           "backups": [
@@ -2640,8 +2641,8 @@
           },
           "lat": 48.216741,
           "lng": 16.395909,
-          "arrive": "8:45 PM",
-          "leave": "9:10 PM",
+          "arrive": "9:05 PM",
+          "leave": "9:30 PM",
           "website": "https://wienerriesenrad.com/en/",
           "nativeName": "Wiener Riesenrad",
           "placeId": "RIESENRAD",
@@ -2650,8 +2651,8 @@
             "zh": "Official: Dec 21–30 daily 10:00–22:15 · Wintermarkt am Riesenradplatz runs to Jan 6"
           },
           "notes": {
-            "en": "One 1897 Ferris-wheel rotation over night-time Vienna (~15 min) + a quick loop of the Wintermarkt (30 min) – after dinner, well before the 10:15 PM close",
-            "zh": "One 1897 Ferris-wheel rotation over night-time Vienna (~15 min) + a quick loop of the Wintermarkt (30 min) – after dinner, well before the 10:15 PM close"
+            "en": "One 1897 Ferris-wheel rotation over night-time Vienna (~15 min) + a quick look at the Wintermarkt (25 min) – after dinner, well before the 10:15 PM close",
+            "zh": "1897 年的摩天轮转一圈，看夜里的维也纳（大约 15 分钟），再看一眼圣诞市集（25 分钟）。晚饭之后，离 22:15 关门还早。"
           },
           "mustSee": [
             {
@@ -2712,7 +2713,7 @@
                 },
                 "duration": "5 min",
                 "from": "Karlsplatz (Oper exit)",
-                "to": "Hotel Sacher – Rote Bar (Philharmonikerstr. 4)",
+                "to": "Café Sacher Wien (Philharmonikerstr. 4)",
                 "distanceM": 350
               }
             ],
@@ -2724,26 +2725,26 @@
           "bookingUrl": "https://wienerriesenrad.com/en/"
         },
         {
-          "type": "restaurant",
+          "type": "cafe",
           "status": "tentative",
           "name": {
-            "en": "Rote Bar (Hotel Sacher)",
-            "zh": "Rote Bar (Hotel Sacher)"
+            "en": "Café Sacher",
+            "zh": "萨赫咖啡馆"
           },
           "lat": 48.203939,
           "lng": 16.36966,
-          "arrive": "9:33 PM",
-          "leave": "10:10 PM",
-          "website": "https://www.sacher.com/de/restaurants/restaurant-rote-bar/",
-          "nativeName": "Rote Bar im Hotel Sacher",
-          "placeId": "ROTEBAR",
+          "arrive": "~9:50 PM",
+          "leave": "10:25 PM",
+          "website": "https://www.sacher.com/en/restaurants/cafe-sacher-wien/",
+          "nativeName": "Café Sacher Wien",
+          "placeId": "SACHER",
           "hours": {
-            "en": "Daily 12:00–24:00, kitchen to 22:30 (Falter)",
-            "zh": "Daily 12:00–24:00, kitchen to 22:30 (Falter)"
+            "en": "Official : daily 7:00–23:00",
+            "zh": "Official : daily 7:00–23:00"
           },
           "notes": {
-            "en": "Original Sacher-Torte with whipped cream + Melange (order on arrival; kitchen closes 10:30 PM)",
-            "zh": "Original Sacher-Torte with whipped cream + Melange (order on arrival; kitchen closes 10:30 PM)"
+            "en": "Original Sacher-Torte with whipped cream + Sacher Melange in the red-velvet coffee house of the Hotel Sacher (replaces the Rote Bar – a fine-dining room, not a dessert-only stop)",
+            "zh": "在萨赫酒店的红色丝绒咖啡馆吃一份原味萨赫蛋糕配鲜奶油，再来一杯 Sacher Melange。这一站替代 Rote Bar：那里是正餐餐厅，不是只吃甜点的地方。"
           },
           "mustOrder": [
             {
@@ -2754,8 +2755,8 @@
             },
             {
               "text": {
-                "en": "Wiener Melange",
-                "zh": "维也纳米朗琪咖啡"
+                "en": "Sacher Melange",
+                "zh": "萨赫米朗琪咖啡"
               }
             }
           ],
@@ -2765,13 +2766,27 @@
             "zh": "老字号本地菜"
           },
           "mustOrderNote": {
-            "en": "Signature dish first; the others are the house classics",
-            "zh": "第一道是招牌，其余是店里经典"
+            "en": "Signature dish first; the Sacher Melange is the house coffee",
+            "zh": "第一道是招牌；萨赫米朗琪是店里的招牌咖啡"
           },
           "ticket": {
-            "en": "Reserve ahead on the official site (or walk in early)",
-            "zh": "建议在官网提前订位（或早点直接去）"
+            "en": "Walk in (evening queue short) or reserve on sacher.com",
+            "zh": "直接去（晚上排队短）或在官网订位"
           },
+          "backups": [
+            {
+              "name": "Café Bel Étage (Sacher Eck, Kärntner Straße 38)",
+              "hoursZh": "官网：每天 8–22（厨房 12–21:30）",
+              "lat": 48.20387,
+              "lng": 16.370004,
+              "website": "https://www.sacher.com/en/restaurants/cafe-bel-etage/",
+              "placeId": "SACHER_BELETAGE",
+              "note": {
+                "en": "Same Sacher-Torte around the corner, shorter queue – but closes 22:00, so only if you skip the Riesenrad / arrive before ~9:30 PM",
+                "zh": "Same Sacher-Torte around the corner, shorter queue – but closes 22:00, so only if you skip the Riesenrad / arrive before ~9:30 PM"
+              }
+            }
+          ],
           "transit": {
             "segments": [
               {
@@ -2781,7 +2796,7 @@
                   "zh": "步行"
                 },
                 "duration": "6 min",
-                "from": "Sacher",
+                "from": "Café Sacher",
                 "to": "Karlsplatz (U2)",
                 "distanceM": 450
               },
@@ -2826,7 +2841,7 @@
           },
           "lat": 48.215855,
           "lng": 16.403732,
-          "arrive": "~10:40 PM",
+          "arrive": "~10:55 PM",
           "leave": null,
           "website": "https://www.hilton.com/en/hotels/vienahx-hampton-vienna-messe/",
           "placeId": "VIENNA_HOTEL",
@@ -2847,12 +2862,16 @@
           "zh": "Spanish Riding School morning exercise does run on Dec 29 but only 10:00–11:00 (doors 9:45) – it collides with the kept Belvedere 9:00 slot, so it is not scheduled (swap option: Morgenarbeit 10:00 instead of Belvedere + Musikverein/Karlskirche)."
         },
         {
-          "en": "v4.0: Figlmüller for 7:00 PM (only slot left) – back from Bratislava on 5:16 PM (Petržalka) → Wien Hbf 6:15 PM · Riesenrad after dinner, reached on foot along the Danube Canal (open to 10:15 PM Dec 21–30), Rote Bar last (kitchen to 10:30 PM).",
-          "zh": "v4.0: Figlmüller for 7:00 PM (only slot left) – back from Bratislava on 5:16 PM (Petržalka) → Wien Hbf 6:15 PM · Riesenrad after dinner, reached on foot along the Danube Canal (open to 10:15 PM Dec 21–30), Rote Bar last (kitchen to 10:30 PM)."
+          "en": "(superseded by v4.0.8) v4.0: Figlmüller for 7:00 PM (only slot left) – back from Bratislava on 5:16 PM (Petržalka) → Wien Hbf 6:15 PM · Riesenrad after dinner, reached on foot along the Danube Canal (open to 10:15 PM Dec 21–30), Rote Bar last (kitchen to 10:30 PM).",
+          "zh": "(superseded by v4.0.8) v4.0: Figlmüller for 7:00 PM (only slot left) – back from Bratislava on 5:16 PM (Petržalka) → Wien Hbf 6:15 PM · Riesenrad after dinner, reached on foot along the Danube Canal (open to 10:15 PM Dec 21–30), Rote Bar last (kitchen to 10:30 PM)."
         },
         {
-          "en": "v4.0.1: Figlmüller → Riesenrad on foot (30 min along the Danube Canal) → Riesenrad 8:45–9:10 → Rote Bar 9:33 (kitchen to 10:30) → hotel ~10:40 PM.",
-          "zh": "v4.0.1: Figlmüller → Riesenrad on foot (30 min along the Danube Canal) → Riesenrad 8:45–9:10 → Rote Bar 9:33 (kitchen to 10:30) → hotel ~10:40 PM."
+          "en": "(superseded by v4.0.8) v4.0.1: Figlmüller → Riesenrad on foot (30 min along the Danube Canal) → Riesenrad 8:45–9:10 → Rote Bar 9:33 (kitchen to 10:30) → hotel ~10:40 PM.",
+          "zh": "(superseded by v4.0.8) v4.0.1: Figlmüller → Riesenrad on foot (30 min along the Danube Canal) → Riesenrad 8:45–9:10 → Rote Bar 9:33 (kitchen to 10:30) → hotel ~10:40 PM."
+        },
+        {
+          "en": "v4.0.8 (traveler's final plan): back on 5:50 PM → Wien Hbf 6:46 → U1 → Figlmüller ~7:10, table 7:30 PM (moved from 7:00, confirmed) → dinner to 8:35 → walk 30 min along the Danube Canal → Riesenrad 9:05–9:30 (closes 10:15) → U1 Praterstern → Karlsplatz → Café Sacher ~9:50–10:25 (closes 23:00 · replaces the Rote Bar) → U2 → hotel ~10:55 PM.",
+          "zh": "v4.0.8：17:50 出发，18:46 到维也纳火车总站，乘 U1，大约 19:10 到 Figlmüller，19:30 入座（从 19:00 改过来，已确认）。晚饭到 20:35，沿多瑙运河步行 30 分钟，摩天轮 21:05–21:30（22:15 关门），U1 到 Praterstern 再转到 Karlsplatz，大约 21:50–22:25 在 Café Sacher（23:00 关门，替代 Rote Bar），U2 回酒店，大约 22:55。"
         }
       ]
     },
@@ -2879,7 +2898,7 @@
           "placeId": "VIENNA_HOTEL",
           "notes": {
             "en": "Check out (~7:05 AM) and leave bags at the front desk (collected ~3:00 PM by taxi on the way to the airport)",
-            "zh": "Check out (~7:05 AM) and leave bags at the front desk (collected ~3:00 PM by taxi on the way to the airport)"
+            "zh": "大约 7:05 退房，行李放前台（下午大约 3:00 打车去机场时再取）"
           },
           "booked": true,
           "transit": {
@@ -2996,8 +3015,8 @@
               "googleMaps": "https://www.google.com/maps/search/?api=1&query=Caf%C3%A9+Sacher+Wien+Philharmonikerstra%C3%9Fe+4%2C+1010+Wien",
               "placeId": "SACHER",
               "note": {
-                "en": "Backup for breakfast 2026-12-30 · ~15 min transit/walk",
-                "zh": "Backup for breakfast 2026-12-30 · ~15 min transit/walk"
+                "en": "Backup for breakfast 2026-12-30 · ~15 min transit/walk (also the Dec 29 evening dessert stop – try Café Sperl first)",
+                "zh": "Backup for breakfast 2026-12-30 · ~15 min transit/walk (also the Dec 29 evening dessert stop – try Café Sperl first)"
               },
               "founded": "1876",
               "cuisine": {
@@ -3415,8 +3434,8 @@
             "zh": "品尝菜单——以上是当季招牌，最终以厨房当天菜单为准"
           },
           "ticket": {
-            "en": "arrive on time",
-            "zh": "已订好——准时到"
+            "en": "11:30 AM; free cancellation until 48 h before",
+            "zh": "已订——11:30，1 位；48 小时前可免费取消"
           },
           "booked": true,
           "backups": [

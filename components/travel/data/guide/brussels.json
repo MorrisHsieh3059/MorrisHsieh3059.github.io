@@ -1,6 +1,6 @@
 {
   "id": "brussels",
-  "version": "v4.0.5",
+  "version": "v4.0.8",
   "draft": true,
   "country": {
     "en": "Belgium",
@@ -120,7 +120,7 @@
           "placeId": "HILTON_BXL",
           "notes": {
             "en": "Check in, drop the bag (2 nights)",
-            "zh": "Check in, drop the bag (2 nights)"
+            "zh": "入住，放下行李（住两晚）"
           },
           "booked": true,
           "transit": {

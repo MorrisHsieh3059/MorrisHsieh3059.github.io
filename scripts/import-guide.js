@@ -175,6 +175,7 @@ function stripBookingDetails(s) {
   s = s.replace(/\s*\([^)]*\b(?:not yet booked|unbooked|booked)\b[^)]*\)/gi, '');
   s = s.replace(/\bnot yet booked\b/gi, '');
   s = s.replace(/\bunbooked\b/gi, '');
+  s = s.replace(/\brebooked\b/gi, 'moved');
   s = s.replace(/\b(?:is\s+|was\s+)?booked\b/gi, '');
   s = s.replace(/\s*@[\w.]+/g, '');
   s = s.replace(/\s+for \d+\b(?!\s*(?:min|minutes|h\b|hours?|AM|PM|:))/gi, '');
@@ -183,6 +184,9 @@ function stripBookingDetails(s) {
 
 function polishActivity(original, sanitized) {
   let s = sanitized;
+  if (/Drop the luggage first/i.test(original || '')) {
+    return 'Drop the luggage first, then lunch. Early check-in at noon if the room is ready; otherwise leave the bags at the desk. Standard check-in is 3 PM.';
+  }
   if (/^Connect to$/i.test(s)) s = 'Connect to the overnight flight';
   if (/REX\s?-?\d/i.test(original || '') && /back to Vienna/i.test(s)) s = 'Train back to Vienna';
   else if (/REX\s?-?\d/i.test(original || '') && /Bratislava/i.test(s)) s = 'Train to Bratislava';
@@ -193,6 +197,9 @@ function polishActivity(original, sanitized) {
 
 function polishNote(original) {
   let s = sanitize(original);
+  if (/v4\.0\.8 \(traveler's final plan\): Mirror Bar/i.test(original || '')) {
+    return 'v4.0.8: Mirror Bar 4:30–about 5:14 PM, then a 4-minute walk, tram 1 at 5:18 from Jesenského to the main station at 5:35, REX 8 at 5:50 PM, Wien Hbf at 6:46 PM. Backup: REX 6 from Petržalka at 6:16, arriving 7:15 PM. Buy the ticket before boarding.';
+  }
   if (/Leave home for JFK/i.test(original || '')) s = 'Leave for the airport at 9:30 AM';
   if (/time not on page/i.test(s)) return '';
   if (/^(phone|email)\b/i.test(s)) return '';
@@ -1033,12 +1040,16 @@ function buildCity(city, version) {
       title: bilingual(titleEn, 'title'),
       stops: []
     };
-    const notes = (day.notes || []).map(function (n) {
+    const notes = (day.notes || []).filter(function (n) {
+      return !/^v4\.0\.8 train table/i.test(String(n || ''));
+    }).map(function (n) {
       return bilingual(polishNote(n), 'note');
     }).filter(function (n) { return n && n.en; });
     if (notes.length) built.notes = notes;
     const returns = (day.return_options || []).map(returnOption).filter(Boolean);
     if (returns.length) built.returnOptions = returns;
+    const trains = publicTrainTable(day.train_table);
+    if (trains) built.trainTable = trains;
 
     const timeline = day.timeline || [];
     if (timeline[0] && timeline[0].item_type === 'leg') {
@@ -1066,6 +1077,38 @@ function buildCity(city, version) {
     out.days.push(built);
   });
   return out;
+}
+
+function trainRows(list, line) {
+  return (list || []).map(function (row) {
+    const label = String(row && row.train || '');
+    let mark = '';
+    if (/never planned|\bLAST\b/i.test(label)) mark = 'last';
+    else if (/backup/i.test(label)) mark = 'backup';
+    else if (/planned/i.test(label)) mark = 'planned';
+    return {
+      line: line,
+      depart: String(row.dep || ''),
+      arrive: String(row.arr || ''),
+      mark: mark,
+      gap: /no 21:50/i.test(label)
+    };
+  }).filter(function (row) {
+    return /^\d{1,2}:\d{2}/.test(row.depart) && /^\d{1,2}:\d{2}/.test(row.arrive);
+  });
+}
+
+function publicTrainTable(raw) {
+  if (!raw || typeof raw !== 'object') return null;
+  const rows = trainRows(raw.rex8_hlst_to_wien_hbf, 'REX 8').concat(trainRows(raw.rex6_petrzalka_to_wien_hbf, 'REX 6'));
+  if (!rows.length) return null;
+  return {
+    caption: {
+      en: 'Dec 29 trains to Wien Hbf. REX 8 leaves Bratislava hlavná stanica via Marchegg (56 min). REX 6 leaves Petržalka via Kittsee (59 min). Buy the ticket before boarding.',
+      zh: '12月29日开往维也纳火车总站。REX 8 从总站经 Marchegg（56分钟）。REX 6 从 Petržalka 经 Kittsee（59分钟）。上车前买票。'
+    },
+    rows: rows
+  };
 }
 
 function returnOption(raw) {
