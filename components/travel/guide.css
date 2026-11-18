@@ -964,6 +964,15 @@ a.guide-daytrip {
 	font-size: 0.66rem;
 }
 
+.guide-train-table tr.is-planned td {
+	color: #222;
+	font-weight: 700;
+}
+
+.guide-train-table tr.is-last td {
+	color: #aaa;
+}
+
 .guide-tl-seg + .guide-tl-seg {
 	margin-top: 0.12rem;
 }

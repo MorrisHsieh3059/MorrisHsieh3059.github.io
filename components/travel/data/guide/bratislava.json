@@ -1,6 +1,6 @@
 {
   "id": "bratislava",
-  "version": "v4.0.5",
+  "version": "v4.0.8",
   "draft": true,
   "country": {
     "en": "Slovakia",
@@ -431,7 +431,7 @@
             "en": "4:22 PM (table 4:30 PM)",
             "zh": "16:22（入座 16:30）"
           },
-          "leave": "4:52 PM",
+          "leave": "5:14 PM",
           "website": "https://www.mirrorbarcarlton.com/",
           "nativeName": "Mirror Bar",
           "placeId": "MIRROR_BAR",
@@ -440,8 +440,8 @@
             "zh": "Official : Tuesday 9:00–24:00"
           },
           "notes": {
-            "en": "🍸 Mirror Bar – World's 50 Best Bars 2026 No. 34 (No. 25 in 2025): one drink, ~30 min, in the Carlton's emerald 'secret garden' room. Order the signature Lux (gin, passion fruit, rue berry liqueur, sherry, prosecco – served under a bonsai); alternative showpiece: Lantern of Infinity.",
-            "zh": "🍸 Mirror Bar – World's 50 Best Bars 2026 No. 34 (No. 25 in 2025): one drink, ~30 min, in the Carlton's emerald 'secret garden' room. Order the signature Lux (gin, passion fruit, rue berry liqueur, sherry, prosecco – served under a bonsai); alternative showpiece: Lantern of Infinity."
+            "en": "🍸 Mirror Bar – World's 50 Best Bars 2026 No. 34 (No. 25 in 2025): ~45 min, one or two drinks, in the Carlton's emerald 'secret garden' room. Order the signature Lux (gin, passion fruit, rue berry liqueur, sherry, prosecco – served under a bonsai); second drink if time: Lantern of Infinity. Leave by 5:14 PM for the 5:18 PM tram 1.",
+            "zh": "Mirror Bar，2026 年世界 50 佳酒吧第 34（2025 年第 25）：大约 45 分钟，一两杯，在 Carlton 的绿色“秘密花园”房间。先点招牌 Lux（金酒、百香果、芸香莓利口酒、雪利、普罗塞克，配一棵盆景端上来）；来得及再点第二杯 Lantern of Infinity。17:14 离开，赶 17:18 的 1 路电车。"
           },
           "mustSee": [
             {
@@ -478,12 +478,12 @@
             }
           ],
           "mustOrderNote": {
-            "en": "Lux is the bar's signature – a gin take on the Pornstar Martini served under a bonsai and halo lamp; Lantern of Infinity arrives in a glowing lantern inside a mirrored tesseract. Both are named in the 50 Best write-up (The Essence of Design menu). One drink fits the ~30 min visit – Lux first. Sources: the50.com (World's 50 Best Bars 2026 #34, Europe #8), Drinks International 'Menu of the month'.",
-            "zh": "Lux 是招牌——金酒版的 Pornstar Martini，盆景加光环灯上桌；无限之灯装在发光灯笼里、放在镜面四维立方体中。两款都在 50 Best 介绍里点名（The Essence of Design 酒单）。约 30 分钟只够一杯——先点 Lux。来源：the50.com（2026 全球 50 佳第 34、欧洲第 8）、Drinks International「本月酒单」。"
+            "en": "Lux is the bar's signature – a gin take on the Pornstar Martini served under a bonsai and halo lamp; Lantern of Infinity arrives in a glowing lantern inside a mirrored tesseract. Both are named in the 50 Best write-up (The Essence of Design menu). ~45 min: Lux first; Lantern of Infinity as a second drink if time. Sources: the50.com (World's 50 Best Bars 2026 #34, Europe #8), Drinks International 'Menu of the month'.",
+            "zh": "Lux 是招牌——金酒版的 Pornstar Martini，盆景加光环灯上桌；无限之灯装在发光灯笼里、放在镜面四维立方体中。两款都在 50 Best 介绍里点名（The Essence of Design 酒单）。约 45 分钟：先点 Lux，时间够再来一杯无限之灯。来源：the50.com（2026 全球 50 佳第 34、欧洲第 8）、Drinks International「本月酒单」。"
           },
           "ticket": {
-            "en": "4:30 PM table",
-            "zh": "已订好——4:30 的位子"
+            "en": "4:30 PM table (leave ~5:14 PM)",
+            "zh": "已订好——4:30 的位子（约 5:14 离开）"
           },
           "booked": true,
           "transit": {
@@ -494,24 +494,25 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "7 min",
-                "from": "Mirror Bar",
-                "to": "Most SNP (terminál, under the bridge)",
-                "distanceM": 450
+                "duration": "4 min",
+                "from": "Mirror Bar (Hviezdoslavovo nám.)",
+                "to": "Jesenského (tram 1)",
+                "distanceM": 300
               },
               {
-                "mode": "bus",
+                "mode": "tram",
                 "label": {
-                  "en": "Bus",
-                  "zh": "公交"
+                  "en": "Tram",
+                  "zh": "电车"
                 },
-                "duration": "5 min",
-                "line": "91 / 191",
-                "direction": "Čunovo / Rusovce",
-                "from": "Most SNP (terminál)",
-                "to": "Petržalka stanica (Panónska c.)",
-                "stops": 3,
-                "frequency": "every 10 min (91 and 191 alternate: 4:50 / 5:00 / 5:10 PM)"
+                "duration": "17 min",
+                "line": "1",
+                "direction": "Hlavná stanica",
+                "from": "Jesenského",
+                "to": "Bratislava hl.st. (tram loop)",
+                "stops": 8,
+                "frequency": "every 10 min (5:18 / 5:28 PM)",
+                "note": "same tram, no change needed at Nám. Ľ. Štúra"
               },
               {
                 "mode": "walk",
@@ -519,10 +520,10 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "4 min",
-                "from": "Petržalka stanica (bus)",
-                "to": "Bratislava-Petržalka (platform)",
-                "distanceM": 90
+                "duration": "5 min",
+                "from": "Bratislava hl.st. tram loop",
+                "to": "REX 8 platform",
+                "distanceM": 300
               }
             ],
             "ticket": {
@@ -535,16 +536,16 @@
           "type": "station",
           "status": "tentative",
           "name": {
-            "en": "Bratislava-Petržalka station",
-            "zh": "布拉迪斯拉发 Petržalka 火车站"
+            "en": "Bratislava main station",
+            "zh": "布拉迪斯拉发总站"
           },
-          "lat": 48.1206,
-          "lng": 17.0952,
-          "arrive": "~5:09 PM",
-          "leave": "5:16 PM",
+          "lat": 48.158799,
+          "lng": 17.106022,
+          "arrive": "~5:35 PM",
+          "leave": "5:50 PM",
           "website": null,
-          "nativeName": "Bratislava-Petržalka",
-          "placeId": "BA_PETRZALKA",
+          "nativeName": "Bratislava hlavná stanica",
+          "placeId": "BA_HLST",
           "notes": {
             "en": "Train back to Vienna",
             "zh": "坐火车回维也纳"
@@ -561,42 +562,25 @@
           "zh": "v3.4.3: Mirror Bar back in (4:30 PM) · Kaffee Mayer coffee stop cut (Mirror Bar is the sit-down stop) · Old Town Hall museum, Primate's Palace interior and UFO stay dropped."
         },
         {
-          "en": "v4.0: return moved to Bratislava-Petržalka 5:16 PM → Wien Hbf 6:15 PM so the 7 PM Figlmüller table has a ~25 min margin. Fallback if 5:16 is missed: bus 93 (5:32) to the main station and 5:50 PM → Wien Hbf 6:46 PM → U1 → Figlmüller ~7:05 (tell the restaurant you are a few minutes late). Later at 6:50 and 7:50 PM also run · the last train 10:50 PM is never used.",
-          "zh": "v4.0: return moved to Bratislava-Petržalka 5:16 PM → Wien Hbf 6:15 PM so the 7 PM Figlmüller table has a ~25 min margin. Fallback if 5:16 is missed: bus 93 (5:32) to the main station and 5:50 PM → Wien Hbf 6:46 PM → U1 → Figlmüller ~7:05 (tell the restaurant you are a few minutes late). Later at 6:50 and 7:50 PM also run · the last train 10:50 PM is never used."
+          "en": "(superseded by v4.0.8) v4.0: return moved to Bratislava-Petržalka 5:16 PM → Wien Hbf 6:15 PM so the 7 PM Figlmüller table has a ~25 min margin. Fallback if 5:16 is missed: bus 93 (5:32) to the main station and 5:50 PM → Wien Hbf 6:46 PM → U1 → Figlmüller ~7:05 (tell the restaurant you are a few minutes late). Later at 6:50 and 7:50 PM also run · the last train 10:50 PM is never used.",
+          "zh": "(superseded by v4.0.8) v4.0: return moved to Bratislava-Petržalka 5:16 PM → Wien Hbf 6:15 PM so the 7 PM Figlmüller table has a ~25 min margin. Fallback if 5:16 is missed: bus 93 (5:32) to the main station and 5:50 PM → Wien Hbf 6:46 PM → U1 → Figlmüller ~7:05 (tell the restaurant you are a few minutes late). Later at 6:50 and 7:50 PM also run · the last train 10:50 PM is never used."
         },
         {
-          "en": "Order changed so the castle is seen before the grounds close at 4 PM · Mirror Bar is ~30 min.",
-          "zh": "Order changed so the castle is seen before the grounds close at 4 PM · Mirror Bar is ~30 min."
-        },
-        {
-          "en": "ÖBB Bratislava-Ticket: check it covers the Kittsee/Petržalka line as well as Marchegg · if not, buy a single Petržalka–Wien in the ÖBB app.",
-          "zh": "ÖBB Bratislava-Ticket: check it covers the Kittsee/Petržalka line as well as Marchegg · if not, buy a single Petržalka–Wien in the ÖBB app."
+          "en": "Order changed so the castle is seen before the grounds close at 4 PM · Mirror Bar ~45 min – see v4.0.8.",
+          "zh": "行程改成城堡在下午 4 点关门前看完。Mirror Bar 大约 45 分钟，见 v4.0.8。"
         },
         {
           "en": "v4.0.1: station → Slovak Pub on foot (21 min, downhill via Námestie slobody) · lunch 2:31–3:03, castle 3:18 (grounds close 4 PM). Rest of the afternoon unchanged.",
           "zh": "v4.0.1: station → Slovak Pub on foot (21 min, downhill via Námestie slobody) · lunch 2:31–3:03, castle 3:18 (grounds close 4 PM). Rest of the afternoon unchanged."
+        },
+        {
+          "en": "v4.0.8: Mirror Bar 4:30–about 5:14 PM, then a 4-minute walk, tram 1 at 5:18 from Jesenského to the main station at 5:35, REX 8 at 5:50 PM, Wien Hbf at 6:46 PM. Backup: REX 6 from Petržalka at 6:16, arriving 7:15 PM. Buy the ticket before boarding.",
+          "zh": "v4.0.8：Mirror Bar 16:30 到大约 17:14，步行 4 分钟，17:18 从 Jesenského 乘 1 路电车，17:35 到总站，17:50 乘 REX 8，18:46 到维也纳火车总站。备用：18:16 从 Petržalka 乘 REX 6，19:15 到。上车前买票。"
         }
       ],
       "returnOptions": [
         {
           "rank": 1,
-          "mode": "train",
-          "line": "REX 6",
-          "from": "Bratislava-Petržalka",
-          "to": "Wien Hauptbahnhof",
-          "depart": "5:16 PM",
-          "arrive": "6:15 PM",
-          "ticket": {
-            "en": "ÖBB Bratislava-Ticket: the return train, plus city trams and buses that day.",
-            "zh": "ÖBB Bratislava-Ticket：当天往返火车，以及市内电车和公交。"
-          },
-          "note": {
-            "en": "Planned: bus 91 Most SNP 5:00 PM → Petržalka 5:05 · 45 min before the 7 PM Figlmüller",
-            "zh": "Planned: bus 91 Most SNP 5:00 PM → Petržalka 5:05 · 45 min before the 7 PM Figlmüller"
-          }
-        },
-        {
-          "rank": 2,
           "mode": "train",
           "line": "REX 8",
           "from": "Bratislava hlavná stanica",
@@ -608,8 +592,25 @@
             "zh": "ÖBB Bratislava-Ticket：当天往返火车，以及市内电车和公交。"
           },
           "note": {
-            "en": "Fallback (bus 93 ~5:32 PM to the main station) · U1 → Stephansplatz → Figlmüller ~7:05 PM – tight",
-            "zh": "Fallback (bus 93 ~5:32 PM to the main station) · U1 → Stephansplatz → Figlmüller ~7:05 PM – tight"
+            "en": "Planned: tram 1 Jesenského 5:18 → hl.st. 5:35 · Figlmüller ~7:10 for the 7:30 PM table",
+            "zh": "Planned: tram 1 Jesenského 5:18 → hl.st. 5:35 · Figlmüller ~7:10 for the 7:30 PM table"
+          }
+        },
+        {
+          "rank": 2,
+          "mode": "train",
+          "line": "REX 6",
+          "from": "Bratislava-Petržalka",
+          "to": "Wien Hauptbahnhof",
+          "depart": "6:16 PM",
+          "arrive": "7:15 PM",
+          "ticket": {
+            "en": "ÖBB Bratislava-Ticket: the return train, plus city trams and buses that day.",
+            "zh": "ÖBB Bratislava-Ticket：当天往返火车，以及市内电车和公交。"
+          },
+          "note": {
+            "en": "Backup: bus 93 hl.st. ~5:57 → Petržalka 6:07 (or bus 91 Most SNP 6:00 → 6:05) · U1 → Figlmüller ~7:38 – a few minutes late, tell the restaurant",
+            "zh": "Backup: bus 93 hl.st. ~5:57 → Petržalka 6:07 (or bus 91 Most SNP 6:00 → 6:05) · U1 → Figlmüller ~7:38 – a few minutes late, tell the restaurant"
           }
         },
         {
@@ -625,11 +626,166 @@
             "zh": "ÖBB Bratislava-Ticket：当天往返火车，以及市内电车和公交。"
           },
           "note": {
-            "en": "Only if both are missed – tell Figlmüller you will be late (kitchen to 21:30) · hourly after this, never plan on the last 10:50 PM",
-            "zh": "Only if both are missed – tell Figlmüller you will be late (kitchen to 21:30) · hourly after this, never plan on the last 10:50 PM"
+            "en": "Only if both are missed – Figlmüller ~8:05 (call ahead · kitchen to 21:30) and skip the Riesenrad · hourly after this, never plan on the last 11:16 PM / 11:50 PM",
+            "zh": "Only if both are missed – Figlmüller ~8:05 (call ahead · kitchen to 21:30) and skip the Riesenrad · hourly after this, never plan on the last 11:16 PM / 11:50 PM"
           }
         }
       ],
+      "trainTable": {
+        "caption": {
+          "en": "Dec 29 trains to Wien Hbf. REX 8 leaves Bratislava hlavná stanica via Marchegg (56 min). REX 6 leaves Petržalka via Kittsee (59 min). Buy the ticket before boarding.",
+          "zh": "12月29日开往维也纳火车总站。REX 8 从总站经 Marchegg（56分钟）。REX 6 从 Petržalka 经 Kittsee（59分钟）。上车前买票。"
+        },
+        "rows": [
+          {
+            "line": "REX 8",
+            "depart": "13:50",
+            "arrive": "14:46",
+            "mark": "",
+            "gap": false
+          },
+          {
+            "line": "REX 8",
+            "depart": "14:50",
+            "arrive": "15:46",
+            "mark": "",
+            "gap": false
+          },
+          {
+            "line": "REX 8",
+            "depart": "15:50",
+            "arrive": "16:46",
+            "mark": "",
+            "gap": false
+          },
+          {
+            "line": "REX 8",
+            "depart": "16:50",
+            "arrive": "17:46",
+            "mark": "",
+            "gap": false
+          },
+          {
+            "line": "REX 8",
+            "depart": "17:50",
+            "arrive": "18:46",
+            "mark": "planned",
+            "gap": false
+          },
+          {
+            "line": "REX 8",
+            "depart": "18:50",
+            "arrive": "19:46",
+            "mark": "",
+            "gap": false
+          },
+          {
+            "line": "REX 8",
+            "depart": "19:50",
+            "arrive": "20:46",
+            "mark": "",
+            "gap": false
+          },
+          {
+            "line": "REX 8",
+            "depart": "20:50",
+            "arrive": "21:46",
+            "mark": "",
+            "gap": false
+          },
+          {
+            "line": "REX 8",
+            "depart": "22:50",
+            "arrive": "23:46",
+            "mark": "",
+            "gap": true
+          },
+          {
+            "line": "REX 8",
+            "depart": "23:50",
+            "arrive": "00:46 (+1)",
+            "mark": "last",
+            "gap": false
+          },
+          {
+            "line": "REX 6",
+            "depart": "13:16",
+            "arrive": "14:15",
+            "mark": "",
+            "gap": false
+          },
+          {
+            "line": "REX 6",
+            "depart": "14:16",
+            "arrive": "15:15",
+            "mark": "",
+            "gap": false
+          },
+          {
+            "line": "REX 6",
+            "depart": "15:16",
+            "arrive": "16:15",
+            "mark": "",
+            "gap": false
+          },
+          {
+            "line": "REX 6",
+            "depart": "16:16",
+            "arrive": "17:15",
+            "mark": "",
+            "gap": false
+          },
+          {
+            "line": "REX 6",
+            "depart": "17:16",
+            "arrive": "18:15",
+            "mark": "",
+            "gap": false
+          },
+          {
+            "line": "REX 6",
+            "depart": "18:16",
+            "arrive": "19:15",
+            "mark": "backup",
+            "gap": false
+          },
+          {
+            "line": "REX 6",
+            "depart": "19:16",
+            "arrive": "20:15",
+            "mark": "",
+            "gap": false
+          },
+          {
+            "line": "REX 6",
+            "depart": "20:16",
+            "arrive": "21:15",
+            "mark": "",
+            "gap": false
+          },
+          {
+            "line": "REX 6",
+            "depart": "21:16",
+            "arrive": "22:15",
+            "mark": "",
+            "gap": false
+          },
+          {
+            "line": "REX 6",
+            "depart": "22:16",
+            "arrive": "23:15",
+            "mark": "",
+            "gap": false
+          },
+          {
+            "line": "REX 6",
+            "depart": "23:16",
+            "arrive": "00:15 (+1)",
+            "mark": "last",
+            "gap": false
+          }
+        ]
+      },
       "inbound": {
         "segments": [
           {

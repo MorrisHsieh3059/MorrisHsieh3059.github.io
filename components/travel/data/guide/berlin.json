@@ -1,6 +1,6 @@
 {
   "id": "berlin",
-  "version": "v4.0.5",
+  "version": "v4.0.8",
   "draft": true,
   "country": {
     "en": "Germany",
@@ -22,8 +22,8 @@
       "date": "2026-12-24",
       "weekday": "Thu",
       "title": {
-        "en": "Christmas Eve · arrive BER 1:25 PM → Reichstag, Holocaust Memorial, Brandenburg Gate, Unter den Linden, Gendarmenmarkt → Lutter & Wegner 4:30 PM → Wax On at the 7 PM opening → night views (Brandenburg Gate, Unter den Linden, Bebelplatz, Gendarmenmarkt) → U2 direct to St George's Midnight Mass",
-        "zh": "Christmas Eve · arrive BER 1:25 PM → Reichstag, Holocaust Memorial, Brandenburg Gate, Unter den Linden, Gendarmenmarkt → Lutter & Wegner 4:30 PM → Wax On at the 7 PM opening → night views (Brandenburg Gate, Unter den Linden, Bebelplatz, Gendarmenmarkt) → U2 direct to St George's Midnight Mass"
+        "en": "Christmas Eve · arrive BER 1:25 PM → hotel bag drop → Curry 36 → Reichstag, Holocaust Memorial, Brandenburg Gate, Unter den Linden, Gendarmenmarkt → Lutter & Wegner 4:30 PM → Wax On at the 7 PM opening → night views (Brandenburg Gate, Unter den Linden, Bebelplatz, Gendarmenmarkt) → U2 direct to St George's Midnight Mass",
+        "zh": "Christmas Eve · arrive BER 1:25 PM → hotel bag drop → Curry 36 → Reichstag, Holocaust Memorial, Brandenburg Gate, Unter den Linden, Gendarmenmarkt → Lutter & Wegner 4:30 PM → Wax On at the 7 PM opening → night views (Brandenburg Gate, Unter den Linden, Bebelplatz, Gendarmenmarkt) → U2 direct to St George's Midnight Mass"
       },
       "stops": [
         {
@@ -84,7 +84,7 @@
                 "from": "Berlin Hauptbahnhof",
                 "to": "Zoologischer Garten",
                 "stops": 3,
-                "frequency": "S3/S5/S7/S9 combined every ~3–5 min (each line every 10–20 min)",
+                "frequency": "S3/S5/S7/S9 combined every ~3–5 min (planned: FEX 14:01 → Hbf 14:23, S9 14:29 → Zoo 14:35)",
                 "note": "same ABC ticket"
               },
               {
@@ -93,10 +93,11 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "2 min",
-                "from": "Zoologischer Garten (Hardenbergplatz exit)",
-                "to": "Curry 36",
-                "distanceM": 150
+                "duration": "4 min",
+                "from": "S+U Zoologischer Garten (Hardenbergplatz exit)",
+                "to": "Waldorf Astoria Berlin (Hardenbergstraße 28)",
+                "distanceM": 255,
+                "note": "cross Hardenbergplatz, then left on Hardenbergstraße – the tower next to the Zoo station"
               }
             ],
             "ticket": {
@@ -122,6 +123,41 @@
           }
         },
         {
+          "type": "hotel",
+          "status": "confirmed",
+          "name": {
+            "en": "Waldorf Astoria Berlin",
+            "zh": "Waldorf Astoria Berlin"
+          },
+          "lat": 52.505584,
+          "lng": 13.332911,
+          "arrive": "2:39 PM",
+          "leave": "2:47 PM",
+          "website": "https://www.hilton.com/en/hotels/berwawa-waldorf-astoria-berlin/",
+          "placeId": "WALDORF",
+          "notes": {
+            "en": "Drop the luggage first, then lunch. Early check-in at noon if the room is ready; otherwise leave the bags at the desk. Standard check-in is 3 PM.",
+            "zh": "先把行李放酒店再去吃饭。房间若已备好，中午就能提前入住；否则把行李寄在前台。正常入住时间是下午 3 点。"
+          },
+          "booked": true,
+          "transit": {
+            "segments": [
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "2 min",
+                "from": "Waldorf Astoria Berlin",
+                "to": "Curry 36 Bahnhof Zoo (Hardenbergplatz 13)",
+                "distanceM": 170,
+                "note": "back across Hardenbergplatz to the stand under the station arches"
+              }
+            ]
+          }
+        },
+        {
           "type": "restaurant",
           "status": "tentative",
           "name": {
@@ -130,8 +166,8 @@
           },
           "lat": 52.506552,
           "lng": 13.332461,
-          "arrive": "2:40 PM",
-          "leave": "2:50 PM",
+          "arrive": "2:49 PM",
+          "leave": "3:00 PM",
           "website": "https://curry36.de/",
           "nativeName": "Curry 36 Bahnhof Zoo",
           "placeId": "CURRY36_ZOO",
@@ -140,8 +176,8 @@
             "zh": "每天 8:00 到次日 5:00"
           },
           "notes": {
-            "en": "Late lunch: currywurst (10 min, quick)",
-            "zh": "晚点的午饭：currywurst（10 分钟，很快）"
+            "en": "Late lunch after the bag drop: currywurst (~10 min, standing tables), then straight to the bus 100 stop on the same square",
+            "zh": "先放好行李再吃午饭：咖喱香肠（大约 10 分钟，站着吃），然后到同一个广场的 100 路车站。"
           },
           "mustOrder": [
             {
@@ -266,41 +302,9 @@
                   "zh": "步行"
                 },
                 "duration": "2 min",
-                "distanceM": 170
-              }
-            ]
-          }
-        },
-        {
-          "type": "hotel",
-          "status": "confirmed",
-          "name": {
-            "en": "Waldorf Astoria Berlin",
-            "zh": "Waldorf Astoria Berlin"
-          },
-          "lat": 52.505584,
-          "lng": 13.332911,
-          "arrive": "2:52 PM",
-          "leave": "3:00 PM",
-          "website": "https://www.hilton.com/en/hotels/berwawa-waldorf-astoria-berlin/",
-          "placeId": "WALDORF",
-          "notes": {
-            "en": "Drop bags / early check-in (Fine Hotels + Resorts booking: 12 PM check-in when available; room)",
-            "zh": "Drop bags / early check-in (Fine Hotels + Resorts booking: 12 PM check-in when available; room)"
-          },
-          "booked": true,
-          "transit": {
-            "segments": [
-              {
-                "mode": "walk",
-                "label": {
-                  "en": "Walk",
-                  "zh": "步行"
-                },
-                "duration": "5 min",
-                "from": "Waldorf Astoria Berlin",
-                "to": "Breitscheidplatz",
-                "distanceM": 320
+                "from": "Curry 36 Bahnhof Zoo",
+                "to": "S+U Zoologischer Garten bus terminal (Hardenbergplatz, bus 100 stop)",
+                "distanceM": 120
               },
               {
                 "mode": "bus",
@@ -308,13 +312,14 @@
                   "en": "Bus",
                   "zh": "公交"
                 },
-                "duration": "15 min",
+                "duration": "18 min",
                 "line": "100",
-                "direction": "Memhardstr. (Alexanderplatz)",
-                "from": "Breitscheidplatz",
+                "direction": "S+U Alexanderplatz / Memhardstr.",
+                "from": "S+U Zoologischer Garten (Hardenbergplatz)",
                 "to": "Reichstag/Bundestag",
-                "stops": 9,
-                "frequency": "about every 10 min on the Dec 24 timetable (3:06 PM departure)"
+                "stops": 10,
+                "frequency": "every 10 min on Dec 24 (planned 15:03 → 15:21; next 15:13 → 15:31)",
+                "note": "bus 100 starts here – sit upstairs on the right for the Victory Column and Bellevue Palace"
               },
               {
                 "mode": "walk",
@@ -324,7 +329,7 @@
                 },
                 "duration": "2 min",
                 "from": "Reichstag/Bundestag",
-                "to": "Platz der Republik",
+                "to": "Platz der Republik (Reichstag west front)",
                 "distanceM": 130
               }
             ],
@@ -339,10 +344,10 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "4 min",
-                "from": "Waldorf",
+                "duration": "2 min",
+                "from": "Curry 36 / Hardenbergplatz",
                 "to": "S+U Zoologischer Garten",
-                "distanceM": 255
+                "distanceM": 120
               },
               {
                 "mode": "train",
@@ -381,7 +386,7 @@
           },
           "lat": 52.518654,
           "lng": 13.376102,
-          "arrive": "3:22 PM",
+          "arrive": "3:23 PM",
           "leave": "3:30 PM",
           "website": "https://www.bundestag.de/en/visittheBundestag",
           "nativeName": "Reichstagsgebäude (Außen) · Platz der Republik",
@@ -391,8 +396,8 @@
             "zh": "户外 · 穹顶 12 月 24 日全天关闭（穹顶仍在 12 月 25 日 14:15）"
           },
           "notes": {
-            "en": "Reichstag west front + 'Dem deutschen Volke' inscription (photo stop, 8 min; dome closed Dec 24)",
-            "zh": "Reichstag west front + 'Dem deutschen Volke' inscription (photo stop, 8 min; dome closed Dec 24)"
+            "en": "Reichstag west front + 'Dem deutschen Volke' inscription (photo stop, 7 min; dome closed Dec 24)",
+            "zh": "国会大厦西立面和“Dem deutschen Volke”铭文（拍照 7 分钟；12月24日穹顶不开放）"
           },
           "mustSee": [
             {
@@ -660,7 +665,7 @@
         },
         {
           "type": "restaurant",
-          "status": "tentative",
+          "status": "confirmed",
           "name": {
             "en": "Lutter & Wegner",
             "zh": "Lutter & Wegner"
@@ -677,26 +682,26 @@
             "zh": "官网：12 月 24–26 日开，有圣诞菜单。餐厅 11 月 16 日回复：24 日晚上已满，最晚一桌 16:30。"
           },
           "notes": {
-            "en": "Christmas Eve dinner (Christmas menu; Gänsebraten if offered, else Berliner Kalbsleber / Wiener Schnitzel)",
-            "zh": "平安夜晚饭（圣诞菜单；有烤鹅就点烤鹅，不然是小牛肝或维也纳炸肉排）"
+            "en": "Christmas Eve dinner (à la carte + the evening's Christmas recommendation): Berliner Kartoffelsuppe, Wiener Schnitzel, Sauerbraten (or Gänsebraten if offered), Kaiserschmarrn, a glass of house Riesling Sekt",
+            "zh": "圣诞夜晚餐（单点，加上当晚的圣诞推荐）：柏林土豆汤、维也纳炸小牛排、酸焖牛肉（若有烤鹅就点烤鹅）、凯撒煎饼，再加一杯店家雷司令起泡酒。"
           },
           "mustOrder": [
             {
               "text": {
-                "en": "Berliner Kalbsleber",
-                "zh": "柏林式小牛肝"
+                "en": "Lutter & Wegner Wiener Schnitzel vom Milchkalb",
+                "zh": "招牌维也纳小牛肉炸排（《纽约时报》：维也纳以外最好的炸排）"
               }
             },
             {
               "text": {
-                "en": "Sauerbraten",
-                "zh": "德式醋焖牛肉"
+                "en": "Sauerbraten Lutter & Wegner",
+                "zh": "德式醋焖牛肉（德国 Sauerbraten 大赛第一名），配苹果紫甘蓝和土豆泥"
               }
             },
             {
               "text": {
-                "en": "Wiener Schnitzel",
-                "zh": "维也纳炸肉排"
+                "en": "Berliner Kartoffelsuppe nach altem Rezept",
+                "zh": "柏林老式土豆汤（配维也纳香肠）"
               }
             }
           ],
@@ -706,13 +711,14 @@
             "zh": "老字号本地菜"
           },
           "mustOrderNote": {
-            "en": "Gänsebraten too if it is on the Christmas menu",
-            "zh": "圣诞菜单上有烤鹅也可以点"
+            "en": "For 2, à la carte (no set menu – the restaurant offers its à-la-carte card plus a Christmas recommendation on the night): share the Berliner Kartoffelsuppe as a starter, then one Wiener Schnitzel (add the warm potato-cucumber salad and cranberries as sides) and one Sauerbraten, and swap halves. If Gänsebraten (roast goose) is on the Christmas recommendation, take it instead of the Sauerbraten. Dessert: order the Kaiserschmarrn (~30 min – order it with the mains) or the Wiener Apfelstrudel. Drink: a glass of the house Lutter & Wegner Riesling Sekt – the word 'Sekt' was born here in 1815. Visa / Mastercard / debit card accepted.",
+            "zh": "两人点单点菜（没有套餐；当晚另有圣诞推荐菜）：前菜分一份柏林土豆汤；主菜一份维也纳炸排（配温土豆黄瓜沙拉+蔓越莓）、一份醋焖牛肉，两人对半分。圣诞推荐里有烤鹅（Gänsebraten）就换掉醋焖牛肉。甜点：Kaiserschmarrn 皇帝煎饼（2 人份起，约 30 分钟，点主菜时一起下单）或苹果卷。酒：一杯店家特别灌装的 Lutter & Wegner Riesling Sekt（“Sekt”一词 1815 年就诞生在这家店）。收 Visa / Mastercard / 借记卡。"
           },
           "ticket": {
-            "en": "Requested – waiting for the restaurant's reply",
-            "zh": "已申请——等餐厅回复"
+            "en": "4:30 PM; cards only (Visa/Mastercard/debit)",
+            "zh": "已订——16:30，2 位；只收卡（Visa/Mastercard/借记卡）"
           },
+          "booked": true,
           "backups": [
             {
               "name": "Brauhaus Georgbräu",
@@ -1341,8 +1347,8 @@
           "zh": "12 月 24 日关闭：国立博物馆（博物馆岛）、国会大厦穹顶、纪念碑信息中心、柏林大教堂的参观（只有礼拜）、KaDeWe 和 14:00 后的商店。地铁从 23/24 日通宵到 27/28 日。"
         },
         {
-          "en": "No hotel rest stops: after the 3:00 PM bag drop the traveler is out until he returns to sleep after Midnight Mass (~12:45 AM).",
-          "zh": "中途不回酒店休息。15:00 放完行李就出门，子夜弥撒后大约 0:45 才回去睡。"
+          "en": "No hotel rest stops: after the 2:39 PM bag drop (hotel first, then Curry 36) the traveler is out until he returns to sleep after Midnight Mass (~12:45 AM).",
+          "zh": "中间不回酒店：下午 2:39 放完行李（先酒店，再 Curry 36）之后一直在外面，直到子夜弥撒后大约 12:45 回来睡觉。"
         },
         {
           "en": "v4.0: dinner moved to 4:30 PM (the only Christmas Eve slot left). Lutter & Wegner (1811) kept after re-check: it is the historic Berlin house that is confirmed open Dec 24 with a Christmas menu · Nante-Eck and Dicke Wirtin are closed Dec 24, Augustiner is Bavarian, Dieselhaus is modern, and Zur letzten Instanz (Dec 26 lunch already) has not published Christmas Eve hours.",
@@ -1351,6 +1357,10 @@
         {
           "en": "v4.0.1: Wax On moved to its 7 PM opening (walk-in only – arriving at opening avoids the queue) · night views now after the bar (8:28–9:30 PM, Unter den Linden on foot), then U2 Hausvogteiplatz → Neu-Westend direct (no change) → church ~10:08 PM.",
           "zh": "v4.0.1: Wax On moved to its 7 PM opening (walk-in only – arriving at opening avoids the queue) · night views now after the bar (8:28–9:30 PM, Unter den Linden on foot), then U2 Hausvogteiplatz → Neu-Westend direct (no change) → church ~10:08 PM."
+        },
+        {
+          "en": "v4.0.7 (traveler's request): hotel FIRST to drop the luggage, then Curry 36 – BER → Zoo → Waldorf 2:39 → Curry 36 2:49–3:00 → bus 100 from the Zoo station 3:03 → Reichstag 3:23 · everything after unchanged (L&W 4:30, Wax On 7 PM).",
+          "zh": "v4.0.7：先回酒店放行李，再去 Curry 36。BER 到动物园站，2:39 到华尔道夫，2:49–3:00 Curry 36，3:03 从动物园站坐 100 路，3:23 到国会大厦。之后不变（Lutter & Wegner 16:30，Wax On 19:00）。"
         }
       ],
       "inbound": {
@@ -2177,7 +2187,7 @@
         },
         {
           "type": "restaurant",
-          "status": "tentative",
+          "status": "confirmed",
           "name": {
             "en": "Max und Moritz",
             "zh": "Max und Moritz"
@@ -2222,13 +2232,14 @@
             "zh": "老字号本地菜"
           },
           "mustOrderNote": {
-            "en": "Cash only",
-            "zh": "只收现金"
+            "en": "Cash preferred; a card is fine for the whole bill (restaurant e-mail)",
+            "zh": "店家希望付现金；整单刷卡也可以（餐厅邮件）"
           },
           "ticket": {
-            "en": "Requested – waiting for the restaurant's reply",
-            "zh": "已申请——等餐厅回复"
+            "en": "6:30 PM; cash preferred",
+            "zh": "已订——18:30，1 位；希望付现金"
           },
+          "booked": true,
           "backups": [
             {
               "name": "Alt-Berliner Wirtshaus Henne",

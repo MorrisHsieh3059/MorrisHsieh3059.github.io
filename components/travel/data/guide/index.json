@@ -1,13 +1,6 @@
 {
-  "version": "v4.0.5",
+  "version": "v4.0.8",
   "draft": true,
-  "cities": [
-    "berlin",
-    "vienna",
-    "bratislava",
-    "brussels",
-    "arizona"
-  ],
   "trips": [
     {
       "id": "europe",
@@ -32,5 +25,12 @@
         "arizona"
       ]
     }
+  ],
+  "cities": [
+    "berlin",
+    "vienna",
+    "bratislava",
+    "brussels",
+    "arizona"
   ]
 }
