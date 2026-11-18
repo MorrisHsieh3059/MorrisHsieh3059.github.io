@@ -894,6 +894,76 @@ a.guide-daytrip {
 	margin: 0.35rem 0 0;
 }
 
+.guide-menu-source {
+	margin: 0.28rem 0 0;
+	font-size: 0.72rem;
+	line-height: 1.35;
+}
+
+.guide-menu-source a,
+.guide-menu-links a {
+	color: var(--accent, #303F9F);
+	text-decoration: none;
+}
+
+.guide-menu-source a + a,
+.guide-menu-links a + a {
+	margin-left: 0.45rem;
+}
+
+.guide-menu-check {
+	margin-top: 0.8rem;
+}
+
+.guide-menu-scroll {
+	max-width: 100%;
+	margin-top: 0.45rem;
+	overflow-x: auto;
+}
+
+.guide-menu-table {
+	width: 100%;
+	table-layout: fixed;
+	border-collapse: collapse;
+	font-size: 0.72rem;
+	line-height: 1.35;
+	color: #555;
+}
+
+.guide-menu-table th:nth-child(1),
+.guide-menu-table td:nth-child(1) {
+	width: 24%;
+}
+
+.guide-menu-table th:nth-child(3),
+.guide-menu-table td:nth-child(3) {
+	width: 18%;
+}
+
+.guide-menu-table th {
+	font-family: "Roboto Mono", "PingFang SC", "Microsoft YaHei", sans-serif;
+	font-size: 0.62rem;
+	font-weight: 700;
+	letter-spacing: 0.03em;
+	text-transform: uppercase;
+	text-align: left;
+	color: #888;
+	padding: 0.2rem 0.4rem 0.3rem 0;
+	border-bottom: 1px solid #e4e4e4;
+}
+
+.guide-menu-table td {
+	padding: 0.35rem 0.45rem 0.35rem 0;
+	border-bottom: 1px solid #eee;
+	vertical-align: top;
+	overflow-wrap: anywhere;
+}
+
+.guide-menu-links {
+	margin-top: 0.12rem;
+	font-size: 0.66rem;
+}
+
 .guide-tl-seg + .guide-tl-seg {
 	margin-top: 0.12rem;
 }

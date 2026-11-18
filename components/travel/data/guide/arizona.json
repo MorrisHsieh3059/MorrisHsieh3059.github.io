@@ -1,13 +1,13 @@
 {
   "id": "arizona",
-  "version": "v1.2",
+  "version": "v1.3",
   "draft": true,
   "country": {
     "en": "United States",
     "zh": "美国"
   },
-    "flag": "img/travel/flags/az.svg",
-    "cover": "img/travel/flags/az.svg",
+  "flag": "img/travel/flags/az.svg",
+  "cover": "img/travel/flags/az.svg",
   "coverFit": "contain",
   "name": {
     "en": "Arizona",
@@ -66,7 +66,7 @@
                 "durationZh": "约15 分钟",
                 "note": {
                   "en": "",
-                  "zh": "🚝 T4 出口跟 'PHX Sky Train' 标志 → 坐到 Rental Car Center 站（免费，约 5–8 分钟一班），出站即 Avis 柜台"
+                  "zh": "\ude9d T4 出口跟 'PHX Sky Train' 标志 → 坐到 Rental Car Center 站（免费，约 5–8 分钟一班），出站即 Avis 柜台"
                 }
               }
             ]
@@ -109,7 +109,7 @@
                 "distanceM": 66000,
                 "note": {
                   "en": "",
-                  "zh": "🚗 I-17 N 约 40 mi → Exit 242（Black Canyon City）→ 右转 Old Black Canyon Hwy 1 分钟；店前免费停车场"
+                  "zh": "\ude97 I-17 N 约 40 mi → Exit 242（Black Canyon City）→ 右转 Old Black Canyon Hwy 1 分钟；店前免费停车场"
                 }
               }
             ]
@@ -160,19 +160,19 @@
             {
               "text": {
                 "en": "Thanksgiving Dinner",
-                "zh": "Thanksgiving Dinner（火鸡+蒜泥土豆+gravy+yams+玉米面包 stuffing+蔓越莓+面包卷+一片派）"
+                "zh": "Thanksgiving Dinner（11/26 限定套餐：turkey、garlic mashed potatoes、gravy、yams、cornbread stuffing、cranberry sauce、dinner roll + a slice of pie）"
               }
             },
             {
               "text": {
-                "en": "Jack Daniel's Pecan Pie",
-                "zh": "Jack Daniel's Pecan Pie（招牌派）"
+                "en": "JD Pecan Pie",
+                "zh": "JD Pecan Pie（招牌 Jack Daniel's 山核桃派）"
               }
             },
             {
               "text": {
-                "en": "Banana Cream / Apple Crumb Pie",
-                "zh": "Banana Cream / Apple Crumb Pie"
+                "en": "Banana Cream Pie / Apple Crumb Pie",
+                "zh": "Banana Cream Pie / Apple Crumb Pie"
               }
             }
           ],
@@ -189,14 +189,14 @@
               "mustOrder": [
                 {
                   "text": {
-                    "en": "Chop & Chick",
-                    "zh": "Chop & Chick（猪排+鸡蛋）"
+                    "en": "The Chop & Chick",
+                    "zh": "The Chop & Chick（猪排+2 蛋）"
                   }
                 },
                 {
                   "text": {
-                    "en": "Griddle Cakes",
-                    "zh": "Griddle Cakes"
+                    "en": "Griddlecakes",
+                    "zh": "Griddlecakes"
                   }
                 }
               ],
@@ -204,7 +204,11 @@
               "cuisine": {
                 "en": "Historic local",
                 "zh": "老字号本地菜"
-              }
+              },
+              "menuSource": [
+                "https://mattsbigbreakfast.com/menu/",
+                "https://www.skyharbor.com/at-the-airport/food-drinks/matts-big-breakfast-324/"
+              ]
             },
             {
               "name": "The Hudson",
@@ -213,18 +217,19 @@
               "mustOrder": [
                 {
                   "text": {
-                    "en": "Thanksgiving menu (turkey)",
-                    "zh": "感恩节节日菜单（火鸡）"
-                  }
-                },
-                {
-                  "text": {
-                    "en": "Smoked salmon or the house burger",
-                    "zh": "Smoked salmon / 招牌汉堡"
+                    "en": "Thanksgiving Day Menu",
+                    "zh": "Thanksgiving Day Menu（官网页面，菜品现场看）"
                   }
                 }
+              ],
+              "menuSource": [
+                "https://www.thehudsonsedona.com/menus/thanksgiving-day-menu"
               ]
             }
+          ],
+          "menuSource": [
+            "https://rockspringscafe.com/featured-upcoming/thanksgiving-dinner-at-the-rock-2/",
+            "https://rockspringscafe.com/shop/"
           ],
           "transit": {
             "segments": [
@@ -241,7 +246,7 @@
                 "distanceM": 88000,
                 "note": {
                   "en": "",
-                  "zh": "🚗 I-17 N → Exit 298 → AZ-179 N 约 8 mi → 右侧 Courthouse Vista / Bell Rock Trailhead 停车场；用 行程主人 的 America the Beautiful 年票挂后视镜即可（不用另买 Red Rock Pass）"
+                  "zh": "\ude97 I-17 N → Exit 298 → AZ-179 N 约 8 mi → 右侧 Courthouse Vista / Bell Rock Trailhead 停车场；用 行程主人 的 America the Beautiful 年票挂后视镜即可（不用另买 Red Rock Pass）"
                 }
               }
             ]
@@ -303,7 +308,7 @@
                 "distanceM": 13000,
                 "note": {
                   "en": "",
-                  "zh": "🚗 AZ-179 N → Y 形环岛左转 89A W → 左转 Airport Rd 上山 0.5 mi（感恩节下午 179 环岛常堵，预留 10 分钟）"
+                  "zh": "\ude97 AZ-179 N → Y 形环岛左转 89A W → 左转 Airport Rd 上山 0.5 mi（感恩节下午 179 环岛常堵，预留 10 分钟）"
                 }
               }
             ]
@@ -365,7 +370,7 @@
                 "distanceM": 3000,
                 "note": {
                   "en": "",
-                  "zh": "🚗 Airport Rd 下山 → 89A W 1.5 mi → 右转进 The Wilde Resort；度假村免费停车"
+                  "zh": "\ude97 Airport Rd 下山 → 89A W 1.5 mi → 右转进 The Wilde Resort；度假村免费停车"
                 }
               }
             ]
@@ -397,19 +402,7 @@
             {
               "text": {
                 "en": "Roast Turkey Dinner",
-                "zh": "Roast Turkey Dinner（感恩节限定，Red Bird 火鸡+sage stuffing+红薯泥+gravy）"
-              }
-            },
-            {
-              "text": {
-                "en": "Shrimp & Grits",
-                "zh": "Shrimp & Grits（2022 'Best Twist on an Original'）"
-              }
-            },
-            {
-              "text": {
-                "en": "Hot Flaky Rolls",
-                "zh": "Hot Flaky Rolls（Ms. Emily 迷你可颂）"
+                "zh": "Roast Turkey Dinner（感恩节限定：Red Bird 火鸡、sage bread stuffing、green beans、whipped sweet potatoes、gravy、cranberry relish、dinner roll）"
               }
             },
             {
@@ -420,8 +413,14 @@
             },
             {
               "text": {
-                "en": "Pumpkin Pie",
-                "zh": "Pumpkin Pie"
+                "en": "Pumpkin Pie with Whipped Cream",
+                "zh": "Pumpkin Pie with Whipped Cream"
+              }
+            },
+            {
+              "text": {
+                "en": "Shrimp & Grits",
+                "zh": "Shrimp & Grits（常规晚餐菜单招牌，2022 'Best Twist on an Original'）"
               }
             }
           ],
@@ -435,7 +434,10 @@
               "cuisine": {
                 "en": "Historic local",
                 "zh": "老字号本地菜"
-              }
+              },
+              "menuSource": [
+                "https://cowboyclub.com/menus/"
+              ]
             },
             {
               "name": "The Hudson",
@@ -444,12 +446,19 @@
               "mustOrder": [
                 {
                   "text": {
-                    "en": "Thanksgiving menu",
-                    "zh": "感恩节节日菜单"
+                    "en": "Thanksgiving Day Menu",
+                    "zh": "Thanksgiving Day Menu"
                   }
                 }
+              ],
+              "menuSource": [
+                "https://www.thehudsonsedona.com/menus/thanksgiving-day-menu"
               ]
             }
+          ],
+          "menuSource": [
+            "https://rascalrestaurantsedona.com/wp-content/uploads/2026/11/Rascal-Final-Thanksgiving-Menu-2026.pdf",
+            "https://rascalrestaurantsedona.com/wp-content/uploads/2026/09/Rascal-Sedona-DINNER-WINTER-Menu.pdf"
           ],
           "transit": {
             "segments": [
@@ -466,7 +475,7 @@
                 "distanceM": 300,
                 "note": {
                   "en": "",
-                  "zh": "🚗 89A W 0.1 mi 隔壁（也可走路 3 分钟）"
+                  "zh": "\ude97 89A W 0.1 mi 隔壁（也可走路 3 分钟）"
                 }
               }
             ]
@@ -516,7 +525,7 @@
                 "distanceM": 1500,
                 "note": {
                   "en": "",
-                  "zh": "🚗 89A W 0.9 mi，右侧；酒店免费停车"
+                  "zh": "\ude97 89A W 0.9 mi，右侧；酒店免费停车"
                 }
               }
             ]
@@ -606,7 +615,7 @@
                 "distanceM": 2400,
                 "note": {
                   "en": "",
-                  "zh": "🚗 89A E 1.5 mi，左侧；店前免费停车"
+                  "zh": "\ude97 89A E 1.5 mi，左侧；店前免费停车"
                 }
               }
             ]
@@ -636,20 +645,20 @@
           "mustOrder": [
             {
               "text": {
-                "en": "101 Omelettes 里的 Peanut Butter, Jelly & Banana",
-                "zh": "101 Omelettes 里的 Peanut Butter, Jelly & Banana（招牌怪口味）"
+                "en": "#101 Jelly, Peanut Butter and Banana",
+                "zh": "#101 Jelly, Peanut Butter and Banana（101 号煎蛋卷，Elvis 传说那款）"
               }
             },
             {
               "text": {
-                "en": "Green chile or a Southwest omelet",
-                "zh": "Green chile / Southwest 类煎蛋卷"
+                "en": "#49 Green Chile and Cheese",
+                "zh": "#49 Green Chile and Cheese（青辣椒芝士煎蛋卷）"
               }
             },
             {
               "text": {
                 "en": "Huevos Rancheros",
-                "zh": "Huevos Rancheros"
+                "zh": "Huevos Rancheros（green chile sauce）"
               }
             }
           ],
@@ -666,10 +675,13 @@
               "mustOrder": [
                 {
                   "text": {
-                    "en": "Breakfast burrito",
-                    "zh": "Breakfast burrito"
+                    "en": "Miley's Burrito",
+                    "zh": "Miley's Burrito（牛肉+豆，enchilada sauce，偏辣）"
                   }
                 }
+              ],
+              "menuSource": [
+                "https://mileyscafe.com/-food-menu"
               ]
             },
             {
@@ -679,18 +691,25 @@
               "mustOrder": [
                 {
                   "text": {
-                    "en": "Biscuits & gravy",
-                    "zh": "Biscuits & gravy"
+                    "en": "Biscuits & Country Gravy",
+                    "zh": "Biscuits & Country Gravy"
                   }
                 },
                 {
                   "text": {
                     "en": "Pancakes",
-                    "zh": "Pancakes"
+                    "zh": "Pancakes（2 或 3 片）"
                   }
                 }
+              ],
+              "menuSource": [
+                "https://order.toasttab.com/online/red-rock-cafe-100-verde-valley-school-rd"
               ]
             }
+          ],
+          "menuSource": [
+            "https://coffeepotsedona.com/menu/",
+            "https://coffee-pot-restaurant.hub.biz/app/online-menu"
           ],
           "transit": {
             "segments": [
@@ -707,7 +726,7 @@
                 "distanceM": 3500,
                 "note": {
                   "en": "",
-                  "zh": "🚗 89A W 2 mi → 右转 Upper Red Rock Loop Rd → 905 号停车场（免费，禁过夜）"
+                  "zh": "\ude97 89A W 2 mi → 右转 Upper Red Rock Loop Rd → 905 号停车场（免费，禁过夜）"
                 }
               },
               {
@@ -722,7 +741,7 @@
                 "durationZh": "10 分钟",
                 "note": {
                   "en": "",
-                  "zh": "🚌 Sedona Shuttle Route 11 首班 7:00（每 30 分钟一班，免费；11/19–11/29 每天运行，感恩节当天除外）→ Dry Creek Vista 7:10"
+                  "zh": "\ude8c Sedona Shuttle Route 11 首班 7:00（每 30 分钟一班，免费；11/19–11/29 每天运行，感恩节当天除外）→ Dry Creek Vista 7:10"
                 }
               }
             ]
@@ -783,7 +802,7 @@
                 "durationZh": "18 分钟",
                 "note": {
                   "en": "",
-                  "zh": "🚌 Route 11 回程 9:40 → 9:58 到 Park & Ride（下一班 10:10）"
+                  "zh": "\ude8c Route 11 回程 9:40 → 9:58 到 Park & Ride（下一班 10:10）"
                 }
               },
               {
@@ -799,7 +818,7 @@
                 "distanceM": 9000,
                 "note": {
                   "en": "",
-                  "zh": "🚗 89A E 穿过 West Sedona → Y 环岛右转 AZ-179 S 0.3 mi → Tlaquepaque 右侧；Tlaquepaque 免费停车场（对面也有）"
+                  "zh": "\ude97 89A E 穿过 West Sedona → Y 环岛右转 AZ-179 S 0.3 mi → Tlaquepaque 右侧；Tlaquepaque 免费停车场（对面也有）"
                 }
               }
             ]
@@ -861,7 +880,7 @@
                 "distanceM": 450,
                 "note": {
                   "en": "",
-                  "zh": "🚶 沿 AZ-179 往北 450 m（过 Oak Creek 桥）到 Hideaway House"
+                  "zh": "\udeb6 沿 AZ-179 往北 450 m（过 Oak Creek 桥）到 Hideaway House"
                 }
               }
             ]
@@ -891,20 +910,20 @@
           "mustOrder": [
             {
               "text": {
-                "en": "House flatbread pizza, Margherita or House Special",
-                "zh": "招牌薄饼披萨（Margherita / House Special）"
+                "en": "Roma 或 Blanco Classico",
+                "zh": "Roma 或 Blanco Classico（14\" 招牌披萨；Blanco Classico 是 House favorite 白披萨）"
               }
             },
             {
               "text": {
-                "en": "Lasagna",
-                "zh": "Lasagna"
+                "en": "Meat Lasagna",
+                "zh": "Meat Lasagna"
               }
             },
             {
               "text": {
-                "en": "Hideaway salad",
-                "zh": "Hideaway 沙拉"
+                "en": "Hideaway Antipasto",
+                "zh": "Hideaway Antipasto（House favorite 沙拉）"
               }
             }
           ],
@@ -920,16 +939,19 @@
               "mustOrder": [
                 {
                   "text": {
-                    "en": "Sonoran-style enchiladas",
-                    "zh": "Sonoran 风 enchiladas"
+                    "en": "Chicken Mole' Enchiladas",
+                    "zh": "Chicken Mole' Enchiladas"
                   }
                 },
                 {
                   "text": {
-                    "en": "Prickly pear margarita",
-                    "zh": "Prickly pear margarita"
+                    "en": "Javelina Margarita",
+                    "zh": "Javelina Margarita（+prickly pear）"
                   }
                 }
+              ],
+              "menuSource": [
+                "https://www.javelinacantinasedona.com/menu"
               ]
             },
             {
@@ -939,18 +961,30 @@
               "mustOrder": [
                 {
                   "text": {
-                    "en": "Nut Brown Ale",
-                    "zh": "Nut Brown Ale"
+                    "en": "Village Nut Brown Ale",
+                    "zh": "Village Nut Brown Ale"
                   }
                 },
                 {
                   "text": {
-                    "en": "Pizza / burger",
-                    "zh": "Pizza / burger"
+                    "en": "Tlaquepaque Burger",
+                    "zh": "Tlaquepaque Burger"
+                  }
+                },
+                {
+                  "text": {
+                    "en": "14\" wood-fired pizza",
+                    "zh": "14\" wood-fired pizza"
                   }
                 }
+              ],
+              "menuSource": [
+                "https://oakcreekbreweryandgrill.com/"
               ]
             }
+          ],
+          "menuSource": [
+            "https://sedonahideawayhouse.com/food-menu"
           ],
           "transit": {
             "segments": [
@@ -967,7 +1001,7 @@
                 "distanceM": 5000,
                 "note": {
                   "en": "",
-                  "zh": "🚶 回 Tlaquepaque 取车 6 分钟 → 🚗 AZ-179 S 3 mi → Chapel Rd 环岛左转 0.6 mi；只有 45 个车位在上坡路右侧；满了就在坡顶回转处下客，司机在坡下等"
+                  "zh": "\udeb6 回 Tlaquepaque 取车 6 分钟 → \ude97 AZ-179 S 3 mi → Chapel Rd 环岛左转 0.6 mi；只有 45 个车位在上坡路右侧；满了就在坡顶回转处下客，司机在坡下等"
                 }
               }
             ]
@@ -1029,7 +1063,7 @@
                 "distanceM": 6000,
                 "note": {
                   "en": "",
-                  "zh": "🚗 AZ-179 N 3.5 mi → Y 环岛右转 89A N → Uptown 公共停车场（Forest Rd 停车楼）"
+                  "zh": "\ude97 AZ-179 N 3.5 mi → Y 环岛右转 89A N → Uptown 公共停车场（Forest Rd 停车楼）"
                 }
               }
             ]
@@ -1091,7 +1125,7 @@
                 "distanceM": 2000,
                 "note": {
                   "en": "",
-                  "zh": "🚗 89A S → Y 环岛 → AZ-179 S 0.6 mi → 1294 SR-179 Park & Ride（免费）"
+                  "zh": "\ude97 89A S → Y 环岛 → AZ-179 S 0.6 mi → 1294 SR-179 Park & Ride（免费）"
                 }
               },
               {
@@ -1106,7 +1140,7 @@
                 "durationZh": "10 分钟",
                 "note": {
                   "en": "",
-                  "zh": "🚌 Sedona Shuttle Route 15（每 15 分钟，最后一班去程 4:30）→ Cathedral Rock 站"
+                  "zh": "\ude8c Sedona Shuttle Route 15（每 15 分钟，最后一班去程 4:30）→ Cathedral Rock 站"
                 }
               }
             ]
@@ -1167,7 +1201,7 @@
                 "durationZh": "10 分钟",
                 "note": {
                   "en": "",
-                  "zh": "🚌 Route 15 回程（最晚 5:12 PM 末班，误了就要走 ~3 km 公路回去）"
+                  "zh": "\ude8c Route 15 回程（最晚 5:12 PM 末班，误了就要走 ~3 km 公路回去）"
                 }
               },
               {
@@ -1183,7 +1217,7 @@
                 "distanceM": 7000,
                 "note": {
                   "en": "",
-                  "zh": "🚗 AZ-179 N → 89A W 3.5 mi → 酒店；换掉登山装（傍晚，非午休）"
+                  "zh": "\ude97 AZ-179 N → 89A W 3.5 mi → 酒店；换掉登山装（傍晚，非午休）"
                 }
               }
             ]
@@ -1222,7 +1256,7 @@
                 "distanceM": 6000,
                 "note": {
                   "en": "",
-                  "zh": "🚗 89A E 4 mi → Uptown；停 Forest Rd 停车楼"
+                  "zh": "\ude97 89A E 4 mi → Uptown；停 Forest Rd 停车楼"
                 }
               }
             ]
@@ -1252,26 +1286,26 @@
           "mustOrder": [
             {
               "text": {
-                "en": "Trail Boss / Cowboy Sampler",
-                "zh": "Trail Boss / Cowboy Sampler（响尾蛇香肠、仙人掌薯条、野牛肉丸、BBQ 肋排）"
+                "en": "Trail Boss Sampler",
+                "zh": "Trail Boss Sampler（Cactus Fries、Rattlesnake Sausage、Bison Meatballs、BBQ Ribs + pretzel stick）"
               }
             },
             {
               "text": {
-                "en": "Cactus Fries",
-                "zh": "Cactus Fries（仙人掌薯条配 prickly pear 酱）"
+                "en": "House Smoked Prime Rib",
+                "zh": "House Smoked Prime Rib（The Weekend Roast：周五–周日 4 PM 后限量）"
               }
             },
             {
               "text": {
-                "en": "Bison main",
-                "zh": "野牛（Bison）主菜"
+                "en": "Butcher's Cut of Bison",
+                "zh": "Butcher's Cut of Bison（当日野牛部位，问服务员）"
               }
             },
             {
               "text": {
-                "en": "Prickly Pear Margarita",
-                "zh": "Prickly Pear Margarita"
+                "en": "Famous Cowboy margarita + Prickly Pear",
+                "zh": "Famous Cowboy margarita + Prickly Pear"
               }
             }
           ],
@@ -1289,14 +1323,20 @@
               "mustOrder": [
                 {
                   "text": {
-                    "en": "Caesar salad made at the table",
-                    "zh": "桌边现做 Caesar Salad"
+                    "en": "Côtelettes d'Agneau Roasted Double Lamb Chops",
+                    "zh": "Côtelettes d'Agneau Roasted Double Lamb Chops（三块双骨羊排）"
                   }
                 },
                 {
                   "text": {
-                    "en": "Rack of Lamb",
-                    "zh": "Rack of Lamb"
+                    "en": "French Onion Soup Gratinee",
+                    "zh": "French Onion Soup Gratinee"
+                  }
+                },
+                {
+                  "text": {
+                    "en": "Flaming Bananas Foster",
+                    "zh": "Flaming Bananas Foster（桌边点火甜点）"
                   }
                 }
               ],
@@ -1304,7 +1344,10 @@
               "cuisine": {
                 "en": "Historic local",
                 "zh": "老字号本地菜"
-              }
+              },
+              "menuSource": [
+                "https://renerestaurantsedona.com/wp-content/uploads/2026/09/Rene-Tlaquepaque-Sedona-WINTER-Menu-2026.pdf"
+              ]
             },
             {
               "name": "Elote Cafe",
@@ -1315,24 +1358,30 @@
                 {
                   "text": {
                     "en": "Elote",
-                    "zh": "Elote（招牌烤玉米）"
+                    "zh": "Elote"
                   }
                 },
                 {
                   "text": {
-                    "en": "Smoked pork cheeks",
-                    "zh": "Smoked pork cheeks"
+                    "en": "Smoked Pork Cheeks",
+                    "zh": "Smoked Pork Cheeks"
                   }
                 },
                 {
                   "text": {
-                    "en": "Lamb adobo",
-                    "zh": "Lamb adobo"
+                    "en": "Lamb Adobo",
+                    "zh": "Lamb Adobo"
                   }
                 }
               ],
-              "founded": "2007"
+              "founded": "2007",
+              "menuSource": [
+                "https://www.elotecafe.com/eat-1"
+              ]
             }
+          ],
+          "menuSource": [
+            "https://cowboyclub.com/menus/"
           ],
           "transit": {
             "segments": [
@@ -1349,7 +1398,7 @@
                 "distanceM": 6000,
                 "note": {
                   "en": "",
-                  "zh": "🚗 89A W 4 mi 回酒店"
+                  "zh": "\ude97 89A W 4 mi 回酒店"
                 }
               }
             ]
@@ -1375,8 +1424,8 @@
       "date": "2026-11-28",
       "weekday": "Sat",
       "title": {
-        "en": "Oak Creek Canyon, Flagstaff, then the South Rim: Mather, Trail of Time, El Tovar, Desert View Watchtower, Lipan Point sunset, then Page",
-        "zh": "Oak Creek Canyon → Flagstaff → 大峡谷南缘（Mather · Trail of Time · El Tovar · Desert View 塔楼 · Lipan Point 日落）→ Page"
+        "en": "Oak Creek Canyon to Flagstaff, then the South Rim (Mather, Trail of Time, El Tovar, Desert View Watchtower, Lipan Point at sunset), dinner at Cameron, then Page",
+        "zh": "Oak Creek Canyon → Flagstaff → 大峡谷南缘（Mather · Trail of Time · El Tovar · Desert View 塔楼 · Lipan Point 日落）→ Cameron 晚餐 → Page"
       },
       "stops": [
         {
@@ -1416,7 +1465,7 @@
                 "distanceM": 48000,
                 "note": {
                   "en": "",
-                  "zh": "🚗 89A E 穿 Uptown → 89A N 一路开过 Oak Creek Canyon（之字弯段车窗看风景，不停 Oak Creek Vista）→ I-17 N 并入 Milton Rd → 市中心 Beaver St。11 月清晨之字弯可能结冰：结冰就改 AZ-179 S → I-17 N；市中心路边计时/免费小停车场"
+                  "zh": "\ude97 89A E 穿 Uptown → 89A N 一路开过 Oak Creek Canyon（之字弯段车窗看风景，不停 Oak Creek Vista）→ I-17 N 并入 Milton Rd → 市中心 Beaver St。11 月清晨之字弯可能结冰：结冰就改 AZ-179 S → I-17 N；市中心路边计时/免费小停车场"
                 }
               }
             ]
@@ -1446,20 +1495,26 @@
           "mustOrder": [
             {
               "text": {
-                "en": "House latte or house coffee",
-                "zh": "自家烘焙 Latte / House coffee"
+                "en": "House-roasted coffee / Cafe Mexicano",
+                "zh": "House-roasted coffee / Cafe Mexicano（cappuccino+肉桂肉豆蔻）"
               }
             },
             {
               "text": {
-                "en": "Fresh scone or cinnamon roll",
-                "zh": "现烤 Scone / Cinnamon roll"
+                "en": "French cinnamon roll",
+                "zh": "French cinnamon roll（柜台糕点，以当天为准）"
               }
             },
             {
               "text": {
-                "en": "Breakfast burrito",
-                "zh": "Breakfast burrito（素）"
+                "en": "Breakfast Sandwich",
+                "zh": "Breakfast Sandwich（croissant + steamed eggs）"
+              }
+            },
+            {
+              "text": {
+                "en": "Biscuit & Gravy",
+                "zh": "Biscuit & Gravy（素食 gravy，本地招牌）"
               }
             }
           ],
@@ -1477,9 +1532,12 @@
                 {
                   "text": {
                     "en": "Chilaquiles",
-                    "zh": "Chilaquiles"
+                    "zh": "Chilaquiles（red / green / Christmas sauce，可加 chorizo）"
                   }
                 }
+              ],
+              "menuSource": [
+                "https://martannes.com/flagstaff-martannes-breakfast-palace-food-menu"
               ]
             },
             {
@@ -1489,12 +1547,25 @@
               "mustOrder": [
                 {
                   "text": {
-                    "en": "Bagel sandwich",
-                    "zh": "Bagel sandwich"
+                    "en": "Egg bagel",
+                    "zh": "Egg bagel（早餐蛋贝果）"
+                  }
+                },
+                {
+                  "text": {
+                    "en": "Deli Sandwich",
+                    "zh": "Deli Sandwich"
                   }
                 }
+              ],
+              "menuSource": [
+                "https://www.biffsbagels.com/biffsmenu"
               ]
             }
+          ],
+          "menuSource": [
+            "https://macyscoffee.net/products/breakfast-c176957656",
+            "https://www.yelp.com/menu/macys-european-coffee-house-flagstaff-2"
           ],
           "transit": {
             "segments": [
@@ -1511,7 +1582,7 @@
                 "distanceM": 128000,
                 "note": {
                   "en": "",
-                  "zh": "🚗 Humphreys St → US-180 N（Kendrick Park 林区）→ AZ-64 N 过 Tusayan → 南入口约 10:20 到。用年票走最左边 Lane 1（持票车道，排队较短）；出发前看 NPS 南入口摄像头。时间表已留 25 分钟排队缓冲 → 跟 Visitor Center 标志停 Lot 1–4"
+                  "zh": "\ude97 Humphreys St → US-180 N（Kendrick Park 林区）→ AZ-64 N 过 Tusayan → 南入口约 10:20 到。用年票走最左边 Lane 1（持票车道，排队较短）；出发前看 NPS 南入口摄像头。时间表已留 25 分钟排队缓冲 → 跟 Visitor Center 标志停 Lot 1–4"
                 }
               }
             ]
@@ -1573,7 +1644,7 @@
                 "distanceM": 1300,
                 "note": {
                   "en": "",
-                  "zh": "🚶 Rim Trail 往西 1.3 km（平坦铺装），沿途峡谷边"
+                  "zh": "\udeb6 Rim Trail 往西 1.3 km（平坦铺装），沿途峡谷边"
                 }
               }
             ]
@@ -1629,7 +1700,7 @@
                 "distanceM": 2300,
                 "note": {
                   "en": "",
-                  "zh": "🚶 Rim Trail 'Trail of Time' 往西 2.3 km 到 Grand Canyon Village（每 1 m 代表 100 万年的地质时间线），到 Verkamp's → El Tovar"
+                  "zh": "\udeb6 Rim Trail 'Trail of Time' 往西 2.3 km 到 Grand Canyon Village（每 1 m 代表 100 万年的地质时间线），到 Verkamp's → El Tovar"
                 }
               }
             ]
@@ -1685,7 +1756,7 @@
                 "distanceM": 200,
                 "note": {
                   "en": "",
-                  "zh": "🚶 Rim Trail 往东 200 m 回 El Tovar"
+                  "zh": "\udeb6 Rim Trail 往东 200 m 回 El Tovar"
                 }
               }
             ]
@@ -1716,20 +1787,20 @@
           "mustOrder": [
             {
               "text": {
-                "en": "Traditional Navajo Taco",
-                "zh": "Traditional Navajo Taco（印第安炸面包）"
+                "en": "Navajo Taco",
+                "zh": "Navajo Taco（Chef's Recommendation：现炸 fry bread）"
               }
             },
             {
               "text": {
-                "en": "El Tovar Signature Chili",
-                "zh": "El Tovar Signature Chili"
+                "en": "El Tovar's Signature Chili",
+                "zh": "El Tovar's Signature Chili（Beef Chili）"
               }
             },
             {
               "text": {
-                "en": "Beef Stroganoff",
-                "zh": "Beef Stroganoff（老菜单经典）"
+                "en": "Signature Beef Stroganoff",
+                "zh": "Signature Beef Stroganoff"
               }
             }
           ],
@@ -1746,14 +1817,20 @@
               "mustOrder": [
                 {
                   "text": {
-                    "en": "Navajo taco",
-                    "zh": "Navajo taco"
+                    "en": "Fred Harvey Double Bacon Cheeseburger",
+                    "zh": "Fred Harvey Double Bacon Cheeseburger"
                   }
                 },
                 {
                   "text": {
-                    "en": "Chili",
-                    "zh": "Chili"
+                    "en": "Pot Roast",
+                    "zh": "Pot Roast"
+                  }
+                },
+                {
+                  "text": {
+                    "en": "Tortilla Black Bean Soup",
+                    "zh": "Tortilla Black Bean Soup"
                   }
                 }
               ],
@@ -1761,7 +1838,10 @@
               "cuisine": {
                 "en": "Historic local",
                 "zh": "老字号本地菜"
-              }
+              },
+              "menuSource": [
+                "https://www.grandcanyonlodges.com/content/uploads/2026/07/HH-All-Day-Dining-Limited-Menu_Jul-2026.pdf"
+              ]
             },
             {
               "name": "Yavapai Lodge Tavern / Dining Hall",
@@ -1770,18 +1850,24 @@
               "mustOrder": [
                 {
                   "text": {
-                    "en": "Burger",
-                    "zh": "Burger"
+                    "en": "Elk burger",
+                    "zh": "Elk burger"
                   }
                 },
                 {
                   "text": {
-                    "en": "Chili",
-                    "zh": "Chili"
+                    "en": "Pulled-pork burger",
+                    "zh": "Pulled-pork burger"
                   }
                 }
+              ],
+              "menuSource": [
+                "https://www.visitgrandcanyon.com/dining/yavapai-tavern/"
               ]
             }
+          ],
+          "menuSource": [
+            "https://www.grandcanyonlodges.com/content/uploads/2026/07/Limited-Lunch-Menu_Jul-2026.pdf"
           ],
           "transit": {
             "segments": [
@@ -1798,7 +1884,7 @@
                 "distanceM": 400,
                 "note": {
                   "en": "",
-                  "zh": "🚶 Rim Trail 往西 400 m"
+                  "zh": "\udeb6 Rim Trail 往西 400 m"
                 }
               }
             ]
@@ -1853,7 +1939,7 @@
                 "durationZh": "约20 分钟",
                 "note": {
                   "en": "",
-                  "zh": "🚌 免费园区巴士 Village Route (Blue) 在 Bright Angel Lodge 附近上车 → Visitor Center（每 15–20 分钟）"
+                  "zh": "\ude8c 免费园区巴士 Village Route (Blue) 在 Bright Angel Lodge 附近上车 → Visitor Center（每 15–20 分钟）"
                 }
               },
               {
@@ -1869,7 +1955,7 @@
                 "distanceM": 19000,
                 "note": {
                   "en": "",
-                  "zh": "🚗 Desert View Drive（AZ-64 E）12 mi → 左转 Grandview Point；免费"
+                  "zh": "\ude97 Desert View Drive（AZ-64 E）12 mi → 左转 Grandview Point；免费"
                 }
               }
             ]
@@ -1925,7 +2011,7 @@
                 "distanceM": 22000,
                 "note": {
                   "en": "",
-                  "zh": "🚗 Desert View Drive 往东 14 mi（Moran Point 不停）到 Desert View 停车场（顺便加油：24h 自助油泵）；免费"
+                  "zh": "\ude97 Desert View Drive 往东 14 mi（Moran Point 不停）到 Desert View 停车场（顺便加油：24h 自助油泵）；免费"
                 }
               }
             ]
@@ -1987,7 +2073,7 @@
                 "distanceM": 5000,
                 "note": {
                   "en": "",
-                  "zh": "🚗 Desert View Drive 往西 3 mi（往回开一小段）"
+                  "zh": "\ude97 Desert View Drive 往西 3 mi（往回开一小段）"
                 }
               }
             ]
@@ -2038,14 +2124,14 @@
                   "en": "Drive",
                   "zh": "开车"
                 },
-                "duration": "~2h 15 min",
+                "duration": "~45 min",
                 "from": "Lipan Point",
-                "to": "Big John's Texas BBQ (Page)",
-                "durationZh": "约2 小时 15 分钟",
-                "distanceM": 200000,
+                "to": "Cameron Trading Post",
+                "durationZh": "约45 分钟",
+                "distanceM": 56000,
                 "note": {
                   "en": "",
-                  "zh": "🚗 AZ-64 E 经 Desert View 出东口 → Cameron 左转 US-89 N → US-89 进 Page。夜路无路灯，常有鹿/麋鹿，限速内开；Cameron 是最后补给点；店旁免费停车"
+                  "zh": "\ude97 Desert View Drive 往东 → AZ-64 E 出东口 → 到 US-89 路口的 Cameron（约 35 mi）。天黑后路上常有鹿/麋鹿，限速内开；贸易站前免费停车"
                 }
               }
             ]
@@ -2055,43 +2141,50 @@
           "type": "restaurant",
           "status": "confirmed",
           "name": {
-            "en": "Big John's Texas BBQ",
-            "zh": "Big John's Texas BBQ"
+            "en": "Cameron Trading Post Dining Room",
+            "zh": "Cameron Trading Post Dining Room"
           },
-          "lat": 36.9152091,
-          "lng": -111.4556229,
-          "arrive": "7:35 PM",
-          "leave": "8:30 PM",
-          "website": "https://bigjohnstexasbbq.com/",
-          "placeId": "BIG_JOHNS",
+          "lat": null,
+          "lng": null,
+          "arrive": "6:05 PM",
+          "leave": "7:05 PM",
+          "website": "https://camerontradingpost.com/dinner-menu.html",
+          "placeId": "CAMERON_DINING",
           "notes": {
-            "en": "Dinner before check-in. The kitchen closes at 9 PM",
-            "zh": "晚餐（先吃再入住，9 PM 打烊）"
+            "en": "Dinner. The dining room is open until 9 PM MST",
+            "zh": "晚餐（餐厅开到 9 PM MST）"
           },
           "hours": {
-            "en": "Daily 11 AM–9 PM, from several sources",
-            "zh": "每天 11 AM–9 PM（多来源）"
+            "en": "The dining room is open daily, 6 AM–9 PM MST",
+            "zh": "官网：餐厅每天 6 AM–9 PM（MST）"
           },
           "mustOrder": [
             {
               "text": {
-                "en": "Brisket",
-                "zh": "Brisket（牛胸）"
+                "en": "Navajo Hot Beef",
+                "zh": "Navajo Hot Beef（fry bread + 烤牛肉 + gravy + 整根青辣椒，官网写的店主最爱；菜单表上没单列，点之前问一下）"
               }
             },
             {
               "text": {
-                "en": "Pulled pork / Ribs",
-                "zh": "Pulled pork / Ribs"
+                "en": "Prime Rib",
+                "zh": "Prime Rib（au jus + horseradish）"
               }
             },
             {
               "text": {
-                "en": "Mac & cheese、Baked beans、Cornbread",
-                "zh": "Mac & cheese、Baked beans、Cornbread"
+                "en": "Combination Plate",
+                "zh": "Combination Plate（pork tamale + beef taco + cheese enchilada）"
+              }
+            },
+            {
+              "text": {
+                "en": "Fruit Pies",
+                "zh": "Fruit Pies"
               }
             }
           ],
+          "founded": "1916",
           "cuisine": {
             "en": "Historic local",
             "zh": "老字号本地菜"
@@ -2104,8 +2197,8 @@
               "mustOrder": [
                 {
                   "text": {
-                    "en": "Chile relleno",
-                    "zh": "Chile relleno"
+                    "en": "Chile Relleno / Especialty Crispy Rellenos",
+                    "zh": "Chile Relleno / Especialty Crispy Rellenos"
                   }
                 },
                 {
@@ -2114,27 +2207,42 @@
                     "zh": "Fajitas"
                   }
                 }
+              ],
+              "menuSource": [
+                "https://www.eltapatiofamilyrestaurants.com/el-tapatio-5",
+                "https://www.restaurantji.com/az/page/el-tapatio-/"
               ]
             },
             {
-              "name": "State 48 Tavern",
-              "nameEn": "State 48 Tavern",
-              "placeId": "STATE48",
+              "name": "Big John's Texas BBQ",
+              "nameEn": "Big John's Texas BBQ",
+              "placeId": "BIG_JOHNS",
+              "website": "https://bigjohnstexasbbq.com/",
               "mustOrder": [
                 {
                   "text": {
-                    "en": "Burger",
-                    "zh": "Burger"
+                    "en": "10. Sampler Platter",
+                    "zh": "10. Sampler Platter（brisket、pulled pork、hot link、2 根 baby back ribs + cowboy beans + 土豆沙拉/凉拌卷心菜）"
                   }
                 },
                 {
                   "text": {
-                    "en": "Wings",
-                    "zh": "Wings"
+                    "en": "Fresh Baked Cornbread Muffin",
+                    "zh": "Fresh Baked Cornbread Muffin"
                   }
                 }
+              ],
+              "cuisine": {
+                "en": "Historic local",
+                "zh": "老字号本地菜"
+              },
+              "menuSource": [
+                "https://bigjohnstexasbbq.com/menus/page-lake-powell-restaurant-menu/"
               ]
             }
+          ],
+          "menuSource": [
+            "https://camerontradingpost.com/dinner-menu.html"
           ],
           "transit": {
             "segments": [
@@ -2144,14 +2252,14 @@
                   "en": "Drive",
                   "zh": "开车"
                 },
-                "duration": "~3 min",
-                "from": "Big John's",
+                "duration": "~1h 25 min",
+                "from": "Cameron",
                 "to": "Red Rock Motel",
-                "durationZh": "约3 分钟",
-                "distanceM": 600,
+                "durationZh": "约1 小时 25 分钟",
+                "distanceM": 137000,
                 "note": {
                   "en": "",
-                  "zh": "🚗 Lake Powell Blvd → 8th Ave"
+                  "zh": "\ude97 US-89 N 85 mi → Page（AZ-98 不用走）→ Lake Powell Blvd → 8th Ave。整段夜路无路灯，限速内开；Cameron 加满油"
                 }
               }
             ]
@@ -2171,8 +2279,8 @@
           "website": null,
           "placeId": "RED_ROCK_MOTEL",
           "notes": {
-            "en": "Self check-in after 4 PM. No need to stop at the desk",
-            "zh": "自助入住（4 PM 后，不用去前台）"
+            "en": "4:00 PM self check-in",
+            "zh": "下午 4:00 自助入住"
           },
           "hours": {
             "en": "Confirmed",
@@ -2253,7 +2361,7 @@
                 "distanceM": 4000,
                 "note": {
                   "en": "",
-                  "zh": "🚗 US-89 S 2 mi → 右转 Horseshoe Bend 停车场（日出才开门，11/29 日出约 7:13）"
+                  "zh": "\ude97 US-89 S 2 mi → 右转 Horseshoe Bend 停车场（日出才开门，11/29 日出约 7:13）"
                 }
               }
             ]
@@ -2315,7 +2423,7 @@
                 "distanceM": 5000,
                 "note": {
                   "en": "",
-                  "zh": "🚗 US-89 N → Navajo Dr"
+                  "zh": "\ude97 US-89 N → Navajo Dr"
                 }
               }
             ]
@@ -2345,20 +2453,20 @@
           "mustOrder": [
             {
               "text": {
-                "en": "Country Fried Steak & Eggs",
-                "zh": "Country Fried Steak & Eggs"
+                "en": "Southwest Country Fried Steak",
+                "zh": "Southwest Country Fried Steak（盖招牌 pork chile verde）"
+              }
+            },
+            {
+              "text": {
+                "en": "Huevos Rancheros",
+                "zh": "Huevos Rancheros（pork chile verde）"
               }
             },
             {
               "text": {
                 "en": "Biscuits & Gravy",
                 "zh": "Biscuits & Gravy"
-              }
-            },
-            {
-              "text": {
-                "en": "Pancakes",
-                "zh": "Pancakes"
               }
             }
           ],
@@ -2375,8 +2483,8 @@
               "mustOrder": [
                 {
                   "text": {
-                    "en": "Breakfast burrito",
-                    "zh": "Breakfast burrito"
+                    "en": "Breakfast Burrito",
+                    "zh": "Breakfast Burrito（bacon 或 chorizo）"
                   }
                 },
                 {
@@ -2385,6 +2493,9 @@
                     "zh": "Latte"
                   }
                 }
+              ],
+              "menuSource": [
+                "https://lpespresso.com/menu-2024"
               ]
             },
             {
@@ -2395,18 +2506,25 @@
               "mustOrder": [
                 {
                   "text": {
-                    "en": "Biscuits",
-                    "zh": "Biscuits"
+                    "en": "Southern Shrimp and Grits",
+                    "zh": "Southern Shrimp and Grits"
                   }
                 },
                 {
                   "text": {
-                    "en": "Shrimp & grits",
-                    "zh": "Shrimp & grits"
+                    "en": "Biscuits & Gravy",
+                    "zh": "Biscuits & Gravy"
                   }
                 }
+              ],
+              "menuSource": [
+                "https://rusticthistleeats.com/"
               ]
             }
+          ],
+          "menuSource": [
+            "https://www.yelp.com/biz/ranch-house-grille-page",
+            "https://ranchhousegrille.com/menu/"
           ],
           "transit": {
             "segments": [
@@ -2423,7 +2541,7 @@
                 "distanceM": 2000,
                 "note": {
                   "en": "",
-                  "zh": "🚗 Navajo Dr → Lake Powell Blvd S"
+                  "zh": "\ude97 Navajo Dr → Lake Powell Blvd S"
                 }
               }
             ]
@@ -2465,7 +2583,7 @@
                 "distanceM": 6000,
                 "note": {
                   "en": "",
-                  "zh": "🚗 Lake Powell Blvd → AZ-98 E 2.5 mi → 左转 Indian Route 222 到 Dixie's（Lower Antelope 停车场）；免费"
+                  "zh": "\ude97 Lake Powell Blvd → AZ-98 E 2.5 mi → 左转 Indian Route 222 到 Dixie's（Lower Antelope 停车场）；免费"
                 }
               }
             ]
@@ -2528,7 +2646,7 @@
                 "distanceM": 6000,
                 "note": {
                   "en": "",
-                  "zh": "🚗 AZ-98 W → Navajo Dr"
+                  "zh": "\ude97 AZ-98 W → Navajo Dr"
                 }
               }
             ]
@@ -2552,26 +2670,32 @@
             "zh": "午餐"
           },
           "hours": {
-            "en": "Official site: Sunday 11 AM–9 PM",
-            "zh": "官网：周日 11 AM–9 PM"
+            "en": "⚠ Other listings say Sunday 11 AM–9 PM, but the site also says Sunday is closed. Call ahead. If it is closed, go to El Tapatio",
+            "zh": "⚠ 第三方都写周日 11 AM–9 PM，但官网有一处写周日休息 → 出发前打电话；没开就去 El Tapatio"
           },
           "mustOrder": [
             {
               "text": {
-                "en": "Bone-in fried chicken plate",
-                "zh": "带骨炸鸡套餐"
+                "en": "Chicken Box / Half Chicken",
+                "zh": "Chicken Box / Half Chicken（Original、Very Spicy 或 Honey Butter 口味）"
               }
             },
             {
               "text": {
-                "en": "Fried chicken sandwich",
-                "zh": "炸鸡三明治"
+                "en": "The Best Chicken Sandwich",
+                "zh": "The Best Chicken Sandwich（brioche + 2 条 tenders + BirdHouse sauce）"
               }
             },
             {
               "text": {
-                "en": "Honey butter biscuit and sides",
-                "zh": "Honey butter biscuit / 配菜"
+                "en": "Honey Butter Chicken Sandwich",
+                "zh": "Honey Butter Chicken Sandwich"
+              }
+            },
+            {
+              "text": {
+                "en": "Mac-N-Cheese & Gravy / Milk Glazed Donut Holes",
+                "zh": "Mac-N-Cheese & Gravy / Milk Glazed Donut Holes"
               }
             }
           ],
@@ -2587,21 +2711,40 @@
               "mustOrder": [
                 {
                   "text": {
-                    "en": "Chile relleno",
-                    "zh": "Chile relleno"
+                    "en": "Chile Relleno / Especialty Crispy Rellenos",
+                    "zh": "Chile Relleno / Especialty Crispy Rellenos"
                   }
                 }
+              ],
+              "menuSource": [
+                "https://www.eltapatiofamilyrestaurants.com/el-tapatio-5"
               ]
             },
             {
               "name": "Big John's Texas BBQ",
               "nameEn": "Big John's Texas BBQ",
               "placeId": "BIG_JOHNS",
+              "mustOrder": [
+                {
+                  "text": {
+                    "en": "10. Sampler Platter",
+                    "zh": "10. Sampler Platter"
+                  }
+                }
+              ],
               "cuisine": {
                 "en": "Historic local",
                 "zh": "老字号本地菜"
-              }
+              },
+              "menuSource": [
+                "https://bigjohnstexasbbq.com/menus/page-lake-powell-restaurant-menu/"
+              ]
             }
+          ],
+          "menuSource": [
+            "https://www.menuguide.com/AZ/Page/BirdHouse",
+            "https://www.restaurantji.com/az/page/birdhouse-/",
+            "https://www.birdhouseaz.com/"
           ],
           "transit": {
             "segments": [
@@ -2618,7 +2761,7 @@
                 "distanceM": 4000,
                 "note": {
                   "en": "",
-                  "zh": "🚗 US-89 N 过 Carl Hayden VC 前 → 左转 Scenic View Rd；免费"
+                  "zh": "\ude97 US-89 N 过 Carl Hayden VC 前 → 左转 Scenic View Rd；免费"
                 }
               }
             ]
@@ -2674,7 +2817,7 @@
                 "distanceM": 128000,
                 "note": {
                   "en": "",
-                  "zh": "🚗 US-89 S 80 mi（Echo Cliffs 红崖一路相伴）"
+                  "zh": "\ude97 US-89 S 80 mi（Echo Cliffs 红崖一路相伴）"
                 }
               }
             ]
@@ -2682,7 +2825,7 @@
         },
         {
           "type": "sight",
-          "status": "tentative",
+          "status": "confirmed",
           "name": {
             "en": "Cameron Trading Post",
             "zh": "Cameron Trading Post"
@@ -2694,12 +2837,12 @@
           "website": null,
           "placeId": "CAMERON",
           "notes": {
-            "en": "A 20-minute stretch: the 1916 trading post and the suspension bridge",
-            "zh": "伸腿 20 分钟：1916 年老贸易站、吊桥"
+            "en": "A 20-minute stop: the old suspension bridge and the trading-post gallery. Dinner was here last night. Skip it if you are short on time",
+            "zh": "伸腿 20 分钟：老吊桥 + 贸易站画廊（昨晚已在这里吃过晚餐，赶时间可以跳过）"
           },
           "hours": {
-            "en": "Hours were not checked. Usually open until evening",
-            "zh": "营业时间未核实（通常到傍晚）"
+            "en": "Trading post 7 AM–8 PM. Dining room 6 AM–9 PM MST",
+            "zh": "官网：贸易站 7 AM–8 PM、餐厅 6 AM–9 PM（MST）"
           },
           "mustSee": [
             {
@@ -2715,6 +2858,7 @@
               }
             }
           ],
+          "optional": true,
           "transit": {
             "segments": [
               {
@@ -2730,7 +2874,7 @@
                 "distanceM": 85000,
                 "note": {
                   "en": "",
-                  "zh": "🚗 US-89 S 50 mi → Flagstaff → Route 66 W → Mars Hill Rd 上山；免费"
+                  "zh": "\ude97 US-89 S 50 mi → Flagstaff → Route 66 W → Mars Hill Rd 上山；免费"
                 }
               }
             ]
@@ -2792,7 +2936,7 @@
                 "distanceM": 2500,
                 "note": {
                   "en": "",
-                  "zh": "🚗 Mars Hill Rd 下山 → Route 66 → Beaver St；市中心路边/停车场"
+                  "zh": "\ude97 Mars Hill Rd 下山 → Route 66 → Beaver St；市中心路边/停车场"
                 }
               }
             ]
@@ -2822,20 +2966,20 @@
           "mustOrder": [
             {
               "text": {
-                "en": "Wood-fired pizza",
-                "zh": "柴火窑烤披萨"
+                "en": "Wood-fired pizza: Enchanted Forest or Mexican Street Pizza",
+                "zh": "Wood-fired pizza：Enchanted Forest 或 Mexican Street Pizza"
               }
             },
             {
               "text": {
-                "en": "Swiss fondue",
-                "zh": "Swiss fondue（招牌，按当天菜单）"
+                "en": "Brewer's Platter",
+                "zh": "Brewer's Platter（bratwurst + Louisiana hot link + 红卷心菜 + 苹果酱 + 土豆泥）"
               }
             },
             {
               "text": {
-                "en": "A flight of house beer, including Railhead Red Ale",
-                "zh": "Railhead Red Ale 等自酿啤酒 flight"
+                "en": "Railhead Red",
+                "zh": "Railhead Red（招牌 Special Bitter）/ Hopshot Red IPA"
               }
             }
           ],
@@ -2853,15 +2997,13 @@
                 {
                   "text": {
                     "en": "Margherita",
-                    "zh": "Margherita"
-                  }
-                },
-                {
-                  "text": {
-                    "en": "Amatriciana",
-                    "zh": "Amatriciana"
+                    "zh": "Margherita（Bianco DiNapoli 番茄、house mozzarella、basil）"
                   }
                 }
+              ],
+              "menuSource": [
+                "https://www.pizzicletta.com/menu",
+                "https://pizzicletta.square.site/product/margherita/505"
               ]
             },
             {
@@ -2871,16 +3013,23 @@
               "mustOrder": [
                 {
                   "text": {
-                    "en": "Prime rib",
-                    "zh": "Prime rib"
+                    "en": "Prime Rib",
+                    "zh": "Prime Rib（8 oz / 12 oz）"
                   }
                 }
               ],
               "cuisine": {
                 "en": "Historic local",
                 "zh": "老字号本地菜"
-              }
+              },
+              "menuSource": [
+                "https://www.blackbartssteakhouse.com/entrees.php"
+              ]
             }
+          ],
+          "menuSource": [
+            "https://beaverstreetbrewery.com/menu/",
+            "https://beaverstreetbrewery.com/"
           ],
           "transit": {
             "segments": [
@@ -2897,7 +3046,7 @@
                 "distanceM": 300,
                 "note": {
                   "en": "",
-                  "zh": "🚶 Beaver St 往北 300 m 到 Route 66 和老火车站"
+                  "zh": "\udeb6 Beaver St 往北 300 m 到 Route 66 和老火车站"
                 }
               }
             ]
@@ -2953,7 +3102,7 @@
                 "distanceM": 5000,
                 "note": {
                   "en": "",
-                  "zh": "🚗 Route 66 E → Butler Ave → Lucky Ln"
+                  "zh": "\ude97 Route 66 E → Butler Ave → Lucky Ln"
                 }
               }
             ]
@@ -3028,8 +3177,8 @@
             "zh": "含早餐 → 退房"
           },
           "hours": {
-            "en": "Breakfast is included. The breakfast hours were not checked",
-            "zh": "含早餐（早餐时段 未核实）"
+            "en": "Breakfast is included. ⚠ Breakfast hours are not confirmed",
+            "zh": "含早餐（早餐时段 ⚠ 未核实）"
           },
           "booked": true,
           "transit": {
@@ -3047,7 +3196,7 @@
                 "distanceM": 85000,
                 "note": {
                   "en": "",
-                  "zh": "🚗 I-40 W → I-17 S 50 mi → Exit 289 → Montezuma Castle Rd；免费"
+                  "zh": "\ude97 I-40 W → I-17 S 50 mi → Exit 289 → Montezuma Castle Rd；免费"
                 }
               }
             ]
@@ -3103,7 +3252,7 @@
                 "distanceM": 76000,
                 "note": {
                   "en": "",
-                  "zh": "🚗 I-17 S 47 mi → Exit 242"
+                  "zh": "\ude97 I-17 S 47 mi → Exit 242"
                 }
               }
             ]
@@ -3142,19 +3291,19 @@
             {
               "text": {
                 "en": "Thanksgiving Dinner",
-                "zh": "Thanksgiving Dinner（火鸡+蒜泥土豆+gravy+yams+玉米面包 stuffing+蔓越莓+面包卷+一片派）"
+                "zh": "Thanksgiving Dinner（11/26 限定套餐：turkey、garlic mashed potatoes、gravy、yams、cornbread stuffing、cranberry sauce、dinner roll + a slice of pie）"
               }
             },
             {
               "text": {
-                "en": "Jack Daniel's Pecan Pie",
-                "zh": "Jack Daniel's Pecan Pie（招牌派）"
+                "en": "JD Pecan Pie",
+                "zh": "JD Pecan Pie（招牌 Jack Daniel's 山核桃派）"
               }
             },
             {
               "text": {
-                "en": "Banana Cream / Apple Crumb Pie",
-                "zh": "Banana Cream / Apple Crumb Pie"
+                "en": "Banana Cream Pie / Apple Crumb Pie",
+                "zh": "Banana Cream Pie / Apple Crumb Pie"
               }
             }
           ],
@@ -3171,14 +3320,14 @@
               "mustOrder": [
                 {
                   "text": {
-                    "en": "Chop & Chick",
-                    "zh": "Chop & Chick（猪排+鸡蛋）"
+                    "en": "The Chop & Chick",
+                    "zh": "The Chop & Chick（猪排+2 蛋）"
                   }
                 },
                 {
                   "text": {
-                    "en": "Griddle Cakes",
-                    "zh": "Griddle Cakes"
+                    "en": "Griddlecakes",
+                    "zh": "Griddlecakes"
                   }
                 }
               ],
@@ -3186,7 +3335,11 @@
               "cuisine": {
                 "en": "Historic local",
                 "zh": "老字号本地菜"
-              }
+              },
+              "menuSource": [
+                "https://mattsbigbreakfast.com/menu/",
+                "https://www.skyharbor.com/at-the-airport/food-drinks/matts-big-breakfast-324/"
+              ]
             },
             {
               "name": "The Hudson",
@@ -3195,18 +3348,19 @@
               "mustOrder": [
                 {
                   "text": {
-                    "en": "Thanksgiving menu (turkey)",
-                    "zh": "感恩节节日菜单（火鸡）"
-                  }
-                },
-                {
-                  "text": {
-                    "en": "Smoked salmon or the house burger",
-                    "zh": "Smoked salmon / 招牌汉堡"
+                    "en": "Thanksgiving Day Menu",
+                    "zh": "Thanksgiving Day Menu（官网页面，菜品现场看）"
                   }
                 }
+              ],
+              "menuSource": [
+                "https://www.thehudsonsedona.com/menus/thanksgiving-day-menu"
               ]
             }
+          ],
+          "menuSource": [
+            "https://rockspringscafe.com/featured-upcoming/thanksgiving-dinner-at-the-rock-2/",
+            "https://rockspringscafe.com/shop/"
           ],
           "transit": {
             "segments": [
@@ -3223,7 +3377,7 @@
                 "distanceM": 66000,
                 "note": {
                   "en": "",
-                  "zh": "🚗 I-17 S 40 mi → I-10 E → AZ-143/Sky Harbor 出口跟 Rental Car Return 标志；还车前在附近加满油"
+                  "zh": "\ude97 I-17 S 40 mi → I-10 E → AZ-143/Sky Harbor 出口跟 Rental Car Return 标志；还车前在附近加满油"
                 }
               }
             ]
@@ -3261,7 +3415,7 @@
                 "durationZh": "约15 分钟",
                 "note": {
                   "en": "",
-                  "zh": "🚝 PHX Sky Train → Terminal 4 → AA 柜台/安检"
+                  "zh": "\ude9d PHX Sky Train → Terminal 4 → AA 柜台/安检"
                 }
               }
             ]
@@ -3281,8 +3435,8 @@
           "website": null,
           "placeId": "PHX",
           "notes": {
-            "en": "Security, then lunch, then depart 3:29 PM and land at JFK at 10:14 PM ET",
-            "zh": "安检 → 午餐（见🍽）→ 3:29 PM 起飞 → JFK 10:14 PM ET"
+            "en": "Security, then lunch, departing at 3:29 PM and arriving at JFK at 10:14 PM ET",
+            "zh": "安检 → 午餐（见）→ 3:29 PM 起飞 → JFK 10:14 PM ET"
           },
           "hours": {
             "en": "Flight confirmed",
@@ -3305,6 +3459,1026 @@
           "zh": "11:35 到还车点，留 25 分钟缓冲；还车前在附近加满油"
         }
       ]
+    }
+  ],
+  "menuCheck": [
+    {
+      "place": "Rock Springs Cafe",
+      "dishes": [
+        {
+          "en": "Thanksgiving Dinner",
+          "zh": "Thanksgiving Dinner"
+        },
+        {
+          "en": "JD Pecan Pie",
+          "zh": "JD Pecan Pie"
+        },
+        {
+          "en": "Banana Cream Pie",
+          "zh": "Banana Cream Pie"
+        },
+        {
+          "en": "Apple Crumb Pie",
+          "zh": "Apple Crumb Pie"
+        }
+      ],
+      "sources": [
+        "https://rockspringscafe.com/featured-upcoming/thanksgiving-dinner-at-the-rock-2/",
+        "https://rockspringscafe.com/shop/"
+      ],
+      "hours": {
+        "en": "11/26 11–3",
+        "zh": "11/26 11–3"
+      },
+      "note": {
+        "en": "Pie names now match the menu: JD Pecan Pie, Banana Cream Pie, and Apple Crumb Pie. The plate follows the site announcement",
+        "zh": "派名改成菜单写法 JD Pecan Pie / Banana Cream Pie / Apple Crumb Pie；套餐内容按官网公告"
+      }
+    },
+    {
+      "place": "Matt's Big Breakfast (PHX T4, B concourse)",
+      "dishes": [
+        {
+          "en": "The Chop & Chick",
+          "zh": "The Chop & Chick"
+        },
+        {
+          "en": "Griddlecakes",
+          "zh": "Griddlecakes"
+        }
+      ],
+      "sources": [
+        "https://mattsbigbreakfast.com/menu/",
+        "https://www.skyharbor.com/at-the-airport/food-drinks/matts-big-breakfast-324/"
+      ],
+      "hours": {
+        "en": "Airport site: daily from 5 AM until the last flight. Thanksgiving hours are not listed separately",
+        "zh": "机场官网：每天 5 AM–末班机（感恩节未单独公告）"
+      },
+      "note": {
+        "en": "Names are now The Chop & Chick and Griddlecakes",
+        "zh": "名称改为 The Chop & Chick / Griddlecakes"
+      }
+    },
+    {
+      "place": "The Hudson",
+      "dishes": [
+        {
+          "en": "Thanksgiving Day Menu",
+          "zh": "Thanksgiving Day Menu（具体菜名官网未列出）"
+        }
+      ],
+      "sources": [
+        "https://www.thehudsonsedona.com/menus/thanksgiving-day-menu"
+      ],
+      "hours": {
+        "en": "11/26 12–8",
+        "zh": "11/26 12–8"
+      },
+      "note": {
+        "en": "Dropped the unverified smoked salmon and signature burger. Only the holiday menu is listed",
+        "zh": "删掉未核实的 Smoked salmon/招牌汉堡；只写节日菜单"
+      }
+    },
+    {
+      "place": "Rascal Modern American Diner & Bar",
+      "dishes": [
+        {
+          "en": "Roast Turkey Dinner",
+          "zh": "Roast Turkey Dinner"
+        },
+        {
+          "en": "Butternut Squash Soup",
+          "zh": "Butternut Squash Soup"
+        },
+        {
+          "en": "Pumpkin Pie with Whipped Cream",
+          "zh": "Pumpkin Pie with Whipped Cream"
+        },
+        {
+          "en": "Shrimp & Grits",
+          "zh": "Shrimp & Grits（常规菜单）"
+        },
+        {
+          "en": "Hot Flaky Rolls",
+          "zh": "Hot Flaky Rolls（原写法，只在常规菜单）"
+        }
+      ],
+      "sources": [
+        "https://rascalrestaurantsedona.com/wp-content/uploads/2026/11/Rascal-Final-Thanksgiving-Menu-2026.pdf",
+        "https://rascalrestaurantsedona.com/wp-content/uploads/2026/09/Rascal-Sedona-DINNER-WINTER-Menu.pdf"
+      ],
+      "hours": {
+        "en": "Confirmed",
+        "zh": "已订"
+      },
+      "note": {
+        "en": "Dropped Hot Flaky Rolls and the Old Fashioned. The turkey plate already includes a roll, and the drink list was not checked. The Thanksgiving menu is three courses. ⚠ Ask when you sit whether the regular menu is also served",
+        "zh": "去掉 Hot Flaky Rolls 和 Old Fashioned（火鸡套餐已含面包卷；酒单没核）；加说明：感恩节菜单只有 3 道，常规菜单当晚是否同时供应 ⚠ 入座时问"
+      }
+    },
+    {
+      "place": "The Hudson",
+      "dishes": [
+        {
+          "en": "Thanksgiving Day Menu",
+          "zh": "Thanksgiving Day Menu（具体菜名官网未列出）"
+        }
+      ],
+      "sources": [
+        "https://www.thehudsonsedona.com/menus/thanksgiving-day-menu"
+      ],
+      "hours": {
+        "en": "11/26 12–8",
+        "zh": "11/26 12–8"
+      },
+      "note": {
+        "en": "Holiday menu only. Individual dishes are not listed",
+        "zh": "只写节日菜单，不列具体菜"
+      }
+    },
+    {
+      "place": "Cowboy Club Grille & Spirits",
+      "dishes": [
+        {
+          "en": "See Nov 27",
+          "zh": "见 11/27"
+        }
+      ],
+      "sources": [
+        "https://cowboyclub.com/menus/"
+      ],
+      "hours": {
+        "en": "Daily 11–9. ⚠ Thanksgiving hours are not listed separately",
+        "zh": "每天 11–9（感恩节当天 ⚠ 未单独公告）"
+      },
+      "note": {
+        "en": "—",
+        "zh": "—"
+      }
+    },
+    {
+      "place": "Coffee Pot Restaurant",
+      "dishes": [
+        {
+          "en": "#101 Jelly, Peanut Butter and Banana",
+          "zh": "#101 Jelly, Peanut Butter and Banana"
+        },
+        {
+          "en": "#49 Green Chile and Cheese",
+          "zh": "#49 Green Chile and Cheese"
+        },
+        {
+          "en": "Huevos Rancheros",
+          "zh": "Huevos Rancheros"
+        }
+      ],
+      "sources": [
+        "https://coffeepotsedona.com/menu/",
+        "https://coffee-pot-restaurant.hub.biz/app/online-menu"
+      ],
+      "hours": {
+        "en": "6 AM",
+        "zh": "6 AM"
+      },
+      "note": {
+        "en": "Menu names and numbers: #101 Jelly, Peanut Butter and Banana. There is no Southwest omelette, so it is #49 Green Chile and Cheese",
+        "zh": "改成菜单原名和编号：#101 Jelly, Peanut Butter and Banana；'Southwest 煎蛋卷' 菜单没有 → 换成 #49 Green Chile and Cheese"
+      }
+    },
+    {
+      "place": "Miley's Cafe",
+      "dishes": [
+        {
+          "en": "Miley's Burrito",
+          "zh": "Miley's Burrito"
+        }
+      ],
+      "sources": [
+        "https://mileyscafe.com/-food-menu"
+      ],
+      "hours": {
+        "en": "⚠ Opens at 6:30",
+        "zh": "⚠ 6:30 开"
+      },
+      "note": {
+        "en": "Breakfast burrito is now Miley's Burrito, the name on the menu. Opens at 6:30",
+        "zh": "'Breakfast burrito' 改为菜单上的 Miley's Burrito；注明 6:30 才开"
+      }
+    },
+    {
+      "place": "Red Rock Cafe",
+      "dishes": [
+        {
+          "en": "Biscuits & gravy",
+          "zh": "Biscuits & gravy"
+        },
+        {
+          "en": "Pancakes",
+          "zh": "Pancakes"
+        }
+      ],
+      "sources": [
+        "https://order.toasttab.com/online/red-rock-cafe-100-verde-valley-school-rd"
+      ],
+      "hours": {
+        "en": "⚠ Opens at 7 AM",
+        "zh": "⚠ 7 AM 开"
+      },
+      "note": {
+        "en": "Names follow the Toast menu",
+        "zh": "名称按 Toast 菜单"
+      }
+    },
+    {
+      "place": "Hideaway House",
+      "dishes": [
+        {
+          "en": "Roma",
+          "zh": "Roma (14\")"
+        },
+        {
+          "en": "Blanco Classico",
+          "zh": "Blanco Classico (14\")"
+        },
+        {
+          "en": "Meat Lasagna",
+          "zh": "Meat Lasagna"
+        },
+        {
+          "en": "Hideaway Antipasto",
+          "zh": "Hideaway Antipasto"
+        }
+      ],
+      "sources": [
+        "https://sedonahideawayhouse.com/food-menu"
+      ],
+      "hours": {
+        "en": "11 AM",
+        "zh": "11 AM"
+      },
+      "note": {
+        "en": "There is no House Special pizza or Hideaway salad. It is Roma or Blanco Classico, plus Hideaway Antipasto. Lasagna is Meat Lasagna",
+        "zh": "菜单没有 'House Special' 披萨和 'Hideaway 沙拉' → 换成 Roma/Blanco Classico 和 Hideaway Antipasto；Lasagna 改为 Meat Lasagna"
+      }
+    },
+    {
+      "place": "Javelina Cantina",
+      "dishes": [
+        {
+          "en": "Chicken Mole' Enchiladas",
+          "zh": "Chicken Mole' Enchiladas"
+        },
+        {
+          "en": "Javelina Margarita",
+          "zh": "Javelina Margarita (prickly pear +)"
+        }
+      ],
+      "sources": [
+        "https://www.javelinacantinasedona.com/menu"
+      ],
+      "hours": {
+        "en": "11 AM",
+        "zh": "11 AM"
+      },
+      "note": {
+        "en": "Sonoran enchiladas are now Chicken Mole' Enchiladas. The prickly pear margarita is a Javelina Margarita with prickly pear",
+        "zh": "'Sonoran 风 enchiladas' → Chicken Mole' Enchiladas；Prickly pear margarita → Javelina Margarita 加 prickly pear"
+      }
+    },
+    {
+      "place": "Oak Creek Brewery & Grill (Tlaquepaque)",
+      "dishes": [
+        {
+          "en": "Village Nut Brown Ale",
+          "zh": "Village Nut Brown Ale"
+        },
+        {
+          "en": "Tlaquepaque Burger",
+          "zh": "Tlaquepaque Burger"
+        },
+        {
+          "en": "Wood-fired pizza",
+          "zh": "Wood-fired pizza"
+        }
+      ],
+      "sources": [
+        "https://oakcreekbreweryandgrill.com/"
+      ],
+      "hours": {
+        "en": "⚠ Opens at 11:30",
+        "zh": "⚠ 11:30 开"
+      },
+      "note": {
+        "en": "Names are Village Nut Brown Ale and the Tlaquepaque Burger. Opens at 11:30",
+        "zh": "名称改为 Village Nut Brown Ale / Tlaquepaque Burger；注明 11:30 才开"
+      }
+    },
+    {
+      "place": "Cowboy Club Grille & Spirits",
+      "dishes": [
+        {
+          "en": "Trail Boss Sampler",
+          "zh": "Trail Boss Sampler"
+        },
+        {
+          "en": "Cactus Fries",
+          "zh": "Cactus Fries"
+        },
+        {
+          "en": "House Smoked Prime Rib",
+          "zh": "House Smoked Prime Rib (Weekend Roast)"
+        },
+        {
+          "en": "Butcher's Cut of Bison",
+          "zh": "Butcher's Cut of Bison"
+        },
+        {
+          "en": "Famous Cowboy margarita",
+          "zh": "Famous Cowboy margarita (+Prickly Pear)"
+        },
+        {
+          "en": "'Prickly Pear Margarita'",
+          "zh": "'Prickly Pear Margarita'（原写法）"
+        }
+      ],
+      "sources": [
+        "https://cowboyclub.com/menus/"
+      ],
+      "hours": {
+        "en": "Friday night",
+        "zh": "周五晚"
+      },
+      "note": {
+        "en": "The bison plate is Butcher's Cut of Bison, plus House Smoked Prime Rib on Friday. There is no drink named Prickly Pear Margarita. Order a Famous Cowboy with prickly pear",
+        "zh": "'野牛主菜' → Butcher's Cut of Bison；新增周五才有的 House Smoked Prime Rib；'Prickly Pear Margarita' 菜单没有这个名字 → Famous Cowboy 加 Prickly Pear"
+      }
+    },
+    {
+      "place": "René at Tlaquepaque",
+      "dishes": [
+        {
+          "en": "Côtelettes d'Agneau Roasted Double Lamb Chops",
+          "zh": "Côtelettes d'Agneau Roasted Double Lamb Chops"
+        },
+        {
+          "en": "French Onion Soup Gratinee",
+          "zh": "French Onion Soup Gratinee"
+        },
+        {
+          "en": "Flaming Bananas Foster",
+          "zh": "Flaming Bananas Foster"
+        },
+        {
+          "en": "Tableside Caesar Salad (previous name)",
+          "zh": "桌边 Caesar Salad（原写法）"
+        }
+      ],
+      "sources": [
+        "https://renerestaurantsedona.com/wp-content/uploads/2026/09/Rene-Tlaquepaque-Sedona-WINTER-Menu-2026.pdf"
+      ],
+      "hours": {
+        "en": "Site: Friday dinner 3:30–9 PM",
+        "zh": "官网：周五晚餐 3:30–9 PM"
+      },
+      "note": {
+        "en": "The winter menu has no tableside Caesar. It is French Onion Soup Gratinee and Flaming Bananas Foster. Rack of Lamb is now Double Lamb Chops",
+        "zh": "冬季菜单没有桌边 Caesar → 换成 French Onion Soup Gratinee + Flaming Bananas Foster；Rack of Lamb → Double Lamb Chops"
+      }
+    },
+    {
+      "place": "Elote Cafe",
+      "dishes": [
+        {
+          "en": "Elote",
+          "zh": "Elote"
+        },
+        {
+          "en": "Smoked Pork Cheeks",
+          "zh": "Smoked Pork Cheeks"
+        },
+        {
+          "en": "Lamb Adobo",
+          "zh": "Lamb Adobo"
+        }
+      ],
+      "sources": [
+        "https://www.elotecafe.com/eat-1"
+      ],
+      "hours": {
+        "en": "From 5 PM, per the site",
+        "zh": "5 PM 起（官网）"
+      },
+      "note": {
+        "en": "Capitalization follows the site",
+        "zh": "名称按官网大小写"
+      }
+    },
+    {
+      "place": "Macy's European Coffeehouse & Bakery",
+      "dishes": [
+        {
+          "en": "Breakfast Sandwich",
+          "zh": "Breakfast Sandwich"
+        },
+        {
+          "en": "Biscuit & Gravy",
+          "zh": "Biscuit & Gravy"
+        },
+        {
+          "en": "Cafe Mexicano",
+          "zh": "Cafe Mexicano"
+        },
+        {
+          "en": "French cinnamon roll",
+          "zh": "French cinnamon roll（评论/柜台，非菜单项）"
+        },
+        {
+          "en": "Scone",
+          "zh": "Scone（原写法）"
+        },
+        {
+          "en": "Breakfast burrito",
+          "zh": "Breakfast burrito（原写法）"
+        }
+      ],
+      "sources": [
+        "https://macyscoffee.net/products/breakfast-c176957656",
+        "https://www.yelp.com/menu/macys-european-coffee-house-flagstaff-2"
+      ],
+      "hours": {
+        "en": "6:30",
+        "zh": "6:30"
+      },
+      "note": {
+        "en": "No scone and no breakfast burrito. It is a Breakfast Sandwich and Biscuit & Gravy. The cinnamon roll stays, from recent notes",
+        "zh": "菜单没有 Scone 和 breakfast burrito → 换成 Breakfast Sandwich + Biscuit & Gravy；cinnamon roll 按评论保留"
+      }
+    },
+    {
+      "place": "Martanne's Burrito Palace",
+      "dishes": [
+        {
+          "en": "Chilaquiles",
+          "zh": "Chilaquiles"
+        }
+      ],
+      "sources": [
+        "https://martannes.com/flagstaff-martannes-breakfast-palace-food-menu"
+      ],
+      "hours": {
+        "en": "7:30",
+        "zh": "7:30"
+      },
+      "note": {
+        "en": "Sauce choices added. Saturday opening at 7:30 is confirmed",
+        "zh": "补酱汁选项；核实周六 7:30 开"
+      }
+    },
+    {
+      "place": "Biff's Bagels",
+      "dishes": [
+        {
+          "en": "Breakfast egg bagel",
+          "zh": "Breakfast egg bagel"
+        },
+        {
+          "en": "Deli Sandwich",
+          "zh": "Deli Sandwich"
+        }
+      ],
+      "sources": [
+        "https://www.biffsbagels.com/biffsmenu"
+      ],
+      "hours": {
+        "en": "7 AM",
+        "zh": "7 AM"
+      },
+      "note": {
+        "en": "Address added: 1 S Beaver St. Dish names follow the site",
+        "zh": "补地址 1 S Beaver St；菜名按官网"
+      }
+    },
+    {
+      "place": "El Tovar Dining Room",
+      "dishes": [
+        {
+          "en": "Navajo Taco",
+          "zh": "Navajo Taco"
+        },
+        {
+          "en": "El Tovar's Signature Chili",
+          "zh": "El Tovar's Signature Chili"
+        },
+        {
+          "en": "Signature Beef Stroganoff",
+          "zh": "Signature Beef Stroganoff"
+        }
+      ],
+      "sources": [
+        "https://www.grandcanyonlodges.com/content/uploads/2026/07/Limited-Lunch-Menu_Jul-2026.pdf"
+      ],
+      "hours": {
+        "en": "Confirmed",
+        "zh": "已订"
+      },
+      "note": {
+        "en": "Lunch-menu names: Navajo Taco, El Tovar's Signature Chili, and Signature Beef Stroganoff. These are lunch dishes",
+        "zh": "名称按午餐菜单：Navajo Taco / El Tovar's Signature Chili / Signature Beef Stroganoff（都是午餐菜单，不是晚餐）"
+      }
+    },
+    {
+      "place": "Harvey House Cafe (Bright Angel Lodge)",
+      "dishes": [
+        {
+          "en": "Fred Harvey Double Bacon Cheeseburger",
+          "zh": "Fred Harvey Double Bacon Cheeseburger"
+        },
+        {
+          "en": "Pot Roast",
+          "zh": "Pot Roast"
+        },
+        {
+          "en": "Tortilla Black Bean Soup",
+          "zh": "Tortilla Black Bean Soup"
+        },
+        {
+          "en": "Navajo taco",
+          "zh": "Navajo taco（原写法）"
+        },
+        {
+          "en": "Chili",
+          "zh": "Chili（原写法）"
+        }
+      ],
+      "sources": [
+        "https://www.grandcanyonlodges.com/content/uploads/2026/07/HH-All-Day-Dining-Limited-Menu_Jul-2026.pdf"
+      ],
+      "hours": {
+        "en": "All Day Dining 11 AM–9 PM, from the July menu. ⚠ Confirm again after the Nov 20 reopening",
+        "zh": "All Day Dining 11 AM–9 PM（7 月菜单；11/20 复业后 ⚠ 再确认）"
+      },
+      "note": {
+        "en": "Harvey House has no Navajo taco or chili. It is the Fred Harvey Double Bacon Cheeseburger, Pot Roast, and Tortilla Black Bean Soup",
+        "zh": "Harvey House 菜单没有 Navajo taco 和 chili → 换成 Fred Harvey Double Bacon Cheeseburger / Pot Roast / Tortilla Black Bean Soup"
+      }
+    },
+    {
+      "place": "Yavapai Lodge Tavern / Dining Hall",
+      "dishes": [
+        {
+          "en": "Elk burger",
+          "zh": "Elk burger"
+        },
+        {
+          "en": "Pulled-pork burger",
+          "zh": "Pulled-pork burger"
+        },
+        {
+          "en": "Chili",
+          "zh": "Chili（原写法）"
+        }
+      ],
+      "sources": [
+        "https://www.visitgrandcanyon.com/dining/yavapai-tavern/"
+      ],
+      "hours": {
+        "en": "⚠ Still to confirm",
+        "zh": "⚠ 待确认"
+      },
+      "note": {
+        "en": "Burger/Chili is now an elk burger or a pulled-pork burger. The place may not have reopened",
+        "zh": "'Burger/Chili' → Elk burger / Pulled-pork burger；注明可能未恢复营业"
+      }
+    },
+    {
+      "place": "Cameron Trading Post Dining Room",
+      "dishes": [
+        {
+          "en": "Navajo Hot Beef",
+          "zh": "Navajo Hot Beef（官网介绍文字，非菜单表）"
+        },
+        {
+          "en": "Prime Rib",
+          "zh": "Prime Rib"
+        },
+        {
+          "en": "Combination Plate",
+          "zh": "Combination Plate"
+        },
+        {
+          "en": "Steak Ranchero",
+          "zh": "Steak Ranchero"
+        },
+        {
+          "en": "Fruit Pies",
+          "zh": "Fruit Pies"
+        }
+      ],
+      "sources": [
+        "https://camerontradingpost.com/dinner-menu.html"
+      ],
+      "hours": {
+        "en": "6 AM–9 PM",
+        "zh": "6 AM–9 PM"
+      },
+      "note": {
+        "en": "New first choice. Big John's site now closes at 8 PM, so 7:35 is too tight and the signature plate often sells out. Dinner is at Cameron at 6:05. Arrival in Page stays 8:35",
+        "zh": "新首选：Big John's 官网现在只开到 8 PM，7:35 到太赶（招牌菜常卖完）→ 改在 Cameron 6:05 吃晚餐，8:35 到 Page 不变"
+      }
+    },
+    {
+      "place": "El Tapatio",
+      "dishes": [
+        {
+          "en": "Chile Relleno",
+          "zh": "Chile Relleno"
+        },
+        {
+          "en": "Fajitas",
+          "zh": "Fajitas"
+        }
+      ],
+      "sources": [
+        "https://www.eltapatiofamilyrestaurants.com/el-tapatio-5",
+        "https://www.restaurantji.com/az/page/el-tapatio-/"
+      ],
+      "hours": {
+        "en": "Until 11 PM",
+        "zh": "到 11 PM"
+      },
+      "note": {
+        "en": "Saturday hours confirmed through 11 PM. A backup if you reach Page late",
+        "zh": "核实周六开到 11 PM；作为 Page 晚到时的备选"
+      }
+    },
+    {
+      "place": "Big John's Texas BBQ",
+      "dishes": [
+        {
+          "en": "Sampler Platter",
+          "zh": "Sampler Platter"
+        },
+        {
+          "en": "Fresh Baked Cornbread Muffin",
+          "zh": "Fresh Baked Cornbread Muffin"
+        },
+        {
+          "en": "Mac & cheese",
+          "zh": "Mac & cheese（原写法：只有儿童 Kraft 款）"
+        },
+        {
+          "en": "Two-meat plate (previous name)",
+          "zh": "双肉拼盘（原写法）"
+        }
+      ],
+      "sources": [
+        "https://bigjohnstexasbbq.com/menus/page-lake-powell-restaurant-menu/"
+      ],
+      "hours": {
+        "en": "⚠ Closes at 8 PM",
+        "zh": "⚠ 8 PM 关"
+      },
+      "note": {
+        "en": "Now a backup. Closes at 8 PM. Dishes are Sampler Platter and a Cornbread Muffin. The mac and cheese side is not on the menu",
+        "zh": "降为备选：8 PM 关门；菜名改为 Sampler Platter / Cornbread Muffin，删掉菜单没有的 Mac & cheese 配菜"
+      }
+    },
+    {
+      "place": "Ranch House Grille",
+      "dishes": [
+        {
+          "en": "Southwest Country Fried Steak",
+          "zh": "Southwest Country Fried Steak"
+        },
+        {
+          "en": "Huevos Rancheros",
+          "zh": "Huevos Rancheros"
+        },
+        {
+          "en": "Biscuits & Gravy",
+          "zh": "Biscuits & Gravy"
+        },
+        {
+          "en": "Pancakes",
+          "zh": "Pancakes（Page 店菜单未见原写法）"
+        }
+      ],
+      "sources": [
+        "https://www.yelp.com/biz/ranch-house-grille-page",
+        "https://ranchhousegrille.com/menu/"
+      ],
+      "hours": {
+        "en": "6 AM",
+        "zh": "6 AM"
+      },
+      "note": {
+        "en": "Country Fried Steak & Eggs is now Southwest Country Fried Steak, the chile verde plate. Pancakes are now Huevos Rancheros, the two plates mentioned most often in Page",
+        "zh": "Country Fried Steak & Eggs → Southwest Country Fried Steak（招牌 chile verde 版）；Pancakes 换成 Huevos Rancheros（Page 店评论最多的两道）"
+      }
+    },
+    {
+      "place": "Lake Powell Espresso",
+      "dishes": [
+        {
+          "en": "Breakfast Burrito",
+          "zh": "Breakfast Burrito"
+        },
+        {
+          "en": "Latte",
+          "zh": "Latte"
+        }
+      ],
+      "sources": [
+        "https://lpespresso.com/menu-2024"
+      ],
+      "hours": {
+        "en": "6 AM",
+        "zh": "6 AM"
+      },
+      "note": {
+        "en": "Sunday 6 AM opening confirmed",
+        "zh": "核实周日 6 AM"
+      }
+    },
+    {
+      "place": "Rustic Thistle Eats",
+      "dishes": [
+        {
+          "en": "Southern Shrimp and Grits",
+          "zh": "Southern Shrimp and Grits"
+        },
+        {
+          "en": "Biscuits & Gravy",
+          "zh": "Biscuits & Gravy"
+        }
+      ],
+      "sources": [
+        "https://rusticthistleeats.com/"
+      ],
+      "hours": {
+        "en": "7 AM",
+        "zh": "7 AM"
+      },
+      "note": {
+        "en": "Names follow the site. Sunday 7 AM–3 PM",
+        "zh": "名称按官网；周日 7 AM–3 PM"
+      }
+    },
+    {
+      "place": "BirdHouse",
+      "dishes": [
+        {
+          "en": "Half Chicken",
+          "zh": "Half Chicken"
+        },
+        {
+          "en": "The Best Chicken Sandwich",
+          "zh": "The Best Chicken Sandwich"
+        },
+        {
+          "en": "Honey Butter Chicken Sandwich",
+          "zh": "Honey Butter Chicken Sandwich"
+        },
+        {
+          "en": "Mac-N-Cheese & Gravy",
+          "zh": "Mac-N-Cheese & Gravy"
+        },
+        {
+          "en": "Milk Glazed Donut Holes",
+          "zh": "Milk Glazed Donut Holes"
+        },
+        {
+          "en": "Honey butter biscuit",
+          "zh": "Honey butter biscuit（原写法）"
+        }
+      ],
+      "sources": [
+        "https://www.menuguide.com/AZ/Page/BirdHouse",
+        "https://www.restaurantji.com/az/page/birdhouse-/",
+        "https://www.birdhouseaz.com/"
+      ],
+      "hours": {
+        "en": "⚠ The Sunday hours on the site disagree",
+        "zh": "⚠ 周日官网矛盾"
+      },
+      "note": {
+        "en": "No honey-butter biscuit. It is Half Chicken, The Best Chicken Sandwich, Mac-N-Cheese & Gravy, and Milk Glazed Donut Holes. The site contradicts itself on Sunday hours. ⚠",
+        "zh": "菜单没有 honey butter biscuit → 改成 Half Chicken / The Best Chicken Sandwich / Mac-N-Cheese & Gravy / Milk Glazed Donut Holes；周日营业时间官网自相矛盾 → 标 ⚠"
+      }
+    },
+    {
+      "place": "El Tapatio",
+      "dishes": [
+        {
+          "en": "Chile Relleno",
+          "zh": "Chile Relleno"
+        }
+      ],
+      "sources": [
+        "https://www.eltapatiofamilyrestaurants.com/el-tapatio-5"
+      ],
+      "hours": {
+        "en": "Sunday 10 AM–10 PM",
+        "zh": "周日 10 AM–10 PM"
+      },
+      "note": {
+        "en": "—",
+        "zh": "—"
+      }
+    },
+    {
+      "place": "Big John's Texas BBQ",
+      "dishes": [
+        {
+          "en": "Sampler Platter",
+          "zh": "Sampler Platter"
+        }
+      ],
+      "sources": [
+        "https://bigjohnstexasbbq.com/menus/page-lake-powell-restaurant-menu/"
+      ],
+      "hours": {
+        "en": "Daily 11 AM–8 PM",
+        "zh": "每天 11 AM–8 PM"
+      },
+      "note": {
+        "en": "—",
+        "zh": "—"
+      }
+    },
+    {
+      "place": "Beaver Street Brewery",
+      "dishes": [
+        {
+          "en": "Enchanted Forest pizza",
+          "zh": "Enchanted Forest pizza"
+        },
+        {
+          "en": "Mexican Street Pizza",
+          "zh": "Mexican Street Pizza"
+        },
+        {
+          "en": "Brewer's Platter",
+          "zh": "Brewer's Platter"
+        },
+        {
+          "en": "Elote Dip and Chips",
+          "zh": "Elote Dip and Chips"
+        },
+        {
+          "en": "Railhead Red",
+          "zh": "Railhead Red"
+        },
+        {
+          "en": "Swiss fondue",
+          "zh": "Swiss fondue（原写法）"
+        },
+        {
+          "en": "beer flight",
+          "zh": "beer flight（原写法）"
+        }
+      ],
+      "sources": [
+        "https://beaverstreetbrewery.com/menu/",
+        "https://beaverstreetbrewery.com/"
+      ],
+      "hours": {
+        "en": "Sunday 11–9",
+        "zh": "周日 11–9"
+      },
+      "note": {
+        "en": "No fondue or beer flight on the site menu. It is Brewer's Platter and Elote Dip. The pizzas are Enchanted Forest and Mexican Street Pizza",
+        "zh": "官网菜单没有 fondue 和 beer flight → 换成 Brewer's Platter + Elote Dip；披萨写明 Enchanted Forest / Mexican Street Pizza"
+      }
+    },
+    {
+      "place": "Pizzicletta",
+      "dishes": [
+        {
+          "en": "Margherita",
+          "zh": "Margherita"
+        },
+        {
+          "en": "Amatriciana",
+          "zh": "Amatriciana（原写法）"
+        }
+      ],
+      "sources": [
+        "https://www.pizzicletta.com/menu",
+        "https://pizzicletta.square.site/product/margherita/505"
+      ],
+      "hours": {
+        "en": "12–9",
+        "zh": "12–9"
+      },
+      "note": {
+        "en": "Amatriciana is not on the menu, so it is dropped. Sunday 12–9 is confirmed",
+        "zh": "Amatriciana 菜单上找不到 → 删掉；核实周日 12–9"
+      }
+    },
+    {
+      "place": "Black Bart's Steakhouse",
+      "dishes": [
+        {
+          "en": "Prime Rib",
+          "zh": "Prime Rib"
+        }
+      ],
+      "sources": [
+        "https://www.blackbartssteakhouse.com/entrees.php"
+      ],
+      "hours": {
+        "en": "5–9",
+        "zh": "5–9"
+      },
+      "note": {
+        "en": "Menu and Sunday hours confirmed",
+        "zh": "核实菜单和周日时间"
+      }
+    },
+    {
+      "place": "Matt's Big Breakfast (PHX T4)",
+      "dishes": [
+        {
+          "en": "The Chop & Chick",
+          "zh": "The Chop & Chick"
+        },
+        {
+          "en": "The Hog & Chick",
+          "zh": "The Hog & Chick"
+        },
+        {
+          "en": "Griddlecakes",
+          "zh": "Griddlecakes"
+        }
+      ],
+      "sources": [
+        "https://mattsbigbreakfast.com/menu/",
+        "https://www.skyharbor.com/at-the-airport/food-drinks/matts-big-breakfast-324/"
+      ],
+      "hours": {
+        "en": "Airport site: daily from 5 AM until the last flight",
+        "zh": "机场官网：每天 5 AM–末班机"
+      },
+      "note": {
+        "en": "Names are The Hog & Chick and Griddlecakes. The airport menu may be shorter",
+        "zh": "名称改为 The Hog & Chick / Griddlecakes（机场店菜单可能是精简版）"
+      }
+    },
+    {
+      "place": "Four Peaks Brewing Company (PHX T4, A concourse)",
+      "dishes": [
+        {
+          "en": "Kilt Lifter",
+          "zh": "Kilt Lifter"
+        },
+        {
+          "en": "Pub Fish & Chips",
+          "zh": "Pub Fish & Chips"
+        },
+        {
+          "en": "Four Peaks burger (previous name, not verified)",
+          "zh": "Four Peaks 汉堡（原写法，名称未核实）"
+        }
+      ],
+      "sources": [
+        "https://www.fourpeaks.com/sky-harbor",
+        "https://sagemenu.com/phoenix/four-peaks-brewing-tempe-2/"
+      ],
+      "hours": {
+        "en": "7:30–7:30",
+        "zh": "7:30–7:30"
+      },
+      "note": {
+        "en": "Dropped the unnamed burger. Fish and chips is now Pub Fish & Chips. Hours follow the site, 7:30–7:30",
+        "zh": "删掉名称不明的 '汉堡'；Fish & chips 改为 Pub Fish & Chips；时间改为官网 7:30–7:30"
+      }
+    },
+    {
+      "place": "Barrio Café (PHX T4, D concourse)",
+      "dishes": [
+        {
+          "en": "Cochinita Pibil",
+          "zh": "Cochinita Pibil"
+        },
+        {
+          "en": "Guacamole Barrio",
+          "zh": "Guacamole Barrio"
+        }
+      ],
+      "sources": [
+        "https://www.skyharbor.com/at-the-airport/food-drinks/barrio-cafe-428/",
+        "https://barrio-cafe.res-menu.com/menu"
+      ],
+      "hours": {
+        "en": "Airport site: 4 AM–9 PM",
+        "zh": "机场官网：4 AM–9 PM"
+      },
+      "note": {
+        "en": "Names follow the menu",
+        "zh": "名称按菜单"
+      }
     }
   ]
 }
