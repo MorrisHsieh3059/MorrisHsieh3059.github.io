@@ -115,17 +115,18 @@
 		var s = parseISO(start);
 		var e = parseISO(end || start);
 		if (!s) return '';
+		if (!e) e = s;
 		if (state.lang === 'zh') {
-			if (!e || (s.y === e.y && s.m === e.m && s.d === e.d)) return s.m + '月' + s.d + '日';
-			if (s.y === e.y && s.m === e.m) return s.m + '月' + s.d + '–' + e.d + '日';
-			if (s.y === e.y) return s.m + '月' + s.d + '日 – ' + e.m + '月' + e.d + '日';
-			return s.y + '年' + s.m + '月' + s.d + '日 – ' + e.y + '年' + e.m + '月' + e.d + '日';
+			if (s.y === e.y && s.m === e.m && s.d === e.d) return s.y + '年' + s.m + '月' + s.d + '日';
+			if (s.y === e.y && s.m === e.m) return s.y + '年' + s.m + '月' + s.d + '–' + e.d + '日';
+			if (s.y === e.y) return s.y + '年' + s.m + '月' + s.d + '日 – ' + e.m + '月' + e.d + '日';
+			return s.y + '年' + s.m + '月' + s.d + '日–' + e.y + '年' + e.m + '月' + e.d + '日';
 		}
 		var sm = MONTHS[s.m - 1];
-		var em = e ? MONTHS[e.m - 1] : sm;
-		if (!e || (s.y === e.y && s.m === e.m && s.d === e.d)) return sm + ' ' + s.d;
-		if (s.y === e.y && s.m === e.m) return sm + ' ' + s.d + ' – ' + e.d;
-		if (s.y === e.y) return sm + ' ' + s.d + ' – ' + em + ' ' + e.d;
+		var em = MONTHS[e.m - 1];
+		if (s.y === e.y && s.m === e.m && s.d === e.d) return sm + ' ' + s.d + ', ' + s.y;
+		if (s.y === e.y && s.m === e.m) return sm + ' ' + s.d + ' – ' + e.d + ', ' + s.y;
+		if (s.y === e.y) return sm + ' ' + s.d + ' – ' + em + ' ' + e.d + ', ' + s.y;
 		return sm + ' ' + s.d + ', ' + s.y + ' – ' + em + ' ' + e.d + ', ' + e.y;
 	}
 
