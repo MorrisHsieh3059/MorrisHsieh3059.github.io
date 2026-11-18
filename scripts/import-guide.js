@@ -21,6 +21,7 @@
  */
 const fs = require('fs');
 const path = require('path');
+const roadTrip = require('./import-road-trip');
 
 const root = path.join(__dirname, '..');
 const outDir = path.join(root, 'components', 'travel', 'data', 'guide');
@@ -1195,6 +1196,12 @@ function enrichFromMeals(data, cities) {
   });
 }
 
+function readGuideIndex() {
+  const indexPath = path.join(outDir, 'index.json');
+  if (!fs.existsSync(indexPath)) return null;
+  return JSON.parse(fs.readFileSync(indexPath, 'utf8'));
+}
+
 function main() {
   const input = process.argv[2];
   if (!input) {
@@ -1208,6 +1215,14 @@ function main() {
     process.exit(1);
   }
 
+  if (roadTrip.isRoadTrip(data)) {
+    roadTrip.writeRoadTrip(data, {
+      outDir: outDir,
+      assertPublic: assertPublic
+    });
+    return;
+  }
+
   // between_cities (NYC→Berlin and Brussels→Newark) is not a city day. It stays out of the city pages.
   // changes_*, field_additions_*, archive_*, lists_consulted_*, walk_audit_*, walk_in_*,
   // google_lists_*, and the advance-booking checklist are not rendered.
@@ -1216,10 +1231,29 @@ function main() {
   flightAlts(data, cities);
   enrichFromMeals(data, cities);
   attachBookingLinks(data, cities);
+  const owned = cities.map(function (c) { return c.id; });
+  const prev = readGuideIndex();
+  let trips = prev && Array.isArray(prev.trips) ? prev.trips.map(function (trip) {
+    return { id: trip.id, name: trip.name, cities: (trip.cities || []).slice() };
+  }) : [];
+  if (owned.indexOf('berlin') !== -1) {
+    const europe = { id: 'europe', name: { en: 'Europe', zh: '欧洲' }, cities: owned };
+    const at = trips.findIndex(function (trip) { return trip.id === 'europe'; });
+    if (at === -1) trips.unshift(europe);
+    else trips[at] = europe;
+  }
+  if (!trips.length) trips = [{ id: 'europe', name: { en: 'Europe', zh: '欧洲' }, cities: owned }];
+  const cityIds = [];
+  trips.forEach(function (trip) {
+    (trip.cities || []).forEach(function (id) {
+      if (cityIds.indexOf(id) === -1) cityIds.push(id);
+    });
+  });
   const index = {
-    version: data.version || 'v1',
+    version: data.version || (prev && prev.version) || 'v1',
     draft: true,
-    cities: cities.map(function (c) { return c.id; })
+    trips: trips,
+    cities: cityIds
   };
 
   const problems = assertPublic([{ name: 'index.json', json: index }].concat(cities.map(function (city) {

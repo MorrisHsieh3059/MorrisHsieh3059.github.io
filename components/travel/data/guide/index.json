@@ -5,6 +5,32 @@
     "berlin",
     "vienna",
     "bratislava",
-    "brussels"
+    "brussels",
+    "arizona"
+  ],
+  "trips": [
+    {
+      "id": "europe",
+      "name": {
+        "en": "Europe",
+        "zh": "欧洲"
+      },
+      "cities": [
+        "berlin",
+        "vienna",
+        "bratislava",
+        "brussels"
+      ]
+    },
+    {
+      "id": "arizona",
+      "name": {
+        "en": "Arizona",
+        "zh": "亚利桑那"
+      },
+      "cities": [
+        "arizona"
+      ]
+    }
   ]
 }
