@@ -685,12 +685,13 @@ a.guide-daytrip {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 22px;
-	height: 18px;
-	margin-top: 0.72rem;
-	background: #fff;
-	color: var(--accent, #303F9F);
-	font-size: 0.72rem;
+	width: 16px;
+	height: 16px;
+	margin-top: 0.55rem;
+	margin-left: 3px;
+	background: #F0F0F0;
+	color: #303F9F;
+	font-size: 13px;
 	line-height: 1;
 }
 
