@@ -529,6 +529,8 @@
 	}
 
 	function drawMap(stops) {
+		var kept = state.keepMap;
+		state.keepMap = null;
 		destroyMap();
 		var node = document.getElementById('guide-map');
 		if (!node || typeof L === 'undefined') return;
@@ -576,7 +578,12 @@
 			}).addTo(state.map);
 		}
 		state.map.invalidateSize();
-		fitStops(stops);
+		if (kept && typeof kept.lat === 'number' && typeof kept.zoom === 'number') {
+			state.map.setView([kept.lat, kept.lng], kept.zoom, { animate: false });
+			spreadMarkers();
+		} else {
+			fitStops(stops);
+		}
 	}
 
 	function refreshMap() {
@@ -724,9 +731,10 @@
 		return bits.join(' · ');
 	}
 
-	function fold(label, body) {
+	function fold(label, body, key) {
 		if (!body) return '';
-		return '<details class="guide-tl-fold"><summary>' + esc(label) + '</summary><p>' + esc(body) + '</p></details>';
+		var attr = key ? ' data-fold="' + esc(key) + '"' : '';
+		return '<details class="guide-tl-fold"' + attr + '><summary>' + esc(label) + '</summary><p>' + esc(body) + '</p></details>';
 	}
 
 	function durationMinutes(seg) {
@@ -750,10 +758,11 @@
 		return formatTimeLabel(h12 + ':' + (m < 10 ? '0' : '') + m + ' ' + ap);
 	}
 
-	function legRows(transit, nextStop, departMins) {
+	function legRows(transit, nextStop, departMins, foldKey) {
 		var segments = legSegments(transit);
 		if (!segments.length) return '';
 		var cursor = departMins;
+		var key = foldKey || 'leg';
 		return segments.map(function (seg, i) {
 			var time = cursor != null ? clockLabel(cursor) : '';
 			var add = durationMinutes(seg);
@@ -766,17 +775,17 @@
 				if (dest) sub = '<p class="guide-leg-sub">' + esc((state.lang === 'zh' ? '到 ' : 'to ') + dest) + '</p>';
 			}
 			var detail = segDetail(seg);
-			var more = detail ? fold(state.lang === 'zh' ? '详情' : 'Details', detail) : '';
+			var more = detail ? fold(state.lang === 'zh' ? '详情' : 'Details', detail, key + '-s' + i) : '';
 			var extra = '';
 			if (i === segments.length - 1) {
-				if (transit.ticket && tx(transit.ticket)) extra += fold(state.lang === 'zh' ? '车票' : 'Tickets', tx(transit.ticket));
+				if (transit.ticket && tx(transit.ticket)) extra += fold(state.lang === 'zh' ? '车票' : 'Tickets', tx(transit.ticket), key + '-ticket');
 				if (transit.alternative && transit.alternative.length) {
 					var alt = transit.alternative.map(function (altSeg) {
 						var line = segHeadline(altSeg);
 						var altDetail = segDetail(altSeg);
 						return altDetail ? line + ' — ' + altDetail : line;
 					}).join('\n');
-					extra += '<details class="guide-tl-fold"><summary>' + esc(state.lang === 'zh' ? '另一条路线' : 'Alternative') + '</summary><p>' +
+					extra += '<details class="guide-tl-fold" data-fold="' + esc(key + '-route') + '"><summary>' + esc(state.lang === 'zh' ? '另一条路线' : 'Alternative') + '</summary><p>' +
 						esc(alt).replace(/\n/g, '<br>') + '</p></details>';
 				}
 			}
@@ -807,10 +816,10 @@
 				var note = alt.note && tx(alt.note) ? ' · ' + tx(alt.note) : '';
 				return placeName(alt) + note;
 			}).join('\n');
-			alts = '<details class="guide-tl-fold"><summary>' + esc(ui('dayAlt')) + '</summary><p>' +
+			alts = '<details class="guide-tl-fold" data-fold="stop-' + index + '-alts"><summary>' + esc(ui('dayAlt')) + '</summary><p>' +
 				esc(altBody).replace(/\n/g, '<br>') + '</p></details>';
 		}
-		var backups = backupsHtml(stop);
+		var backups = backupsHtml(stop, index);
 		var gap = stop.transit ? '' : ' is-gap';
 		var inner = timeCol(stop) +
 			'<div class="guide-tl-axis"><span class="guide-tl-dot ' + statusClass(shown) + '">' + (index + 1) + '</span></div>' +
@@ -834,7 +843,7 @@
 			inner + '</div>';
 	}
 
-	function backupsHtml(stop) {
+	function backupsHtml(stop, index) {
 		if (!stop.backups || !stop.backups.length) return '';
 		var rows = stop.backups.map(function (item) {
 			var name = state.lang === 'zh' ? (item.name || item.nameEn || '') : (item.nameEn || item.name || '');
@@ -854,7 +863,7 @@
 			return '<div class="guide-backup"><div class="guide-backup-head"><span class="guide-backup-name">' + esc(name) + '</span><span class="guide-stop-actions">' + buttons + '</span></div>' + meta + mealMeta(item) + mustBlock('mustEat', item.mustOrder, item.mustOrderNote) + '</div>';
 		}).join('');
 		if (!rows) return '';
-		return '<details class="guide-tl-fold guide-backups"><summary>' + esc(ui('backup')) + '</summary>' + rows + '</details>';
+		return '<details class="guide-tl-fold guide-backups" data-fold="stop-' + index + '-backups"><summary>' + esc(ui('backup')) + '</summary>' + rows + '</details>';
 	}
 
 	function returnOptionsHtml(day) {
@@ -868,7 +877,7 @@
 			if (opt.ticket && tx(opt.ticket)) bits.push(tx(opt.ticket));
 			return bits.filter(Boolean).join(' · ');
 		}).join('\n');
-		return '<details class="guide-return"><summary>' + esc(ui('returnOpts')) + '</summary><p>' +
+		return '<details class="guide-return" data-fold="return"><summary>' + esc(ui('returnOpts')) + '</summary><p>' +
 			esc(lines).replace(/\n/g, '<br>') + '</p></details>';
 	}
 
@@ -904,10 +913,10 @@
 		var section = day.section && tx(day.section)
 			? '<p class="guide-day-section">' + esc(tx(day.section)) + '</p>' : '';
 		var pieces = [];
-		if (day.inbound) pieces.push(legRows(day.inbound, day.stops[0] || null, null));
+		if (day.inbound) pieces.push(legRows(day.inbound, day.stops[0] || null, null, 'in'));
 		day.stops.forEach(function (stop, i) {
 			pieces.push(stopHtml(stop, i));
-			if (stop.transit) pieces.push(legRows(stop.transit, day.stops[i + 1] || null, parseClock(stop.leave)));
+			if (stop.transit) pieces.push(legRows(stop.transit, day.stops[i + 1] || null, parseClock(stop.leave), 't' + i));
 		});
 		var stops = pieces.join('');
 		var notes = (day.notes || []).map(function (n) {
@@ -918,7 +927,7 @@
 		var around = '';
 		if (city.gettingAround && tx(city.gettingAround)) {
 			var aroundLabel = state.lang === 'zh' ? '市内交通' : 'Getting around';
-			around = '<details class="guide-around"><summary>' + esc(aroundLabel) + '</summary><p>' + esc(tx(city.gettingAround)) + '</p></details>';
+			around = '<details class="guide-around" data-fold="around"><summary>' + esc(aroundLabel) + '</summary><p>' + esc(tx(city.gettingAround)) + '</p></details>';
 		}
 		var html = '<div class="guide-toolbar">' +
 				'<div class="guide-heading"><p class="guide-city-name">' + esc(tx(city.name)) + ' ' + draftBadge() + '</p>' +
@@ -1048,14 +1057,90 @@
 		});
 	}
 
+	function captureGuideView() {
+		var timeline = document.getElementById('guide-timeline');
+		var scroller = document.querySelector('#guide-root .guide-scroll');
+		var days = document.querySelector('#guide-root .guide-days');
+		var section = document.querySelector('.section.active');
+		var open = [];
+		document.querySelectorAll('#guide-root details[open][data-fold]').forEach(function (el) {
+			open.push(el.getAttribute('data-fold'));
+		});
+		var map = null;
+		if (state.map) {
+			var c = state.map.getCenter();
+			map = { lat: c.lat, lng: c.lng, zoom: state.map.getZoom() };
+		}
+		var anchor = null;
+		if (timeline) {
+			var box = timeline.getBoundingClientRect();
+			var rows = timeline.querySelectorAll('.guide-stop, .guide-tl-leg');
+			var i;
+			for (i = 0; i < rows.length; i++) {
+				var rect = rows[i].getBoundingClientRect();
+				if (rect.bottom > box.top + 1) {
+					anchor = { index: i, offset: rect.top - box.top };
+					break;
+				}
+			}
+		}
+		return {
+			timeline: timeline ? timeline.scrollTop : null,
+			anchor: anchor,
+			scroll: scroller ? scroller.scrollTop : null,
+			days: days ? days.scrollLeft : null,
+			section: section ? section.scrollTop : null,
+			windowY: window.pageYOffset || document.documentElement.scrollTop || 0,
+			open: open,
+			map: map
+		};
+	}
+
+	function restoreGuideView(view) {
+		if (!view) return;
+		(view.open || []).forEach(function (key) {
+			if (!key) return;
+			var el = document.querySelector('#guide-root details[data-fold="' + key.replace(/"/g, '') + '"]');
+			if (el) el.open = true;
+		});
+		var timeline = document.getElementById('guide-timeline');
+		if (timeline) {
+			if (view.anchor) {
+				var rows = timeline.querySelectorAll('.guide-stop, .guide-tl-leg');
+				var row = rows[view.anchor.index];
+				if (row) {
+					var box = timeline.getBoundingClientRect();
+					var rect = row.getBoundingClientRect();
+					timeline.scrollTop += (rect.top - box.top) - view.anchor.offset;
+				} else if (view.timeline != null) {
+					timeline.scrollTop = view.timeline;
+				}
+			} else if (view.timeline != null) {
+				timeline.scrollTop = view.timeline;
+			}
+		}
+		var scroller = document.querySelector('#guide-root .guide-scroll');
+		if (scroller && view.scroll != null) scroller.scrollTop = view.scroll;
+		var days = document.querySelector('#guide-root .guide-days');
+		if (days && view.days != null) days.scrollLeft = view.days;
+		var section = document.querySelector('.section.active');
+		if (section && view.section != null) section.scrollTop = view.section;
+		if (view.windowY) window.scrollTo(window.pageXOffset || 0, view.windowY);
+	}
+
 	function setLang(lang) {
 		if (lang !== 'en' && lang !== 'zh') return;
 		if (lang === state.lang) return;
+		var view = state.ready ? captureGuideView() : null;
 		state.lang = lang;
 		writeLang(lang);
 		syncTabs();
 		if (!state.ready) return;
+		state.keepMap = view && view.map;
 		render();
+		if (!state.key) state.keepMap = null;
+		restoreGuideView(view);
+		requestAnimationFrame(function () { restoreGuideView(view); });
 	}
 
 	function bind() {
@@ -1070,6 +1155,7 @@
 			if (day === state.day) return;
 			state.day = day;
 			state.active = null;
+			state.keepMap = null;
 			renderCity();
 		});
 		$(document).on('click', 'a.guide-card, a.guide-back, a.guide-daytrip', function (e) {
