@@ -44,12 +44,17 @@ function isRoadTrip(data) {
   });
 }
 
-function publicText(raw) {
+function publicText(raw, opts) {
   let s = String(raw == null ? '' : raw);
+  if (/门码|door code/i.test(s) && /4\s*(?::00\s*)?PM|4:00/.test(s)) {
+    s = '下午 4:00 自助入住';
+  }
   s = s.replace(/https?:\/\/\S+/gi, '');
-  s = s.replace(/[✅☑️⚠️❌]/g, '');
+  s = s.replace(opts && opts.keepWarn ? /[✅☑️❌]/g : /[✅☑️⚠️❌]/g, '');
+  s = s.replace(/[💵🍽️]/g, '');
   s = s.replace(/\$\s?\d[\d.,]*(?:\s*[–—/-]\s*\$?\d[\d.,]*)?(?:\s*\/\s*[\u4e00-\u9fffA-Za-z]+)?/g, '');
   s = s.replace(/\+\s*\$\s?\d[\d.,]*/g, '');
+  s = s.replace(/\$+/g, '');
   s = s.replace(/\b(?:AA|OS|UA|VL|WN|DL)\s*-?\d{2,4}\b/gi, '');
   s = s.replace(/同行朋友[^，。；）)]*/g, '');
   s = s.replace(/公司\s*AWD[^，。；）)]*/g, '');
@@ -89,10 +94,19 @@ function english(zh) {
 }
 
 function pair(raw, bucket) {
-  const zh = publicText(raw);
+  const zh = publicText(raw, bucket === 'hours' || bucket === 'note' ? { keepWarn: true } : null);
   if (!zh) return null;
   const en = english(raw, bucket) || english(zh, bucket) || zh;
   return { en: en, zh: zh };
+}
+
+function menuUrls(raw) {
+  const found = String(raw || '').match(/https?:\/\/[^\s·,，]+/g) || [];
+  return found.map(function (url) {
+    return url.replace(/[).,，]+$/g, '');
+  }).filter(function (url, i, all) {
+    return all.indexOf(url) === i;
+  });
 }
 
 function sectionZh(area) {
@@ -179,6 +193,8 @@ function backupOf(raw) {
   if (raw.cuisine_rule === 'historic-local') {
     item.cuisine = { en: 'Historic local', zh: '老字号本地菜' };
   }
+  const sources = menuUrls(raw.menu_source);
+  if (sources.length) item.menuSource = sources;
   return item;
 }
 
@@ -204,6 +220,7 @@ function buildStop(item, meals) {
   const see = listText(item.must_see_zh, 'see');
   if (see.length) stop.mustSee = see;
   if (isBooked(item.booking)) stop.booked = true;
+  if (/可以跳过/.test(String(item.activity_zh || ''))) stop.optional = true;
   const meal = item.place_id && meals[item.place_id];
   if (meal && meal.top) {
     const order = (Array.isArray(meal.top.must_order_zh) ? meal.top.must_order_zh : []).map(dishText).filter(Boolean);
@@ -217,8 +234,33 @@ function buildStop(item, meals) {
     }
     const backups = (meal.backups || []).map(backupOf).filter(Boolean);
     if (backups.length) stop.backups = backups;
+    const sources = menuUrls(meal.top.menu_source);
+    if (sources.length) stop.menuSource = sources;
   }
   return stop;
+}
+
+function dishLabel(raw) {
+  const full = publicText(raw);
+  if (!full) return null;
+  const head = publicText(String(raw).split(/（|\(/)[0]);
+  const en = english(raw) || english(full) || ((head && /^[\x00-\x7F]+$/.test(head)) ? head : full);
+  return { en: en, zh: full };
+}
+
+function buildMenuCheck(data) {
+  return (data.menu_verification || []).map(function (row) {
+    const dishes = (row.dishes || []).map(function (dish) {
+      return dishLabel(Array.isArray(dish) ? dish[0] : dish);
+    }).filter(Boolean);
+    return {
+      place: publicText(row.place),
+      dishes: dishes,
+      sources: menuUrls(row.source),
+      hours: pair(row.open_zh, 'hours'),
+      note: pair(row.changed, 'note')
+    };
+  }).filter(function (row) { return row.place; });
 }
 
 function buildDay(day, meals) {
@@ -284,7 +326,8 @@ function buildCity(data) {
       en: 'A driving trip. Times are local. Keep bags in the trunk at trailheads.',
       zh: '这是一趟自驾。时间都是当地时间。停在步道口时，行李放进行李箱。'
     },
-    days: (data.days || []).map(function (day) { return buildDay(day, meals); })
+    days: (data.days || []).map(function (day) { return buildDay(day, meals); }),
+    menuCheck: buildMenuCheck(data)
   };
 }
 
@@ -301,9 +344,20 @@ function writeRoadTrip(data, ctx) {
     });
   }
   scanKeys(city, 'arizona');
-  if (privateKeys.length) {
+  const leaked = [];
+  function scanStrings(node) {
+    if (typeof node === 'string') {
+      if (/party_size|\$|\bprice\b|\bcost\b|\bcode\b|@|门码|door code/i.test(node)) leaked.push(node.slice(0, 140));
+      return;
+    }
+    if (!node || typeof node !== 'object') return;
+    Object.keys(node).forEach(function (key) { scanStrings(node[key]); });
+  }
+  scanStrings(city);
+  if (privateKeys.length || leaked.length) {
     console.error('Refusing to write private fields:');
     privateKeys.slice(0, 20).forEach(function (p) { console.error('  ' + p); });
+    leaked.slice(0, 20).forEach(function (p) { console.error('  ' + p); });
     process.exit(1);
   }
   const problems = ctx.assertPublic([{ name: 'arizona.json', json: city }]);
