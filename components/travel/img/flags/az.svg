@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <title>Flag of Arizona</title>
+  <desc>Arizona state flag drawn from A.R.S. § 41-851: thirteen red and light-yellow rays, a blue field, and a copper star. Public-domain insignia.</desc>
+  <rect width="600" height="200" fill="#BF0A30"/>
+  <polygon fill="#BF0A30" points="300,200 0,200 0,126.06"/>
+  <polygon fill="#FED700" points="300,200 0,126.06 0,42.55"/>
+  <polygon fill="#BF0A30" points="300,200 0,42.55 0,0 74.25,0"/>
+  <polygon fill="#FED700" points="300,200 74.25,0 161.95,0"/>
+  <polygon fill="#BF0A30" points="300,200 161.95,0 224.15,0"/>
+  <polygon fill="#FED700" points="300,200 224.15,0 275.72,0"/>
+  <polygon fill="#BF0A30" points="300,200 275.72,0 324.28,0"/>
+  <polygon fill="#FED700" points="300,200 324.28,0 375.85,0"/>
+  <polygon fill="#BF0A30" points="300,200 375.85,0 438.05,0"/>
+  <polygon fill="#FED700" points="300,200 438.05,0 525.75,0"/>
+  <polygon fill="#BF0A30" points="300,200 525.75,0 600,0 600,42.55"/>
+  <polygon fill="#FED700" points="300,200 600,42.55 600,126.06"/>
+  <polygon fill="#BF0A30" points="300,200 600,126.06 600,200"/>
+  <rect y="200" width="600" height="200" fill="#002868"/>
+  <polygon fill="#CE5C17" points="300,100 324.82,176.39 405.15,176.39 340.16,223.61 364.98,300 300,252.79 235.02,300 259.84,223.61 194.85,176.39 275.18,176.39"/>
+</svg>

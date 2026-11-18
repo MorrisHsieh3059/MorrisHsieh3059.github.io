@@ -23,10 +23,10 @@
       ]
     },
     {
-      "id": "arizona",
+      "id": "north-america",
       "name": {
-        "en": "Arizona",
-        "zh": "亚利桑那"
+        "en": "North America",
+        "zh": "北美"
       },
       "cities": [
         "arizona"

@@ -275,8 +275,8 @@ function buildCity(data) {
     version: data.version || 'v1.1',
     draft: true,
     country: { en: 'United States', zh: '美国' },
-    flag: 'img/travel/flags/us.svg',
-    cover: 'img/travel/flags/us.svg',
+    flag: 'img/travel/flags/az.svg',
+    cover: 'img/travel/flags/az.svg',
     coverFit: 'contain',
     name: { en: 'Arizona', zh: '亚利桑那' },
     dates: { start: range.start, end: range.end },
@@ -324,14 +324,15 @@ function writeRoadTrip(data, ctx) {
       cities: (prev.cities || []).filter(function (id) { return id !== 'arizona'; })
     }];
   }
-  const arizona = {
-    id: 'arizona',
-    name: { en: 'Arizona', zh: '亚利桑那' },
+  prev.trips = prev.trips.filter(function (trip) { return trip.id !== 'arizona'; });
+  const northAmerica = {
+    id: 'north-america',
+    name: { en: 'North America', zh: '北美' },
     cities: ['arizona']
   };
-  const at = prev.trips.findIndex(function (trip) { return trip.id === 'arizona'; });
-  if (at === -1) prev.trips.push(arizona);
-  else prev.trips[at] = arizona;
+  const at = prev.trips.findIndex(function (trip) { return trip.id === 'north-america'; });
+  if (at === -1) prev.trips.push(northAmerica);
+  else prev.trips[at] = northAmerica;
   const cities = [];
   prev.trips.forEach(function (trip) {
     (trip.cities || []).forEach(function (id) {

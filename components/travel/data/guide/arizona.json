@@ -6,8 +6,8 @@
     "en": "United States",
     "zh": "美国"
   },
-  "flag": "img/travel/flags/us.svg",
-  "cover": "img/travel/flags/us.svg",
+    "flag": "img/travel/flags/az.svg",
+    "cover": "img/travel/flags/az.svg",
   "coverFit": "contain",
   "name": {
     "en": "Arizona",
