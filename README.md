@@ -147,7 +147,9 @@ npm run import-guide -- path/to/itinerary_v2.json
 npm run build
 ```
 
-That rewrites `index.json` and each `<id>.json`. The script drops personal names, flight and train numbers, emails, phone numbers, prices, confirmation codes, and “reserve now” notes. Place and dish names stay in the original language. Simplified Chinese for the prose lives in `scripts/guide-zh.json`, keyed by the sanitized English. A string with no entry is left in English and printed as a warning.
+A Europe export (a `cities` array) rewrites `index.json` and each Europe `<id>.json`. The script drops personal names, flight and train numbers, emails, phone numbers, prices, confirmation codes, party size, and “reserve now” notes. Place and dish names stay in the original language. Simplified Chinese for the prose lives in `scripts/guide-zh.json`, keyed by the sanitized English. A string with no entry is left in English and printed as a warning.
+
+A road-trip export (top-level `days`, as in the Arizona file) writes only `arizona.json` and adds the Arizona trip on the index. It does not rewrite the Europe city files. English for that file lives in `scripts/guide-az-en.json`, keyed by the sanitized Chinese. Party size, prices, door codes, and guest names are dropped and never written into the public JSON.
 
 Adding or editing a stop in a city file is enough for the page. A new city also needs its id in `index.json` (the importer does this). `npm run build` then adds `/travel/guide/<id>/` so a refresh stays a 200.
 

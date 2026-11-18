@@ -40,6 +40,7 @@
 		station: { en: 'Station', zh: '车站' },
 		church: { en: 'Church', zh: '教会' },
 		bar: { en: 'Bar', zh: '酒吧' },
+		rental: { en: 'Car', zh: '租车' },
 		returnOpts: { en: 'Return options', zh: '返程选项' },
 		other: { en: 'Stop', zh: '停留' },
 		directions: { en: 'Directions to {name}', zh: '去{name}的路线' },
@@ -55,6 +56,7 @@
 		tram: 'fa-tram',
 		bus: 'fa-bus',
 		taxi: 'fa-taxi',
+		drive: 'fa-car',
 		lift: 'fa-arrow-down'
 	};
 
@@ -616,19 +618,26 @@
 		syncTabs();
 	}
 
+	function cardHtml(city) {
+		var fit = city.coverFit === 'contain' ? ' fit-contain' : ' fit-cover';
+		return '<a class="guide-card" href="/travel/guide/' + esc(city.id) + '/" data-city="' + esc(city.id) + '">' +
+			'<span class="guide-card-cover' + fit + '"><img src="' + esc(city.cover || city.flag || '') + '" alt="' + esc(tx(city.name)) + '"></span>' +
+			'<span class="guide-card-body">' +
+				'<span class="guide-card-name">' + esc(tx(city.name)) + '</span>' +
+				'<span class="guide-card-dates">' + esc(formatRange(city.dates && city.dates.start, city.dates && city.dates.end)) + '</span>' +
+			'</span></a>';
+	}
+
 	function renderLanding() {
 		destroyMap();
-		var cards = state.cities.map(function (city) {
-			var fit = city.coverFit === 'contain' ? ' fit-contain' : ' fit-cover';
-			return '<a class="guide-card" href="/travel/guide/' + esc(city.id) + '/" data-city="' + esc(city.id) + '">' +
-				'<span class="guide-card-cover' + fit + '"><img src="' + esc(city.cover || city.flag || '') + '" alt="' + esc(tx(city.name)) + '"></span>' +
-				'<span class="guide-card-body">' +
-					'<span class="guide-card-name">' + esc(tx(city.name)) + '</span>' +
-					'<span class="guide-card-dates">' + esc(formatRange(city.dates && city.dates.start, city.dates && city.dates.end)) + '</span>' +
-				'</span></a>';
+		var groups = state.trips && state.trips.length ? state.trips : [{ name: null, cities: state.cities }];
+		var body = groups.map(function (trip) {
+			var cards = (trip.cities || []).map(cardHtml).join('');
+			var heading = trip.name ? '<h2 class="guide-trip-name">' + esc(tx(trip.name)) + '</h2>' : '';
+			return '<section class="guide-trip">' + heading + '<div class="guide-cards">' + cards + '</div></section>';
 		}).join('');
 		var html = '<div class="guide-toolbar">' + langSwitch() + '</div>' +
-			'<div class="guide-scroll"><div class="guide-cards">' + cards + '</div></div>';
+			'<div class="guide-scroll">' + body + '</div>';
 		$('#guide-root').attr('lang', state.lang === 'zh' ? 'zh-Hans' : 'en').html(html);
 		syncTabs();
 	}
@@ -708,7 +717,10 @@
 				: seg.distanceM + (state.lang === 'zh' ? ' 米' : ' m'));
 		}
 		if (seg.frequency) bits.push(freqText(seg.frequency));
-		if (seg.note) bits.push(seg.note);
+		if (seg.note) {
+			var noteText = typeof seg.note === 'object' ? (seg.note[state.lang] || '') : seg.note;
+			if (noteText) bits.push(noteText);
+		}
 		return bits.join(' · ');
 	}
 
@@ -889,6 +901,8 @@
 				'<span class="guide-day-kicker">' + esc(dayLabel(i)) + '</span>' +
 				'<span class="guide-day-date">' + dateHtml + '</span></button>';
 		}).join('');
+		var section = day.section && tx(day.section)
+			? '<p class="guide-day-section">' + esc(tx(day.section)) + '</p>' : '';
 		var pieces = [];
 		if (day.inbound) pieces.push(legRows(day.inbound, day.stops[0] || null, null));
 		day.stops.forEach(function (stop, i) {
@@ -914,7 +928,7 @@
 			'<div class="guide-days" role="tablist">' + tabs + '</div>' +
 			'<div class="guide-split">' +
 				'<div class="guide-map-panel"><div id="guide-map" class="guide-map" role="application" aria-label="' + esc(tx(city.name)) + '"></div></div>' +
-				'<div class="guide-timeline" id="guide-timeline"><div class="guide-tl">' + stops + '</div>' + noteBlock + returns + around + '</div>' +
+				'<div class="guide-timeline" id="guide-timeline">' + section + '<div class="guide-tl">' + stops + '</div>' + noteBlock + returns + around + '</div>' +
 			'</div>';
 		$('#guide-root').attr('lang', state.lang === 'zh' ? 'zh-Hans' : 'en').html(html);
 		syncTabs();
@@ -941,14 +955,36 @@
 	function loadLanding() {
 		var d = $.Deferred();
 		loadIndex().done(function (index) {
-			var ids = (index && index.cities) || [];
-			if (!ids.length) { d.resolve([]); return; }
+			var tripDefs = (index && index.trips) || [];
+			var ids = [];
+			if (tripDefs.length) {
+				tripDefs.forEach(function (trip) {
+					(trip.cities || []).forEach(function (id) {
+						if (ids.indexOf(id) === -1) ids.push(id);
+					});
+				});
+			} else {
+				ids = (index && index.cities) || [];
+			}
+			if (!ids.length) { d.resolve({ cities: [] }); return; }
 			var left = ids.length;
-			var out = new Array(ids.length);
-			ids.forEach(function (id, i) {
-				loadCity(id).done(function (city) { out[i] = city; }).always(function () {
+			var byId = {};
+			ids.forEach(function (id) {
+				loadCity(id).done(function (city) { byId[id] = city; }).always(function () {
 					left -= 1;
-					if (!left) d.resolve(out.filter(Boolean));
+					if (left) return;
+					if (!tripDefs.length) {
+						d.resolve({ cities: ids.map(function (cid) { return byId[cid]; }).filter(Boolean) });
+						return;
+					}
+					d.resolve({
+						trips: tripDefs.map(function (trip) {
+							return {
+								name: trip.name,
+								cities: (trip.cities || []).map(function (cid) { return byId[cid]; }).filter(Boolean)
+							};
+						})
+					});
 				});
 			});
 		}).fail(function () { d.reject(); });
@@ -978,8 +1014,8 @@
 				req.resolve({ missing: true });
 			});
 		} else {
-			loadLanding().done(function (cities) {
-				req.resolve({ cities: cities });
+			loadLanding().done(function (payload) {
+				req.resolve(payload || { cities: [] });
 			}).fail(function () {
 				req.resolve({ error: true });
 			});
@@ -997,7 +1033,17 @@
 				return;
 			}
 			if (result.city) state.city = result.city;
-			if (result.cities) state.cities = result.cities;
+			if (result.trips) {
+				state.trips = result.trips;
+				state.cities = [];
+				result.trips.forEach(function (trip) {
+					(trip.cities || []).forEach(function (city) { state.cities.push(city); });
+				});
+			}
+			if (result.cities) {
+				state.cities = result.cities;
+				state.trips = null;
+			}
 			render();
 		});
 	}
