@@ -145,6 +145,26 @@
 	overscroll-behavior: contain;
 }
 
+.guide-trip + .guide-trip {
+	margin-top: 1.5rem;
+}
+
+.guide-trip-name {
+	margin: 0 0 0.65rem;
+	font-family: Lora, "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+	font-size: 1.2rem;
+	font-weight: 700;
+	line-height: 1.2;
+	color: #222;
+}
+
+.guide-day-section {
+	margin: 0 0 0.55rem;
+	color: #666;
+	font-size: 0.82rem;
+	line-height: 1.4;
+}
+
 .guide-cards {
 	display: flex;
 	flex-direction: column;
