@@ -698,9 +698,9 @@ a.guide-daytrip {
 .guide-leg-title {
 	margin: 0.5rem 0 0;
 	font-family: Lora, "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-	font-size: 1rem;
+	font-size: 0.82rem;
 	font-weight: 700;
-	line-height: 1.25;
+	line-height: 1.35;
 	color: #7a7a7a;
 }
 
@@ -992,8 +992,7 @@ a.guide-daytrip {
 		font-size: 0.58rem;
 	}
 
-	.guide-stop-titles h3,
-	.guide-leg-title {
+	.guide-stop-titles h3 {
 		font-size: 0.95rem;
 	}
 }
