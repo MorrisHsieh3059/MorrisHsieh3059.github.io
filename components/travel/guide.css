@@ -404,11 +404,11 @@
 	background: #d0d4e4;
 }
 
-.guide-tl-stop:first-child .guide-tl-axis::before {
+.guide-tl > :first-child .guide-tl-axis::before {
 	top: 13px;
 }
 
-.guide-tl-stop:last-child .guide-tl-axis::before {
+.guide-tl > :last-child .guide-tl-axis::before {
 	bottom: auto;
 	height: 13px;
 }
@@ -669,14 +669,63 @@ a.guide-daytrip {
 	align-items: stretch;
 }
 
-.guide-tl-leg .guide-tl-times {
-	padding: 0;
+.guide-tl-leg .guide-tl-times,
+.guide-tl-leg .guide-tl-body {
+	align-self: start;
 }
 
-.guide-tl-leg.is-walk .guide-tl-axis::before {
-	background: transparent;
-	border-left: 1px dashed #b7bdd0;
-	width: 0;
+.guide-tl-leg .guide-tl-times {
+	padding-top: 0.7rem;
+	color: #8a8a8a;
+}
+
+.guide-tl-mode {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 22px;
+	height: 18px;
+	margin-top: 0.72rem;
+	background: #fff;
+	color: var(--accent, #303F9F);
+	font-size: 0.72rem;
+	line-height: 1;
+}
+
+.guide-leg-title {
+	margin: 0.5rem 0 0;
+	font-family: Lora, "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+	font-size: 1rem;
+	font-weight: 700;
+	line-height: 1.25;
+	color: #7a7a7a;
+}
+
+.guide-leg-sub {
+	margin: 0.12rem 0 0;
+	color: #8a8a8a;
+	font-size: 0.82rem;
+	font-weight: 400;
+	line-height: 1.35;
+}
+
+.guide-tl-leg .guide-tl-body {
+	padding-bottom: 0.35rem;
+}
+
+.guide-tl-leg .guide-tl-fold summary,
+.guide-tl-leg .guide-tl-fold p {
+	color: #8a8a8a;
+}
+
+.guide-tl-leg .guide-tl-fold summary {
+	font-size: 0.72rem;
+}
+
+.guide-tl-leg .guide-tl-fold p {
+	font-size: 0.74rem;
 }
 
 .guide-tl-main {
@@ -942,7 +991,8 @@ a.guide-daytrip {
 		font-size: 0.58rem;
 	}
 
-	.guide-stop-titles h3 {
+	.guide-stop-titles h3,
+	.guide-leg-title {
 		font-size: 0.95rem;
 	}
 }
