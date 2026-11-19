@@ -51,7 +51,7 @@
 		sight: { en: 'Sight', zh: '景点' },
 		restaurant: { en: 'Restaurant', zh: '餐厅' },
 		hotel: { en: 'Hotel', zh: '酒店' },
-		hotelsTab: { en: 'Hotel', zh: '酒店' },
+		hotelsTab: { en: 'Hotel', zh: 'Hotel' },
 		airport: { en: 'Airport', zh: '机场' },
 		station: { en: 'Station', zh: '车站' },
 		church: { en: 'Church', zh: '教会' },
