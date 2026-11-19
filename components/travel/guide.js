@@ -6,7 +6,7 @@
 	var MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 	var UI = {
-		tab: { en: 'Guide', zh: '指南' },
+		tab: { en: 'Guide', zh: 'Guide' },
 		draft: { en: 'Draft', zh: '草稿' },
 		back: { en: 'All cities', zh: '全部城市' },
 		loading: { en: 'Loading guide…', zh: '指南加载中…' },
@@ -51,6 +51,7 @@
 		sight: { en: 'Sight', zh: '景点' },
 		restaurant: { en: 'Restaurant', zh: '餐厅' },
 		hotel: { en: 'Hotel', zh: '酒店' },
+		hotelsTab: { en: 'Hotel', zh: '酒店' },
 		airport: { en: 'Airport', zh: '机场' },
 		station: { en: 'Station', zh: '车站' },
 		church: { en: 'Church', zh: '教会' },
@@ -386,12 +387,16 @@
 		return 'is-confirmed';
 	}
 
-	function syncTabs() {
-		var label = ui('tab');
-		$('a[data-travel-tab="guide"]').each(function () {
+	function setTabLabel(tab, label) {
+		$('a[data-travel-tab="' + tab + '"]').each(function () {
 			if (this.children.length) return;
 			if (this.textContent !== label) this.textContent = label;
 		});
+	}
+
+	function syncTabs() {
+		setTabLabel('guide', ui('tab'));
+		setTabLabel('hotels', ui('hotelsTab'));
 	}
 
 	function destroyMap() {

@@ -783,16 +783,18 @@
 	}
 
 	.hotel-map-panel {
-		flex: 1.15 1 0;
-		min-height: 0;
-		height: auto;
+		flex: 0 0 auto;
+		height: 38vh;
+		height: 38dvh;
+		min-height: 200px;
+		max-height: 320px;
 		max-width: 100%;
 		min-width: 0;
 	}
 
 	.hotel-map-wrap {
 		flex: 1 1 auto;
-		height: auto;
+		height: 100%;
 		min-height: 0;
 		max-width: 100%;
 		min-width: 0;
@@ -1449,14 +1451,16 @@
 	}
 
 	.travel-map-panel {
-		flex: 1.15 1 0;
-		min-height: 0;
-		height: auto;
+		flex: 0 0 auto;
+		height: 38vh;
+		height: 38dvh;
+		min-height: 200px;
+		max-height: 320px;
 	}
 
 	.travel-map-wrap {
 		flex: 1 1 auto;
-		height: auto;
+		height: 100%;
 		min-height: 0;
 		overflow: hidden;
 	}
@@ -1532,6 +1536,15 @@
 		letter-spacing: 0.04em;
 		gap: 0.22em;
 		white-space: nowrap;
+	}
+
+	/* Same map box as the Guide tab at this width. */
+	.travel-map-panel,
+	.hotel-map-panel {
+		height: calc(38vh * 0.7);
+		height: calc(38dvh * 0.7);
+		min-height: calc(200px * 0.7);
+		max-height: calc(320px * 0.7);
 	}
 
 	.travel-tab-with-info {
