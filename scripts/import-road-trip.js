@@ -50,8 +50,10 @@ function publicText(raw, opts) {
     s = '下午 4:00 自助入住';
   }
   s = s.replace(/https?:\/\/\S+/gi, '');
-  s = s.replace(opts && opts.keepWarn ? /[✅☑️❌]/g : /[✅☑️⚠️❌]/g, '');
-  s = s.replace(/[💵🍽️]/g, '');
+  s = s.replace(/\p{Extended_Pictographic}|\uFE0F/gu, function (ch) {
+    return opts && opts.keepWarn && ch === '\u26A0' ? ch : '';
+  });
+  s = s.replace(/[\uD800-\uDFFF]/g, '');
   s = s.replace(/\$\s?\d[\d.,]*(?:\s*[–—/-]\s*\$?\d[\d.,]*)?(?:\s*\/\s*[\u4e00-\u9fffA-Za-z]+)?/g, '');
   s = s.replace(/\+\s*\$\s?\d[\d.,]*/g, '');
   s = s.replace(/\$+/g, '');
