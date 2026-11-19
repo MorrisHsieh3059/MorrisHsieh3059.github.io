@@ -359,6 +359,23 @@
 	border-color: #8a6a2f;
 }
 
+.leaflet-marker-icon.guide-marker.is-meal,
+.leaflet-marker-icon.guide-marker.is-meal.is-active {
+	background: #C45C26;
+	border-color: #C45C26;
+}
+
+.leaflet-marker-icon.guide-marker.is-meal span,
+.leaflet-marker-icon.guide-marker.is-meal.is-active span {
+	color: #fff;
+}
+
+.guide-tl-dot.is-meal {
+	background: #C45C26;
+	border-color: #C45C26;
+	color: #fff;
+}
+
 .guide-timeline {
 	--tl-time: 4.4rem;
 	--tl-gap: 0.45rem;
