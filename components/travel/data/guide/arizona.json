@@ -1,6 +1,6 @@
 {
   "id": "arizona",
-  "version": "v1.3",
+  "version": "v1.4",
   "draft": true,
   "country": {
     "en": "United States",
@@ -26,8 +26,8 @@
       "date": "2026-11-26",
       "weekday": "Thu",
       "title": {
-        "en": "Thanksgiving · land in Phoenix, Rock Springs turkey lunch, Bell Rock, Airport Mesa sunset, Rascal dinner",
-        "zh": "感恩节 · 落地 Phoenix → Rock Springs 火鸡午餐 → Bell Rock → Airport Mesa 日落 → Rascal 晚餐"
+        "en": "Thanksgiving: land in Phoenix, turkey lunch at Rock Springs at 1:30, Bell Rock, sunset at Airport Mesa, dinner at Rascal",
+        "zh": "感恩节 · 落地 Phoenix → Rock Springs 火鸡午餐（1:30）→ Bell Rock → Airport Mesa 日落 → Rascal 晚餐"
       },
       "stops": [
         {
@@ -60,13 +60,13 @@
                   "en": "Sky Train",
                   "zh": "机场列车"
                 },
-                "duration": "~15 min",
+                "duration": "15 min（基准 13 min，+15%）",
                 "from": "PHX T4",
                 "to": "PHX Rental Car Center",
-                "durationZh": "约15 分钟",
+                "durationZh": "15 分钟（基准 13 min，+15%）",
                 "note": {
                   "en": "",
-                  "zh": "\ude9d T4 出口跟 'PHX Sky Train' 标志 → 坐到 Rental Car Center 站（免费，约 5–8 分钟一班），出站即 Avis 柜台"
+                  "zh": "T4 出口跟 'PHX Sky Train' 标志 → 坐到 Rental Car Center 站（免费，约 5–8 分钟一班），出站即 Avis 柜台"
                 }
               }
             ]
@@ -102,14 +102,14 @@
                   "en": "Drive",
                   "zh": "开车"
                 },
-                "duration": "~45 min",
+                "duration": "66 min（基准 59 min，+11%）",
                 "from": "PHX Rental Car Center",
                 "to": "Rock Springs Cafe",
-                "durationZh": "约45 分钟",
-                "distanceM": 66000,
+                "durationZh": "66 分钟（基准 59 min，+11%）",
+                "distanceM": 80000,
                 "note": {
                   "en": "",
-                  "zh": "\ude97 I-17 N 约 40 mi → Exit 242（Black Canyon City）→ 右转 Old Black Canyon Hwy 1 分钟；店前免费停车场"
+                  "zh": "I-17 N 约 40 mi → Exit 242（Black Canyon City）→ 右转 Old Black Canyon Hwy 1 分钟"
                 }
               }
             ]
@@ -124,13 +124,13 @@
           },
           "lat": 34.0485448,
           "lng": -112.1494018,
-          "arrive": "1:05 PM",
-          "leave": "2:05 PM",
+          "arrive": "1:26 PM",
+          "leave": "2:30 PM",
           "website": "https://rockspringscafe.com/",
           "placeId": "ROCK_SPRINGS",
           "notes": {
-            "en": "Thanksgiving lunch, the traditional turkey plate, 11 AM–3 PM, then choose a pie at PieBox",
-            "zh": "感恩节午餐（传统火鸡大餐，11 AM–3 PM），饭后在 PieBox 挑派"
+            "en": "Thanksgiving lunch, table at 1:30 PM. The plate is served 11 AM–3 PM. Choose a pie at PieBox afterward",
+            "zh": "感恩节午餐（订 1:30 PM；套餐 11 AM–3 PM），饭后在 PieBox 挑派"
           },
           "hours": {
             "en": "Official notice: Thanksgiving 11/26 turkey dinner 11 AM–3 PM",
@@ -239,14 +239,14 @@
                   "en": "Drive",
                   "zh": "开车"
                 },
-                "duration": "~1h 5 min",
+                "duration": "80 min（基准 72 min，+12%）",
                 "from": "Rock Springs Cafe",
                 "to": "Bell Rock (Courthouse Vista lot)",
-                "durationZh": "约1 小时 5 分钟",
-                "distanceM": 88000,
+                "durationZh": "80 分钟（基准 72 min，+12%）",
+                "distanceM": 110000,
                 "note": {
                   "en": "",
-                  "zh": "\ude97 I-17 N → Exit 298 → AZ-179 N 约 8 mi → 右侧 Courthouse Vista / Bell Rock Trailhead 停车场；用 行程主人 的 America the Beautiful 年票挂后视镜即可（不用另买 Red Rock Pass）"
+                  "zh": "I-17 N → Exit 298 → AZ-179 N 约 8 mi → 右侧 Courthouse Vista / Bell Rock Trailhead 停车场；用 行程主人 的 America the Beautiful 年票挂后视镜即可（不用另买 Red Rock Pass）"
                 }
               }
             ]
@@ -261,13 +261,13 @@
           },
           "lat": 34.8262,
           "lng": -111.7776,
-          "arrive": "3:10 PM",
-          "leave": "3:55 PM",
+          "arrive": "3:50 PM",
+          "leave": "4:15 PM",
           "website": null,
           "placeId": "BELL_ROCK",
           "notes": {
-            "en": "Walk the Bell Rock Pathway to the base. The lower slope is gentle, about 1.5 km round trip, 45 minutes",
-            "zh": "走 Bell Rock Pathway 到钟形岩底部，可爬下层缓坡（往返约 1.5 km，45 分钟）"
+            "en": "Walk Bell Rock Pathway to the base of the bell rock and see Courthouse Butte. Shortened to 25 minutes so sunset at Airport Mesa comes first",
+            "zh": "Bell Rock Pathway 走到钟形岩底部看 Courthouse Butte（缩短为 25 分钟，Airport Mesa 日落优先）"
           },
           "hours": {
             "en": "Outdoors, open 24 hours, including Thanksgiving",
@@ -301,14 +301,14 @@
                   "en": "Drive",
                   "zh": "开车"
                 },
-                "duration": "~20–25 min",
+                "duration": "12 min（基准 8 min，+52%）",
                 "from": "Bell Rock",
                 "to": "Airport Mesa Scenic Lookout",
-                "durationZh": "约20–25 分钟",
-                "distanceM": 13000,
+                "durationZh": "12 分钟（基准 8 min，+52%）",
+                "distanceM": 8000,
                 "note": {
                   "en": "",
-                  "zh": "\ude97 AZ-179 N → Y 形环岛左转 89A W → 左转 Airport Rd 上山 0.5 mi（感恩节下午 179 环岛常堵，预留 10 分钟）"
+                  "zh": "AZ-179 N → Y 形环岛左转 89A W → 左转 Airport Rd 上山 0.5 mi（感恩节下午 179 环岛常堵，预留 10 分钟）"
                 }
               }
             ]
@@ -323,7 +323,7 @@
           },
           "lat": 34.8558039,
           "lng": -111.7791227,
-          "arrive": "4:15 PM",
+          "arrive": "4:27 PM",
           "leave": "5:30 PM",
           "website": null,
           "placeId": "AIRPORT_MESA",
@@ -363,14 +363,14 @@
                   "en": "Drive",
                   "zh": "开车"
                 },
-                "duration": "~10 min",
+                "duration": "8 min（基准 4 min，+100%）",
                 "from": "Airport Mesa",
                 "to": "Rascal (The Wilde Resort)",
-                "durationZh": "约10 分钟",
-                "distanceM": 3000,
+                "durationZh": "8 分钟（基准 4 min，+100%）",
+                "distanceM": 2600,
                 "note": {
                   "en": "",
-                  "zh": "\ude97 Airport Rd 下山 → 89A W 1.5 mi → 右转进 The Wilde Resort；度假村免费停车"
+                  "zh": "Airport Rd 下山 → 89A W 1.5 mi → 右转进 The Wilde Resort"
                 }
               }
             ]
@@ -385,13 +385,13 @@
           },
           "lat": 34.8641617,
           "lng": -111.799137,
-          "arrive": "6:00 PM",
+          "arrive": "5:38 PM",
           "leave": "7:30 PM",
           "website": "https://rascalrestaurantsedona.com/",
           "placeId": "RASCAL",
           "notes": {
-            "en": "Thanksgiving dinner",
-            "zh": "感恩节晚餐"
+            "en": "Thanksgiving dinner at 6:00 PM. There is a 15-minute grace period",
+            "zh": "感恩节晚餐（6:00 PM；宽限 15 分钟）"
           },
           "hours": {
             "en": "Confirmed. The Thanksgiving menu is on the official PDF",
@@ -463,19 +463,19 @@
           "transit": {
             "segments": [
               {
-                "mode": "drive",
+                "mode": "walk",
                 "label": {
-                  "en": "Drive",
-                  "zh": "开车"
+                  "en": "Walk",
+                  "zh": "步行"
                 },
-                "duration": "~2 min",
+                "duration": "6 min（基准 3 min，+76%）",
                 "from": "Rascal",
                 "to": "McDonald's (turquoise arches)",
-                "durationZh": "约2 分钟",
+                "durationZh": "6 分钟（基准 3 min，+76%）",
                 "distanceM": 300,
                 "note": {
                   "en": "",
-                  "zh": "\ude97 89A W 0.1 mi 隔壁（也可走路 3 分钟）"
+                  "zh": "车留在 The Wilde 停车场，沿 89A 人行道往西 300 m"
                 }
               }
             ]
@@ -490,7 +490,7 @@
           },
           "lat": 34.8633,
           "lng": -111.8016,
-          "arrive": "7:35 PM",
+          "arrive": "7:36 PM",
           "leave": "7:45 PM",
           "website": null,
           "placeId": "MCD_TURQ",
@@ -513,19 +513,35 @@
           "transit": {
             "segments": [
               {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "6 min（基准 3 min，+76%）",
+                "from": "McDonald's",
+                "to": "Rascal parking (car)",
+                "durationZh": "6 分钟（基准 3 min，+76%）",
+                "distanceM": 300,
+                "note": {
+                  "en": "",
+                  "zh": "走回 The Wilde 停车场取车"
+                }
+              },
+              {
                 "mode": "drive",
                 "label": {
                   "en": "Drive",
                   "zh": "开车"
                 },
-                "duration": "~5 min",
-                "from": "McDonald's",
+                "duration": "4 min（基准 2 min，+111%）",
+                "from": "The Wilde Resort",
                 "to": "Dreamcatcher Inn of Sedona",
-                "durationZh": "约5 分钟",
-                "distanceM": 1500,
+                "durationZh": "4 分钟（基准 2 min，+111%）",
+                "distanceM": 1600,
                 "note": {
                   "en": "",
-                  "zh": "\ude97 89A W 0.9 mi，右侧；酒店免费停车"
+                  "zh": "89A W 1 mi，右侧；酒店免费停车"
                 }
               }
             ]
@@ -540,7 +556,7 @@
           },
           "lat": 34.8624924,
           "lng": -111.8122571,
-          "arrive": "7:50 PM",
+          "arrive": "7:55 PM",
           "leave": null,
           "website": null,
           "placeId": "DREAMCATCHER",
@@ -563,6 +579,10 @@
         {
           "en": "Thanksgiving: the Sedona shuttle, Chapel of the Holy Cross, and Montezuma Castle are closed, so none of them are on this day",
           "zh": "感恩节：Sedona Shuttle 停运、Chapel of the Holy Cross 闭馆、Montezuma Castle 闭馆 → 本日都不排"
+        },
+        {
+          "en": "Rock Springs table at 1:30 PM, arriving at 1:26. Bell Rock is shortened to 25 minutes. Sunset at Airport Mesa comes first",
+          "zh": "Rock Springs 订 1:30 PM（1:26 到）；Bell Rock 缩短为 25 分钟，Airport Mesa 日落优先"
         },
         {
           "en": "Bags stay in the car. Put them in the trunk before a trailhead",
@@ -608,14 +628,14 @@
                   "en": "Drive",
                   "zh": "开车"
                 },
-                "duration": "~6 min",
+                "duration": "5 min（基准 2 min，+127%）",
                 "from": "Dreamcatcher",
                 "to": "Coffee Pot Restaurant",
-                "durationZh": "约6 分钟",
-                "distanceM": 2400,
+                "durationZh": "5 分钟（基准 2 min，+127%）",
+                "distanceM": 1600,
                 "note": {
                   "en": "",
-                  "zh": "\ude97 89A E 1.5 mi，左侧；店前免费停车"
+                  "zh": "89A E 1.5 mi，左侧；店前免费停车"
                 }
               }
             ]
@@ -630,13 +650,13 @@
           },
           "lat": 34.8643404,
           "lng": -111.796738,
-          "arrive": "6:00 AM",
+          "arrive": "5:55 AM",
           "leave": "6:40 AM",
           "website": "https://coffeepotsedona.com/",
           "placeId": "COFFEE_POT",
           "notes": {
-            "en": "Breakfast. It opens at 6 AM and there is usually no wait then",
-            "zh": "早餐（6 AM 开门，这时段基本不用等）"
+            "en": "Breakfast. It opens at 6 AM. Arrive at 5:55 to be at the front of the first seating",
+            "zh": "早餐（6 AM 开门；5:55 到门口排第一批）"
           },
           "hours": {
             "en": "Official site: daily 6 AM–2 PM",
@@ -719,14 +739,14 @@
                   "en": "Drive",
                   "zh": "开车"
                 },
-                "duration": "~8 min",
+                "duration": "6 min（基准 3 min，+82%）",
                 "from": "Coffee Pot",
                 "to": "West SR-89A Park & Ride",
-                "durationZh": "约8 分钟",
+                "durationZh": "6 分钟（基准 3 min，+82%）",
                 "distanceM": 3500,
                 "note": {
                   "en": "",
-                  "zh": "\ude97 89A W 2 mi → 右转 Upper Red Rock Loop Rd → 905 号停车场（免费，禁过夜）"
+                  "zh": "89A W 2 mi → 右转 Upper Red Rock Loop Rd → 905 号停车场（免费，禁过夜）"
                 }
               },
               {
@@ -735,13 +755,13 @@
                   "en": "Shuttle",
                   "zh": "接驳车"
                 },
-                "duration": "10 min",
+                "duration": "12 min（基准 10 min，+20%）",
                 "from": "West SR-89A Park & Ride",
                 "to": "Dry Creek Vista Trailhead",
-                "durationZh": "10 分钟",
+                "durationZh": "12 分钟（基准 10 min，+20%）",
                 "note": {
                   "en": "",
-                  "zh": "\ude8c Sedona Shuttle Route 11 首班 7:00（每 30 分钟一班，免费；11/19–11/29 每天运行，感恩节当天除外）→ Dry Creek Vista 7:10"
+                  "zh": "Sedona Shuttle Route 11 首班 7:00（每 30 分钟一班，免费；11/19–11/29 每天运行，感恩节当天除外）→ Dry Creek Vista 7:10"
                 }
               }
             ]
@@ -756,7 +776,7 @@
           },
           "lat": 34.8900834,
           "lng": -111.8209499,
-          "arrive": "7:10 AM",
+          "arrive": "7:12 AM",
           "leave": "9:40 AM",
           "website": null,
           "placeId": "DEVILS_BRIDGE",
@@ -796,13 +816,13 @@
                   "en": "Shuttle",
                   "zh": "接驳车"
                 },
-                "duration": "18 min",
+                "duration": "20 min（基准 18 min，+11%）",
                 "from": "Dry Creek Vista Trailhead",
                 "to": "West SR-89A Park & Ride",
-                "durationZh": "18 分钟",
+                "durationZh": "20 分钟（基准 18 min，+11%）",
                 "note": {
                   "en": "",
-                  "zh": "\ude8c Route 11 回程 9:40 → 9:58 到 Park & Ride（下一班 10:10）"
+                  "zh": "Route 11 回程 9:40 → 9:58 到 Park & Ride（下一班 10:10）"
                 }
               },
               {
@@ -811,14 +831,14 @@
                   "en": "Drive",
                   "zh": "开车"
                 },
-                "duration": "~18 min",
+                "duration": "12 min（基准 7 min，+79%）",
                 "from": "West SR-89A Park & Ride",
                 "to": "Tlaquepaque",
-                "durationZh": "约18 分钟",
-                "distanceM": 9000,
+                "durationZh": "12 分钟（基准 7 min，+79%）",
+                "distanceM": 7000,
                 "note": {
                   "en": "",
-                  "zh": "\ude97 89A E 穿过 West Sedona → Y 环岛右转 AZ-179 S 0.3 mi → Tlaquepaque 右侧；Tlaquepaque 免费停车场（对面也有）"
+                  "zh": "89A E 穿过 West Sedona → Y 环岛右转 AZ-179 S 0.3 mi → Tlaquepaque 停车场"
                 }
               }
             ]
@@ -833,8 +853,8 @@
           },
           "lat": 34.8621084,
           "lng": -111.763321,
-          "arrive": "10:20 AM",
-          "leave": "10:55 AM",
+          "arrive": "10:12 AM",
+          "leave": "10:51 AM",
           "website": null,
           "placeId": "TLAQUEPAQUE",
           "notes": {
@@ -873,14 +893,14 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "~6 min",
+                "duration": "7 min（基准 5 min，+43%）",
                 "from": "Tlaquepaque",
                 "to": "Hideaway House",
-                "durationZh": "约6 分钟",
+                "durationZh": "7 分钟（基准 5 min，+43%）",
                 "distanceM": 450,
                 "note": {
                   "en": "",
-                  "zh": "\udeb6 沿 AZ-179 往北 450 m（过 Oak Creek 桥）到 Hideaway House"
+                  "zh": "沿 AZ-179 往北 450 m（过 Oak Creek 桥）到 Hideaway House"
                 }
               }
             ]
@@ -895,7 +915,7 @@
           },
           "lat": 34.8645315,
           "lng": -111.7632975,
-          "arrive": "11:00 AM",
+          "arrive": "10:58 AM",
           "leave": "12:10 PM",
           "website": "https://sedonahideawayhouse.com/",
           "placeId": "HIDEAWAY",
@@ -989,19 +1009,35 @@
           "transit": {
             "segments": [
               {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "7 min（基准 4 min，+67%）",
+                "from": "Hideaway House",
+                "to": "Tlaquepaque parking (car)",
+                "durationZh": "7 分钟（基准 4 min，+67%）",
+                "distanceM": 450,
+                "note": {
+                  "en": "",
+                  "zh": "走回 Tlaquepaque 停车场取车"
+                }
+              },
+              {
                 "mode": "drive",
                 "label": {
                   "en": "Drive",
                   "zh": "开车"
                 },
-                "duration": "~12 min",
-                "from": "Hideaway House (walk back to car at Tlaquepaque)",
+                "duration": "10 min（基准 8 min，+27%）",
+                "from": "Tlaquepaque",
                 "to": "Chapel of the Holy Cross",
-                "durationZh": "约12 分钟",
-                "distanceM": 5000,
+                "durationZh": "10 分钟（基准 8 min，+27%）",
+                "distanceM": 5600,
                 "note": {
                   "en": "",
-                  "zh": "\udeb6 回 Tlaquepaque 取车 6 分钟 → \ude97 AZ-179 S 3 mi → Chapel Rd 环岛左转 0.6 mi；只有 45 个车位在上坡路右侧；满了就在坡顶回转处下客，司机在坡下等"
+                  "zh": "AZ-179 S 3 mi → Chapel Rd 环岛左转 0.6 mi；停车只有 45 位，满了就坡顶下客"
                 }
               }
             ]
@@ -1016,8 +1052,8 @@
           },
           "lat": 34.8319894,
           "lng": -111.7667585,
-          "arrive": "12:30 PM",
-          "leave": "1:15 PM",
+          "arrive": "12:27 PM",
+          "leave": "1:10 PM",
           "website": "https://chapeloftheholycross.com/",
           "placeId": "CHAPEL",
           "notes": {
@@ -1056,14 +1092,14 @@
                   "en": "Drive",
                   "zh": "开车"
                 },
-                "duration": "~15 min",
+                "duration": "12 min（基准 8 min，+54%）",
                 "from": "Chapel of the Holy Cross",
                 "to": "Uptown Sedona",
-                "durationZh": "约15 分钟",
-                "distanceM": 6000,
+                "durationZh": "12 分钟（基准 8 min，+54%）",
+                "distanceM": 6400,
                 "note": {
                   "en": "",
-                  "zh": "\ude97 AZ-179 N 3.5 mi → Y 环岛右转 89A N → Uptown 公共停车场（Forest Rd 停车楼）"
+                  "zh": "AZ-179 N 3.5 mi → Y 环岛右转 89A N → Uptown 公共停车场（Forest Rd 停车楼）"
                 }
               }
             ]
@@ -1078,7 +1114,7 @@
           },
           "lat": 34.869779,
           "lng": -111.7609231,
-          "arrive": "1:30 PM",
+          "arrive": "1:22 PM",
           "leave": "2:40 PM",
           "website": null,
           "placeId": "UPTOWN",
@@ -1118,14 +1154,14 @@
                   "en": "Drive",
                   "zh": "开车"
                 },
-                "duration": "~8 min",
+                "duration": "5 min（基准 2 min，+163%）",
                 "from": "Uptown Sedona",
                 "to": "North SR-179 Park & Ride",
-                "durationZh": "约8 分钟",
-                "distanceM": 2000,
+                "durationZh": "5 分钟（基准 2 min，+163%）",
+                "distanceM": 2400,
                 "note": {
                   "en": "",
-                  "zh": "\ude97 89A S → Y 环岛 → AZ-179 S 0.6 mi → 1294 SR-179 Park & Ride（免费）"
+                  "zh": "89A S → Y 环岛 → AZ-179 S 0.6 mi → 1294 SR-179 Park & Ride（免费）"
                 }
               },
               {
@@ -1134,13 +1170,13 @@
                   "en": "Shuttle",
                   "zh": "接驳车"
                 },
-                "duration": "10 min",
+                "duration": "12 min（基准 10 min，+20%）",
                 "from": "North SR-179 Park & Ride",
                 "to": "Cathedral Rock Trailhead",
-                "durationZh": "10 分钟",
+                "durationZh": "12 分钟（基准 10 min，+20%）",
                 "note": {
                   "en": "",
-                  "zh": "\ude8c Sedona Shuttle Route 15（每 15 分钟，最后一班去程 4:30）→ Cathedral Rock 站"
+                  "zh": "Sedona Shuttle Route 15（每 15 分钟，最后一班去程 4:30）→ Cathedral Rock 站"
                 }
               }
             ]
@@ -1155,13 +1191,13 @@
           },
           "lat": 34.8359507,
           "lng": -111.780099,
-          "arrive": "3:10 PM",
-          "leave": "5:00 PM",
+          "arrive": "3:12 PM",
+          "leave": "4:52 PM",
           "website": null,
           "placeId": "CATHEDRAL",
           "notes": {
-            "en": "About 2 km round trip, 225 m of climb. The upper part is a scramble. Reach the saddle for side light, and start down at 4:40",
-            "zh": "往返约 2 km，爬升 ~225 m，后半段要手脚并用攀岩坡；到鞍部（saddle）看夕阳侧光，4:40 就要往下走"
+            "en": "About 2 km round trip, ~225 m of climbing, hands and feet on the last part. Leave the saddle at 4:30 for the 4:52 return shuttle. The 5:12 is only a backup",
+            "zh": "往返约 2 km，爬升 ~225 m，后半段手脚并用；4:30 从鞍部往下走，赶 4:52 回程车（5:12 末班只当备用）"
           },
           "hours": {
             "en": "The shuttle runs on 11/27. Last Route 15 bus back is 5:12 PM",
@@ -1195,13 +1231,13 @@
                   "en": "Shuttle",
                   "zh": "接驳车"
                 },
-                "duration": "10 min",
+                "duration": "12 min（基准 10 min，+20%）",
                 "from": "Cathedral Rock Trailhead",
                 "to": "North SR-179 Park & Ride",
-                "durationZh": "10 分钟",
+                "durationZh": "12 分钟（基准 10 min，+20%）",
                 "note": {
                   "en": "",
-                  "zh": "\ude8c Route 15 回程（最晚 5:12 PM 末班，误了就要走 ~3 km 公路回去）"
+                  "zh": "Route 15 回程 4:52（末班 5:12 只当备用，误了就要走 ~3 km 公路）"
                 }
               },
               {
@@ -1210,14 +1246,14 @@
                   "en": "Drive",
                   "zh": "开车"
                 },
-                "duration": "~15 min",
+                "duration": "10 min（基准 7 min，+49%）",
                 "from": "North SR-179 Park & Ride",
                 "to": "Dreamcatcher Inn",
-                "durationZh": "约15 分钟",
-                "distanceM": 7000,
+                "durationZh": "10 分钟（基准 7 min，+49%）",
+                "distanceM": 7400,
                 "note": {
                   "en": "",
-                  "zh": "\ude97 AZ-179 N → 89A W 3.5 mi → 酒店；换掉登山装（傍晚，非午休）"
+                  "zh": "AZ-179 N → 89A W 3.5 mi → 酒店；换掉登山装（傍晚，非午休）"
                 }
               }
             ]
@@ -1232,13 +1268,13 @@
           },
           "lat": 34.8624924,
           "lng": -111.8122571,
-          "arrive": "5:30 PM",
+          "arrive": "5:14 PM",
           "leave": "6:10 PM",
           "website": null,
           "placeId": "DREAMCATCHER",
           "notes": {
-            "en": "Back to the room to change, about 40 minutes in the evening",
-            "zh": "回房换衣服（傍晚 40 分钟）"
+            "en": "Back to the room to change, in the evening",
+            "zh": "回房换衣服（傍晚）"
           },
           "booked": true,
           "transit": {
@@ -1249,14 +1285,14 @@
                   "en": "Drive",
                   "zh": "开车"
                 },
-                "duration": "~12 min",
+                "duration": "12 min（基准 5 min，+122%）",
                 "from": "Dreamcatcher Inn",
                 "to": "Cowboy Club (Uptown)",
-                "durationZh": "约12 分钟",
-                "distanceM": 6000,
+                "durationZh": "12 分钟（基准 5 min，+122%）",
+                "distanceM": 5500,
                 "note": {
                   "en": "",
-                  "zh": "\ude97 89A E 4 mi → Uptown；停 Forest Rd 停车楼"
+                  "zh": "89A E 4 mi → Uptown；停 Forest Rd 停车楼"
                 }
               }
             ]
@@ -1271,7 +1307,7 @@
           },
           "lat": 34.8707,
           "lng": -111.7613,
-          "arrive": "6:30 PM",
+          "arrive": "6:22 PM",
           "leave": "8:00 PM",
           "website": "https://cowboyclub.com/",
           "placeId": "COWBOY_CLUB",
@@ -1391,14 +1427,14 @@
                   "en": "Drive",
                   "zh": "开车"
                 },
-                "duration": "~12 min",
+                "duration": "8 min（基准 5 min，+57%）",
                 "from": "Cowboy Club",
                 "to": "Dreamcatcher Inn",
-                "durationZh": "约12 分钟",
-                "distanceM": 6000,
+                "durationZh": "8 分钟（基准 5 min，+57%）",
+                "distanceM": 5400,
                 "note": {
                   "en": "",
-                  "zh": "\ude97 89A W 4 mi 回酒店"
+                  "zh": "89A W 4 mi 回酒店"
                 }
               }
             ]
@@ -1411,12 +1447,16 @@
       },
       "notes": [
         {
-          "en": "The shuttle runs on 11/27. First Route 11 bus is 7:00. Last Route 15 bus back is 5:12 PM. Do not miss it",
-          "zh": "Shuttle 11/27 运行：Route 11 首班 7:00；Route 15 末班回程 5:12 PM（必须赶上）"
+          "en": "The shuttle runs on 11/27 and stops on Thanksgiving. Route 11's first bus is 7:00. Plan the 4:52 Cathedral Rock return. The 5:12 is only a backup",
+          "zh": "Shuttle 11/27 运行（感恩节当天停）：Route 11 首班 7:00；Cathedral Rock 计划坐 4:52 回程，5:12 末班只当备用"
         },
         {
           "en": "The chapel lot has 45 spaces. If it is full, get dropped at the top of the hill",
           "zh": "Chapel 停车只有 45 位，满了就坡顶下客"
+        },
+        {
+          "en": "If the path is wet or icy, skip the rock climb at Cathedral Rock and stop at the lower viewpoint",
+          "zh": "路湿/结冰：Cathedral Rock 不上攀岩段，只走到下段观景"
         }
       ]
     },
@@ -1424,8 +1464,8 @@
       "date": "2026-11-28",
       "weekday": "Sat",
       "title": {
-        "en": "Oak Creek Canyon to Flagstaff, then the South Rim (Mather, Trail of Time, El Tovar, Desert View Watchtower, Lipan Point at sunset), dinner at Cameron, then Page",
-        "zh": "Oak Creek Canyon → Flagstaff → 大峡谷南缘（Mather · Trail of Time · El Tovar · Desert View 塔楼 · Lipan Point 日落）→ Cameron 晚餐 → Page"
+        "en": "Detour on AZ-179 and I-17 to Flagstaff, then the South Rim: Mather, Trail of Time, El Tovar, Desert View Watchtower, Lipan Point at sunset, dinner at Cameron, then Page",
+        "zh": "AZ-179 → I-17 绕行 → Flagstaff → 大峡谷南缘（Mather · Trail of Time · El Tovar · Desert View 塔楼 · Lipan Point 日落）→ Cameron 晚餐 → Page"
       },
       "stops": [
         {
@@ -1438,12 +1478,12 @@
           "lat": 34.8624924,
           "lng": -111.8122571,
           "arrive": null,
-          "leave": "8:00 AM",
+          "leave": "7:15 AM",
           "website": null,
           "placeId": "DREAMCATCHER",
           "notes": {
-            "en": "Check out and leave at 8:00. Pack the car the night before",
-            "zh": "退房出发 8:00（行李前一晚装好车）"
+            "en": "Check out and leave at 7:15. Bags go in the car the night before. Check az511.gov for road conditions before leaving",
+            "zh": "退房出发 7:15（行李前一晚装好车）；出发前看 az511.gov 路况"
           },
           "hours": {
             "en": "Latest checkout is 11:00",
@@ -1458,14 +1498,14 @@
                   "en": "Drive",
                   "zh": "开车"
                 },
-                "duration": "~40 min",
+                "duration": "70 min（基准 63 min，+11%）",
                 "from": "Dreamcatcher Inn",
-                "to": "Macy's European Coffeehouse (via Oak Creek Canyon)",
-                "durationZh": "约40 分钟",
-                "distanceM": 48000,
+                "to": "Macy's European Coffeehouse (AZ-179 → I-17 绕行)",
+                "durationZh": "70 分钟（基准 63 min，+11%）",
+                "distanceM": 98000,
                 "note": {
                   "en": "",
-                  "zh": "\ude97 89A E 穿 Uptown → 89A N 一路开过 Oak Creek Canyon（之字弯段车窗看风景，不停 Oak Creek Vista）→ I-17 N 并入 Milton Rd → 市中心 Beaver St。11 月清晨之字弯可能结冰：结冰就改 AZ-179 S → I-17 N；市中心路边计时/免费小停车场"
+                  "zh": "89A E → Y 环岛右转 AZ-179 S 15 mi → I-17 N（Exit 298）43 mi → Milton Rd → 市中心 Beaver St。 SR 89A Oak Creek Canyon MP 387–390 无限期封闭（ADOT），不能走 89A；市中心路边计时/免费小停车场"
                 }
               }
             ]
@@ -1480,8 +1520,8 @@
           },
           "lat": 35.1963564,
           "lng": -111.650788,
-          "arrive": "8:40 AM",
-          "leave": "8:55 AM",
+          "arrive": "8:25 AM",
+          "leave": "8:40 AM",
           "website": "https://macyscoffee.net/",
           "placeId": "MACYS",
           "notes": {
@@ -1575,14 +1615,30 @@
                   "en": "Drive",
                   "zh": "开车"
                 },
-                "duration": "~1h 25 min",
+                "duration": "105 min（基准 95 min，+10%）",
                 "from": "Macy's",
-                "to": "Grand Canyon South Entrance → Mather Point lots (Visitor Center)",
-                "durationZh": "约1 小时 25 分钟",
+                "to": "Grand Canyon Visitor Center lots (via South Entrance)",
+                "durationZh": "105 分钟（基准 95 min，+10%）",
                 "distanceM": 128000,
                 "note": {
                   "en": "",
-                  "zh": "\ude97 Humphreys St → US-180 N（Kendrick Park 林区）→ AZ-64 N 过 Tusayan → 南入口约 10:20 到。用年票走最左边 Lane 1（持票车道，排队较短）；出发前看 NPS 南入口摄像头。时间表已留 25 分钟排队缓冲 → 跟 Visitor Center 标志停 Lot 1–4"
+                  "zh": "Humphreys St → US-180 N（Kendrick Park 林区）→ AZ-64 N 过 Tusayan → 南入口约 10:20 到（含排队 10:50 停好车）。用年票走最左边 Lane 1（持票车道，排队较短）；出发前看 NPS 南入口摄像头。时间表已留 25 分钟排队缓冲 → 跟 Visitor Center 标志停 Lot 1–4"
+                }
+              },
+              {
+                "mode": "walk",
+                "label": {
+                  "en": "Walk",
+                  "zh": "步行"
+                },
+                "duration": "8 min（基准 5 min，+54%）",
+                "from": "Visitor Center parking",
+                "to": "Mather Point",
+                "durationZh": "8 分钟（基准 5 min，+54%）",
+                "distanceM": 400,
+                "note": {
+                  "en": "",
+                  "zh": "Visitor Center 广场往北 400 m 到 Mather Point 栏杆平台"
                 }
               }
             ]
@@ -1597,13 +1653,13 @@
           },
           "lat": 36.0617222,
           "lng": -112.1090343,
-          "arrive": "10:45 AM",
+          "arrive": "10:58 AM",
           "leave": "11:10 AM",
           "website": null,
           "placeId": "MATHER",
           "notes": {
-            "en": "First look at the canyon: a 5-minute walk from the visitor center to the Mather Point rail",
-            "zh": "第一眼大峡谷：从 Visitor Center 走 5 分钟到 Mather Point 栏杆平台"
+            "en": "First look at the canyon: walk from the Visitor Center to the Mather Point rail. If you are not at Mather by 11:00, take the Blue bus to the Village and skip the Trail of Time",
+            "zh": "第一眼大峡谷：从 Visitor Center 走到 Mather Point 栏杆平台（11:00 前没到 Mather → 改坐 Blue 巴士去 Village，不走 Trail of Time）"
           },
           "hours": {
             "en": "South Rim open 24 hours",
@@ -1637,14 +1693,14 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "~25 min",
+                "duration": "15 min（基准 13 min，+19%）",
                 "from": "Mather Point",
                 "to": "Yavapai Geology Museum",
-                "durationZh": "约25 分钟",
-                "distanceM": 1300,
+                "durationZh": "15 分钟（基准 13 min，+19%）",
+                "distanceM": 1100,
                 "note": {
                   "en": "",
-                  "zh": "\udeb6 Rim Trail 往西 1.3 km（平坦铺装），沿途峡谷边"
+                  "zh": "Rim Trail 往西 1.1 km（平坦铺装）"
                 }
               }
             ]
@@ -1659,8 +1715,8 @@
           },
           "lat": 36.0660626,
           "lng": -112.1176287,
-          "arrive": "11:35 AM",
-          "leave": "11:45 AM",
+          "arrive": "11:25 AM",
+          "leave": "11:32 AM",
           "website": null,
           "placeId": "YAVAPAI",
           "notes": {
@@ -1693,14 +1749,14 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "~40 min",
+                "duration": "35 min（基准 31 min，+13%）",
                 "from": "Yavapai Point",
-                "to": "El Tovar Hotel",
-                "durationZh": "约40 分钟",
-                "distanceM": 2300,
+                "to": "Hopi House (Village)",
+                "durationZh": "35 分钟（基准 31 min，+13%）",
+                "distanceM": 2400,
                 "note": {
                   "en": "",
-                  "zh": "\udeb6 Rim Trail 'Trail of Time' 往西 2.3 km 到 Grand Canyon Village（每 1 m 代表 100 万年的地质时间线），到 Verkamp's → El Tovar"
+                  "zh": "Rim Trail 'Trail of Time' 往西 2.4 km 到 Grand Canyon Village（每 1 m 代表 100 万年）→ Verkamp's → Hopi House"
                 }
               }
             ]
@@ -1715,13 +1771,13 @@
           },
           "lat": 36.0576,
           "lng": -112.137,
-          "arrive": "12:25 PM",
-          "leave": "12:42 PM",
+          "arrive": "12:07 PM",
+          "leave": "12:36 PM",
           "website": null,
           "placeId": "HOPI_LOOKOUT",
           "notes": {
-            "en": "Fifteen minutes before lunch: Hopi House next to El Tovar, then two minutes west to Lookout Studio on the rim",
-            "zh": "午餐前 15 分钟：El Tovar 隔壁的 Hopi House，往西 2 分钟到崖边 Lookout Studio"
+            "en": "Before lunch: Hopi House next to El Tovar, then west to Lookout Studio on the rim. Optional. Skip it if the line is long or you are behind",
+            "zh": "午餐前：Hopi House（El Tovar 隔壁）→ 往西到崖边 Lookout Studio（可选，排队/落后就跳过）"
           },
           "hours": {
             "en": "Open in the daytime. Shops reopen gradually from 11/20",
@@ -1749,14 +1805,14 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "~3 min",
+                "duration": "6 min（基准 3 min，+107%）",
                 "from": "Lookout Studio",
                 "to": "El Tovar Hotel",
-                "durationZh": "约3 分钟",
+                "durationZh": "6 分钟（基准 3 min，+107%）",
                 "distanceM": 200,
                 "note": {
                   "en": "",
-                  "zh": "\udeb6 Rim Trail 往东 200 m 回 El Tovar"
+                  "zh": "Rim Trail 往东 200 m 回 El Tovar"
                 }
               }
             ]
@@ -1771,17 +1827,17 @@
           },
           "lat": 36.0574373,
           "lng": -112.1376222,
-          "arrive": "12:45 PM",
-          "leave": "1:40 PM",
+          "arrive": "12:42 PM",
+          "leave": "1:55 PM",
           "website": "https://www.grandcanyonlodges.com/dine/el-tovar-dining-room-and-lounge/",
           "placeId": "EL_TOVAR",
           "notes": {
-            "en": "Lunch at 12:45. Confirmed",
-            "zh": "午餐 12:45"
+            "en": "Lunch at 12:45. Confirmed. 70 minutes",
+            "zh": "午餐 12:45（已订）· 70 分钟"
           },
           "hours": {
-            "en": "NPS update on 11/17: from 11/20, lunch is 11–2:30",
-            "zh": "NPS 11/17 更新：11/20 起午餐 11–2:30"
+            "en": "NPS: from 11/20, lunch is 11 AM–2:30 PM and a table is needed. After 11/20, call to confirm lunch is running and whether the menu changed",
+            "zh": "NPS：11/20 起午餐 11 AM–2:30 PM（须订位）· 11/20 后打电话确认午餐照常、菜单是否换新"
           },
           "booked": true,
           "mustOrder": [
@@ -1842,28 +1898,6 @@
               "menuSource": [
                 "https://www.grandcanyonlodges.com/content/uploads/2026/07/HH-All-Day-Dining-Limited-Menu_Jul-2026.pdf"
               ]
-            },
-            {
-              "name": "Yavapai Lodge Tavern / Dining Hall",
-              "nameEn": "Yavapai Lodge Tavern / Dining Hall",
-              "placeId": "YAVAPAI_TAVERN",
-              "mustOrder": [
-                {
-                  "text": {
-                    "en": "Elk burger",
-                    "zh": "Elk burger"
-                  }
-                },
-                {
-                  "text": {
-                    "en": "Pulled-pork burger",
-                    "zh": "Pulled-pork burger"
-                  }
-                }
-              ],
-              "menuSource": [
-                "https://www.visitgrandcanyon.com/dining/yavapai-tavern/"
-              ]
             }
           ],
           "menuSource": [
@@ -1877,69 +1911,29 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "~5 min",
+                "duration": "9 min（基准 6 min，+41%）",
                 "from": "El Tovar",
-                "to": "Kolb Studio · Bright Angel Trailhead",
-                "durationZh": "约5 分钟",
-                "distanceM": 400,
+                "to": "Bright Angel Lodge bus stop",
+                "durationZh": "9 分钟（基准 6 min，+41%）",
+                "distanceM": 300,
                 "note": {
                   "en": "",
-                  "zh": "\udeb6 Rim Trail 往西 400 m"
+                  "zh": "Rim Trail 往西 300 m → Bright Angel Lodge 后面的 Blue 巴士站（有空可顺看 Kolb Studio 外观，见备注）"
                 }
-              }
-            ]
-          }
-        },
-        {
-          "type": "sight",
-          "status": "confirmed",
-          "name": {
-            "en": "Kolb Studio · Bright Angel Trailhead",
-            "zh": "Kolb Studio · Bright Angel Trailhead"
-          },
-          "lat": 36.0579779,
-          "lng": -112.1425903,
-          "arrive": "1:45 PM",
-          "leave": "1:55 PM",
-          "website": null,
-          "placeId": "KOLB",
-          "notes": {
-            "en": "Ten minutes after lunch: Kolb Studio on the rim, the switchbacks at Bright Angel trailhead, then the bus by Bright Angel Lodge",
-            "zh": "饭后 10 分钟：Kolb Studio 外看崖边老照相馆，在 Bright Angel Trailhead 往下看之字步道，然后在 Bright Angel Lodge 旁上巴士"
-          },
-          "hours": {
-            "en": "Open in the daytime",
-            "zh": "日间开放"
-          },
-          "mustSee": [
-            {
-              "text": {
-                "en": "The Kolb brothers' 1904 photo studio hanging on the rim",
-                "zh": "Kolb 兄弟 1904 年摄影工作室挂在崖边"
-              }
-            },
-            {
-              "text": {
-                "en": "Bright Angel Trail switchbacks and the first tunnel",
-                "zh": "Bright Angel Trail 之字弯与第一个隧道"
-              }
-            }
-          ],
-          "transit": {
-            "segments": [
+              },
               {
                 "mode": "bus",
                 "label": {
                   "en": "Shuttle",
                   "zh": "接驳车"
                 },
-                "duration": "~20 min",
-                "from": "Bright Angel Lodge / Village",
+                "duration": "30 min（基准 26 min，+15%）",
+                "from": "Bright Angel Lodge",
                 "to": "Grand Canyon Visitor Center (car)",
-                "durationZh": "约20 分钟",
+                "durationZh": "30 分钟（基准 26 min，+15%）",
                 "note": {
                   "en": "",
-                  "zh": "\ude8c 免费园区巴士 Village Route (Blue) 在 Bright Angel Lodge 附近上车 → Visitor Center（每 15–20 分钟）"
+                  "zh": "免费园区巴士 Village (Blue) Route → Visitor Center 下车走回停车场"
                 }
               },
               {
@@ -1948,70 +1942,14 @@
                   "en": "Drive",
                   "zh": "开车"
                 },
-                "duration": "~20 min",
+                "duration": "35 min（基准 32 min，+11%）",
                 "from": "Visitor Center",
-                "to": "Grandview Point",
-                "durationZh": "约20 分钟",
-                "distanceM": 19000,
-                "note": {
-                  "en": "",
-                  "zh": "\ude97 Desert View Drive（AZ-64 E）12 mi → 左转 Grandview Point；免费"
-                }
-              }
-            ]
-          }
-        },
-        {
-          "type": "sight",
-          "status": "confirmed",
-          "name": {
-            "en": "Grandview Point",
-            "zh": "Grandview Point"
-          },
-          "lat": 35.9986,
-          "lng": -111.9876,
-          "arrive": "2:35 PM",
-          "leave": "2:45 PM",
-          "website": null,
-          "placeId": "GRANDVIEW",
-          "notes": {
-            "en": "A 10-minute viewpoint, shortened",
-            "zh": "观景 10 分钟（缩短）"
-          },
-          "hours": {
-            "en": "Road open, closed for a time if it snows",
-            "zh": "道路开放（遇雪临时封）"
-          },
-          "mustSee": [
-            {
-              "text": {
-                "en": "One of the highest viewpoints on the South Rim, pines right to the edge",
-                "zh": "南缘最高观景点之一，松林直到崖边"
-              }
-            },
-            {
-              "text": {
-                "en": "Horseshoe Mesa and the old mining trail",
-                "zh": "看 Horseshoe Mesa 和古老铜矿步道"
-              }
-            }
-          ],
-          "transit": {
-            "segments": [
-              {
-                "mode": "drive",
-                "label": {
-                  "en": "Drive",
-                  "zh": "开车"
-                },
-                "duration": "~25 min",
-                "from": "Grandview Point",
                 "to": "Desert View Watchtower",
-                "durationZh": "约25 分钟",
-                "distanceM": 22000,
+                "durationZh": "35 分钟（基准 32 min，+11%）",
+                "distanceM": 36000,
                 "note": {
                   "en": "",
-                  "zh": "\ude97 Desert View Drive 往东 14 mi（Moran Point 不停）到 Desert View 停车场（顺便加油：24h 自助油泵）；免费"
+                  "zh": "Desert View Drive（AZ-64 E）25 mi 到 Desert View 停车场（Grandview、Moran 都不停；顺便加油：24h 自助油泵）；免费"
                 }
               }
             ]
@@ -2026,13 +1964,13 @@
           },
           "lat": 36.0440087,
           "lng": -111.8262067,
-          "arrive": "3:10 PM",
+          "arrive": "3:09 PM",
           "leave": "4:30 PM",
           "website": null,
           "placeId": "WATCHTOWER",
           "notes": {
-            "en": "Pick up the free tower ticket first. Last ticket issued at 3:40, last entry at 4:00, groups of 25 for 20 minutes. Then see the Colorado bend from the Desert View terrace",
-            "zh": "先领免费上塔票（最后发票 3:40，最后入场 4:00，每批 25 人 20 分钟），上塔后在 Desert View 平台看 Colorado River 拐弯"
+            "en": "On arrival, pick up the free tower ticket. Last ticket 3:40, last entry 4:00, 25 people for 20 minutes. Then see the bend of the Colorado from the Desert View terrace",
+            "zh": "一到先领免费上塔票（最后发票 3:40，最后入场 4:00，每批 25 人 20 分钟），上塔后在 Desert View 平台看 Colorado River 拐弯"
           },
           "hours": {
             "en": "NPS: the upper level is open 9–5 when staffed. Last ticket at 3:40, last entry at 4:00",
@@ -2066,14 +2004,14 @@
                   "en": "Drive",
                   "zh": "开车"
                 },
-                "duration": "~8 min",
+                "duration": "13 min（基准 10 min，+25%）",
                 "from": "Desert View",
                 "to": "Lipan Point",
-                "durationZh": "约8 分钟",
-                "distanceM": 5000,
+                "durationZh": "13 分钟（基准 10 min，+25%）",
+                "distanceM": 4000,
                 "note": {
                   "en": "",
-                  "zh": "\ude97 Desert View Drive 往西 3 mi（往回开一小段）"
+                  "zh": "Desert View Drive 往西 3 mi（往回开一小段）"
                 }
               }
             ]
@@ -2088,7 +2026,7 @@
           },
           "lat": 36.0330872,
           "lng": -111.8530089,
-          "arrive": "4:40 PM",
+          "arrive": "4:43 PM",
           "leave": "5:20 PM",
           "website": null,
           "placeId": "LIPAN",
@@ -2124,14 +2062,14 @@
                   "en": "Drive",
                   "zh": "开车"
                 },
-                "duration": "~45 min",
+                "duration": "55 min（基准 46 min，+19%）",
                 "from": "Lipan Point",
                 "to": "Cameron Trading Post",
-                "durationZh": "约45 分钟",
+                "durationZh": "55 分钟（基准 46 min，+19%）",
                 "distanceM": 56000,
                 "note": {
                   "en": "",
-                  "zh": "\ude97 Desert View Drive 往东 → AZ-64 E 出东口 → 到 US-89 路口的 Cameron（约 35 mi）。天黑后路上常有鹿/麋鹿，限速内开；贸易站前免费停车"
+                  "zh": "Desert View Drive 往东 → AZ-64 E 出东口 → 到 US-89 路口的 Cameron（约 35 mi）。天黑后路上常有鹿/麋鹿，限速内开；贸易站前免费停车"
                 }
               }
             ]
@@ -2146,8 +2084,8 @@
           },
           "lat": null,
           "lng": null,
-          "arrive": "6:05 PM",
-          "leave": "7:05 PM",
+          "arrive": "6:15 PM",
+          "leave": "7:15 PM",
           "website": "https://camerontradingpost.com/dinner-menu.html",
           "placeId": "CAMERON_DINING",
           "notes": {
@@ -2167,8 +2105,8 @@
             },
             {
               "text": {
-                "en": "Prime Rib",
-                "zh": "Prime Rib（au jus + horseradish）"
+                "en": "Steak Ranchero",
+                "zh": "Steak Ranchero（ribeye + 融化芝士 + 红或青辣椒酱）"
               }
             },
             {
@@ -2252,14 +2190,14 @@
                   "en": "Drive",
                   "zh": "开车"
                 },
-                "duration": "~1h 25 min",
+                "duration": "100 min（基准 88 min，+14%）",
                 "from": "Cameron",
                 "to": "Red Rock Motel",
-                "durationZh": "约1 小时 25 分钟",
-                "distanceM": 137000,
+                "durationZh": "100 分钟（基准 88 min，+14%）",
+                "distanceM": 133000,
                 "note": {
                   "en": "",
-                  "zh": "\ude97 US-89 N 85 mi → Page（AZ-98 不用走）→ Lake Powell Blvd → 8th Ave。整段夜路无路灯，限速内开；Cameron 加满油"
+                  "zh": "US-89 N 85 mi → Page（AZ-98 不用走）→ Lake Powell Blvd → 8th Ave。整段夜路无路灯，限速内开；Cameron 加满油"
                 }
               }
             ]
@@ -2274,7 +2212,7 @@
           },
           "lat": 36.9177975,
           "lng": -111.456095,
-          "arrive": "8:35 PM",
+          "arrive": "8:55 PM",
           "leave": null,
           "website": null,
           "placeId": "RED_ROCK_MOTEL",
@@ -2295,28 +2233,32 @@
       },
       "notes": [
         {
-          "en": "Leave at 8:00 and reach the south entrance about 10:20. Use the pass in the far-left Lane 1. A 25-minute queue buffer is already in the plan. In peak season the wait from 9:30–4 can be 1–2 hours. Check the south-entrance camera before leaving",
-          "zh": "8:00 出发：约 10:20 到南入口，用年票走最左 Lane 1；已留 25 分钟排队缓冲（NPS：旺季 9:30–4 可排 1–2 小时，出发前看南入口摄像头）"
+          "en": "SR 89A through Oak Creek Canyon, mileposts 387–390, is closed indefinitely (ADOT, Nov 12; repairs start in early 2027). Use AZ-179 south to I-17 north. Check az511.gov the night before",
+          "zh": "SR 89A Oak Creek Canyon MP 387–390 无限期封闭（ADOT 11/12，修复 2027 年初才开始）→ 走 AZ-179 S → I-17 N；出发前一晚看 az511.gov"
         },
         {
-          "en": "To protect the tower and the sunset: do not stop at Oak Creek Vista or Moran Point. Shorten Yavapai, the historic village, and Grandview",
-          "zh": "为保塔楼和日落：Oak Creek Vista 不停（车窗看）、Moran Point 不停、Yavapai/历史村/Grandview 各缩短"
+          "en": "Leave at 7:15. Macy's at 8:25, 25 minutes in the south-entrance line, Visitor Center at 10:50. Use the pass in Lane 1",
+          "zh": "7:15 出发：Macy's 8:25 → 南入口排队 25 分钟 → 10:50 到 Visitor Center；用年票走 Lane 1"
         },
         {
-          "en": "Last tower ticket issued 3:40, last entry 4:00, so arrive at 3:10. Hard stop: leave the visitor center by 2:40 or skip Grandview",
-          "zh": "塔楼最后发票 3:40、最后入场 4:00 → 3:10 到；硬性底线：2:40 前从 Visitor Center 出发，晚了就跳过 Grandview"
+          "en": "Grandview Point is dropped. Desert View and Lipan cover that east-rim view. Lunch is lengthened to 70 minutes",
+          "zh": "Grandview Point 删掉（Desert View / Lipan 同一段东缘视角）；午餐加长到 70 分钟"
         },
         {
-          "en": "El Tovar is confirmed at 12:45. See Hopi House and Lookout Studio before lunch, then Kolb Studio and the bus. If the queue is over 25 minutes, skip Hopi and Lookout first, then the Yavapai museum, then Grandview",
-          "zh": "El Tovar 已订 12:45：午餐前先看 Hopi House + Lookout Studio，饭后 Kolb Studio → 巴士；排队超过 25 分钟：先砍 Hopi/Lookout，再砍 Yavapai 进馆，最后砍 Grandview"
+          "en": "If you are not at Mather by 11:00, take the Blue bus to the Village and skip the Trail of Time. Skip Hopi and Lookout if you are behind",
+          "zh": "11:00 前没到 Mather → 改坐 Blue 巴士去 Village，不走 Trail of Time；Hopi/Lookout 落后就跳过"
         },
         {
-          "en": "Two hours of night driving. Use the 24-hour pump at Desert View. Cameron is the last supply stop",
-          "zh": "夜路 2 小时：Desert View 24h 油泵加满；Cameron 最后补给"
+          "en": "Last tower ticket 3:40, last entry 4:00. Arrive at 3:09",
+          "zh": "塔楼最后发票 3:40、最后入场 4:00 → 3:09 到"
         },
         {
-          "en": "Until 11/30 Hermit Road is park bus only. This trip does not go there",
-          "zh": "Hermit Road 11/30 前只通园区巴士，本次不去"
+          "en": "El Tovar: after 11/20, call to confirm lunch is running and to ask about the menu",
+          "zh": "El Tovar：11/20 后打电话确认午餐照常、菜单"
+        },
+        {
+          "en": "Night drive: fill up at the Desert View pumps, open 24 hours. After Cameron, it is 100 minutes to Page",
+          "zh": "夜路：Desert View 24h 油泵加满；Cameron 吃完再开 100 分钟到 Page"
         }
       ]
     },
@@ -2324,8 +2266,8 @@
       "date": "2026-11-29",
       "weekday": "Sun",
       "title": {
-        "en": "Morning at Horseshoe Bend, Ranch House, Sunday service, Lower Antelope Canyon, BirdHouse, Glen Canyon Dam, Cameron, Lowell Observatory, Beaver Street",
-        "zh": "Horseshoe Bend 晨光 → Ranch House → 主日崇拜 → Lower Antelope Canyon → BirdHouse → Glen Canyon Dam → Cameron → Lowell Observatory → Beaver Street"
+        "en": "Morning light at Horseshoe Bend, Ranch House, Sunday service, Lower Antelope Canyon, BirdHouse, Glen Canyon Dam, dinner at Beaver Street, Route 66, then stars at Lowell Observatory",
+        "zh": "Horseshoe Bend 晨光 → Ranch House → 主日崇拜 → Lower Antelope Canyon → BirdHouse → Glen Canyon Dam → Beaver Street 晚餐 → Route 66 → Lowell Observatory 观星"
       },
       "stops": [
         {
@@ -2338,7 +2280,7 @@
           "lat": 36.9177975,
           "lng": -111.456095,
           "arrive": null,
-          "leave": "6:55 AM",
+          "leave": "7:00 AM",
           "website": null,
           "placeId": "RED_ROCK_MOTEL",
           "notes": {
@@ -2354,14 +2296,14 @@
                   "en": "Drive",
                   "zh": "开车"
                 },
-                "duration": "~8 min",
+                "duration": "12 min（基准 10 min，+24%）",
                 "from": "Red Rock Motel",
                 "to": "Horseshoe Bend parking",
-                "durationZh": "约8 分钟",
-                "distanceM": 4000,
+                "durationZh": "12 分钟（基准 10 min，+24%）",
+                "distanceM": 8000,
                 "note": {
                   "en": "",
-                  "zh": "\ude97 US-89 S 2 mi → 右转 Horseshoe Bend 停车场（日出才开门，11/29 日出约 7:13）"
+                  "zh": "US-89 S 2 mi → 右转 Horseshoe Bend 停车场（日出才开门，11/29 日出约 7:13）"
                 }
               }
             ]
@@ -2376,7 +2318,7 @@
           },
           "lat": 36.8808747,
           "lng": -111.5108627,
-          "arrive": "7:15 AM",
+          "arrive": "7:12 AM",
           "leave": "8:30 AM",
           "website": null,
           "placeId": "HORSESHOE",
@@ -2416,14 +2358,14 @@
                   "en": "Drive",
                   "zh": "开车"
                 },
-                "duration": "~8 min",
+                "duration": "12 min（基准 9 min，+29%）",
                 "from": "Horseshoe Bend",
                 "to": "Ranch House Grille",
-                "durationZh": "约8 分钟",
-                "distanceM": 5000,
+                "durationZh": "12 分钟（基准 9 min，+29%）",
+                "distanceM": 8000,
                 "note": {
                   "en": "",
-                  "zh": "\ude97 US-89 N → Navajo Dr"
+                  "zh": "US-89 N → Navajo Dr"
                 }
               }
             ]
@@ -2438,8 +2380,8 @@
           },
           "lat": 36.9205264,
           "lng": -111.458053,
-          "arrive": "8:40 AM",
-          "leave": "9:35 AM",
+          "arrive": "8:42 AM",
+          "leave": "9:38 AM",
           "website": null,
           "placeId": "RANCH_HOUSE",
           "notes": {
@@ -2534,14 +2476,14 @@
                   "en": "Drive",
                   "zh": "开车"
                 },
-                "duration": "~5 min",
+                "duration": "6 min（基准 3 min，+114%）",
                 "from": "Ranch House Grille",
                 "to": "Lake Powell Church of the Nazarene",
-                "durationZh": "约5 分钟",
-                "distanceM": 2000,
+                "durationZh": "6 分钟（基准 3 min，+114%）",
+                "distanceM": 1300,
                 "note": {
                   "en": "",
-                  "zh": "\ude97 Navajo Dr → Lake Powell Blvd S"
+                  "zh": "Navajo Dr → Lake Powell Blvd S"
                 }
               }
             ]
@@ -2556,17 +2498,17 @@
           },
           "lat": 36.9143236,
           "lng": -111.4528169,
-          "arrive": "9:50 AM",
+          "arrive": "9:44 AM",
           "leave": "11:10 AM",
           "website": null,
           "placeId": "NAZARENE",
           "notes": {
-            "en": "Sunday service at 10:00 AM, about an hour. Leave by 11:15",
-            "zh": "主日崇拜 10:00 AM（约 1 小时；11:15 前一定要离开）"
+            "en": "Sunday service at 10:00 AM. Leave at 11:10 even if it is still going. Slip out quietly after the sermon",
+            "zh": "主日崇拜 10:00 AM（传统礼拜）；11:10 一定要离开（如礼拜还没结束，讲道后安静离场）"
           },
           "hours": {
-            "en": "Church site: Sunday 10 AM and 6 PM",
-            "zh": "教会网站：主日 10 AM、6 PM"
+            "en": "Church site: Sunday at 10 AM and 6 PM. Call ahead and ask what time it usually ends",
+            "zh": "教会网站：主日 10 AM、6 PM · 先打电话问通常几点结束"
           },
           "transit": {
             "segments": [
@@ -2576,14 +2518,14 @@
                   "en": "Drive",
                   "zh": "开车"
                 },
-                "duration": "~10 min",
+                "duration": "15 min（基准 12 min，+23%）",
                 "from": "Church",
                 "to": "Dixie's Lower Antelope Canyon Tours",
-                "durationZh": "约10 分钟",
-                "distanceM": 6000,
+                "durationZh": "15 分钟（基准 12 min，+23%）",
+                "distanceM": 8000,
                 "note": {
                   "en": "",
-                  "zh": "\ude97 Lake Powell Blvd → AZ-98 E 2.5 mi → 左转 Indian Route 222 到 Dixie's（Lower Antelope 停车场）；免费"
+                  "zh": "Lake Powell Blvd → AZ-98 E 2.5 mi → 左转 Indian Route 222 到 Dixie's（Lower Antelope 停车场）；免费"
                 }
               }
             ]
@@ -2598,17 +2540,17 @@
           },
           "lat": 36.9026999,
           "lng": -111.4113945,
-          "arrive": "11:30 AM",
-          "leave": "1:15 PM",
+          "arrive": "11:25 AM",
+          "leave": "1:55 PM",
           "website": null,
           "placeId": "DIXIES",
           "notes": {
-            "en": "Check in at 11:30, 45 minutes early, then the 12:15–1:15 tour",
-            "zh": "11:30 check-in（需提前 45 分钟）→ 12:15–1:15 导览"
+            "en": "Check in before 11:30. The site asks for 45 minutes early. The 12:15 tour is 60–90 minutes, plus a 10-minute walk back to the kiosk. Leave by 1:55 at the latest",
+            "zh": "11:30 前 check-in（官网：提前 45 分钟）→ 12:15 导览 60–90 分钟 + 步行 10 分钟回服务亭；最晚 1:55 离开"
           },
           "hours": {
-            "en": "Confirmed. The 12:15 tour is on the schedule",
-            "zh": "已订；12:15 场次存在"
+            "en": "Confirmed. The site says the tour is 60–90 minutes and asks you to check in 45 minutes early",
+            "zh": "已订；官网：导览 60–90 分钟，提前 45 分钟 check-in"
           },
           "mustSee": [
             {
@@ -2639,14 +2581,14 @@
                   "en": "Drive",
                   "zh": "开车"
                 },
-                "duration": "~10 min",
+                "duration": "15 min（基准 13 min，+17%）",
                 "from": "Dixie's",
                 "to": "BirdHouse",
-                "durationZh": "约10 分钟",
-                "distanceM": 6000,
+                "durationZh": "15 分钟（基准 13 min，+17%）",
+                "distanceM": 9000,
                 "note": {
                   "en": "",
-                  "zh": "\ude97 AZ-98 W → Navajo Dr"
+                  "zh": "AZ-98 W → Navajo Dr"
                 }
               }
             ]
@@ -2661,8 +2603,8 @@
           },
           "lat": 36.9190544,
           "lng": -111.4591645,
-          "arrive": "1:25 PM",
-          "leave": "2:15 PM",
+          "arrive": "2:10 PM",
+          "leave": "2:55 PM",
           "website": "https://www.birdhouseaz.com/",
           "placeId": "BIRDHOUSE",
           "notes": {
@@ -2670,8 +2612,8 @@
             "zh": "午餐"
           },
           "hours": {
-            "en": "⚠ Other listings say Sunday 11 AM–9 PM, but the site also says Sunday is closed. Call ahead. If it is closed, go to El Tapatio",
-            "zh": "⚠ 第三方都写周日 11 AM–9 PM，但官网有一处写周日休息 → 出发前打电话；没开就去 El Tapatio"
+            "en": "⚠ The same page says Monday–Sunday 11–9 and also says Sunday is closed. Call before you leave. If it is closed, go to El Tapatio (Sunday 10–10)",
+            "zh": "⚠ 官网同页写'周一–周日 11–9'又写'周日休' → 出发前打电话；没开就去 El Tapatio（周日 10–10）"
           },
           "mustOrder": [
             {
@@ -2754,14 +2696,14 @@
                   "en": "Drive",
                   "zh": "开车"
                 },
-                "duration": "~8 min",
+                "duration": "7 min（基准 4 min，+59%）",
                 "from": "BirdHouse",
                 "to": "Glen Canyon Dam Overlook",
-                "durationZh": "约8 分钟",
-                "distanceM": 4000,
+                "durationZh": "7 分钟（基准 4 min，+59%）",
+                "distanceM": 2700,
                 "note": {
                   "en": "",
-                  "zh": "\ude97 US-89 N 过 Carl Hayden VC 前 → 左转 Scenic View Rd；免费"
+                  "zh": "US-89 N 过 Carl Hayden VC 前 → 左转 Scenic View Rd；免费"
                 }
               }
             ]
@@ -2776,13 +2718,13 @@
           },
           "lat": 36.9236351,
           "lng": -111.4770849,
-          "arrive": "2:25 PM",
-          "leave": "2:45 PM",
+          "arrive": "3:02 PM",
+          "leave": "3:16 PM",
           "website": null,
           "placeId": "GC_DAM",
           "notes": {
-            "en": "A 300 m walk down to the rock shelf for the dam",
-            "zh": "步行 300 m 下到岩台看大坝"
+            "en": "Walk 300 m down to the rock terrace for the dam. 15 minutes. Skip it if the tour runs late",
+            "zh": "步行 300 m 下到岩台看大坝（15 分钟；导览拖晚就跳过）"
           },
           "hours": {
             "en": "Outdoors",
@@ -2810,133 +2752,14 @@
                   "en": "Drive",
                   "zh": "开车"
                 },
-                "duration": "~1h 15 min",
+                "duration": "160 min（基准 143 min，+12%）",
                 "from": "Glen Canyon Dam Overlook",
-                "to": "Cameron Trading Post",
-                "durationZh": "约1 小时 15 分钟",
-                "distanceM": 128000,
+                "to": "Beaver Street Brewery (Flagstaff)",
+                "durationZh": "160 分钟（基准 143 min，+12%）",
+                "distanceM": 216000,
                 "note": {
                   "en": "",
-                  "zh": "\ude97 US-89 S 80 mi（Echo Cliffs 红崖一路相伴）"
-                }
-              }
-            ]
-          }
-        },
-        {
-          "type": "sight",
-          "status": "confirmed",
-          "name": {
-            "en": "Cameron Trading Post",
-            "zh": "Cameron Trading Post"
-          },
-          "lat": 35.8754404,
-          "lng": -111.413786,
-          "arrive": "4:00 PM",
-          "leave": "4:20 PM",
-          "website": null,
-          "placeId": "CAMERON",
-          "notes": {
-            "en": "A 20-minute stop: the old suspension bridge and the trading-post gallery. Dinner was here last night. Skip it if you are short on time",
-            "zh": "伸腿 20 分钟：老吊桥 + 贸易站画廊（昨晚已在这里吃过晚餐，赶时间可以跳过）"
-          },
-          "hours": {
-            "en": "Trading post 7 AM–8 PM. Dining room 6 AM–9 PM MST",
-            "zh": "官网：贸易站 7 AM–8 PM、餐厅 6 AM–9 PM（MST）"
-          },
-          "mustSee": [
-            {
-              "text": {
-                "en": "The 1911 suspension bridge over the Little Colorado",
-                "zh": "1911 年 Little Colorado River 老吊桥"
-              }
-            },
-            {
-              "text": {
-                "en": "Navajo rugs and silverwork in the old trading post",
-                "zh": "老贸易站里 Navajo 地毯与银饰"
-              }
-            }
-          ],
-          "optional": true,
-          "transit": {
-            "segments": [
-              {
-                "mode": "drive",
-                "label": {
-                  "en": "Drive",
-                  "zh": "开车"
-                },
-                "duration": "~1h",
-                "from": "Cameron",
-                "to": "Lowell Observatory",
-                "durationZh": "约1 小时",
-                "distanceM": 85000,
-                "note": {
-                  "en": "",
-                  "zh": "\ude97 US-89 S 50 mi → Flagstaff → Route 66 W → Mars Hill Rd 上山；免费"
-                }
-              }
-            ]
-          }
-        },
-        {
-          "type": "sight",
-          "status": "tentative",
-          "name": {
-            "en": "Lowell Observatory",
-            "zh": "Lowell Observatory"
-          },
-          "lat": 35.2016874,
-          "lng": -111.665276,
-          "arrive": "5:25 PM",
-          "leave": "7:30 PM",
-          "website": "https://lowell.edu/visit/",
-          "placeId": "LOWELL",
-          "notes": {
-            "en": "Where Pluto was found. After dark, telescopes on the Giovale Open Deck if it is clear, plus the Pluto Discovery Telescope",
-            "zh": "冥王星发现地：天黑后 Giovale Open Deck 望远镜观星（晴天），加 Pluto Discovery Telescope"
-          },
-          "hours": {
-            "en": "Official site: November Sundays 12–10 PM, tickets at the door until 9 PM",
-            "zh": "官网：11 月周日 12–10 PM，现场售票到 9 PM"
-          },
-          "mustSee": [
-            {
-              "text": {
-                "en": "The Pluto Discovery Telescope, which found Pluto in 1930",
-                "zh": "1930 年发现冥王星的 Pluto Discovery Telescope"
-              }
-            },
-            {
-              "text": {
-                "en": "The 1896 Clark Refractor dome",
-                "zh": "1896 年 Clark Refractor 圆顶"
-              }
-            },
-            {
-              "text": {
-                "en": "Flagstaff was the world's first International Dark Sky City. On a clear night, the Milky Way and Saturn",
-                "zh": "Flagstaff 是世界第一个'国际暗夜城市'，晴天看银河/土星"
-              }
-            }
-          ],
-          "transit": {
-            "segments": [
-              {
-                "mode": "drive",
-                "label": {
-                  "en": "Drive",
-                  "zh": "开车"
-                },
-                "duration": "~6 min",
-                "from": "Lowell Observatory",
-                "to": "Beaver Street Brewery",
-                "durationZh": "约6 分钟",
-                "distanceM": 2500,
-                "note": {
-                  "en": "",
-                  "zh": "\ude97 Mars Hill Rd 下山 → Route 66 → Beaver St；市中心路边/停车场"
+                  "zh": "US-89 S 130 mi 直达 Flagstaff（Echo Cliffs 红崖；不再停 Cameron）→ Route 66 → Beaver St；市中心路边/停车场"
                 }
               }
             ]
@@ -2951,13 +2774,13 @@
           },
           "lat": 35.1965239,
           "lng": -111.6513388,
-          "arrive": "7:40 PM",
-          "leave": "8:50 PM",
+          "arrive": "5:56 PM",
+          "leave": "7:05 PM",
           "website": "https://beaverstreetbrewery.com/",
           "placeId": "BEAVER_ST",
           "notes": {
-            "en": "Dinner. Sunday close is 9 PM",
-            "zh": "晚餐（周日 9 PM 打烊）"
+            "en": "Dinner. It closes at 9 PM on Sunday, so arriving early avoids a rush",
+            "zh": "晚餐（周日 9 PM 打烊，早到不赶）"
           },
           "hours": {
             "en": "Sunday 11 AM–9 PM",
@@ -3039,14 +2862,14 @@
                   "en": "Walk",
                   "zh": "步行"
                 },
-                "duration": "~5 min",
+                "duration": "6 min（基准 4 min，+50%）",
                 "from": "Beaver Street Brewery",
-                "to": "Historic Downtown / Route 66 & Flagstaff depot",
-                "durationZh": "约5 分钟",
+                "to": "Route 66 & Flagstaff depot",
+                "durationZh": "6 分钟（基准 4 min，+50%）",
                 "distanceM": 300,
                 "note": {
                   "en": "",
-                  "zh": "\udeb6 Beaver St 往北 300 m 到 Route 66 和老火车站"
+                  "zh": "Beaver St 往北 300 m 到 Route 66 和 1926 年老火车站，看一眼就回"
                 }
               }
             ]
@@ -3061,13 +2884,13 @@
           },
           "lat": 35.198,
           "lng": -111.6495,
-          "arrive": "8:55 PM",
-          "leave": "9:10 PM",
+          "arrive": "7:11 PM",
+          "leave": "7:13 PM",
           "website": null,
           "placeId": "FLAG_DOWNTOWN",
           "notes": {
-            "en": "A 15-minute walk after dinner",
-            "zh": "饭后散步 15 分钟"
+            "en": "Five minutes after dinner: Route 66 and the old station, then walk back to the car",
+            "zh": "饭后 5 分钟：Route 66 + 老火车站（看完走回车）"
           },
           "hours": {
             "en": "Outdoors",
@@ -3095,14 +2918,76 @@
                   "en": "Drive",
                   "zh": "开车"
                 },
-                "duration": "~10 min",
+                "duration": "12 min（基准 7 min，+71%）",
                 "from": "Downtown Flagstaff",
-                "to": "Ramada by Wyndham Flagstaff East",
-                "durationZh": "约10 分钟",
-                "distanceM": 5000,
+                "to": "Lowell Observatory",
+                "durationZh": "12 分钟（基准 7 min，+71%）",
+                "distanceM": 2900,
                 "note": {
                   "en": "",
-                  "zh": "\ude97 Route 66 E → Butler Ave → Lucky Ln"
+                  "zh": "Route 66 W → Mars Hill Rd 上山；免费"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "sight",
+          "status": "tentative",
+          "name": {
+            "en": "Lowell Observatory",
+            "zh": "Lowell Observatory"
+          },
+          "lat": 35.2016874,
+          "lng": -111.665276,
+          "arrive": "7:25 PM",
+          "leave": "9:35 PM",
+          "website": "https://lowell.edu/visit/",
+          "placeId": "LOWELL",
+          "notes": {
+            "en": "Where Pluto was found. After dark, telescopes on the Giovale Open Deck if it is clear, plus the Pluto Discovery Telescope",
+            "zh": "冥王星发现地：天黑后 Giovale Open Deck 望远镜观星（晴天），加 Pluto Discovery Telescope"
+          },
+          "hours": {
+            "en": "Site: Sunday 12–10 PM. Closed Tuesday and Thanksgiving. A ticket can be used again the same day",
+            "zh": "官网：周日 12–10 PM（周二休、感恩节休）；门票当天可重复进出"
+          },
+          "mustSee": [
+            {
+              "text": {
+                "en": "The Pluto Discovery Telescope, which found Pluto in 1930",
+                "zh": "1930 年发现冥王星的 Pluto Discovery Telescope"
+              }
+            },
+            {
+              "text": {
+                "en": "The 1896 Clark Refractor dome",
+                "zh": "1896 年 Clark Refractor 圆顶"
+              }
+            },
+            {
+              "text": {
+                "en": "Flagstaff was the world's first International Dark Sky City. On a clear night, the Milky Way and Saturn",
+                "zh": "Flagstaff 是世界第一个'国际暗夜城市'，晴天看银河/土星"
+              }
+            }
+          ],
+          "transit": {
+            "segments": [
+              {
+                "mode": "drive",
+                "label": {
+                  "en": "Drive",
+                  "zh": "开车"
+                },
+                "duration": "12 min（基准 10 min，+22%）",
+                "from": "Lowell Observatory",
+                "to": "Ramada by Wyndham Flagstaff East",
+                "durationZh": "12 分钟（基准 10 min，+22%）",
+                "distanceM": 5500,
+                "note": {
+                  "en": "",
+                  "zh": "Mars Hill Rd 下山 → Route 66 E → Butler Ave → Lucky Ln"
                 }
               }
             ]
@@ -3117,7 +3002,7 @@
           },
           "lat": 35.1935621,
           "lng": -111.6217699,
-          "arrive": "9:20 PM",
+          "arrive": "9:47 PM",
           "leave": null,
           "website": null,
           "placeId": "RAMADA",
@@ -3138,12 +3023,20 @@
       },
       "notes": [
         {
-          "en": "Dixie's asks for check-in 45 minutes early, so leave church by 11:15",
-          "zh": "Dixie's 要提前 45 分钟 check-in → 11:15 一定离开教会"
+          "en": "Check in at Dixie's 45 minutes early, so leave church at 11:10. The tour is 60–90 minutes. Leave by 1:55 at the latest",
+          "zh": "Dixie's 要提前 45 分钟 check-in → 11:10 离开教会；导览 60–90 分钟，最晚 1:55 离开"
         },
         {
-          "en": "The Sunset Crater–Wupatki loop is dropped. The visitor center closes at 4:30 and it is dark at 5:14",
-          "zh": "Sunset Crater–Wupatki 环线取消（游客中心 4:30 关、5:14 天黑）"
+          "en": "Church: ask what time the service usually ends",
+          "zh": "教会：先问礼拜通常几点结束"
+        },
+        {
+          "en": "BirdHouse: the site contradicts itself about Sunday. Call before you leave. If it is closed, go to El Tapatio",
+          "zh": "BirdHouse：官网周日营业自相矛盾，出发前打电话；没开就去 El Tapatio"
+        },
+        {
+          "en": "No stop at Cameron. Dinner was there on Saturday. Eat first, then Lowell, so it is fully dark for the stars",
+          "zh": "不再停 Cameron（周六晚餐已去过）；先吃晚饭再上 Lowell，天全黑观星"
         },
         {
           "en": "Flagstaff nights are below freezing. Dress warmly for Lowell",
@@ -3155,8 +3048,8 @@
       "date": "2026-11-30",
       "weekday": "Mon",
       "title": {
-        "en": "Montezuma Castle opens at 9, pick up pies at Rock Springs, return the car at 12:00, lunch at PHX",
-        "zh": "Montezuma Castle 9 点开门 → Rock Springs 取派 → 12:00 还车 → PHX 午餐 →"
+        "en": "Montezuma Castle opens at 9, then pick up the pie at Rock Springs, return the car at 12:00, and have lunch at Four Peaks in Phoenix",
+        "zh": "Montezuma Castle 9 点开门 → Rock Springs 取派 → 12:00 还车 → PHX Four Peaks 午餐 →"
       },
       "stops": [
         {
@@ -3189,14 +3082,14 @@
                   "en": "Drive",
                   "zh": "开车"
                 },
-                "duration": "~55 min",
+                "duration": "62 min（基准 56 min，+10%）",
                 "from": "Ramada",
                 "to": "Montezuma Castle",
-                "durationZh": "约55 分钟",
-                "distanceM": 85000,
+                "durationZh": "62 分钟（基准 56 min，+10%）",
+                "distanceM": 89000,
                 "note": {
                   "en": "",
-                  "zh": "\ude97 I-40 W → I-17 S 50 mi → Exit 289 → Montezuma Castle Rd；免费"
+                  "zh": "I-40 W → I-17 S 50 mi → Exit 289 → Montezuma Castle Rd；免费"
                 }
               }
             ]
@@ -3211,13 +3104,13 @@
           },
           "lat": 34.6130884,
           "lng": -111.8366661,
-          "arrive": "9:00 AM",
-          "leave": "9:45 AM",
+          "arrive": "8:52 AM",
+          "leave": "9:35 AM",
           "website": "https://www.nps.gov/moca/",
           "placeId": "MONTEZUMA",
           "notes": {
-            "en": "Go in at the 9 AM opening. The paved loop is 0.5 km",
-            "zh": "9 点开门即进，铺装环线 0.5 km"
+            "en": "Go in when it opens at 9. The paved loop is 0.5 km and takes 35 minutes",
+            "zh": "9 点开门即进，铺装环线 0.5 km（35 分钟）"
           },
           "hours": {
             "en": "November, daily 9 AM–4:45 PM, closed only on Thanksgiving",
@@ -3245,14 +3138,14 @@
                   "en": "Drive",
                   "zh": "开车"
                 },
-                "duration": "~40 min",
+                "duration": "57 min（基准 51 min，+11%）",
                 "from": "Montezuma Castle",
                 "to": "Rock Springs Cafe (PieBox pickup)",
-                "durationZh": "约40 分钟",
-                "distanceM": 76000,
+                "durationZh": "57 分钟（基准 51 min，+11%）",
+                "distanceM": 81000,
                 "note": {
                   "en": "",
-                  "zh": "\ude97 I-17 S 47 mi → Exit 242"
+                  "zh": "I-17 S 47 mi → Exit 242"
                 }
               }
             ]
@@ -3267,13 +3160,13 @@
           },
           "lat": 34.0485448,
           "lng": -112.1494018,
-          "arrive": "10:30 AM",
-          "leave": "10:45 AM",
+          "arrive": "10:32 AM",
+          "leave": "10:42 AM",
           "website": null,
           "placeId": "ROCK_SPRINGS",
           "notes": {
-            "en": "Pick up a whole pie for the plane. You can choose a pickup time online. Do not sit down to eat",
-            "zh": "只取整个派带上飞机（可网上预订取货时间），不坐下吃"
+            "en": "Pick up the whole pie only, 10 minutes. Do not sit down to eat",
+            "zh": "只取预订好的整个派（10 分钟），不坐下吃"
           },
           "hours": {
             "en": "Daily 7 AM–8 PM",
@@ -3370,14 +3263,14 @@
                   "en": "Drive",
                   "zh": "开车"
                 },
-                "duration": "~45 min",
+                "duration": "66 min（基准 59 min，+11%）",
                 "from": "Rock Springs Cafe",
-                "to": "PHX Rental Car Center",
-                "durationZh": "约45 分钟",
-                "distanceM": 66000,
+                "to": "PHX Rental Car Center (加油后还车)",
+                "durationZh": "66 分钟（基准 59 min，+11%）",
+                "distanceM": 78000,
                 "note": {
                   "en": "",
-                  "zh": "\ude97 I-17 S 40 mi → I-10 E → AZ-143/Sky Harbor 出口跟 Rental Car Return 标志；还车前在附近加满油"
+                  "zh": "I-17 S 40 mi → I-10 E → AZ-143/Sky Harbor 出口跟 Rental Car Return 标志；还车前在附近加满油"
                 }
               }
             ]
@@ -3392,13 +3285,13 @@
           },
           "lat": 33.4303846,
           "lng": -112.0455742,
-          "arrive": "11:35 AM",
-          "leave": "11:55 AM",
+          "arrive": "11:48 AM",
+          "leave": "11:58 AM",
           "website": null,
           "placeId": "PHX_RCC",
           "notes": {
-            "en": "Return the car. The booking is 12:00 PM. Return it on time",
-            "zh": "还车（订单 12:00 PM，按时还）"
+            "en": "Return the car. The drop-off is 12:00 PM. Arrive at 11:48",
+            "zh": "还车（订单 12:00 PM，11:48 到）"
           },
           "booked": true,
           "transit": {
@@ -3409,13 +3302,13 @@
                   "en": "Sky Train",
                   "zh": "机场列车"
                 },
-                "duration": "~15 min",
+                "duration": "15 min（基准 13 min，+15%）",
                 "from": "PHX Rental Car Center",
                 "to": "PHX T4",
-                "durationZh": "约15 分钟",
+                "durationZh": "15 分钟（基准 13 min，+15%）",
                 "note": {
                   "en": "",
-                  "zh": "\ude9d PHX Sky Train → Terminal 4 → AA 柜台/安检"
+                  "zh": "PHX Sky Train → Terminal 4（Level 3 直通安检）"
                 }
               }
             ]
@@ -3430,13 +3323,13 @@
           },
           "lat": 33.4328486,
           "lng": -112.0067915,
-          "arrive": "12:15 PM",
+          "arrive": "12:13 PM",
           "leave": "3:29 PM",
           "website": null,
           "placeId": "PHX",
           "notes": {
-            "en": "Security, then lunch, departing at 3:29 PM and arriving at JFK at 10:14 PM ET",
-            "zh": "安检 → 午餐（见）→ 3:29 PM 起飞 → JFK 10:14 PM ET"
+            "en": "Security at T4, then lunch at Four Peaks (A20), departing 3:29 PM and arriving at JFK at 10:14 PM ET",
+            "zh": "T4 安检 → 午餐 Four Peaks（A20，见）→ 3:29 PM 起飞 → JFK 10:14 PM ET"
           },
           "hours": {
             "en": "Flight confirmed",
@@ -3455,8 +3348,8 @@
           "zh": "已定方案 A：按 Avis 订单 12:00 PM 还车（不改时间、不加费）"
         },
         {
-          "en": "Arrive at the return lot at 11:35, with 25 minutes of buffer. Fill the tank nearby first",
-          "zh": "11:35 到还车点，留 25 分钟缓冲；还车前在附近加满油"
+          "en": "Montezuma is shortened to 35 minutes. Arrive at the car return at 11:48, including 10 minutes for fuel",
+          "zh": "Montezuma 缩短为 35 分钟；11:48 到还车点（含加油 10 分钟）"
         }
       ]
     }
@@ -4019,36 +3912,8 @@
         "zh": "All Day Dining 11 AM–9 PM（7 月菜单；11/20 复业后 ⚠ 再确认）"
       },
       "note": {
-        "en": "Harvey House has no Navajo taco or chili. It is the Fred Harvey Double Bacon Cheeseburger, Pot Roast, and Tortilla Black Bean Soup",
-        "zh": "Harvey House 菜单没有 Navajo taco 和 chili → 换成 Fred Harvey Double Bacon Cheeseburger / Pot Roast / Tortilla Black Bean Soup"
-      }
-    },
-    {
-      "place": "Yavapai Lodge Tavern / Dining Hall",
-      "dishes": [
-        {
-          "en": "Elk burger",
-          "zh": "Elk burger"
-        },
-        {
-          "en": "Pulled-pork burger",
-          "zh": "Pulled-pork burger"
-        },
-        {
-          "en": "Chili",
-          "zh": "Chili（原写法）"
-        }
-      ],
-      "sources": [
-        "https://www.visitgrandcanyon.com/dining/yavapai-tavern/"
-      ],
-      "hours": {
-        "en": "⚠ Still to confirm",
-        "zh": "⚠ 待确认"
-      },
-      "note": {
-        "en": "Burger/Chili is now an elk burger or a pulled-pork burger. The place may not have reopened",
-        "zh": "'Burger/Chili' → Elk burger / Pulled-pork burger；注明可能未恢复营业"
+        "en": "Harvey House has no Navajo taco or chili. It is the Fred Harvey Double Bacon Cheeseburger, Pot Roast, and Tortilla Black Bean Soup. NPS: from 11/20, 11 AM–8 PM",
+        "zh": "Harvey House 菜单没有 Navajo taco 和 chili → 换成 Fred Harvey Double Bacon Cheeseburger / Pot Roast / Tortilla Black Bean Soup；NPS 11/20 起 11 AM–8 PM"
       }
     },
     {
@@ -4059,16 +3924,16 @@
           "zh": "Navajo Hot Beef（官网介绍文字，非菜单表）"
         },
         {
-          "en": "Prime Rib",
-          "zh": "Prime Rib"
+          "en": "Steak Ranchero",
+          "zh": "Steak Ranchero"
         },
         {
           "en": "Combination Plate",
           "zh": "Combination Plate"
         },
         {
-          "en": "Steak Ranchero",
-          "zh": "Steak Ranchero"
+          "en": "Enchilada Plate",
+          "zh": "Enchilada Plate"
         },
         {
           "en": "Fruit Pies",
@@ -4083,8 +3948,8 @@
         "zh": "6 AM–9 PM"
       },
       "note": {
-        "en": "New first choice. Big John's site now closes at 8 PM, so 7:35 is too tight and the signature plate often sells out. Dinner is at Cameron at 6:05. Arrival in Page stays 8:35",
-        "zh": "新首选：Big John's 官网现在只开到 8 PM，7:35 到太赶（招牌菜常卖完）→ 改在 Cameron 6:05 吃晚餐，8:35 到 Page 不变"
+        "en": "v1.4: Prime Rib is now Steak Ranchero, so it is not the same plate as Friday's prime rib at Cowboy Club",
+        "zh": "v1.4：Prime Rib 换成 Steak Ranchero（避免与周五 Cowboy Club 的 prime rib 重复）"
       }
     },
     {
@@ -4398,6 +4263,48 @@
       }
     },
     {
+      "place": "Four Peaks Brewing Company (PHX T4, A concourse)",
+      "dishes": [
+        {
+          "en": "Chicken Enchiladas",
+          "zh": "Chicken Enchiladas"
+        },
+        {
+          "en": "8th Street Pale Ale Chicken Strips",
+          "zh": "8th Street Pale Ale Chicken Strips"
+        },
+        {
+          "en": "Brick House Wings",
+          "zh": "Brick House Wings"
+        },
+        {
+          "en": "Bavarian Pretzel",
+          "zh": "Bavarian Pretzel"
+        },
+        {
+          "en": "Kilt Lifter",
+          "zh": "Kilt Lifter"
+        },
+        {
+          "en": "Pub Fish & Chips",
+          "zh": "Pub Fish & Chips（原写法，只在 Tempe 8th St 店菜单）"
+        }
+      ],
+      "sources": [
+        "https://www.fourpeaks.com/sky-harbor",
+        "https://www.skyharbor.com/at-the-airport/food-drinks/four-peaks-brewing-company-255/",
+        "https://www.checkle.com/biz/four-peaks-brewing-company-airport-phoenix/menu"
+      ],
+      "hours": {
+        "en": "7:30–7:30",
+        "zh": "7:30–7:30"
+      },
+      "note": {
+        "en": "v1.4: now the first choice. The airport Matt's has a Google rating of 3.7. Pub Fish & Chips was on the Tempe menu and is not at the airport. Use the airport menu: Chicken Enchiladas, Chicken Strips, Wings, and a Pretzel",
+        "zh": "v1.4：升为首选（Matt's 机场店 Google 3.7★）；v1.3 的 Pub Fish & Chips 来源是 Tempe 店菜单，机场店没有 → 换成机场菜单上的 Chicken Enchiladas / Chicken Strips / Wings / Pretzel"
+      }
+    },
+    {
       "place": "Matt's Big Breakfast (PHX T4)",
       "dishes": [
         {
@@ -4422,37 +4329,8 @@
         "zh": "机场官网：每天 5 AM–末班机"
       },
       "note": {
-        "en": "Names are The Hog & Chick and Griddlecakes. The airport menu may be shorter",
-        "zh": "名称改为 The Hog & Chick / Griddlecakes（机场店菜单可能是精简版）"
-      }
-    },
-    {
-      "place": "Four Peaks Brewing Company (PHX T4, A concourse)",
-      "dishes": [
-        {
-          "en": "Kilt Lifter",
-          "zh": "Kilt Lifter"
-        },
-        {
-          "en": "Pub Fish & Chips",
-          "zh": "Pub Fish & Chips"
-        },
-        {
-          "en": "Four Peaks burger (previous name, not verified)",
-          "zh": "Four Peaks 汉堡（原写法，名称未核实）"
-        }
-      ],
-      "sources": [
-        "https://www.fourpeaks.com/sky-harbor",
-        "https://sagemenu.com/phoenix/four-peaks-brewing-tempe-2/"
-      ],
-      "hours": {
-        "en": "7:30–7:30",
-        "zh": "7:30–7:30"
-      },
-      "note": {
-        "en": "Dropped the unnamed burger. Fish and chips is now Pub Fish & Chips. Hours follow the site, 7:30–7:30",
-        "zh": "删掉名称不明的 '汉堡'；Fish & chips 改为 Pub Fish & Chips；时间改为官网 7:30–7:30"
+        "en": "v1.4: now a backup, Google rating 3.7. Names are The Hog & Chick and Griddlecakes. The airport menu may be shorter",
+        "zh": "v1.4：降为备选（Google 3.7★）；名称改为 The Hog & Chick / Griddlecakes（机场店菜单可能是精简版）"
       }
     },
     {
