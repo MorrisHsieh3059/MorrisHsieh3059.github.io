@@ -478,17 +478,21 @@
 	margin-top: 0.15rem;
 }
 
-/* Real award-list logos (not tinted icons) — fixed height with auto
-   width so square marks (50 Best, OAD) and wordmark-shaped logos
-   (101 Best Steakhouses/Burgers, which are tall; OAD's own mark is
-   wide) all read at a consistent height instead of being squashed
-   into a forced square box. */
+/* Real award-list logos — fixed height with auto width so square marks
+   (50 Best, NYT, 50 Top Pizza) and tall wordmarks (101 Best) share one
+   height. OAD is a wide wordmark, so the same height makes it about
+   three times as wide; scale that file down to the others' footprint. */
 .award-accolade-icon {
 	height: 18px;
 	width: auto;
 	max-width: 60px;
 	object-fit: contain;
 	flex: 0 0 auto;
+}
+
+.award-accolade-icon[src*="oad.svg"] {
+	height: 11px;
+	max-width: none;
 }
 
 .michelin-meta,
@@ -1195,6 +1199,11 @@
 	max-width: 34px;
 	object-fit: contain;
 	display: block;
+}
+
+.dining-timeline-award-mark[src*="oad.svg"] {
+	height: 10px;
+	max-width: none;
 }
 
 .dining-timeline-card-line2 {
