@@ -409,11 +409,15 @@
 
 	var STREET_ZOOM = 17;
 
-	function markerIcon(n, status, active, dx, dy) {
+	function isDining(stop) {
+		return !!stop && (stop.type === 'restaurant' || stop.type === 'bar' || stop.type === 'cafe');
+	}
+
+	function markerIcon(n, status, active, dx, dy, dining) {
 		dx = dx || 0;
 		dy = dy || 0;
 		return L.divIcon({
-			className: 'guide-marker ' + statusClass(status) + (active ? ' is-active' : ''),
+			className: 'guide-marker ' + statusClass(status) + (active ? ' is-active' : '') + (dining ? ' is-meal' : ''),
 			html: '<span>' + n + '</span>',
 			iconSize: [30, 30],
 			iconAnchor: [15 - dx, 15 - dy]
@@ -496,7 +500,7 @@
 
 	function refreshMarkerIcon(m) {
 		var on = state.active === m.index;
-		m.marker.setIcon(markerIcon(m.number, m.status, on, m.dx || 0, m.dy || 0));
+		m.marker.setIcon(markerIcon(m.number, m.status, on, m.dx || 0, m.dy || 0, m.dining));
 		m.marker.setZIndexOffset(on ? 900 : ((m.dx || m.dy) ? 200 : 0));
 	}
 
@@ -600,8 +604,9 @@
 			var ll = [stop.lat, stop.lng];
 			line.push(ll);
 			var shownStatus = displayStatus(stop);
+			var dining = isDining(stop);
 			var marker = L.marker(ll, {
-				icon: markerIcon(i + 1, shownStatus, state.active === i, 0, 0),
+				icon: markerIcon(i + 1, shownStatus, state.active === i, 0, 0, dining),
 				keyboard: true,
 				title: placeName(stop),
 				zIndexOffset: state.active === i ? 900 : 0
@@ -613,6 +618,7 @@
 				number: i + 1,
 				status: shownStatus,
 				marker: marker,
+				dining: dining,
 				dx: 0,
 				dy: 0
 			});
@@ -871,7 +877,7 @@
 		var backups = backupsHtml(stop, index);
 		var gap = stop.transit ? '' : ' is-gap';
 		var inner = timeCol(stop) +
-			'<div class="guide-tl-axis"><span class="guide-tl-dot ' + statusClass(shown) + '">' + (index + 1) + '</span></div>' +
+			'<div class="guide-tl-axis"><span class="guide-tl-dot ' + statusClass(shown) + (isDining(stop) ? ' is-meal' : '') + '">' + (index + 1) + '</span></div>' +
 			'<div class="guide-tl-body">' +
 				'<div class="guide-tl-head">' +
 					'<div class="guide-stop-titles"><h3>' + esc(placeName(stop)) + '</h3>' + native +
