@@ -3,8 +3,10 @@
     "id": "carbone-112026",
     "name": "Carbone",
     "date": "2026-11-20",
+    "stars": 1,
+    "status": "former",
     "rank": "selected",
-    "status": "current",
+    "rankStatus": "current",
     "cuisines": [
       "Italian",
       "Italian-American"

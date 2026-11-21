@@ -509,11 +509,11 @@
 		the starred visits (one restaurant list, one source of truth) but
 		rendered on its own tab/grid, split out by visit.rank.
 
-		visit.rank: 'gourmand' | 'selected' (mutually exclusive with
-		visit.stars — a visit is either a starred entry or a Gourmand-tab
-		entry, never both)
-		visit.status: "current" | "former" (still holds the distinction
-		today, or not)
+		visit.rank: 'gourmand' | 'selected'
+		visit.status: "current" | "former" for that rank, unless the visit
+		also has stars. A former or current star that is still Selected or
+		Bib Gourmand carries both: stars + status for the Stars tab, and
+		rank + rankStatus ("current" | "former") for this tab.
 
 		Card/popup markup, filters and photoPath all reuse the michelin
 		tab's plumbing (same .michelin-card/.michelin-popup-header markup,
@@ -530,6 +530,14 @@
 		return visit.rank === 'gourmand' || visit.rank === 'selected';
 	}
 
+	// Star status stays on visit.status. When a visit is also on this tab,
+	// rankStatus is the Guide distinction; rank-only visits keep using status.
+	function guideStatus(visit) {
+		if (visit.rankStatus === 'former' || visit.rankStatus === 'current') return visit.rankStatus;
+		if (parseInt(visit.stars, 10) >= 1) return 'current';
+		return visit.status === 'former' ? 'former' : 'current';
+	}
+
 	// 'gourmand' (Bib Gourmand) shows its badge icon next to the name, same
 	// as a starred visit. 'selected' is a quieter distinction — no icon by
 	// the name, just a "Former" label when it applies (the stats banner
@@ -537,7 +545,7 @@
 	function rankHtml(visit) {
 		var meta = RANK_META[visit.rank];
 		if (!meta) return '';
-		var isFormer = visit.status === 'former';
+		var isFormer = guideStatus(visit) === 'former';
 		if (visit.rank === 'selected') {
 			return isFormer
 				? '<span class="michelin-stars"><span class="mich-former-label">Former</span></span>'
@@ -609,7 +617,7 @@
 			Object.keys(latestByName).forEach(function (key) {
 				var v = latestByName[key];
 				if (v.rank !== rank) return;
-				if (v.status === 'former') { former++; } else { current++; }
+				if (guideStatus(v) === 'former') { former++; } else { current++; }
 			});
 			var meta = RANK_META[rank];
 			groups.push(
@@ -1159,7 +1167,9 @@
 	function loadData() {
 		$.getJSON('data/michelin.json').done(function (data) {
 			michelinData = data;
-			render(data.filter(function (v) { return !isGourmandVisit(v); }));
+			render(data.filter(function (v) {
+				return parseInt(v.stars, 10) >= 1 || !isGourmandVisit(v);
+			}));
 			renderGourmand(data.filter(isGourmandVisit));
 			tryRenderTimeline();
 		}).fail(function () {
@@ -1229,13 +1239,13 @@
 	}
 
 	function timelineMichelinMarks(visit) {
-		var isFormer = visit.status === 'former';
 		var parts = [];
 		var count = parseInt(visit.stars, 10);
 		var i;
 
 		if (count >= 1) {
-			var starClass = 'mich-star' + (isFormer ? ' mich-star-former' : '');
+			var starFormer = visit.status === 'former';
+			var starClass = 'mich-star' + (starFormer ? ' mich-star-former' : '');
 			var stars = '';
 			for (i = 0; i < count; i++) {
 				stars += '<span class="' + starClass + '"></span>';
@@ -1245,9 +1255,10 @@
 
 		if (isGourmandVisit(visit)) {
 			var meta = RANK_META[visit.rank];
+			var rankFormer = guideStatus(visit) === 'former';
 			if (meta && meta.icon) {
 				parts.push(
-					'<img class="mich-bib-icon' + (isFormer ? ' mich-bib-icon-former' : '') + '" src="' + iconPath(meta.icon) + '" alt="">'
+					'<img class="mich-bib-icon' + (rankFormer ? ' mich-bib-icon-former' : '') + '" src="' + iconPath(meta.icon) + '" alt="">'
 				);
 			}
 		}
