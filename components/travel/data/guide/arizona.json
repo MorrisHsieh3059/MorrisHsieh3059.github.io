@@ -1,6 +1,6 @@
 {
   "id": "arizona",
-  "version": "v1.4",
+  "version": "v1.5",
   "draft": true,
   "country": {
     "en": "United States",
@@ -598,8 +598,8 @@
       "date": "2026-11-27",
       "weekday": "Fri",
       "title": {
-        "en": "Full Sedona day · Devil's Bridge first shuttle, Tlaquepaque and Hideaway House, the Chapel, Uptown, Cathedral Rock, Cowboy Club",
-        "zh": "Sedona 全天 · Devil's Bridge 首班车 → Tlaquepaque + Hideaway House → Chapel of the Holy Cross → Uptown → Cathedral Rock → Cowboy Club"
+        "en": "Three-trail day in Sedona: Subway Cave in Boynton Canyon, Devil's Bridge on Route 11, lunch at Coffee Pot, Chapel of the Holy Cross, Cathedral Rock on Route 15, and Cowboy Club",
+        "zh": "Sedona 三条步道日 · Subway Cave（Boynton Canyon）→ Devil's Bridge（Route 11）→ Coffee Pot 午餐 → Chapel of the Holy Cross → Cathedral Rock（Route 15）→ Cowboy Club"
       },
       "stops": [
         {
@@ -612,12 +612,12 @@
           "lat": 34.8624924,
           "lng": -111.8122571,
           "arrive": null,
-          "leave": "5:50 AM",
+          "leave": "6:25 AM",
           "website": null,
           "placeId": "DREAMCATCHER",
           "notes": {
-            "en": "Leave. Breakfast is not included",
-            "zh": "出发（不含早餐）"
+            "en": "Leave at 6:25. Skip a sit-down breakfast and bring a grab-and-go. Hang the America the Beautiful pass on the mirror",
+            "zh": "6:25 出发（不吃坐下早餐，带 grab-and-go）；America the Beautiful 年票挂后视镜"
           },
           "booked": true,
           "transit": {
@@ -628,108 +628,59 @@
                   "en": "Drive",
                   "zh": "开车"
                 },
-                "duration": "5 min（基准 2 min，+127%）",
-                "from": "Dreamcatcher",
-                "to": "Coffee Pot Restaurant",
-                "durationZh": "5 分钟（基准 2 min，+127%）",
-                "distanceM": 1600,
+                "duration": "15 min（基准 10 min，+43%）",
+                "from": "Dreamcatcher Inn",
+                "to": "Boynton Canyon Trailhead",
+                "durationZh": "15 分钟（基准 10 min，+43%）",
+                "distanceM": 7900,
                 "note": {
                   "en": "",
-                  "zh": "89A E 1.5 mi，左侧；店前免费停车"
+                  "zh": "89A W 0.2 mi → 右转 Dry Creek Rd 2.0 mi → 靠左上 Boynton Pass Rd 0.9 mi → T 字路口左转（往 Enchantment）1.6 mi → 右转进 Forest Service 停车场（Enchantment Resort 大门前）；Forest Service 小停车场（约 25–36 位，Black Friday 7:00–7:30 就满）；年票有效"
                 }
               }
             ]
           }
         },
         {
-          "type": "restaurant",
+          "type": "sight",
           "status": "confirmed",
           "name": {
-            "en": "Coffee Pot Restaurant",
-            "zh": "Coffee Pot Restaurant"
+            "en": "Subway Cave (Boynton Canyon Trail No. 47)",
+            "zh": "Subway Cave (Boynton Canyon Trail No. 47)"
           },
-          "lat": 34.8643404,
-          "lng": -111.796738,
-          "arrive": "5:55 AM",
-          "leave": "6:40 AM",
-          "website": "https://coffeepotsedona.com/",
-          "placeId": "COFFEE_POT",
+          "lat": 34.932365,
+          "lng": -111.862797,
+          "arrive": "6:40 AM",
+          "leave": "9:30 AM",
+          "website": "https://www.fs.usda.gov/r03/coconino/recreation/trails/boynton-canyon-trail-no-47",
+          "placeId": "SUBWAY_CAVE",
           "notes": {
-            "en": "Breakfast. It opens at 6 AM. Arrive at 5:55 to be at the front of the first seating",
-            "zh": "早餐（6 AM 开门；5:55 到门口排第一批）"
+            "en": "Boynton Canyon Trail No. 47. About 2 miles in, turn right behind the large alligator juniper onto an unmarked path, about 0.3–0.4 miles. People sometimes lay branches across it on purpose. The last stretch is steep slickrock. Use hands and feet to climb into the cave. About 5 miles round trip. Allow 2 hours 50 minutes, including parking, the restroom, and photos in the cave",
+            "zh": "Boynton Canyon Trail No. 47 → 约 2 mi 处左手边大棵 alligator juniper（鳄皮刺柏）后右转进无标志小路（约 0.3–0.4 mi，有人故意横放树枝）→ 最后一段陡滑的 slickrock 手脚并用爬进洞；往返约 5 mi，留 2 小时 50 分（含停车、厕所、洞里拍照）"
           },
           "hours": {
-            "en": "Official site: daily 6 AM–2 PM",
-            "zh": "官网：每天 6 AM–2 PM"
+            "en": "The trail is open all day. Sunrise is about 7:11 AM. It is still dark at 6:45, so use a headlamp or phone light for the first 20 minutes",
+            "zh": "步道全天开放；日出约 7:11 AM，6:45 起步天还暗 → 带头灯/手机灯走前 20 分钟"
           },
-          "mustOrder": [
+          "mustSee": [
             {
               "text": {
-                "en": "#101 Jelly, Peanut Butter and Banana",
-                "zh": "#101 Jelly, Peanut Butter and Banana（101 号煎蛋卷，Elvis 传说那款）"
+                "en": "The curved red-sandstone subway tunnel at the cave mouth. Stand inside and photograph the half-circle opening",
+                "zh": "洞口弧形红砂岩'地铁隧道'——站在洞内往外拍半圆形洞口"
               }
             },
             {
               "text": {
-                "en": "#49 Green Chile and Cheese",
-                "zh": "#49 Green Chile and Cheese（青辣椒芝士煎蛋卷）"
+                "en": "The Sinagua cliff dwelling beside the cave is about 800 years old. Look only. Do not touch, enter, or climb the walls. ARPA protects it",
+                "zh": "洞旁 Sinagua 古崖居遗址（800 年；只看不碰、不进、不爬墙，受 ARPA 法保护）"
               }
             },
             {
               "text": {
-                "en": "Huevos Rancheros",
-                "zh": "Huevos Rancheros（green chile sauce）"
+                "en": "Red rock walls on both sides of Boynton Canyon, and Kachina Woman on the way back",
+                "zh": "Boynton Canyon 两侧红岩壁 + 回程看 Kachina Woman 岩柱"
               }
             }
-          ],
-          "cuisine": {
-            "en": "Historic local",
-            "zh": "老字号本地菜"
-          },
-          "backups": [
-            {
-              "name": "Miley's Cafe",
-              "nameEn": "Miley's Cafe",
-              "placeId": "MILEYS",
-              "website": "https://mileyscafe.com/",
-              "mustOrder": [
-                {
-                  "text": {
-                    "en": "Miley's Burrito",
-                    "zh": "Miley's Burrito（牛肉+豆，enchilada sauce，偏辣）"
-                  }
-                }
-              ],
-              "menuSource": [
-                "https://mileyscafe.com/-food-menu"
-              ]
-            },
-            {
-              "name": "Red Rock Cafe",
-              "nameEn": "Red Rock Cafe",
-              "placeId": "RED_ROCK_CAFE",
-              "mustOrder": [
-                {
-                  "text": {
-                    "en": "Biscuits & Country Gravy",
-                    "zh": "Biscuits & Country Gravy"
-                  }
-                },
-                {
-                  "text": {
-                    "en": "Pancakes",
-                    "zh": "Pancakes（2 或 3 片）"
-                  }
-                }
-              ],
-              "menuSource": [
-                "https://order.toasttab.com/online/red-rock-cafe-100-verde-valley-school-rd"
-              ]
-            }
-          ],
-          "menuSource": [
-            "https://coffeepotsedona.com/menu/",
-            "https://coffee-pot-restaurant.hub.biz/app/online-menu"
           ],
           "transit": {
             "segments": [
@@ -739,14 +690,14 @@
                   "en": "Drive",
                   "zh": "开车"
                 },
-                "duration": "6 min（基准 3 min，+82%）",
-                "from": "Coffee Pot",
+                "duration": "15 min（基准 11 min，+34%）",
+                "from": "Boynton Canyon Trailhead",
                 "to": "West SR-89A Park & Ride",
-                "durationZh": "6 分钟（基准 3 min，+82%）",
-                "distanceM": 3500,
+                "durationZh": "15 分钟（基准 11 min，+34%）",
+                "distanceM": 9300,
                 "note": {
                   "en": "",
-                  "zh": "89A W 2 mi → 右转 Upper Red Rock Loop Rd → 905 号停车场（免费，禁过夜）"
+                  "zh": "出停车场左转 1.6 mi → 右转 Boynton Pass Rd 0.9 mi → 靠右 Dry Creek Rd 2.0 mi → 右转 89A W 1.1 mi → 左转 Upper Red Rock Loop Rd → 右侧 West SR-89A Park & Ride（905 号）；Park & Ride 免费"
                 }
               },
               {
@@ -761,7 +712,7 @@
                 "durationZh": "12 分钟（基准 10 min，+20%）",
                 "note": {
                   "en": "",
-                  "zh": "Sedona Shuttle Route 11 首班 7:00（每 30 分钟一班，免费；11/19–11/29 每天运行，感恩节当天除外）→ Dry Creek Vista 7:10"
+                  "zh": "Route 11 每 :00 / :30 发车（免费）→ Dry Creek Vista 10:10"
                 }
               }
             ]
@@ -776,17 +727,17 @@
           },
           "lat": 34.8900834,
           "lng": -111.8209499,
-          "arrive": "7:12 AM",
-          "leave": "9:40 AM",
+          "arrive": "10:12 AM",
+          "leave": "12:40 PM",
           "website": null,
           "placeId": "DEVILS_BRIDGE",
           "notes": {
-            "en": "Devil's Bridge is about 6.4 km round trip (1.6 km of dirt road plus 1.6 km of trail each way). The last 400 m of steps are steep, and the bridge photo has a queue",
-            "zh": "Devil's Bridge 往返约 6.4 km（土路 1.6 km + 步道 1.6 km，单程），最后 400 m 石阶较陡；桥上拍照排队"
+            "en": "About 6.4 km round trip, about 55 minutes each way. Start at 10:12, reach the bridge around 11:10, photograph until 11:45, then walk back to Dry Creek Vista for the 12:40 return bus",
+            "zh": "往返约 6.4 km（单程约 55 分钟）。10:12 起步 → ~11:10 到桥 → 拍照到 11:45 → 走回 Dry Creek Vista 赶 12:40 回程车"
           },
           "hours": {
-            "en": "The trail is open all day. The shuttle runs on 11/27",
-            "zh": "步道全天开放；Shuttle 11/27 运行（官网节假日表）"
+            "en": "⚠ On Black Friday the midday photo line is 40–60 minutes. If it is longer than 35 minutes at 11:10, do not wait. Photograph from beside or below the bridge. Leave the bridge at 11:45 for the 12:40 bus. 12:15 is the latest, which means the 1:10 bus and lunch to go. Coffee Pot closes at 2 PM",
+            "zh": "⚠ Black Friday 中午排队 40–60 分钟：11:10 到桥时队伍 >35 分钟就别排，改在桥侧/桥下拍全景。 11:45 一定离开桥（赶 12:40 车）；最晚 12:15 离开 → 1:10 车（这样午餐只能外带，Coffee Pot 2 PM 关门）"
           },
           "mustSee": [
             {
@@ -822,7 +773,7 @@
                 "durationZh": "20 分钟（基准 18 min，+11%）",
                 "note": {
                   "en": "",
-                  "zh": "Route 11 回程 9:40 → 9:58 到 Park & Ride（下一班 10:10）"
+                  "zh": "Route 11 回程每 :10 / :40；12:40 → 12:58"
                 }
               },
               {
@@ -831,76 +782,14 @@
                   "en": "Drive",
                   "zh": "开车"
                 },
-                "duration": "12 min（基准 7 min，+79%）",
+                "duration": "6 min（基准 3 min，+87%）",
                 "from": "West SR-89A Park & Ride",
-                "to": "Tlaquepaque",
-                "durationZh": "12 分钟（基准 7 min，+79%）",
-                "distanceM": 7000,
+                "to": "Coffee Pot Restaurant",
+                "durationZh": "6 分钟（基准 3 min，+87%）",
+                "distanceM": 3600,
                 "note": {
                   "en": "",
-                  "zh": "89A E 穿过 West Sedona → Y 环岛右转 AZ-179 S 0.3 mi → Tlaquepaque 停车场"
-                }
-              }
-            ]
-          }
-        },
-        {
-          "type": "sight",
-          "status": "confirmed",
-          "name": {
-            "en": "Tlaquepaque Arts & Shopping Village",
-            "zh": "Tlaquepaque Arts & Shopping Village"
-          },
-          "lat": 34.8621084,
-          "lng": -111.763321,
-          "arrive": "10:12 AM",
-          "leave": "10:51 AM",
-          "website": null,
-          "placeId": "TLAQUEPAQUE",
-          "notes": {
-            "en": "Walk the Mexican colonial-style arts village. Shops open about 10 AM",
-            "zh": "逛墨西哥殖民风艺术村（商店约 10 AM 开）"
-          },
-          "hours": {
-            "en": "Daily 10 AM–5 PM. Shops vary",
-            "zh": "每天 10 AM–5 PM（店家各异）"
-          },
-          "mustSee": [
-            {
-              "text": {
-                "en": "Chapel courtyard, small chapel, and bell tower",
-                "zh": "Chapel 小礼拜堂与钟楼庭院"
-              }
-            },
-            {
-              "text": {
-                "en": "Stone fountain court under the sycamores",
-                "zh": "梧桐树下的石砌喷泉庭院"
-              }
-            },
-            {
-              "text": {
-                "en": "Gallery row, including Mountain Trails",
-                "zh": "画廊街（Mountain Trails 等）"
-              }
-            }
-          ],
-          "transit": {
-            "segments": [
-              {
-                "mode": "walk",
-                "label": {
-                  "en": "Walk",
-                  "zh": "步行"
-                },
-                "duration": "7 min（基准 5 min，+43%）",
-                "from": "Tlaquepaque",
-                "to": "Hideaway House",
-                "durationZh": "7 分钟（基准 5 min，+43%）",
-                "distanceM": 450,
-                "note": {
-                  "en": "",
-                  "zh": "沿 AZ-179 往北 450 m（过 Oak Creek 桥）到 Hideaway House"
+                  "zh": "89A E 1.4 mi，左侧（Basha's 和 Safeway 之间）；店前免费停车"
                 }
               }
             ]
@@ -910,40 +799,40 @@
           "type": "restaurant",
           "status": "confirmed",
           "name": {
-            "en": "Hideaway House",
-            "zh": "Hideaway House"
+            "en": "Coffee Pot Restaurant",
+            "zh": "Coffee Pot Restaurant"
           },
-          "lat": 34.8645315,
-          "lng": -111.7632975,
-          "arrive": "10:58 AM",
-          "leave": "12:10 PM",
-          "website": "https://sedonahideawayhouse.com/",
-          "placeId": "HIDEAWAY",
+          "lat": 34.8643404,
+          "lng": -111.796738,
+          "arrive": "1:06 PM",
+          "leave": "1:50 PM",
+          "website": "https://coffeepotsedona.com/",
+          "placeId": "COFFEE_POT",
           "notes": {
-            "en": "Lunch. Arrive at the 11 AM opening, walk in, and ask for a terrace seat facing the red rocks",
-            "zh": "午餐（11 点开门就到，walk-in，要露台位看 Oak Creek 红岩）"
+            "en": "Lunch, about 45 minutes. Breakfast is served all day, and lunch starts at 11 AM. Sign in at the door and wait. If it is crowded, order to go on the website",
+            "zh": "午餐约 45 分钟（全天供应早餐，11 AM 起有午餐；到店先在门口签到候位）；人多就点外带（官网可网上点）"
           },
           "hours": {
-            "en": "Official site: daily from 11 AM. Parties of this size are walk-in only",
-            "zh": "官网：每天 11 AM 起；2–只接 walk-in"
+            "en": "Official site: daily 6 AM–2 PM",
+            "zh": "官网：每天 6 AM–2 PM"
           },
           "mustOrder": [
             {
               "text": {
-                "en": "Roma 或 Blanco Classico",
-                "zh": "Roma 或 Blanco Classico（14\" 招牌披萨；Blanco Classico 是 House favorite 白披萨）"
+                "en": "#101 Jelly, Peanut Butter and Banana",
+                "zh": "#101 Jelly, Peanut Butter and Banana（101 号煎蛋卷，Elvis 传说那款）"
               }
             },
             {
               "text": {
-                "en": "Meat Lasagna",
-                "zh": "Meat Lasagna"
+                "en": "#49 Green Chile and Cheese",
+                "zh": "#49 Green Chile and Cheese（青辣椒芝士煎蛋卷）"
               }
             },
             {
               "text": {
-                "en": "Hideaway Antipasto",
-                "zh": "Hideaway Antipasto（House favorite 沙拉）"
+                "en": "Huevos Rancheros",
+                "zh": "Huevos Rancheros（green chile sauce）"
               }
             }
           ],
@@ -952,6 +841,39 @@
             "zh": "老字号本地菜"
           },
           "backups": [
+            {
+              "name": "Hideaway House",
+              "nameEn": "Hideaway House",
+              "placeId": "HIDEAWAY",
+              "website": "https://sedonahideawayhouse.com/",
+              "mustOrder": [
+                {
+                  "text": {
+                    "en": "Roma 或 Blanco Classico",
+                    "zh": "Roma 或 Blanco Classico（14\" 招牌披萨；Blanco Classico 是 House favorite 白披萨）"
+                  }
+                },
+                {
+                  "text": {
+                    "en": "Meat Lasagna",
+                    "zh": "Meat Lasagna"
+                  }
+                },
+                {
+                  "text": {
+                    "en": "Hideaway Antipasto",
+                    "zh": "Hideaway Antipasto（House favorite 沙拉）"
+                  }
+                }
+              ],
+              "cuisine": {
+                "en": "Historic local",
+                "zh": "老字号本地菜"
+              },
+              "menuSource": [
+                "https://sedonahideawayhouse.com/food-menu"
+              ]
+            },
             {
               "name": "Javelina Cantina",
               "nameEn": "Javelina Cantina",
@@ -973,71 +895,28 @@
               "menuSource": [
                 "https://www.javelinacantinasedona.com/menu"
               ]
-            },
-            {
-              "name": "Oak Creek Brewery & Grill (Tlaquepaque)",
-              "nameEn": "Oak Creek Brewery & Grill (Tlaquepaque)",
-              "placeId": "OAK_CREEK_BREWERY",
-              "mustOrder": [
-                {
-                  "text": {
-                    "en": "Village Nut Brown Ale",
-                    "zh": "Village Nut Brown Ale"
-                  }
-                },
-                {
-                  "text": {
-                    "en": "Tlaquepaque Burger",
-                    "zh": "Tlaquepaque Burger"
-                  }
-                },
-                {
-                  "text": {
-                    "en": "14\" wood-fired pizza",
-                    "zh": "14\" wood-fired pizza"
-                  }
-                }
-              ],
-              "menuSource": [
-                "https://oakcreekbreweryandgrill.com/"
-              ]
             }
           ],
           "menuSource": [
-            "https://sedonahideawayhouse.com/food-menu"
+            "https://coffeepotsedona.com/menu/",
+            "https://coffee-pot-restaurant.hub.biz/app/online-menu"
           ],
           "transit": {
             "segments": [
-              {
-                "mode": "walk",
-                "label": {
-                  "en": "Walk",
-                  "zh": "步行"
-                },
-                "duration": "7 min（基准 4 min，+67%）",
-                "from": "Hideaway House",
-                "to": "Tlaquepaque parking (car)",
-                "durationZh": "7 分钟（基准 4 min，+67%）",
-                "distanceM": 450,
-                "note": {
-                  "en": "",
-                  "zh": "走回 Tlaquepaque 停车场取车"
-                }
-              },
               {
                 "mode": "drive",
                 "label": {
                   "en": "Drive",
                   "zh": "开车"
                 },
-                "duration": "10 min（基准 8 min，+27%）",
-                "from": "Tlaquepaque",
+                "duration": "15 min（基准 10 min，+43%）",
+                "from": "Coffee Pot Restaurant",
                 "to": "Chapel of the Holy Cross",
-                "durationZh": "10 分钟（基准 8 min，+27%）",
-                "distanceM": 5600,
+                "durationZh": "15 分钟（基准 10 min，+43%）",
+                "distanceM": 9200,
                 "note": {
                   "en": "",
-                  "zh": "AZ-179 S 3 mi → Chapel Rd 环岛左转 0.6 mi；停车只有 45 位，满了就坡顶下客"
+                  "zh": "89A E → Y 环岛右转 AZ-179 S 3 mi → Chapel Rd 环岛左转 0.6 mi；停车只有 45 位，满了就坡顶下客"
                 }
               }
             ]
@@ -1052,8 +931,8 @@
           },
           "lat": 34.8319894,
           "lng": -111.7667585,
-          "arrive": "12:27 PM",
-          "leave": "1:10 PM",
+          "arrive": "2:05 PM",
+          "leave": "2:45 PM",
           "website": "https://chapeloftheholycross.com/",
           "placeId": "CHAPEL",
           "notes": {
@@ -1061,8 +940,8 @@
             "zh": "上坡道进礼拜堂（保持安静），再到外平台看红岩"
           },
           "hours": {
-            "en": "Official site: daily 9 AM–5 PM, last entry 4:45. Third-party listings said Thanksgiving is closed, so this visit is Friday",
-            "zh": "官网：每天 9 AM–5 PM，最后入场 4:45；第三方：感恩节闭馆 → 改周五"
+            "en": "Daily 9 AM–5 PM. Last entry at 4:45",
+            "zh": "每天 9 AM–5 PM（最后入场 4:45）"
           },
           "mustSee": [
             {
@@ -1092,76 +971,14 @@
                   "en": "Drive",
                   "zh": "开车"
                 },
-                "duration": "12 min（基准 8 min，+54%）",
+                "duration": "9 min（基准 6 min，+38%）",
                 "from": "Chapel of the Holy Cross",
-                "to": "Uptown Sedona",
-                "durationZh": "12 分钟（基准 8 min，+54%）",
-                "distanceM": 6400,
-                "note": {
-                  "en": "",
-                  "zh": "AZ-179 N 3.5 mi → Y 环岛右转 89A N → Uptown 公共停车场（Forest Rd 停车楼）"
-                }
-              }
-            ]
-          }
-        },
-        {
-          "type": "sight",
-          "status": "confirmed",
-          "name": {
-            "en": "Uptown Sedona (Main St · Snoopy Rock view)",
-            "zh": "Uptown Sedona (Main St · Snoopy Rock view)"
-          },
-          "lat": 34.869779,
-          "lng": -111.7609231,
-          "arrive": "1:22 PM",
-          "leave": "2:40 PM",
-          "website": null,
-          "placeId": "UPTOWN",
-          "notes": {
-            "en": "Walk Uptown and look at Snoopy Rock. Cowboy Club is on this street",
-            "zh": "Uptown 主街散步 + 看 Snoopy Rock；确认晚餐 Cowboy Club 位置（就在主街）"
-          },
-          "hours": {
-            "en": "Shops about 10 AM–6 PM",
-            "zh": "商店约 10 AM–6 PM"
-          },
-          "mustSee": [
-            {
-              "text": {
-                "en": "Snoopy Rock and Lucy Rock silhouettes from the main street",
-                "zh": "主街看 Snoopy Rock / Lucy Rock 红岩剪影"
-              }
-            },
-            {
-              "text": {
-                "en": "Old western storefronts on the Sedona Heritage side streets",
-                "zh": "Sedona Heritage 小街两侧的西部老店面"
-              }
-            },
-            {
-              "text": {
-                "en": "The Cowboy Club sign, Birthplace of Cowboy Artists of America",
-                "zh": "Cowboy Club 门口 'Birthplace of Cowboy Artists of America' 牌子"
-              }
-            }
-          ],
-          "transit": {
-            "segments": [
-              {
-                "mode": "drive",
-                "label": {
-                  "en": "Drive",
-                  "zh": "开车"
-                },
-                "duration": "5 min（基准 2 min，+163%）",
-                "from": "Uptown Sedona",
                 "to": "North SR-179 Park & Ride",
-                "durationZh": "5 分钟（基准 2 min，+163%）",
-                "distanceM": 2400,
+                "durationZh": "9 分钟（基准 6 min，+38%）",
+                "distanceM": 4700,
                 "note": {
                   "en": "",
-                  "zh": "89A S → Y 环岛 → AZ-179 S 0.6 mi → 1294 SR-179 Park & Ride（免费）"
+                  "zh": "Chapel Rd → AZ-179 N 约 1.5 mi → 右侧 North SR-179 Park & Ride（1294 SR-179）；Park & Ride 免费"
                 }
               },
               {
@@ -1176,7 +993,7 @@
                 "durationZh": "12 分钟（基准 10 min，+20%）",
                 "note": {
                   "en": "",
-                  "zh": "Sedona Shuttle Route 15（每 15 分钟，最后一班去程 4:30）→ Cathedral Rock 站"
+                  "zh": "Route 15 每 15 分钟（:00/:15/:30/:45）→ Cathedral Rock 3:10"
                 }
               }
             ]
@@ -1196,8 +1013,8 @@
           "website": null,
           "placeId": "CATHEDRAL",
           "notes": {
-            "en": "About 2 km round trip, ~225 m of climbing, hands and feet on the last part. Leave the saddle at 4:30 for the 4:52 return shuttle. The 5:12 is only a backup",
-            "zh": "往返约 2 km，爬升 ~225 m，后半段手脚并用；4:30 从鞍部往下走，赶 4:52 回程车（5:12 末班只当备用）"
+            "en": "100 minutes on the trail. About 2 km round trip and about 225 m of climbing. The second half uses hands and feet. At 4:30 start down from the saddle for the 4:52 return bus. The 5:12 is the last bus and only a backup",
+            "zh": "步道 100 分钟：往返约 2 km，爬升 ~225 m，后半段手脚并用； 4:30 一定从鞍部往下走，赶 4:52 回程车（5:12 是末班，只当备用）"
           },
           "hours": {
             "en": "The shuttle runs on 11/27. Last Route 15 bus back is 5:12 PM",
@@ -1253,7 +1070,7 @@
                 "distanceM": 7400,
                 "note": {
                   "en": "",
-                  "zh": "AZ-179 N → 89A W 3.5 mi → 酒店；换掉登山装（傍晚，非午休）"
+                  "zh": "AZ-179 N → Y 环岛 → 89A W 3.5 mi → 酒店；回房换衣服（傍晚，非午休）"
                 }
               }
             ]
@@ -1273,8 +1090,8 @@
           "website": null,
           "placeId": "DREAMCATCHER",
           "notes": {
-            "en": "Back to the room to change, in the evening",
-            "zh": "回房换衣服（傍晚）"
+            "en": "Back to the room to wash up and change. This is the evening, not a midday break",
+            "zh": "回房洗把脸、换衣服（傍晚）"
           },
           "booked": true,
           "transit": {
@@ -1289,7 +1106,7 @@
                 "from": "Dreamcatcher Inn",
                 "to": "Cowboy Club (Uptown)",
                 "durationZh": "12 分钟（基准 5 min，+122%）",
-                "distanceM": 5500,
+                "distanceM": 5400,
                 "note": {
                   "en": "",
                   "zh": "89A E 4 mi → Uptown；停 Forest Rd 停车楼"
@@ -1431,7 +1248,7 @@
                 "from": "Cowboy Club",
                 "to": "Dreamcatcher Inn",
                 "durationZh": "8 分钟（基准 5 min，+57%）",
-                "distanceM": 5400,
+                "distanceM": 5300,
                 "note": {
                   "en": "",
                   "zh": "89A W 4 mi 回酒店"
@@ -1447,16 +1264,44 @@
       },
       "notes": [
         {
-          "en": "The shuttle runs on 11/27 and stops on Thanksgiving. Route 11's first bus is 7:00. Plan the 4:52 Cathedral Rock return. The 5:12 is only a backup",
-          "zh": "Shuttle 11/27 运行（感恩节当天停）：Route 11 首班 7:00；Cathedral Rock 计划坐 4:52 回程，5:12 末班只当备用"
+          "en": "Leave at 6:25 for Boynton Canyon. There is no shuttle, so drive. On Black Friday the lot is full by 7:00–7:30, so arrive at 6:40. No sit-down breakfast. Bring a grab-and-go",
+          "zh": "6:25 出发去 Boynton Canyon（无 shuttle，自驾）；停车场 Black Friday 7:00–7:30 就满 → 6:40 到；坐下早餐取消，带 grab-and-go"
         },
         {
-          "en": "The chapel lot has 45 spaces. If it is full, get dropped at the top of the hill",
-          "zh": "Chapel 停车只有 45 位，满了就坡顶下客"
+          "en": "Subway Cave is in the Red Rock–Secret Mountain Wilderness. No drones. Look at the cliff dwelling beside the cave and do not touch it",
+          "zh": "Subway Cave 在 Red Rock–Secret Mountain Wilderness 内： 无人机；洞旁古崖居只看不碰"
         },
         {
-          "en": "If the path is wet or icy, skip the rock climb at Cathedral Rock and stop at the lower viewpoint",
-          "zh": "路湿/结冰：Cathedral Rock 不上攀岩段，只走到下段观景"
+          "en": "Devil's Bridge: the midday photo line is 40–60 minutes. Leave the bridge at 11:45 for the 12:40 bus. 12:15 is the latest, for the 1:10 bus, and then lunch is to go",
+          "zh": "Devil's Bridge：中午拍照排队 40–60 分钟 → 11:45 离开桥（赶 12:40 车）；最晚 12:15 离开（1:10 车，午餐改外带）"
+        },
+        {
+          "en": "Route 11 leaves at :00 and :30 and returns at :10 and :40. Route 15 runs every 15 minutes. Turn back from the saddle at 4:30 and take the 4:52 return. The 5:12 last bus is only a backup",
+          "zh": "Route 11 每 :00/:30 发、:10/:40 回；Route 15 每 15 分钟， 4:30 鞍部回头，坐 4:52 回程，5:12 末班只当备用"
+        },
+        {
+          "en": "The chapel is open 9–5, last entry 4:45. The lot has 45 spaces. If it is full, drop off at the top of the hill",
+          "zh": "Chapel 每天 9–5（最后入场 4:45）；停车只有 45 位，满了就坡顶下客"
+        },
+        {
+          "en": "If the rock is wet or icy, skip the scramble on Cathedral Rock and do not climb the slickrock into Subway Cave",
+          "zh": "路湿/结冰：Cathedral Rock 不上攀岩段、Subway Cave 不爬滑石坡"
+        },
+        {
+          "en": "Parking: the small Forest Service lot, about 25–36 spaces, is outside the Enchantment Resort gate. If it is full, park on the Boynton Pass Rd shoulder with the car fully off the pavement, or at the Fay Canyon trailhead, then walk 0.7 miles along the road, about 15 minutes each way",
+          "zh": "停车：Forest Service 小停车场（约 25–36 位）在 Enchantment Resort 大门外；满了 → 停 Boynton Pass Rd 路肩（车完全离开路面）或 Fay Canyon TH，再沿路走 0.7 mi（+15 分钟/单程）"
+        },
+        {
+          "en": "Do not sit down for breakfast. Pack a grab-and-go the night before, from the hotel or a market: bars, fruit, and coffee. Bring 1.5 L of water each",
+          "zh": "早餐不坐下吃：前一晚备好酒店/超市 grab-and-go（能量棒、水果、咖啡），水每人 1.5 L"
+        },
+        {
+          "en": "No drones. Boynton Canyon Trail and Subway Cave are in the Red Rock–Secret Mountain Wilderness. Federal wilderness rules prohibit takeoff, landing, and flying. The lot is on the boundary. Do not launch from the parking lot either",
+          "zh": "无人机：Boynton Canyon 步道和 Subway Cave 都在 Red Rock–Secret Mountain Wilderness 内，联邦 Wilderness 规定禁止起飞/降落/操作（停车场边界紧贴，也别在停车场起飞）"
+        },
+        {
+          "en": "Drive back at 9:30 to catch the 10:00 Route 11. If you finish early, take the 9:30 bus",
+          "zh": "9:30 一定往回开（赶 10:00 Route 11）；早点下来就坐 9:30 班"
         }
       ]
     },
@@ -3535,52 +3380,8 @@
         "zh": "6 AM"
       },
       "note": {
-        "en": "Menu names and numbers: #101 Jelly, Peanut Butter and Banana. There is no Southwest omelette, so it is #49 Green Chile and Cheese",
-        "zh": "改成菜单原名和编号：#101 Jelly, Peanut Butter and Banana；'Southwest 煎蛋卷' 菜单没有 → 换成 #49 Green Chile and Cheese"
-      }
-    },
-    {
-      "place": "Miley's Cafe",
-      "dishes": [
-        {
-          "en": "Miley's Burrito",
-          "zh": "Miley's Burrito"
-        }
-      ],
-      "sources": [
-        "https://mileyscafe.com/-food-menu"
-      ],
-      "hours": {
-        "en": "⚠ Opens at 6:30",
-        "zh": "⚠ 6:30 开"
-      },
-      "note": {
-        "en": "Breakfast burrito is now Miley's Burrito, the name on the menu. Opens at 6:30",
-        "zh": "'Breakfast burrito' 改为菜单上的 Miley's Burrito；注明 6:30 才开"
-      }
-    },
-    {
-      "place": "Red Rock Cafe",
-      "dishes": [
-        {
-          "en": "Biscuits & gravy",
-          "zh": "Biscuits & gravy"
-        },
-        {
-          "en": "Pancakes",
-          "zh": "Pancakes"
-        }
-      ],
-      "sources": [
-        "https://order.toasttab.com/online/red-rock-cafe-100-verde-valley-school-rd"
-      ],
-      "hours": {
-        "en": "⚠ Opens at 7 AM",
-        "zh": "⚠ 7 AM 开"
-      },
-      "note": {
-        "en": "Names follow the Toast menu",
-        "zh": "名称按 Toast 菜单"
+        "en": "Menu names and numbers: #101 Jelly, Peanut Butter and Banana. There is no Southwest omelette, so it is #49 Green Chile and Cheese. In v1.5 this moves from breakfast on 11/27 to lunch on 11/27. The site serves breakfast all day",
+        "zh": "改成菜单原名和编号：#101 Jelly, Peanut Butter and Banana；'Southwest 煎蛋卷' 菜单没有 → 换成 #49 Green Chile and Cheese；v1.5：从 11/27 早餐挪到 11/27 午餐（官网：全天早餐）"
       }
     },
     {
@@ -3637,34 +3438,6 @@
       "note": {
         "en": "Sonoran enchiladas are now Chicken Mole' Enchiladas. The prickly pear margarita is a Javelina Margarita with prickly pear",
         "zh": "'Sonoran 风 enchiladas' → Chicken Mole' Enchiladas；Prickly pear margarita → Javelina Margarita 加 prickly pear"
-      }
-    },
-    {
-      "place": "Oak Creek Brewery & Grill (Tlaquepaque)",
-      "dishes": [
-        {
-          "en": "Village Nut Brown Ale",
-          "zh": "Village Nut Brown Ale"
-        },
-        {
-          "en": "Tlaquepaque Burger",
-          "zh": "Tlaquepaque Burger"
-        },
-        {
-          "en": "Wood-fired pizza",
-          "zh": "Wood-fired pizza"
-        }
-      ],
-      "sources": [
-        "https://oakcreekbreweryandgrill.com/"
-      ],
-      "hours": {
-        "en": "⚠ Opens at 11:30",
-        "zh": "⚠ 11:30 开"
-      },
-      "note": {
-        "en": "Names are Village Nut Brown Ale and the Tlaquepaque Burger. Opens at 11:30",
-        "zh": "名称改为 Village Nut Brown Ale / Tlaquepaque Burger；注明 11:30 才开"
       }
     },
     {

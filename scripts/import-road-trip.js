@@ -279,7 +279,6 @@ function buildDay(day, meals) {
   const notes = (day.notes || []).map(function (line) {
     return pair(line, 'note');
   }).filter(Boolean);
-  if (notes.length) built.notes = notes;
 
   let i = 0;
   if (timeline[0] && timeline[0].item_type === 'leg') {
@@ -298,8 +297,13 @@ function buildDay(day, meals) {
     const stop = buildStop(item, meals);
     if (segments.length) stop.transit = { segments: segments };
     built.stops.push(stop);
+    (Array.isArray(item.notes_zh) ? item.notes_zh : []).forEach(function (line) {
+      const extra = pair(line, 'note');
+      if (extra) notes.push(extra);
+    });
     i = j;
   }
+  if (notes.length) built.notes = notes;
   return built;
 }
 
